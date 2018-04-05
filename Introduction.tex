@@ -1,0 +1,278 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%
+\label{Sec:Introduction}
+
+
+We study the equation
+\begin{equation}
+\label{Eq:NonlocalAllenCahn}
+Lu = f(u) \quad \textrm{ in } \R^{2m}
+\end{equation}
+where $f$ is of bistable type and $L$ is an integro-differential operator of the form
+\begin{equation}
+\label{Eq:DefOfLu}
+Lu(x) = \PV \int_{\R^n} \{u(x) - u(y)\} K(x-y)\d y
+\end{equation}
+where $K \geq 0$ is a nonnegative kernel. We assume also
+\begin{equation}
+\label{Eq:Symmetry&IntegrabilityOfK}
+K(y) = K(-y) \quad \textrm{ and } \quad \int_{\R^n} \min \left\{ |y|^2, 1 \right\} K(y) \d y < + \infty\,.
+\end{equation}
+The most canonical example of such operators is the fractional Laplacian
+$$
+\fraclaplacian u = \PV c_{n, \s}\int_{\R^n} \dfrac{u(x) - u(y)}{|x-y|^{n + 2\s}}\d y\,,
+$$
+where $c_{n, \s}$ is a normalizing constant (for its exact value see for instance \cite{HitchhikerGuide}).\todo{Mirar a ver si esta es una buena referencia o se pone otra}
+
+Throughout the paper, we assume that the operators of our study are uniformly elliptic in the sense of the following definition.
+\begin{definition}
+\label{Def:L_0Class}
+We say that an operator $L$ of the form \eqref{Eq:DefOfLu} belongs to the class $\lcal_0(n,\s,\lambda, \Lambda)$ if its kernel $K\geq 0$ satisfies \eqref{Eq:Symmetry&IntegrabilityOfK} and \begin{equation}
+\label{Eq:Ellipticity}
+c_{n,\s}\dfrac{\lambda}{|y|^{n+2\s}} \leq K(y) \leq c_{n,\s}\dfrac{\Lambda}{|y|^{n+2\s}}\,, \quad 0< \lambda \leq \Lambda \,,
+\end{equation}
+where $c_{n,\s}$ is the constant appearing in the definition of the fractional Laplacian.
+\end{definition}
+When there is no ambiguity, we shall write only $\lcal_0$ for simplicity.
+
+
+\bigskip
+[...]
+\bigskip
+
+Given $f$ a $C^1$ nonlinearity, we define
+$$
+G(u)= \int_u^1 f(t) \d t\,.
+$$
+We have that $G$ is a $C^2$ function satisfying $G' = -f$. In this paper, we assume some, or all, of the following conditions on $f$.
+\begin{equation}
+\label{Eq:HipothesisfOdd}
+f \textrm{ is odd;}
+\end{equation}
+\begin{equation}
+\label{Eq:HipothesisGWells}
+G\geq 0 \quad \textrm{ in } \R, \quad G > 0 \ \textrm{ in }  (-1,1), \quad \textrm{ and }\quad G(\pm 1 )=0\,;
+\end{equation}
+\begin{equation}
+\label{Eq:HipothesisfConcave}
+f \textrm{ is concave in }  (0,1).
+\end{equation}
+
+
+
+Note that \eqref{Eq:HipothesisfOdd} and \eqref{Eq:HipothesisGWells} yield that $f(0)=f(\pm 1)=0$. 
+
+Note that \eqref{Eq:HipothesisfOdd} is equivalent to say that $G$ is even.
+
+Note that \eqref{Eq:HipothesisfOdd}, \eqref{Eq:HipothesisGWells}, and \eqref{Eq:HipothesisfConcave} and the fact that $f(1)=0$ yield $f'(0)>0$ and $f'(\pm 1) < 0$. As a consequence, $f > 0$ in $(0,1)$.
+
+Comentario: $f'(\pm 1) < 0$ equivale a $G''(\pm 1) > 0\,,$ que es la hipotesis junto con las otras para que exista el Layer
+
+Note that, since $f$ is concave in $(0,1)$ and $f(0)=0$, then 
+\begin{equation}
+\label{Eq:PropertyConcavityf}
+f'(t)t \leq f(t) \quad \textrm{ for all } t\in (0,1)\,.
+\end{equation}
+The inequality is strict if we have strict concavity.
+
+
+\bigskip
+\bigskip
+\bigskip
+-------------
+\bigskip
+\bigskip
+\bigskip
+
+[...]
+
+The interest on this problem originates from the famous De Giorgi conjecture for the classical Allen-Cahn equation.
+
+\begin{conjecture}[De Giorgi, 1978]
+	Let $u$ be a bounded solution of the Allen-Cahn equation
+	\begin{equation}
+	\label{Eq:LocalAllenCahn}
+	-\Delta  u = u - u^3 \quad \text{ in } \R^n
+	\end{equation}
+	such that it is monotone in one direction, say $\partial_{x_n} u > 0$. Then, if $n\leq 8$, $u$ is one dimensional, i.e., $u$ depends only on one Euclidean variable.
+\end{conjecture}
+
+This conjecture was proved true in dimension $n=2$ by Ghoussoub and Gui in \cite{GhoussoubGui}, and in dimension $n=3$ by Ambrosio and Cabré in \cite{AmbrosioCabre}. For dimensions $4\leq n \leq 8$, it was established by Savin in \cite{Savin-DeGiorgi} but with the extra assumption of
+\begin{equation}
+\label{Eq:SavinCondition}
+	\lim_{x_n \to \pm \infty} u(x',x_n) = \pm 1 \quad \text{ for all } x'\in \R^{n-1}\,.
+\end{equation}
+A counterexample to the conjecture was given by del~Pino, Kowalczyk and Wei in \cite{delPinoKowalczykWei}. 
+
+
+One can also formulate the same conjecture in the nonlocal setting by changing the Laplacian by a nonlocal operator, the most canonical one being $\fraclaplacian$. In this framework, for the equation $\fraclaplacian u = f(u)$ in $\R^n$ and $\s\in (0,1)$, the conjecture has been proven to be true in dimension $n=2$ by Cabré and Solà-Morales in \cite{CabreSolaMorales} for $\s=1/2$ and extended to every power $0<\s<1$ by Cabré and Sire in \cite{CabreSireI} and also by Sire and Valdinoci in \cite{SireValdinoci}. In dimension $3$ the conjecture has been proved by Cabré and Cinti for $1/2 \leq \s < 1$ in \cite{CabreCinti-EnergyHalfL, CabreCinti-SharpEnergy}. Recently, in \cite{Savin-Fractional} Savin has established the validity of the conjecture in dimensions $4\leq n \leq 8$ and for $1/2 < \s < 1$, but assuming the condition \eqref{Eq:SavinCondition}. In that paper he has also announced that the same holds for $\s=1/2$. The case $0<\s<1/2$ has been also treated by Dipierro, Serra and Valdinoci in \cite{DipierroSerraValdinoci} \todo{Revisar, dependeria de la clasificación de los conos}. The most recent result related to the conjecture is the one of Figalli and Serra in \cite{FigalliSerra}, where they have proven the conjecture in dimension $n=4$ and $\s=1/2$. Note that this is the only result that is available (by now) exclusively in the nonlocal setting and not for the Laplacian.
+
+After all the years of study of the conjecture raised by De Giorgi, another question appeared naturally: do global minimizers of the energy associated to the equation  $-\Delta u = f(u)$ in $\R^n$ have one-dimensional symmetry? A deep result from Savin \cite{Savin-DeGiorgi} is that in dimension $n \leq 7$ this is indeed true, and the conjecture is that for $n\geq 8$ is false. The answer to this question would provide some insights of the original conjecture of De Giorgi. This is due to a result by Jerison and Monneau in \cite{JerisonMonneau}, where they show that a counterexample of the original conjecture in $\R^{n+1}$ can be constructed from a bounded, even with respect to each coordinate, global minimizer of $-\Delta u = f(u)$ in $\R^n$. Hence, finding a global minimizer that is not one-dimensional would give a natural counterexample to the original conjecture.
+
+Saddle-shaped solutions are of special interest in the search for this counterexample. To define these solutions properly, we need to introduce some notation and definition.
+
+First of all, recall that the Simons cone is defined in $\R^{2m}$ with $2m = n$ by
+\begin{equation}
+\label{Eq:SimonsCone}
+	\mathscr{C} = \setcond{x = (x', x'') \in \R^{2m}}{|x'| = |x''|}\,.
+\end{equation}
+The Simons cone is proven to be a (classical) stationary minimal surface. Moreover, if $n\geq 8$, is also minimizing (see 99 and the coments... \todo{comentar algo despues con aquello del límite?}). 
+Through the paper we will also use the letters $\ocal$ and $\ical$ to denote the outside and inside of the cone:
+\begin{equation}
+\label{Eq:DefOandI}
+\ocal:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| > |x''|} \ \textrm{ and } \
+\ical:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| < |x''|}.
+\end{equation}
+
+
+Let $SO(m)$ be the special orthogonal group of $\R^m$, that is, the group of rotations of $\R^m$. We will work with the group $SO(m)^2 = SO(m) \times SO(m)$. Note that $SO(m)^2 \subset SO(2m)$ and therefore, for any $R\in SO(m)^2$, $|Rx| = |x|$. Moreover, the sets $\ocal$ and $\ical$ are invariant under the action of the group and belong to a more general class of domains defined next.
+
+\begin{definition}
+\label{Def:DoubleRevolutionSet}
+We say that a set $\Omega\subset \R^{2m}$ is of \emph{double revolution} if it is invariant under $SO(m)^2$, i.e., if it is invariant under orthogonal transformations in the first $m$ variables and also under orthogonal transformations in the last $m$ variables.
+\end{definition}
+
+More defs (introducir mejor)
+
+\begin{definition}
+\label{Def:DoublyRadial}
+We say that a function $w:\R^{2m} \to \R$ is \emph{doubly radial} if it only depends on the modulus of the first $m$ variables and on the modulus of the last $m$ ones, i.e., $w(x) = w(|x'|,|x''|)$. Equivalently, if $w(Rx) = w(x)$ for every $R \in SO(m)^2$.
+\end{definition}
+
+Through the paper we will consider the following isometry:
+\begin{equation}
+\label{Eq:DefStar}
+\begin{matrix}
+(\cdot)^\star \colon & \R^{2m}= \R^{m}\times \R^{m}  &\to&  \R^{2m}= \R^{m}\times \R^{m}  \\
+	& x = (x',x'') &\mapsto & x^\star = (x'',x')\,.
+\end{matrix}
+\end{equation}
+Note that this isometry satisfies
+\begin{enumerate}
+\item $((\cdot)^\star)^{-1} = (\cdot)^\star$.
+\item $\ocal^\star= \ical$ and $\ical^\star = \ocal$.
+\end{enumerate}
+
+
+\begin{definition}
+\label{Def:OddwrtSimonsCone}
+We say that a doubly radial function $w$ is \emph{odd with respect to the Simons cone} if $w(|x'|,|x''|) = -w(|x''|,|x'|)$ for every $x = (x', x'') \in \R^{2m}$, or equivalently, if $w(x) = -w(x^\star)$. Similarly, we say that a doubly radial function $w$ is \emph{even with respect to the Simons cone} if $w(|x'|,|x''|) = w(|x''|,|x'|)$ for every $x = (x', x'') \in \R^{2m}$, or equivalently, if $w(x) = w(x^\star)$.
+\end{definition}
+
+With these definitions in hand, we can define now properly saddle-shaped solutions:
+\begin{definition}
+\label{Def:SaddleShapedSol}
+We say that $u$ is a \emph{saddle-shaped solution} (or simply \emph{saddle solution}) of \eqref{Eq:NonlocalAllenCahn} if
+\begin{enumerate}
+\item $u$ is doubly radial.
+\item $u$ is odd with respect to the Simons cone.
+\item $u > 0$ in $\ocal$.
+\end{enumerate}
+\end{definition}
+
+
+Note that these solutions are even with respect to the coordinate axis and that their zero level set is the Simons cone $\mathscr{C} = \{|x'|=|x''|\}$. Therefore, saddle-shaped solutions are candidates to build a counterexample of the De Giorgi conjecture in high dimensions, since if one could prove that they are global minimizers in $\R^8$, by the result in \cite{JerisonMonneau} one would have a counterexample of the De Giorgi conjecture in $\R^9$ (as an alternative to that of \cite{delPinoKowalczykWei}).
+
+Saddle-shaped solutions for the classical equation with the Laplacian were first studied by Dang, Fife, and Peletier in \cite{DangFifePeletier} in dimension $2m=2$. They established the existence and uniqueness of this type of solutions, as well as some monotonicity properties and asymptotic behavior. In \cite{Schatzman}, Schatzman studied the instability property of saddle solutions in $\R^2$. In higher even dimensions, Cabré and Terra  proved the existence of a saddle solution in every dimension $2m\geq 2$ and they established also some qualitative properties such as monotonicity properties, asymptotic behavior, as well as instability in dimensions $2m = 4$ and $2m = 6$ (see \cite{CabreTerraI,CabreTerraII}). The uniqueness in dimensions higher than $2$ was established by Cabré in \cite{Cabre-Saddle}, where he also proved that saddle solutions are stable (see the definition below\todo{ver si lo quitamos o como lo ponemos}) in dimensions $2m \geq 14$.
+
+In the nonlocal framework, there are some works concerning saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn} with $L= \fraclaplacian$. In  \cite{Cinti-Saddle}, Cinti established the existence of saddle-shaped solutions to $(-\Delta)^{1/2}u = f(u)$ in $\R^{2m}$, as well as some qualitative properties such as asymptotic behavior, monotonicity properties, and instability in dimensions $2m = 4$ and $2m = 6$ (instability in dimension $2m=2$ follows by a result of Cabré and Solà-Morales in \cite{CabreSolaMorales}). More recently, she has extended the same results to all $\s \in (0,1)$ in 99\todo{Citar paper de Cinti}.
+
+
+To the best of our knowledge, there are no more works studying the saddle-shaped solutions in the nonlocal setting. Moreover, the problem has not been studied for general operators $L\in \lcal_0$. Regarding the nonlocal Allen-Cahn equation with general kernels, we have to mention two works.
+
+The first one is \cite{CozziPassalacqua}, where Cozzi and Passalacqua study layer solutions to the equation \eqref{Eq:NonlocalAllenCahn}.
+
+We should also mention \cite{DipierroSerraValdinoci}\todo{CHECK} where they study nonlocal minimal surfaces with general kernels and blablabla.mal surfaces with general kernels and blablabla.
+
+
+
+\bigskip
+\bigskip
+\bigskip
+-------------
+\bigskip
+\bigskip
+\bigskip
+
+
+
+
+
+
+
+
+
+The second variation of the energy is
+\begin{equation}
+ \label{Eq:SecondVariation}	
+ Q_u(\xi) := \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\R^{2m}} f'(u) \xi^2 \d x\,.
+\end{equation}
+
+\begin{definition}
+	\label{Def:Stability}
+	We say that a solution $u$ of \eqref{Eq:NonlocalAllenCahn} is \emph{stable} in a set $\Omega \subset \R^{2m}$ if 
+	\begin{equation}
+	\label{Eq:StablityCondition}	
+	Q_u(\xi) = \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\Omega} f'(u) \xi^2 \d x \geq 0
+	\end{equation}
+	for every $\xi \in C^\infty_c (\Omega)$.
+\end{definition}
+
+\begin{lemma}[see \cite{HamelRosOtonSireValdinoci}]
+	\label{Lemma:EquivalenceStability}
+	A solution $u$ is stable in $\Omega$ (in the sense of Definition~\ref{Def:Stability}) if and only if there exists a continuous function $\varphi$ such that $\varphi > 0$ in $\Omega$ and $L\varphi \geq f'(u) \varphi$ in $\Omega$.
+\end{lemma}
+
+The proof of this result can be found in \cite{HamelRosOtonSireValdinoci}. Nevertheless, one of the implications is quite simple and since is an argument that will be repeated in the paper, we show it here. 
+
+Assume that $\varphi > 0$ is a supersolution of the linearized operator in $\Omega$. Then, let $\xi \in C^\infty_c (\Omega)$ and we compute
+\begin{align*}
+	\int_\Omega f'(u) \xi^2 \d x &= \int_\Omega f'(u) \varphi \dfrac{\xi^2}{\varphi} \d x \\
+	&\leq \int_\Omega L\varphi \dfrac{\xi^2}{\varphi}  \d x \\ 
+	&= \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} \big ( \varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } K(x - y) \d x \d y
+	 \\ 
+	&\leq \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y\,.
+\end{align*}
+Here we have used that the kernel is positive and that
+$$
+\big ( \varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
+$$
+Indeed, developing the squares and the products, this last inequality is equivalent to
+$$
+2 \xi(x) \xi(y) \leq \dfrac{\varphi(x)}{\varphi(y)} \xi^2(y) +  \dfrac{\varphi(y)}{\varphi(x)} \xi^2 (x)\,,
+$$
+which is equivalent to
+$$
+\bpar{\xi (x)\sqrt{\dfrac{\varphi(y)}{\varphi(x)}} - \xi(y) \sqrt{\dfrac{\varphi(x)}{\varphi(y)} } }^2 \geq 0\,.
+$$
+
+\bigskip
+\bigskip
+\bigskip
+-------------
+\bigskip
+\bigskip
+\bigskip
+
+
+\bigskip
+\bigskip
+\bigskip
+-------------
+\bigskip
+\bigskip
+\bigskip
+
+\begin{theorem}[Existence of the saddle-shaped solution]
+	\label{Th:Existence}
+    Let $f$ satisfy .... Then, for every dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$ and \todo{Poner algo más?}.
+\end{theorem}
+
+
+\begin{theorem}[Uniqueness of the saddle-shaped solution]
+	\label{Th:Uniqueness}
+    Let $f$ satisfy .... Then, for every dimension $2m \geq 2$, there exists at most one saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}.
+\end{theorem}
+
+\todo[inline]{juntar teoremas?}

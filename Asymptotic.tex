@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Asymptotic results}
+\label{sec:Asymptotic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}
+\label{Thm:AsymptoticBehaviourSaddleSolution}
+Let $f\in \cp{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle- shaped solution of
+$$
+Lu = f(u) \ \textrm{in } \R,
+$$
+with kernel $K$ satisfying \todo{write conditions}.
+Then,
+$$
+\norm{u-\mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)}+\norm{\nabla u-\nabla \mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)}+\norm{D^2u-D^2\mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)} \xrightarrow{\text{as } R\to \infty}{} 0,
+$$
+where
+$$
+\mathcal{U}(x) = u_0(z),
+$$
+with $z$ the distance to the cone and $u_0$ the layer 1D solution.
+\end{theorem}
+
+\begin{proof}
+By contradiction, assume that the result does not hold. Then, there exists $\epsilon>0$ and a sequence $\{x_k\}$, that we may assume without loss of generality in $\overline{\ocal}$ and by continuity out of ${\ccal}$, such that
+\begin{equation}
+\label{Eq: ContradictionAsymptotic}
+|u(x_k)-\mathcal{U}(x_k)|+|\nabla u(x_k)-\nabla \mathcal{U}(x_k)|+|D^2u(x_k)-D^2\mathcal{U}(x_k)| > \epsilon.
+\end{equation}
+
+
+We distinguish two cases:
+
+CASE 1. $\{d_k:=\dist(x_k,\ccal)\}$ is an unbounded sequence. We may assume $d_k \geq 2k$.\\
+In such case, we define
+$$
+w_k(x) = u(x+x_k)  \ \textrm{for } x\in B_{d_k}(0), 
+$$
+which satisfies $0<w_k<1$ and
+$$
+Lw_k = f(w_k) \ \textrm{in } B_k.
+$$
+By letting $k$ tend to infinity and using compactness \todo{Atencion} we have that $w_k$ converges to $w$, up to a subsequence, satisfying
+$$
+\beqc{\PDEsystem}
+L w &=& f(w) & \textrm{ in }\R^n\,,\\
+w &\geq& 0 & \textrm{ in } \R^n\,.
+\eeqc
+$$
+
+By Theorem \ref{Thm: SymmetryWholeSpace}, $w\equiv 0$ or $w\equiv 1$. First, $w$ cannot be zero. Indeed, since $w_k$ are stable in $B_k$, $w$ is stable in $\R^n$, which means that the linear operator $L-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, the linear operator $L-f'(w) = L-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L$ is of order $R^{-2s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
+
+On the other hand, since $d_k\rightarrow \infty$  and $\mathcal{U}(x_k) = u_0(z_k) = u_0(d_k)$ we get by the properties of the layer solution \todo{ver bien} that $\mathcal{U}(x_k) \rightarrow 1$, $\nabla \mathcal{U}(x_k) \rightarrow 0$ and $D^2\mathcal{U}(x_k) \rightarrow 0$. From this and condition \eqref{Eq: ContradictionAsymptotic} we get
+$$
+|u(x_k)-1|+|\nabla u(x_k)|+|D^2u(x_k)| > \epsilon/2,
+$$
+which means that $w \not\equiv 1$. Therefore we arrive to a contradiction with Theorem \ref{Thm: SymmetryWholeSpace}.
+
+CASE 2. $\{d_k:=\dist(x_k,\ccal)\}$ is a bounded sequence.
+Then, at least for a subsequence $d_k \rightarrow d$. Now, define for each $x_k$ its projection on $\ccal$, $x_k^0$ and then we have that $ \nu_k^0 := \frac{x_k-x_k^0}{d_k}$ is the unit normal to $\ccal$. Through a subsequence, $ \nu_k^0 \rightarrow \nu$ with $|\nu|=1$.
+
+Define as before
+$$ w_k (x) = u(x+x_k^0), $$
+which solves
+$$ L w_k = f(w_k) \ \text{in } \R^n. $$
+By letting $k$ tend to infinity and using compactness \todo{Atencion} we have that $w_k$ converges to $w$, up to a subsequence, satisfying
+$$
+\beqc{\PDEsystem}
+%L w &=& f(w)  \textrm{ in } &H:=\{x\cdot \nu >0\}\,,\\
+%w &\geq& 0  \textrm{ in } &H\,,\\
+%w &\text{ odd}& \hspace{-2mm} \text{with respect} \text{to} &H \,.
+L w &=& f(w)  &\textrm{ in } H:=\{x\cdot \nu >0\}\,,\\
+w &\geq& 0  &\textrm{ in } H\,,\\
+\,\,w \text{ odd with respect to } H. \span\span\span \,
+\eeqc
+$$
+For the detail of the proof of how $\ocal \rightarrow H$ see \cite{CabreTerra1}.
+
+As in the previous case, by stability $w$ cannot be zero, and then, by Theorem \ref{Thm: SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Therefore, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
+\begin{align*}
+u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + o(1) \\
+&= u_0((x_k-x_k^0)\cdot \nu) + o(1) \\
+&= u_0((x_k-x_k^0)\cdot \nu_k^0) + o(1) \\
+&= u_0(d_k |\nu_k^0|^2) + o(1) \\
+&= u_0(d_k) + o(1) = \ucal (x_k) + o(1),
+\end{align*}
+contradicting \eqref{Eq: ContradictionAsymptotic}. The same is done for $\nabla u$ and $D^2 u$.
+\end{proof}

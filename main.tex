@@ -1,0 +1,256 @@
+\documentclass[12pt,reqno]{amsart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+
+%%---AMS packages---%% (automatically loaded in amsart or amsbook)
+\usepackage{amsmath} %General package for maths (loads also amsbsy to make bold symbols)
+\usepackage{amsthm} %Package for theorems
+\usepackage{amssymb} %Symbols (loads also amsfonts)
+\usepackage{amscd} %Package for rectangular diagrams
+%\usepackage{amsrefs} %Gestió de referències
+
+
+\usepackage{emptypage}
+%\usepackage{pdfpages} %Include pdf documents
+
+%\usepackage{dsfont} % Double stroke roman fonts
+\usepackage{enumitem} %Enumerations
+\usepackage{mathtools} %More symbols, etc.
+\usepackage{mathrsfs} %Calligraphic symbols with \mathscr
+%\usepackage{fancyhdr} %Customize the header
+\usepackage{hyperref} %Makes references hyperlinks
+\hypersetup{
+	%true = make page number, not text, be link
+    linktocpage = true,
+    %set to all if you want both sections and subsections linked
+    %linktoc=all,    
+    colorlinks=true, 
+    linkcolor=red,
+} 
+\usepackage{esint} %To write averaged integrals
+
+%%%FIGURES AND IMAGES
+\usepackage{graphicx} %For using \includegraphics
+%\usepackage{wrapfig} %For figures wrapped inside the text
+%\usepackage{float} %Interface for defining floating objects
+%\usepackage{caption} %Customize the captions in floating environments
+%\usepackage{subfigure}
+%\usepackage{tcolorbox} %For boxing
+%\tcbuselibrary{theorems}
+%\tcbuselibrary{skins}
+
+%\usepackage{pgf,tikz}
+%\usepackage{mathrsfs}
+%\usetikzlibrary{arrows}
+
+
+%%%EDITION HELP
+\usepackage[colorinlistoftodos]{todonotes} %Package to add TODO's in colors
+\setlength{\marginparwidth}{2.3cm} % make todonotes appear wider
+\usepackage{showlabels} %Show the labels of equations and theorems
+%\usepackage{showkeys} %Show the keys of all references
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   THEOREM ENVIRONMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{remark*}{Remark}
+\newtheorem{observation}[theorem]{Observation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   MACROS/ABREVIATIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\con}[1]{\mathbb{#1}}
+\newcommand{\C}{\con{C}} %Complex
+\newcommand{\R}{\con{R}} %Real
+\newcommand{\Q}{\con{Q}} %Rational
+\newcommand{\Z}{\con{Z}} %Integer
+\newcommand{\N}{\con{N}} %Natural
+\newcommand{\T}{\con{T}} %Torus
+\newcommand{\Sph}{\con{S}} %Sphere
+\renewcommand{\H}{\con{H}}
+\newcommand{\ccal}{\mathscr{C}}
+\newcommand{\ecal}{\mathcal{E}}
+\newcommand{\ical}{\mathcal{I}}
+\newcommand{\lcal}{\mathcal{L}}
+\newcommand{\ncal}{\mathcal{N}}
+\newcommand{\ocal}{\mathcal{O}}
+\newcommand{\ucal}{\mathcal{U}}
+\newcommand{\e}{\mathrm{e}}
+
+
+\makeatletter
+\newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
+\newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
+\makeatother
+
+\newcommand{\limn}{\displaystyle\lim_{n \rightarrow \infty}} %limit n to infinity
+\newcommand{\norm}[1]{\left | \left |{#1} \right | \right |}
+\newcommand{\seminorm}[1]{\left [ {#1} \right ] }
+\newcommand{\laplacian}{\Delta}
+\newcommand{\s}{\gamma}
+\newcommand{\fraclaplacian}{(-\Delta)^\s}
+\newcommand{\loc}{\mathrm{loc}}
+\renewcommand{\d}{\,\mathrm{d}} %straight d with small space before
+\newcommand{\dx}{\,\mathrm{d}x} %The usual differential of x
+\newcommand{\ddt}[1][]{\dfrac{\d{#1}}{\d t}} %Derivative with respect t
+\newcommand{\ddtpar}[1]{ \dfrac{\d}{\d t}\Big ( {#1} \Big)} %Derivative with respect t with parenthesis
+\newcommand{\lp}[1]{\mathrm{L}^{#1}}%L^p spaces
+\newcommand{\hp}[1]{\mathrm{H}^{#1}}%H^p spaces
+\newcommand{\sobolev}[1]{\mathrm{W}^{#1}}%Sobolev spaces
+\newcommand{\cp}[1]{\mathcal{C}^{#1}}%C^p spaces
+\newcommand{\bpar}[1]{\left ( {#1}\right )}
+\newcommand{\setcond}[2]{\left \{ #1 \ : \ #2  \right \}}
+\newcommand\evalat[1]{_{\mkern1.5mu\big\vert_{\scriptstyle #1}}}
+\newcommand{\normLinf}[1]{\left | \left |{#1} \right | \right |_{\lp{\infty}}}
+
+%\newcommand{\averageline}{{\mathchoice 
+%{\kern1ex\vcenter{\hrule height.4pt width 6pt depth0pt} \kern-9.3pt} {}
+%{\kern1ex\vcenter{\hrule height.4pt width 4.3pt depth0pt} \kern-7pt} 
+%{} {} }}
+%\newcommand{\average}{\averageline \!\int}
+
+\newcommand{\average}{\fint}
+
+\newcommand\beqc[1]{\left\{\begin{array}{#1}}
+\newcommand\eeqc{\end{array} \right.}
+\def\PDEsystem{rcll}
+\def\bmatrix{\begin{pmatrix}}
+\def\ematrix{\end{pmatrix}}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Det}{Det}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\PV}{P.V.}
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+\newcommand{\usub}{\underline{u}}
+\newcommand{\usup}{\overline{u}}
+\def\ds{\displaystyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\textwidth}{155mm}
+\setlength{\textheight}{210mm}
+\oddsidemargin=5mm
+\evensidemargin=5mm
+
+\numberwithin{equation}{section}
+
+\graphicspath {{Images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% HYPHENATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{auto-ma-ti-cally}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% GENERAL INFORMATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Integro-differential Allen-Cahn equations with general kernels]{Integro-differential Allen-Cahn equations with general kernels: half-space and saddle-shaped solutions}
+\author{Juan Carlos Felipe} 
+\address{J.C. Felipe:
+Universitat Polit\`ecnica de Catalunya and BGSMath, Departament de Matem\`{a}tiques, Diagonal 647, 08028 Barcelona, Spain}
+\email{juan.carlos.felipe@upc.edu}
+
+\author{Tomás Sanz-Perela}
+\address{T. Sanz-Perela:
+Universitat Polit\`ecnica de Catalunya and BGSMath, Departament de Matem\`{a}tiques, Diagonal 647, 08028 Barcelona, Spain}
+\email{tomas.sanz@upc.edu}
+
+
+
+
+
+
+
+\thanks{The author is supported by MINECO grants MDM-2014-0445 and MTM2014-52402-C3-1-P. He is part of the Catalan research group 2014 SGR 1083. }
+
+\keywords{Fractional Laplacian, extremal solution, Dirichlet problem, stable solutions}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+We study blablabla
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\maketitle
+
+
+\tableofcontents
+
+\include{Introduction}
+
+\include{Preliminaries}
+
+\include{Nonlocal_AllenCahn_Energy}
+
+\include{Existence}
+
+\include{Symmetry_results}
+
+\include{Asymptotic}
+
+\include{Maximum_principle}
+
+%\include{Uniqueness}
+
+
+\appendix
+
+
+\include{Appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+
+The authors thank Xavier Cabré for his guidance and useful discussions on the topic of this paper.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{amsplain}
+\bibliography{biblio}
+
+\end{document}
+that
