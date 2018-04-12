@@ -3,10 +3,85 @@
 \label{Sec:SymmetryResults}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Preliminary: Parabolic Maximum principle}
+
+
+
+This section is devoted to prove the following two symmetry results. The first one is a result for positive solutions in the whole space
 
 \begin{theorem}
-\label{Thm: ParabolicmaxPrpBdd}
+	\label{Th:SymmetryWholeSpace}
+	Let $L$ be an integro-differential operator with kernel $K$ satisfying 99. Let $u$ be a bounded solution to
+	\begin{equation}
+	\label{Eq:PositiveWholeSpace}
+	\beqc{\PDEsystem}
+	L u &=& f(u) & \textrm{ in }\R^n\,,\\
+	u &\geq& 0 & \textrm{ in } \R^n\,,
+	\eeqc
+	\end{equation}
+	with the nonlinearity $f\in C^1$ satisfying
+	\begin{itemize}
+		\item $f(0) = f(1) = 0$,
+		\item $f'(0)>0$,
+		\item $f>0$ in $(0,1)$, and
+		\item $f<0$ in $(1,+\infty)$.
+	\end{itemize}
+	Then, $u\equiv 0$ or $u \equiv 1$.
+\end{theorem}
+
+The second one is a symmetry result for equations in a half-space.
+
+\begin{theorem}
+	\label{Th:SymmHalfSpace}
+	Let $L$ be an integro-differential operator with kernel $K$ satisfying 99. Let $u$ be a bounded solution of one of these two problems
+	\begin{equation}
+	\leqnomode
+	\tag{P3}
+	\label{Eq:P3}
+	\beqc{\PDEsystem}
+	Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
+	u &>& 0   &\textrm{ in } \,\R^n_+,\\
+	u &=& 0   &\textrm{ in } \,\overline{\R^n_-},
+	\eeqc
+	\end{equation}
+	
+	\begin{equation}
+	\leqnomode
+	\tag{P4}
+	\label{Eq:P4}
+	\beqc{\PDEsystem}
+	Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
+	u &>& 0   &\textrm{ in } \,\R^n_+,\\
+	u(x',x_n) &=& -u(x',-x_n)   &\textrm{ in } \,\R^n.
+	\eeqc
+	\end{equation}
+	
+	\reqnomode
+	
+	Assume that the kernel $K$ of the integral operator $L$ satisfies
+	$$
+	K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+,
+	$$
+	where $y^*$ is the reflection of $y$ with respect to $\{x_n = 0\}$. Suppose that the nonlinearity $f$ is Lipsitchz and
+	\begin{itemize}
+		\item $f(0) = f(1) = 0$,
+		\item $f'(0)>0$, and $f'(t)\leq 0$ for all $t\in[1-\delta,1]$ for some $\delta>0$,
+		\item $f>0$ in $(0,1)$, and
+		\item $f$ is odd in the case of \eqref{Eq:P4}.
+	\end{itemize}
+	Then, $u$ depends only on $x_n$ and it is increasing in that direction.
+\end{theorem}
+
+
+The result in the case of problem \eqref{Eq:P3} will not be used in this paper. However, since the proof is exactly the same as for \eqref{Eq:P4} we include it here for completeness and further reference.
+
+\subsection{Preliminary: Parabolic Maximum principle}
+
+
+
+
+
+\begin{theorem}
+\label{Th:ParabolicmaxPrpBdd}
 \todo{Acotada donde? Creo que no hace falta que sea en todo $\R^n$}
 Assume that $v$ is bounded and $\cp{2\s+\epsilon}(B_R\times(0,T])$ such that
 \begin{equation*}
@@ -28,12 +103,12 @@ Let us proceed by contradiction. Assume $v$ attains a positive maximum $M$. That
 \end{proof}
 
 \begin{lemma}
-\label{Lemma: NoBddSolL=1}
+\label{Lemma:NoBddSolL=1}
 There is no bounded solution of $$Lv=1 \,\,\, \text{ in } \,\,\, \R^n.$$
 \end{lemma}
 
 \begin{proof}
-Assume by contradiction that such solution exists. Then, by interior regularity \todo{!!!!} $v\in\cp{1}(\R^n)$ and $|\nabla v|\leq C$ in $\R^n$. By differentiating the equation with respect to $x_i$ we obtain
+Assume by contradiction that such solution exists. Then, by interior regularity (see Section~\ref{Sec:Preliminaries}) $v\in\cp{1}(\R^n)$ and $|\nabla v|\leq C$ in $\R^n$. By differentiating the equation with respect to $x_i$ we obtain
 \begin{equation*}
 \beqc{\PDEsystem}
 L v_{x_i} &=& 0 & \textrm{ in } \R^n\,,\\
@@ -44,7 +119,7 @@ By Liouville Theorem, $v_{x_i}$ is constant. \todo[inline]{Quizás está bien es
 \end{proof}
 
 \begin{lemma}
-\label{Lemma: SolBall}
+\label{Lemma:SolBall}
 Let $L$ be an integral operator with kernel $K$ satisfying 99-99 and let $R>0$ be given. Then, there exists $\phi_R$ a solution of
 \begin{equation*}
 \beqc{\PDEsystem}
@@ -53,7 +128,9 @@ L \phi_R &=& 1 & \textrm{ in } B_R\,,\\
 \eeqc
 \end{equation*}
 and satisfying
-$$ M_R:= \sup_{B_R} \phi_R \xrightarrow{\text{as } R\to \infty}{} \infty $$
+$$
+M_R:= \sup_{B_R} \phi_R \to \infty \quad \text{as } R\to \infty\,.
+$$
 \end{lemma}
 \begin{proof}
 The existence of a weak solution is given by Riesz representation theorem. Moreover, by regularity results (see section \ref{Subsec:Regularity}) it is in fact a classical solution and by the maximum principle, $\phi_R>0$ in $B_R$. Now consider the new function
@@ -61,7 +138,7 @@ $$ \varphi_R := \frac{\phi_R}{M_R}, $$
 which satisfies
 \begin{equation}
 \beqc{\PDEsystem}
-L \varphi_R &=& \frac{1}{M_R} & \textrm{ in } B_R\,,\\
+L \varphi_R &=& 1/M_R & \textrm{ in } B_R\,,\\
 \varphi_R &=& 0 & \textrm{ in } \R^n\setminus B_R\,, \label{Eq: varphi}\\
 ||\varphi_R||_{\lp{\infty}} &=& 1.
 \eeqc
@@ -72,11 +149,11 @@ Therefore, applying Lemma \ref{Lemma:CompactnessLemma} we deduce that $\varphi_R
 $$ L \varphi = \frac{1}{M}  \textrm{ in } \,\R^n\,, $$
 and moreover $||\varphi||_{\lp{\infty}}=1$ for being the uniform limit of functions with this norm.
 
-But such $\varphi$ cannot exists by Lemma \ref{Lemma: NoBddSolL=1}. Thus, we arrive to a contradiction and $M_R$ goes to infinity. 
+But such $\varphi$ cannot exists by Lemma \ref{Lemma:NoBddSolL=1}. Thus, we arrive to a contradiction and $M_R$ goes to infinity. 
 \end{proof}
 
 \begin{lemma}
-\label{Lemma: SolBallToZero}
+\label{Lemma:SolBallToZero}
 Let $M_R$ be as in the previous Lemma. Then, there exists a function $\psi_R\geq 0$ solution of
 \begin{equation*}
 \beqc{\PDEsystem}
@@ -91,13 +168,13 @@ $$ \psi_R \xrightarrow{\text{as } R\to \infty}{} 0. $$
 \begin{proof}
 Let us define
 $$ \psi_R := 1-\frac{\phi_R}{M_R} = 1-\varphi_R. $$
-By Lemma \ref{Lemma: SolBall}, it is clear that $\psi_R$ defined previously solves the problem and is nonnegative. Then we only need to show the limit condition. Note that this is equivalent to show that $\varphi_R \to 1$ as $R\to\infty$. Recall that $\varphi_R$ solves problem \eqref{Eq: varphi}. Therefore, letting $R$ to infinity and knowing that $M_R\to \infty$ we can apply Lemma \ref{Lemma:CompactnessLemma} to deduce that $\varphi_R$ converges in  $C^{2\s+\epsilon}$-norm (up to a subsequence) to a function $\varphi\geq 0$ that solves
+By Lemma \ref{Lemma:SolBall}, it is clear that $\psi_R$ defined previously solves the problem and is nonnegative. Then we only need to show the limit condition. Note that this is equivalent to show that $\varphi_R \to 1$ as $R\to\infty$. Recall that $\varphi_R$ solves problem \eqref{Eq: varphi}. Therefore, letting $R$ to infinity and knowing that $M_R\to \infty$ we can apply Lemma \ref{Lemma:CompactnessLemma} to deduce that $\varphi_R$ converges in  $C^{2\s+\epsilon}$-norm (up to a subsequence) to a function $\varphi\geq 0$ that solves
 $$ L\varphi = 0 \,\,\,\,\, \text{ in } \,\,\, \R^n. $$
 By Liouville Theorem, $\varphi$ must be constant, and since its $\lp{\infty}$-norm is one and it is nonnegative, then $\varphi\equiv 1$, and the result is proved.
 \end{proof}
 
 \begin{theorem}
-\label{Thm: ParaMaxPrp}
+\label{Th:ParaMaxPrp}
 Assume $v$ is a bounded function such that
 \begin{equation*}
 \beqc{\PDEsystem}
@@ -130,11 +207,11 @@ w_R(x,0) &\geq& 0 & \textrm{ in } B_R\,,\\
 w_R(x,t) &\geq& \normLinf{v}  & \textrm{ in } \left( \R^n\setminus B_R\right) \times (0,T] \,.
 \eeqc
 \end{equation*}
-By the maximum principle in $(B_R\times[0,T])\cap \Omega$, Lemma \ref{Thm: ParabolicmaxPrpBdd}, we conclude that $ w_R\geq \tilde{v} $ in $B_R\times(0,T]$.
+By the maximum principle in $(B_R\times[0,T])\cap \Omega$, Lemma \ref{Th:ParabolicmaxPrpBdd}, we conclude that $ w_R\geq \tilde{v} $ in $B_R\times(0,T]$.
 
 Now, given an arbitrary point $(x_0,t_0)$, take $R_0>0$ and $T>0$ such that $(x_0,t_0)\in B_{R_0}\times [0,T]$. Then
 $$ \tilde{v}(x_0,t_0) \leq w_R(x_o,t_0) = \normLinf{v} \left(  \psi_R(x_0) + \frac{t_0}{M_R} \right), \,\,\,\,\,\text{ for any }\,\,\, R\geq R_0. $$
-Finally, letting $R \to \infty$ and using that $\psi_R(x_0) \to 0$ and $M_R \to \infty$ by Lemmas \ref{Lemma: SolBall} and \ref{Lemma: SolBallToZero}, we conclude
+Finally, letting $R \to \infty$ and using that $\psi_R(x_0) \to 0$ and $M_R \to \infty$ by Lemmas \ref{Lemma:SolBall} and \ref{Lemma:SolBallToZero}, we conclude
 $$ \tilde{v}(x_0,t_0) \leq 0, $$
 and therefore
 $$ v(x_0,t_0) = \e^{\alpha\,t_0}\,\tilde{v}(x_0,t_0) \leq 0, $$
@@ -144,76 +221,58 @@ $$ v(x_0,t_0) = \e^{\alpha\,t_0}\,\tilde{v}(x_0,t_0) \leq 0, $$
 
 \subsection{A symmetry result for positive solutions in the whole space}
 
-\begin{theorem}
-\label{Thm: SymmetryWholeSpace}
-Let $L$ be an integral operator with kernel $K$ satisfying hypothesis 99-99 and $u$ be a bounded solution of
-\begin{equation}
-\label{eq: PositiveWholeSpace}
-\beqc{\PDEsystem}
-L u &=& f(u) & \textrm{ in }\R^n\,,\\
-u &\geq& 0 & \textrm{ in } \R^n\,,
-\eeqc
-\end{equation}
 
 
-with the nonlinearity $f\in C^1$ satisfying
-\begin{itemize}
-\item $f(0) = f(1) = 0$,
-\item $f'(0)>0$,
-\item $f>0$ in $(0,1)$, and
-\item $f<0$ in $(1,+\infty)$.
-\end{itemize}
-Then, $u\equiv 0$ or $u \equiv 1$.
-\end{theorem}
-
-
-\begin{proof}
+\begin{proof}[Proof of Theorem~\ref{Th:SymmetryWholeSpace}]
 The proof follows the ideas of Berestycki, Hamel and Nadirashvili from Theorem 2.2. in \cite{BerestyckiHamelNadi} but adapted to the whole space and with a nonlocal operator.
 
-Assume $u\not\equiv 0$. Then, by the strong maximum principle $u>0$.
-\begin{enumerate}
-\item[Step 1:] $m:=\inf_{\R^n} u >0$ .
+Assume $u\not\equiv 0$. Then, by the strong maximum principle $u>0$. Our goal is to show that $u \equiv 1$, and this will be accomplished in two steps.
+
+\textbf{Step 1:} We show that $m:=\inf_{\R^n} u >0$.
 
 By contradiction, we will assume $m=0$. Then, there exists a sequence $\{x_k\}$ such that $u(x_k)\rightarrow 0$ as $k \rightarrow +\infty$. By the Harnack Inequality  from Di Casto, Kuusi and Palatucci in \cite{DiCastoKuusiPalatucci}, given any $R>0$ we have
+\todo[inline, color=red]{MIRAR LO DE MATTEO!!!!}
 \begin{equation}
-\label{eq: Harnack}
+\label{Eq:Harnack}
 \sup_{B_R(x_k)}u \leq C_R \inf_{B_R(x_k)}u \leq C \, u(x_k) \rightarrow 0 \,\,\text{as}\,\, k\rightarrow +\infty.
 \end{equation}
 
 
-Since $f(0) = 0 $ and $f'(0)>0$, it is easy to show that $f(t)\geq \frac{f'(0)}{2}t$ if $t$ is small enough. That is,
+Since $f(0) = 0 $ and $f'(0)>0$, it is easy to show that $f(t)\geq f'(0)t/2$ if $t$ is small enough. Indeed, since $f(0)=0$,
 \begin{align*}
 f'(0) = \lim_{t\to 0} \frac{f(t)}{t}
 \end{align*}
-and by the definition of limit we get that 
+and by the definition of limit we get that there exists $t_0>0$ such that
 \begin{align}
-\label{eq: TaylorSimplification}
-\exists \ t_0>0 \ \ \textrm{sych that } \ f(t)\geq \frac{f'(0)}{2}t \ \ \textrm{ for all} \ \ 0\leq t\leq t_0.
+\label{Eq:TaylorSimplification}
+f(t)\geq \frac{f'(0)}{2}t \ \ \textrm{ for all} \ \ 0\leq t\leq t_0.
 \end{align}
-Therefore, with \eqref{eq: Harnack} and \eqref{eq: TaylorSimplification}, we deduce that there exists $M(R)\in\N$ such that
+\todo[inline]{Igual esto se puede quitar que es fácil}
+Therefore, with \eqref{Eq:Harnack} and \eqref{Eq:TaylorSimplification}, we deduce that there exists $M(R)\in\N$ such that
 \begin{align}
-\label{eq:WholeSpace2}
-L u - \frac{f'(0)}{2}u \geq 0 \,\,\textrm{ in }\,\,,B_R(x_{M(R)})\,. 
+\label{Eq:WholeSpace2}
+L u - \frac{f'(0)}{2}u \geq 0 \,\,\textrm{ in }\ B_R(x_{M(R)})\,. 
 \end{align}
 On the other hand, let us define
-$$ \lambda_R^{x_0} = \inf_{\substack{\varphi\in\cp{1}_{0}(B_R(x_0))\\ \varphi\not\equiv 0}} \frac{\int_{\R^n}\int_{\R^n}\left[\varphi(x)-\varphi(y)\right]^2\,K(x-y)\,dx\,dy}{\int_{\R^n}\varphi^2}, $$
-which decreases to zero uniformly in $x_0$ as $R$ goes to infinity from being $L\in\mathcal{L}_0$. Therefore, there exists $R_0>0$ such that
+$$ \lambda_R^{x_0} = \inf_{\substack{\varphi\in\cp{1}_{0}(B_R(x_0))\\ \varphi\not\equiv 0}} \frac{\ds \int_{\R^n}\int_{\R^n}|\varphi(x)-\varphi(y)|^2\,K(x-y) \d x \d y}{\ds \int_{\R^n}\varphi^2 \d x}, $$
+which decreases to zero uniformly in $x_0$ as $R$ goes to infinity from being $L\in\mathcal{L}_0$ (see the proof of Lemma~\ref{Lemma:FirstOddEigenfunction} and also Proposition~9 of \cite{ServadeiValdinoci}). Therefore, there exists $R_0>0$ such that
 $$ \lambda_R^x < \frac{f'(0)}{2} $$
-for all $x\in \R^n$ and $R\geq R_0$. In particular, by choosing $x=x_{M(R_0)}$ there exists $w\in\cp{1}_0(B_{R_0}(x_{M(R_0)})$ such that $w\not\equiv 0$ and
+for all $x\in \R^n$ and $R\geq R_0$. In particular, by choosing $x=x_{M(R_0)}$ there exists $w\in\cp{1}_0(B_{R_0}(x_{M(R_0)}))$ such that $w\not\equiv 0$ and
 \begin{equation}
 \label{Eq:Eigenfunction}
-\int_{\R^n}\int_{\R^n}\left[w(x)-w(y)\right]^2\,K(x-y)\,dx\,dy < \frac{f'(0)}{2}\int_{\R^n}w^2.
+\int_{\R^n}\int_{\R^n}|\varphi(x)-\varphi(y)|^2\,K(x-y) \d x \d y < \frac{f'(0)}{2}\int_{\R^n}w^2 \d x.
 \end{equation}
 
-If we multiply \eqref{eq:WholeSpace2} by $\frac{w^2}{u}\geq 0$ and integrate
+If we multiply \eqref{Eq:WholeSpace2} by $w^2/u\geq 0$ and integrate
 \begin{align*}
-0 &\leq \int_{\R^n} Lu\,\frac{w^2}{u} - \frac{f'(0)}{2}\int_{\R^n} w^2 \\
-&= \int_{\R^n}\int_{\R^n}\left[ u(x)-u(y) \right]\left[ \frac{w^2(x)}{u(x)}-\frac{w^2(y)}{u(y)} \right] K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2 \\
-&\leq \int_{\R^n}\int_{\R^n} \left[ w(x)-w(y)\right]^2 K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2,
+0 &\leq \int_{\R^n} Lu\,\frac{w^2}{u} \d x - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
+&= \int_{\R^n}\int_{\R^n}\left\{ u(x)-u(y) \right\} \left( \frac{w^2(x)}{u(x)}-\frac{w^2(y)}{u(y)} \right) K(x-y) \d x \d y - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
+&\leq \int_{\R^n}\int_{\R^n} \left\{ w(x)-w(y)\right\}^2 K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x ,
 \end{align*}
 which contradicts \eqref{Eq:Eigenfunction}. Then $\inf_{\R^n} u >0$.\\
 
-\item[Step 2:] $u\equiv 1$ .\\
+\textbf{Step 2:} We show that $u\equiv 1$.
+
 Now, choose $0<\xi_0<\min\{1,m\}$, which is well define by Step 1, and let $\xi(t)$ be the solution of the ODE
 $$
 \beqc{\PDEsystem}
@@ -227,26 +286,124 @@ Now, note that both $u(x)$ and $\xi(t)$ solve the parabolic equation
 $$ \partial_t w + Lw = f(w) \,\,\, \textrm{ in }\R^n\times (0,\infty)\,, $$
 and satisfy
 $$ u(x) \geq m \geq \xi_0 = \xi(0). $$
-Thus, by the parabolic maximum principle, Theorem \ref{Thm: ParaMaxPrp}, $u(x)\geq \xi(t)$ for all $x\in\R^n$ and $t\in(0,\infty)$. By letting $t \to \infty$ we obtain
+Thus, by the parabolic maximum principle, Theorem \ref{Th:ParaMaxPrp}, $u(x)\geq \xi(t)$ for all $x\in\R^n$ and $t\in(0,\infty)$. By letting $t \to \infty$ we obtain
 $$ u(x) \geq 1 \,\, \textrm{ in }\R^n\,.  $$
 In a similar way, taking $\tilde{\xi}_0>\norm{u}_{L^\infty} \geq 1$, using $f<0$ in $(1,\infty)$, $f(1)=0$ and the parabolic maximum principle, we obtain the upper bound $u\leq 1$.
-\end{enumerate}
+
 \end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{A one-dimensional symmetry result for positive solutions "in a half-space"}
+\subsection{A one-dimensional symmetry result for positive solutions ``in a half-space''}
+
+
+First we show that the solution is monotone. We do it using a moving planes argument, and for this reason we need the following maximum principle in ``narrow'' domains. Recall that for a domain $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
+$$
+\dfrac{|B_R(x)\setminus \Omega|}{|B_R(x)|}\geq \dfrac{1}{2} \quad \text{ for every } x \in \Omega.
+$$
+If no such radius exists, we define $R(\Omega) = +\infty$.
+
+\begin{proposition}
+	\label{Prop:MaxPrpNarrowOdd}
+	Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L$ be an integro-differential operator with a positive kernel $K$ satisfying
+	\begin{equation}
+	\label{Eq:KernelSymmetry}
+	K(x-y) \geq K(x-y^*), \,\,\,\,\text{for all } \,\, x,y\in H.
+	\end{equation}
+	Assume that $v $ 99 satisfies 
+	\begin{equation}
+	\beqc{\PDEsystem}
+	L v &\geq& c(x)\,v  &\textrm{ in } \Omega\subseteq H,\\
+	v &\geq& 0 &\textrm{ in } H\setminus\Omega,\\
+	v(x) &=& -v(x^*) &\textrm{ in } \R^n.
+	\eeqc
+	\end{equation}
+	Then, $v \geq 0$ whenever $\Omega$ is narrow in the sense that\todo[inline]{Hay que poner In which sense??}.
+\end{proposition}
+
+\begin{proof}
+	Let us begin by defining $\Omega_- = \{x\in \Omega \,:\,\, v<0\}$. We shall prove that $\Omega_-$ is empty. Assume by contradiction that it is not empty. Then, we split 
+	$$ v = v_1+v_2\,, $$
+	where
+	\begin{equation*}
+	v_1(x) = 
+	\begin{cases}
+	v(x)  &\textrm{ in } \Omega_-,\\
+	0 &\textrm{ in } \R^n\setminus\Omega_-,
+	\end{cases}
+	\quad \text{ and } \quad
+	v_2(x) = 
+	\begin{cases}
+	0  &\textrm{ in } \Omega_-,\\
+	v(x) &\textrm{ in } \R^n\setminus\Omega_-.
+	\end{cases}
+	\end{equation*}
+	Let us first show that $Lv_2\leq 0$ in $\Omega_-$. To see this, let us take $x\in\Omega_-$ and thus
+	$$ 
+	Lv_2(x) = \int_{\R^n\setminus\Omega_-} -v_2(y)K(x-y) \d y = -\int_{\R^n\setminus\Omega_-} v(y)K(x-y) \d y.  
+	$$
+	Now, we split $\R^n\setminus\Omega_-$ into
+	$$ 
+	A_1 = \Omega_-^*,\,\,\,\,\,\,\,\text{ and }\,\,\,\,\,\,\, A_2 = \left(H\setminus\Omega_-\right)\cup\left(H\setminus\Omega_-\right)^*,
+	$$
+	and we compute
+	\begin{align*}
+	-\int_{A_1} v(y)K(x-y) \d y = -\int_{\Omega_-} v(y^*)K(x-y^*) \d y  = \int_{\Omega_-} v(y)K(x-y^*) \d y \leq 0,
+	\end{align*}
+	where the last inequality comes from being $v$ negative in $\Omega_-$ and the kernel positive in all $\R^n$.
+	On the other hand
+	\begin{align*}
+	-\int_{A_2} v(y)K(x-y) \d y = -\int_{H\setminus\Omega_-} v(y)K(x-y) \d y  -\int_{H\setminus\Omega_-} v(y^*)K(x-y^*) \d y \\ 
+	= -\int_{H\setminus\Omega_-} v(y)\left\{K(x-y)-K(x-y^*)\right\} \d y \leq 0,
+	\end{align*}
+	where we have use the kernel condition \eqref{Eq:KernelSymmetry} and the odd symmetry of $v$. Thus, we get $Lv_2 \leq 0$ in $\Omega_-$, which means
+	$$ Lv_1 = Lv-Lv_2 \geq Lu \geq c(x)\,v = c(x)\,v_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
+	Therefore $v_1$ solves
+	\begin{equation*}
+	\beqc{\PDEsystem}
+	Lv_1 &\geq& c(x)\,v_1   &\textrm{ in } \,\Omega_-,\\
+	v_1 &=& 0 &\textrm{ in }\,\R^n\setminus\Omega_-,
+	\eeqc
+	\end{equation*}
+	and we can apply the usual maximum principle for narrow domains (see Theorem~2.4 in \cite{QuaasXia}) to $v_1$ in $\Omega_-$ in order to deduce that $v_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $v_1$ and the fact that the set $\Omega_-$ is not empty.
+\end{proof}
+
+This maximum principle in narrow domains for odd functions with respect to a hyperplane is the principal tool to use the moving plane argument (in the setting of odd functions\todo{ Esto esta bien dicho?}). This allows us to show the following result.
 
 
 \begin{proposition}
-\label{Prop: HalfSpaceLimUnif}
+	\label{Prop:MonotonyHalfSpace}
+	Let $u$ be a bounded solution of one of the problems \eqref{Eq:P3} or \eqref{Eq:P4}, with $L$ an integro-differential operator with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||u||_{\lp{\infty}(\R^n_+)})$. Then,
+	$$ 
+	\frac{\partial u}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
+	$$
+\end{proposition}
+
+
+\begin{proof}
+	The proof is based on the moving planes method, exactly the analogue proof of Quaas and Xia in \cite{QuaasXia}, where they establish an equivalent result for the fractional Laplacian. The only ingredient that was missing to extend the proof to more general integro-differential operators of the form $L$ is the maximum principle of Proposition~\ref{Prop:MaxPrpNarrowOdd}. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{proposition}
+\label{Prop:HalfSpaceLimUnif}
 Let $u$ be a bounded solution of one of the following problems
 
 \begin{equation}
 \leqnomode
 \tag{P1}
-\label{eq: P1}
+\label{Eq:P1}
 \beqc{\PDEsystem}
 L u &=& f(u)  &\textrm{ in }\R^n\,,\\
 \ds \lim_{x_n \to \pm \infty} u(x',x_n) &=& \pm 1 \,\,\, &\textrm{ uniformly}.
@@ -256,7 +413,7 @@ L u &=& f(u)  &\textrm{ in }\R^n\,,\\
 \begin{equation}
 \leqnomode
 \tag{P2}
-\label{eq: P2}
+\label{Eq:P2}
 \beqc{\PDEsystem}
 L u &=& f(u)  &\textrm{ in }\R^n_+ = \{ x_n>0\} \,,\\ 
 u &=& 0  &\textrm{ in }\overline{\R^n_-} = \{ x_n\leq 0\}\,,\\
@@ -268,15 +425,15 @@ u &=& 0  &\textrm{ in }\overline{\R^n_-} = \{ x_n\leq 0\}\,,\\
 
 Assume that there exists $\delta > 0$ such that
 $$ f'(t) \leq 0 \,\, \text{ in } \,\,\, [-1,-1+\delta]\cup[1-\delta,1], $$
-for problem \eqref{eq: P1} and
+for problem \eqref{Eq:P1} and
 $$ f'(t) \leq 0 \,\, \text{ in } \,\,\, [-1,-1+\delta] $$
-for problem \eqref{eq: P2}.
+for problem \eqref{Eq:P2}.
 
 Then, $u$ only depends on $x_n$ and is increasing in that direction.
 \end{proposition}
 
 \begin{proof}
-The proof follows the ideas, sliding method, of Berestycki, Hamel and Monneau from Theorem 1. in \cite{BerestyckiHamelMonneau} but adapted to a nonlocal operator.
+The proof follows the ideas, sliding method, of Berestycki, Hamel and Monneau from Theorem~1 in \cite{BerestyckiHamelMonneau} but adapted to a nonlocal operator.
 
 Let us define $ u^t(x) := u(x+\nu t) $ for any $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and call $v^t(x):=u^t(x)-u(x)$. The aim is to show that $v^t(x)\geq 0$ for all $t\geq 0$.
 
@@ -284,7 +441,7 @@ Let us define $ u^t(x) := u(x+\nu t) $ for any $\nu\in\R^n$ with $|\nu|=1$ and $
 \item[Step 1:] For $t>0$ big enough $v^t\geq 0$.\\
 Since the limits of $u$ at infinity are uniform, let $A>0$ be such that for all $|x_n|\geq A$ and $x'\in \R^{n-1}$
 \begin{equation}
-\label{Eq: DefinitionA}
+\label{Eq:DefinitionA}
 u(x',x_n)\not\in (-1+\delta,1-\delta).
 \end{equation}
 Let $H=\{v^t\geq 0\} = \{u^t(x) \geq u(x)\}$. Therefore, $v^t$ solves
@@ -296,12 +453,12 @@ v^t &\geq& 0  &\textrm{ in } H\,,
 $$
 with $d^t(x)\leq 0$. To show this, note that
 \begin{equation}
-\label{Eq: Definition_dt}
+\label{Eq:Definition_dt}
 Lv^t = Lu^t - Lu = f(u^t) - f(u) = \frac{f(u^t) - f(u)}{u^t-u} v^t = d^t(x) v^t.
 \end{equation}
-Then we have to show that $ \frac{f(u^t) - f(u)}{u^t-u} \leq 0 $ out of $H$ for $t$ large enough. In order to prove it we distinguish the two different problems, \eqref{eq: P1} and \eqref{eq: P2}.
+Then we have to show that $ \frac{f(u^t) - f(u)}{u^t-u} \leq 0 $ out of $H$ for $t$ large enough. In order to prove it we distinguish the two different problems, \eqref{Eq:P1} and \eqref{Eq:P2}.
 
-For \eqref{eq: P1}: Take $x\not\in H$, that is $u^t(x)<u(x)$, and $t\geq 2A/\nu_n$, then
+For \eqref{Eq:P1}: Take $x\not\in H$, that is $u^t(x)<u(x)$, and $t\geq 2A/\nu_n$, then
 \begin{itemize}
 \item If $x_n\geq -A$, then $1-\delta \leq u^t(x) < u(x)$ and $f$ is nonincreasing, which means
 $$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
@@ -309,7 +466,7 @@ $$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
 $$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
 \end{itemize}
 
-For \eqref{eq: P2}: Note that in this case $\R^n\setminus H$ is contained in $\R^n_+$. Take $x\not\in H$, that is $u^t(x)<u(x)$, and $t\geq A/\nu_n$, then $1-\delta \leq u^t(x) \leq u(x)$ and $f$ is nonincreasing, which means
+For \eqref{Eq:P2}: Note that in this case $\R^n\setminus H$ is contained in $\R^n_+$. Take $x\not\in H$, that is $u^t(x)<u(x)$, and $t\geq A/\nu_n$, then $1-\delta \leq u^t(x) \leq u(x)$ and $f$ is nonincreasing, which means
 $$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
 
 Therefore, by the maximum principle, $v^t\geq 0$ in $\R^n$ for $t$ large enough. Note that we have quantify how large must be $t$ in terms of the nonlinearity $f$ and the vector $\nu$.
@@ -319,9 +476,9 @@ For this, define
 $$\tau = \inf \{t \,\,\text{ such that }\, u^t\geq u\}, $$ 
 and we claim that $\tau=0$. Assume, in order to get a contradiction, that $\tau>0$. Let us define
 $$ m = \inf_{\R^{n-1}\times [-A,A]} (u^\tau - u) $$
-in the case of \eqref{eq: P1} and
+in the case of \eqref{Eq:P1} and
 $$ m = \inf_{\R^{n-1}\times [0,A]} (u^\tau - u) $$
-in the case of \eqref{eq: P2}. Now we can distinguish two cases depending if $m>0$ or $m=0$.
+in the case of \eqref{Eq:P2}. Now we can distinguish two cases depending if $m>0$ or $m=0$.
 
 \item[Step 2.1:] $v^t\geq 0$ for all $t\geq 0$ if $m>0$.\\
 By interior estimates for $L$, $u$ is globally $\cp{s}$-H\"older continuous. Then, there exists $\eta_0$ small so that for any $t\in(\tau-\eta_0,\tau)$ 
@@ -334,12 +491,12 @@ u^t(x)-u(x) &= u(x+t\nu)-u(x)-u(x+\tau\nu)+u(x+\tau\nu) \\
 \end{align*}
 if $|t-\tau|^s\leq m/C$.
 
-On the other hand, if we define $d^{\tau-\eta}(x)$ as in equation \eqref{Eq: Definition_dt}, we have
+On the other hand, if we define $d^{\tau-\eta}(x)$ as in equation \eqref{Eq:Definition_dt}, we have
 $$ L v^{\tau-\eta} = d^{\tau-\eta} (x) \,v^{\tau-\eta}. $$
 Let us show now that $d^{\tau-\eta}\leq 0$ in the sets
-$$ \hat{H} = \left\{|x_n|\geq A\right\} \cap \left\{u^{\tau-\eta}<u\right\}  \,\,\,\, \textrm{for \eqref{eq: P1}}, $$
+$$ \hat{H} = \left\{|x_n|\geq A\right\} \cap \left\{u^{\tau-\eta}<u\right\}  \,\,\,\, \textrm{for \eqref{Eq:P1}}, $$
 and
-$$ \hat{H} = \{x_n\geq A\} \cap \{u^{\tau-\eta}<u\}  \,\,\,\, \textrm{for \eqref{eq: P2}}. $$
+$$ \hat{H} = \{x_n\geq A\} \cap \{u^{\tau-\eta}<u\}  \,\,\,\, \textrm{for \eqref{Eq:P2}}. $$
 
 To see this fact, we have to proceed as before. Let $x\in \tilde{H}$. Then,
 \begin{itemize}
@@ -355,13 +512,13 @@ which contradicts the minimality of $\tau$. This means that $\tau = 0$.
 \item[Step 2.2:] $v^t\geq 0$ for all $t\geq 0$ if $m=0$.\\
 By definition of $m$ we can take a sequence $x_k= (x_k',x_k^n) \in \R^{n-1}\times[-A,A]$ such that
 \begin{equation}
-\label{Eq: Limit}
+\label{Eq:Limit}
 u^\tau(x_k) - u(x_k) \rightarrow 0.
 \end{equation}
 Since $x_k^n$ is bounded, we can choose a subsequence that converges to $x_\infty^n \in [-A,A]$.
-Call $u_k(x) = u(x'+x_k',x_k^n)$, which satisfies problem \eqref{eq: P1} or \eqref{eq: P2} for each $k$ since the problems are invariant under translations. Therefore, by elliptic estimates, $u_k$ converges to a function $u_\infty$ which satisfies
+Call $u_k(x) = u(x'+x_k',x_k^n)$, which satisfies problem \eqref{Eq:P1} or \eqref{Eq:P2} for each $k$ since the problems are invariant under translations. Therefore, by elliptic estimates, $u_k$ converges to a function $u_\infty$ which satisfies
 $$ L u_\infty = f(u_\infty) \,\,\, \text{ in } \,\,\, \R^n. $$
-Note that since $u$ satisfies \eqref{Eq: DefinitionA} and the translations are only in the $n-1$ first variables, $u_k$ and its limit $u_\infty$ also satisfy this property. 
+Note that since $u$ satisfies \eqref{Eq:DefinitionA} and the translations are only in the $n-1$ first variables, $u_k$ and its limit $u_\infty$ also satisfy this property. 
 
 Then, if we define $w= u_\infty^\tau - u_\infty$, it solves
 $$
@@ -378,7 +535,7 @@ $$ d(x) = \begin{cases}
 \end{cases} $$
 
 
-That is, we have that $w\geq 0$ in $\R^n$ since $u^\tau \geq u$. And on the other hand, from \eqref{Eq: Limit} we get
+That is, we have that $w\geq 0$ in $\R^n$ since $u^\tau \geq u$. And on the other hand, from \eqref{Eq:Limit} we get
 \begin{align*}
 w(0,x_\infty^n) &= \lim_{k\to\infty} u_k^\tau(0,x_k^n)- u_k(0,x_k^n) \\ 
 &= \lim_{k\to\infty} u^\tau(x_k',x_k^n)- u_k(x_k',x_k^n) \\ 
@@ -392,7 +549,7 @@ $$ 1-\delta \leq u_\infty(x',A) = u_\infty \left( x' - \left\lceil \frac{2A}{\ta
 
 Once we have shown that $v^t\geq 0$ for all $t>0$, then it is clear that
 \begin{equation}
-\label{Eq: nuDerivative}
+\label{Eq:nuDerivative}
 \nabla u(x) \cdot \nu = \frac{\partial u}{\partial \nu} (x) = \lim_{t \to 0}  \frac{u(x+t\nu)-u(x)}{t} \geq 0
 \end{equation}
 for any $x\in \R^n$ and any $\nu\in \R^n$ such that $\nu_n>0$.
@@ -400,276 +557,27 @@ By making the limit $\nu_n$ to zero in the previous expression we get
 $$ \nabla u \cdot (\nu',0) \geq 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}. $$
 And choosing now the opposite vector $-\nu'$ we finally get
 $$ \nabla u \cdot (\nu',0) = 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}, $$
-which is equivalent to say that $u$ only depends on $x_n$. Moreover, if we choose $\nu = e_n$, then from \eqref{Eq: nuDerivative} we obtain
+which is equivalent to say that $u$ only depends on $x_n$. Moreover, if we choose $\nu = e_n$, then from \eqref{Eq:nuDerivative} we obtain
 $$ \frac{\partial u}{\partial x_n} \geq 0. $$
 \end{proof}
 
 
-\begin{proposition}
-\label{Prop:MaxPrpNarrowOdd}
-Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Assume
-\begin{equation}
-\beqc{\PDEsystem}
-L v &\geq& c(x)\,v  &\textrm{ in } \Omega\subseteq H,\\
-v &\geq& 0 &\textrm{ in } H\setminus\Omega,\\
-v(x) &=& v(x^*) &\textrm{ in } \R^n,
-\eeqc
-\end{equation}
-and the integral operator $L$ having a kernel $K$ satisfying
-\begin{equation}
-\label{Eq: KernelSymmetry}
-K(x-y) \geq K(x-y^*), \,\,\,\,\text{for all } \,\, x,y\in H.
-\end{equation}
-Then, if $\Omega$ is narrow\todo[inline]{Hay que poner In which sense??},
-$$ v \geq 0 \,\,\, \text{ in } \,\, \Omega. $$
-\end{proposition}
-
-\begin{proof}
-Let us begin by defining
-$$ \Omega_- = \{x\in \Omega \,\text{ such that }\,\, u<0\}. $$
-Then, we shall prove that $\Omega_-=\emptyset$. Assume by the contrary that it is not empty. Then, we split 
-$$ v = v_1+v_2, $$
-where
-\begin{equation*}
-v_1(x) = 
-\beqc{\PDEsystem}
-v(x)  &\textrm{ if } x\in\Omega_-,\\
-0 &\textrm{ otherwise },
-\eeqc
-\end{equation*}
-and
-\begin{equation*}
-v_2(x) = 
-\beqc{\PDEsystem}
-0  &\textrm{ if } x\in\Omega_-,\\
-v(x) &\textrm{ otherwise }.
-\eeqc
-\end{equation*}
-Let us first show that $Lv_2\leq 0$ in $\Omega_-$. That is, take $x\in\Omega_-$ and then
-$$ Lv_2(x) = \int_{\R^n\setminus\Omega_-} -v_2(y)K(x-y) \,dy = -\int_{\R^n\setminus\Omega_-} v(y)K(x-y) \,dy.  $$
-
-Now, we split $\R^n\setminus\Omega_-$ into
-$$ A_1 = \Omega_-^*,\,\,\,\,\,\,\,\text{ and }\,\,\,\,\,\,\, A_2 = \left(H\setminus\Omega_-\right)\cup\left(H\setminus\Omega_-\right)^* $$
-and we compute
-\begin{align*}
--\int_{A_1} v(y)K(x-y) \,dy = -\int_{\Omega_-} v(y^*)K(x-y^*) \,dy  = \int_{\Omega_-} v(y)K(x-y^*) \,dy \leq 0,
-\end{align*}
-where the last inequality comes from being $v$ negative in $\Omega_-$ and the kernel positive in all $\R^n$.
-On the other hand
-\begin{align*}
--\int_{A_2} u(y)K(x-y) \,dy = -\int_{H\setminus\Omega_-} u(y)K(x-y) \,dy  -\int_{H\setminus\Omega_-} u(y^*)K(x-y^*) \,dy \\ 
-= -\int_{H\setminus\Omega_-} u(y)\left[K(x-y)-K(x-y^*)\right] \,dy \leq 0,
-\end{align*}
-where we have use the kernel condition \eqref{Eq: KernelSymmetry}. Thus, we get $Lu_2 \leq 0$ in $\Omega_-$, which means
-$$ Lu_1 = Lu-Lu_2 \geq Lu \geq c(x)\,u = c(x)\,u_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
-Therefore $u_1$ solves
-
-\begin{equation*}
-\beqc{\PDEsystem}
-Lu_1 &\geq& c(x)\,u_1   &\textrm{ in } \,\Omega_-,\\
-u_1 &=& 0 &\textrm{ in }\,\R^n\setminus\Omega_-,
-\eeqc
-\end{equation*}
-
-and we can apply the usual maximum principle for narrow domains to $u_1$ in $\Omega_-$ in order to deduce that $u_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $u_1$ and the fact that the set $\Omega_-$ is not empty.
-\end{proof}
-
-
-\begin{proposition}
-\label{Prop: MonotonyHalfSpace}
-Let $u$ be a bounded solution of the problem
-\begin{equation}
-\label{Eq: HalfSpaceZero}
-\beqc{\PDEsystem}
-Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
-u &>& 0   &\textrm{ in } \,\R^n_+,\\
-u &=& 0   &\textrm{ in } \,\overline{\R^n_-},
-\eeqc
-\end{equation}
-or
-\begin{equation}
-\label{Eq: HalfSpaceOdd}
-\beqc{\PDEsystem}
-Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
-u &>& 0   &\textrm{ in } \,\R^n_+,\\
-u(x',x_n) &=& -u(x',-x_n)   &\textrm{ in } \,\R^n.
-\eeqc
-\end{equation}
-Assume that the integral operator $L$ has a kernel $K$ satisfying
-$$ K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+ $$
-and $f>0$ in $\left(0,||u||_{\lp{\infty}(\R^n_+)}\right)$ and is Lipschitz. Then
-$$ \frac{\partial u}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+. $$
-\end{proposition}
-
-
-\begin{proof}
-The proof is based on the moving planes method, following the ideas Quaas and Xia use in \cite{QuaasXia} for proving an equivalent result for the fractional laplacian. First, we give some preliminary notations, we define
-$$ \Sigma_\lambda = \left\{ x = (x',x_n) \,\,\text{ such that } \,\,\, 0<x_n<\lambda \right\}, $$
-$$ H_\lambda = \left\{ x = (x',x_n) \,\,\text{ such that } \,\,\, x_n<\lambda \right\}, $$
-$$ T_\lambda = \partial H_\lambda = \left\{ x = (x',x_n) \,\,\text{ such that } \,\,\, x_n=\lambda \right\} $$
-$$ u_\lambda (x) = u(x',2\lambda-x_n) = u(x_\lambda), $$
-$$ w_\lambda (x) = u_\lambda(x)-u(x), $$
-for any $\lambda>0$. Note that by definition $w_\lambda$ is an odd function with respect to the hyperplane $T_\lambda$.
-
-Proving the theorem is equivalent to show that $w_\lambda >0$ in $ H_\lambda $ for any $\lambda>0$. We divide the proof in two parts, we first prove the result for $\lambda$ small enough, and finally we extend it for any $\lambda>0$.
-\begin{itemize}
-\item[Step 1:] For small $\lambda$, $w_\lambda>0$ in $\Sigma_\lambda$.
-
-Let us note that since $u\leq 0$ in $\R^n_-$, $u > 0$ in $\R^n_+$ and $\lambda>0$, then $w_\lambda >0$ in $\R^n_-$. On the other hand, since the nonlinearity $f$ is Lipschitz we can write
-$$ Lw_\lambda = f(u_\lambda)-f(u) = c_\lambda(x) w_\lambda,  $$
-with $c_\lambda$ a bounded function. Therefore $w_\lambda$ solves the problem
-\begin{equation}
-\beqc{\PDEsystem}
-L w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subseteq H_\lambda,\\
-u &\geq& 0 &\textrm{ in } H_\lambda\setminus\Sigma_\lambda,\\
-u(x) &=& u(x_\lambda) &\textrm{ in } \R^n,
-\eeqc
-\end{equation}
-Hence, by the maximum principle in narrow domains for odd functions, Proposition \ref{Prop:MaxPrpNarrowOdd}, if $\lambda$ is small enough $w_\lambda \geq 0$ in $\Sigma_\lambda$. Finally, the strong maximum principle for odd functions \todo{!!!!!!} gives $w_\lambda>0$.
-
-\item[Step 2:] $w_\lambda>0$ in $\Sigma_\lambda$ for all $\lambda>0$.
-
-Let us define
-$$ \lambda^* = \sup\{\lambda \,\, \text{ such that } \,\, w_\eta>0 \,\, \text{ in } \,\, \Sigma_\lambda \,\, \text{ for all } \,\, \eta<\lambda\}. $$
-Note that $\lambda^*$ is well defined by Step 1. Now we only need to show that $\lambda^*=\infty$. 
-
-Let us proceed by contradiction assuming that $\lambda^*<+\infty$.
-
-First, note that by the maximum principle in narrow domains there exists an $\epsilon_0>0$ such that the linear operator $L+c_{\lambda^*+\epsilon_0}(x)$ satisfies the maximum principle in $ \left( \Sigma_{\lambda^*+\epsilon_0} \setminus \Sigma_{\lambda^*-\epsilon_0}\right) \cup \Sigma_{\epsilon_0}. $
-
-Now, we claim that there exists $\delta_0\in(0,\epsilon_0]$ such that for all $\delta\in(0,\delta_0]$
-$$ w_{\lambda^*+\delta} > 0 \,\,\,\text{ in } \,\,\, \Sigma_{\lambda^*+\delta}\setminus \Sigma_{\epsilon_0}. $$
-Assuming this claim is true we can apply the maximum principle in narrow domains and the strong maximum principle to conclude that
-$$ w_{\lambda^*+\delta} > 0 \,\,\,\text{ in } \,\,\, \Sigma_{\lambda^*+\delta}, $$
-contradicting the definition of $\lambda^*$.
-
-Then, we only have to show the claim. Let us assume that it is false. Then, there exists a sequence $\delta_k \to 0$ and a sequence $x^k = (x'_k,x_n^k)\in \Sigma_{\lambda^*+\epsilon_0} \setminus \Sigma_{\lambda^*-\epsilon_0}$ such that
-$$ w_{\lambda^* + \delta_k} (x^k) \leq 0. $$
-Since $x_n^k$ is a sequence of real numbers in a bounded interval we can assume that there exists $x_n^\infty\in [\epsilon_0, \lambda^*-\epsilon_0]$ such that
-$$ x_n^k \xrightarrow{\text{as } k \to \infty}{} x_n^\infty. $$
-
-Let us define
-$$ u^k(x) = u(x'+x_k',x_n), $$
-and
-$$ w_\lambda^k(x) = u_\lambda^k (x)- u^k(x). $$
-Since $L$ is translation invariant, each $u^k$ is solution of \eqref{Eq: HalfSpaceZero} (or \eqref{Eq: HalfSpaceOdd}). Therefore, by interior estimates and Arzela-Ascoli \todo{!!!} there exists a function $\tilde{u}$ such that $u^k \to \tilde{u}$ and also satisfies \eqref{Eq: HalfSpaceZero} (or \eqref{Eq: HalfSpaceOdd}).
-
-Since $f>0$ in $(0,1)$ and $\tilde{u}\geq 0$, there are two possibilities from the strong maximum principle, either $\tilde{u} \equiv 0$ in $\R^n$ or $u>0$ in $\R^n_+$.
-\begin{itemize}
-\item[Case ] $\tilde{u}>0$ in $\R^n_+$.
-
-Be the definition of $\lambda^*$, since the sequence we have previously defined are only horizontal translations we have
-$$ w_\lambda^k >0 \,\,\,\, \text{ in } \,\,\, \Sigma_\lambda \,\,\,\, \text{ for any } \,\,\, \lambda\leq \lambda^*, $$
-and therefore
-$$ \tilde{w}_\lambda = \lim_{k\to\infty} w_\lambda^k \geq 0\,\,\,\, \text{ in } \,\,\, \Sigma_\lambda \,\,\,\, \text{ for any } \,\,\, \lambda\leq \lambda^*. $$
-Moreover,
-$$ Lw_\lambda^k = c_\lambda^k(x)\,w_\lambda^k, $$
-with $c_\lambda^k(x) = c_\lambda(x',x_n+x_n^k)$ uniformly bounded and such that $\ds \lim_{k\to\infty} c_\lambda^k(x) = c_\lambda(x',x_n+x_n^\infty)=:c_\lambda^\infty(x)$. Then
-$$ L\tilde{w}_\lambda = c_\lambda^\infty(x)\,\tilde{w}, $$
-and by the strong maximum principle we get $\tilde{w}_{\lambda^*} >0$ in $\Sigma_{\lambda^*}$.
-
-On the other hand, by continuity
-$$ \tilde{w}_{\lambda^*} (0,x_n^\infty) = \lim_{k\to\infty} w_{\lambda^*+\delta_k} (x^k) \leq 0.  $$
-And since $x_n^\infty \in (0,\lambda^*-\epsilon_0]$ we arrive at a contradiction.
-
-
-\item[Case ] $\tilde{u}\equiv 0$ in $\R^n$.
-
-Let us define
-\begin{equation*}
-\beqc{\PDEsystem}
-Q_1 &=& (-1,1)^{n-1} \times (\epsilon_0,2\lambda^*+1),\\
-Q_2 &=& (-2,2)^{n-1} \times (\epsilon_0/2,2\lambda^*+2),
-\eeqc
-\end{equation*}
-Since $u^k \to 0$ we may assume $u^k\leq 1$ in $Q_2$. Let us also define
-\begin{equation*}
-\beqc{\PDEsystem}
-\alpha_k &=& u^k(0,x_n^k),\\
-v^k &=& \frac{u^k}{\alpha_k}.
-\eeqc
-\end{equation*}
-Now,
-\begin{equation}
-\label{Eq: EqInQ2}
-Lv^k = \frac{f(u^k)}{\alpha_k} = \frac{f(u^k)}{u^k} v^k \,\,\, \text{ in } \,\,\, Q_2.
-\end{equation}
-By Harnack inequality
-$$ \sup_{Q_1} v^k \leq C \inf_{Q_1} \leq C v^k(0,x_n^k) = C. $$
-Now, since $w_{\lambda^*}\geq 0$ in $\Sigma_{\lambda^*}$, this means that
-$$ v^k(x',x_n) \leq v^k(x',2\lambda^*-x_n) \leq C \,\,\,\, \text{ in } \,\,\, \Sigma_{\epsilon_0}. $$
-Hence, $v^k$ are uniformly bounded in $Q = (-1,1)^{n-1} \times (0,2\lambda^*+1)$.
-
-With this uniform estimates we can make the limit in \eqref{Eq: EqInQ2} in order to get
-$$ Lv \geq l v\,\,\,\,\,\text{ in } \,\,\,\, Q, $$
-where $\ds l = \lim_{t \to 0} \frac{f(t)}{t}$. By definition $v\geq 0$ in $Q$, but since $v(0,x_n^\infty) =1$, we can conclude by the strong maximum principle that $v>0$ in $Q$.
-
-Now, define
-$$ z_\lambda (x',x_n) = v(x',2\lambda-x_n) - v(x',x_n), $$
-which satisfies
-$$ Lz \leq C\, z\,\,\,\,\,\text{ in } \,\,\,\, Q, $$
-with $C$ the Lipschitz constant of $f$ in $Q$, and also satisfies
-$$ z_\lambda(x) = \lim_{k\to\infty} \frac{1}{\alpha_k} \left[ u(x',x_k',2\lambda-x_n)-u(x'+x_k',x_n) \right] \geq 0 \,\,\,\text{ in } \,\, \Sigma_\lambda\cap Q $$
-for any $\lambda\leq \lambda^*$. 
-
-Since $v>0$, $z_\lambda(x',0) = v(x',2\lambda)>0$, and we conclude by the strong maximum principle that $z_{\lambda^*}>0$ in $\Sigma_{\lambda^*}\cap Q$.
-
-But, on the other hand
-$$ z_{\lambda^*} (0,x_n^\infty) = \lim_{k\to\infty} \frac{1}{\alpha_k} \left[ u(x_k',2(\lambda^*+\delta_k)-x_n^k) - u(x_k',x_n^k) \right] \leq 0. $$
-Therefore, we finally arrive at a contradiction.
 
 
 
-\end{itemize}
-\end{itemize}
-\end{proof}
 
+With all these ingredients we can now proce Theorem~\ref{Th:SymmHalfSpace}
 
-\begin{theorem}
-\label{Thm: SymmHalfSpace}
-Let $u$ be a bounded solution of one of these two problems
-\begin{equation}
-\leqnomode
-\tag{P3}
-\label{eq: P3}
-\beqc{\PDEsystem}
-Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
-u &>& 0   &\textrm{ in } \,\R^n_+,\\
-u &=& 0   &\textrm{ in } \,\overline{\R^n_-},
-\eeqc
-\end{equation}
-
-\begin{equation}
-\leqnomode
-\tag{P4}
-\label{eq: P4}
-\beqc{\PDEsystem}
-Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
-u &>& 0   &\textrm{ in } \,\R^n_+,\\
-u(x',x_n) &=& -u(x',-x_n)   &\textrm{ in } \,\R^n.
-\eeqc
-\end{equation}
-
-\reqnomode
-
-Assume that the kernel $K$ of the integral operator $L$ satisfies
-$$ K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+  $$
-and the nonlinearity $f$ to be Lipsitchz and
-\begin{itemize}
-\item $f(0) = f(1) = 0$,
-\item $f'(0)>0$, and $f'(t)\leq 0$ for all $t\in[1-\delta,1]$ for some $\delta>0$,
-\item $f>0$ in $(0,1)$, and
-\item $f$ is odd in the case of \eqref{eq: P4}.
-\end{itemize}
-Then, $u$ depends only on $x_n$ and it is increasing in that direction.
-\end{theorem}
-
-\begin{proof}
-Note that by Proposition \ref{Prop: HalfSpaceLimUnif} we only need to prove that $\ds \lim_{x_n\to \infty} u(x',x_n) = 1$ uniformly. Therefore we divide the proof in two steps, first we prove that the limit exists and is one and then we prove that it is uniform.
+\begin{proof}[Proof of Theorem~\ref{Th:SymmHalfSpace}]
+Note that by Proposition~\ref{Prop:HalfSpaceLimUnif} we only need to prove that 
+$$
+\ds \lim_{x_n\to \infty} u(x',x_n) = 1
+$$
+uniformly. Therefore we divide the proof in two steps, first we prove that the limit exists and is one and then we prove that it is uniform.
 \begin{enumerate}
 \item[Step 1:] Given $x'\in \R^{n-1}$, then  $\ds \lim_{x_n\to \infty} u(x',x_n) = 1$.\\
 
-By Proposition \ref{Prop: MonotonyHalfSpace} we know that $u$ is strictly increasing in the direction $x_n$. Since $u$ is also bounded by hypothesis, we know that that given $x'\in\R^{n-1}$, the one variable function $u(x',\cdot)$ has a limit, that is in fact positive for being $u(x',0) = 0$ and $u_{x_n}>0$. Let us define $\overline{u}(x')$ as this limit.
+By Proposition \ref{Prop:MonotonyHalfSpace} we know that $u$ is strictly increasing in the direction $x_n$. Since $u$ is also bounded by hypothesis, we know that that given $x'\in\R^{n-1}$, the one variable function $u(x',\cdot)$ has a limit, that is in fact positive for being $u(x',0) = 0$ and $u_{x_n}>0$. Let us define $\overline{u}(x')$ as this limit.
 
 Let $x_n^k$ be any increasing sequence tending to infinity. Then we define the following sequence of functions
 $$ u_k(x',x_n) = u(x',x_n+x_n^k), $$
@@ -690,7 +598,7 @@ Lu_\infty &=& f(u_\infty)   &\textrm{ in } \,\R^n,\\
 u_\infty &\geq& 0   &\textrm{ in } \,\R^n.
 \eeqc
 \end{equation}
-By Theorem \ref{Thm: SymmetryWholeSpace} it is clear that $u_\infty\equiv 0$ or $u_\infty \equiv 1$. But, by construction
+By Theorem \ref{Th:SymmetryWholeSpace} it is clear that $u_\infty\equiv 0$ or $u_\infty \equiv 1$. But, by construction
 $$ u_\infty(x',0) = \lim_{k\to \infty} u_k(x',0) = \lim_{k\to \infty} u(x',x_n^k) = \overline{u}(x') > 0, $$
 and therefore the only possibility is
 $$ \lim_{x_n\to \infty} u(x',x_n) = 1 \,\,\,\,\, \text{ for all} \, x'\in\R^{n-1}. $$
@@ -716,47 +624,9 @@ Lu_\infty &=& f(u_\infty)   &\textrm{ in } \,\R^n,\\
 u_\infty &\geq& 0   &\textrm{ in } \,\R^n.
 \eeqc
 \end{equation}
-By Theorem \ref{Thm: SymmetryWholeSpace} it is clear that $u_\infty\equiv 0$ or $u_\infty \equiv 1$. But, by construction
+By Theorem \ref{Th:SymmetryWholeSpace} it is clear that $u_\infty\equiv 0$ or $u_\infty \equiv 1$. But, by construction
 $$ u_\infty(0,0) = \lim_{k\to \infty} u_k(0,0) = \lim_{k\to \infty} u(x'_k,x_n^k) = 1-\epsilon, $$
-which is a contradiction for $\epsilon>0$ small enough. Thus, the limit is uniform and applying Proposition \ref{Prop: HalfSpaceLimUnif} we get that $u$ depends only on $x_n$ and is increasing in that direction.
+which is a contradiction for $\epsilon>0$ small enough. Thus, the limit is uniform and applying Proposition \ref{Prop:HalfSpaceLimUnif} we get that $u$ depends only on $x_n$ and is increasing in that direction.
 \end{enumerate}
 \end{proof}
 
-\begin{proposition}
-\label{Prop: KernelsDimension}
-Let $L$ and $\tilde{L}$ be two symmetric and translation invariant integral operators with kernels $K$ and $\tilde{K}$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
-
-If,
-$$ \tilde{K}(t) = |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) d\sigma, $$
-then
-\begin{enumerate}
-\item[(i)] $Lu(x) = \tilde{L}v(x_n)$,
-\item[(ii)] $L\in \mathcal{L}_0 (n,s,\lambda,\Lambda) \Rightarrow \tilde{L}\in \mathcal{L}_0 (n,s,\lambda,\Lambda)$.
-\end{enumerate}
-\end{proposition}
-
-Note that if $L$ is the fractional laplacian in dimension $n$, the $\tilde{L}$ is also the fractional laplacian, but in dimension $1$.
-
-\begin{proof}
-\begin{enumerate}
-\item[(i)]
-\begin{align*}
-Lu(x) &= \int_{\R^n} \left\{ u(x)-u(y) \right\} K(x-y) dy \\
-&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left((x'-y',x_n-y_n\right) dy'dy_n.
-\end{align*}
-Now we make the change of variables $y' = x'-(x_n-y_n)\sigma$. That is,
-\begin{align*}
-Lu(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} d\sigma dy_n \\
-&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((x_n-y_n)(\sigma,1)\right) d\sigma dy_n \\
-&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \tilde{K}(x_n-y_n dy_n = \tilde{L}v(x_n). \\
-\end{align*}
-\item[(ii)] We are only going to prove one of the bounds, since they are in fact the same. That is,
-\begin{align*}
-\tilde{K}(t) &= |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,s} \frac{\lambda}{|t|^{n+2s}(\sigma^2+
-1)^{\frac{n+2s}{2}}} d\sigma \\
-&= c_{n,s} \frac{\lambda}{|t|^{1+2s}} \int_{\R^n} \frac{d\sigma}{(\sigma^2+1)^{\frac{n+2s}{2}}} = c_{n,s} \frac{\lambda}{|t|^{1+2s}} \frac{c_{1,s}}{c_{n,s}} \\
-&= c_{1,s} \frac{\lambda}{|t|^{1+2s}},
-\end{align*}
-where the only inequality that appears comes from the lower bound of the kernel $K$ for being in $\mathcal{L}_0$.
-\end{enumerate}
-\end{proof}
