@@ -32,15 +32,15 @@ The second one is a symmetry result for equations in a half-space.
 
 \begin{theorem}
 	\label{Th:SymmHalfSpace}
-	Let $L$ be an integro-differential operator with kernel $K$ satisfying 99. Let $u$ be a bounded solution of one of these two problems
+	Let $L$ be an integro-differential operator with kernel $K$ satisfying 99. Let $u$ be a bounded solution to one of these two problems
 	\begin{equation}
 	\leqnomode
 	\tag{P3}
 	\label{Eq:P3}
 	\beqc{\PDEsystem}
-	Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
-	u &>& 0   &\textrm{ in } \,\R^n_+,\\
-	u &=& 0   &\textrm{ in } \,\overline{\R^n_-},
+	Lu &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	v &>& 0   &\textrm{ in } \,\R^n_+,\\
+	v &=& 0   &\textrm{ in } \,\overline{\R^n_-},
 	\eeqc
 	\end{equation}
 	
@@ -49,9 +49,9 @@ The second one is a symmetry result for equations in a half-space.
 	\tag{P4}
 	\label{Eq:P4}
 	\beqc{\PDEsystem}
-	Lu &=& f(u)   &\textrm{ in } \,\R^n_+,\\
-	u &>& 0   &\textrm{ in } \,\R^n_+,\\
-	u(x',x_n) &=& -u(x',-x_n)   &\textrm{ in } \,\R^n.
+	Lv &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	v &>& 0   &\textrm{ in } \,\R^n_+,\\
+	v(x',x_n) &=& -v(x',-x_n)   &\textrm{ in } \,\R^n.
 	\eeqc
 	\end{equation}
 	
@@ -68,7 +68,7 @@ The second one is a symmetry result for equations in a half-space.
 		\item $f>0$ in $(0,1)$, and
 		\item $f$ is odd in the case of \eqref{Eq:P4}.
 	\end{itemize}
-	Then, $u$ depends only on $x_n$ and it is increasing in that direction.
+	Then, $v$ depends only on $x_n$ and it is increasing in that direction.
 \end{theorem}
 
 
@@ -302,7 +302,11 @@ First we show that the solution is monotone. We do it using a moving planes argu
 $$
 \dfrac{|B_R(x)\setminus \Omega|}{|B_R(x)|}\geq \dfrac{1}{2} \quad \text{ for every } x \in \Omega.
 $$
-If no such radius exists, we define $R(\Omega) = +\infty$.
+If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small.
+
+
+
+\todo[inline]{Ellos lo demuestran dentro de la demo de los moving planes. En realidad sirve para los dos problemas. De todas formas, como el argumento es interesante y corto, lo ponemos aqui por completitud y para futura referencia. Hay que poner que es de ellos justo en el enunciado¿¿¿???}
 
 \begin{proposition}
 	\label{Prop:MaxPrpNarrowOdd}
@@ -319,7 +323,7 @@ If no such radius exists, we define $R(\Omega) = +\infty$.
 	v(x) &=& -v(x^*) &\textrm{ in } \R^n.
 	\eeqc
 	\end{equation}
-	Then, $v \geq 0$ whenever $\Omega$ is narrow in the sense that\todo[inline]{Hay que poner In which sense??}.
+	Then, there exist a number $\overline{R}$ such that $v \geq 0$ whenever $R(\Omega) \leq \overline{R}$.
 \end{proposition}
 
 \begin{proof}
@@ -358,7 +362,7 @@ If no such radius exists, we define $R(\Omega) = +\infty$.
 	= -\int_{H\setminus\Omega_-} v(y)\left\{K(x-y)-K(x-y^*)\right\} \d y \leq 0,
 	\end{align*}
 	where we have use the kernel condition \eqref{Eq:KernelSymmetry} and the odd symmetry of $v$. Thus, we get $Lv_2 \leq 0$ in $\Omega_-$, which means
-	$$ Lv_1 = Lv-Lv_2 \geq Lu \geq c(x)\,v = c(x)\,v_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
+	$$ Lv_1 = Lv-Lv_2 \geq Lv \geq c(x)\,v = c(x)\,v_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
 	Therefore $v_1$ solves
 	\begin{equation*}
 	\beqc{\PDEsystem}
@@ -369,20 +373,37 @@ If no such radius exists, we define $R(\Omega) = +\infty$.
 	and we can apply the usual maximum principle for narrow domains (see Theorem~2.4 in \cite{QuaasXia}) to $v_1$ in $\Omega_-$ in order to deduce that $v_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $v_1$ and the fact that the set $\Omega_-$ is not empty.
 \end{proof}
 
-This maximum principle in narrow domains for odd functions with respect to a hyperplane is the principal tool to use the moving plane argument (in the setting of odd functions\todo{ Esto esta bien dicho?}). This allows us to show the following result.
+This maximum principle in narrow domains for odd functions with respect to a hyperplane is the principal tool to use the moving plane argument. This allows us to show the following result.
 
 
 \begin{proposition}
 	\label{Prop:MonotonyHalfSpace}
-	Let $u$ be a bounded solution of one of the problems \eqref{Eq:P3} or \eqref{Eq:P4}, with $L$ an integro-differential operator with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||u||_{\lp{\infty}(\R^n_+)})$. Then,
+	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P3} or \eqref{Eq:P4}, with $L$ an integro-differential operator with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{\lp{\infty}(\R^n_+)})$. Then,
 	$$ 
-	\frac{\partial u}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
+	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
 	$$
 \end{proposition}
 
 
 \begin{proof}
-	The proof is based on the moving planes method, exactly the analogue proof of Quaas and Xia in \cite{QuaasXia}, where they establish an equivalent result for the fractional Laplacian. The only ingredient that was missing to extend the proof to more general integro-differential operators of the form $L$ is the maximum principle of Proposition~\ref{Prop:MaxPrpNarrowOdd}. 
+	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ one defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in any of the two cases ---\eqref{Eq:P3} or \eqref{Eq:P4}---, the following problem:
+	$$
+	\beqc{\PDEsystem} 
+	L w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subseteq H_\lambda,\\ 
+	w_\lambda &\geq& 0 &\textrm{ in } H_\lambda\setminus\Sigma_\lambda,\\ 
+	w_\lambda(x) &=& w_\lambda(x_\lambda) &\textrm{ in } \R^n, 
+	\eeqc 
+	$$
+	where $\Sigma_\lambda := \left\{ x = (x',x_n) \ : \ 0<x_n<\lambda \right\}$ and $H_\lambda := \left\{ x = (x',x_n) \ : \ x_n<\lambda \right\}$ and $c_\lambda$ is a bounded function. Note that $w_\lambda$ is odd with respect to $\partial H_\lambda$. Then, using the maximum principle in narrow domains  Proposition~\ref{Prop:MaxPrpNarrowOdd} one shows that, if $\lambda$ is small enough, $w_\lambda>0$ in $\Sigma_\lambda$. To conclude the proof, we define 
+	$$ 
+	\lambda^* := \sup\{\lambda \ : \ w_\eta>0 \,\, \text{ in } \,\, \Sigma_\lambda \,\, \text{ for all } \,\, \eta<\lambda\}. 
+	$$
+	Note that $\lambda^*$ is well defined by the previous argument. Then, to conclude the proof one has to show that $\lambda^*=\infty$. This is done by showing that, if $\lambda^*$ is finite, then there exists a small $\delta_0 > 0$ such that for every $\delta \in (0,\delta_0]$ we have
+	$$
+	w_{\lambda^* +  \delta} (x) > 0 \quad \text{ in } \Sigma_{\lambda^*-\varepsilon}\setminus \Sigma_{\varepsilon}
+	$$
+	for some small $\varepsilon$.
+	This is established using a compactness argument exactly as in Lemma~3.1 \cite{QuaasXia}. Finally, by the maximum principle in narrow domains we can deduce that $w_{\lambda^* +  \delta} (x) > 0 $ in $\Sigma_{\lambda^*+\delta}$, contradicting the definition of $\lambda^*$.
 \end{proof}
 
 
