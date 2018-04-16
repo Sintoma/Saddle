@@ -13,21 +13,22 @@ and the same is true for strict convexity with an strict inequality
 (see Chapter~1 of \cite{Niculescu} and the references therein).
 
 
-
 \begin{lemma}
-\label{Lemma:Convex<->AllReflectionsConvex}
-Let $h: I \subseteq \R \to \R$ be a measurable function. Then, $h(z)$ is convex in $I$ if and only if $\widetilde{h}_c(z) := h(c+z) + h(c-z)$ is convex in $I_c := (-\dist\{c, \partial I\}, \dist\{c, \partial I\})$ for every $c\in I$.
-The statement remains true if we replace convexity by strict convexity.
+\label{Lemma:Convex<->AllReflectionsConvex} Let $h: I \subseteq \R \to \R$ be a function defined in
+an open interval $I$ such that it is measurable. Then, $h(z)$ is convex in $I$ if and only if
+$\widetilde{h}_c(z) := h(c+z) + h(c-z)$ is convex in $I_c := (-\dist\{c, \partial I\}, \dist\{c,
+\partial I\})$ for every $c\in I$. The statement remains true if we replace convexity by strict
+convexity, concavity or strict concavity.
 \end{lemma}
 
 \begin{proof}
-Assume first that $h$ is convex in $I$. We call 
+Assume first that $h$ is convex in $I$. We call
 $$
 x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
 $$
 Therefore, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in (0,1)$
 \begin{align*}
-t\widetilde{h}_c(x) + (1-t)\widetilde{h}_c(y) 
+t\widetilde{h}_c(x) + (1-t)\widetilde{h}_c(y)
 &=  th(x_+) + (1-t)h(y_+) + t h(x_-) + (1-t)h(y_-) \\
 &\geq h(tx_+ + (1-t)y_+) + h(tx_- + (1-t)y_-) \\
 &= h(c + tx + (1-t)y) + h(c-tx + (1-t)y) \\
@@ -64,7 +65,7 @@ $$
 is  convex in $(-1/c_2, 1/c_2)$ if and only if $K(\sqrt{z})$ is convex in $(0, +\infty)$.
 \end{corollary}
 \begin{proof}
-The function $g$ is  convex in $(-1/c_2, 1/c_2)$ if and only if 
+The function $g$ is  convex in $(-1/c_2, 1/c_2)$ if and only if
 $$
 K \left (\sqrt{c_1^2 + c_1^2c_2 z}\right) +  K \left (\sqrt{c_1^2 - c_1^2c_2 z}\right)
 $$
@@ -80,7 +81,7 @@ is convex in $(-c_1^2, c_1^2)$. By Lemma~\ref{Lemma:Convex<->AllReflectionsConve
 Let $g \colon I\subset \R \to \R$ be a function defined in an open interval $I$ such that $g$ is measurable and nondecrasing in $I$. Then, we have the following equivalences:
 \begin{enumerate}
 \item[i)] $g$ is strictly convex in $I$.
-\item[ii)] For any given real numbers $A$, $B$, $C$, $D$ $\in I$ such that 
+\item[ii)] For any given real numbers $A$, $B$, $C$, $D$ $\in I$ such that
 \begin{equation}
 \label{Eq:AssumptionsInequalitiesABCD}
 \begin{cases}
@@ -111,7 +112,7 @@ This is the simpler case. Since $g$ is nondecreasing and $A \geq B$, $D \geq C$,
 
 $\bullet D < C$
 
-If $A = B$ we arrive at a contradiction from \eqref{Eq:AssumptionsInequalitiesABCD}. Then, we have $A > B \geq C > D$. 
+If $A = B$ we arrive at a contradiction from \eqref{Eq:AssumptionsInequalitiesABCD}. Then, we have $A > B \geq C > D$.
 
 Since $g$ is piecewise $C^1$, let $\{z_i\}_{i=1}^{n}$ be the nondifferentiability points in the interval $(B,A)$ with $z_0 = B$ and $z_{n+1}=A$, and let $\{\bar{z}_i\}_{i=1}^{m}$ be the nondifferentiability points in the interval $(D,C)$ with $\bar{z}_0 = D$ and $\bar{z}_{m+1}=C$.
 
@@ -150,7 +151,7 @@ that from being $g$ measurable means it is strictly convex.
 
 \begin{remark}
 \label{Remark:InequalitConvexFunctions}
-Note that the condition of strict convexity is only needed in order to characterize when the equality is satisfied. That is, with only a convexity condition we also obtain the inequality although we are not able to determine when equality is satisfied. 
+Note that the condition of strict convexity is only needed in order to characterize when the equality is satisfied. That is, with only a convexity condition we also obtain the inequality although we are not able to determine when equality is satisfied.
 \end{remark}
 \begin{remark}
 \label{Remark:LeftImplicationDoNotRequireNondecreasing}
@@ -162,7 +163,7 @@ The deduction of $i)$ from $ii)$ does not require $g$ to be nondecreasing.
 Let $h \colon I\subset \R \to \R$ be a function defined in an open interval $I$ such that $h$ is measurable and nonincrasing in $I$. Then, we have the following equivalences:
 \begin{enumerate}
 \item[i)] $h$ is convex in $I$.
-\item[ii)] For any given real numbers $a$, $b$, $c$, $d$ $\in I$ such that 
+\item[ii)] For any given real numbers $a$, $b$, $c$, $d$ $\in I$ such that
 \begin{equation}
 \label{Eq:AssumptionsInequalitiesABCD}
 \begin{cases}
@@ -261,7 +262,7 @@ $$
 	D = |x''||y''|\alpha + |x'||y'|  \beta \,.
 \end{array}
 $$
-Then, 
+Then,
 \begin{enumerate}
 \item It holds
 $$
@@ -270,7 +271,7 @@ $$
 |A| + |D| \geq |B| + |C|\,.
 \end{cases}
 $$
-\item If either 
+\item If either
 $$ |A| = |B| \ \ \ \ \textrm{ and} \ \ \ \ |C| = |D|, $$
 or
 $$ |A| = |C| \ \ \ \ \textrm{ and} \ \ \ \ |B| = |D|, $$
@@ -279,7 +280,7 @@ then necessarily $\alpha = \beta = 0$.
 
 \end{lemma}
 \begin{proof}
-Since $\alpha \geq |\beta |$, 
+Since $\alpha \geq |\beta |$,
 $$
 \alpha\geq 0 \quad \textrm{ and } \quad  -\alpha \leq \beta \leq \alpha\,.
 $$
@@ -289,7 +290,7 @@ $$
 $$
 These inequalities will be used in all the proof.
 
-We start with the first point. First,  we show that $A\geq 0$ and that 
+We start with the first point. First,  we show that $A\geq 0$ and that
 $$
 A \geq |B|, \ A \geq C ,\ |A| \geq D\,.
 $$
@@ -369,14 +370,14 @@ $$
 This concludes the proof of the first statement.
 
 We prove now the second point of the lemma. Since the roles of $B$ and $C$ are completely interchangeable, we only need to show the result in the case
-$|A| = |B|$ and $|C| = |D|$. 
+$|A| = |B|$ and $|C| = |D|$.
 
 Recall that $A \geq 0$. Hence, since $A = |B|$ and $|C| = |D|$, a simple computation shows that
 $$
-\alpha = \sign (B) \dfrac{|x''|}{|x'|}\beta \quad \textrm{ and } \quad 
+\alpha = \sign (B) \dfrac{|x''|}{|x'|}\beta \quad \textrm{ and } \quad
 \beta = \sign (C) \sign(D) \dfrac{|x''|}{|x'|} \alpha \,.
 $$
-Hence, 
+Hence,
 $$
 \alpha = \sign (B) \sign (C) \sign(D) \dfrac{|x''|^2}{|x'|^2} \alpha
 $$
@@ -423,10 +424,10 @@ where:
 	\begin{align}
 	J(s,t,\sigma, \tau) &:= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}}  K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \omega_1 -2 t \tau \tilde{\omega}_1}\Big) \d \omega \d \tilde{\omega}  \label{Eq:KernelSTVariables1}\\
 	&= c_m \int_{-1}^1  \int_{-1}^1  (1-\theta^2)^{\frac{m-3}{2}} (1-\overline{\theta}^2)^{\frac{m-3}{2}} \nonumber\\
-	& \quad \quad \quad \quad \quad 
+	& \quad \quad \quad \quad \quad
 	K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \theta -2 t \tau \overline{\theta}}\Big) \d \theta \d \overline{\theta}\,, \label{Eq:KernelSTVariables2}
 	\end{align}
-	with 
+	with
 	$$
 	c_m = \bpar{\dfrac{2 \pi^{\frac{m-1}{2}}}{\Gamma (\frac{m-1}{2})}}^2.
 	$$
@@ -446,32 +447,32 @@ We start with the case $m=1$. In this case, we will use explicitly that since $u
 $$
 Lu(x) = \int_{\{y_2 > - y_1\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
 $$
-If we call 
+If we call
 $$
 I(\Omega, x) := \int_{\Omega} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,,
 $$
-then 
+then
 $$
 Lu(x) = I(\{y_2 > |y_1|\},x) + I(\{y_1 > |y_2|\},x)\,.
 $$
 We will check that $I(\{y_2 > |y_1|\},x)$ can be written in the form \eqref{Eq:OperatorInSTVariables} (integrated in the set $\tau > \sigma$). The computations for $I(\{y_1 > |y_2|\},x)$ are completely analogous.
 
-First, note that the set $\{y_2 > |y_1|\}$ can be written as 
+First, note that the set $\{y_2 > |y_1|\}$ can be written as
 $$
-\{y_2 > y_1 > 0\} \cup \phi(\{y_2 > y_1 > 0\}) \cup \{y_2 > 0, y_1 =0\} 
+\{y_2 > y_1 > 0\} \cup \phi(\{y_2 > y_1 > 0\}) \cup \{y_2 > 0, y_1 =0\}
 $$
-where $\phi$ is the reflection with respect to the $y_2$-axis. Therefore,   
+where $\phi$ is the reflection with respect to the $y_2$-axis. Therefore,
 \begin{align*}
 I(\{y_2 > |y_1|\}, x) & = \int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y  \\
 & \quad \quad + \int_{\phi(\{y_2 > y_1 > 0\})} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
 \end{align*}
 By performing the change $\phi = \phi^{-1}$ in the second integral and using the symmetry of $u$, we end up with
 \begin{align*}
-I(\{y_2 > |y_1|\}, x) &=  
+I(\{y_2 > |y_1|\}, x) &=
 \int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \cdot\\
 & \quad \quad \left \{K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|) \right \} \d y\,.
 \end{align*}
-Then, if in the previous expression we write 
+Then, if in the previous expression we write
 $$
 x = (s \sign(x_1), t \sign(x_2)) \quad \textrm{ and } \quad = (\sigma \sign(y_1), \tau \sign(y_2))\,,
 $$
@@ -480,13 +481,13 @@ $$
 I(\{y_2 > |y_1|\}, x) =
 \int_0^{\infty} \! \! \d \sigma \int_\sigma^{\infty} \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)\,,
 $$
-with $J$ as in \eqref{Eq:KernelInSTVariablesR2}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that $y=(\sigma, \tau)$, and it is not difficult to check that the expression 
+with $J$ as in \eqref{Eq:KernelInSTVariablesR2}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that $y=(\sigma, \tau)$, and it is not difficult to check that the expression
 $$
 K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|)
 $$
 does not depend on $\sign(x_1)$ nor $\sign(x_1)$, so we can assume that $x=(s,t)$ and then
 \begin{align*}
-K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|) = \\ 
+K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|) = \\
 K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 + 2 s \sigma + 2 t \tau }\Big) +  K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 + 2 s \sigma  -2 t \tau }\Big) \\
 \quad + K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma + 2 t \tau }\Big) + K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma  -2 t \tau }\Big)\,.
 \end{align*}
@@ -506,7 +507,7 @@ Then,
 \begin{align*}
 Lu(x) &= \int_{\R^{2m}} \big( u(x) - u(y)\big) K( |x-y|) \d y &\\
 &= \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big)  \\
-&\quad \quad \quad \quad  \bpar{\int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 } \Big) \d y_\sigma \d y_\tau } \d \sigma \d \tau 
+&\quad \quad \quad \quad  \bpar{\int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 } \Big) \d y_\sigma \d y_\tau } \d \sigma \d \tau
 \end{align*}
 Now, we make some manipulations to the term
 \begin{equation}
@@ -605,22 +606,22 @@ Consider the changes
 Then, \eqref{Eq:KernelInequalitySimplified2} is now equivalent to show
 \begin{align*}
 \int \int_{Q_1} \left\{
-  \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) 
+  \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big)
 + \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) \right. \\
-+ \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \beta + \alpha\}}\Big) 
++ \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \beta + \alpha\}}\Big)
 + \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon)(1+\delta) \beta + \alpha\}}\Big) \\
-- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big) 
+- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big)
 - \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big) \\
-\left.- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \beta + (1+\delta)\alpha\}}\Big) 
+\left.- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \beta + (1+\delta)\alpha\}}\Big)
 - \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon) \beta + (1+\delta)\alpha\}}\Big)
 \right\} \cdot \\
 \cdot (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}} \d \alpha \d \beta \geq 0\,.
 \end{align*}
 Note that we are not considering anymore the set $\{|\alpha| = |\beta|\}$, that has measure zero.
 
-Now, if we call 
+Now, if we call
 $$
-g(z) := \tilde{K}\Big(\sqrt{1 -2 t \tau z}\Big) 
+g(z) := \tilde{K}\Big(\sqrt{1 -2 t \tau z}\Big)
 + \tilde{K}\Big(\sqrt{1 +2 t \tau z }\Big)\,,
 $$
 the previous inequality reads
@@ -628,11 +629,11 @@ the previous inequality reads
 \label{Eq:KernelInequalitySimplified3}
 \begin{split}
 	\int \int_{Q_1} \left\{
-	g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big) 
-	+ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big) 
-	\right.\\ 
+	g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big)
+	+ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big)
+	\right.\\
 	\left.
-	- g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)  
+	- g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)
 	- g\Big((1+\varepsilon) \beta + (1+\delta)\alpha\Big)
 	\right\} \cdot \\
 	\cdot (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}} \d \alpha \d \beta \geq 0\,.
@@ -641,15 +642,15 @@ the previous inequality reads
 We claim that
 \begin{equation}
 \label{Eq:KernelInequalityLastSimplification}
-g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big) 
-+ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big) 
- \geq 
-g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)  
+g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big)
++ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big)
+ \geq
+g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)
 +g\Big((1+\varepsilon) \beta + (1+\delta)\alpha\Big) \,.
 \end{equation}
 This will conclude the proof.
 
-To prove the claim, we want to use Lemma~\ref{Lemma:InequalitConvexFunctions} with 
+To prove the claim, we want to use Lemma~\ref{Lemma:InequalitConvexFunctions} with
 $$
 \begin{array}{cc}
 A = (1+\varepsilon)(1+\delta) \alpha + \beta\,, &
@@ -698,7 +699,7 @@ Now, we compute the second term. By changing the order of integration and perfor
 & =  \int_0^{+\infty}  \!\! \d \sigma \int_0^{\sigma}  \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} u(\tau, \sigma) J(s_0,t_0,\tau, \sigma)   \\
 & =  - \int_0^{+\infty}  \!\! \d \sigma \int_0^{\sigma}  \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} u( \sigma, \tau) J(s_0,t_0,\tau, \sigma) \,.  \\
 \end{align*}
-Now, since $u\geq 0$ in $\ocal$ and $u \not \equiv 0$, by Lemma~\ref{Lemma:KernelInequalityCone} we get 
+Now, since $u\geq 0$ in $\ocal$ and $u \not \equiv 0$, by Lemma~\ref{Lemma:KernelInequalityCone} we get
 $$
 0 \leq Lu(x_0) = \int_0^{+\infty}  \!\! \d \sigma \int_0^{\sigma}  \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} u(\sigma, \tau) \big( J(s_0,t_0,\tau, \sigma) - J(s_0,t_0,\sigma, \tau)   \big ) < 0\,,
 $$
@@ -749,7 +750,7 @@ a contradiction.
 	\begin{equation}
 	\label{Eq:InequalitiesMaxPNarrowProofVariablesst}
 	0 \geq L v(x_0) + c(x_0)v(x_0) \geq L v(x_0) - \norm{c_-}_{L^\infty(H)}M\,.
-	\end{equation} 
+	\end{equation}
 	Now, we compute $L v(x_0)$. Assume that $x_0 = (s_0 x_s, t_0 x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$. Then, by Lemma~\ref{Lemma:OperatorInSTVariables} we can write
 	\begin{align*}
 	Lv(x_0) &= \widetilde{L} v (s_0,t_0) \\
@@ -790,7 +791,7 @@ a contradiction.
 	$$
 	\int_0^{+\infty}  \!\! \d \sigma \int_0^{\sigma}  \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} J(t_0, s_0, \sigma, \tau)
 	$$
-	can be as big as we want if $\varepsilon$ is small enough. To see this, we recall that $x_0 = (s_0 x_s, t_0 x_t)$ and define 
+	can be as big as we want if $\varepsilon$ is small enough. To see this, we recall that $x_0 = (s_0 x_s, t_0 x_t)$ and define
 	$$
 	z_0 := (t_0 x_s,  s_0 x_t)\,.
 	$$
@@ -798,7 +799,7 @@ a contradiction.
 	$$
 	\int_{\ocal} K(|z_0 - y|)\d y
 	$$
-	is as big as desired if $\varepsilon$ is small enough. 
+	is as big as desired if $\varepsilon$ is small enough.
 	
 	Let $z_\star$ be the projection of $z_0$ into the Simons cone $\ccal$ \todo{Justificar que es única}. Since $x_0 \in \{t < s < t + \varepsilon\}$, then $|z_0 - z_\star| \leq \sqrt{2}\varepsilon$. \todo{justify better}
 	Then,
@@ -810,11 +811,11 @@ a contradiction.
 	\int_{\ocal} K(|z_0 - y|)\d y \geq
 	\int_{\ocal} K(\sqrt{2}\varepsilon + |z_\star - y|)\d y
 	$$
-	The crucial point now is that, as $\varepsilon \to 0$, the integral of the right-hand side converges to 
+	The crucial point now is that, as $\varepsilon \to 0$, the integral of the right-hand side converges to
 	$$
 	\int_{\ocal} K(|z_\star - y|)\d y\,,
 	$$
-	and since $z_\star \in \ccal$, this last integral is infinite --- see (??)\todo{escribir en el enunciado o al ppio del paper}. Therefore, for $\varepsilon$ small enough,  
+	and since $z_\star \in \ccal$, this last integral is infinite --- see (??)\todo{escribir en el enunciado o al ppio del paper}. Therefore, for $\varepsilon$ small enough,
 	$$
 	\int_{\ocal} K(|z_0 - y|)\d y
 	$$
@@ -825,16 +826,16 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 
 
 \begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleInO}]
-	For the sake of simplicity, we will denote 
+	For the sake of simplicity, we will denote
 	$$
 	\mathscr{L} w := Lw - f'(u)w - cw\,.
 	$$
 	Let $\varepsilon > 0$ such that the maximum principle of Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} is valid and define the following sets:
 	$$
-	\Omega_\varepsilon := \Omega \cap \{s > t + \varepsilon\}\quad \textrm{ and } \quad 
+	\Omega_\varepsilon := \Omega \cap \{s > t + \varepsilon\}\quad \textrm{ and } \quad
 	\ncal_\varepsilon := \Omega \cap \{t < s < t + \varepsilon\}\,.
 	$$
-	Recall that, by (??)\todo{Poner esto bien}, we have 
+	Recall that, by (??)\todo{Poner esto bien}, we have
 	$$
 	u \geq \delta > 0 \quad \textrm{ in } \overline{\Omega}_\varepsilon\,,
 	$$
@@ -845,7 +846,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	\end{equation}
 	where we have used that $u>0$ in $\ocal$.
 	
-	Assume, in order to get a contradiction, that there exists $x_0\in \Omega$ such that $v(x_0)> 0$. Let $w = v - \lambda u$. Since in $\overline{\Omega}_\varepsilon$ we have $u \geq \delta > 0$, we see that for $\lambda$ big enough, $w < 0$ in $\overline{\Omega}_\varepsilon$. Moreover, since $v\leq 0$ in $\ocal\setminus\Omega$, we have 
+	Assume, in order to get a contradiction, that there exists $x_0\in \Omega$ such that $v(x_0)> 0$. Let $w = v - \lambda u$. Since in $\overline{\Omega}_\varepsilon$ we have $u \geq \delta > 0$, we see that for $\lambda$ big enough, $w < 0$ in $\overline{\Omega}_\varepsilon$. Moreover, since $v\leq 0$ in $\ocal\setminus\Omega$, we have
 	$$
 	w \leq 0 \quad \textrm{ in } \ocal \setminus \ncal_\varepsilon\,.
 	$$
@@ -863,7 +864,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	if $\lambda$ is big enough.
 	
-	Now, define 
+	Now, define
 	$$
 	\lambda_\star := \inf \setcond{\lambda > 0}{v - \lambda u \leq 0 \ \textrm{ in } \Omega}\,.
 	$$
@@ -871,7 +872,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	
 	We claim that $v - \lambda_\star u \not \equiv 0$. Indeed, if $v - \lambda_\star u \equiv 0$ then $v = \lambda_\star u$ and thus, since $\lambda_\star > 0$, we get
 	$$
-	0 \geq \mathscr{L} v(x_0) = \lambda_\star \mathscr{L} u(x_0) > 0\,, 
+	0 \geq \mathscr{L} v(x_0) = \lambda_\star \mathscr{L} u(x_0) > 0\,,
 	$$
 	a contradiction.
 	
@@ -879,14 +880,13 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	v - \lambda_\star u < 0 \quad \textrm{ in }\Omega\,.
 	$$
-	Therefore, by continuity there exists $0 < \eta <\lambda_\star$ such that 
+	Therefore, by continuity there exists $0 < \eta <\lambda_\star$ such that
 	$$
 	\tilde{w} := v - (\lambda_\star - \eta) u < 0 \quad \textrm{ in }\overline{\Omega}_\varepsilon\,.
 	$$
-	Using again the maximum principle in narrow domains with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that 
+	Using again the maximum principle in narrow domains with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that
 	$$
 	v - (\lambda_\star - \eta) u \leq 0 \quad \textrm{ in }\Omega\,,
 	$$
 	and this contradicts the definition of $\lambda_\star$. Hence, $v\leq 0$ in $\Omega$.
 \end{proof}
-
