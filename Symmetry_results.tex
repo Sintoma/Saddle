@@ -295,18 +295,95 @@ In a similar way, taking $\tilde{\xi}_0>\norm{u}_{L^\infty} \geq 1$, using $f<0$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{A one-dimensional symmetry result for positive solutions ``in a half-space''}
+\subsection{A one-dimensional symmetry result for positive solutions ``in a half-space''} In this subsection...
 
 
-First we show that the solution is monotone. We do it using a moving planes argument, and for this reason we need the following maximum principle in ``narrow'' domains. Recall that for a domain $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
+
+\todo[inline]{Introduction...}
+
+First we show that the solution is monotone.\todo{Escribir bien} We do it using a moving planes argument, and for this reason we need the following maximum principle in ``narrow'' domains. Recall that for a domain $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
 $$
 \dfrac{|B_R(x)\setminus \Omega|}{|B_R(x)|}\geq \dfrac{1}{2} \quad \text{ for every } x \in \Omega.
 $$
 If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small.
 
 
+An important result that we need is the following ABP-type estimate. 
+\todo[inline]{Esto aparece en Quaas y Xia para el fractional Laplacian, la demo es parecida y es como la de Cabre. Para L no he encontrado que la hicieran}
+\begin{theorem}
+	\label{Th:ABPEstimate}
+	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L \in \lcal_0(\s)$\todo{Esta es buena notacion?} and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $\sup_{\Omega} v < +\infty$ and satisfying
+	$$
+	\beqc{\PDEsystem}
+	Lv - c(x)v &\leq & h & \text{ in } \Omega\,, \\
+	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
+	\eeqc
+	$$
+	with $c(x)\leq 0$ in $\Omega$ and $h\in L^\infty(\Omega)$.
+	
+	Then,
+	$$
+	\sup_\Omega v \leq C R(\Omega)^{2\s} \norm{h}_{L^{\infty}(\Omega)}\,,
+	$$
+	where $C$ is a constant depending on \todo{Poner}.
+\end{theorem}
+
+As a consequence of this result, one can deduce easily a maximum principle in ``narrow'' domains.
+
+\begin{corollary}
+	\label{Cor:MaxPpleNarrowDomains}
+	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$ and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfy
+	$$
+	\beqc{\PDEsystem}
+	Lv + c(x)v &\leq & 0 & \text{ in } \Omega\,, \\
+	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
+	\eeqc
+	$$
+	with $c(x)$ bounded below.
+	
+	Then, there exists a number $\bar{R} > 0$ such that $v \leq 0$ in $\Omega$ whenever $R(\Omega)< \bar{R}$.
+	
+\end{corollary}
+
+\begin{proof}
+	We write $c= c^+ - c^-$, and therefore $Lv -(-c^+)v \leq c^- v^+	$. By Theorem~\ref{Th:ABPEstimate} we get
+	$$
+	\sup_\Omega v \leq C R(\Omega)^{2\s} \norm{c^- v^+}_{L^\infty(\Omega)} \leq C R(\Omega)^{2\s} \norm{c^-}_{L^\infty(\Omega)} \sup_\Omega v 
+	$$
+	and if $C R(\Omega)^{2\s} \norm{c^-}_{L^\infty(\Omega)}  <1 $, we deduce that $v\leq 0$ in $\Omega$.
+\end{proof}
+
+The only ingredient needed to show Theorem~\ref{Th:ABPEstimate} is the following weak Harnack inequality, which follows easily from \cite{DiCastoKuusiPalatucci}
+
+\todo[inline]{De hecho seguro que está en lo de Matteo, CHECK!!
+	De momento no la pongo}
+
+\begin{proof}[Proof of Theorem~\ref{Th:ABPEstimate}]
+	We are going to show it for $v$ satisfying,
+	$$
+	\beqc{\PDEsystem}
+	Lv &\leq & h & \text{ in } \Omega\,, \\
+	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
+	\eeqc
+	$$
+	since the case $c\neq 0$ can be reduced to this one. Indeed, if we consider $\Omega_0 = \{x \in \Omega \ : \ v > 0\}$, then $Lv \leq Lv - c(x)v \leq h$ in $\Omega_0$.
+	
+	Assume first that $\Omega$ is bounded. Then the supremum of $v$ must be achieved at an interior point $x_0\in \Omega$. Define	$M:= v(x_0) = \sup_\Omega v$ and consider the function $w := M - v^+$. Note that $0 \leq v \leq M$, $v(x_0) = 0$ and $v \equiv M$ in $\R^n \setminus \Omega$. If we extend $h$ to be $0$ outside $\Omega$, we see that $Lv \geq -h$ in $B_R(x_0)$. 
+	
+	Now, by choosing $R= 2R(\Omega)$, and using the weak Harnack inequality \todo{citar o poner bien} we get
+	\begin{align*}
+		M \dfrac{1}{2^\varepsilon} & \leq \bpar{M^{\varepsilon}\dfrac{|B_{R/2}(x_0)\setminus \Omega|}{|B_{R/2}(x_0)|}}^{1/\varepsilon}= \bpar{\dfrac{1}{|B_{R/2}(x_0)|} \int_{B_{R/2}(x_0)\setminus \Omega} v^\varepsilon}^{1/\varepsilon} \\ 
+		& \leq \bpar{ \fint_{B_{R/2}(x_0)} v^\varepsilon}^{1/\varepsilon} \leq C \bpar{\inf_{B_{R}(x_0)} v + R^{2\s} \norm{h}_{L^{\infty}(\Omega)} }\,.
+	\end{align*}
+	The conclusion follows from the fact that $v(x_0)= \inf_{B_{R}(x_0)} v = 0$.
+	
+	In the case of $\Omega$ being unbounded, the proof is the same with minor changes. We define $M$ as before and we consider, for every $\delta > 0$, a point $x_0$ such that $M-\delta \leq v(x_0)$. We proceed as before and the desired estimate follows by letting $\delta \to 0$. 
+\end{proof}
+ 
 
 \todo[inline]{Ellos lo demuestran dentro de la demo de los moving planes. En realidad sirve para los dos problemas. De todas formas, como el argumento es interesante y corto, lo ponemos aqui por completitud y para futura referencia. Hay que poner que es de ellos justo en el enunciado¿¿¿???}
+
+In order to apply the moving planes method, the previous maximum principle in narrow domains is not powerful enough. The reason for this is that we need a prescribed constant sign of a function outside the domain, but in the application of the moving planes argument, since our functions are odd with respect to a hyperplane, they cannot have a constant sign in the exterior of a narrow band. For this reason, we need another version of a maximum principle in ``narrow'' domains that applies to odd functions and only assumes a constant sign of the function at one side of a hyperplane.
 
 \begin{proposition}
 	\label{Prop:MaxPrpNarrowOdd}
@@ -370,12 +447,12 @@ If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a d
 	v_1 &=& 0 &\textrm{ in }\,\R^n\setminus\Omega_-,
 	\eeqc
 	\end{equation*}
-	and we can apply the usual maximum principle for narrow domains (see Theorem~2.4 in \cite{QuaasXia}) to $v_1$ in $\Omega_-$ in order to deduce that $v_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $v_1$ and the fact that the set $\Omega_-$ is not empty.
+	and we can apply the usual maximum principle for narrow domains (Corollary~\ref{Cor:MaxPpleNarrowDomains}) to $v_1$ in $\Omega_-$ in order to deduce that $v_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $v_1$ and the fact that the set $\Omega_-$ is not empty.
 \end{proof}
 
 This maximum principle in narrow domains for odd functions with respect to a hyperplane is the principal tool to use the moving plane argument. This allows us to show the following result.
 
-
+\todo[inline]{Mirar lo que hacen Barrios, Quaas, etc en MR3624935 (2017) por si hay que citarlo}
 \begin{proposition}
 	\label{Prop:MonotonyHalfSpace}
 	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P3} or \eqref{Eq:P4}, with $L$ an integro-differential operator with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{\lp{\infty}(\R^n_+)})$. Then,
@@ -406,7 +483,7 @@ This maximum principle in narrow domains for odd functions with respect to a hyp
 	This is established using a compactness argument exactly as in Lemma~3.1 \cite{QuaasXia}. Finally, by the maximum principle in narrow domains we can deduce that $w_{\lambda^* +  \delta} (x) > 0 $ in $\Sigma_{\lambda^*+\delta}$, contradicting the definition of $\lambda^*$.
 \end{proof}
 
-
+\todo[inline]{habría que citar la harnack q se usa en Lemma 3.1, seguramente la de Matteo funciona}
 
 
 
@@ -454,94 +531,86 @@ Then, $u$ only depends on $x_n$ and is increasing in that direction.
 \end{proposition}
 
 \begin{proof}
-The proof follows the ideas, sliding method, of Berestycki, Hamel and Monneau from Theorem~1 in \cite{BerestyckiHamelMonneau} but adapted to a nonlocal operator.
+The proof follows the ideas, sliding method, of Berestycki, Hamel and Monneau from Theorem~1 in \cite{BerestyckiHamelMonneau} but adapted to a the integro-differential operator $L$.
 
-Let us define $ u^t(x) := u(x+\nu t) $ for any $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and call $v^t(x):=u^t(x)-u(x)$. The aim is to show that $v^t(x)\geq 0$ for all $t\geq 0$.
+Let us define $ v^t(x) := v(x+\nu t) $ for any $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and call $w^t(x):=v^t(x)-v(x)$. The aim is to show that $w^t(x)\geq 0$ for all $t\geq 0$.
 
-\begin{enumerate}
-\item[Step 1:] For $t>0$ big enough $v^t\geq 0$.\\
+
+\textbf{Step 1:} We show that $v^t\geq 0$ if $t>0$ is big enough.
+
 Since the limits of $u$ at infinity are uniform, let $A>0$ be such that for all $|x_n|\geq A$ and $x'\in \R^{n-1}$
 \begin{equation}
 \label{Eq:DefinitionA}
-u(x',x_n)\not\in (-1+\delta,1-\delta).
+v(x',x_n)\not\in (-1+\delta,1-\delta).
 \end{equation}
-Let $H=\{v^t\geq 0\} = \{u^t(x) \geq u(x)\}$. Therefore, $v^t$ solves
+Let $H=\{w^t\geq 0\} = \{v^t(x) \geq v(x)\}$. Therefore, $w^t$ solves
 $$
 \beqc{\PDEsystem}
-L v^t &=& d^t(x) v^t  &\textrm{ in }\R^n\setminus H,\\
-v^t &\geq& 0  &\textrm{ in } H\,,
+L w^t &=& d^t(x) w^t  &\textrm{ in }\R^n\setminus H,\\
+w^t &\geq& 0  &\textrm{ in } H\,,
 \eeqc
 $$
-with $d^t(x)\leq 0$. To show this, note that
+with 
 \begin{equation}
 \label{Eq:Definition_dt}
-Lv^t = Lu^t - Lu = f(u^t) - f(u) = \frac{f(u^t) - f(u)}{u^t-u} v^t = d^t(x) v^t.
-\end{equation}
-Then we have to show that $ \frac{f(u^t) - f(u)}{u^t-u} \leq 0 $ out of $H$ for $t$ large enough. In order to prove it we distinguish the two different problems, \eqref{Eq:P1} and \eqref{Eq:P2}.
+d^t(x) = \frac{f(v^t) - f(v)}{v^t-v} \,.
+\end{equation} 
 
-For \eqref{Eq:P1}: Take $x\not\in H$, that is $u^t(x)<u(x)$, and $t\geq 2A/\nu_n$, then
+We claim that $d^t \leq 0$ in $\R^n\setminus H$ for $t$ big enough. If we prove this, Step~1 follows from the maximum principle. To see $d^t \leq 0$, we distinguish between the two different problems, \eqref{Eq:P1} and \eqref{Eq:P2}. In both cases, let $x\not\in H$ (thus $v^t(x) < v(x)$).
+
 \begin{itemize}
-\item If $x_n\geq -A$, then $1-\delta \leq u^t(x) < u(x)$ and $f$ is nonincreasing, which means
-$$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
-\item If $x_n\leq -A$, then $u^t(x) \leq u(x) \leq -1+\delta$ and $f$ is nonincreasing, which also means
-$$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
+	\item \eqref{Eq:P1}: Take $t\geq 2A/\nu_n$.
+	On the one hand, if $x_n\geq -A$, then $1-\delta \leq v^t(x) < v(x)$ ---here we used that $x\not\in H$ and \eqref{Eq:DefinitionA}. Since $f$ is nonincreasing in $[1-\delta, 1]$, we get $d^t(x) \leq 0$. On the other hand, if $x_n\leq -A$, then $v^t(x) < v(x) \leq -1+\delta$ and the conclusion is the same using that $f$ is nonincreasing in $[-1, -1+\delta]$. 
+	
+	\item \eqref{Eq:P2}: Note that in this case $\R^n\setminus H$ is contained in $\R^n_+$. Take $t\geq A/\nu_n$.  Then, $1-\delta \leq v^t(x) < v(x)$ and, since $f$ is nonincreasing $[1-\delta, 1]$, we get $d^t(x) \leq 0$.	
 \end{itemize}
 
-For \eqref{Eq:P2}: Note that in this case $\R^n\setminus H$ is contained in $\R^n_+$. Take $x\not\in H$, that is $u^t(x)<u(x)$, and $t\geq A/\nu_n$, then $1-\delta \leq u^t(x) \leq u(x)$ and $f$ is nonincreasing, which means
-$$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
 
-Therefore, by the maximum principle, $v^t\geq 0$ in $\R^n$ for $t$ large enough. Note that we have quantify how large must be $t$ in terms of the nonlinearity $f$ and the vector $\nu$.
 
-\item[Step 2:] $v^t\geq 0$ for all $t\geq 0$.\\
-For this, define 
-$$\tau = \inf \{t \,\,\text{ such that }\, u^t\geq u\}, $$ 
-and we claim that $\tau=0$. Assume, in order to get a contradiction, that $\tau>0$. Let us define
-$$ m = \inf_{\R^{n-1}\times [-A,A]} (u^\tau - u) $$
-in the case of \eqref{Eq:P1} and
-$$ m = \inf_{\R^{n-1}\times [0,A]} (u^\tau - u) $$
-in the case of \eqref{Eq:P2}. Now we can distinguish two cases depending if $m>0$ or $m=0$.
+\textbf{Step 2:} We show that $w^t\geq 0$ for all $t\geq 0$.
 
-\item[Step 2.1:] $v^t\geq 0$ for all $t\geq 0$ if $m>0$.\\
-By interior estimates for $L$, $u$ is globally $\cp{s}$-H\"older continuous. Then, there exists $\eta_0$ small so that for any $t\in(\tau-\eta_0,\tau)$ 
-$$ u^t\geq u \,\,\,\, \textrm{in }\,\,\, \R^{n-1}\times [-A,A] \,\, \left( \textrm{in }\,\,\, \R^{n-1}\times [0,A] \right). $$
-That is,
+Define $\tau := \inf \{t \ : \ v^t\geq v\}$, and we claim that $\tau=0$. Assume, in order to get a contradiction, that $\tau>0$. Let us define
+$$ 
+m := \inf_{\R^{n-1}\times [-A,A]} (v^\tau - v)\, \quad \text{ or } \quad
+m := \inf_{\R^{n-1}\times [0,A]} (v^\tau - v) \,,
+$$
+in the case of \eqref{Eq:P1} or \eqref{Eq:P2} respectively. We distinguish two cases depending whether $m>0$ or $m=0$.
+\begin{itemize}
+\item Case $m=0$:
+On the one hand, by interior estimates \todo{Boundary??} for $L$, $u$ is globally $C^\s$-H\"older continuous. Thus, there exists $\eta_0$ small such that, for every  $t\in(\tau-\eta_0,\tau)$,
+$$ 
+v^t\geq v \quad \textrm{ in } \quad  \R^{n-1}\times [-A,A] 
+\quad \text{ or } \quad  
+v^t\geq v \quad \textrm{ in } \quad  \R^{n-1}\times [0,A], 
+$$
+in the case of \eqref{Eq:P1} or \eqref{Eq:P2} respectively. Indeed,
 \begin{align*}
-u^t(x)-u(x) &= u(x+t\nu)-u(x)-u(x+\tau\nu)+u(x+\tau\nu) \\
-& \geq u^\tau(x)-u(x) - |u(x+t\nu)-u(x+\tau\nu)| \\
+v^t(x)-v(x) &= v(x+t\nu)-v(x)-v(x+\tau\nu)+v(x+\tau\nu) \\
+& \geq v^\tau(x)-u(x) - |v(x+t\nu)-v(x+\tau\nu)| \\
 & \geq m - C|t-\tau|^s \geq 0,
 \end{align*}
-if $|t-\tau|^s\leq m/C$.
+if $0 < |t-\tau|^s\leq m/C$.
 
 On the other hand, if we define $d^{\tau-\eta}(x)$ as in equation \eqref{Eq:Definition_dt}, we have
-$$ L v^{\tau-\eta} = d^{\tau-\eta} (x) \,v^{\tau-\eta}. $$
-Let us show now that $d^{\tau-\eta}\leq 0$ in the sets
-$$ \hat{H} = \left\{|x_n|\geq A\right\} \cap \left\{u^{\tau-\eta}<u\right\}  \,\,\,\, \textrm{for \eqref{Eq:P1}}, $$
-and
-$$ \hat{H} = \{x_n\geq A\} \cap \{u^{\tau-\eta}<u\}  \,\,\,\, \textrm{for \eqref{Eq:P2}}. $$
+$$ L w^{\tau-\eta} = d^{\tau-\eta} (x) \,w^{\tau-\eta}. $$
+Note that $d^{\tau-\eta}\leq 0$ in the sets
+$$ 
+\hat{H} = \left\{|x_n|\geq A\right\} \cap \left\{v^{\tau-\eta}<v\right\},   \quad  \textrm{ or }  \quad  
+\hat{H} = \{x_n\geq A\} \cap \{v^{\tau-\eta}<v\},
+$$
+in the case of \eqref{Eq:P1} or \eqref{Eq:P2} respectively. This can be seen exactly as in Step~1. Therefore, for $0<\eta \leq \eta_0$ we can apply the maximum principle in $\tilde{H}$ to obtain $u^{\tau-\eta} \geq u$ in $\R^n$, which contradicts the minimality of $\tau$. This yields that $\tau = 0$.
 
-To see this fact, we have to proceed as before. Let $x\in \tilde{H}$. Then,
-\begin{itemize}
-\item If $x_n\leq -A$, then $u^{\tau-\eta}(x) < u(x) \leq -1+\delta$ and $f$ is nonincreasing, which means
-$$ d^{\tau-\eta}(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
-\item If $x_n\geq A$, then $1-\delta \leq u^{\tau-\eta}(x) < u(x) $ and $f$ is nonincreasing, which also means
-$$ d^t(x) = \frac{f(u^t) - f(u)}{u^t-u} \leq 0.  $$
-\end{itemize}
-Therefore, for $0<\eta \leq \eta_0$ we can apply the maximum principle in $\tilde{H}$ to obtain
-$$ u^{\tau-\eta} \geq u \,\,\, \text{ in } \,\, \R^n, $$
-which contradicts the minimality of $\tau$. This means that $\tau = 0$.
-
-\item[Step 2.2:] $v^t\geq 0$ for all $t\geq 0$ if $m=0$.\\
-By definition of $m$ we can take a sequence $x_k= (x_k',x_k^n) \in \R^{n-1}\times[-A,A]$ such that
+\item Case $m=0$: By definition of $m$, we can take a sequence $x_k= (x_k',x_k^n) \in \R^{n-1}\times[-A,A]$ ---in $\R^{n-1}\times[0,A]$ for problem \eqref{Eq:P2}---, such that
 \begin{equation}
 \label{Eq:Limit}
-u^\tau(x_k) - u(x_k) \rightarrow 0.
+v^\tau(x_k) - v(x_k) \rightarrow 0.
 \end{equation}
-Since $x_k^n$ is bounded, we can choose a subsequence that converges to $x_\infty^n \in [-A,A]$.
-Call $u_k(x) = u(x'+x_k',x_k^n)$, which satisfies problem \eqref{Eq:P1} or \eqref{Eq:P2} for each $k$ since the problems are invariant under translations. Therefore, by elliptic estimates, $u_k$ converges to a function $u_\infty$ which satisfies
+Since $x_k^n$ is bounded, we can choose a subsequence that converges to $x_\infty^n \in [-A,A]$ ---in $[0,A]$ for problem \eqref{Eq:P2}.
+Call $v_k(x) = v(x'+x_k',x_k^n)$, which satisfies the same problem as $v$ for each $k$ (both \eqref{Eq:P1} and \eqref{Eq:P2} are invariant under translations in the first $n-1$ coordinates). Therefore, by elliptic estimates\todo{Poner bien}, $u_k$ converges to a function $u_\infty$ which satisfies the same problem as $v$ \todo{EL DE ABAJO NO!}
 $$ L u_\infty = f(u_\infty) \,\,\, \text{ in } \,\,\, \R^n. $$
-Note that since $u$ satisfies \eqref{Eq:DefinitionA} and the translations are only in the $n-1$ first variables, $u_k$ and its limit $u_\infty$ also satisfy this property. 
+Note that since the translations are only in the $n-1$ first variables, $v_k$ and its limit $v_\infty$ also satisfy \eqref{Eq:DefinitionA}. 
 
-Then, if we define $w= u_\infty^\tau - u_\infty$, it solves
+Then, if we define $w= v_\infty^\tau - v_\infty$, it solves
 $$
 \beqc{\PDEsystem}
 L w &=& d(x) w  &\textrm{ in }\R^n,\\
@@ -551,7 +620,7 @@ w(0, x_\infty^n ) &=& 0,
 $$
 with 
 $$ d(x) = \begin{cases}
-\frac{f(u_\infty^\tau(x))-f(u_\infty(x))}{u_\infty^\tau(x)-u_\infty(x)} \,\,\, &\text{if } \,\, u_\infty^\tau(x)\not=u_\infty(x)\\
+\dfrac{f(u_\infty^\tau(x))-f(u_\infty(x))}{u_\infty^\tau(x)-u_\infty(x)} \,\,\, &\text{if } \,\, u_\infty^\tau(x)\not=u_\infty(x)\\
 0 \,\, & \text{otherwise}.
 \end{cases} $$
 
@@ -566,20 +635,22 @@ w(0,x_\infty^n) &= \lim_{k\to\infty} u_k^\tau(0,x_k^n)- u_k(0,x_k^n) \\
 By applying the strong maximum principle we get $w\equiv 0$, which means that $u_\infty(x) = u_\infty(x+\tau\nu)$. But this is a contradiction with the fact that $u_\infty(x',x_n) \geq 1-\delta$ for $x_n>A$, $u_\infty(x',x_n) \leq -1+\delta$ for $x_n<-A$ since $\delta<<1$ and $\tau_n>0$. That is,
 $$ 1-\delta \leq u_\infty(x',A) = u_\infty \left( x' - \left\lceil \frac{2A}{\tau\nu_n} \right\rceil \tau \nu', A - \left\lceil \frac{2A}{\tau\nu_n} \right\rceil \tau \nu_n\right) \leq -1+\delta. $$
 
-\end{enumerate}
+\end{itemize}
 
-Once we have shown that $v^t\geq 0$ for all $t>0$, then it is clear that
+\textbf{Step 3: }Conclusion.
+
+Once we have shown that $w^t\geq 0$ for all $t>0$, then it is clear that
 \begin{equation}
 \label{Eq:nuDerivative}
-\nabla u(x) \cdot \nu = \frac{\partial u}{\partial \nu} (x) = \lim_{t \to 0}  \frac{u(x+t\nu)-u(x)}{t} \geq 0
+\nabla v(x) \cdot \nu = \frac{\partial v}{\partial \nu} (x) = \lim_{t \to 0}  \dfrac{v(x+t\nu)-v(x)}{t} \geq 0
 \end{equation}
 for any $x\in \R^n$ and any $\nu\in \R^n$ such that $\nu_n>0$.
 By making the limit $\nu_n$ to zero in the previous expression we get
-$$ \nabla u \cdot (\nu',0) \geq 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}. $$
-And choosing now the opposite vector $-\nu'$ we finally get
-$$ \nabla u \cdot (\nu',0) = 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}, $$
+$$ \nabla v \cdot (\nu',0) \geq 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}. $$
+Choosing now the opposite vector $-\nu'$ we finally get
+$$ \nabla v \cdot (\nu',0) = 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}, $$
 which is equivalent to say that $u$ only depends on $x_n$. Moreover, if we choose $\nu = e_n$, then from \eqref{Eq:nuDerivative} we obtain
-$$ \frac{\partial u}{\partial x_n} \geq 0. $$
+$$ \frac{\partial v}{\partial x_n} \geq 0. $$
 \end{proof}
 
 
