@@ -1,16 +1,22 @@
 
 *.aux
 
+\.pdf
+
+*.log
+
+*.bak
+
 *.bbl
 
 *.blg
 
-*.log
-
 *.out
 
-*.gz
+main\.pdf
+
+*.synctex
 
 *.toc
 
-main\.pdf
+*.gz
