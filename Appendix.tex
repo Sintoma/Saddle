@@ -5,7 +5,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this appendix we present some auxiliary results that are needed in the paper. Such results concern convex functions. Recall that for measurable functions $f:\R\to \R$, convexity in an open interval $I$ is equivalent to midpoint convexity, i.e.,
+In this appendix we present some auxiliary results that are needed in the paper. Such results
+concern convex functions. Recall that for measurable functions $f:\R\to \R$, convexity in an open
+interval $I$ is equivalent to midpoint convexity, i.e.,
 $$
 \dfrac{f(x) + f(y)}{2} \geq f \left( \dfrac{x+y}{2}\right) \quad \textrm{ for every } x,\, y \in I\,,
 $$
@@ -26,7 +28,8 @@ Assume first that $h$ is convex in $I$. We call
 $$
 x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
 $$
-Therefore, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in (0,1)$
+Therefore, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in
+(0,1)$
 \begin{align*}
 t\widetilde{h}_c(x) + (1-t)\widetilde{h}_c(y)
 &=  th(x_+) + (1-t)h(y_+) + t h(x_-) + (1-t)h(y_-) \\
@@ -36,7 +39,8 @@ t\widetilde{h}_c(x) + (1-t)\widetilde{h}_c(y)
 \end{align*}
 Therefore, $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$.
 
-Assume now that $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$. By contradiction, suppose that $h$ is not convex in $I$. Then, there exist some $x$, $y\in I$ such that
+Assume now that $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$. By contradiction,
+suppose that $h$ is not convex in $I$. Then, there exist some $x$, $y\in I$ such that
 \begin{equation}
 \label{Eq:ContradictionConvexity}
 \dfrac{h(x) + h(y)}{2} < h \left (\dfrac{x+y}{2}\right )\,.
@@ -57,28 +61,32 @@ and this contradicts \eqref{Eq:ContradictionConvexity}. Hence, $h$ is convex in 
 
 
 \begin{corollary}
-\label{Cor:gConvex<->K(sqrt)convex}
-Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function. Then, given any $c_1,c_2>0$, the function
+\label{Cor:gConvex<->K(sqrt)convex} Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function.
+Then, given any $c_1,c_2>0$, the function
 $$
 g(z) := K \left (c_1 \sqrt{1 + c_2 z}\right) +  K \left (c_1 \sqrt{1 - c_2 z}\right)
 $$
-is  convex in $(-1/c_2, 1/c_2)$ if and only if $K(\sqrt{z})$ is convex in $(0, +\infty)$.
+is  (strictly) convex in $(-1/c_2, 1/c_2)$ for every $c_1>0$ if and only if $K(\sqrt{z})$ is
+(strictly) convex in $(0, +\infty)$.
 \end{corollary}
 \begin{proof}
-The function $g$ is  convex in $(-1/c_2, 1/c_2)$ if and only if
+Since we can rewrite $g$ as
 $$
-K \left (\sqrt{c_1^2 + c_1^2c_2 z}\right) +  K \left (\sqrt{c_1^2 - c_1^2c_2 z}\right)
+g(z) = K \left (\sqrt{c_1^2 + c_1^2c_2 z}\right) +  K \left (\sqrt{c_1^2 - c_1^2c_2 z}\right),
 $$
-is  convex in $(-1/c_2, 1/c_2)$, and this is equivalent to say that
+it is clear that $g$ is  (strictly) convex in $(-1/c_2, 1/c_2)$ for every $c_1>0$ if and only if
 $$
 K \left(\sqrt{c_1^2 + z}\right) +  K \left(\sqrt{c_1^2 - z}\right)
 $$
-is convex in $(-c_1^2, c_1^2)$. By Lemma~\ref{Lemma:Convex<->AllReflectionsConvex}, this is equivalent to the convexity of $K(\sqrt{z})$ in $(0, +\infty)$.
+is (strictly) convex in $(-c_1^2, c_1^2)$ for every $c_1>0$. Then, by applying
+Lemma~\ref{Lemma:Convex<->AllReflectionsConvex} taking $I = (0,+\infty)$, this is equivalent to the
+convexity of $K(\sqrt{z})$ in $(0, +\infty)$.
 \end{proof}
 
 \begin{lemma}
-\label{Lemma:InequalitConvexFunctions}
-Let $g \colon I\subset \R \to \R$ be a function defined in an open interval $I$ such that $g$ is measurable and nondecrasing in $I$. Then, we have the following equivalences:
+\label{Lemma:InequalitConvexFunctions} Let $g \colon I\subset \R \to \R$ be a function defined in
+an open interval $I$ such that $g$ is measurable and nondecrasing in $I$. Then, we have the
+following equivalences:
 \begin{enumerate}
 \item[i)] $g$ is strictly convex in $I$.
 \item[ii)] For any given real numbers $A$, $B$, $C$, $D$ $\in I$ such that
@@ -101,22 +109,31 @@ $$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
 
 \end{lemma}
 \begin{proof}
-$i)\, \Rightarrow \,ii)$
-First note that from the strictly convexity condition of $g$ we have that $g$ is $C^0(I)$ and $C^1$ at all but at most countably many points and admits left and right derivatives ($g'_-$ and $g'_+$ respectively), and these are monotonically increasing. Moreover, from being $g$ strictly convex and nondecreasing, it is in fact increasing.
+$i)\, \Rightarrow \,ii)$ First note that from the strict convexity condition in $g$ we have that
+$g$ is $C^0(I)$ and $C^1$ at all but at most countably many points. Moreover, $g'$ is increasing in
+the regular points. In addition, from being $g$ strictly convex and nondecreasing, it is in fact
+increasing.
 
-Without loss of generality, we can assume that $B \geq C$. Now, we distiguish two cases:
+Without loss of generality, we can assume that $B \geq C$. Now, we distinguish two cases:
 
 $\bullet D \geq C$
 
-This is the simpler case. Since $g$ is nondecreasing and $A \geq B$, $D \geq C$, we have that $g(A) \geq g(B)$ and $g(D) \geq g(C)$. By adding up these two inequalities we get the desired result. Moreover, if $A>B$ or $D>C$ we obtain the strict inequality since $g$ is in fact increasing.
+This is the simpler case. Since $g$ is nondecreasing and $A \geq B$, $D \geq C$, we have that $g(A)
+\geq g(B)$ and $g(D) \geq g(C)$. By adding up these two inequalities we get the desired result.
+Moreover, if $A>B$ or $D>C$ we obtain the strict inequality since $g$ is in fact increasing.
 
 $\bullet D < C$
 
-If $A = B$ we arrive at a contradiction from \eqref{Eq:AssumptionsInequalitiesABCD}. Then, we have $A > B \geq C > D$.
+If $A = B$ we arrive at a contradiction from \eqref{Eq:AssumptionsInequalitiesABCD}. Then, we have
+$A > B \geq C > D$.
 
-Since $g$ is piecewise $C^1$, let $\{z_i\}_{i=1}^{n}$ be the nondifferentiability points in the interval $(B,A)$ with $z_0 = B$ and $z_{n+1}=A$, and let $\{\bar{z}_i\}_{i=1}^{m}$ be the nondifferentiability points in the interval $(D,C)$ with $\bar{z}_0 = D$ and $\bar{z}_{m+1}=C$.
+Since $g$ is piecewise $C^1$, let $\{z_i\}_{i=1}^{n}$ be the points in the interval $(B,A)$ where
+the function is not differentiable, with $z_0 = B$ and $z_{n+1}=A$, and let
+$\{\bar{z}_i\}_{i=1}^{m}$ be the same for the interval $(D,C)$ with $\bar{z}_0 = D$ and
+$\bar{z}_{m+1}=C$.
 
-By applying Taylor's theorem in each interval of differentiability and adding the expressions we obtain
+By applying Taylor's theorem in each interval of differentiability and adding the expressions we
+obtain
 $$
 g(A) = g(B) + \sum_{i=0}^{n}(z_{i+1}-z_i) g'(\xi_i) \quad \textrm{ with } \xi_i \in (z_i,z_{i+1})\,,
 $$
@@ -142,16 +159,19 @@ g(A) + g(D) - g(B) - g(C) &= (g(A) - g(B)) - (g(C) - g(D)) \\
 &= (A - B - C + D)g'(\xi) + (C - D) (g'(\xi) - g'(\overline{\xi}))\\
 & > 0\,,
 \end{align*}
-where we have used that $A - B - C + D \geq 0$, $C - D > 0$, $g'\geq 0$ in the regular points and $g'(\xi) > g'(\overline{\xi})$.
+where we have used that $A - B - C + D \geq 0$, $C - D > 0$, $g'\geq 0$ in the regular points and
+$g'(\xi) > g'(\overline{\xi})$.
 
-$ii)\, \Rightarrow \,i)$ Given $x\neq y$ in $I$, that we can suppose $x>y$ without loss of generality, we define $A=x$, $B=C=(x+y)/2$ and $D=y$. Then we get
+$ii)\, \Rightarrow \,i)$ Given $x\neq y$ in $I$, that we can suppose $x>y$ without loss of
+generality, we define $A=x$, $B=C=(x+y)/2$ and $D=y$. Then we get
 $$ g(x)+g(y) > 2g\left( \frac{x+y}{2} \right), $$
 that from being $g$ measurable means it is strictly convex.
 \end{proof}
 
 \begin{remark}
-\label{Remark:InequalitConvexFunctions}
-Note that the condition of strict convexity is only needed in order to characterize when the equality is satisfied. That is, with only a convexity condition we also obtain the inequality although we are not able to determine when equality is satisfied.
+\label{Remark:InequalitConvexFunctions} Note that the condition of strict convexity is only needed
+in order to characterize when the equality is satisfied. That is, with only a convexity condition
+we also obtain the inequality although we are not able to determine when equality is satisfied.
 \end{remark}
 \begin{remark}
 \label{Remark:LeftImplicationDoNotRequireNondecreasing}
@@ -159,13 +179,14 @@ The deduction of $i)$ from $ii)$ does not require $g$ to be nondecreasing.
 \end{remark}
 
 \begin{corollary}
-\label{Cor:hDecreasingConvex}
-Let $h \colon I\subset \R \to \R$ be a function defined in an open interval $I$ such that $h$ is measurable and nonincrasing in $I$. Then, we have the following equivalences:
+\label{Cor:hDecreasingConvex} Let $h \colon I\subset \R \to \R$ be a function defined in an open
+interval $I$ such that $h$ is measurable and nonincreasing in $I$. Then, we have the following
+equivalences:
 \begin{enumerate}
 \item[i)] $h$ is convex in $I$.
 \item[ii)] For any given real numbers $a$, $b$, $c$, $d$ $\in I$ such that
 \begin{equation}
-\label{Eq:AssumptionsInequalitiesABCD}
+\label{Eq:AssumptionsInequalitiesabcd}
 \begin{cases}
 a \geq b \geq c \geq d \,, \\
 a + d \leq b + c\,.
@@ -177,33 +198,44 @@ $$ h(a) + h(d) \geq h(b) + h(c)\,.$$
 \end{corollary}
 
 \begin{proof}
-Let us define $g(z) = h(a-z)$. It is clear that since $h$ is measurable and nonincreasing, then $g$ is measurable and nondecreasing.
-On the other hand, let $A=a-d$, $B=a-c$, $C=a-b$ and $D=0$. Then, we have that condition $a \geq b \geq c \geq d$ is equivalent to $A\geq B \geq C \geq D$ and condition $a+d\leq b+c$ is equivalent to $A+D\geq B+C$.
-Therefore, we can apply Lemma \ref{Lemma:InequalitConvexFunctions}, taking into account Remark \ref{Remark:InequalitConvexFunctions}, and obtain the desired equivalence.
+Let us define $g(z) = h(a-z)$. It is clear that since $h$ is measurable and nonincreasing, then $g$
+is measurable and nondecreasing. On the other hand, let $A=a-d$, $B=a-c$, $C=a-b$ and $D=0$. Then,
+we have that condition $a \geq b \geq c \geq d$ is equivalent to $A\geq B \geq C \geq D$ and
+condition $a+d\leq b+c$ is equivalent to $A+D\geq B+C$. Therefore, we can apply Lemma
+\ref{Lemma:InequalitConvexFunctions}, taking into account Remark
+\ref{Remark:InequalitConvexFunctions}, and the desired equivalence is obtained.
 \end{proof}
 
 
 \begin{lemma}
 \label{Lemma:gNondecreasing}
 Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function such that
-$$ \lim_{z\to\infty} K(z) = 0 $$
-and $ K(\sqrt{z}) $ is convex. Then, given any $c_1,c_2>0$ the function
+$$ \lim_{z\to+\infty} K(z) = 0 $$
+and $ K(\sqrt{z}) $ is convex/strictly convex in $(0,+\infty)$. Then, given any $c_1,c_2>0$ the
+function
 $$
 g(z) := K(c_1 \sqrt{1 + c_2 z}) +  K(c_1 \sqrt{1 - c_2 z})
 $$
-is nondecreasing $(0, 1/c_2)$.
+is nondecreasing/increasing in $(0, 1/c_2)$.
 \end{lemma}
 
 \begin{proof}
-First of all, we can note that from the hypothesis of $K$ we can deduce that $K(\sqrt{z})$, and also $K(c_1\sqrt{z})$, is convex and nonincreaing.
+First, note that from the hypothesis of $K$ we can deduce that $K(\sqrt{z})$, and also
+$K(c_1\sqrt{z})$, is convex and nonincreasing.
 
 Now, given $x\geq y$, we have
 \begin{align*}
 g(x)-g(y) &= K(c_1\sqrt{1+c_2 x}) + K(c_1\sqrt{1-c_2 x}) \\
 &\ \ \ \ - K(c_1\sqrt{1+c_2 y}) -K(c_1\sqrt{1-c_2 y}) \geq 0,
 \end{align*}
-where the inequality follows from applying Corollary~\ref{Cor:hDecreasingConvex} with $h(z) = K(c_1\sqrt{z})$, $a=1+c_2x$, $b=1+c_2y$, $c=1-c_2y$ and $d=1-c_2x$.
+where we have applied Corollary~\ref{Cor:hDecreasingConvex} with $h(z) = K(c_1\sqrt{z})$,
+$a=1+c_2x$, $b=1+c_2y$, $c=1-c_2y$ and $d=1-c_2x$.
 \end{proof}
+
+\begin{remark}
+If we assume that $K$ is nonincreasing and concave, then we can prove in a similar way that $g$ is
+nondecreasing.
+\end{remark}
 
 
 \begin{proposition}
@@ -238,11 +270,15 @@ Then, the following statements are equivalent:
 \end{proposition}
 
 \begin{proof}
-$i)\, \Rightarrow \,ii)$
-By Lemma~\ref{Lemma:gNondecreasing} and Corollary~\ref{Cor:gConvex<->K(sqrt)convex}, $g$ is nondecreasing and strictly convex. Therefore, point $ii)$ follows from Lemma~\ref{Lemma:InequalitConvexFunctions}.
+$i)\, \Rightarrow \,ii)$ By Lemma~\ref{Lemma:gNondecreasing} and
+Corollary~\ref{Cor:gConvex<->K(sqrt)convex}, $g$ is nondecreasing and strictly convex in
+$(-1/c_2,1/c_2)$ for all $c_1>0$. Therefore, point $ii)$ follows from
+Lemma~\ref{Lemma:InequalitConvexFunctions}.
 
-$ii)\, \Rightarrow \,i)$
-By Lemma~\ref{Lemma:InequalitConvexFunctions} and in view of Remark~\ref{Remark:LeftImplicationDoNotRequireNondecreasing}, $g$ is strictly convex. Hence, using Lemma~\ref{Cor:gConvex<->K(sqrt)convex} we deduce that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
+$ii)\, \Rightarrow \,i)$ By Lemma~\ref{Lemma:InequalitConvexFunctions} and in view of
+Remark~\ref{Remark:LeftImplicationDoNotRequireNondecreasing}, $g$ is strictly convex in
+$(-1/c_2,1/c_2)$ for all $c_1>0$. Hence, using Lemma~\ref{Cor:gConvex<->K(sqrt)convex} we deduce
+that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 \end{proof}
 
 
@@ -252,8 +288,8 @@ By Lemma~\ref{Lemma:InequalitConvexFunctions} and in view of Remark~\ref{Remark:
 
 
 \begin{lemma}
-\label{Lemma:ComputationABCD}
-Let $\alpha$, $\beta$ two real numbers satisfying $\alpha \geq |\beta|$. Let $x=(x',x'')$, $y=(y',y'')\in \ocal \subset \R^{2m}$. Define
+\label{Lemma:ComputationABCD} Let $\alpha$, $\beta$ two real numbers satisfying $\alpha \geq
+|\beta|$. Let $x=(x',x'')$, $y=(y',y'')\in \ocal \subset \R^{2m}$. Define
 $$
 \begin{array}{cc}
 	A = |x'||y'|  \alpha + |x''||y''|\beta \,, &
@@ -292,7 +328,7 @@ These inequalities will be used in all the proof.
 
 We start with the first point. First,  we show that $A\geq 0$ and that
 $$
-A \geq |B|, \ A \geq C ,\ |A| \geq D\,.
+A \geq |B|, \ A \geq |C| ,\ A \geq |D|\,.
 $$
 
 
@@ -321,7 +357,9 @@ It remains to show
 $$
 A + |D| \geq |B| + |C|\,.
 $$
-The proof of it is just a computation considering all the eight possible configurations of the signs of $B$, $C$ and $D$. Since the roles of $B$ and $C$ are completely interchangeable, we may assume that $B \geq C$ and we only need to check six cases. To do it, note first that
+The proof of it is just a computation considering all the eight possible configurations of the
+signs of $B$, $C$ and $D$. Since the roles of $B$ and $C$ are completely interchangeable, we may
+assume that $B \geq C$ and we only need to check six cases. To do it, note first that
 \begin{equation}
 \label{Eq:LemmaABCDProof1}
 A + D - B - C = (|x'|-|x''|)(|y'|-|y''|)(\alpha + \beta) \geq 0 \,,
@@ -339,38 +377,41 @@ With these three relations at hand we check the six cases.
 
 - If $B \geq 0$, $C \geq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof1} we have
 $$
-A + |D| - |B| - |C| = A + D - B - C = \geq 0\,.
+A + |D| - |B| - |C| = A + D - B - C \geq 0\,.
 $$
 
-- If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof1} to see that
+- If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof1} to
+see that
 $$
 A + |D| - |B| - |C| = A - D - B - C =  A + D - B - C -2D \geq 0\,.
 $$
 
-- If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use that $D\geq 0$ and \eqref{Eq:LemmaABCDProof2} to see that
+- If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use that $D\geq 0$ and \eqref{Eq:LemmaABCDProof2} to
+see that
 $$
 A + |D| - |B| - |C| = A + D - B + C =  A - D - B + C +2D \geq 0\,.
 $$
 
 - If $B \geq 0$, $C \leq 0$ and $D \leq 0$, then by \eqref{Eq:LemmaABCDProof2} we have
 $$
-A + |D| - |B| - |C| = A - D - B + C = \geq 0\,.
+A + |D| - |B| - |C| = A - D - B + C \geq 0\,.
 $$
 
 - If $B \leq 0$, $C \leq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof3} we have
 $$
-A + |D| - |B| - |C| = A + D + B + C = \geq 0\,.
+A + |D| - |B| - |C| = A + D + B + C \geq 0\,.
 $$
 
-- If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof3} to see that
+- If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof3} to
+see that
 $$
 A + |D| - |B| - |C| = A - D + B + C =  A + D + B + C -2D \geq 0\,.
 $$
 
 This concludes the proof of the first statement.
 
-We prove now the second point of the lemma. Since the roles of $B$ and $C$ are completely interchangeable, we only need to show the result in the case
-$|A| = |B|$ and $|C| = |D|$.
+We prove now the second point of the lemma. Since the roles of $B$ and $C$ are completely
+interchangeable, we only need to show the result in the case $|A| = |B|$ and $|C| = |D|$.
 
 Recall that $A \geq 0$. Hence, since $A = |B|$ and $|C| = |D|$, a simple computation shows that
 $$
@@ -381,7 +422,9 @@ Hence,
 $$
 \alpha = \sign (B) \sign (C) \sign(D) \dfrac{|x''|^2}{|x'|^2} \alpha
 $$
-and if we assume $\alpha \neq 0$, then necessarily $|x'| = |x''|$, but this is a contradiction with $x\in \ocal$. Therefore, $\alpha = 0$ and thus $\beta = 0$. Therefore, $\alpha = 0$ and thus $\beta = 0$.
+and if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \sign(D)=1$ and $|x'| =
+|x''|$, but this is a contradiction with $x\in \ocal$. Therefore, $\alpha = 0$ and thus $\beta =
+0$.
 \end{proof}
 
 
@@ -403,11 +446,16 @@ and if we assume $\alpha \neq 0$, then necessarily $|x'| = |x''|$, but this is a
 \subsection{The nonlocal Allen-Cahn equation in the $(s,t)$ variables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The goal of this subsection is to write equation \eqref{Eq:NonlocalAllenCahn} in the $(s,t)$ variables. For this, we must find a new kernel in these variables.
+The goal of this subsection is to write equation \eqref{Eq:NonlocalAllenCahn} in the $(s,t)$
+variables. For this, we must find a new kernel in these variables.
 
 \begin{lemma}
-\label{Lemma:OperatorInSTVariables}
-Let $m \geq 1$, $\s\in(0,1)$ and let $u\in C_{\loc}^\alpha(\R^{2m})$ with $\alpha > 2\s$ be a function depending only on the variables $s$ and $t$. Let $L$ be an operator of the form \eqref{Eq:DefOfLu} with a kernel $K\geq 0$ satisfying $K(y) = K(|y|)$. Then, for any $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ ($x_s$, $x_t = \pm 1$ in the case $m=1$),  $Lu(x)$ can be written in the following way:\todo{Is singular in $s=0$ or $t=0$??}
+\label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$ and let $u\in
+C_{\loc}^\alpha(\R^{2m})$ with $\alpha > 2\s$ be a function depending only on the variables $s$ and
+$t$. Let $L$ be an operator of the form \eqref{Eq:DefOfLu} with a kernel $K\geq 0$ satisfying $K(y)
+= K(|y|)$. Then, for any $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ ($x_s$, $x_t = \pm
+1$ in the case $m=1$),  $Lu(x)$ can be written in the following way:\todo{Is singular in $s=0$ or
+$t=0$??}
 \begin{equation}
 \label{Eq:OperatorInSTVariables}
 Lu(x) = \widetilde{L} u (s,t) := \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)  \d \sigma\d \tau\,,
@@ -443,7 +491,9 @@ where:
 
 
 \begin{proof}
-We start with the case $m=1$. In this case, we will use explicitly that since $u$ is a function of $s$ and $t$, then $u$ is even with respect to the coordinate axis. Using this symmetry and the change $y = -\tilde{y}$, we have
+We start with the case $m=1$. In this case, we will use explicitly that since $u$ is a function of
+$s$ and $t$, then $u$ is even with respect to the coordinate axis. Using this symmetry and the
+change $y = -\tilde{y}$, we have
 $$
 Lu(x) = \int_{\{y_2 > - y_1\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
 $$
@@ -455,7 +505,9 @@ then
 $$
 Lu(x) = I(\{y_2 > |y_1|\},x) + I(\{y_1 > |y_2|\},x)\,.
 $$
-We will check that $I(\{y_2 > |y_1|\},x)$ can be written in the form \eqref{Eq:OperatorInSTVariables} (integrated in the set $\tau > \sigma$). The computations for $I(\{y_1 > |y_2|\},x)$ are completely analogous.
+We will check that $I(\{y_2 > |y_1|\},x)$ can be written in the form
+\eqref{Eq:OperatorInSTVariables} (integrated in the set $\tau > \sigma$). The computations for
+$I(\{y_1 > |y_2|\},x)$ are completely analogous.
 
 First, note that the set $\{y_2 > |y_1|\}$ can be written as
 $$
@@ -466,7 +518,8 @@ where $\phi$ is the reflection with respect to the $y_2$-axis. Therefore,
 I(\{y_2 > |y_1|\}, x) & = \int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y  \\
 & \quad \quad + \int_{\phi(\{y_2 > y_1 > 0\})} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
 \end{align*}
-By performing the change $\phi = \phi^{-1}$ in the second integral and using the symmetry of $u$, we end up with
+By performing the change $\phi = \phi^{-1}$ in the second integral and using the symmetry of $u$,
+we end up with
 \begin{align*}
 I(\{y_2 > |y_1|\}, x) &=
 \int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \cdot\\
@@ -481,7 +534,8 @@ $$
 I(\{y_2 > |y_1|\}, x) =
 \int_0^{\infty} \! \! \d \sigma \int_\sigma^{\infty} \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)\,,
 $$
-with $J$ as in \eqref{Eq:KernelInSTVariablesR2}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that $y=(\sigma, \tau)$, and it is not difficult to check that the expression
+with $J$ as in \eqref{Eq:KernelInSTVariablesR2}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that
+$y=(\sigma, \tau)$, and it is not difficult to check that the expression
 $$
 K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|)
 $$
@@ -515,7 +569,11 @@ Now, we make some manipulations to the term
 J(x_s, x_t, s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 }\Big ) \d y_\sigma \d y_\tau \,.
 \end{equation}
 
-First of all, it is easy to see that \eqref{Eq:KernelSTVariablesProof1} does not depend on $x_s$ nor $x_t$. Indeed, consider a different point $(z_s, z_t)$ and let $M_s$ and $M_t$ be two orthogonal transformations such that $M_s(x_s) = z_s$ and $M_t(x_t) = z_t$. Then, making the change of variables $y_\sigma = M_s(\tilde{y}_\sigma)$ and $y_\tau = M_t(\tilde{y}_\tau)$, and using that $M_s( \Sph^{m-1}) = M_t(\Sph^{m-1}) = \Sph^{m-1}$, we find out that
+First of all, it is easy to see that \eqref{Eq:KernelSTVariablesProof1} does not depend on $x_s$
+nor $x_t$. Indeed, consider a different point $(z_s, z_t)$ and let $M_s$ and $M_t$ be two
+orthogonal transformations such that $M_s(x_s) = z_s$ and $M_t(x_t) = z_t$. Then, making the change
+of variables $y_\sigma = M_s(\tilde{y}_\sigma)$ and $y_\tau = M_t(\tilde{y}_\tau)$, and using that
+$M_s( \Sph^{m-1}) = M_t(\Sph^{m-1}) = \Sph^{m-1}$, we find out that
 \begin{align*}
 & \hspace{-1cm} J(z_s, z_t, s,t,\sigma, \tau) = \\
 &= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|s M_s(x_s) - \sigma y_\sigma|^2 + |t M_t(x_t) - \tau y_\tau|^2 }\Big) \d y_\sigma \d y_\tau \\
@@ -525,7 +583,8 @@ First of all, it is easy to see that \eqref{Eq:KernelSTVariablesProof1} does not
 &= J(x_s, x_t, s,t,\sigma, \tau) \,.
 \end{align*}
 
-Therefore, we can replace $x_s$ and $x_t$ in \eqref{Eq:KernelSTVariablesProof1} by $e =(1,0,\ldots, 0) \in \Sph^{m-1}$. Thus, we have
+Therefore, we can replace $x_s$ and $x_t$ in \eqref{Eq:KernelSTVariablesProof1} by $e =(1,0,\ldots,
+0) \in \Sph^{m-1}$. Thus, we have
 \begin{equation}
 \label{Eq:KernelSTVariablesProof2}
 J(s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{|s e - \sigma y_\sigma|^2 + |t e - \tau y_\tau|^2 }\Big) \d y_\sigma \d y_\tau \,.
@@ -536,7 +595,8 @@ For an easier notation, we rename $\omega = y_\sigma$ and $\tilde\omega = y_\tau
 &= s^2 +\sigma^2 - 2 s \sigma e \cdot \omega + t^2 + \tau^2 - 2 t \tau e\cdot \tilde\omega \\
 &= s^2 +\sigma^2 - 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1\,.
 \end{align*}
-This gives \eqref{Eq:KernelSTVariables1}. Finally, we use polar coordinates in $\Sph^{m-1}$ to obtain \eqref{Eq:KernelSTVariables2}.
+This gives \eqref{Eq:KernelSTVariables1}. Finally, we use polar coordinates in $\Sph^{m-1}$ to
+obtain \eqref{Eq:KernelSTVariables2}.
 \end{proof}
 
 
@@ -548,11 +608,14 @@ This gives \eqref{Eq:KernelSTVariables1}. Finally, we use polar coordinates in $
 \todo[inline]{Falta poner el weak max principle en estas variables}
 
 
-Finally, in this subsection we show a strong maximum principle for functions that are odd with respect to the Simons cone $\ccal$. To do this, we need to show first the following inequality for the kernel in the $(s,t)$ variables.
+Finally, in this subsection we show a strong maximum principle for functions that are odd with
+respect to the Simons cone $\ccal$. To do this, we need to show first the following inequality for
+the kernel in the $(s,t)$ variables.
 
 \begin{lemma}
-\label{Lemma:KernelInequalityCone}
-Let $m\geq 2$ and let $J$ the kernel defined in \eqref{Eq:KernelSTVariables2}. Then, if $s>t>0$ and $\sigma > \tau>0$\todo{Check if we can put $t=0$ or $\tau = 0$}, we have \todo{Kernel strictly decreasing???}
+\label{Lemma:KernelInequalityCone} Let $m\geq 2$ and let $J$ the kernel defined in
+\eqref{Eq:KernelSTVariables2}. Then, if $s>t>0$ and $\sigma > \tau>0$\todo{Check if we can put
+$t=0$ or $\tau = 0$}, we have \todo{Kernel strictly decreasing???}
 \begin{equation}
 \label{Eq:KernelInequalityCone}
 J(s,t,\sigma, \tau) \geq J(s,t,\tau, \sigma)\,.
@@ -560,15 +623,16 @@ J(s,t,\sigma, \tau) \geq J(s,t,\tau, \sigma)\,.
 \end{lemma}
 
 \begin{proof}
-We will just consider some simplifications of \eqref{Eq:KernelInequalityCone}. Eventually, we will use Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce the desired inequality.
+We will just consider some simplifications of \eqref{Eq:KernelInequalityCone}. Eventually, we will
+use Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce the desired inequality.
 
 First of all, note that it is enough to show that
 \begin{equation}
 \label{Eq:KernelInequalitySimplified1}
 \int_{-1}^1  \int_{-1}^1  (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}}  \left \{\tilde{K}\Big(\sqrt{1 -2 s \sigma \alpha -2 t \tau \beta}\Big) - \tilde{K}\Big(\sqrt{1 -2 s \tau \alpha -2 t \sigma \beta}\Big)  \right \}\d \alpha \d \beta \geq 0\,,
 \end{equation}
-Where $\tilde{K}(z) = K((s^2 + t^2 + \sigma^2 + \tau^2)z)$.
-To see that this is equivalent to \eqref{Eq:KernelInequalityCone}, we just normalize the variables in the following way:
+Where $\tilde{K}(z) = K((s^2 + t^2 + \sigma^2 + \tau^2)z)$. To see that this is equivalent to
+\eqref{Eq:KernelInequalityCone}, we just normalize the variables in the following way:
 $$
 \tilde{s} = \dfrac{s}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,, \quad \tilde{t} = \dfrac{t}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,,
 $$
@@ -586,7 +650,8 @@ with $\varepsilon$, $\delta > 0$. Then, \eqref{Eq:KernelInequalitySimplified1} i
 \int_{-1}^1  \int_{-1}^1  (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}}  \left \{\tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) - \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big)  \right \}\d \alpha \d \beta \geq 0\,.
 \end{equation}
 
-Now, we make some changes of variables to reduce the domain of integration. First, we divide $(-1,1)^2 \setminus \{|\alpha| = |\beta|\}$ into four sectors:
+Now, we make some changes of variables to reduce the domain of integration. First, we divide
+$(-1,1)^2 \setminus \{|\alpha| = |\beta|\}$ into four sectors:
 $$
 Q_1 = \{\alpha > |\beta| \}\,, \quad Q_2 = \{\beta > |\alpha| \}\,, \quad Q_3 = \{\alpha < -|\beta|\}\,, \quad \textrm{ and } \quad Q_4 = \{ \beta < -|\alpha|\}\,.
 $$
@@ -659,34 +724,57 @@ C = (1+\delta)\alpha + (1+\varepsilon) \beta\,, &
 D = \alpha + (1+\varepsilon)(1+\delta) \beta\,.
 \end{array}
 $$
-Note that, since $\tilde{K}$ and $\sqrt{1 - z}$ are nonincreasing, $g$ is nondecreasing $[0,1)$. Moreover, since $\tilde{K}$ is convex and nonincreasing and $\sqrt{1 - z}$ is concave, $g$ is convex in $[0,1)$. But since $A$, $B$, $C$ and $D$ $\in (-1, 1)$ ---by the normalizations we have made--- and $g$ is even, we cannot apply directly Lemma~\ref{Lemma:InequalitConvexFunctions} ($g$ is nonincreasing in $(-1,0]$). Instead, if we do it for  $|A|$, $|B|$, $|C|$ and $|D|$, then we can use the lemma in $[0,1)$. Hence, we should check that
+Note that, since $\tilde{K}$ and $\sqrt{1 - z}$ are nonincreasing, $g$ is nondecreasing $[0,1)$.
+Moreover, since $\tilde{K}$ is convex and nonincreasing and $\sqrt{1 - z}$ is concave, $g$ is
+convex in $[0,1)$. But since $A$, $B$, $C$ and $D$ $\in (-1, 1)$ ---by the normalizations we have
+made--- and $g$ is even, we cannot apply directly Lemma~\ref{Lemma:InequalitConvexFunctions} ($g$
+is nonincreasing in $(-1,0]$). Instead, if we do it for  $|A|$, $|B|$, $|C|$ and $|D|$, then we can
+use the lemma in $[0,1)$. Hence, we should check that
 $$
 \begin{cases}
 |A| \geq |B|,\ |C|, \ |D|\,, \\
 |A| + |D| \geq |B| + |C|\,.
 \end{cases}
 $$
-The verification of these inequalities is a simple but tedious computation and it is presented in the appendix (see Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, we use Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce
+The verification of these inequalities is a simple but tedious computation and it is presented in
+the appendix (see Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, we use
+Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce
 $$
 g(|A|) + g(|D|) \geq g(|B|) + g(|C|)\,,
 $$
-which is equivalent to \eqref{Eq:KernelInequalityLastSimplification} since $g$ is even. This concludes the proof of \eqref{Eq:KernelInequalityCone}.
+which is equivalent to \eqref{Eq:KernelInequalityLastSimplification} since $g$ is even. This
+concludes the proof of \eqref{Eq:KernelInequalityCone}.
 
 
 
-Finally, to justify that the inequality in \eqref{Eq:KernelInequalityCone} is strict up to a set of measure zero, we consider the points where $J(s,t,\sigma, \tau) = J(s,t,\tau,\sigma)$. Following the previous arguments, this is equivalent to say that we have an equality in \eqref{Eq:KernelInequalitySimplified2}, and since the integrand of that equality is nonnegative, it is equivalent to say that we have an equality in \eqref{Eq:KernelInequalityLastSimplification} up to a set of measure zero. Then, we take into account the following: since the function $\sqrt{1-z}$ is increasing and strictly convex and the kernel $K$ is decreasing, then $g''>0$ in $(0,1)$. Therefore, in view of Remark~\eqref{Remark:StrictInequalitConvexFunctions}, the equality $g(A) + g(D) = g(B) + g(C)$ is only possible in the case $A=B=C=D$, and it is easy to verify that this cannot happen unless $A=B=C=D=0$\todo{Check again}. This is equivalent to $s=t$ and $\sigma=\tau$, something that is impossible in $\ocal$.
+Finally, to justify that the inequality in \eqref{Eq:KernelInequalityCone} is strict up to a set of
+measure zero, we consider the points where $J(s,t,\sigma, \tau) = J(s,t,\tau,\sigma)$. Following
+the previous arguments, this is equivalent to say that we have an equality in
+\eqref{Eq:KernelInequalitySimplified2}, and since the integrand of that equality is nonnegative, it
+is equivalent to say that we have an equality in \eqref{Eq:KernelInequalityLastSimplification} up
+to a set of measure zero. Then, we take into account the following: since the function $\sqrt{1-z}$
+is increasing and strictly convex and the kernel $K$ is decreasing, then $g''>0$ in $(0,1)$.
+Therefore, in view of Remark~\eqref{Remark:StrictInequalitConvexFunctions}, the equality $g(A) +
+g(D) = g(B) + g(C)$ is only possible in the case $A=B=C=D$, and it is easy to verify that this
+cannot happen unless $A=B=C=D=0$\todo{Check again}. This is equivalent to $s=t$ and $\sigma=\tau$,
+something that is impossible in $\ocal$.
 
 %, under these conditions, $\varepsilon = \delta = (\sqrt{5} - 1)/2$. If we fix such values of $\varepsilon$ and $\delta$ we have a set of measure zero, $ \{2 \tilde{s} = (1 + \sqrt{5}) \tilde{t} \} \cap \{2 \tilde{\sigma} = (1 + \sqrt{5}) \tilde{\tau} \}$, in the space of the normalized parameters $\tilde{s}$, $\tilde{t}$, $\tilde{\sigma}$, $\tilde{\tau}$, as well as in the space of original ones.
 \end{proof}
 
 
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:StrongMaximumPrincipleForOddFunctions}
-Let $u\in C^{2s}(\R^{2m})$ \todo{write well the space} and assume that $u = u(s,t)$ and that $u$ is odd with respect to the Simons cone~$\ccal$, i.e., $u(s,t) = - u(t,s)$. Assume that $Lu \geq 0$ in $\ocal$, where $L \in \lcal_0$ such that ...\todo{Hypothesis for the inequality of the kernels}. Then, either $u\equiv 0$ or $u > 0$ in $\ocal$.
+\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $u\in C^{2s}(\R^{2m})$ \todo{write well the
+space} and assume that $u = u(s,t)$ and that $u$ is odd with respect to the Simons cone~$\ccal$,
+i.e., $u(s,t) = - u(t,s)$. Assume that $Lu \geq 0$ in $\ocal$, where $L \in \lcal_0$ such that
+...\todo{Hypothesis for the inequality of the kernels}. Then, either $u\equiv 0$ or $u > 0$ in
+$\ocal$.
 \end{proposition}
 
 \begin{proof}
-Assume that $u \not \equiv 0$. We shall prove that $u > 0$ in $\ocal$. By contradiction, assume that there exists a point $x_0\in \ocal$ with $|x_0|^2 = s_0^2 + t_0^2$ such that $u(s_0, t_0)= 0$. Then, we have
+Assume that $u \not \equiv 0$. We shall prove that $u > 0$ in $\ocal$. By contradiction, assume
+that there exists a point $x_0\in \ocal$ with $|x_0|^2 = s_0^2 + t_0^2$ such that $u(s_0, t_0)= 0$.
+Then, we have
 \begin{align*}
 0 &\leq Lu(x_0) = \widetilde{L} u (s_0,t_0) \\
 &= - \int_0^{+\infty} \!\! \d \sigma \int_0^{+\infty} \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} u(\sigma, \tau) J(s_0,t_0,\sigma, \tau)   \\
@@ -699,7 +787,8 @@ Now, we compute the second term. By changing the order of integration and perfor
 & =  \int_0^{+\infty}  \!\! \d \sigma \int_0^{\sigma}  \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} u(\tau, \sigma) J(s_0,t_0,\tau, \sigma)   \\
 & =  - \int_0^{+\infty}  \!\! \d \sigma \int_0^{\sigma}  \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} u( \sigma, \tau) J(s_0,t_0,\tau, \sigma) \,.  \\
 \end{align*}
-Now, since $u\geq 0$ in $\ocal$ and $u \not \equiv 0$, by Lemma~\ref{Lemma:KernelInequalityCone} we get
+Now, since $u\geq 0$ in $\ocal$ and $u \not \equiv 0$, by Lemma~\ref{Lemma:KernelInequalityCone}we
+get
 $$
 0 \leq Lu(x_0) = \int_0^{+\infty}  \!\! \d \sigma \int_0^{\sigma}  \!\! \d \tau \ \ \sigma^{m-1} \tau^{m-1} u(\sigma, \tau) \big( J(s_0,t_0,\tau, \sigma) - J(s_0,t_0,\sigma, \tau)   \big ) < 0\,,
 $$
@@ -822,7 +911,8 @@ a contradiction.
 	is as big as we want, in particular bigger than $\norm{c_-}_{L^\infty(H)}$. This shows \eqref{Eq:ClaimMaxPNarrowProof} and concludes the proof.
 \end{proof}
 
-Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleInO}.
+Once this maximum principle in narrow domains is available, we can now proceed with the proof of
+Proposition~\ref{Prop:MaximumPrincipleInO}.
 
 
 \begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleInO}]
