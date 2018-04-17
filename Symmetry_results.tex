@@ -28,21 +28,11 @@ This section is devoted to prove the following two symmetry results. The first o
 	Then, $u\equiv 0$ or $u \equiv 1$.
 \end{theorem}
 
-The second one is a symmetry result for equations in a half-space.
+The second one is a symmetry result for equations in a half-space. Here we use the notation $\R^n_+ = \{x_n > 0\}$ and $\R^n_- = \{x_n < 0\}$ .
 
 \begin{theorem}
 	\label{Th:SymmHalfSpace}
 	Let $L$ be an integro-differential operator with kernel $K$ satisfying 99. Let $u$ be a bounded solution to one of these two problems
-	\begin{equation}
-	\leqnomode
-	\tag{P3}
-	\label{Eq:P3}
-	\beqc{\PDEsystem}
-	Lu &=& f(v)   &\textrm{ in } \,\R^n_+,\\
-	v &>& 0   &\textrm{ in } \,\R^n_+,\\
-	v &=& 0   &\textrm{ in } \,\overline{\R^n_-},
-	\eeqc
-	\end{equation}
 	
 	\begin{equation}
 	\leqnomode
@@ -54,6 +44,19 @@ The second one is a symmetry result for equations in a half-space.
 	v(x',x_n) &=& -v(x',-x_n)   &\textrm{ in } \,\R^n.
 	\eeqc
 	\end{equation}
+
+	\begin{equation}
+	\leqnomode
+	\tag{P3}
+	\label{Eq:P3}
+	\beqc{\PDEsystem}
+	Lu &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	v &>& 0   &\textrm{ in } \,\R^n_+,\\
+	v &=& 0   &\textrm{ in } \,\overline{\R^n_-},
+	\eeqc
+	\end{equation}
+	
+
 	
 	\reqnomode
 	
@@ -238,17 +241,7 @@ By contradiction, we will assume $m=0$. Then, there exists a sequence $\{x_k\}$ 
 \end{equation}
 
 
-Since $f(0) = 0 $ and $f'(0)>0$, it is easy to show that $f(t)\geq f'(0)t/2$ if $t$ is small enough. Indeed, since $f(0)=0$,
-\begin{align*}
-f'(0) = \lim_{t\to 0} \frac{f(t)}{t}
-\end{align*}
-and by the definition of limit we get that there exists $t_0>0$ such that
-\begin{align}
-\label{Eq:TaylorSimplification}
-f(t)\geq \frac{f'(0)}{2}t \ \ \textrm{ for all} \ \ 0\leq t\leq t_0.
-\end{align}
-\todo[inline]{Igual esto se puede quitar que es fácil}
-Therefore, with \eqref{Eq:Harnack} and \eqref{Eq:TaylorSimplification}, we deduce that there exists $M(R)\in\N$ such that
+Since $f(0) = 0 $ and $f'(0)>0$, it is easy to show that $f(t)\geq f'(0)t/2$ if $t$ is small enough. Therefore, from this and \eqref{Eq:Harnack}  we deduce that there exists $M(R)\in\N$ such that
 \begin{align}
 \label{Eq:WholeSpace2}
 L u - \frac{f'(0)}{2}u \geq 0 \,\,\textrm{ in }\ B_R(x_{M(R)})\,. 
@@ -260,24 +253,38 @@ $$ \lambda_R^x < \frac{f'(0)}{2} $$
 for all $x\in \R^n$ and $R\geq R_0$. In particular, by choosing $x=x_{M(R_0)}$ there exists $w\in\cp{1}_0(B_{R_0}(x_{M(R_0)}))$ such that $w\not\equiv 0$ and
 \begin{equation}
 \label{Eq:Eigenfunction}
-\int_{\R^n}\int_{\R^n}|\varphi(x)-\varphi(y)|^2\,K(x-y) \d x \d y < \frac{f'(0)}{2}\int_{\R^n}w^2 \d x.
+\int_{\R^n}\int_{\R^n}|w(x)-w(y)|^2\,K(x-y) \d x \d y < \frac{f'(0)}{2}\int_{\R^n}w^2 \d x.
 \end{equation}
 
-If we multiply \eqref{Eq:WholeSpace2} by $w^2/u\geq 0$ and integrate
+If we multiply \eqref{Eq:WholeSpace2} by $w^2/u\geq 0$ and integrate in $\R^n$, we get
 \begin{align*}
 0 &\leq \int_{\R^n} Lu\,\frac{w^2}{u} \d x - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
 &= \int_{\R^n}\int_{\R^n}\left\{ u(x)-u(y) \right\} \left( \frac{w^2(x)}{u(x)}-\frac{w^2(y)}{u(y)} \right) K(x-y) \d x \d y - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
-&\leq \int_{\R^n}\int_{\R^n} \left\{ w(x)-w(y)\right\}^2 K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x ,
+&\leq \int_{\R^n}\int_{\R^n} |w(x)-w(y)|^2 K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x ,
 \end{align*}
-which contradicts \eqref{Eq:Eigenfunction}. Then $\inf_{\R^n} u >0$.\\
+which contradicts \eqref{Eq:Eigenfunction}. Here we have used that the kernel is positive and that
+$$
+\left\{ u(x)-u(y) \right\} \left( \frac{w^2(x)}{u(x)}-\frac{w^2(y)}{u(y)} \right)  \leq |w (x) - w(y)|^2\,.
+$$
+Indeed, developing the squares and the products, this last inequality is equivalent to
+$$
+2 w(x) w(y) \leq \dfrac{u(x)}{u(y)} w^2(y) +  \dfrac{u(y)}{u(x)} \xi^2 (x)\,,
+$$
+which is equivalent to
+$$
+\bpar{w (x)\sqrt{\dfrac{u(y)}{u(x)}} - w(y) \sqrt{\dfrac{u(x)}{u(y)} } }^2 \geq 0\,.
+$$
+
+
+Then $\inf_{\R^n} u >0$.\\
 
 \textbf{Step 2:} We show that $u\equiv 1$.
 
-Now, choose $0<\xi_0<\min\{1,m\}$, which is well define by Step 1, and let $\xi(t)$ be the solution of the ODE
+Now, choose $0<\xi_0<\min\{1,m\}$, which is well defined by Step~1, and let $\xi(t)$ be the solution of the ODE
 $$
 \beqc{\PDEsystem}
 \dot{\xi}(t) &=& f(\xi(t)) & \textrm{ in }(0,\infty)\,,\\
-\xi(0) &=& \xi_0.
+\xi(0) &=& \xi_0\,.
 \eeqc
 $$
 Since $f>0$ in $(0,1)$ and $f(1) = 0$ we have that $\dot{\xi}(t)>0$ for all $t\geq 0$ and $\ds \lim_{t\to 0} \xi(t) = 1$.
@@ -522,135 +529,16 @@ u &=& 0  &\textrm{ in }\overline{\R^n_-} = \{ x_n\leq 0\}\,,\\
 \reqnomode
 
 Assume that there exists $\delta > 0$ such that
-$$ f'(t) \leq 0 \,\, \text{ in } \,\,\, [-1,-1+\delta]\cup[1-\delta,1], $$
+$$ f'(t) \leq 0 \quad \text{ in } \quad [-1,-1+\delta]\cup[1-\delta,1], $$
 for problem \eqref{Eq:P1} and
-$$ f'(t) \leq 0 \,\, \text{ in } \,\,\, [-1,-1+\delta] $$
+$$ f'(t) \leq 0 \quad \text{ in } \quad [1-\delta,1] $$
 for problem \eqref{Eq:P2}.
 
 Then, $u$ only depends on $x_n$ and is increasing in that direction.
 \end{proposition}
 
 \begin{proof}
-The proof follows the ideas, sliding method, of Berestycki, Hamel and Monneau from Theorem~1 in \cite{BerestyckiHamelMonneau} but adapted to a the integro-differential operator $L$.
-
-Let us define $ v^t(x) := v(x+\nu t) $ for any $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and call $w^t(x):=v^t(x)-v(x)$. The aim is to show that $w^t(x)\geq 0$ for all $t\geq 0$.
-
-
-\textbf{Step 1:} We show that $v^t\geq 0$ if $t>0$ is big enough.
-
-Since the limits of $u$ at infinity are uniform, let $A>0$ be such that for all $|x_n|\geq A$ and $x'\in \R^{n-1}$
-\begin{equation}
-\label{Eq:DefinitionA}
-v(x',x_n)\not\in (-1+\delta,1-\delta).
-\end{equation}
-Let $H=\{w^t\geq 0\} = \{v^t(x) \geq v(x)\}$. Therefore, $w^t$ solves
-$$
-\beqc{\PDEsystem}
-L w^t &=& d^t(x) w^t  &\textrm{ in }\R^n\setminus H,\\
-w^t &\geq& 0  &\textrm{ in } H\,,
-\eeqc
-$$
-with 
-\begin{equation}
-\label{Eq:Definition_dt}
-d^t(x) = \frac{f(v^t) - f(v)}{v^t-v} \,.
-\end{equation} 
-
-We claim that $d^t \leq 0$ in $\R^n\setminus H$ for $t$ big enough. If we prove this, Step~1 follows from the maximum principle. To see $d^t \leq 0$, we distinguish between the two different problems, \eqref{Eq:P1} and \eqref{Eq:P2}. In both cases, let $x\not\in H$ (thus $v^t(x) < v(x)$).
-
-\begin{itemize}
-	\item \eqref{Eq:P1}: Take $t\geq 2A/\nu_n$.
-	On the one hand, if $x_n\geq -A$, then $1-\delta \leq v^t(x) < v(x)$ ---here we used that $x\not\in H$ and \eqref{Eq:DefinitionA}. Since $f$ is nonincreasing in $[1-\delta, 1]$, we get $d^t(x) \leq 0$. On the other hand, if $x_n\leq -A$, then $v^t(x) < v(x) \leq -1+\delta$ and the conclusion is the same using that $f$ is nonincreasing in $[-1, -1+\delta]$. 
-	
-	\item \eqref{Eq:P2}: Note that in this case $\R^n\setminus H$ is contained in $\R^n_+$. Take $t\geq A/\nu_n$.  Then, $1-\delta \leq v^t(x) < v(x)$ and, since $f$ is nonincreasing $[1-\delta, 1]$, we get $d^t(x) \leq 0$.	
-\end{itemize}
-
-
-
-\textbf{Step 2:} We show that $w^t\geq 0$ for all $t\geq 0$.
-
-Define $\tau := \inf \{t \ : \ v^t\geq v\}$, and we claim that $\tau=0$. Assume, in order to get a contradiction, that $\tau>0$. Let us define
-$$ 
-m := \inf_{\R^{n-1}\times [-A,A]} (v^\tau - v)\, \quad \text{ or } \quad
-m := \inf_{\R^{n-1}\times [0,A]} (v^\tau - v) \,,
-$$
-in the case of \eqref{Eq:P1} or \eqref{Eq:P2} respectively. We distinguish two cases depending whether $m>0$ or $m=0$.
-\begin{itemize}
-\item Case $m=0$:
-On the one hand, the regularity theory for the operator $L$ yields that $u$ is globally $C^\s$-H\"older continuous. Thus, it is easy to see that there exists $\eta_0$ small such that, for every  $t\in(\tau-\eta_0,\tau)$,
-$$ 
-v^t\geq v \quad \textrm{ in } \quad  \R^{n-1}\times [-A,A] 
-\quad \text{ or } \quad  
-v^t\geq v \quad \textrm{ in } \quad  \R^{n-1}\times [0,A], 
-$$
-in the case of \eqref{Eq:P1} or \eqref{Eq:P2} respectively. Indeed,
-\begin{align*}
-v^t(x)-v(x) &= v(x+t\nu)-v(x)-v(x+\tau\nu)+v(x+\tau\nu) \\
-& \geq v^\tau(x)-u(x) - |v(x+t\nu)-v(x+\tau\nu)| \\
-& \geq m - C|t-\tau|^s \geq 0,
-\end{align*}
-if $0 < |t-\tau|^\s\leq m/C$.
-
-On the other hand, if we define $d^{\tau-\eta}(x)$ as in equation \eqref{Eq:Definition_dt}, we have
-$$ L w^{\tau-\eta} = d^{\tau-\eta} (x) \,w^{\tau-\eta}. $$
-Note that $d^{\tau-\eta}\leq 0$ in the sets
-$$ 
-\hat{H} = \left\{|x_n|\geq A\right\} \cap \left\{v^{\tau-\eta}<v\right\},   \quad  \textrm{ or }  \quad  
-\hat{H} = \{x_n\geq A\} \cap \{v^{\tau-\eta}<v\},
-$$
-in the case of \eqref{Eq:P1} or \eqref{Eq:P2} respectively. This can be seen exactly as in Step~1. Therefore, for $0<\eta \leq \eta_0$ we can apply the maximum principle in $\tilde{H}$ to obtain $u^{\tau-\eta} \geq u$ in $\R^n$, which contradicts the minimality of $\tau$. This yields that $\tau = 0$.
-
-\item Case $m=0$: By definition of $m$, we can take a sequence $x_k= (x_k',x_k^n) \in \R^{n-1}\times[-A,A]$ ---in $\R^{n-1}\times[0,A]$ for problem \eqref{Eq:P2}---, such that
-\begin{equation}
-\label{Eq:Limit}
-v^\tau(x_k) - v(x_k) \rightarrow 0.
-\end{equation}
-Since $x_k^n$ is bounded, we can choose a subsequence that converges to $x_\infty^n \in [-A,A]$ ---in $[0,A]$ for problem \eqref{Eq:P2}.
-Call $v_k(x) = v(x'+x_k',x_k^n)$, which satisfies the same problem as $v$ for each $k$ (both \eqref{Eq:P1} and \eqref{Eq:P2} are invariant under translations in the first $n-1$ coordinates). Therefore, by elliptic estimates\todo{Poner bien}, $u_k$ converges to a function $u_\infty$ which satisfies the same problem as $v$ \todo{EL DE ABAJO NO!}
-$$ L u_\infty = f(u_\infty) \,\,\, \text{ in } \,\,\, \R^n. $$
-Note that since the translations are only in the $n-1$ first variables, $v_k$ and its limit $v_\infty$ also satisfy \eqref{Eq:DefinitionA}. 
-
-Then, if we define $w= v_\infty^\tau - v_\infty$, it solves
-$$
-\beqc{\PDEsystem}
-L w &=& d(x) w  &\textrm{ in }\R^n,\\
-w &\geq& 0  &\textrm{ in }\R^n,\\
-w(0, x_\infty^n ) &=& 0,
-\eeqc
-$$
-with 
-$$ d(x) = \begin{cases}
-\dfrac{f(u_\infty^\tau(x))-f(u_\infty(x))}{u_\infty^\tau(x)-u_\infty(x)} \,\,\, &\text{if } \,\, u_\infty^\tau(x)\not=u_\infty(x)\\
-0 \,\, & \text{otherwise}.
-\end{cases} $$
-
-
-That is, we have that $w\geq 0$ in $\R^n$, since $v^\tau \geq v$. And on the other hand, from \eqref{Eq:Limit} we get
-\begin{align*}
-w(0,x_\infty^n) &= \lim_{k\to\infty} v_k^\tau(0,x_k^n)- v_k(0,x_k^n) \\ 
-&= \lim_{k\to\infty} v^\tau(x_k',x_k^n)- v_k(x_k',x_k^n) \\ 
-&= \lim_{k\to\infty}  v^\tau(x_k)- v_k(x_k) = 0
-\end{align*}
-
-By applying the strong maximum principle we get $w\equiv 0$, which means that $v_\infty(x) = v_\infty(x+\tau\nu)$. But this is a contradiction with the fact that $v_\infty(x',x_n) \geq 1-\delta$ for $x_n>A$, $v_\infty(x',x_n) \leq -1+\delta$ for $x_n<-A$ since $\delta<<1$ and $\tau_n>0$. That is,
-$$ 1-\delta \leq v_\infty(x',A) = v_\infty \left( x' - \left\lceil \frac{2A}{\tau\nu_n} \right\rceil \tau \nu', A - \left\lceil \frac{2A}{\tau\nu_n} \right\rceil \tau \nu_n\right) \leq -1+\delta. $$
-
-\end{itemize}
-
-\textbf{Step 3: }Conclusion.
-
-Once we have shown that $w^t\geq 0$ for all $t>0$, then it is clear that
-\begin{equation}
-\label{Eq:nuDerivative}
-\nabla v(x) \cdot \nu = \frac{\partial v}{\partial \nu} (x) = \lim_{t \to 0}  \dfrac{v(x+t\nu)-v(x)}{t} \geq 0
-\end{equation}
-for any $x\in \R^n$ and any $\nu\in \R^n$ such that $\nu_n>0$.
-By making the limit $\nu_n$ to zero in the previous expression we get
-$$ \nabla v \cdot (\nu',0) \geq 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}. $$
-Choosing now the opposite vector $-\nu'$ we finally get
-$$ \nabla v \cdot (\nu',0) = 0 \,\,\, \text{for all } \,\, \nu'\in\R^{n-1}, $$
-which is equivalent to say that $u$ only depends on $x_n$. Moreover, if we choose $\nu = e_n$, then from \eqref{Eq:nuDerivative} we obtain
-$$ \frac{\partial v}{\partial x_n} \geq 0. $$
+It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual,   to define $ v^t(x) := v(x+\nu t) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$ and the aim is to show that $v^t(x)-v(x)\geq 0$ for all $t\geq 0$. Despite the fact that $L$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle and the translation invariance of the operator. Therefore, we do not include here the details.
 \end{proof}
 
 
@@ -663,62 +551,34 @@ With all these ingredients we can now proce Theorem~\ref{Th:SymmHalfSpace}
 \begin{proof}[Proof of Theorem~\ref{Th:SymmHalfSpace}]
 Note that by Proposition~\ref{Prop:HalfSpaceLimUnif} we only need to prove that 
 $$
-\ds \lim_{x_n\to \infty} u(x',x_n) = 1
+\ds \lim_{x_n\to \infty} v(x',x_n) = 1
 $$
-uniformly. Therefore we divide the proof in two steps, first we prove that the limit exists and is one and then we prove that it is uniform.
-\begin{enumerate}
-\item[Step 1:] Given $x'\in \R^{n-1}$, then  $\ds \lim_{x_n\to \infty} u(x',x_n) = 1$.\\
+uniformly. Therefore we divide the proof in two steps: first, we prove that the limit exists and is $1$, and then we prove that it is uniform.
 
-By Proposition \ref{Prop:MonotonyHalfSpace} we know that $u$ is strictly increasing in the direction $x_n$. Since $u$ is also bounded by hypothesis, we know that that given $x'\in\R^{n-1}$, the one variable function $u(x',\cdot)$ has a limit, that is in fact positive for being $u(x',0) = 0$ and $u_{x_n}>0$. Let us define $\overline{u}(x')$ as this limit.
 
-Let $x_n^k$ be any increasing sequence tending to infinity. Then we define the following sequence of functions
-$$ u_k(x',x_n) = u(x',x_n+x_n^k), $$
-which solves the problem
+\textbf{Step 1:} Given $x'\in \R^{n-1}$, then  $\ds \lim_{x_n\to \infty} v(x',x_n) = 1$.
+
+By Proposition \ref{Prop:MonotonyHalfSpace} we know that $v$ is strictly increasing in the direction $x_n$. Since $v$ is also bounded by hypothesis, we know that, given $x'\in\R^{n-1}$, the one variable function $v(x',\cdot)$ has a limit, that we call $\overline{v}(x')$. Note that, since $v(x',0) = 0$ and $v_{x_n}>0$, we deduce that $\overline{v}(x') > 0$.
+
+Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x',x_n) := v(x',x_n+x_n^k)$. By the regularity theory of the operator $L$ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ that is a solution to
 \begin{equation}
+\label{Eq:ProofSymmHalf-SemilinearEqWholeSpace}
 \beqc{\PDEsystem}
-Lu_k &=& f(u_k)   &\textrm{ in } \,\{x_n>-x_n^k\},\\
-u_k &>& 0   &\textrm{ in } \,\{x_n>-x_n^k\},\\
-u &=& 0 \,\, \text{or odd}  &\textrm{ in } \,\{x_n\leq-x_n^k\},,
+Lv_\infty &=& f(v_\infty)   &\textrm{ in } \,\R^n,\\
+v_\infty &\geq& 0   &\textrm{ in } \,\R^n.
 \eeqc
 \end{equation}
-and are uniformly bounded.
-
-By letting $k\to\infty$ and using compactness \todo{!!!!} we have that $u_k$ converges (up to a subsequence) to a function $u_\infty$ that is solution of
-\begin{equation}
-\beqc{\PDEsystem}
-Lu_\infty &=& f(u_\infty)   &\textrm{ in } \,\R^n,\\
-u_\infty &\geq& 0   &\textrm{ in } \,\R^n.
-\eeqc
-\end{equation}
-By Theorem \ref{Th:SymmetryWholeSpace} it is clear that $u_\infty\equiv 0$ or $u_\infty \equiv 1$. But, by construction
-$$ u_\infty(x',0) = \lim_{k\to \infty} u_k(x',0) = \lim_{k\to \infty} u(x',x_n^k) = \overline{u}(x') > 0, $$
+By Theorem \ref{Th:SymmetryWholeSpace}, either $v_\infty\equiv 0$ or $v_\infty \equiv 1$. But, by construction,
+$$ v_\infty(x',0) = \lim_{k\to \infty} v_k(x',0) = \lim_{k\to \infty} v(x',x_n^k) = \overline{v}(x') > 0, $$
 and therefore the only possibility is
-$$ \lim_{x_n\to \infty} u(x',x_n) = 1 \,\,\,\,\, \text{ for all} \, x'\in\R^{n-1}. $$
+$$ \lim_{x_n\to \infty} v(x',x_n) = 1 \quad \text{ for all } \ x'\in\R^{n-1}. $$
 
-\item[Step 2:] The limit is uniform in $x'$.
+\textbf{Step 2:}The limit is uniform in $x'$.
 
-Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\epsilon>0$ small enough, there exists a sequence of points $(x_k',x_n^k)$ with $x_n^k\to \infty$ such that $u(x_k',x_n^k) = 1-\epsilon$. Then we define the following sequence of functions
-$$ u_k(x',x_n) = u(x'+x_k',x_n+x_n^k), $$
-which solves the problem
-\begin{equation}
-\beqc{\PDEsystem}
-Lu_k &=& f(u_k)   &\textrm{ in } \,\{x_n>-x_n^k\},\\
-u_k &>& 0   &\textrm{ in } \,\{x_n>-x_n^k\},\\
-u &=& 0 \,\, \text{or odd}  &\textrm{ in } \,\{x_n\leq-x_n^k\},,
-\eeqc
-\end{equation}
-and are uniformly bounded.
+Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_k',x_n^k)$ with $x_n^k\to \infty$ such that $v(x_k',x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x',x_n) = v(x'+x_k',x_n+x_n^k)$ converge uniformly on compact sets to a function $\tilde{v}_\infty$ that solves also \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:SymmetryWholeSpace}, it is clear that $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
+$$ \tilde{v}_\infty(0,0) = \lim_{k\to \infty} \tilde{v}_k(0,0) = \lim_{k\to \infty} v(x'_k,x_n^k) = 1-\varepsilon, $$
+which is a contradiction for $\varepsilon>0$ small enough. Thus, the limit is uniform. 
 
-By letting $k\to\infty$ and using compactness \todo{!!!!} we have that $u_k$ converges (up to a subsequence) to a function $u_\infty$ that is solution of
-\begin{equation}
-\beqc{\PDEsystem}
-Lu_\infty &=& f(u_\infty)   &\textrm{ in } \,\R^n,\\
-u_\infty &\geq& 0   &\textrm{ in } \,\R^n.
-\eeqc
-\end{equation}
-By Theorem \ref{Th:SymmetryWholeSpace} it is clear that $u_\infty\equiv 0$ or $u_\infty \equiv 1$. But, by construction
-$$ u_\infty(0,0) = \lim_{k\to \infty} u_k(0,0) = \lim_{k\to \infty} u(x'_k,x_n^k) = 1-\epsilon, $$
-which is a contradiction for $\epsilon>0$ small enough. Thus, the limit is uniform and applying Proposition \ref{Prop:HalfSpaceLimUnif} we get that $u$ depends only on $x_n$ and is increasing in that direction.
-\end{enumerate}
+By applying Proposition~\ref{Prop:HalfSpaceLimUnif}, we get that $v$ depends only on $x_n$ and is increasing in that direction.
 \end{proof}
 
