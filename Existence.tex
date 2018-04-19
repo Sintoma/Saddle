@@ -4,38 +4,33 @@
 \label{Sec:Existence}
 
 
-
-
-
-We can now proceed with the proof of the existence of saddle-shaped solutions.
+In this section we give two different proofs of the existence of saddle-shaped solutions. The first one is based on the direct method of the calculus of variations, and it uses all the results appearing in Section~\ref{Sec:Nonlocal_AllenCahn_Energy}.
 
 \begin{proof}[Proof of Theorem~\ref{Th:Existence}]
-Since $\ecal(w,B_R)$ is bounded below ---by $0$---, we can take a minimizing sequence $v_R^j\in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Note that, by Lemmas~\ref{Lemma:TruncationOfFunctions1DecreaseEnergy} and \ref{Lemma:TruncationOfFunctions2DecreaseEnergy} we can assume that $-1 \leq v_R^j \leq 1$ and that $v_R^j \geq 0$ in $\ocal$ and $v_R^j \leq 0$ in $\ical$. 
+Since $\ecal(w,B_R)$ is bounded below ---by $0$---, we can take a minimizing sequence $u_R^j\in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Note that, by Lemmas~\ref{Lemma:TruncationOfFunctions1DecreaseEnergy} and \ref{Lemma:TruncationOfFunctions2DecreaseEnergy} we can assume that $-1 \leq u_R^j \leq 1$ and that $u_R^j \geq 0$ in $\ocal$ and $u_R^j \leq 0$ in $\ical$. 
 
-Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$ and the fact that $v_R^j$ is a minimizing sequence, we deduce that 
+Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$ and the fact that $u_R^j$ is a minimizing sequence, we deduce that 
 $$
-[v_R^j]_{H^s(B_R)} \leq \dfrac{c_{n,s}}{\lambda}  [v_R^j]_{\H^K(B_R)}\leq \dfrac{2 c_{n,s}}{\lambda}\ecal(v_R^j,B_R) \leq C
+[u_R^j]_{H^s(B_R)} \leq \dfrac{c_{n,s}}{\lambda}  [u_R^j]_{\H^K(B_R)}\leq \dfrac{2 c_{n,s}}{\lambda}\ecal(u_R^j,B_R) \leq C
 $$
-for a constant $C$ that does not depend on $j$. Therefore, $\{v_R^j\}$ is bounded in $H^s(B_R)$ and then, by the compact embedding $H^s(B_R) \subset \subset L^2(B_R)$ (see Theorem~7.1 of \cite{HitchhikerGuide}), there exists a subsequence, still denoted by $v_R^j$,  that converges to some $v_R \in L^2(B_R)$, and thus, a.e. in $B_R$. By Fatou's lemma, we have
+for a constant $C$ that does not depend on $j$. Therefore, $\{u_R^j\}$ is bounded in $H^s(B_R)$ and then, by the compact embedding $H^s(B_R) \subset \subset L^2(B_R)$ (see Theorem~7.1 of \cite{HitchhikerGuide}), there exists a subsequence, still denoted by $u_R^j$,  that converges to some $u_R \in L^2(B_R)$, and thus, a.e. in $B_R$. By Fatou's lemma, we have
 $$
-\ecal(v_R, B_R)
-\leq \liminf_{j\to \infty} \ecal(v_R^j, B_R) = \inf \setcond{\ecal(w, B_R)}{w \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)}.
+\ecal(u_R, B_R)
+\leq \liminf_{j\to \infty} \ecal(u_R^j, B_R) = \inf \setcond{\ecal(w, B_R)}{w \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)}.
 $$
-Therefore, $v_R \in \widetilde{\H}^K_0(B_R)$ is a minimizer of $\ecal(\cdot, B_R)$ in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Moreover, it satisfies $-1\leq v_R \leq 1$ in $B_R$, $v_R\geq 0$ in $\ocal$, $v_R(x) = - v_R(Sx)$ for every $x\in \R^{2m}$ and $v_R \equiv 0 $ in $\R^{2m} \setminus B_R$.
+Therefore, $u_R \in \widetilde{\H}^K_0(B_R)$ is a minimizer of $\ecal(\cdot, B_R)$ in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Moreover, it satisfies $-1\leq u_R \leq 1$ in $B_R$, $u_R\geq 0$ in $\ocal$, $u_R(x) = - u_R(x^\star)$ for every $x\in \R^{2m}$ and $u_R \equiv 0 $ in $\R^{2m} \setminus B_R$.
 
-Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, we deduce that $v_R$ is a classical solution of
+Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, we deduce that $u_R$ is a classical solution of
 \begin{equation}
 \label{Eq:ProofExistenceProblemBR}
 	\beqc{\PDEsystem}
-	L v_R &=& f(v_R) & \textrm{ in } B_R\,,\\
-	v_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
+	L u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
+	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
 	\eeqc
 \end{equation}
 
 
-The next step is to make $R\to \infty$.
-
-\todo[inline]{compactness argument}
+The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. Let $S>0$ and $T =4\lceil 1/\s\rceil$ and consider the family $\{u_R\}$, for $R> S + T$, of solutions in $B_{S+T}$. By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} in balls of radius $1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2,\alpha}(\overline{B_S})$ bound for $u_R$. By the Arzela-Ascoli theorem, a subsequence of $\{u_R\}$ converges in $C^2(\overline{B_S})$ to a solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging in $C^2_{\loc}(\R^{2m})$ to a solution $u \in C^2(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
 
 Therefore, we have $u$ a solution of $Lu = f(u)$ in $\R^{2m}$ which is doubly radial. Furthermore, $u$ is odd with respect to the Simons cone $\ccal$, i.e., $u(x) = -u(x^\star)$ for $x\in \R^{2m}$, and $0 \leq u\leq 1$ in $\ocal$.
 
@@ -46,14 +41,7 @@ C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
 C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 \end{cases} $$
-for every $0 < S < R-2$ and with a constant $C$ independent of $R$ and $S$. By letting $R \to \infty$ in the estimate we get
-$$
-\ecal (u,B_S) \leq \begin{cases}
-C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
-C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
-\end{cases} $$
-for every $S > 0$. and with a constant $C$ independent of $S$. By contradiction, assume $u\equiv 0$. Then, the previous estimate leads to
+for every $0 < S < R-2$ and with a constant $C$ independent of $R$ and $S$. By letting $R \to \infty$ we obtain the same estimate for $u$. By contradiction, assume $u\equiv 0$. Then, the previous estimate leads to
 $$
 c_m G(0)S^{2m} = \ecal(0, B_S) \leq \begin{cases}
 C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
@@ -63,9 +51,7 @@ C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 and this is a contradiction for $S$ large enough. Therefore, since $u \not \equiv 0$, the strong maximum principle for odd functions (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) yields that $u>0$ in $\ocal$. 
 \end{proof}
 
-\subsection{Alternative proof of Theorem~\ref{Th:Existence}}
-
-First, we present a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons Cone $\ccal$.
+We now give an alternative proof of Theorem~\ref{Th:Existence}, based only on the maximum principle and the existence of a positive subsolution. To do this correctly, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons Cone $\ccal$.
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
@@ -130,17 +116,24 @@ First, we present a version of the monotone iteration procedure for doubly radia
 	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by a compactness argument we see that, up to a subsequence, $u_k$ converges in $C^2$ to the desired solution.
 \end{proof}
 
-We also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L$.
+In order to construct a positive supersolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L$, which are presented next.
 
 \begin{lemma}
 \label{Lemma:FirstOddEigenfunction}
-Let $\Omega$ be a bounded subset of $\R^{2m}$ that is of double revolution and let $L\in \lcal_0$. Then, there exists an eigenvalue $\lambda_{1, \, \mathrm{odd}}(\Omega, L) > 0$ such that
-\begin{enumerate}
-\item The eigenvalue $\lambda_{1, \, \mathrm{odd}}(\Omega, L)$ is characterized by
+Let $\Omega$ be a bounded subset of $\R^{2m}$ that is of double revolution and let $L\in \lcal_0$. Define 
 \begin{equation}
 \label{Eq:DefLambda1}
 \lambda_{1, \, \mathrm{odd}}(\Omega, L) = \min_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_\Omega w(x)^2 \d x}\,.
 \end{equation}
+
+Then, such minimum is attained\todo{VOY POR AQUI}
+
+
+
+Then, there exists an eigenvalue $\lambda_{1, \, \mathrm{odd}}(\Omega, L) > 0$ such that
+\begin{enumerate}
+\item The eigenvalue $\lambda_{1, \, \mathrm{odd}}(\Omega, L)$ is characterized by
+
 \item There exists an eigenfunction $\phi_1\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)$, attaining the minimum in \eqref{Eq:DefLambda1} and such that
 $$
 \beqc{\PDEsystem}
