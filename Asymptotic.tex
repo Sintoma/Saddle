@@ -63,14 +63,15 @@ Note that if $L$ is the fractional Laplacian in dimension $n$, then $\tilde{L}$ 
 
 \begin{theorem}
 \label{Thm:AsymptoticBehaviourSaddleSolution}
-Let $f\in \cp{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle- shaped solution of
+Let $f\in \cp{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution of
 $$
 Lu = f(u) \ \textrm{in } \R,
 $$
-with kernel $K$ satisfying \todo{write conditions}.
+with $L\in \lcal_\star$.
+
 Then,
 $$
-\norm{u-\mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)}+\norm{\nabla u-\nabla \mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)}+\norm{D^2u-D^2\mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)} \xrightarrow{\text{as } R\to \infty}{} 0,
+\norm{u-\mathcal{U}}_{L^\infty(\R^n\setminus B_R)}+\norm{\nabla u-\nabla \mathcal{U}}_{L^\infty(\R^n\setminus B_R)}+\norm{D^2u-D^2\mathcal{U}}_{L^\infty(\R^n\setminus B_R)} \xrightarrow{\text{as } R\to \infty}{} 0,
 $$
 where
 $$
@@ -106,7 +107,7 @@ w &\geq& 0 & \textrm{ in } \R^n\,.
 \eeqc
 $$
 
-By Theorem \ref{Thm:SymmetryWholeSpace}, $w\equiv 0$ or $w\equiv 1$. First, $w$ cannot be zero. Indeed, since $w_k$ are stable in $B_k$, $w$ is stable in $\R^n$, which means that the linear operator $L-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, the linear operator $L-f'(w) = L-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L$ is of order $R^{-2s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
+By Theorem~\ref{Thm:SymmetryWholeSpace}, $w\equiv 0$ or $w\equiv 1$. First, $w$ cannot be zero. Indeed, since $w_k$ are stable in $B_k$, $w$ is stable in $\R^n$, which means that the linear operator $L-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, the linear operator $L-f'(w) = L-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L$ is of order $R^{-2\s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
 
 On the other hand, since $d_k\rightarrow \infty$  and $\mathcal{U}(x_k) = u_0(z_k) = u_0(d_k)$ we get by the properties of the layer solution \todo{ver bien} that $\mathcal{U}(x_k) \rightarrow 1$, $\nabla \mathcal{U}(x_k) \rightarrow 0$ and $D^2\mathcal{U}(x_k) \rightarrow 0$. From this and condition \eqref{Eq: ContradictionAsymptotic} we get
 $$

@@ -10,7 +10,7 @@ This section is devoted to prove the following two symmetry results. Both result
 
 \begin{theorem}
 	\label{Th:SymmetryWholeSpace}
-	Let $L$ be an integro-differential operator with kernel $K$ satisfying 99. Let $u$ be a bounded solution to
+	Let $L\in \lcal_0$ and let $v$ be a bounded solution to
 	\begin{equation}
 	\label{Eq:PositiveWholeSpace}
 	\beqc{\PDEsystem}
@@ -32,7 +32,7 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 
 \begin{theorem}
 	\label{Th:SymmHalfSpace}
-	Let $L$ be an integro-differential operator with kernel $K$ satisfying 99. Let $u$ be a bounded solution to one of these two problems
+	Let $L\in \lcal_0$ and let $v$ be a bounded solution to one of these two problems
 	
 	\begin{equation}
 	\leqnomode
@@ -85,7 +85,9 @@ The result in the case of problem \eqref{Eq:P2} will not be used in this paper. 
 
 \begin{theorem}
 \label{Th:ParabolicmaxPrpBdd}
-Assume that $v \in C^{2\s+\epsilon}(B_R\times(0,T])$ is bounded above and satisfies
+Let  $v \in C^{2\s+\epsilon}(B_R\times(0,T])$ be bounded by above and let $L$ be an integro-differential operator of the form \eqref{Eq:DefOfLu} 
+
+Assume that $v$ satisfies
 \begin{equation*}
 \beqc{\PDEsystem}
 \partial_t v + L v &\leq& 0 & \textrm{ in }B_R\times(0,T]\,,\\
@@ -102,7 +104,7 @@ By contradiction, assume that $v$ attains a positive absolute maximum at a point
 
 \begin{lemma}
 \label{Lemma:NoBddSolL=1}
-There is no bounded solution of $$Lv=1 \,\,\, \text{ in } \,\,\, \R^n.$$
+There is no bounded solution to $Lv=1$ in $\R^n$ for any $L\in \lcal_0$.
 \end{lemma}
 
 \begin{proof}
@@ -118,7 +120,7 @@ By the Liouville Theorem for the operator $L$ (it is proved exactly as in \cite{
 
 \begin{lemma}
 \label{Lemma:SolBall}
-Let $L$ be an integro-differential operator with kernel $K$ satisfying 99-99 and let $R>0$ be given. Then, there exists $\phi_R$ a solution of
+Let $L\in \lcal_0$ and let $R>0$ be given. Then, there exists $\phi_R$ a solution of
 \begin{equation*}
 \beqc{\PDEsystem}
 L \phi_R &=& 1 & \textrm{ in } B_R\,,\\
@@ -148,7 +150,7 @@ Therefore, applying Lemma \ref{Lemma:CompactnessLemma} we deduce that $\varphi_R
 
 \begin{lemma}
 \label{Lemma:SolBallToZero}
-Let $M_R$ be as in the previous lemma. Then, there exists a function $\psi_R\geq 0$ solution of
+Let $M_R$ be as in the previous lemma. Then, there exists a function $\psi_R\geq 0$ solution to
 \begin{equation*}
 \beqc{\PDEsystem}
 L \psi_R &=& -1/M_R & \textrm{ in } B_R\,,\\
@@ -165,7 +167,7 @@ We define $ \psi_R := 1-\phi_R/M_R = 1-\varphi_R$, where $\phi_R$ and $\varphi_R
 
 \begin{theorem}
 \label{Th:ParaMaxPrp}
-Assume $v$ is a bounded function such that
+Let $L\in \lcal_0$ and let $v$ be a bounded function such that
 \begin{equation*}
 \beqc{\PDEsystem}
 \partial_t v + L v + c\,v &\leq& 0 & \textrm{ in }\R^n\times(0,+\infty)\,,\\
@@ -355,7 +357,7 @@ As a consequence of this result, one can deduce easily a maximum principle in ``
 	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
 	\eeqc
 	$$
-	with $c(x)$ bounded below.
+	with $c(x)$ bounded below and $L\in \lcal_0(n,\s)$.
 	
 	Then, there exists a number $\bar{R} > 0$ such that $v \leq 0$ in $\Omega$ whenever $R(\Omega)< \bar{R}$.
 	
@@ -374,7 +376,7 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 
 \begin{proposition}
 	\label{Prop:MaxPrpNarrowOdd}
-	Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L$ be an integro-differential operator with a positive kernel $K$ satisfying
+	Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L\in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying
 	\begin{equation}
 	\label{Eq:KernelSymmetry}
 	K(x-y) \geq K(x-y^*), \,\,\,\,\text{for all } \,\, x,y\in H.
@@ -446,7 +448,7 @@ The maximum principle in narrow domains for odd functions with respect to a hype
 \todo[inline]{Mirar lo que hacen Barrios, Quaas, etc en MR3624935 (2017) por si hay que citarlo}
 \begin{proposition}
 	\label{Prop:MonotonyHalfSpace}
-	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L$ an integro-differential operator with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{\lp{\infty}(\R^n_+)})$. Then,
+	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L\in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
 	$$ 
 	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
 	$$
@@ -486,8 +488,7 @@ The other important ingredient needed in the proof of Theorem~\ref{Th:SymmHalfSp
 
 \begin{proposition}
 \label{Prop:HalfSpaceLimUnif}
-Let $v$ be a bounded solution of one of the following problems
-
+Let $L\in \lcal_0(n,\s)$ and let $v$ be a bounded solution of one of the following problems
 \begin{equation}
 \leqnomode
 \tag{P3}

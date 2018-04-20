@@ -111,14 +111,11 @@ $\Omega$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The operator $L$ acting on doubly radial functions}
+\subsection{The operators of $\Lr$ acting on doubly radial functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The main purpose of this subsection is to deduce an alternative expression for the operator $L$
-acting on doubly radial functions. This expression is more suitable to work with and it will be
-used throughout the paper. Recall that we are always assuming that $L\in \lcal_0$ and that the
-kernel is radially symmetric, i.e., $K(z) = K(|z|)$.
+The main purpose of this subsection is to deduce an alternative expression for an operator $L\in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Recall that the operators in the class $\Lr$ are always uniformly elliptic ($L\in \lcal_0$) and have a radially symmetric kernel, i.e., $K(y) = K(|y|)$.
 
 Our first remark is that if $w$ is invariant by $SO(m)^2$, so is $Lw$. Indeed, for every $R \in
 SO(m)^2$,
@@ -136,9 +133,7 @@ R\tilde{y}$.
 Next, we present an alternative expression for the operator $L$ acting on doubly radial functions.
 
 \begin{lemma} \label{Lemma:AlternativeOperatorExpression}
-Let $w$ be a doubly radial function for which $Lw$ is well-defined. Let $K$ be the kernel
-associated to $L$ and assume that it is radially symmetric and translation invariant, that is,
-$K(x,y) = K(|x-y|)$. Then, $Lw$ can be expressed as
+Let $L\in \Lr$ and let $w$ be a doubly radial function for which $Lw$ is well-defined. Then, $Lw$ can be expressed as
 $$
 Lw(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
@@ -186,8 +181,7 @@ $$
 where we have used the right invariance of the Haar measure.
 \end{proof}
 
-In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by
-\eqref{Eq:DefStar}.
+In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by \eqref{Eq:DefStar} and its relation with the doubly radial kernel $\overline{K}$.
 
 \begin{lemma}
 \label{Lemma:PropertiesStar}
@@ -208,10 +202,11 @@ The Haar integral on $SO(m)^2$ has the following invariance:
 for every $g \in L^1(SO(m)^2)$.
 \item $\overline{K}(x^\star,y) = \overline{K} (x,y^\star)$.
 \item $\overline{K}(x^\star,y^\star) = \overline{K} (x,y)$.
-\item If $w$ is a doubly radial function which is odd with respect to the Simons cone, then
+\item Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L\in \Lr$. Then,
 $$
 Lw (x) = \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \,.
 $$
+\todo[inline]{Poner la otra expresion}
 \end{enumerate}
 \end{lemma}
 
@@ -268,6 +263,8 @@ $K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$. Then,
 \end{equation}
 where $\overline{K}$ is defined by \eqref{Eq:KbarDef}.
 \end{proposition}
+
+\todo[inline]{La condicion de convexidad da que es decreciente y luego ya te da que la g es creciente, mirar si eso hay que decirlo o va incluido en los lemas del final}
 \begin{proof}
 Let $x$, $y \in \ocal$ and let $x_0 = (|x'|e, |x''|e)$ and $y_0 = (|y'|e, |y''|e)$, for an
 arbitrary unitary vector $e \in \Sph^{m-1} \subset \R^m$. Hence, since $\overline{K}$ is invariant
@@ -422,7 +419,7 @@ necessary condition.
 
 \begin{proposition}
 \label{Prop:ContraryKernelInequalityReflexion} Assume that the kernel $K$ is radially symmetric,
-nonincreasing and satisfies hypothesis \eqref{Eq:Symmetry&IntegrabilityOfK} and
+nonincreasing and satisfies the hypotheses \eqref{Eq:Symmetry&IntegrabilityOfK} and
 \eqref{Eq:Ellipticity}. If
 \begin{equation}
 \label{Eq:KernelInequalityReflexion2}
@@ -515,6 +512,10 @@ $$ \overline{K}(x,y) \leq \overline{K}(x, y^\star),$$
 for every $(x,y)\in \Omega_{t_1,t_2}$, contradicting \eqref{Eq:KernelInequalityReflexion2}.
 \end{proof}
 
+The inequality given in Proposition~\ref{Prop:KernelInequalityReflexion} is crucial to have a maximum principle, a key tool in the developement of the rest of the paper. Therefore, while studying saddle-shaped solutions we will consider operators in the class $\Lr$ whose kernel satisfies \eqref{Eq:KernelInequalityReflexion}. The class of such operators will be denoted by $\lcal_\star$.
+
+\todo[inline]{Supongo que esto irá en la introducción}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Maximum principles for doubly radial odd functions}
@@ -528,8 +529,7 @@ inequality of Proposition~\ref{Prop:KernelInequalityReflexion}.
 \begin{proposition}[Weak maximum principle for odd functions with respect to $\ccal$]
 \label{Prop:WeakMaximumPrincipleForOddFunctionsRotations} Let $u\in C^{\alpha}(\R^{2m})$ with
 $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let
-$\Omega \subseteq \ocal$ and let $L \in \lcal_0$ be such that ...\todo{Hypothesis for the
-inequality of the kernels}. Assume that
+$\Omega \subseteq \ocal$ and let $L \in \lcal_\star$. Assume that
 $$
 \beqc{\PDEsystem}
 Lu & \geq & 0 & \text{ in } \Omega\,,\\
@@ -570,8 +570,7 @@ The following is a strong maximum principle for odd functions.
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
 \label{Prop:StrongMaximumPrincipleForOddFunctionsRotations} Let $u\in C^{\alpha}(\R^{2m})$ with
 $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone.  Let
-$\Omega \subseteq \ocal$ and assume that $Lu \geq 0$ in $\Omega$, where $L \in \lcal_0$ such that
-...\todo{Hypothesis for the inequality of the kernels}. Assume also that $u\geq 0$ in $\ocal$.
+$\Omega \subseteq \ocal$ and assume that $Lu \geq 0$ in $\Omega$, where $L \in \lcal_\star$. Assume also that $u\geq 0$ in $\ocal$.
 Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
 \end{proposition}
 
