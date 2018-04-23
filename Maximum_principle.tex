@@ -9,7 +9,7 @@ The maximum principle we establish is the following.
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleInO}
-	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\Omega \subseteq \ocal$ a domain (not necessarily bounded). Let $L \in \lcal_0$ such that ...\todo{Write hypotheses}. Assume that $v$ satisfies
+	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\Omega \subseteq \ocal$ a domain (not necessarily bounded) and let $L \in \lcal_\star$. Assume that $v$ satisfies
 	$$
 	\beqc{\PDEsystem}
 	Lv - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
@@ -26,7 +26,11 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleNarrowDomainsOdd}
-	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\varepsilon>0$ and $H \subseteq \{(x',x'')\in \R^m\times\R^m \ \text{ such that }\ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal$ a domain (not necessarily bounded). Let $L \in \lcal_0$ such that ...\todo{Write hypotheses}. Assume that $v$ satisfies
+	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\varepsilon>0$ and let
+	$$
+	H \subseteq \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
+	$$ 
+	be a domain (not necessarily bounded). Let $L \in \lcal_\star$ and assume that $v$ satisfies
 	\begin{equation}
 	\label{Eq:AssumptionsMaxPNarrow}
 	\beqc{\PDEsystem}
@@ -49,61 +53,50 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	\label{Eq:InequalitiesMaxPNarrowProof}
 	0 \geq L v(x_0) + c(x_0)v(x_0) \geq L v(x_0) - \norm{c_-}_{L^\infty(H)}M\,.
 	\end{equation} 
-	Now, we compute $L v(x_0)$. Then, since $v$ is doubly radial and odd with respect to the Simons cone, by Lemma~\ref{Lemma:PropertiesStar} we can write
+	Now, we compute $L v(x_0)$. Then, since $v$ is doubly radial and odd with respect to the Simons cone, by Lemma~\ref{Lemma:PropertiesStar}\todo{Escrbir en este lema la otra expresion} we can write
 	\begin{align*}
-	Lv(x_0) &= \int_{\ocal} \{v(x_0) - v(y)\} \overline{K}(x_0,y) + \{v(x_0) + v(y)\} \overline{K}(x_0,y^\star) \d y \\
-    &= \int_{\ocal} \{M - v(y)\} \overline{K}(x_0,y) + \{M + v(y)\} \overline{K}(x_0,y^\star) \d y \\
-    &\geq \int_{\ocal} \{M - v(y)\} \overline{K}(x_0,y^\star) + \{M + v(y)\} \overline{K}(x_0,y^\star) \d y \\
-    &=2M \int_{\ocal} \overline{K}(x_0,y^\star)\d y,
+	Lv(x_0) &= \int_{\ocal} \big (M - v(y) \big) \big (\overline{K}(x_0,y) -\overline{K}(x_0,y^\star)\big) \d y + 2M\int_{\ocal} \overline{K}(x_0,y^\star)\d y\\
+    &\geq2M \int_{\ocal} \overline{K}(x_0,y^\star)\d y,
 	\end{align*}
     where the inequality comes from being $M$ the supremum of $v$ in $\ocal$ and the kernel inequality from Proposition~\ref{Prop:KernelInequalityReflexion}.   
     
 	Recalling \eqref{Eq:InequalitiesMaxPNarrowProof}, we have
-	\begin{align*}
-	0& \geq L v(x_0) + c(x_0)v(x_0)  \\
-	& \geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,Sy)\d y - \norm{c_-}_{L^\infty(H)}
+	$$
+	0 \geq L v(x_0) + c(x_0)v(x_0)  \geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
 	\right\}\,.
-	\end{align*}
+	$$
 	We claim that, for $\varepsilon$ small enough,
 	\begin{equation}
 	\label{Eq:ClaimMaxPNarrowProof}
-	 2 \int_{\ocal} \overline{K}(x_0,Sy)\d y > \norm{c_-}_{L^\infty(H)}\,.
+	 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y > \norm{c_-}_{L^\infty(H)}\,.
 	\end{equation}
-	If we assume this claim to be true, then we have the desired contradiction and we conclude that $v \leq 0$ in $H$.
+	If we assume this claim to be true, then we have a contradiction and we conclude that $v \leq 0$ in $H$.
 	
-	Let us show \eqref{Eq:ClaimMaxPNarrowProof} by proving that
+	Let us show \eqref{Eq:ClaimMaxPNarrowProof} by proving that the left hand-side in that equation can be as big as desired if $\varepsilon$ is small enough. On the one hand, note that
 	$$
-	\int_{\ocal} \overline{K}(x_0,y^\star)\d y = \int_{\ical} \overline{K}(x_0,y)\d y = \int_{\ical} K(|x_0-y|\d y
+	\int_{\ocal} \overline{K}(x_0,y^\star)\d y = \int_{\ical} \overline{K}(x_0,y)\d y = \int_{\ical} K(|x_0-y|)\d y \geq \lambda c_{2m,\s}\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
 	$$
-	can be as big as we want if $\varepsilon$ is small enough. 
-    
-    By Lemma 4.2 in \cite{CabreTerraI} and the narrow condition, there exists a point $\overline{x_0}=(\lambda e, \lambda e)$, which is a projection of $x_0$ in the Simons cone, with $\lambda>0$ such that
+	by the ellipticity of the kernel. On the other hand, by Lemma~4.2 in \cite{CabreTerraI} and the narrow condition, there exists a point $\overline{x_0}=(\mu e, \mu e)$ with $\mu>0$, which is a projection of $x_0$ in the Simons cone, such that
     $$ |x_0-\overline{x_0}| = \frac{|x_0'|-|x_0''|}{\sqrt[]{2}} \leq \frac{\sqrt[]{2}}{2} \varepsilon. $$
-	
-	Then,
+	Therefore, $	|x_0 - y| \leq |x_0 - \overline{x_0}| + |\overline{x_0} - y| \leq \sqrt{2}\varepsilon/2 + |\overline{x_0} - y|$ and we obtain
 	$$
-	|x_0 - y| \leq |x_0 - \overline{x_0}| + |\overline{x_0} - y| \leq \frac{\sqrt[]{2}}{2} \varepsilon + |\overline{x_0} - y|
+	\int_{\ical} |x_0-y|^{-2m-2\s}\d y  \geq
+	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y
 	$$
-	and since $K$ is decreasing,
+	By monotone convergence, we get
 	$$
-	\int_{\ical} K(|x_0 - y|)\d y \geq
-	\int_{\ical} K\left(\frac{\sqrt[]{2}}{2} \varepsilon + |\overline{x_0} - y|\right)\d y
+	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y \to \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y 
 	$$
-	The crucial point now is that, applying Monotone Convergence Theorem and the fact that $K$ is continuous we get 
-	$$
-	\int_{\ical} K\left(\frac{\sqrt[]{2}}{2} \varepsilon + |\overline{x_0} - y|\right)\d y \xrightarrow{\varepsilon\to 0}{} \int_{\ical} K\left(|\overline{x_0} - y|\right)\d y.
-	$$
-	Since $\overline{x_0} \in \ccal$, this last integral is infinite. That is,
+	as $\varepsilon \to 0$. 
+	Since $\overline{x_0} \in \ccal$, $|\overline{x_0}^\star - y|= |\overline{x_0}^\star - y|= |\overline{x_0} - y|$. Therefore, the previous integral is infinite. Indeed,
     \begin{align*}
-    \int_{\ical} K\left(|\overline{x_0} - y|\right)\d y &\geq \int_{\ical\cap B_R(\overline{x_0})} K\left(|\overline{x_0} - y|\right)\d y \\
-    &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})} K\left(|\overline{x_0} - y|\right)\d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} K\left(|\overline{x_0} - y^\star|\right)\d y\\
-    &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})} K\left(|\overline{x_0} - y|\right)\d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} K\left(|\overline{x_0}^\star - y|\right)\d y\\
-    &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})} K\left(|\overline{x_0} - y|\right)\d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} K\left(|\overline{x_0} - y|\right)\d y\\
-    &= \frac{1}{2}\int_{B_R(\overline{x_0})} K\left(|\overline{x_0} - y|\right)\d y = \frac{1}{2}\int_{B_R} K\left(|z|\right)\d z = +\infty.
+    \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y &\geq \int_{\ical\cap B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s}\d y \\
+    &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})}  |\overline{x_0} - y|^{-2m-2\s} \d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} |\overline{x_0} - y^\star|^{-2m-2\s}\d y\\
+    &= \frac{1}{2}\int_{B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s} \d y = \frac{1}{2}\int_{B_R} |z|^{-2m-2\s} \d z = +\infty.
     \end{align*}
-    Note that the fact that $\overline{x_0} = (\lambda e, \lambda e)$ is fundamental in order to have $(\ical\cap B_R(\overline{x_0}))^\star = \ocal\cap B_R(\overline{x_0})$. Therefore, for $\varepsilon$ small enough,  
+    Note that the fact that $\overline{x_0} = (\mu e, \mu e)$ is fundamental in order to have $(\ical\cap B_R(\overline{x_0}))^\star = \ocal\cap B_R(\overline{x_0})$. Therefore, for $\varepsilon$ small enough,
 	$$
-	\int_{\ical} K(|x_0 - y|)\d y
+	\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
 	$$
 	is as big as we want, in particular bigger than $\norm{c_-}_{L^\infty(H)}$. This shows \eqref{Eq:ClaimMaxPNarrowProof} and concludes the proof.
 \end{proof}
@@ -127,12 +120,12 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	u \geq \delta > 0 \quad \textrm{ in } \overline{\Omega}_\varepsilon\,,
 	$$
-	for some $\delta >0$. Moreover, since $f$ is strictly concave and $f(0)=0$, \todo{CHECK}, $f(\theta) > f'(\theta) \theta$ for $\theta \in (0,1)$. Therefore,
+	for some $\delta >0$. \todo{Ponerlo en una remark en la seccion de assymptotic} Moreover, by \eqref{Eq:PropertyConcavityf} we get
 	\begin{equation}
 	\label{Eq:uSupersolLinearized}
-	\mathscr{L} u = Lu - f'(u)u - cu \leq f(u) - f'(u)u > 0 \quad \textrm{ in } \Omega \subseteq \ocal\,,
+	\mathscr{L} u = Lu - f'(u)u - cu \geq f(u) - f'(u)u > 0 \quad \textrm{ in } \Omega \subseteq \ocal\,,
 	\end{equation}
-	where we have used that $u>0$ in $\ocal$ and that $c\leq 0$ in the first inequality.
+	where in the first inequality we have used that $u>0$ in $\ocal$ and that $c\leq 0$.
 	
     
     By contradiction, assume that there exists $x_0\in \Omega$ such that $v(x_0)> 0$.
@@ -166,7 +159,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	which is a contradiction.
 	
-	Then, since $v - \overline{\tau} u \not \equiv 0$, the strong maximum principle (Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) we have
+	Then, since $v - \overline{\tau} u \not \equiv 0$, the strong maximum principle (Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) yields
 	$$
 	v - \overline{\tau} u < 0 \quad \textrm{ in }\Omega\,.
 	$$
@@ -183,7 +176,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 
 
 
-With these ingredients available we can finally establish the uniqueness of the saddle-shaped solution.
+With these ingredients available, we can finally establish the uniqueness of the saddle-shaped solution.
 
 
 

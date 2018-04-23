@@ -51,9 +51,9 @@
 %%%EDITION HELP
 \usepackage[colorinlistoftodos]{todonotes} %Package to add TODO's in colors
 \setlength{\marginparwidth}{2.3cm} % make todonotes appear wider
-\usepackage{showlabels} %Show the labels of equations and theorems
+%\usepackage{showlabels} %Show the labels of equations and theorems
 %\usepackage{showkeys} %Show the keys of all references
-
+\usepackage{refcheck}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,6 +110,7 @@
 \newcommand{\laplacian}{\Delta}
 \newcommand{\s}{\gamma}
 \newcommand{\fraclaplacian}{(-\Delta)^\s}
+\newcommand{\Lr}{\mathcal{L}_{\mathrm{r}}}
 \newcommand{\loc}{\mathrm{loc}}
 \renewcommand{\d}{\,\mathrm{d}} %straight d with small space before
 \newcommand{\dx}{\,\mathrm{d}x} %The usual differential of x
@@ -123,7 +124,6 @@
 \newcommand{\setcond}[2]{\left \{ #1 \ : \ #2  \right \}}
 \newcommand\evalat[1]{_{\mkern1.5mu\big\vert_{\scriptstyle #1}}}
 \newcommand{\normLinf}[1]{\left | \left |{#1} \right | \right |_{\lp{\infty}}}
-
 %\newcommand{\averageline}{{\mathchoice
 %{\kern1ex\vcenter{\hrule height.4pt width 6pt depth0pt} \kern-9.3pt} {}
 %{\kern1ex\vcenter{\hrule height.4pt width 4.3pt depth0pt} \kern-7pt}
@@ -244,7 +244,7 @@ We study blablabla
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Acknowledgements}
 
-The authors thank Xavier Cabré for his guidance and useful discussions on the topic of this paper.
+The authors thank Xavier Cabré for his guidance and useful discussions on the topic of this paper. We also thank Matteo Cozzi for interesting discussions on the topic of this paper.
 
 
 

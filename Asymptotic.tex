@@ -1,18 +1,77 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Asymptotic results}
-\label{sec:Asymptotic}
+\label{Sec:Asymptotic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+Layer solution
+
+
+\begin{proposition}
+	\label{Prop:KernelsDimension}
+	Let $L$ and $\tilde{L}$ be two symmetric and translation invariant integral operators with kernels $K$ and $\tilde{K}$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
+	
+	If,
+	$$ \tilde{K}(t) = |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) d\sigma, $$
+	then
+	\begin{enumerate}
+		\item[(i)] $Lu(x) = \tilde{L}v(x_n)$,
+		\item[(ii)] $L\in \mathcal{L}_0 (n,s,\lambda,\Lambda) \Rightarrow \tilde{L}\in \mathcal{L}_0 (n,s,\lambda,\Lambda)$.
+	\end{enumerate}
+\end{proposition}
+
+Note that if $L$ is the fractional Laplacian in dimension $n$, then $\tilde{L}$ is also the fractional Laplacian, but in dimension $1$.
+
+\begin{proof}
+	\begin{enumerate}
+		\item[(i)]
+		\begin{align*}
+		Lu(x) &= \int_{\R^n} \left\{ u(x)-u(y) \right\} K(x-y) dy \\
+		&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left((x'-y',x_n-y_n\right) dy'dy_n.
+		\end{align*}
+		Now we make the change of variables $y' = x'-(x_n-y_n)\sigma$. That is,
+		\begin{align*}
+		Lu(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} d\sigma dy_n \\
+		&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((x_n-y_n)(\sigma,1)\right) d\sigma dy_n \\
+		&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \tilde{K}(x_n-y_n dy_n = \tilde{L}v(x_n). \\
+		\end{align*}
+		\item[(ii)] We are only going to prove one of the bounds, since they are in fact the same. That is,
+		\begin{align*}
+		\tilde{K}(t) &= |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,s} \frac{\lambda}{|t|^{n+2s}(\sigma^2+
+			1)^{\frac{n+2s}{2}}} d\sigma \\
+		&= c_{n,s} \frac{\lambda}{|t|^{1+2s}} \int_{\R^n} \frac{d\sigma}{(\sigma^2+1)^{\frac{n+2s}{2}}} = c_{n,s} \frac{\lambda}{|t|^{1+2s}} \frac{c_{1,s}}{c_{n,s}} \\
+		&= c_{1,s} \frac{\lambda}{|t|^{1+2s}},
+		\end{align*}
+		where the only inequality that appears comes from the lower bound of the kernel $K$ for being in $\mathcal{L}_0$.
+	\end{enumerate}
+\end{proof}
+
+
+
+
+
+
 
 \begin{theorem}
 \label{Thm:AsymptoticBehaviourSaddleSolution}
-Let $f\in \cp{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle- shaped solution of
+Let $f\in \cp{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution of
 $$
 Lu = f(u) \ \textrm{in } \R,
 $$
-with kernel $K$ satisfying \todo{write conditions}.
+with $L\in \lcal_\star$.
+
 Then,
 $$
-\norm{u-\mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)}+\norm{\nabla u-\nabla \mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)}+\norm{D^2u-D^2\mathcal{U}}_{\lp{\infty}(\R^n\setminus B_R)} \xrightarrow{\text{as } R\to \infty}{} 0,
+\norm{u-\mathcal{U}}_{L^\infty(\R^n\setminus B_R)}+\norm{\nabla u-\nabla \mathcal{U}}_{L^\infty(\R^n\setminus B_R)}+\norm{D^2u-D^2\mathcal{U}}_{L^\infty(\R^n\setminus B_R)} \xrightarrow{\text{as } R\to \infty}{} 0,
 $$
 where
 $$
@@ -24,7 +83,7 @@ with $z$ the distance to the cone and $u_0$ the layer 1D solution.
 \begin{proof}
 By contradiction, assume that the result does not hold. Then, there exists $\epsilon>0$ and a sequence $\{x_k\}$, that we may assume without loss of generality in $\overline{\ocal}$ and by continuity out of ${\ccal}$, such that
 \begin{equation}
-\label{Eq: ContradictionAsymptotic}
+\label{Eq:ContradictionAsymptotic}
 |u(x_k)-\mathcal{U}(x_k)|+|\nabla u(x_k)-\nabla \mathcal{U}(x_k)|+|D^2u(x_k)-D^2\mathcal{U}(x_k)| > \epsilon.
 \end{equation}
 
@@ -48,13 +107,13 @@ w &\geq& 0 & \textrm{ in } \R^n\,.
 \eeqc
 $$
 
-By Theorem \ref{Thm: SymmetryWholeSpace}, $w\equiv 0$ or $w\equiv 1$. First, $w$ cannot be zero. Indeed, since $w_k$ are stable in $B_k$, $w$ is stable in $\R^n$, which means that the linear operator $L-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, the linear operator $L-f'(w) = L-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L$ is of order $R^{-2s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
+By Theorem~\ref{Thm:SymmetryWholeSpace}, $w\equiv 0$ or $w\equiv 1$. First, $w$ cannot be zero. Indeed, since $w_k$ are stable in $B_k$, $w$ is stable in $\R^n$, which means that the linear operator $L-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, the linear operator $L-f'(w) = L-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L$ is of order $R^{-2\s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
 
 On the other hand, since $d_k\rightarrow \infty$  and $\mathcal{U}(x_k) = u_0(z_k) = u_0(d_k)$ we get by the properties of the layer solution \todo{ver bien} that $\mathcal{U}(x_k) \rightarrow 1$, $\nabla \mathcal{U}(x_k) \rightarrow 0$ and $D^2\mathcal{U}(x_k) \rightarrow 0$. From this and condition \eqref{Eq: ContradictionAsymptotic} we get
 $$
 |u(x_k)-1|+|\nabla u(x_k)|+|D^2u(x_k)| > \epsilon/2,
 $$
-which means that $w \not\equiv 1$. Therefore we arrive to a contradiction with Theorem \ref{Thm: SymmetryWholeSpace}.
+which means that $w \not\equiv 1$. Therefore we arrive to a contradiction with Theorem \ref{Thm:SymmetryWholeSpace}.
 
 CASE 2. $\{d_k:=\dist(x_k,\ccal)\}$ is a bounded sequence.
 Then, at least for a subsequence $d_k \rightarrow d$. Now, define for each $x_k$ its projection on $\ccal$, $x_k^0$ and then we have that $ \nu_k^0 := \frac{x_k-x_k^0}{d_k}$ is the unit normal to $\ccal$. Through a subsequence, $ \nu_k^0 \rightarrow \nu$ with $|\nu|=1$.
@@ -76,7 +135,7 @@ w &\geq& 0  &\textrm{ in } H\,,\\
 $$
 For the detail of the proof of how $\ocal \rightarrow H$ see \cite{CabreTerra1}.
 
-As in the previous case, by stability $w$ cannot be zero, and then, by Theorem \ref{Thm: SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Therefore, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
+As in the previous case, by stability $w$ cannot be zero, and then, by Theorem \ref{Thm:SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Therefore, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
 \begin{align*}
 u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + o(1) \\
 &= u_0((x_k-x_k^0)\cdot \nu) + o(1) \\
@@ -84,5 +143,5 @@ u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + o(1) \\
 &= u_0(d_k |\nu_k^0|^2) + o(1) \\
 &= u_0(d_k) + o(1) = \ucal (x_k) + o(1),
 \end{align*}
-contradicting \eqref{Eq: ContradictionAsymptotic}. The same is done for $\nabla u$ and $D^2 u$.
+contradicting \eqref{Eq:ContradictionAsymptotic}. The same is done for $\nabla u$ and $D^2 u$.
 \end{proof}
