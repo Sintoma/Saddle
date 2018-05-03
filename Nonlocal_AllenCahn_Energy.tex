@@ -1,14 +1,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section{Non-local Allen-Cahn Energy}
+\section{Non-local Allen-Cahn energy}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:Nonlocal_AllenCahn_Energy}
 
-We follow the same notation as in \cite{CozziPassalacqua}.
 
 
-\begin{definition}
-\label{Def:FunctionalSpaceHK}
-Given a set $\Omega \subseteq \R^n$ and a kernel $K \in \lcal_0$, we define the space
+
+This section is devoted to the energy functional associated to the Allen-Cahn equation. We first define appropriately the functional spaces where we are going to apply classic techniques of calculus of variations. We also rewrite the energy in terms of the new kernel $\overline{K}$ and finally, we establish a sharp energy estimate. Through all the section we follow the notation of \cite{CozziPassalacqua}.
+
+
+
+Let us start by defining the functional spaces that we are going to consider in this paper. Given a set $\Omega \subseteq \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
 $$
 \H^K(\Omega) := \setcond{w \in L^2(\Omega)}{[w]^2_{\H^K(\Omega)} < + \infty},
 $$
@@ -21,6 +23,7 @@ We also define
 	\H^K_0(\Omega) &:= \setcond{w \in \H^K(\Omega)}{ w = 0 \quad \textrm{a.e. in } \R^n \setminus \Omega} \\
 	&\ = \setcond{w \in \H^K(\R^n)}{ w = 0 \quad \textrm{a.e. in } \R^n \setminus \Omega}.
 \end{align*}
+
 Assume that $\Omega \subseteq \R^{2m}$ is a domain of double revolution. Then, we define
 $$
 \widetilde{\H}^K(\Omega) := \setcond{w \in \H^K(\Omega)}{w \textrm{ is doubly radial a.e.}}.
@@ -30,13 +33,13 @@ $$
 \widetilde{\H}^K_0(\Omega) := \setcond{w \in \H^K_0(\Omega)}{w \textrm{ is doubly radial a.e.}}.
 $$
 We will add the subscript `odd' and `even' to these spaces to consider only functions that are odd (respectively even) with respect to the Simons cone.
-\end{definition}
+
 
 \begin{remark}
 \label{Remark:DecompositionHK}
 If $\widetilde{\H}^K_0(\Omega)$ is equipped with the scalar product
 $$
-\langle v,w \rangle_{\widetilde{\H}^K_0(\Omega)} := \dfrac{1}{2}\int_{\R^{2m}} \int_{\R^{2m}}  \big(v(x) - v(y)\big)\big(w(x) - w(y)\big) \overline{K} (x,y) \d x \d y\,,
+\langle v,w \rangle_{\widetilde{\H}^K_0(\Omega)} := \dfrac{1}{2}\int_{\R^{2m}} \int_{\R^{2m}}  \big(v(x) - v(y)\big)\big(w(x) - w(y)\big) K(x-y) \d x \d y\,,
 $$
 then, it is easy to check that $\widetilde{\H}^K_0(\Omega)$ can be decomposed as the orthogonal
 direct sum of $\widetilde{\H}^K_{0,\, \mathrm{even}}(\Omega)$ and $\widetilde{\H}^K_{0,\,
@@ -48,118 +51,41 @@ which is the space associated to the kernel of the fractional Laplacian, $K(y) =
 Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, the usual fractional Sobolev space (see
 \cite{HitchhikerGuide}).  For more comments on this, see~\cite{CozziPassalacqua}.
 
+Once presented the functional setting of our problem, we define now  the energy functional associated to the Allen-Cahn equation. 
+
 \begin{definition}
-\label{Def:Energy}
-Given a kernel $K \in \lcal_0$, a potential $G$ and a function $w\in \H^K(\Omega)$, with $\Omega\subseteq \R^{n}$, we define the energy
-$$
-\ecal(w, \Omega) := \ecal_\mathrm{K}(w,\Omega) + \ecal_\mathrm{P}(w,\Omega)\,,
-$$
-where
-$$
-\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{2} [w]^2_{\H^K(\Omega)} \quad \text{ and } \quad  \ecal_\mathrm{P}(w, \Omega) := \int_{\Omega} G(w)
-\,.
-$$
+	Given a kernel $K \in \lcal_0$, a potential $G$ and a function $w\in \H^K(\Omega)$, with $\Omega\subseteq \R^{n}$, we define
+	$$
+	\ecal(w, \Omega) := \ecal_\mathrm{K}(w,\Omega) + \ecal_\mathrm{P}(w,\Omega)\,,
+	$$
+	where
+	$$
+	\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{2} [w]^2_{\H^K(\Omega)} \quad \text{ and } \quad  \ecal_\mathrm{P}(w, \Omega) := \int_{\Omega} G(w)
+	\,.
+	$$
+	We will call $\ecal_\mathrm{K}$ and $\ecal_\mathrm{P}$ the \emph{kinetic} and \emph{potential} energy respectively.
 \end{definition}
-%\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 K(x-y) \d x \d y + \int_{\Omega} F(w) \d x
-For short, we will denote $\ecal(w, \R^n) =: \ecal(w)$. Note that, for functions $w\in \H^K_0(\Omega)$, $\ecal_\mathrm{K}(w,\Omega) = \ecal_\mathrm{K}(w)$. Moreover, if $G\geq 0$, the energy satisfies
-$$
-\ecal(w, \Omega) \leq \ecal(w, \Omega') \quad \text{ whenever } \quad \Omega \subseteq \Omega'\,.
-$$
 
 
+For short, we will denote $\ecal(w, \R^n) =: \ecal(w)$. Note that, for functions $w\in \H^K_0(\Omega)$, $\ecal_\mathrm{K}(w,\Omega) = \ecal_\mathrm{K}(w)$. Moreover, if $G\geq 0$, the energy satisfies $
+\ecal(w, \Omega) \leq \ecal(w, \Omega')$  whenever $ \Omega \subseteq \Omega'$.
 
-\todo[inline]{Poner la expresion dentro dentro dentro fuera}
-
-Let us introduce a notation that will make the expression of the kinetic energy simpler. For $A$,
-$B\subseteq \ocal$ of double revolution, we define
+Sometimes is it useful to rewrite the kinetic energy as
+\begin{equation}
+	\label{Eq:KineticEnergyInteractions}
+	\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{4} \int_\Omega \int_\Omega |w(x) - w(y)|^2 K(x-y) \d x \d y + \dfrac{1}{2} \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y	
+\end{equation}
+Our goal is, as in the previous section, rewrite the energy in terms of the doubly radial kernel $\overline{K}$ and with integrals only computed in $\ocal$. We are interested in finding a suitable expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation.For $A$, $B\subseteq \ocal$ of double revolution, we define
 $$
 I_w(A,B) := \int_A  \int_B  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\}  +2 \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,.
 $$
-%Then, if $w \in \H^K(\Omega)$,
-%\begin{equation}
-%\label{Eq:EnergyWithInteractions}
-%2 \ecal_\mathrm{K}(w,\Omega) = \dfrac{1}{2}I_w(\Omega, \Omega) + I_w(\Omega,\R^n\setminus\Omega)\,.
-%\end{equation}
-%When working with spaces of even dimension, is it also convenient to consider the following interaction. If $A$, $B\subseteq \R^{2m}$ we denote
-%$$
-%I^\star_w(A,B) := \int_A \int_B |w(x)-w(y^\star)|^2 K(|x-y^\star|) \d x \d y\,.
-%$$
-%Note that if $w(x^\star) = - w(x)$, then at least at a formal level we have
-%$$
-%I^\star_w(A,B) = I_w(A,B^\star) = I_w(A^\star,B)\,.
-%$$
-%
-%From now on, we always assume that $n=2m$. The first task is to write the energy using the kernel $\overline{K}$, and writing a different expression for the Energy of doubly radial and odd functions. This is done in the following lemma.  \todo{Mejorar}
-%
-%
-%\begin{lemma}
-%\label{Lemma:InteractionsWithOverlineK}
-%Let $A$, $B\subseteq \R^{2m}$ be two domains of double revolution and let $w$ a doubly radial function for which $I_w(A,B)$ is well defined. Then, the following statements hold:
-%\begin{enumerate}
-%\item $I_w(A,B)$ can be written as
-%$$
-%I_w(A,B) = \int_A  \int_B  \ |w(x)-w(y)|^2 \overline{K}(x,y)  \d x \d y\,.
-%$$
-%\item If $w$ is odd with respect to the isometry $(\cdot)^\star$, then
-%$$
-%I^\star_w(A,B) = \int_A \int_B |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y\,.
-%$$
-%\item If $\Omega$ is a set of double revolution such that $\Omega^\star = \Omega$, then
-%$$
-%\ecal_\mathrm{K}(w, \Omega) = \dfrac{1}{2} \big \{ I_w(\Omega\cap \ocal, \Omega\cap \ocal) + I^\star_w(\Omega\cap \ocal, \Omega\cap \ocal) \big \} + I_w(\Omega\cap \ocal,\ocal\setminus\Omega)  + I^\star_w(\Omega\cap \ocal,\ocal\setminus\Omega)\,.
-%$$
-%\end{enumerate}
-%\end{lemma}
-%
-%
-%\begin{proof}
-%Given any $R\in SO(m)^2$ we have
-%\begin{align*}
-%	I_w(A,B) &= \int_A  \int_B  \ |w(x)-w(y)|^2 K(|x-y|)  \d x \d y\\
-%    &=  \int_A  \int_B  \ |w(R\overline{x})-w(y)|^2 K(|R\overline{x}-y|)  \d x \d y\\
-%    &=  \int_A  \int_B  \ |w(x)-w(y)|^2 K(|R\overline{x}-y|)  \d x \d y\,,
-%\end{align*}
-%where the first equality comes from the change of variables $x = R\tilde{x}$, which is an isometry, and the second one comes from the double radial symmetry of the function $w$. Now, if we integrate over all the rotations in $SO(m)^2$ we get the desired result. That is,
-%\begin{align*}
-%	I_w(A,B) &=\average_{SO(m)^2} I_w(A,B) \d R \\
-%    &= \fint_{SO(m)^2} \int_A  \int_B  \ |w(x)-w(y)|^2 K(|R\overline{x}-y|)  \d x \d y \d R \\
-%    &= \int_A \int_B |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y\,.
-%\end{align*}
-%
-%The second statement follows from the relation $I^\star_w(A,B) = I_w(A,B^\star)$ and the previous computation just using the change of variables $\bar{y} = y^\star$.
-%
-%Finally, the last statement follows from the expression \eqref{Eq:EnergyWithInteractions} and the relation $I^\star_w(A,B) = I_w(A,B^\star) = I_w(A^\star,B)$. We compute
-%\begin{align*}
-%I_w(\Omega, \Omega) &= I_w(\Omega, \Omega\cap \ocal) + I_w(\Omega, \Omega\cap \ical) \\
-%&= I_w(\Omega\cap \ocal, \Omega\cap \ocal) + I_w(\Omega\cap \ical, \Omega\cap \ocal) \\
-%&  \qquad \qquad + I_w(\Omega\cap \ocal, \Omega\cap \ical) + I_w(\Omega\cap \ical, \Omega\cap \ical) \\
-%&= I_w(\Omega\cap \ocal, \Omega\cap \ocal) + 2 I_w(\Omega\cap \ical, \Omega\cap \ocal)  + I_w(\Omega\cap \ical, \Omega\cap \ical) \\
-%&= I_w(\Omega\cap \ocal, \Omega\cap \ocal) + 2I_w((\Omega\cap \ocal)^\star, \Omega\cap \ocal) + I_w((\Omega\cap \ocal)^\star, (\Omega\cap \ocal)^\star) \\
-%&= I_w(\Omega\cap \ocal, \Omega\cap \ocal) + 2I_w^\star(\Omega\cap \ocal, \Omega\cap \ocal) + I_w(\Omega\cap \ocal, \Omega\cap \ocal) \\
-%&=  2 I_w(\Omega\cap \ocal, \Omega\cap \ocal) + 2I_w^\star(\Omega\cap \ocal, \Omega\cap \ocal)\,.
-%\end{align*}
-%Similarly,
-%\begin{align*}
-%I_w(\Omega, \R^n\setminus \Omega) &= I_w(\Omega,  \ocal \setminus \Omega) + I_w(\Omega,\ical \setminus \Omega) \\
-%&= I_w(\Omega\cap \ocal, \ocal \setminus \Omega) + I_w(\Omega\cap \ical, \ocal \setminus \Omega) \\
-%&  \qquad \qquad + I_w(\Omega\cap \ocal, \ical \setminus \Omega) + I_w(\Omega\cap \ical, \ical \setminus \Omega) \\
-%&= I_w(\Omega\cap \ocal, \ocal \setminus \Omega) + I_w((\Omega\cap \ocal)^\star, \ocal \setminus \Omega) \\
-%&  \quad \quad + I_w(\Omega\cap \ocal, (\ocal \setminus \Omega)^\star) + I_w((\Omega\cap \ocal)^\star, (\ocal \setminus \Omega)^\star) \\
-%&= I_w(\Omega\cap \ocal, \ocal \setminus \Omega) + I_w^\star(\Omega\cap \ocal, \ocal \setminus \Omega) \\
-%&  \qquad \qquad + I_w^\star(\Omega\cap \ocal, \ocal \setminus \Omega) + I_w(\Omega\cap \ocal, \ocal \setminus \Omega) \\
-%&= 2 I_w(\Omega\cap \ocal, \ocal \setminus \Omega) + 2I_w^\star(\Omega\cap \ocal, \ocal \setminus \Omega) \,.
-%\end{align*}
-%\end{proof}
-%
-%As a consequence of this result, if $w\in \widetilde{\H}^K_{\mathrm{odd}}(\R^{2m})$, then
-%\begin{equation}
-%\label{Eq:EnergyOddInOcal}
-%\ecal_\mathrm{K}(w) = \frac{1}{2}\int_{\ocal} \int_\ocal|w(x) - w(y)|^2 \overline{K}(x,y) + |w(x) + w(y)|^2 \overline{K}(x,y^\star) \d x \d y.
-%\end{equation}
+Thanks to this notation, we rewrite the kinetic energy as follows.
+
 
 \begin{lemma}
-Let $\Omega\subset \R^{2m}$ be a domain of double revolution and let $w$ be a doubly radial
-function. Then
+	\label{Lemma:ShortExpressionEnergy}
+Let $\Omega\subset \R^{2m}$ be a domain of double revolution and let $w\in \widetilde{\H}^K_{0,\,
+	\mathrm{odd}}(\Omega)$. Let $K \in \Lr$. Then, 
 \begin{align*}
 \label{Eq:EnergyOddInOcal2}
 \ecal_\mathrm{K}(w, \Omega) = \frac{1}{2} I_w(\Omega\cap\ocal,\Omega\cap\ocal) + I_w(\Omega\cap\ocal,\ocal\setminus\Omega)
@@ -167,22 +93,19 @@ function. Then
 \end{lemma}
 
 \begin{proof}
-\todo[inline]{Poner primero q con un cambio y tomando medias sale la primera eq y dp ya el resto}
-\begin{align*}
-\ecal_\mathrm{K}(w, \Omega) = & \frac{1}{4} \int_{\Omega} \int_{\Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y + \frac{1}{2} \int_{\Omega} \int_{\R^n \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y \\
-= & \frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
+	
+	First, in \eqref{Eq:KineticEnergyInteractions} we consider the change $ y = R\tilde{y}$. Then, since $w$ is doubly radial and $\Omega$ is of double revolution, by taking the average among all $R\in SO(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}, we obtain
+	$$
+	\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \int_{\Omega} \int_{\Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y + \frac{1}{2} \int_{\Omega} \int_{\R^n \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y\,.
+	$$
+	Now we split $\Omega$ into $\Omega \cap \ocal$ and $\Omega \setminus \ocal$. By using the change of variables given by $(\cdot)^\star$ and the odd symmetry of $w$, we get	
+	\begin{align*}
+\ecal_\mathrm{K}(w, \Omega) =  & \frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
 & + \int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
 = & \frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\}  +2 \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
 &+ \int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\}  +2 \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
 = & \frac{1}{2} I_w(\Omega\cap\ocal,\Omega\cap\ocal) + I_w(\Omega\cap\ocal,\ocal\setminus\Omega).
-%&\frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega\cap \ocal} |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
-%&+\int_{\Omega\cap \ocal} \int_{\ocal\setminus \Omega} |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
-%&+\int_{\Omega\cap \ocal} w^2(x) \left( \int_\ocal \overline{K}(x,y^\star) \d y \right) \d x + \int_\ocal w^2(x) \left( \int_{\Omega\cap \ocal} \overline{K}(x,y^\star) \d y \right) \d x\\
-%=&\frac{1}{2} \int \int_{\ocal^2\setminus \left(\Omega\cap \ocal\right)^2} |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
-%&+\int \int_{\left(\Omega\cap \ocal\right) \times \ocal \cup \ocal \times \left(\Omega\cap \ocal\right) }  w^2(x) \overline{K}(x,y^\star) \d x \d y
 \end{align*}
-Note that the first equality comes from making the means, while the second one comes from writing
-$\Omega = (\Omega\cap \ocal) \cup (\Omega\cap \ical)$ and use the symmetry properties of $w$.
 \end{proof}
 
 The following are two lemmas regarding the decrease of the energy under some operations.
@@ -196,14 +119,14 @@ v(x) = \begin{cases}
 \end{cases}
 \end{equation*}
 Then
-$$ \ecal(v) \leq \ecal(u)  $$
+$$ \ecal(v,\Omega) \leq \ecal(u,\Omega)\,.  $$
 \end{lemma}
 
 \begin{proof}
-First it is clear that $v$ is doubly radial and odd with respect to the Simons cone. From the
-expression of the energy in Lemma 99 and the fact that $\overline{K}(x,y) > \overline{K}(x,y^\star)
+First, it is clear that $v\in \widetilde{\H}^K_{\mathrm{odd}}(\Omega)$. Thus,
+expression of the energy in Lemma~\ref{Lemma:ShortExpressionEnergy} and the fact that $\overline{K}(x,y) > \overline{K}(x,y^\star)
 > 0$ if $x,y\in \ocal$, we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x)
-\leq u^2(x)$ if $x,y\in\ocal$. The first condition follows from
+\leq u^2(x)$ whenever $x,y\in\ocal$. The first condition follows from
 $$ \big||u(x)|-|u(y)|\big|^2\leq |u(x)-u(y)|^2 \Longleftrightarrow w(x)w(y) \leq |w(x)w(y)|,  $$
 while the second one is trivial and it is in fact an equality.
 
@@ -222,13 +145,12 @@ v(x) = \begin{cases}
 \end{cases}
 \end{equation*}
 Then,
-$$ \ecal(v) \leq \ecal(u)\,.  $$
+$$ \ecal(v,\Omega) \leq \ecal(u,\Omega)\,.  $$
 \end{lemma}
 
 \begin{proof}
-As in the previous proof, it is clear that $v$ is doubly radial and odd with respect to the Simons
-cone and we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x) \leq u^2(x)$ if
-$x,y\in\ocal$. In order to show these conditions we need to proceed by cases. On the one hand, if
+As in the previous proof, it is clear that $v\in
+\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$. Thus, we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x) \leq u^2(x)$ whenever $x,y\in\ocal$. In order to show these conditions we need to proceed by cases. On the one hand, if
 $u(x)\leq 1$ and $u(y)\leq 1$, or $u(x)\geq 1$ and $u(y)\geq 1$, it is trivial that $|v(x)-v(y)|^2
 \leq |u(x)-u(y)|^2$. If $u(x)\geq 1$ and $u(y)\leq 1$, then $ |u(x)-u(y)|^2-|v(x)-v(y)|^2 =
 |u(x)-u(y)|^2-|1-u(y)|^2 = (u(x)-1))^2+2(u(x)-1)(1-u(y)) \geq 0$. On the other hand, $v^2(x) =
@@ -240,11 +162,11 @@ result by adding the kinetic and potential energies.
 \end{proof}
 
 
-The last result we will use is the following.
+We present next a result that will be used later. \todo{Poner algo mas?}
 
 \begin{proposition}
 	\label{Prop:WeakSolutionForAllTestFunctions}
-	Let $\Omega \subset \R^{2m}$ be a bounded set of double revolution. Let $u\in \widetilde{\H}^K_{0}(\Omega)$ such that
+	Let $\Omega \subset \R^{2m}$ be a bounded set of double revolution and let $L\in \Lr$ with kernel $K$. Let $u\in \widetilde{\H}^K_{0}(\Omega)$ such that
 	$$
 	\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \xi(x) \d x
 	$$
@@ -307,15 +229,27 @@ Note that in the previous result we do not need to use the kernel $\overline{K}$
 
 In this section we present a sharp estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \textrm{odd}}(B_R)$ of the energy in $B_R$.
 
-In order to prove this result we need to define some auxiliary functions and sets. That is,
+\begin{theorem}
+	\label{Th:EnergyEstimate} Let $u$ be a minimizer of the non-local Allen-Cahn energy in $B_{R}$,
+	with $R>S+2$, among functions that are in $\widetilde{\H}^K_{0, \textrm{odd}}(B_R)$. Then
+	%$$ \lim_{R\to +\infty} \frac{1}{S^n} \ecal (u,B_S) = 0. $$
+	%More precisely,
+	$$ \ecal (u,B_S) \leq \begin{cases}
+	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
+	C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
+	\end{cases} $$
+	with $C$ a positive constant depending only on $m$, $\s$, $\Lambda$ and $G$.
+\end{theorem}
 
+In order to prove this result we need to define some auxiliary functions and sets. We follow the ideas of Savin and Valdinocci in \cite{SavinValdinoci-EnergyEstimate}, but we have to adapt them to the case of odd functions vanishing on $\ccal$. We set
 $$ \Psi_S(x) := \max\left\{-1+2\min\{(|x|-S-1)_+,1\},-\dist(x,\ccal) \right\},  $$
 if $x\in \ocal$ and odd reflected in $\ical$,
 $$ d_S(x) := \max\left\{1,\min\{S+1-|x|,\dist(x,\ccal)\} \right\},  $$
 and
 $$ \Omega_S := \left( B_{S+2}\setminus \overline{B_s} \right) \cup \left( B_{S+2} \cap \{\dist(x,\ccal)< 1\}\right). $$
-
-First note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of
+\todo[inline]{Dibujo}
+Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of
 $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. On the other hand, we
 can see $\overline{\Omega_S}$ as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$.
 
@@ -345,14 +279,14 @@ y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\leq 1\}\cap \ocal \ \ \ &\Rightarrow \ \ 
 \end{cases}$$
 
 Given $x,y \in \R^{2m}$ it is easy to prove by using the triangular inequality and the definition of distance to the cone that
-\begin{equation} \label{eq: tirangularCone}
+\begin{equation} \label{Eq:TriangularCone}
 \dist(x,\ccal) \leq |x-y| + \dist(y,\ccal).
 \end{equation}
 Therefore we have
-\begin{equation} \label{eq: tirangularCone2}
+\begin{equation} \label{Eq:TriangularCone2}
 1-|x-y|-\dist(y,\ccal) \leq 1-\dist(x,\ccal) \leq 0
 \end{equation}
-Now, multiplying $|1-\dist(y,\ccal)|$ by equation \eqref{eq: tirangularCone} and using \eqref{eq: tirangularCone2} we obtain
+Now, multiplying \eqref{Eq:TriangularCone} by $|1-\dist(y,\ccal)|$ and using \eqref{Eq:TriangularCone2} we obtain
 \begin{align*}
 |1-\dist(y,\ccal)|\,\dist(x,\ccal) &\leq |1-\dist(y,\ccal)| \left(|x-y| + \dist(y,\ccal)\right) \\
 %&= \left(1-\dist(y,\ccal)\right) \left(|x-y| + \dist(y,\ccal)\right) \\
@@ -364,6 +298,8 @@ Hence,
 $$ |\Psi_S(x)-\Psi_S(y)| = |1-\dist(y,\ccal)| \leq \frac{|x-y|}{\dist(x,\ccal)} \leq  \frac{|x-y|}{d_S(x)},$$
 completing the proof.
 \end{proof}
+
+Another auxiliary result that we will need in the proof of Theorem~\ref{Th:EnergyEstimate} is the following estimate for the function $d_S$. 
 
 \begin{lemma}
 \label{Lemma: Integrability_dFunction}
@@ -382,12 +318,14 @@ $$\int_{\Omega_S} d_S(x)^{-2\s} \d x \leq C\,S^{2m-1}.$$
 
 For the other part of the integral we can write
 \begin{align*}
-\int_{B_{S+2}\setminus \Omega} d_S(x)^{-2\s} \d x &= \int_{B_{S}\cap \dist\{x,\ccal\}>1} d_S(x)^{-2\s} \d x \\
+\int_{B_{S+2}\setminus \Omega_S} d_S(x)^{-2\s} \d x &= \int_{B_{S}\cap \dist\{x,\ccal\}>1} d_S(x)^{-2\s} \d x \\
 & \leq \int_{B_{S}\cap \dist\{x,\ccal\}>1} \left( S+1-|x| \right)^{-2\s} \d x + \int_{B_{S}\cap \dist\{x,\ccal\}>1} \dist(x,\ccal)^{-2\s} \d x.
 \end{align*}
-Note that from the computations of Savin and Valdinocci in \cite{SavinValdinoci-EnergyEstimate}, in order to complete the proof it only remains to estimate the second integral.
-
-This integral can be estimated by writing it in $(y,z)$ variables, since $z$ is the distance to the cone. That is,
+The desired estimate for the first integral can be found in \cite{SavinValdinoci-EnergyEstimate}. Therefore, in order to complete the proof it only remains to estimate the second integral. It can be estimated by writing it in $(y,z)$-variables, where
+$$
+y = \dfrac{|x'|+|x''|}{\sqrt{2}} \, \quad \text{ and } z = \dfrac{|x'|-|x''|}{\sqrt{2}}\,.
+$$
+In this case, $z$ is the signed distance to the cone. Thus,
 \begin{align*}
 \int_{B_{S}\cap \dist\{x,\ccal\}>1} \dist(x,\ccal)^{-2\s} \d x &\leq C \int \int_{B_{S}\cap \{y\geq|z|>1\}} |z|^{-2\s} \, (y^2-z^2)^{m-1} \d y\d z \\
 & \leq C \int \int_{B_{S}\cap \{y\geq|z|>1\}} |z|^{-2\s} \, y^{2m-2} \d y\d z \\
@@ -400,6 +338,9 @@ C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 \end{cases}
 \end{align*}
 \end{proof}
+
+
+The last auxiliary result we need in order to establish the energy estimate is the following inequality.
 
 \begin{lemma}
 \label{Lemma: InteractionInequalityMinimumFunction}
@@ -438,23 +379,17 @@ I_\phi(\ocal\cap A, \ocal \setminus A) &+ I_\varphi(\ocal\cap A, \ocal \setminus
 %Here we have used that $\omega(x) = \varphi(x)$ if $x\in \ocal\cap A$ and that $\omega(y) = \phi(y)$ if $y\in \ocal \setminus A$.
 \end{proof}
 
-\begin{theorem}
-\label{Th:EnergyEstimate} Let $u$ be a minimizer of the non-local Allen-Cahn energy in $B_{R}$,
-with $R>S+2$, among functions that are doubly radial, odd with respect to the Simon's cone and zero
-outside $B_R$. Then
-%$$ \lim_{R\to +\infty} \frac{1}{S^n} \ecal (u,B_S) = 0. $$
-%More precisely,
-$$ \ecal (u,B_S) \leq \begin{cases}
-C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
-C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
-\end{cases} $$
-with $C$ a positive constant depending only on $m$, $\s$, $\Lambda$ and $G$.
-\end{theorem}
 
-\begin{proof}
 
-Note that, by Lemmas~\ref{Lemma:TruncationOfFunctions1DecreaseEnergy} and \ref{Lemma:TruncationOfFunctions2DecreaseEnergy} we can assume without loss of generality that $-1 \leq u \leq 1$ and that $u \geq 0$ in $\ocal$ and $u \leq 0$ in $\ical$. In fact, it also true that $0\leq u < 1$ in $\ocal$. In order to prove it we first need to show that $u$ is a weak solution of
+With all these ingredients we can establish now the sharp energy estimate.
+
+\begin{proof}[Proof of Theorem~\ref{Th:EnergyEstimate}]
+
+Note that, by Lemmas~\ref{Lemma:TruncationOfFunctions1DecreaseEnergy} and \ref{Lemma:TruncationOfFunctions2DecreaseEnergy} we can assume without loss of generality that if $u$ is a minimizer of $\ecal$ in $B_R$, then $-1 \leq u \leq 1$, $u \geq 0$ in $\ocal$, and $u \leq 0$ in $\ical$. 
+
+\textbf{Step 1:} we show that $0\leq u < 1$ in $\ocal$. 
+
+In order to prove it we first need to show that $u$ is a weak solution of
 \begin{equation}
 \label{Eq:ProofExistenceProblemBR}
 	\beqc{\PDEsystem}
@@ -462,7 +397,7 @@ Note that, by Lemmas~\ref{Lemma:TruncationOfFunctions1DecreaseEnergy} and \ref{L
 	u &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
 	\eeqc
 \end{equation}
-To see this, we consider on the one hand perturbations $u +  \varepsilon \xi$, with $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$ and such that $\xi$ has compact support in $B_R$. Then,
+To see this, we consider on the one hand perturbations $u +  \varepsilon \xi$, with $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$ and such that $\xi$ has compact support in $B_R$. Then, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$, we get
 $$
 0 = \dfrac{\d}{\d \varepsilon}\evalat{\varepsilon = 0} \ecal(u +  \varepsilon \xi, B_R) = \langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} - \langle f(u),\xi \rangle_{L^2(B_R)}\,.
 $$
@@ -491,6 +426,7 @@ From being $u$ a classical solution it is easy to show that it cannot be $1$ or 
 &>0.
 \end{align*}
 
+\textbf{Step 2:} we build a suitable competitor for $u$ and compare their energies.
 
 Now we introduce the function
 $$ v(x) := \min\{u(x),\Psi_S(x)\}, $$
@@ -526,10 +462,12 @@ Therefore we get an estimate of the energy of $u$ in $B_S$. That is,
 \end{align*}
 Once we are at this point we only have to bound this three terms in order to obtain the desired energy estimate.
 
-\todo[inline]{Quitar sangrado}
 
-\begin{itemize}
-\item Estimate for $\ecal(\Psi_S,B_{S+2})$\\
+\textbf{Step 3:} we estimate the remaining terms.
+
+\textbf{3.1. Estimate for $\ecal(\Psi_S,B_{S+2})$.}
+
+
 In order to make this estimate we use the definition of the energy that involves the original kernel $K$ and not the adapted one $\overline{K}$. That is,
 \begin{align*}
 \ecal(\Psi_S,B_{S+2}) &= \frac{1}{4} \int_{B_{S+2}} \int_{B_{S+2}} |\Psi_S(x)-\Psi(y)|^2K(|x-y|) \d x\d y \\
@@ -574,9 +512,14 @@ I_4 = \int_{B_{S+2}} G(\Psi_S) = \int_{\Omega_S} G(\Psi_S) + \int_{B_{S+2}\setmi
 \end{align*}
 Then, we obtain
 \begin{align*}
-\ecal(\Psi_S,B_{S+2}) &\leq C \left(\int_{\ocal \cap B_{S+2}} d_S(x)^{-2\s} \d x + S^{2m-1} \right)\leq C\left(\int_{\ocal \cap B_{S}} d_S(x)^{-2\s} \d x + S^{2m-1} \right)
+\ecal(\Psi_S,B_{S+2}) &\leq C \left(\int_{\ocal \cap B_{S+2}} d_S(x)^{-2\s} \d x + S^{2m-1} \right)\leq C\left(\int_{\ocal \cap B_{S}} d_S(x)^{-2\s} \d x + S^{2m-1} \right).
 \end{align*}
-\item Estimate for $I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S) + I_u^\star(\ocal \setminus B_{S+1}, \ocal \cap B_S)$
+
+%%%%%%%%%
+
+\textbf{3.2. Estimate for $I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S) + I_u^\star(\ocal \setminus B_{S+1}, \ocal \cap B_S)$.}
+
+
 First we prove that if $x\in B_S\cap \ocal$ and $y\in \R^{2m}\setminus B_{S+1}$, then $|x-y|\geq d_S(x)$. It is clear that being $x\in B_S$ then $d_S(x) \leq S+1-|x|$ and therefore we have $|x-y|\geq |y|-|x|\geq |y|+d_S(x)-S-1 \geq  d_S(x)$. Thus we have
 \begin{align*}
 I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S) &= \int_{\ocal\cap B_S} \d x \int_{\R^{2m}\setminus B_{S+1}} \d y \ |u(x)-u(y)|^2 \, K(|x-y|) \\
@@ -584,7 +527,7 @@ I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S) &= \int_{\ocal\cap B_S} \d x \int_{
 &\leq \int_{\ocal\cap B_S} \d x \int_{|x-y|\geq d_S(x)} \d y \ |x-y|^{-2m-2\s} \\
 &\leq C \int_{\ocal \cap B_{S}} d_S(x)^{-2\s} \d x.
 \end{align*}
-\end{itemize}
+
 Finally, by adding up this estimates and applying Lemma \ref{Lemma: Integrability_dFunction} we finally obtain the desired result. That is,
 \begin{align*}
 \ecal(u,B_S) &\leq \ecal(\Psi_S,B_{S+2}) + I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S) \leq C\left(\int_{\ocal \cap B_{S}} d_S(x)^{-2\s} \d x + S^{2m-1} \right)\\
@@ -594,5 +537,4 @@ C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1).\\
 \end{cases}
 \end{align*}
-
 \end{proof}
