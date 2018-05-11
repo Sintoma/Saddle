@@ -263,20 +263,11 @@ with $C>0$ independent of $S$.
 \end{lemma}
 
 \begin{proof}
-On the one hand, if $x\in \Omega_S \cap \ocal$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$.
-
-Hence, it only rests to show the result for the case $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. For this case we have $\Psi_S(x)=-1$. Moreover, since $x\in B_S$ and $\dist(x,\ccal)\geq 1$ we get
-$$ d_S(x) = \min\left\{S+1-|x|,\dist(x,\ccal)\right\} \leq S+1-|x|,$$
-and therefore
+Note first that if $x\in \Omega_S \cap \ocal$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$. Hence, it only rests to show the result for the case $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. Under these hypotheses, we have that $\Psi_S(x)=-1$ and $d_S(x) = \min\{S+1-|x|,\dist(x,\ccal)\}$. Moreover, since $x\in B_S$ and $\dist(x,\ccal)\geq 1$ we get $d_S(x) \leq S+1-|x|$. Therefore, if $|x-y|\leq d_S(x)$ we obtain
 $$ |y|\leq |x-y| + |x| \leq d_S(x)+|x| \leq S+1. $$
-In addition, if $y\in B_{S+1} \cap \{\dist(x,\ccal)\geq 1\}\cap \ocal$ then $\Psi_S(y)=-1$, and the
-result is trivial from being also $\Psi_S(x)=-1$.
 
-Therefore, we have proven the result for all the cases with the exception of
-$$\begin{cases}
-x\in B_S \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal \ \ \ &\Rightarrow \ \ \ \Psi_S(x)=-1 \\
-y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\leq 1\}\cap \ocal \ \ \ &\Rightarrow \ \ \ \Psi_S(y)=-\dist(y,\ccal). \\
-\end{cases}$$
+Now we distinguish two cases, either $\{\dist(\cdot,\ccal)\geq 1\}$ or $\{\dist(\cdot,\ccal)\leq 1\}$. Assume first that $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal$. Then, $\Psi_S(y)=-1$ and the result is trivial from being also $\Psi_S(x)=-1$. Thus, it only remains to show the result in the case $x\in B_S \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal$ and $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\leq 1\}\cap \ocal$. Note that under these assumptions, $\Psi_S(x)=-1$ and $\Psi_S(y)=-\dist(y,\ccal)$.
+
 
 Given $x,y \in \R^{2m}$ it is easy to prove by using the triangular inequality and the definition of distance to the cone that
 \begin{equation} \label{Eq:TriangularCone}
@@ -321,7 +312,7 @@ For the other part of the integral we can write
 \int_{B_{S+2}\setminus \Omega_S} d_S(x)^{-2\s} \d x &= \int_{B_{S}\cap \dist\{x,\ccal\}>1} d_S(x)^{-2\s} \d x \\
 & \leq \int_{B_{S}\cap \dist\{x,\ccal\}>1} \left( S+1-|x| \right)^{-2\s} \d x + \int_{B_{S}\cap \dist\{x,\ccal\}>1} \dist(x,\ccal)^{-2\s} \d x.
 \end{align*}
-The desired estimate for the first integral can be found in \cite{SavinValdinoci-EnergyEstimate}. Therefore, in order to complete the proof it only remains to estimate the second integral. It can be estimated by writing it in $(y,z)$-variables, where
+The desired estimate for the first integral can be found in \cite{SavinValdinoci-EnergyEstimate}. Therefore, in order to complete the proof it only remains to estimate the second integral. It can be estimated by writing it in $(y,z)$ variables, where
 $$
 y = \dfrac{|x'|+|x''|}{\sqrt{2}} \, \quad \text{ and } z = \dfrac{|x'|-|x''|}{\sqrt{2}}\,.
 $$
@@ -334,7 +325,7 @@ In this case, $z$ is the signed distance to the cone. Thus,
 & \leq \begin{cases}
 C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
 C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
-C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
+C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1).\\
 \end{cases}
 \end{align*}
 \end{proof}
