@@ -117,8 +117,8 @@ $\Omega$.
 
 The main purpose of this subsection is to deduce an alternative expression for an operator $L\in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Recall that the operators in the class $\Lr$ are always uniformly elliptic ($L\in \lcal_0$) and have a radially symmetric kernel, i.e., $K(y) = K(|y|)$.
 
-Our first remark is that if $w$ is invariant by $SO(m)^2$, so is $Lw$. Indeed, for every $R \in
-SO(m)^2$,
+Our first remark is that if $w$ is invariant by $O(m)^2$, so is $Lw$. Indeed, for every $R \in
+O(m)^2$,
 \begin{align*}
 Lw (Rx)
 & = \int_{\R^{2m}} \{w(Rx) - w(y)\} K(|Rx - y|)  \d y\\
@@ -126,7 +126,7 @@ Lw (Rx)
 & = \int_{\R^{2m}} \{w(x) - w(\tilde{y})\} K(|x-\tilde{y}|) \d \tilde{y}\\
 & = Lw (x)\,.
 \end{align*}
-Here we have used that $w(R \cdot) = w(\cdot)$ for every $R\in SO(m)^2$ and the change $y =
+Here we have used that $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$ and the change $y =
 R\tilde{y}$.
 
 
@@ -137,46 +137,42 @@ Let $L\in \Lr$ and let $w$ be a doubly radial function for which $Lw$ is well-de
 $$
 Lw(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
-where $\overline{K}$ is symmetric, invariant by $SO(m)^2$ in both arguments and is defined by
+where $\overline{K}$ is symmetric, invariant by $O(m)^2$ in both arguments and is defined by
 \begin{equation}
 \label{Eq:KbarDef}
-\overline{K}(x,y) := \average_{SO(m)^2} K(|Rx - y|)\d R\,.
+\overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,.
 \end{equation}
-Here, $\d R$ denotes integration with respect to the Haar measure on $SO(m)^2$.
+Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$.
 \end{lemma}
 
-Recall (see for instance 99) that the Haar measure on $SO(m)^2$ exists and it is unique up to a
+Recall (see for instance 99) that the Haar measure on $O(m)^2$ exists and it is unique up to a
 multiplicative constant. Let us state next the properties that will be used in the rest of the
-paper. In the following, the Haar measure is denoted by $\mu$. First, since $SO(m)^2$ is a compact
+paper. In the following, the Haar measure is denoted by $\mu$. First, since $O(m)^2$ is a compact
 group, it is unimodular (see Chapter~II, Proposition~ 13 of \cite{Nachbin}). As a consequence, the
 measure $\mu$ is left and right invariant, that is, $\mu(R\Sigma) = \mu(\Sigma) = \mu(\Sigma R) $
-for every subset $\Sigma \subseteq SO(m)^2$ and every $R\in SO(m)^2$. Moreover, it holds
+for every subset $\Sigma \subseteq O(m)^2$ and every $R\in O(m)^2$. Moreover, it holds
 \begin{equation}
 \label{Eq:Unimodular}
-\average_{SO(m)^2} g(R^{-1}) \d R = \average_{SO(m)^2} g(R) \d R
+\average_{O(m)^2} g(R^{-1}) \d R = \average_{O(m)^2} g(R) \d R
 \end{equation}	
-for every $g\in L^1(SO(m)^2)$ ---see \cite{Nachbin} for the details.
+for every $g\in L^1(O(m)^2)$ ---see \cite{Nachbin} for the details.
 
 \begin{proof}[Proof of Lemma~\ref{Lemma:AlternativeOperatorExpression}]
-Since $Lw$ is invariant by $SO(m)^2$ and $w(R \cdot) = w(\cdot)$ for every $R\in SO(m)^2$,
+Since $Lw$ is invariant by $O(m)^2$ and $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$,
 \begin{align*}
-Lw(x) &= \average_{SO(m)^2} Lw(Rx)\d R\\
-&=  \average_{SO(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
-&= \int_{\R^{2m}} \{w(x) - w(y)\}  \average_{SO(m)^2} K(|Rx - y|) \d R  \d y\\
-&= \int_{\R^{2m}} \{w(x) - w(y)\}  \overline{K}(x,y) \d y\,.
+Lw(x) &= \average_{O(m)^2} Lw(Rx)\d R =  \average_{O(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
+&= \int_{\R^{2m}} \{w(x) - w(y)\}  \average_{O(m)^2} K(|Rx - y|) \d R  \d y = \int_{\R^{2m}} \{w(x) - w(y)\}  \overline{K}(x,y) \d y\,.
 \end{align*}
 Now, we show that $\overline{K}$ is symmetric:
 \begin{align*}
-\overline{K}(y,x) &= \average_{SO(m)^2} K(|R y - x|)\d R \\
-&= \average_{SO(m)^2} K(|R^{-1} (R y - x)|)\d R \\
-&= \average_{SO(m)^2} K(|R^{-1}x-y)|)\d R \\
-&= \overline{K}(x,y)\,.
+\overline{K}(y,x) &= \average_{O(m)^2} K(|R y - x|)\d R = \average_{O(m)^2} K(|R^{-1} (R y - x)|)\d R \\
+&= \average_{O(m)^2} K(|R^{-1}x-y)|)\d R = \overline{K}(x,y)\,.
 \end{align*}
 In this last step we have used property \eqref{Eq:Unimodular}. It remains to show that
-$\overline{K}$ is invariant by $SO(m)^2$ in its two arguments. By the symmetry, it is enough to
-check it for the first one. Let $\tilde{R} \in SO^2(m)^2$. Then,
+$\overline{K}$ is invariant by $O(m)^2$ in its two arguments. By the symmetry, it is enough to
+check it for the first one. Let $\tilde{R} \in O^2(m)^2$. Then,
 $$
-\overline{K} (\tilde{R}x, y) = \average_{SO(m)^2} K(|R \tilde{R} x - y|)\d R  = \average_{SO(m)^2} K(|R x - y|)\d R = \overline{K} (x, y)\,
+\overline{K} (\tilde{R}x, y) = \average_{O(m)^2} K(|R \tilde{R} x - y|)\d R  = \average_{O(m)^2} K(|R x - y|)\d R = \overline{K} (x, y)\,
 $$
 where we have used the right invariance of the Haar measure.
 \end{proof}
@@ -190,44 +186,39 @@ Let $(\cdot)^\star$ be the isometry defined by $x^\star = (x',x'')^\star = (x'',
 Then,
 \begin{enumerate}
 \item 	
-For every $R\in SO(m)^2$, there exists  $R_\star\in SO(m)^2$ defined by $R_\star :=
-(R(\cdot)^\star)^\star$. Equivalently, if $R = (R_1, R_2)$ with $R_1$, $R_2 \in SO(m)$, then
+For every $R\in O(m)^2$, there exists  $R_\star\in O(m)^2$ defined by $R_\star :=
+(R(\cdot)^\star)^\star$. Equivalently, if $R = (R_1, R_2)$ with $R_1$, $R_2 \in O(m)$, then
 $R_\star = (R_2, R_1)$.
 \item
-The Haar integral on $SO(m)^2$ has the following invariance:
+The Haar integral on $O(m)^2$ has the following invariance:
 \begin{equation}
 \label{Eq:InvarianceByStar}
-\int_{SO(m)^2} g(R_\star) \d R = \int_{SO(m)^2} g(R) \d R \,,
+\int_{O(m)^2} g(R_\star) \d R = \int_{O(m)^2} g(R) \d R \,,
 \end{equation}
-for every $g \in L^1(SO(m)^2)$.
+for every $g \in L^1(O(m)^2)$.
 \item $\overline{K}(x^\star,y) = \overline{K} (x,y^\star)$.
 \item $\overline{K}(x^\star,y^\star) = \overline{K} (x,y)$.
 \item Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L\in \Lr$. Then,
-$$
-Lw (x) = \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \,.
-$$
-\todo[inline]{Poner la otra expresion}
+\begin{align*}
+Lw (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
+&= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
+\end{align*}
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
 The first statement is trivial. To check \eqref{Eq:InvarianceByStar}, we use Fubini:
 \begin{align*}
-\int_{SO(m)^2} g(R_\star) \d R & = \int_{SO(m)} \!\! \d R_1 \int_{SO(m)} \!\! \d R_2 \ \ g(R_2, R_1) \\
-& =  \int_{SO(m)} \!\! \d R_2 \int_{SO(m)} \!\! \d R_1 \ \ g(R_2, R_1) \\
-& =  \int_{SO(m)} \!\! \d R_1 \int_{SO(m)} \!\! \d R_2 \ \ g(R_1, R_2) \\
-& =  \int_{SO(m)^2} g(R) \d R\,.
+\int_{O(m)^2} g(R_\star) \d R & = \int_{O(m)} \!\! \d R_1 \int_{O(m)} \!\! \d R_2 \ \ g(R_2, R_1)  =  \int_{O(m)} \!\! \d R_2 \int_{O(m)} \!\! \d R_1 \ \ g(R_2, R_1) \\
+& =  \int_{O(m)} \!\! \d R_1 \int_{O(m)} \!\! \d R_2 \ \ g(R_1, R_2)  =  \int_{O(m)^2} g(R) \d R\,.
 \end{align*}
 
 To show the third statement, we use the definition of $R_\star$ and \eqref{Eq:InvarianceByStar}
 to see that
 \begin{align*}
-\overline{K}(x^\star,y) &= \average_{SO(m)^2} K(|Rx^\star - y|) \d R \\
-&= \average_{SO(m)^2} K(|(Rx^\star - y)^\star|) \d R \\
-&= \average_{SO(m)^2} K(|(R x^\star)^\star - y^\star|) \d R \\
-&= \average_{SO(m)^2} K(|R_\star x - y^\star|) \d R \\
-&= \average_{SO(m)^2} K(|Rx - y^\star|) \d R \\
-&= \overline{K}(x,y^\star)\,.
+\overline{K}(x^\star,y) &= \average_{O(m)^2} K(|Rx^\star - y|) \d R = \average_{O(m)^2} K(|(Rx^\star - y)^\star|) \d R \\
+&= \average_{O(m)^2} K(|(R x^\star)^\star - y^\star|) \d R = \average_{O(m)^2} K(|R_\star x - y^\star|) \d R \\
+&= \average_{O(m)^2} K(|Rx - y^\star|) \d R = \overline{K}(x,y^\star)\,.
 \end{align*}
 As a consequence, we have that
 $$\overline{K}(x^\star,y^\star) = \overline{K}(x,(y^\star)^\star) = \overline{K}(x,y)\,.$$
@@ -247,6 +238,10 @@ Lw (x) &= \int_{\R^{2m}}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
 &= \int_{\ocal}  \{w(x) - w(y) \} \overline{K}(x, y)\d y +\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
 &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \,.
 \end{align*}
+By adding and subtracting $w(x)\overline{K}(x, y^\star)$ in the last integrand we immediately deduce
+$$
+Lw (x) \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y\,.
+$$
 \end{proof}
 
 To finish the subsection, we prove an important result that will be used repeatedly throughout the
@@ -268,11 +263,11 @@ where $\overline{K}$ is defined by \eqref{Eq:KbarDef}.
 \begin{proof}
 Let $x$, $y \in \ocal$ and let $x_0 = (|x'|e, |x''|e)$ and $y_0 = (|y'|e, |y''|e)$, for an
 arbitrary unitary vector $e \in \Sph^{m-1} \subset \R^m$. Hence, since $\overline{K}$ is invariant
-by $SO(m)^2$,
+by $O(m)^2$,
 $$
 \overline{K}(x,y) = \overline{K}(x_0, y_0) \quad \text{ and } \quad \overline{K}(x,y^\star) = \overline{K}(x_0, y_0^\star)\,.
 $$
-To see this, let $R_x$, $R_y \in SO(m)^2$ satisfying $x = R_x x_0$ and $y = R_y y_0$. Then,
+To see this, let $R_x$, $R_y \in O(m)^2$ satisfying $x = R_x x_0$ and $y = R_y y_0$. Then,
 $$
 \overline{K}(x,y) = \overline{K}(R_x x_0,R_y y_0)  = \overline{K}(x_0, y_0)
 $$
@@ -286,14 +281,14 @@ vector.
 
 Now, define
 \begin{align*}
-Q_1 &:= \setcond{R = (R_1,R_2) \in SO(m)^2}{e\cdot R_1 e > |e\cdot R_2 e|},\\
-Q_2 &:= \setcond{R = (R_1,R_2) \in SO(m)^2}{e\cdot R_2 e > |e\cdot R_1 e|},\\
-Q_3 &:= \setcond{R = (R_1,R_2) \in SO(m)^2}{e\cdot R_1 e < -|e\cdot R_2 e|},\\
-Q_4 &:= \setcond{R = (R_1,R_2) \in SO(m)^2}{e\cdot R_2 e < - |e\cdot R_1 e|}.
+Q_1 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_1 e > |e\cdot R_2 e|},\\
+Q_2 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_2 e > |e\cdot R_1 e|},\\
+Q_3 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_1 e < -|e\cdot R_2 e|},\\
+Q_4 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_2 e < - |e\cdot R_1 e|}.
 \end{align*}
 Note that $Q_i \cap Q_j = \emptyset$ for $i\neq j$. Moreover, the set
 $$
-SO(m)^2 \setminus \{Q_1 \cup Q_2 \cup Q_3 \cup Q_4\} = \setcond{R\in SO(m)^2}{|e\cdot R_1 e| = |e\cdot R_2 e|}
+O(m)^2 \setminus \{Q_1 \cup Q_2 \cup Q_3 \cup Q_4\} = \setcond{R\in O(m)^2}{|e\cdot R_1 e| = |e\cdot R_2 e|}
 $$
 has zero measure. Note also that
 \begin{itemize}
@@ -303,7 +298,7 @@ has zero measure. Note also that
 \end{itemize}
 Therefore,
 \begin{align*}
-\overline{K} (x, y) &= \average_{SO(m)^2} K(|x - R y|)\d R \\
+\overline{K} (x, y) &= \average_{O(m)^2} K(|x - R y|)\d R \\
 & = \average_{Q_1} K(|x - R y|)\d R + \average_{Q_2} K(|x - R y|)\d R \\
 & \quad \quad
 + \average_{Q_3} K(|x - R y|)\d R +
@@ -313,7 +308,7 @@ Therefore,
 \end{align*}
 and
 \begin{align*}
-\overline{K} (x, y^\star) &= \average_{SO(m)^2} K(|x - R y^\star|)\d R \\
+\overline{K} (x, y^\star) &= \average_{O(m)^2} K(|x - R y^\star|)\d R \\
 & = \average_{Q_1} \{K(|x - R y^\star|) + K(|x + R y^\star|) \\
 &\quad \quad + K(|x - R_\star y^\star|) + K(|x + R_\star y^\star|)\}\d R
 \end{align*}
