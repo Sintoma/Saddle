@@ -24,7 +24,7 @@ convexity, concavity or strict concavity.
 \end{lemma}
 
 \begin{proof}
-Assume first that $h$ is convex in $I$. We call
+First, let us assume that $h$ is convex in $I$. We call
 $$
 x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
 $$
@@ -282,19 +282,23 @@ that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 \end{proof}
 
 
-\bigskip
--------------------
-\bigskip
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{An auxiliary computation}
+\label{Sec:AuxiliaryResults2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this appendix we present an auxiliary computation that is needed in some parts of the present
+paper.
 
 \begin{lemma}
-\label{Lemma:ComputationABCD} Let $\alpha$, $\beta$ two real numbers satisfying $\alpha \geq
+\label{Lemma:ComputationABCD} Let $\alpha$, $\beta$ be two real numbers satisfying $\alpha \geq
 |\beta|$. Let $x=(x',x'')$, $y=(y',y'')\in \ocal \subset \R^{2m}$. Define
 $$
 \begin{array}{cc}
-	A = |x'||y'|  \alpha + |x''||y''|\beta \,, &
+	A = |x'||y'|  \alpha + |x''||y''|\beta \,, \ \ \ \ \ &
 	B = |x'||y''| \alpha + |x''||y'| \beta \,, \\
-	C = |x''||y'| \alpha + |x'||y''| \beta \,, &
+	C = |x''||y'| \alpha + |x'||y''| \beta \,, \ \ \ \ \ &
 	D = |x''||y''|\alpha + |x'||y'|  \beta \,.
 \end{array}
 $$
@@ -357,9 +361,9 @@ It remains to show
 $$
 A + |D| \geq |B| + |C|\,.
 $$
-The proof of it is just a computation considering all the eight possible configurations of the
-signs of $B$, $C$ and $D$. Since the roles of $B$ and $C$ are completely interchangeable, we may
-assume that $B \geq C$ and we only need to check six cases. To do it, note first that
+The proof of this fact is just a computation considering all the eight possible configurations of
+the signs of $B$, $C$ and $D$. Since the roles of $B$ and $C$ are completely interchangeable, we
+may assume that $B \geq C$ and we only need to check six cases. To do it, note first that
 \begin{equation}
 \label{Eq:LemmaABCDProof1}
 A + D - B - C = (|x'|-|x''|)(|y'|-|y''|)(\alpha + \beta) \geq 0 \,,
@@ -383,13 +387,13 @@ $$
 - If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof1} to
 see that
 $$
-A + |D| - |B| - |C| = A - D - B - C =  A + D - B - C -2D \geq 0\,.
+A + |D| - |B| - |C| = A - D - B - C =  (A + D - B - C) + (-2D) \geq 0\,.
 $$
 
 - If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use that $D\geq 0$ and \eqref{Eq:LemmaABCDProof2} to
 see that
 $$
-A + |D| - |B| - |C| = A + D - B + C =  A - D - B + C +2D \geq 0\,.
+A + |D| - |B| - |C| = A + D - B + C =  (A - D - B + C) + 2D \geq 0\,.
 $$
 
 - If $B \geq 0$, $C \leq 0$ and $D \leq 0$, then by \eqref{Eq:LemmaABCDProof2} we have
@@ -405,7 +409,7 @@ $$
 - If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof3} to
 see that
 $$
-A + |D| - |B| - |C| = A - D + B + C =  A + D + B + C -2D \geq 0\,.
+A + |D| - |B| - |C| = A - D + B + C =  (A + D + B + C) + (-2D) \geq 0\,.
 $$
 
 This concludes the proof of the first statement.
@@ -418,12 +422,12 @@ $$
 \alpha = \sign (B) \dfrac{|x''|}{|x'|}\beta \quad \textrm{ and } \quad
 \beta = \sign (C) \sign(D) \dfrac{|x''|}{|x'|} \alpha \,.
 $$
-Hence,
+Hence, combining both equalities we obtain
 $$
-\alpha = \sign (B) \sign (C) \sign(D) \dfrac{|x''|^2}{|x'|^2} \alpha
+\alpha = \sign (B) \sign (C) \sign(D) \dfrac{|x''|^2}{|x'|^2} \alpha.
 $$
-and if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \sign(D)=1$ and $|x'| =
-|x''|$, but this is a contradiction with $x\in \ocal$. Therefore, $\alpha = 0$ and thus $\beta =
+Finally, if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \sign(D)=1$ and $|x'|
+= |x''|$, but this is a contradiction with $x\in \ocal$. Therefore, $\alpha = 0$ and thus $\beta =
 0$.
 \end{proof}
 
@@ -436,30 +440,29 @@ and if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \sign(D)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Computations in $s$ and $t$ coordinates}
+\section{The nonlocal Allen-Cahn equation in the $(s,t)$ variables}
 \label{Sec:stcomputations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The nonlocal Allen-Cahn equation in the $(s,t)$ variables}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The goal of this subsection is to write equation \eqref{Eq:NonlocalAllenCahn} in the $(s,t)$
-variables. For this, we must find a new kernel in these variables.
+The goal of this appendix is to take advantage of the doubly radial symmetry of the functions we
+are dealing with to write equation \eqref{Eq:NonlocalAllenCahn} in $(s,t)$ variables, passing from
+an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset \R^2$.
 
 \begin{lemma}
-\label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$ and let $u\in
-C_{\loc}^\alpha(\R^{2m})$ with $\alpha > 2\s$ be a function depending only on the variables $s$ and
-$t$. Let $L$ be an operator of the form \eqref{Eq:DefOfLu} with a kernel $K\geq 0$ satisfying $K(y)
-= K(|y|)$. Then, for any $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ ($x_s$, $x_t = \pm
-1$ in the case $m=1$),  $Lu(x)$ can be written in the following way:\todo{Is singular in $s=0$ or
-$t=0$??}
-\begin{equation}
+\label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$ and let $w\in
+C_{\loc}^\alpha(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function, i.e., depending only on
+the variables $s$ and $t$. Let $L$ be a rotational invariant operator ($K(y) = K(|y|)$) of the form
+\eqref{Eq:DefOfLu}. Then, if we define $\tilde{w}:(0,+\infty)\times (0,+\infty) \to \R$ as
+$\tilde{w}(s,t) = w(s,0,...,0,t,0,...,0)$, it satisfies
+$$ Lw(x) = \tilde{L} \tilde{w} (|x'|,|x''|), $$
+with
+%Then, for any $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ ($x_s$, $x_t = \pm 1$ in the
+%case $m=1$), $Lu(x)$ can be written in the following way:\todo{Is singular in $s=0$ or $t=0$??}
+\begin{equation*}
 \label{Eq:OperatorInSTVariables}
-Lu(x) = \widetilde{L} u (s,t) := \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)  \d \sigma\d \tau\,,
-\end{equation}
+\widetilde{L} \tilde{w} (s,t) := \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)  \d \sigma\d \tau\,,
+\end{equation*}
 where:
 \begin{enumerate}
 	\item If $m= 1$,
@@ -470,14 +473,13 @@ where:
 	
 	\item If $m\geq 2$,
 	\begin{align}
-	J(s,t,\sigma, \tau) &:= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}}  K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \omega_1 -2 t \tau \tilde{\omega}_1}\Big) \d \omega \d \tilde{\omega}  \label{Eq:KernelSTVariables1}\\
-	&= c_m \int_{-1}^1  \int_{-1}^1  (1-\theta^2)^{\frac{m-3}{2}} (1-\overline{\theta}^2)^{\frac{m-3}{2}} \nonumber\\
+	J(s,t,\sigma, \tau) &:= c_m ^2  \int_{-1}^1  \int_{-1}^1  (1-\theta^2)^{\frac{m-2}{2}} (1-\overline{\theta}^2)^{\frac{m-2}{2}} \nonumber\\
 	& \quad \quad \quad \quad \quad
 	K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \theta -2 t \tau \overline{\theta}}\Big) \d \theta \d \overline{\theta}\,, \label{Eq:KernelSTVariables2}
 	\end{align}
 	with
 	$$
-	c_m = \bpar{\dfrac{2 \pi^{\frac{m-1}{2}}}{\Gamma (\frac{m-1}{2})}}^2.
+	c_m = \dfrac{2 \pi^{\frac{m-1}{2}}}{\Gamma (\frac{m-1}{2})}.
 	$$
 \end{enumerate}
 %To compute it one should split three cases:
@@ -491,86 +493,88 @@ where:
 
 
 \begin{proof}
-We start with the case $m=1$. In this case, we will use explicitly that since $u$ is a function of
-$s$ and $t$, then $u$ is even with respect to the coordinate axis. Using this symmetry and the
-change $y = -\tilde{y}$, we have
-$$
-Lu(x) = \int_{\{y_2 > - y_1\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
-$$
-If we call
-$$
-I(\Omega, x) := \int_{\Omega} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,,
-$$
-then
-$$
-Lu(x) = I(\{y_2 > |y_1|\},x) + I(\{y_1 > |y_2|\},x)\,.
-$$
-We will check that $I(\{y_2 > |y_1|\},x)$ can be written in the form
-\eqref{Eq:OperatorInSTVariables} (integrated in the set $\tau > \sigma$). The computations for
-$I(\{y_1 > |y_2|\},x)$ are completely analogous.
-
-First, note that the set $\{y_2 > |y_1|\}$ can be written as
-$$
-\{y_2 > y_1 > 0\} \cup \phi(\{y_2 > y_1 > 0\}) \cup \{y_2 > 0, y_1 =0\}
-$$
-where $\phi$ is the reflection with respect to the $y_2$-axis. Therefore,
-\begin{align*}
-I(\{y_2 > |y_1|\}, x) & = \int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y  \\
-& \quad \quad + \int_{\phi(\{y_2 > y_1 > 0\})} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
-\end{align*}
-By performing the change $\phi = \phi^{-1}$ in the second integral and using the symmetry of $u$,
-we end up with
-\begin{align*}
-I(\{y_2 > |y_1|\}, x) &=
-\int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \cdot\\
-& \quad \quad \left \{K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|) \right \} \d y\,.
-\end{align*}
-Then, if in the previous expression we write
-$$
-x = (s \sign(x_1), t \sign(x_2)) \quad \textrm{ and } \quad = (\sigma \sign(y_1), \tau \sign(y_2))\,,
-$$
-we find that
-$$
-I(\{y_2 > |y_1|\}, x) =
-\int_0^{\infty} \! \! \d \sigma \int_\sigma^{\infty} \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)\,,
-$$
-with $J$ as in \eqref{Eq:KernelInSTVariablesR2}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that
-$y=(\sigma, \tau)$, and it is not difficult to check that the expression
-$$
-K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|)
-$$
-does not depend on $\sign(x_1)$ nor $\sign(x_1)$, so we can assume that $x=(s,t)$ and then
-\begin{align*}
-K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|) = \\
-K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 + 2 s \sigma + 2 t \tau }\Big) +  K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 + 2 s \sigma  -2 t \tau }\Big) \\
-\quad + K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma + 2 t \tau }\Big) + K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma  -2 t \tau }\Big)\,.
-\end{align*}
-
-In a completely analogous way, we find that
-$$
-I(\{y_1 > |y_2|\},x) = \int_0^{\infty} \! \! \d \sigma \int_0^\sigma \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)\,,
-$$
-and hence
-$$
-Lu(x) = \int_0^{\infty} \! \! \d \sigma \int_0^\infty \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau) =: \widetilde{L}u(s,t)\,.
-$$
-This concludes the proof when $m=1$.
-	
-We deal now with the case $m=2$. Let $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ and $y = (\sigma y_\sigma, \tau y_\tau)$ with $y_\sigma$, $y_\tau$ $\in \Sph^{m-1}$.
-Then,
+%We start with the case $m=1$. In this case, we will use explicitly that since $u$ is a function of
+%$s$ and $t$, then $u$ is even with respect to the coordinate axis. Using this symmetry and the
+%change $y = -\tilde{y}$, we have
+%$$
+%Lu(x) = \int_{\{y_2 > - y_1\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
+%$$
+%If we call
+%$$
+%I(\Omega, x) := \int_{\Omega} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,,
+%$$
+%then
+%$$
+%Lu(x) = I(\{y_2 > |y_1|\},x) + I(\{y_1 > |y_2|\},x)\,.
+%$$
+%We will check that $I(\{y_2 > |y_1|\},x)$ can be written in the form
+%\eqref{Eq:OperatorInSTVariables} (integrated in the set $\tau > \sigma$). The computations for
+%$I(\{y_1 > |y_2|\},x)$ are completely analogous.
+%
+%First, note that the set $\{y_2 > |y_1|\}$ can be written as
+%$$
+%\{y_2 > y_1 > 0\} \cup \phi(\{y_2 > y_1 > 0\}) \cup \{y_2 > 0, y_1 =0\}
+%$$
+%where $\phi$ is the reflection with respect to the $y_2$-axis. Therefore,
+%\begin{align*}
+%I(\{y_2 > |y_1|\}, x) & = \int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y  \\
+%& \quad \quad + \int_{\phi(\{y_2 > y_1 > 0\})} \big( u(x) - u(y)\big) \{K(|x - y|) + K(|x + y|)\} \d y\,.
+%\end{align*}
+%By performing the change $\phi = \phi^{-1}$ in the second integral and using the symmetry of $u$,
+%we end up with
+%\begin{align*}
+%I(\{y_2 > |y_1|\}, x) &=
+%\int_{\{y_2 > y_1 > 0\}} \big( u(x) - u(y)\big) \cdot\\
+%& \quad \quad \left \{K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|) \right \} \d y\,.
+%\end{align*}
+%Then, if in the previous expression we write
+%$$
+%x = (s \sign(x_1), t \sign(x_2)) \quad \textrm{ and } \quad = (\sigma \sign(y_1), \tau \sign(y_2))\,,
+%$$
+%we find that
+%$$
+%I(\{y_2 > |y_1|\}, x) =
+%\int_0^{\infty} \! \! \d \sigma \int_\sigma^{\infty} \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)\,,
+%$$
+%with $J$ as in \eqref{Eq:KernelInSTVariablesR2}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that
+%$y=(\sigma, \tau)$, and it is not difficult to check that the expression
+%$$
+%K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|)
+%$$
+%does not depend on $\sign(x_1)$ nor $\sign(x_1)$, so we can assume that $x=(s,t)$ and then
+%\begin{align*}
+%K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|) = \\
+%K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 + 2 s \sigma + 2 t \tau }\Big) +  K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 + 2 s \sigma  -2 t \tau }\Big) \\
+%\quad + K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma + 2 t \tau }\Big) + K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma  -2 t \tau }\Big)\,.
+%\end{align*}
+%
+%In a completely analogous way, we find that
+%$$
+%I(\{y_1 > |y_2|\},x) = \int_0^{\infty} \! \! \d \sigma \int_0^\sigma \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)\,,
+%$$
+%and hence
+%$$
+%Lu(x) = \int_0^{\infty} \! \! \d \sigma \int_0^\infty \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau) =: \widetilde{L}u(s,t)\,.
+%$$
+%This concludes the proof when $m=1$.
+%	
+%We deal now with the case $m=2$.
+Let $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ and $y = (\sigma y_\sigma, \tau
+y_\tau)$ with $y_\sigma$, $y_\tau$ $\in \Sph^{m-1}$. Then, decomposing $\R^{2m} = \R^m \times \R^m$
+and using polar coordinates in each $\R^m$ we obtain
 \begin{align*}
 Lu(x) &= \int_{\R^{2m}} \big( u(x) - u(y)\big) K( |x-y|) \d y &\\
 &= \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big)  \\
 &\quad \quad \quad \quad  \bpar{\int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 } \Big) \d y_\sigma \d y_\tau } \d \sigma \d \tau
 \end{align*}
-Now, we make some manipulations to the term
+Now, we define the kernel
 \begin{equation}
 \label{Eq:KernelSTVariablesProof1}
 J(x_s, x_t, s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 }\Big ) \d y_\sigma \d y_\tau \,.
 \end{equation}
 
-First of all, it is easy to see that \eqref{Eq:KernelSTVariablesProof1} does not depend on $x_s$
-nor $x_t$. Indeed, consider a different point $(z_s, z_t)$ and let $M_s$ and $M_t$ be two
+First of all, it is easy to see that $J$ does not depend on $x_s$ nor $x_t$. Indeed, consider a
+different point $(z_s, z_t)\in \Sph^{m-1} \times \Sph^{m-1}$ and let $M_s$ and $M_t$ be two
 orthogonal transformations such that $M_s(x_s) = z_s$ and $M_t(x_t) = z_t$. Then, making the change
 of variables $y_\sigma = M_s(\tilde{y}_\sigma)$ and $y_\tau = M_t(\tilde{y}_\tau)$, and using that
 $M_s( \Sph^{m-1}) = M_t(\Sph^{m-1}) = \Sph^{m-1}$, we find out that
@@ -595,167 +599,210 @@ For an easier notation, we rename $\omega = y_\sigma$ and $\tilde\omega = y_\tau
 &= s^2 +\sigma^2 - 2 s \sigma e \cdot \omega + t^2 + \tau^2 - 2 t \tau e\cdot \tilde\omega \\
 &= s^2 +\sigma^2 - 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1\,.
 \end{align*}
-This gives \eqref{Eq:KernelSTVariables1}. Finally, we use polar coordinates in $\Sph^{m-1}$ to
-obtain \eqref{Eq:KernelSTVariables2}.
+Then, we can rewrite $J$ as
+\begin{equation*}
+\label{Eq:KernelSTVariablesProof3}
+J(s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega \d \tilde\omega \,.
+\end{equation*}
+At this point we have to distinguish the cases $m=1$ and $m\geq 2$. For the fist one, since
+$\Sph^{0} = \{-1,1\}$ we directly obtain \eqref{Eq:KernelInSTVariablesR2}. For the second one,
+since the integrand only depends on $\omega_1$ and $\tilde\omega_1$, we proceed as follows
+\begin{align*}
+\label{Eq:KernelSTVariablesProof4}
+J(s,t,\sigma, \tau) &= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega \d \tilde\omega \,\\
+&= \int_{-1}^1 \d \omega_1 \int_{\partial B_{\rho(\omega_1)}} \d \omega_2\cdot\cdot\cdot\d \omega_m \int_{-1}^1 \d \tilde\omega_1 \int_{\partial B_{\rho(\tilde\omega_1)}} \d \tilde\omega_2\cdot\cdot\cdot\d \tilde\omega_m  \\
+& \quad \quad \quad \quad \quad K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \, \\
+&= \int_{-1}^1 \int_{-1}^1  |\partial B_{\rho(\omega_1)}| |\partial B_{\rho(\tilde\omega_1)}|\,\\
+& \quad \quad \quad \quad \quad K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega_1 \d \tilde\omega_1.
+\end{align*}
+where $\rho(r) = \sqrt{1-r^2}$. Finally, we obtain \eqref{Eq:KernelSTVariables2} once we replace
+$|\partial B_{r}|=c_m\,r^{m-2}$, where $c_m$ es the surface of the ball of radius one in
+$\R^{m-1}$.
 \end{proof}
 
-
-
-
-
-
-
-Now we rewrite the kernel inequality \eqref{Eq:KernelInequalityReflexion} in $s,t$-coordinates.
-\todo[inline]{Poner solo la ineq o tambien la demo?}
-
+In the case the operator is the fractional Laplacian we can obtain an alternative expression of the
+kernel $J$ in terms of some hypergeometric functions.
 \begin{lemma}
-\label{Lemma:KernelInequalityCone} 
-Let $m\geq 2$ and let $J$ the kernel defined in
-\eqref{Eq:KernelSTVariables2}. Then, if $s>t>0$ and $\sigma > \tau>0$\todo{Check if we can put
-$t=0$ or $\tau = 0$}, we have \todo{Kernel strictly decreasing???}
+\label{Lemma:Appell} If $L = (-\Delta)^\s$ and $m\geq 2$, then
 \begin{equation}
-\label{Eq:KernelInequalityCone}
-J(s,t,\sigma, \tau) \geq J(s,t,\tau, \sigma)\,.
+\label{Eq:Appell}
+J(s,t,\sigma,\tau) = \frac{\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\frac{m-1}{2}\right)^2\Gamma\left(\frac{m+1}{2}\right)^2} \frac{F_2\left( m+s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right)}{[(s+\sigma)^2+(t+\tau)^2]^{m+s}},
 \end{equation}
+where $F_2$ is the so-called Appell hypergeometric function (see \cite{Appell}).
 \end{lemma}
+Although we are not using this result in this work, we think that it could be very useful in future
+works since we are writing the kernel in terms of functions that have already been studied and have
+interesting well-known properties.
+
 
 \begin{proof}
-We will just consider some simplifications of \eqref{Eq:KernelInequalityCone}. Eventually, we will
-use Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce the desired inequality.
-
-First of all, note that it is enough to show that
-\begin{equation}
-\label{Eq:KernelInequalitySimplified1}
-\int_{-1}^1  \int_{-1}^1  (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}}  \left \{\tilde{K}\Big(\sqrt{1 -2 s \sigma \alpha -2 t \tau \beta}\Big) - \tilde{K}\Big(\sqrt{1 -2 s \tau \alpha -2 t \sigma \beta}\Big)  \right \}\d \alpha \d \beta \geq 0\,,
-\end{equation}
-Where $\tilde{K}(z) = K((s^2 + t^2 + \sigma^2 + \tau^2)z)$. To see that this is equivalent to
-\eqref{Eq:KernelInequalityCone}, we just normalize the variables in the following way:
-$$
-\tilde{s} = \dfrac{s}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,, \quad \tilde{t} = \dfrac{t}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,,
-$$
-$$
-\tilde{\sigma} = \dfrac{\sigma}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\, \quad \textrm{ and } \quad \tilde{\tau} = \dfrac{\tau}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,.
-$$
-
-The second simplification is the following. Since $s>t>0$ and $\sigma > \tau>0$, we may write
-$$
-s = (1+\varepsilon) t \quad \textrm{ and} \quad \sigma = (1 + \delta) \tau
-$$
-with $\varepsilon$, $\delta > 0$. Then, \eqref{Eq:KernelInequalitySimplified1} is equivalent to
-\begin{equation}
-\label{Eq:KernelInequalitySimplified2}
-\int_{-1}^1  \int_{-1}^1  (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}}  \left \{\tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) - \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big)  \right \}\d \alpha \d \beta \geq 0\,.
-\end{equation}
-
-Now, we make some changes of variables to reduce the domain of integration. First, we divide
-$(-1,1)^2 \setminus \{|\alpha| = |\beta|\}$ into four sectors:
-$$
-Q_1 = \{\alpha > |\beta| \}\,, \quad Q_2 = \{\beta > |\alpha| \}\,, \quad Q_3 = \{\alpha < -|\beta|\}\,, \quad \textrm{ and } \quad Q_4 = \{ \beta < -|\alpha|\}\,.
-$$
-Consider the changes
+If we take $K(z) = |z|^{-2m-2\s}$ in \eqref{Eq:KernelSTVariables2} we get
 \begin{align*}
-  \psi_2 \colon Q_2 \  &\to \ Q_1 \\
-  \ (\alpha,\beta) &\mapsto (\beta,\alpha)
+J(s,t,\sigma, \tau) = c_m ^2  \int_{-1}^1  \int_{-1}^1  \frac{(1-\theta^2)^{\frac{m-2}{2}} (1-\overline{\theta}^2)^{\frac{m-2}{2}}}{(s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \theta -2 t \tau \overline{\theta})^{m+\s}} \d \theta \d \overline{\theta}\,.
 \end{align*}
+Then, if we make the change of variables $\theta = 2\varpi_1-1$ and $\overline{\theta}=2\varpi_2-1$
+we arrive at
 \begin{align*}
-  \psi_3 \colon Q_3 \  &\to \ Q_1 \\
-  \ (\alpha,\beta) &\mapsto (-\alpha,-\beta)
+J(s,t,\sigma, \tau) &= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \int_0^1 \int_0^1
+\frac{\varpi_1^\frac{m-2}{2} (1-\varpi_1)^\frac{m-2}{2} \varpi_2^\frac{m-2}{2}
+(1-\varpi_2)^\frac{m-2}{2}}{\left(1-\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2}\,\varpi_1-\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2}\,\varpi_2
+\right)^{m+\s}} \d \varpi_1 \d \varpi_2 \\
+&= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \frac{\Gamma\left(\frac{m}{2} \right)^4}{\Gamma(m)^2} \\
+& \quad \quad \quad \quad F_2\left( m+\s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right).
 \end{align*}
-\begin{align*}
-  \psi_4 \colon Q_4 \  &\to \ Q_1 \\
-  \ (\alpha,\beta) &\mapsto (-\beta,-\alpha)
-\end{align*}
-Then, \eqref{Eq:KernelInequalitySimplified2} is now equivalent to show
-\begin{align*}
-\int \int_{Q_1} \left\{
-  \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big)
-+ \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) \right. \\
-+ \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \beta + \alpha\}}\Big)
-+ \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon)(1+\delta) \beta + \alpha\}}\Big) \\
-- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big)
-- \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big) \\
-\left.- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \beta + (1+\delta)\alpha\}}\Big)
-- \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon) \beta + (1+\delta)\alpha\}}\Big)
-\right\} \cdot \\
-\cdot (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}} \d \alpha \d \beta \geq 0\,.
-\end{align*}
-Note that we are not considering anymore the set $\{|\alpha| = |\beta|\}$, that has measure zero.
-
-Now, if we call
-$$
-g(z) := \tilde{K}\Big(\sqrt{1 -2 t \tau z}\Big)
-+ \tilde{K}\Big(\sqrt{1 +2 t \tau z }\Big)\,,
-$$
-the previous inequality reads
-\begin{equation}
-\label{Eq:KernelInequalitySimplified3}
-\begin{split}
-	\int \int_{Q_1} \left\{
-	g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big)
-	+ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big)
-	\right.\\
-	\left.
-	- g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)
-	- g\Big((1+\varepsilon) \beta + (1+\delta)\alpha\Big)
-	\right\} \cdot \\
-	\cdot (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}} \d \alpha \d \beta \geq 0\,.
-\end{split}
-\end{equation}
-We claim that
-\begin{equation}
-\label{Eq:KernelInequalityLastSimplification}
-g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big)
-+ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big)
- \geq
-g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)
-+g\Big((1+\varepsilon) \beta + (1+\delta)\alpha\Big) \,.
-\end{equation}
-This will conclude the proof.
-
-To prove the claim, we want to use Lemma~\ref{Lemma:InequalitConvexFunctions} with
-$$
-\begin{array}{cc}
-A = (1+\varepsilon)(1+\delta) \alpha + \beta\,, &
-B = (1+\varepsilon) \alpha + (1+\delta)\beta\,, \\
-C = (1+\delta)\alpha + (1+\varepsilon) \beta\,, &
-D = \alpha + (1+\varepsilon)(1+\delta) \beta\,.
-\end{array}
-$$
-Note that, since $\tilde{K}$ and $\sqrt{1 - z}$ are nonincreasing, $g$ is nondecreasing $[0,1)$.
-Moreover, since $\tilde{K}$ is convex and nonincreasing and $\sqrt{1 - z}$ is concave, $g$ is
-convex in $[0,1)$. But since $A$, $B$, $C$ and $D$ $\in (-1, 1)$ ---by the normalizations we have
-made--- and $g$ is even, we cannot apply directly Lemma~\ref{Lemma:InequalitConvexFunctions} ($g$
-is nonincreasing in $(-1,0]$). Instead, if we do it for  $|A|$, $|B|$, $|C|$ and $|D|$, then we can
-use the lemma in $[0,1)$. Hence, we should check that
-$$
-\begin{cases}
-|A| \geq |B|,\ |C|, \ |D|\,, \\
-|A| + |D| \geq |B| + |C|\,.
-\end{cases}
-$$
-The verification of these inequalities is a simple but tedious computation and it is presented in
-the appendix (see Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, we use
-Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce
-$$
-g(|A|) + g(|D|) \geq g(|B|) + g(|C|)\,,
-$$
-which is equivalent to \eqref{Eq:KernelInequalityLastSimplification} since $g$ is even. This
-concludes the proof of \eqref{Eq:KernelInequalityCone}.
-
-
-
-Finally, to justify that the inequality in \eqref{Eq:KernelInequalityCone} is strict up to a set of
-measure zero, we consider the points where $J(s,t,\sigma, \tau) = J(s,t,\tau,\sigma)$. Following
-the previous arguments, this is equivalent to say that we have an equality in
-\eqref{Eq:KernelInequalitySimplified2}, and since the integrand of that equality is nonnegative, it
-is equivalent to say that we have an equality in \eqref{Eq:KernelInequalityLastSimplification} up
-to a set of measure zero. Then, we take into account the following: since the function $\sqrt{1-z}$
-is increasing and strictly convex and the kernel $K$ is decreasing, then $g''>0$ in $(0,1)$.
-Therefore, in view of Remark~\eqref{Remark:StrictInequalitConvexFunctions}, the equality $g(A) +
-g(D) = g(B) + g(C)$ is only possible in the case $A=B=C=D$, and it is easy to verify that this
-cannot happen unless $A=B=C=D=0$\todo{Check again}. This is equivalent to $s=t$ and $\sigma=\tau$,
-something that is impossible in $\ocal$.
-
-%, under these conditions, $\varepsilon = \delta = (\sqrt{5} - 1)/2$. If we fix such values of $\varepsilon$ and $\delta$ we have a set of measure zero, $ \{2 \tilde{s} = (1 + \sqrt{5}) \tilde{t} \} \cap \{2 \tilde{\sigma} = (1 + \sqrt{5}) \tilde{\tau} \}$, in the space of the normalized parameters $\tilde{s}$, $\tilde{t}$, $\tilde{\sigma}$, $\tilde{\tau}$, as well as in the space of original ones.
+We finally obtain \eqref{Eq:Appell} by using the duplication formula for the $\Gamma$-function.
 \end{proof}
 
+Now we rewrite the kernel inequality \eqref{Eq:KernelInequalityReflexion} in $(s,t)$ variables. We
+do not present a proof of this result since it is identical to the one of
+Proposition~\ref{Prop:KernelInequalityReflexion} but changing the notation.
+
+\begin{lemma}
+\label{Lemma:KernelInequalityCone} Let $m\geq 2$ and let $J$ the kernel defined in
+\eqref{Eq:KernelSTVariables2}. Then, if $s>t>0$ and $\sigma > \tau>0$\todo{Check if we can put
+$t=0$ or $\tau = 0$}, we have \todo{Poner las hipotesis de K}
+\begin{equation*}
+%\label{Eq:KernelInequalityCone}
+J(s,t,\sigma, \tau) \geq J(s,t,\tau, \sigma)\,.
+\end{equation*}
+\end{lemma}
+
+%\begin{proof}
+%We will just consider some simplifications of \eqref{Eq:KernelInequalityCone}. Eventually, we will
+%use Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce the desired inequality.
+%
+%First of all, note that it is enough to show that
+%\begin{equation}
+%\label{Eq:KernelInequalitySimplified1}
+%\int_{-1}^1  \int_{-1}^1  (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}}  \left \{\tilde{K}\Big(\sqrt{1 -2 s \sigma \alpha -2 t \tau \beta}\Big) - \tilde{K}\Big(\sqrt{1 -2 s \tau \alpha -2 t \sigma \beta}\Big)  \right \}\d \alpha \d \beta \geq 0\,,
+%\end{equation}
+%Where $\tilde{K}(z) = K((s^2 + t^2 + \sigma^2 + \tau^2)z)$. To see that this is equivalent to
+%\eqref{Eq:KernelInequalityCone}, we just normalize the variables in the following way:
+%$$
+%\tilde{s} = \dfrac{s}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,, \quad \tilde{t} = \dfrac{t}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,,
+%$$
+%$$
+%\tilde{\sigma} = \dfrac{\sigma}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\, \quad \textrm{ and } \quad \tilde{\tau} = \dfrac{\tau}{\sqrt{s^2 + t^2 + \sigma^2 + \tau^2}}\,.
+%$$
+%
+%The second simplification is the following. Since $s>t>0$ and $\sigma > \tau>0$, we may write
+%$$
+%s = (1+\varepsilon) t \quad \textrm{ and} \quad \sigma = (1 + \delta) \tau
+%$$
+%with $\varepsilon$, $\delta > 0$. Then, \eqref{Eq:KernelInequalitySimplified1} is equivalent to
+%\begin{equation}
+%\label{Eq:KernelInequalitySimplified2}
+%\int_{-1}^1  \int_{-1}^1  (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}}  \left \{\tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) - \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big)  \right \}\d \alpha \d \beta \geq 0\,.
+%\end{equation}
+%
+%Now, we make some changes of variables to reduce the domain of integration. First, we divide
+%$(-1,1)^2 \setminus \{|\alpha| = |\beta|\}$ into four sectors:
+%$$
+%Q_1 = \{\alpha > |\beta| \}\,, \quad Q_2 = \{\beta > |\alpha| \}\,, \quad Q_3 = \{\alpha < -|\beta|\}\,, \quad \textrm{ and } \quad Q_4 = \{ \beta < -|\alpha|\}\,.
+%$$
+%Consider the changes
+%\begin{align*}
+%  \psi_2 \colon Q_2 \  &\to \ Q_1 \\
+%  \ (\alpha,\beta) &\mapsto (\beta,\alpha)
+%\end{align*}
+%\begin{align*}
+%  \psi_3 \colon Q_3 \  &\to \ Q_1 \\
+%  \ (\alpha,\beta) &\mapsto (-\alpha,-\beta)
+%\end{align*}
+%\begin{align*}
+%  \psi_4 \colon Q_4 \  &\to \ Q_1 \\
+%  \ (\alpha,\beta) &\mapsto (-\beta,-\alpha)
+%\end{align*}
+%Then, \eqref{Eq:KernelInequalitySimplified2} is now equivalent to show
+%\begin{align*}
+%\int \int_{Q_1} \left\{
+%  \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big)
+%+ \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) \right. \\
+%+ \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \beta + \alpha\}}\Big)
+%+ \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon)(1+\delta) \beta + \alpha\}}\Big) \\
+%- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big)
+%- \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big) \\
+%\left.- \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \beta + (1+\delta)\alpha\}}\Big)
+%- \tilde{K}\Big(\sqrt{1 +2 t \tau \{(1+\varepsilon) \beta + (1+\delta)\alpha\}}\Big)
+%\right\} \cdot \\
+%\cdot (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}} \d \alpha \d \beta \geq 0\,.
+%\end{align*}
+%Note that we are not considering anymore the set $\{|\alpha| = |\beta|\}$, that has measure zero.
+%
+%Now, if we call
+%$$
+%g(z) := \tilde{K}\Big(\sqrt{1 -2 t \tau z}\Big)
+%+ \tilde{K}\Big(\sqrt{1 +2 t \tau z }\Big)\,,
+%$$
+%the previous inequality reads
+%\begin{equation}
+%\label{Eq:KernelInequalitySimplified3}
+%\begin{split}
+%	\int \int_{Q_1} \left\{
+%	g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big)
+%	+ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big)
+%	\right.\\
+%	\left.
+%	- g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)
+%	- g\Big((1+\varepsilon) \beta + (1+\delta)\alpha\Big)
+%	\right\} \cdot \\
+%	\cdot (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}} \d \alpha \d \beta \geq 0\,.
+%\end{split}
+%\end{equation}
+%We claim that
+%\begin{equation}
+%\label{Eq:KernelInequalityLastSimplification}
+%g\Big((1+\varepsilon)(1+\delta) \alpha + \beta\Big)
+%+ g\Big((1+\varepsilon)(1+\delta) \beta + \alpha\Big)
+% \geq
+%g\Big((1+\varepsilon) \alpha + (1+\delta)\beta\Big)
+%+g\Big((1+\varepsilon) \beta + (1+\delta)\alpha\Big) \,.
+%\end{equation}
+%This will conclude the proof.
+%
+%To prove the claim, we want to use Lemma~\ref{Lemma:InequalitConvexFunctions} with
+%$$
+%\begin{array}{cc}
+%A = (1+\varepsilon)(1+\delta) \alpha + \beta\,, &
+%B = (1+\varepsilon) \alpha + (1+\delta)\beta\,, \\
+%C = (1+\delta)\alpha + (1+\varepsilon) \beta\,, &
+%D = \alpha + (1+\varepsilon)(1+\delta) \beta\,.
+%\end{array}
+%$$
+%Note that, since $\tilde{K}$ and $\sqrt{1 - z}$ are nonincreasing, $g$ is nondecreasing $[0,1)$.
+%Moreover, since $\tilde{K}$ is convex and nonincreasing and $\sqrt{1 - z}$ is concave, $g$ is
+%convex in $[0,1)$. But since $A$, $B$, $C$ and $D$ $\in (-1, 1)$ ---by the normalizations we have
+%made--- and $g$ is even, we cannot apply directly Lemma~\ref{Lemma:InequalitConvexFunctions} ($g$
+%is nonincreasing in $(-1,0]$). Instead, if we do it for  $|A|$, $|B|$, $|C|$ and $|D|$, then we can
+%use the lemma in $[0,1)$. Hence, we should check that
+%$$
+%\begin{cases}
+%|A| \geq |B|,\ |C|, \ |D|\,, \\
+%|A| + |D| \geq |B| + |C|\,.
+%\end{cases}
+%$$
+%The verification of these inequalities is a simple but tedious computation and it is presented in
+%the appendix (see Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, we use
+%Lemma~\ref{Lemma:InequalitConvexFunctions} to deduce
+%$$
+%g(|A|) + g(|D|) \geq g(|B|) + g(|C|)\,,
+%$$
+%which is equivalent to \eqref{Eq:KernelInequalityLastSimplification} since $g$ is even. This
+%concludes the proof of \eqref{Eq:KernelInequalityCone}.
+%
+%
+%
+%Finally, to justify that the inequality in \eqref{Eq:KernelInequalityCone} is strict up to a set of
+%measure zero, we consider the points where $J(s,t,\sigma, \tau) = J(s,t,\tau,\sigma)$. Following
+%the previous arguments, this is equivalent to say that we have an equality in
+%\eqref{Eq:KernelInequalitySimplified2}, and since the integrand of that equality is nonnegative, it
+%is equivalent to say that we have an equality in \eqref{Eq:KernelInequalityLastSimplification} up
+%to a set of measure zero. Then, we take into account the following: since the function $\sqrt{1-z}$
+%is increasing and strictly convex and the kernel $K$ is decreasing, then $g''>0$ in $(0,1)$.
+%Therefore, in view of Remark~\eqref{Remark:StrictInequalitConvexFunctions}, the equality $g(A) +
+%g(D) = g(B) + g(C)$ is only possible in the case $A=B=C=D$, and it is easy to verify that this
+%cannot happen unless $A=B=C=D=0$\todo{Check again}. This is equivalent to $s=t$ and $\sigma=\tau$,
+%something that is impossible in $\ocal$.
+%
+%%, under these conditions, $\varepsilon = \delta = (\sqrt{5} - 1)/2$. If we fix such values of $\varepsilon$ and $\delta$ we have a set of measure zero, $ \{2 \tilde{s} = (1 + \sqrt{5}) \tilde{t} \} \cap \{2 \tilde{\sigma} = (1 + \sqrt{5}) \tilde{\tau} \}$, in the space of the normalized parameters $\tilde{s}$, $\tilde{t}$, $\tilde{\sigma}$, $\tilde{\tau}$, as well as in the space of original ones.
+%\end{proof}
