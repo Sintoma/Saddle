@@ -1,18 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Asymptotic results}
+\section{Asymptotic result for the saddle-shaped solution}
 \label{Sec:Asymptotic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+In this section, we establish...
 
 
-
-
-
-
-
-
-
-
+The main difference between a general operator $L$ and the fractional Laplacian is that $L$ is, in some sense, invariant with respect to the dimension 
 Layer solution
 
 
@@ -21,38 +15,37 @@ Layer solution
 	Let $L$ and $\tilde{L}$ be two symmetric and translation invariant integral operators with kernels $K$ and $\tilde{K}$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
 	
 	If,
-	$$ \tilde{K}(t) = |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) d\sigma, $$
+	$$ \tilde{K}(t) = |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) \d \sigma, $$
 	then
 	\begin{enumerate}
 		\item[(i)] $Lu(x) = \tilde{L}v(x_n)$,
-		\item[(ii)] $L\in \mathcal{L}_0 (n,s,\lambda,\Lambda) \Rightarrow \tilde{L}\in \mathcal{L}_0 (n,s,\lambda,\Lambda)$.
+		\item[(ii)] $L\in \mathcal{L}_0 (n,\s,\lambda,\Lambda) \Rightarrow \tilde{L}\in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$.
 	\end{enumerate}
 \end{proposition}
 
 Note that if $L$ is the fractional Laplacian in dimension $n$, then $\tilde{L}$ is also the fractional Laplacian, but in dimension $1$.
 
 \begin{proof}
-	\begin{enumerate}
-		\item[(i)]
-		\begin{align*}
-		Lu(x) &= \int_{\R^n} \left\{ u(x)-u(y) \right\} K(x-y) dy \\
-		&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left((x'-y',x_n-y_n\right) dy'dy_n.
-		\end{align*}
-		Now we make the change of variables $y' = x'-(x_n-y_n)\sigma$. That is,
-		\begin{align*}
-		Lu(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} d\sigma dy_n \\
-		&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((x_n-y_n)(\sigma,1)\right) d\sigma dy_n \\
-		&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \tilde{K}(x_n-y_n dy_n = \tilde{L}v(x_n). \\
-		\end{align*}
-		\item[(ii)] We are only going to prove one of the bounds, since they are in fact the same. That is,
-		\begin{align*}
-		\tilde{K}(t) &= |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,s} \frac{\lambda}{|t|^{n+2s}(\sigma^2+
-			1)^{\frac{n+2s}{2}}} d\sigma \\
-		&= c_{n,s} \frac{\lambda}{|t|^{1+2s}} \int_{\R^n} \frac{d\sigma}{(\sigma^2+1)^{\frac{n+2s}{2}}} = c_{n,s} \frac{\lambda}{|t|^{1+2s}} \frac{c_{1,s}}{c_{n,s}} \\
-		&= c_{1,s} \frac{\lambda}{|t|^{1+2s}},
-		\end{align*}
-		where the only inequality that appears comes from the lower bound of the kernel $K$ for being in $\mathcal{L}_0$.
-	\end{enumerate}
+	
+	We start proving point $(i)$. We write $y=(y',y_n)$, with $y'\in \R^{n-1}$.
+	\begin{align*}
+	Lu(x) &= \int_{\R^n} \left\{ u(x)-u(y) \right\} K(x-y) \d y \\
+	&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left((x'-y',x_n-y_n)\right) \d y' \d y_n.
+	\end{align*}
+	Now we make the change of variables $y' = x'-(x_n-y_n)\sigma$. That is,
+	\begin{align*}
+	Lu(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} \d \sigma \d y_n \\
+	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((x_n-y_n)(\sigma,1)\right) \d\sigma \d y_n \\
+	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \tilde{K}(x_n-y_n \d y_n = \tilde{L}v(x_n). \\
+	\end{align*}
+	
+	We establish now point $(ii)$. We are only going to prove one of the bounds, since they are in fact the same. That is,
+	\begin{align*}
+	\tilde{K}(t) &= |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) \d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,\s} \frac{\lambda}{|t|^{n+2\s}(\sigma^2+1)^{\frac{n+2s}{2}}} \d\sigma \\
+	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^n} \frac{\d\sigma}{(\sigma^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} \\
+	&= c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
+	\end{align*}
+	where the only inequality that appears comes from the lower bound of the kernel $K$ for being in $\mathcal{L}_0$.
 \end{proof}
 
 

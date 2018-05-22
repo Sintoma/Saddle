@@ -5,9 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this appendix we present some auxiliary results that are needed in the paper. Such results
-concern convex functions. Recall that for measurable functions $f:\R\to \R$, convexity in an open
-interval $I$ is equivalent to midpoint convexity, i.e.,
+In this appendix we present some auxiliary results concerning convex functions. Recall that for measurable functions $f:\R\to \R$, convexity in an open interval $I$ is equivalent to midpoint convexity, i.e.,
 $$
 \dfrac{f(x) + f(y)}{2} \geq f \left( \dfrac{x+y}{2}\right) \quad \textrm{ for every } x,\, y \in I\,,
 $$
@@ -15,8 +13,45 @@ and the same is true for strict convexity with an strict inequality
 (see Chapter~1 of \cite{Niculescu} and the references therein).
 
 
+The main result, used in the characterization of $\lcal_\star$ in Theorem \todo{Poner teorema en la introducción}, is the following.
+
+\begin{proposition}
+	\label{Prop:EquivalenceK(sqrt)Convex<->Inequality}
+	Let $K:(0, +\infty) \to (0,+\infty)$ be a continuous and nonincreasing function such that
+	$$
+	\lim_{z\to +\infty} K(z) = 0\,.
+	$$
+	Then, the following statements are equivalent:
+	\begin{enumerate}
+		\item[i)] $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
+		\item[ii)] For every $c_1$, $c_2$, $A$, $B$, $C$ and $D$ satisfying
+		\begin{enumerate}
+			\item $c_1 > 0$, $c_2>0$.
+			\item $A$, $B$, $C$, $D \in (0, 1/c_2)$.
+			\item $A = \max\{A,\, B,\, C,\, D\}$.
+			\item $A + D \geq B + C$.
+		\end{enumerate}
+		it holds
+		$$
+		g(A) + g(D) \geq g(B) + g(C)\,,
+		$$
+		where
+		$$
+		g(z) := K(c_1 \sqrt{1 + c_2z}) + K(c_1 \sqrt{1 - c_2z})\,.
+		$$
+		Moreover, equality holds if and only if
+		$$ A = B \ \ \ \ \textrm{ and} \ \ \ \ C=D, $$
+		or
+		$$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
+	\end{enumerate}
+\end{proposition}
+
+
+
+To prove this result, we need some lemmas on convex functions. The first one is the following. 
+
 \begin{lemma}
-\label{Lemma:Convex<->AllReflectionsConvex} Let $h: I \subseteq \R \to \R$ be a function defined in
+\label{Lemma:Convex<->AllReflectionsConvex} Let $h: I \subset \R \to \R$ be a function defined in
 an open interval $I$ such that it is measurable. Then, $h(z)$ is convex in $I$ if and only if
 $\widetilde{h}_c(z) := h(c+z) + h(c-z)$ is convex in $I_c := (-\dist\{c, \partial I\}, \dist\{c,
 \partial I\})$ for every $c\in I$. The statement remains true if we replace convexity by strict
@@ -28,8 +63,7 @@ First, let us assume that $h$ is convex in $I$. We call
 $$
 x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
 $$
-Therefore, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in
-(0,1)$
+Therefore, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in(0,1)$,
 \begin{align*}
 t\widetilde{h}_c(x) + (1-t)\widetilde{h}_c(y)
 &=  th(x_+) + (1-t)h(y_+) + t h(x_-) + (1-t)h(y_-) \\
@@ -59,6 +93,7 @@ $$
 and this contradicts \eqref{Eq:ContradictionConvexity}. Hence, $h$ is convex in $I$.
 \end{proof}
 
+From this result we deduce an immediate corollary.
 
 \begin{corollary}
 \label{Cor:gConvex<->K(sqrt)convex} Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function.
@@ -79,9 +114,11 @@ $$
 K \left(\sqrt{c_1^2 + z}\right) +  K \left(\sqrt{c_1^2 - z}\right)
 $$
 is (strictly) convex in $(-c_1^2, c_1^2)$ for every $c_1>0$. Then, by applying
-Lemma~\ref{Lemma:Convex<->AllReflectionsConvex} taking $I = (0,+\infty)$, this is equivalent to the
+Lemma~\ref{Lemma:Convex<->AllReflectionsConvex} with $I = (0,+\infty)$, this is equivalent to the
 convexity of $K(\sqrt{z})$ in $(0, +\infty)$.
 \end{proof}
+
+The following is a characterization of the nondecreasing convex functions.
 
 \begin{lemma}
 \label{Lemma:InequalitConvexFunctions} Let $g \colon I\subset \R \to \R$ be a function defined in
@@ -109,20 +146,16 @@ $$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
 
 \end{lemma}
 \begin{proof}
-$i)\, \Rightarrow \,ii)$ First note that from the strict convexity condition in $g$ we have that
-$g$ is $C^0(I)$ and $C^1$ at all but at most countably many points. Moreover, $g'$ is increasing in
-the regular points. In addition, from being $g$ strictly convex and nondecreasing, it is in fact
-increasing.
+$i)\, \Rightarrow \,ii)$ First note that if $g$ is strictly convex, then $g$ is continuous in $I$ and differentiable except for, at most, a countable set of points. Moreover, $g'$ is increasing in the regular points. In addition, since $g$ is strictly convex and nondecreasing, it is in fact increasing.
 
 Without loss of generality, we can assume that $B \geq C$. Now, we distinguish two cases:
 
-$\bullet D \geq C$
 
-This is the simpler case. Since $g$ is nondecreasing and $A \geq B$, $D \geq C$, we have that $g(A)
-\geq g(B)$ and $g(D) \geq g(C)$. By adding up these two inequalities we get the desired result.
-Moreover, if $A>B$ or $D>C$ we obtain the strict inequality since $g$ is in fact increasing.
+$\bullet$ $D \geq C$
 
-$\bullet D < C$
+The inequality $g(A) + g(D) \geq g(B) + g(C)$ is trivial by the monotonicity of $g$. Moreover, if $A>B$ or $D>C$ we obtain the strict inequality since $g$ is in fact increasing.
+
+$\bullet$ $D < C$
 
 If $A = B$ we arrive at a contradiction from \eqref{Eq:AssumptionsInequalitiesABCD}. Then, we have
 $A > B \geq C > D$.
@@ -141,18 +174,15 @@ and
 $$
 g(C) = g(D) + \sum_{i=0}^{m}(\bar{z}_{i+1}-\bar{z}_i) g'(\bar{\xi}_i) \quad \textrm{ with } \bar{\xi}_i \in (\bar{z}_i,\bar{z}_{i+1})\,,
 $$
-If we define
-$$ \xi = \xi_0 \ \ \ \ \textrm{ and } \ \ \ \ \bar{\xi} = \bar{\xi}_m
-,$$
-since $g'$ is nondecreasing in the regular points we get
+If we define $\xi = \xi_0 $ and $\bar{\xi} = \bar{\xi}_m$, since $g'$ is nondecreasing at the regular points we get
 $$
 g(A) \geq g(B) + \sum_{i=0}^{n}(z_{i+1}-z_i) g'(\xi) = g(B) + (A-B)g'(\xi),
 $$
 and
 $$
-g(C) \leq g(D) + \sum_{i=0}^{m}(\bar{z}_{i+1}-\bar{z}_i) g'(\bar{\xi}) = g(D)+(C-D)g'(\bar{\xi}).
+g(C) \leq g(D) + \sum_{i=0}^{m}(\bar{z}_{i+1}-\bar{z}_i) g'(\bar{\xi}) = g(D)+(C-D)g'(\bar{\xi}) .
 $$
-It is clear that $\xi > \overline{\xi}$ and then $g'(\xi) > g'(\overline{\xi})$. Therefore,
+It is clear that $\xi > \overline{\xi}$ and thus $g'(\xi) > g'(\overline{\xi})$. Therefore,
 \begin{align*}
 g(A) + g(D) - g(B) - g(C) &= (g(A) - g(B)) - (g(C) - g(D)) \\
 &\geq (A - B)g'(\xi)  - (C - D)g'(\overline{\xi}) \\
@@ -162,25 +192,24 @@ g(A) + g(D) - g(B) - g(C) &= (g(A) - g(B)) - (g(C) - g(D)) \\
 where we have used that $A - B - C + D \geq 0$, $C - D > 0$, $g'\geq 0$ in the regular points and
 $g'(\xi) > g'(\overline{\xi})$.
 
-$ii)\, \Rightarrow \,i)$ Given $x\neq y$ in $I$, that we can suppose $x>y$ without loss of
-generality, we define $A=x$, $B=C=(x+y)/2$ and $D=y$. Then we get
-$$ g(x)+g(y) > 2g\left( \frac{x+y}{2} \right), $$
-that from being $g$ measurable means it is strictly convex.
+$ii)\, \Rightarrow \,i)$ Given $x\neq y$ in $I$, that we can suppose $x>y$ without loss of generality, we take $A=x$, $B=C=(x+y)/2$ and $D=y$. Then we get $ g(x)+g(y) > 2g\left( (x+y)/2 \right)$.
 \end{proof}
 
 \begin{remark}
 \label{Remark:InequalitConvexFunctions} Note that the condition of strict convexity is only needed
 in order to characterize when the equality is satisfied. That is, with only a convexity condition
-we also obtain the inequality although we are not able to determine when equality is satisfied.
+we also obtain the inequality of statement $ii)$, although we are not able to determine when equality is satisfied.
 \end{remark}
 \begin{remark}
 \label{Remark:LeftImplicationDoNotRequireNondecreasing}
 The deduction of $i)$ from $ii)$ does not require $g$ to be nondecreasing.
 \end{remark}
 
+An equivalent version of the previous result but for nonincreasing functions is the following.
+
 \begin{corollary}
-\label{Cor:hDecreasingConvex} Let $h \colon I\subset \R \to \R$ be a function defined in an open
-interval $I$ such that $h$ is measurable and nonincreasing in $I$. Then, we have the following
+\label{Cor:hDecreasingConvex} Let $h \colon I\subset \R \to \R$ be a measurable and nonincreasing function defined in an open
+interval $I$. Then, we have the following
 equivalences:
 \begin{enumerate}
 \item[i)] $h$ is convex in $I$.
@@ -206,6 +235,7 @@ condition $a+d\leq b+c$ is equivalent to $A+D\geq B+C$. Therefore, we can apply 
 \ref{Remark:InequalitConvexFunctions}, and the desired equivalence is obtained.
 \end{proof}
 
+The last result we need to establish Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} is the following.
 
 \begin{lemma}
 \label{Lemma:gNondecreasing}
@@ -237,39 +267,9 @@ If we assume that $K$ is nonincreasing and concave, then we can prove in a simil
 nondecreasing.
 \end{remark}
 
+With all these results at hand we can now prove Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}.
 
-\begin{proposition}
-\label{Prop:EquivalenceK(sqrt)Convex<->Inequality}
-Let $K:(0, +\infty) \to (0,+\infty)$ be a continuous and nonincreasing function such that
-$$
-\lim_{z\to +\infty} K(z) = 0\,.
-$$
-Then, the following statements are equivalent:
-\begin{enumerate}
-\item[i)] $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
-\item[ii)] For every $c_1$, $c_2$, $A$, $B$, $C$ and $D$ satisfying
-  \begin{enumerate}
-    \item $c_1 > 0$, $c_2>0$.
-    \item $A$, $B$, $C$, $D \in (0, 1/c_2)$.
-	\item $A = \max\{A,\, B,\, C,\, D\}$.
-    \item $A + D \geq B + C$.
-  \end{enumerate}
-  it holds
-  $$
-  g(A) + g(D) \geq g(B) + g(C)\,,
-  $$
-  where
-  $$
-  g(z) := K(c_1 \sqrt{1 + c_2z}) + K(c_1 \sqrt{1 - c_2z})\,.
-  $$
-  Moreover, equality holds if and only if
-  $$ A = B \ \ \ \ \textrm{ and} \ \ \ \ C=D, $$
-  or
-  $$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
+\begin{proof}[Proof of Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}]
 $i)\, \Rightarrow \,ii)$ By Lemma~\ref{Lemma:gNondecreasing} and
 Corollary~\ref{Cor:gConvex<->K(sqrt)convex}, $g$ is nondecreasing and strictly convex in
 $(-1/c_2,1/c_2)$ for all $c_1>0$. Therefore, point $ii)$ follows from
@@ -277,7 +277,7 @@ Lemma~\ref{Lemma:InequalitConvexFunctions}.
 
 $ii)\, \Rightarrow \,i)$ By Lemma~\ref{Lemma:InequalitConvexFunctions} and in view of
 Remark~\ref{Remark:LeftImplicationDoNotRequireNondecreasing}, $g$ is strictly convex in
-$(-1/c_2,1/c_2)$ for all $c_1>0$. Hence, using Lemma~\ref{Cor:gConvex<->K(sqrt)convex} we deduce
+$(-1/c_2,1/c_2)$ for all $c_1>0$. Hence, using Corollary~\ref{Cor:gConvex<->K(sqrt)convex} we deduce
 that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 \end{proof}
 
@@ -288,8 +288,8 @@ that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 \label{Sec:AuxiliaryResults2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In this appendix we present an auxiliary computation that is needed in some parts of the present
-paper.
+
+In this appendix we present an auxiliary computation that is needed in Section~\ref{Sec:Preliminaries} in order to characterize the operators that belong to $\lcal_\star$.
 
 \begin{lemma}
 \label{Lemma:ComputationABCD} Let $\alpha$, $\beta$ be two real numbers satisfying $\alpha \geq
@@ -319,18 +319,17 @@ then necessarily $\alpha = \beta = 0$.
 \end{enumerate}
 
 \end{lemma}
-\begin{proof}
-Since $\alpha \geq |\beta |$,
+\begin{proof} The proof is elementary but requires to check some cases. In all of them we will use the following inequalities. Since $\alpha \geq |\beta |$,
 $$
 \alpha\geq 0 \quad \textrm{ and } \quad  -\alpha \leq \beta \leq \alpha\,.
 $$
-Moreover, since $x,y\in\ocal$ it holds
+Moreover, since $x,y\in\ocal$, it holds
 $$
 |x'|>|x''| \quad \textrm{ and } \quad |y'|>|y''|\,.
 $$
-These inequalities will be used in all the proof.
 
-We start with the first point. First,  we show that $A\geq 0$ and that
+
+We start establishing the first statement. We show that $A\geq 0$ and that
 $$
 A \geq |B|, \ A \geq |C| ,\ A \geq |D|\,.
 $$
@@ -384,13 +383,13 @@ $$
 A + |D| - |B| - |C| = A + D - B - C \geq 0\,.
 $$
 
-- If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof1} to
+- If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof1} to
 see that
 $$
 A + |D| - |B| - |C| = A - D - B - C =  (A + D - B - C) + (-2D) \geq 0\,.
 $$
 
-- If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use that $D\geq 0$ and \eqref{Eq:LemmaABCDProof2} to
+- If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof2} to
 see that
 $$
 A + |D| - |B| - |C| = A + D - B + C =  (A - D - B + C) + 2D \geq 0\,.
@@ -406,8 +405,7 @@ $$
 A + |D| - |B| - |C| = A + D + B + C \geq 0\,.
 $$
 
-- If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use that $D\leq 0$ and \eqref{Eq:LemmaABCDProof3} to
-see that
+- If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof3} to see that
 $$
 A + |D| - |B| - |C| = A - D + B + C =  (A + D + B + C) + (-2D) \geq 0\,.
 $$
@@ -626,7 +624,7 @@ kernel $J$ in terms of some hypergeometric functions.
 \label{Lemma:Appell} If $L = (-\Delta)^\s$ and $m\geq 2$, then
 \begin{equation}
 \label{Eq:Appell}
-J(s,t,\sigma,\tau) = \frac{\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\frac{m-1}{2}\right)^2\Gamma\left(\frac{m+1}{2}\right)^2} \frac{F_2\left( m+s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right)}{[(s+\sigma)^2+(t+\tau)^2]^{m+s}},
+J(s,t,\sigma,\tau) = \frac{\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\frac{m-1}{2}\right)^2\Gamma\left(\frac{m+1}{2}\right)^2} \frac{F_2\left( m+\s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right)}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}},
 \end{equation}
 where $F_2$ is the so-called Appell hypergeometric function (see \cite{Appell}).
 \end{lemma}
@@ -659,11 +657,11 @@ Proposition~\ref{Prop:KernelInequalityReflexion} but changing the notation.
 
 \begin{lemma}
 \label{Lemma:KernelInequalityCone} Let $m\geq 2$ and let $J$ the kernel defined in
-\eqref{Eq:KernelSTVariables2}. Then, if $s>t>0$ and $\sigma > \tau>0$\todo{Check if we can put
-$t=0$ or $\tau = 0$}, we have \todo{Poner las hipotesis de K}
+\eqref{Eq:KernelSTVariables2} with $K(\sqrt{\cdot})$ strictly convex. Then, if $s>t>0$ and $\sigma > \tau>0$\todo{Check if we can put
+$t=0$ or $\tau = 0$}, we have
 \begin{equation*}
 %\label{Eq:KernelInequalityCone}
-J(s,t,\sigma, \tau) \geq J(s,t,\tau, \sigma)\,.
+J(s,t,\sigma, \tau) > J(s,t,\tau, \sigma)\,.
 \end{equation*}
 \end{lemma}
 
