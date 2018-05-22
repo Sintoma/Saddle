@@ -219,10 +219,6 @@ In this section we present a sharp estimate for the energy in $B_S$ of minimizer
 
 
 
-\begin{figure}
-\includegraphics[scale=2.6]{EnergyEstimateOmegaS.png}
-	\caption{The set $\Omega_S$.}
-\end{figure}
 
 
 \begin{theorem}
@@ -248,7 +244,21 @@ and
 \label{Eq:DefOmegaS}
 \Omega_S := \left( B_{S+2}\setminus \overline{B_s} \right) \cup \left( B_{S+2} \cap \{\dist(x,\ccal)< 1\}\right).
 \end{equation} 
-\todo[inline]{Dibujo}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{EnergyEstimatePsiS.png}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{EnergyEstimateOmegaS.png}
+	\end{subfigure}
+	\caption{(a) The $1$ and $-1$ level sets of $\Psi_S$. (b) The set $\Omega_S$.}
+	\label{Fig:PsiSandOmegaS}
+\end{figure}
+
 Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of
 $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$.
 
