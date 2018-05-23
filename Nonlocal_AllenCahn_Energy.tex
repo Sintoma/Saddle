@@ -10,7 +10,7 @@ This section is devoted to the energy functional associated to the Allen-Cahn eq
 
 
 
-Let us start by defining the functional spaces that we are going to consider in this paper. Given a set $\Omega \subseteq \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
+Let us start by defining the functional spaces that we are going to consider in this paper. Given a set $\Omega \subset \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
 $$
 \H^K(\Omega) := \setcond{w \in L^2(\Omega)}{[w]^2_{\H^K(\Omega)} < + \infty},
 $$
@@ -24,7 +24,7 @@ We also define
 	&\ = \setcond{w \in \H^K(\R^n)}{ w = 0 \quad \textrm{a.e. in } \R^n \setminus \Omega}.
 \end{align*}
 
-Assume that $\Omega \subseteq \R^{2m}$ is a domain of double revolution. Then, we define
+Assume that $\Omega \subset \R^{2m}$ is a domain of double revolution. Then, we define
 $$
 \widetilde{\H}^K(\Omega) := \setcond{w \in \H^K(\Omega)}{w \textrm{ is doubly radial a.e.}}.
 $$
@@ -54,7 +54,7 @@ Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, the usual fractional Sobolev 
 Once presented the functional setting of our problem, we define now  the energy functional associated to the Allen-Cahn equation. 
 
 \begin{definition}
-	Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, a potential $G$ and a function $w\in \H^K(\Omega)$, with $\Omega\subseteq \R^{n}$, we define the \emph{nonlocal Allen-Cahn energy} by
+	Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, a potential $G$ and a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we define the \emph{nonlocal Allen-Cahn energy} by
 	$$
 	\ecal(w, \Omega) := \ecal_\mathrm{K}(w,\Omega) + \ecal_\mathrm{P}(w,\Omega)\,,
 	$$
@@ -68,7 +68,7 @@ Once presented the functional setting of our problem, we define now  the energy 
 
 
 For short, we will denote $\ecal(w, \R^n) =: \ecal(w)$. Note that, for functions $w\in \H^K_0(\Omega)$, $\ecal_\mathrm{K}(w,\Omega) = \ecal_\mathrm{K}(w)$. Moreover, if $G\geq 0$, the energy satisfies $
-\ecal(w, \Omega) \leq \ecal(w, \Omega')$  whenever $ \Omega \subseteq \Omega'$.
+\ecal(w, \Omega) \leq \ecal(w, \Omega')$  whenever $ \Omega \subset \Omega'$.
 
 Sometimes is it useful to rewrite the kinetic energy as
 \begin{equation}
@@ -78,7 +78,7 @@ Sometimes is it useful to rewrite the kinetic energy as
 	+ \dfrac{1}{2} \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y\,.
 	\end{split}	
 \end{equation}
-Roughly speaking, we have split the kinetic energy into ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is, as in the previous section, rewrite the energy in terms of the doubly radial kernel $\overline{K}$ and with integrals only computed in $\ocal$. In particular, we are interested in finding a suitable expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. For $A$, $B\subseteq \ocal$ of double revolution, we define
+Roughly speaking, we have split the kinetic energy into ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is, as in the previous section, rewrite the energy in terms of the doubly radial kernel $\overline{K}$ and with integrals only computed in $\ocal$. In particular, we are interested in finding a suitable expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. For $A$, $B\subset \ocal$ of double revolution, we define
 \begin{equation}
 	\label{Eq:DefIw}
 	\begin{split}
@@ -118,7 +118,7 @@ where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 The following are two lemmas regarding the decrease of the energy under some operations.
 \begin{lemma}
 \label{Lemma:DecreaseEnergy} 
-Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
+Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:KernelInequalityReflexion}. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
 \begin{equation*}
 v(x) = \begin{cases}
 \hspace{3.2mm}|u(x)| \,\,\, &\text{if } \,\,\, x\in\ocal,\\
@@ -222,7 +222,7 @@ In this section we present a sharp estimate for the energy in $B_S$ of minimizer
 
 
 \begin{theorem}
-	\label{Th:EnergyEstimate} Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity}. Let $S>0$ and let $u$ be a minimizer of the nonlocal Allen-Cahn energy in $B_{R}$, with $R>S+2$, among functions that are in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. Then
+	\label{Th:EnergyEstimate} Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, \eqref{Eq:Ellipticity} and \eqref{Eq:KernelInequalityReflexion}. Let $S>0$ and let $u$ be a minimizer of the nonlocal Allen-Cahn energy in $B_{R}$, with $R>S+2$, among functions that are in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. Then
 	%$$ \lim_{R\to +\infty} \frac{1}{S^n} \ecal (u,B_S) = 0. $$
 	%More precisely,
 	$$ \ecal (u,B_S) \leq \begin{cases}
@@ -349,7 +349,7 @@ $$\begin{cases}
 \omega = \phi \leq \varphi \ \ \ \ \textrm{in } \ \ \ \ocal \setminus A\,,\\
 \omega = \varphi \leq \phi \ \ \ \ \textrm{in } \ \ \ \ocal \cap A\,.
 \end{cases}$$
-Then,
+Then, if $K$ satisfies \eqref{Eq:KernelInequalityReflexion}, it holds
 \begin{align*}
 I_\omega(\ocal\cap A, \ocal \setminus A) \leq I_\phi(\ocal\cap A, \ocal \setminus A) + I_\varphi(\ocal\cap A, \ocal \setminus A)\,,
 \end{align*}
@@ -437,7 +437,7 @@ $$
 Then, it is easy to check that we have the inclusions
 \begin{equation}
 \label{Eq:EnergyEstimateProofInclusionsA}
-	B_{S+1} \subseteq A \subseteq B_{S+2}\,.
+	B_{S+1} \subset A \subset B_{S+2}\,.
 \end{equation}
 To do it, note first that we only need to prove it inside $\ocal$, by the symmetry of $A$ with respect to the Simons cone. On the one hand, if $ x\in B_{S+1}\cap \ocal$, then $\Psi_S(x) = \max\{-1,-\dist(x,\ccal)\} \leq 0 \leq u(x)$, which yields $v(x) = \Psi_S(x)$ Thus, $x\in A\cap \ocal$. On the other hand, if $ x\in A\cap \ocal$ then $\Psi_S(x) \leq u(x) < 1$. This can only happen if $x\in B_{S+2}$.
 
