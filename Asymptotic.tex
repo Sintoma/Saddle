@@ -12,18 +12,18 @@ Layer solution
 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
-	Let $L$ and $\tilde{L}$ be two symmetric and translation invariant integral operators with kernels $K$ and $\tilde{K}$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
+	Let $L$ and $L_1$ be two symmetric and translation invariant integral operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
 	
 	If,
-	$$ \tilde{K}(t) = |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) \d \sigma, $$
+	$$ K_1(t) = |t|^{n-1} \int_{\R^{n-1}} K\left((t\sigma,t)\right) \d \sigma, $$
 	then
-	\begin{enumerate}
-		\item[(i)] $Lu(x) = \tilde{L}v(x_n)$,
-		\item[(ii)] $L\in \mathcal{L}_0 (n,\s,\lambda,\Lambda) \Rightarrow \tilde{L}\in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$.
+	\begin{enumerate}[label=(\roman{*})]
+		\item $Lu(x) = L_1 v(x_n)$.
+		\item If $L\in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_1 \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$.
 	\end{enumerate}
 \end{proposition}
 
-Note that if $L$ is the fractional Laplacian in dimension $n$, then $\tilde{L}$ is also the fractional Laplacian, but in dimension $1$.
+Note that if $L$ is the fractional Laplacian in dimension $n$, then $L_1$ is also the fractional Laplacian, but in dimension $1$.
 
 \begin{proof}
 	
@@ -36,16 +36,16 @@ Note that if $L$ is the fractional Laplacian in dimension $n$, then $\tilde{L}$ 
 	\begin{align*}
 	Lu(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} \d \sigma \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((x_n-y_n)(\sigma,1)\right) \d\sigma \d y_n \\
-	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \tilde{K}(x_n-y_n \d y_n = \tilde{L}v(x_n). \\
+	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = \tilde{L}v(x_n). \\
 	\end{align*}
 	
-	We establish now point $(ii)$. We are only going to prove one of the bounds, since they are in fact the same. That is,
+	We establish now point $(ii)$. To do it, we bound the kernel $K_1$. 
 	\begin{align*}
-	\tilde{K}(t) &= |t|^{n-1} \int_{\R^n} K\left(t(\sigma,1)\right) \d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,\s} \frac{\lambda}{|t|^{n+2\s}(\sigma^2+1)^{\frac{n+2s}{2}}} \d\sigma \\
-	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^n} \frac{\d\sigma}{(\sigma^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} \\
+	K_1(t) &= |t|^{n-1} \int_{\R^{n-1}} K\left(t(\sigma,1)\right) \d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,\s} \frac{\lambda}{|t|^{n+2\s}(|\sigma|^2+1)^{\frac{n+2s}{2}}} \d\sigma \\
+	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^{n-1}} \frac{\d\sigma}{(|\sigma|^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} \\
 	&= c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
 	\end{align*}
-	where the only inequality that appears comes from the lower bound of the kernel $K$ for being in $\mathcal{L}_0$.
+	where the only inequality that appears comes from the lower bound of the kernel $K$ for being $L$ in $\mathcal{L}_0$. The upper bound for $K_1$ is obtained in the same way.
 \end{proof}
 
 
@@ -138,3 +138,9 @@ u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + o(1) \\
 \end{align*}
 contradicting \eqref{Eq:ContradictionAsymptotic}. The same is done for $\nabla u$ and $D^2 u$.
 \end{proof}
+
+\begin{remark}
+	The previous result yields that, for small $\delta$, the level set $\{0<u<\delta\}$ of the saddle-shaped solution is contained in a $\varepsilon$-neighborhood of the cone. Indeed, consider the set $\ocal_\varepsilon := \{(x',x'')\in \R^m\times\R^m \ : \ |x''|+\varepsilon <|x'| \}$. 
+	
+	Since $u_0$ is monotone, for every small $\delta$ we can take $\varepsilon$ small enough and $R$ big enough so that $U(x)\geq 2\delta$ in $\ocal_\varepsilon \setminus B_R$. Thus, by taking $R$ big enough so that $|u-U|< \delta$ in $\ocal \setminus B_R$, we have that $u(x) \geq U(x)-\delta \geq \delta$ whenever $x\in \ocal_\varepsilon \setminus B_R$. Finally, since $\overline{B_R \cap \ocal}$ is a compact and $u$ is positive there, we can take $\varepsilon$ small enough so that $u\geq \delta$ in $B_R\cap \ocal_\varepsilon$.
+\end{remark}
