@@ -1,0 +1,587 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Symmetry results}
+\label{Sec:SymmetryResults}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+This section is devoted to prove the following two symmetry results. Both results will be needed in
+the following section to establish the asymptotic behavior of the saddle-shaped solution. The first
+one is a result for positive solutions in the whole space.
+
+\begin{theorem}
+	\label{Th:SymmetryWholeSpace}
+	Let $L\in \lcal_0$ and let $v$ be a bounded solution to
+	\begin{equation}
+	\label{Eq:PositiveWholeSpace}
+	\beqc{\PDEsystem}
+	L v &=& f(v) & \textrm{ in }\R^n\,,\\
+	v &\geq& 0 & \textrm{ in } \R^n\,,
+	\eeqc
+	\end{equation}
+	with the nonlinearity $f\in C^1$ satisfying
+	\begin{itemize}
+		\item $f(0) = f(1) = 0$,
+		\item $f'(0)>0$,
+		\item $f>0$ in $(0,1)$, and
+		\item $f<0$ in $(1,+\infty)$.
+	\end{itemize}
+	Then, $v\equiv 0$ or $v \equiv 1$.
+\end{theorem}
+
+The second one is a symmetry result for equations in a half-space. Here we use the notation $\R^n_+
+= \{x_n > 0\}$ and $\R^n_- = \{x_n < 0\}$ .
+
+\begin{theorem}
+	\label{Th:SymmHalfSpace}
+	Let $L\in \lcal_0$ and let $v$ be a bounded solution to one of these two problems
+	
+	\begin{equation}
+	\leqnomode
+	\tag{P1}
+	\label{Eq:P1}
+	\beqc{\PDEsystem}
+	Lv &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	v &>& 0   &\textrm{ in } \,\R^n_+,\\
+	v(x',x_n) &=& -v(x',-x_n)   &\textrm{ in } \,\R^n.
+	\eeqc
+	\end{equation}
+
+	\begin{equation}
+	\leqnomode
+	\tag{P2}
+	\label{Eq:P2}
+	\beqc{\PDEsystem}
+	Lu &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	v &>& 0   &\textrm{ in } \,\R^n_+,\\
+	v &=& 0   &\textrm{ in } \,\overline{\R^n_-},
+	\eeqc
+	\end{equation}
+	
+
+	
+	\reqnomode
+	
+	Assume that the kernel $K$ of the operator $L$ satisfies
+	$$
+	K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+,
+	$$ \todo{Es mejor ponerlo como que K es decreciente en la dirección $x_n$?}
+	where $y^*$ is the reflection of $y$ with respect to $\{x_n = 0\}$. Suppose that the nonlinearity $f$ is Lipsitchz and
+	\begin{itemize}
+		\item $f(0) = f(1) = 0$,
+		\item $f'(0)>0$, and $f'(t)\leq 0$ for all $t\in[1-\delta,1]$ for some $\delta>0$,
+		\item $f>0$ in $(0,1)$, and
+		\item $f$ is odd in the case of \eqref{Eq:P1}.
+	\end{itemize}
+	Then, $v$ depends only on $x_n$ and it is increasing in that direction.
+\end{theorem}
+
+
+The result in the case of problem \eqref{Eq:P2} will not be used in this paper. However, since the
+proof is analogous as the one for \eqref{Eq:P1}, we include it here for completeness and further
+reference.
+
+\subsection{Preliminary: Parabolic Maximum principle}
+
+
+
+
+
+\begin{theorem}
+\label{Th:ParabolicmaxPrpBdd}
+Let  $v \in C^{2\s+\epsilon}(B_R\times(0,T])$ be bounded by above and let $L$ be an integro-differential operator of the form \eqref{Eq:DefOfLu}
+
+Assume that $v$ satisfies
+\begin{equation*}
+\beqc{\PDEsystem}
+\partial_t v + L v &\leq& 0 & \textrm{ in }B_R\times(0,T]\,,\\
+v_0:=v(x,0) &\leq& 0 & \textrm{ in } B_R\,,\\
+v &\leq& 0 & \textrm{ in } \left( \R^n\setminus B_R\right) \times (0,T] \,.
+\eeqc
+\end{equation*}
+Then, $v\leq 0$ in $\R^n\times (0,T]$.
+\end{theorem}
+
+\begin{proof}
+By contradiction, assume that $v$ attains a positive absolute maximum at a point $(x_0,t_0)$. By the exterior conditions, $x_0$ must be in $B_R$. If $t_0\in(0,T)$, then $(x_0,t_0)$ is an interior global maximum and it must satisfy $v_t(x_0,t_0)=0$ and $Lv(x_0,t_0)>0$, which contradicts the equation. If $t_0 = T$, then $v_t(x_0,t_o)\geq 0$ and $Lv(x_0,t_0)>0$, which is also a contradiction with the equation.
+\end{proof}
+
+\begin{lemma}
+\label{Lemma:NoBddSolL=1}
+There is no bounded solution to $Lv=1$ in $\R^n$ for any $L\in \lcal_0$.
+\end{lemma}
+
+\begin{proof}
+Assume by contradiction that such solution exists. Then, by interior regularity (see Section~\ref{Sec:Preliminaries}) $v\in C^1(\R^n)$ and $|\nabla v|\leq C$ in $\R^n$. For every $i = 1,\ldots, n$, we differentiate the equation with respect to $x_i$ to obtain
+\begin{equation*}
+\beqc{\PDEsystem}
+L v_{x_i} &=& 0 & \textrm{ in } \R^n\,,\\
+|v_{x_i}| &\leq& C & \textrm{ in } \R^n\,.
+\eeqc
+\end{equation*}
+By the Liouville Theorem for the operator $L$ (it is proved exactly as in \cite{RosOtonSerra-Stable}, see also \cite{SerraC2s+alphaRegularity}), $v_{x_i}$ is constant. Hence, $\nabla v$ is constant, and thus $v$ is affine. But since $u$ is bounded, $v$ must be constant too, and we arrive to a contradiction with $Lv=1$.
+\end{proof}
+
+\begin{lemma}
+\label{Lemma:SolBall}
+Let $L\in \lcal_0$ and let $R>0$ be given. Then, there exists $\phi_R$ a solution of
+\begin{equation*}
+\beqc{\PDEsystem}
+L \phi_R &=& 1 & \textrm{ in } B_R\,,\\
+\phi_R &=& 0 & \textrm{ in } \R^n\setminus B_R\,,
+\eeqc
+\end{equation*}
+and satisfying
+$$
+M_R:= \sup_{B_R} \phi_R \to +\infty \quad \text{as } R\to +\infty\,.
+$$
+\end{lemma}
+\begin{proof}
+The existence of a weak solution $\phi_R$ is given by Riesz representation theorem. Moreover, by regularity results (see Section \ref{Subsec:Regularity}), $\phi_R$ is in fact a classical solution and by the maximum principle, $\phi_R>0$ in $B_R$.
+
+Since $M_R$ is increasing (use the maximum principle to compare $\phi_R$ and $\phi_{R'}$ with $R>R'$), it must have a limit $M$. Assume by contradiction that $M<+\infty$. Now, consider the new function $ \varphi_R := \phi_R/M_R$, which satisfies
+\begin{equation}
+\label{Eq:varphi}
+\beqc{\PDEsystem}
+L \varphi_R &=& 1/M_R & \textrm{ in } B_R\,,\\
+\varphi_R &=& 0 & \textrm{ in } \R^n\setminus B_R\,, \\
+\varphi_R &\leq & 1\,.
+\eeqc
+\end{equation}
+
+Therefore, applying Lemma \ref{Lemma:CompactnessLemma} we deduce that $\varphi_R$ converges (up to a subsequence) to a function $\varphi$ that is solution to $L \varphi = 1/M$ in $\R^n$ and satisfies  $|\varphi| \leq 1$. This contradicts Lemma~\ref{Lemma:NoBddSolL=1} and therefore, $M_R \to +\infty$.
+\end{proof}
+
+\begin{lemma}
+\label{Lemma:SolBallToZero}
+Let $M_R$ be as in the previous lemma. Then, there exists a function $\psi_R\geq 0$ solution to
+\begin{equation*}
+\beqc{\PDEsystem}
+L \psi_R &=& -1/M_R & \textrm{ in } B_R\,,\\
+\psi_R &=& 1 & \textrm{ in } \R^n\setminus B_R\,,
+\eeqc
+\end{equation*}
+such that
+$$ \psi_R \to  0 \quad \text{as } R\to +\infty\,. $$
+\end{lemma}
+
+\begin{proof}
+We define $ \psi_R := 1-\phi_R/M_R = 1-\varphi_R$, where $\phi_R$ and $\varphi_R$ are defined in
+the previous proof. Thus, we only need to show the limit condition. We will see that $\varphi_R \to
+1$ as $R\to +\infty$. Recall that $\varphi_R$ solves problem \eqref{Eq:varphi}, and by the previous
+arguments, letting $R\to +\infty$ we deduce that $\varphi_R$ converges to a function $\varphi\geq
+0$ that solves $ L\varphi = 0 $ in $\R^n$. By Liouville Theorem, $\varphi$ must be constant, and
+since its $L^\infty$-norm is $1$ and $\varphi\geq 0$, we conclude $\varphi\equiv 1$.
+\end{proof}
+
+\begin{theorem}
+\label{Th:ParaMaxPrp}
+Let $L\in \lcal_0$ and let $v$ be a bounded function such that
+\begin{equation*}
+\beqc{\PDEsystem}
+\partial_t v + L v + c\,v &\leq& 0 & \textrm{ in }\R^n\times(0,+\infty)\,,\\
+v_0:=v(x,0) &\leq& 0 & \textrm{ in } \R^n\,,
+\eeqc
+\end{equation*}
+with $c=c(x)$ a bounded function. Then,
+$$ v(x,t) \leq 0 \,\,\,\,\,\text{ in } \,\,\, \R^n\times[0,+\infty). $$
+\end{theorem}
+
+\begin{proof}
+First of all, note that with the change of function $\tilde{v}(x,t) = \e^{-\alpha\,t} v(x,t)$ we can reduce the initial problem to
+\begin{equation*}
+\beqc{\PDEsystem}
+\partial_t \tilde{v} + L \tilde{v} &\leq& 0 & \textrm{ in } \Omega \subset\R^n\times(0,+\infty)\,,\\
+\tilde{v} &\leq& 0 & \textrm{ in }  \left(\R^n\times(0,+\infty)\right) \setminus  \Omega\,,\\
+\tilde{v}_0 &\leq& 0 & \textrm{ in } \R^n\,,
+\eeqc
+\end{equation*}
+if we take $\alpha > ||c||_{L^\infty}$ and $\Omega = \{(x,t)\in \R^n\times(0,+\infty) \ \textrm{such that } \ v(x,t) > 0\}$.
+
+Now, consider the function $ w_R(x,t) := \norm{v}_{L^\infty} ( \psi_R + t/M_R )$, which satisfies
+\begin{equation*}
+\beqc{\PDEsystem}
+\partial_t w_R + L w_R &=& 0 & \textrm{ in }B_R\times(0,T]\,,\\
+w_R(x,0) &\geq& 0 & \textrm{ in } B_R\,,\\
+w_R(x,t) &\geq& \norm{v}_{L^\infty}  & \textrm{ in } \left( \R^n\setminus B_R\right) \times (0,T] \,.
+\eeqc
+\end{equation*}
+By the maximum principle in $(B_R\times[0,T])\cap \Omega$ (Lemma \ref{Th:ParabolicmaxPrpBdd}), we conclude that $ w_R\geq \tilde{v} $ in $B_R\times(0,T]$.
+
+Finally, given an arbitrary point $(x_0,t_0)$, take $R_0>0$ and $T>0$ such that $(x_0,t_0)\in B_{R_0}\times [0,T]$. Thus,
+$$ \tilde{v}(x_0,t_0) \leq w_R(x_o,t_0) = \norm{v}_{L^\infty} \left(  \psi_R(x_0) + \frac{t_0}{M_R} \right), \,\,\,\,\,\text{ for every }\,\,\, R\geq R_0.
+$$
+Letting $R \to +\infty$ and using that $\psi_R(x_0) \to 0$ and $M_R \to \infty$ by Lemmas
+\ref{Lemma:SolBall} and \ref{Lemma:SolBallToZero}, we conclude $ \tilde{v}(x_0,t_0) \leq  0$, and
+therefore $ v(x_0,t_0) = \e^{\alpha\,t_0}\,\tilde{v}(x_0,t_0) \leq 0$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{A symmetry result for positive solutions in the whole space}
+
+
+By using the parabolic maximum principle we can now establish Theorem~\ref{Th:SymmetryWholeSpace}.
+The proof follows the ideas of Berestycki, Hamel and Nadirashvili from Theorem 2.2. in
+\cite{BerestyckiHamelNadi} but adapted to the whole space and with an integro-differential
+operator.
+
+
+\begin{proof}[Proof of Theorem~\ref{Th:SymmetryWholeSpace}]
+
+
+Assume $v\not\equiv 0$. Then, by the strong maximum principle $v>0$. Our goal is to show that $v
+\equiv 1$, and this will be accomplished in two steps.
+
+\textbf{Step 1:} We show that $m:=\inf_{\R^n} v >0$.
+
+By contradiction, we will assume $m=0$. Then, there exists a sequence $\{x_k\}_{k\in\N}$ such that
+$v(x_k)\rightarrow 0$ as $k \rightarrow +\infty$. By the Harnack Inequality from Di Casto, Kuusi
+and Palatucci in \cite{DiCastoKuusiPalatucci}, given any $R>0$ we have \todo[inline,
+color=red]{MIRAR LO DE MATTEO!!!!}
+\begin{equation}
+\label{Eq:Harnack}
+\sup_{B_R(x_k)}v \leq C_R \inf_{B_R(x_k)}v \leq C_R \, v(x_k) \rightarrow 0 \,\,\text{as}\,\, k\rightarrow +\infty.
+\end{equation}
+
+
+Since $f(0) = 0 $ and $f'(0)>0$, it is easy to show that $f(t)\geq f'(0)t/2$ if $t$ is small
+enough. Therefore, from this and \eqref{Eq:Harnack}  we deduce that there exists $M(R)\in\N$ such
+that
+\begin{align}
+\label{Eq:WholeSpace2}
+L v - \frac{f'(0)}{2}v \geq 0 \,\,\textrm{ in }\ B_R(x_{M(R)})\,.
+\end{align}
+On the other hand, let us define
+$$ \lambda_R^{x_0} = \inf_{\substack{\varphi\in C^1_0(B_R(x_0))\\ \varphi\not\equiv 0}} \frac{\ds \int_{\R^n}\int_{\R^n}|\varphi(x)-\varphi(y)|^2\,K(x-y) \d x \d y}{\ds \int_{\R^n}\varphi(x)^2 \d x}, $$
+which decreases to zero uniformly in $x_0$ as $R$ goes to infinity from being $L\in\mathcal{L}_0$ (see the proof of Lemma~\ref{Lemma:FirstOddEigenfunction} and also Proposition~9 of \cite{ServadeiValdinoci}). Therefore, there exists $R_0>0$ such that $ \lambda_R^x < f'(0)/2$ for all $x\in \R^n$ and $R\geq R_0$. In particular, by choosing $x=x_{M(R_0)}$ there exists $w\in C^1_0(B_{R_0}(x_{M(R_0)}))$ such that $w\not\equiv 0$ and
+\begin{equation}
+\label{Eq:Eigenfunction}
+\int_{\R^n}\int_{\R^n}|w(x)-w(y)|^2\,K(x-y) \d x \d y < \frac{f'(0)}{2}\int_{\R^n}w^2 \d x.
+\end{equation}
+
+If we multiply \eqref{Eq:WholeSpace2} by $w^2/v\geq 0$ and integrate in $\R^n$, we get
+\begin{align*}
+0 &\leq \int_{\R^n} Lv\,\frac{w^2}{v} \d x - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
+&= \int_{\R^n}\int_{\R^n}\left\{ v(x)-v(y) \right\} \left( \frac{w^2(x)}{v(x)}-\frac{w^2(y)}{v(y)} \right) K(x-y) \d x \d y - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
+&\leq \int_{\R^n}\int_{\R^n} |w(x)-w(y)|^2 K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x ,
+\end{align*}
+which contradicts \eqref{Eq:Eigenfunction}. Here we have used that the kernel is positive and that
+$$
+\left\{ v(x)-v(y) \right\} \left( \frac{w^2(x)}{v(x)}-\frac{w^2(y)}{v(y)} \right)  \leq |w (x) - w(y)|^2\,.
+$$
+Indeed, developing the squares and the products, this last inequality is equivalent to $ 2 w(x) w(y) \leq v(x) w^2(y)/v(y) +  v(y) \xi^2 (x) /v(x)$, which is equivalent to
+$$
+\bpar{w (x)\sqrt{\dfrac{v(y)}{v(x)}} - w(y) \sqrt{\dfrac{v(x)}{v(y)} } }^2 \geq 0\,.
+$$
+
+
+Thus, $\inf_{\R^n} v >0$.\\
+
+\textbf{Step 2:} We show that $v\equiv 1$.
+
+Now, choose $0<\xi_0<\min\{1,m\}$, which is well defined by Step~1, and let $\xi(t)$ be the solution of the ODE
+$$
+\beqc{\PDEsystem}
+\dot{\xi}(t) &=& f(\xi(t)) & \textrm{ in }(0,\infty)\,,\\
+\xi(0) &=& \xi_0\,.
+\eeqc
+$$
+Since $f>0$ in $(0,1)$ and $f(1) = 0$ we have that $\dot{\xi}(t)>0$ for all $t\geq 0$ and $\ds \lim_{t\to 0} \xi(t) = 1$.
+
+Now, note that both $v(x)$ and $\xi(t)$ solve the parabolic equation
+$$ \partial_t w + Lw = f(w) \,\,\, \textrm{ in }\R^n\times (0,\infty)\,, $$
+and satisfy
+$$ v(x) \geq m \geq \xi_0 = \xi(0). $$
+Thus, by the parabolic maximum principle, Theorem \ref{Th:ParaMaxPrp}, $v(x)\geq \xi(t)$ for all $x\in\R^n$ and $t\in(0,\infty)$. By letting $t \to \infty$ we obtain
+$$ v(x) \geq 1 \,\, \textrm{ in }\R^n\,.  $$
+In a similar way, taking $\tilde{\xi}_0>\norm{v}_{L^\infty} \geq 1$, using $f<0$ in $(1,\infty)$, $f(1)=0$ and the parabolic maximum principle, we obtain the upper bound $v\leq 1$.
+
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{A one-dimensional symmetry result for positive solutions ``in a half-space''}
+
+In this subsection we establish Theorem~\ref{Th:SymmHalfSpace}. To do it, we proceed in three steps. First, we show that the solution is monotone in the $x_n$ direction by using a moving planes argument (see Proposition~\ref{Prop:MonotonyHalfSpace}). Once this is shown, we can deduce that the solution $v$ has uniform limits as $x_n\pm\to \infty$. Finally, by using the sliding method (see Proposition~\ref{Prop:HalfSpaceLimUnif}), we deduce the one-dimensional symmetry of the solution.
+
+We proceed now with the details of the arguments. As we have said, the first step is to show that the solution is monotone (we establish Proposition~\ref{Prop:MonotonyHalfSpace}). We do it using a moving planes argument, and for this reason we need a maximum principle in ``narrow'' domains. Recall that for a domain $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
+$$
+\dfrac{|B_R(x)\setminus \Omega|}{|B_R(x)|}\geq \dfrac{1}{2} \quad \text{ for every } x \in \Omega.
+$$
+If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small.
+
+
+An important result that we need is the following ABP-type estimate. It is proved in \cite{QuaasXia} for the fractional Laplacian, following the arguments in \cite{Cabre-ABP} (see also \cite{Cabre-Topics}). The proof for a general operator $L$ do not differ significantly from the one for the fractional Laplacian. Nevertheless, but we include it here for the sake of completeness.
+
+\begin{theorem}
+	\label{Th:ABPEstimate}
+	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L \in \lcal_0(n,\s)$\todo{Esta es buena notacion?} and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $\sup_{\Omega} v < +\infty$ and satisfying
+	$$
+	\beqc{\PDEsystem}
+	Lv - c(x)v &\leq & h & \text{ in } \Omega\,, \\
+	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
+	\eeqc
+	$$
+	with $c(x)\leq 0$ in $\Omega$ and $h\in L^\infty(\Omega)$.
+	
+	Then,
+	$$
+	\sup_\Omega v \leq C R(\Omega)^{2\s} \norm{h}_{L^{\infty}(\Omega)}\,,
+	$$
+	where $C$ is a constant depending on \todo{Poner, depende de la weak harnack}.
+\end{theorem}
+
+
+The only ingredient needed to show Theorem~\ref{Th:ABPEstimate} is the following weak Harnack inequality, which follows easily from \cite{DiCastoKuusiPalatucci}
+
+\todo[inline]{De hecho seguro que está en lo de Matteo, CHECK!!
+	De momento no la pongo}
+
+\begin{proof}
+	We are going to show it for $v$ satisfying,
+	$$
+	\beqc{\PDEsystem}
+	Lv &\leq & h & \text{ in } \Omega\,, \\
+	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
+	\eeqc
+	$$
+	since the case $c\neq 0$ can be reduced to this one. Indeed, if we consider $\Omega_0 = \{x \in \Omega \ : \ v > 0\}$, then $Lv \leq Lv - c(x)v \leq h$ in $\Omega_0$.
+	
+	Assume first that $\Omega$ is bounded. Then the supremum of $v$ must be achieved at an interior point $x_0\in \Omega$. Define	$M:= v(x_0) = \sup_\Omega v$ and consider the function $w := M - v^+$. Note that $0 \leq v \leq M$, $v(x_0) = 0$ and $v \equiv M$ in $\R^n \setminus \Omega$. If we extend $h$ to be $0$ outside $\Omega$, we see that $Lv \geq -h$ in $B_R(x_0)$.
+	
+	Now, by choosing $R= 2R(\Omega)$, and using the weak Harnack inequality \todo{citar o poner bien} we get
+	\begin{align*}
+	M \dfrac{1}{2^\varepsilon} & \leq \bpar{M^{\varepsilon}\dfrac{|B_{R/2}(x_0)\setminus \Omega|}{|B_{R/2}(x_0)|}}^{1/\varepsilon}= \bpar{\dfrac{1}{|B_{R/2}(x_0)|} \int_{B_{R/2}(x_0)\setminus \Omega} v^\varepsilon}^{1/\varepsilon} \\
+	& \leq \bpar{ \fint_{B_{R/2}(x_0)} v^\varepsilon}^{1/\varepsilon} \leq C \bpar{\inf_{B_{R}(x_0)} v + R^{2\s} \norm{h}_{L^{\infty}(\Omega)} }\,.
+	\end{align*}
+	The conclusion follows from the fact that $v(x_0)= \inf_{B_{R}(x_0)} v = 0$.
+	
+	In the case of $\Omega$ being unbounded, the proof is the same with minor changes. We define $M$ as before and we consider, for every $\delta > 0$, a point $x_0$ such that $M-\delta \leq v(x_0)$. We proceed as before and the desired estimate follows by letting $\delta \to 0$.
+\end{proof}
+
+
+\todo[inline]{Ellos lo demuestran dentro de la demo de los moving planes. En realidad sirve para los dos problemas. De todas formas, como el argumento es interesante y corto, lo ponemos aqui por completitud y para futura referencia. Hay que poner que es de ellos justo en el enunciado¿¿¿???}
+
+
+As a consequence of this result, one can deduce easily a maximum principle in ``narrow'' domains.
+
+\begin{corollary}
+	\label{Cor:MaxPpleNarrowDomains}
+	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$ and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfy
+	$$
+	\beqc{\PDEsystem}
+	Lv + c(x)v &\leq & 0 & \text{ in } \Omega\,, \\
+	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
+	\eeqc
+	$$
+	with $c(x)$ bounded below and $L\in \lcal_0(n,\s)$.
+	
+	Then, there exists a number $\bar{R} > 0$ such that $v \leq 0$ in $\Omega$ whenever $R(\Omega)< \bar{R}$.
+	
+\end{corollary}
+
+\begin{proof}
+	We write $c= c^+ - c^-$, and therefore $Lv -(-c^+)v \leq c^- v^+	$. By Theorem~\ref{Th:ABPEstimate} we get
+	$$
+	\sup_\Omega v \leq C R(\Omega)^{2\s} \norm{c^- v^+}_{L^\infty(\Omega)} \leq C R(\Omega)^{2\s} \norm{c^-}_{L^\infty(\Omega)} \sup_\Omega v
+	$$
+	and if $C R(\Omega)^{2\s} \norm{c^-}_{L^\infty(\Omega)}  <1 $, we deduce that $v\leq 0$ in $\Omega$.
+\end{proof}
+
+
+The previous maximum principle in narrow domains is not powerful enough to apply the moving planes method. The reason for this is that in the hypotheses of Corollary~\ref{Cor:MaxPpleNarrowDomains} there is a prescribed constant sign of a function outside the domain. Nevertheless, in the application of the moving planes argument, since our functions are odd with respect to a hyperplane, they cannot have a constant sign in the exterior of a narrow band. Thus, we need another version of a maximum principle in ``narrow'' domains that applies to odd functions and only requires a constant sign of the function at one side of a hyperplane.
+
+\begin{proposition}
+	\label{Prop:MaxPrpNarrowOdd}
+	Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L\in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying
+	\begin{equation}
+	\label{Eq:KernelSymmetry}
+	K(x-y) \geq K(x-y^*), \,\,\,\,\text{for all } \,\, x,y\in H.
+	\end{equation}
+	Assume that $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfies
+	\begin{equation*}
+	\beqc{\PDEsystem}
+	L v &\geq& c(x)\,v  &\textrm{ in } \Omega\subset H,\\
+	v &\geq& 0 &\textrm{ in } H\setminus\Omega,\\
+	v(x) &=& -v(x^*) &\textrm{ in } \R^n.
+	\eeqc
+	\end{equation*}
+	
+	Then, there exist a number $\overline{R}$ such that $v \geq 0$ whenever $R(\Omega) \leq \overline{R}$.
+\end{proposition}
+
+\begin{proof}
+	Let us begin by defining $\Omega_- = \{x\in \Omega \,:\,\, v<0\}$. We shall prove that $\Omega_-$ is empty. Assume by contradiction that it is not empty. Then, we split $ v = v_1+v_2$, where
+	\begin{equation*}
+	v_1(x) =
+	\begin{cases}
+	v(x)  &\textrm{ in } \Omega_-,\\
+	0 &\textrm{ in } \R^n\setminus\Omega_-,
+	\end{cases}
+	\quad \text{ and } \quad
+	v_2(x) =
+	\begin{cases}
+	0  &\textrm{ in } \Omega_-,\\
+	v(x) &\textrm{ in } \R^n\setminus\Omega_-.
+	\end{cases}
+	\end{equation*}
+	Let us first show that $Lv_2\leq 0$ in $\Omega_-$. To see this, let us take $x\in\Omega_-$ and thus
+	$$
+	Lv_2(x) = \int_{\R^n\setminus\Omega_-} -v_2(y)K(x-y) \d y = -\int_{\R^n\setminus\Omega_-} v(y)K(x-y) \d y.
+	$$
+	Now, we split $\R^n\setminus\Omega_-$ into
+	$$
+	A_1 = \Omega_-^*,\,\,\,\,\,\,\,\text{ and }\,\,\,\,\,\,\, A_2 = \left(H\setminus\Omega_-\right)\cup\left(H\setminus\Omega_-\right)^*,
+	$$
+	and we compute
+	\begin{align*}
+	-\int_{A_1} v(y)K(x-y) \d y = -\int_{\Omega_-} v(y^*)K(x-y^*) \d y  = \int_{\Omega_-} v(y)K(x-y^*) \d y \leq 0,
+	\end{align*}
+	where the last inequality comes from being $v$ negative in $\Omega_-$ and the kernel positive in all $\R^n$.
+	On the other hand
+	\begin{align*}
+	-\int_{A_2} v(y)K(x-y) \d y = -\int_{H\setminus\Omega_-} v(y)K(x-y) \d y  -\int_{H\setminus\Omega_-} v(y^*)K(x-y^*) \d y \\
+	= -\int_{H\setminus\Omega_-} v(y)\left\{K(x-y)-K(x-y^*)\right\} \d y \leq 0,
+	\end{align*}
+	where we have use the kernel condition \eqref{Eq:KernelSymmetry} and the odd symmetry of $v$. Thus, we get $Lv_2 \leq 0$ in $\Omega_-$, which means
+	$$ Lv_1 = Lv-Lv_2 \geq Lv \geq c(x)\,v = c(x)\,v_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
+	Therefore $v_1$ solves
+	\begin{equation*}
+	\beqc{\PDEsystem}
+	Lv_1 &\geq& c(x)\,v_1   &\textrm{ in } \,\Omega_-,\\
+	v_1 &=& 0 &\textrm{ in }\,\R^n\setminus\Omega_-,
+	\eeqc
+	\end{equation*}
+	and we can apply the usual maximum principle for narrow domains (Corollary~\ref{Cor:MaxPpleNarrowDomains}) to $v_1$ in $\Omega_-$ in order to deduce that $v_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $v_1$ and the fact that the set $\Omega_-$ is not empty.
+\end{proof}
+
+
+\begin{remark}
+	A maximum principle such as Proposition~\ref{Prop:MaxPrpNarrowOdd} was already proved for the fractional Laplacian in \cite{ChenLiLi-DirectMethod}, but with the additional hypothesis that $\Omega$ is bounded or, if it is unbounded, that $\liminf_{x\in  \Omega,\ |x|\to \infty} v(x) \geq 0$. In the proof of Theorem~3.1 in \cite{QuaasXia}, Quaas and Xia find a suitable argument (the one used in the previous proof) to avoid the requirement of such additional hypotheses on $\Omega$ or $v$.
+\end{remark}
+
+The maximum principle in narrow domains for odd functions with respect to a hyperplane is the main tool to use the moving plane argument. Now we can show the following result.
+
+\todo[inline]{Mirar lo que hacen Barrios, Quaas, etc en MR3624935 (2017) por si hay que citarlo}
+\begin{proposition}
+	\label{Prop:MonotonyHalfSpace}
+	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L\in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
+	$$
+	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
+	$$
+\end{proposition}
+
+
+\begin{proof}
+	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ one defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in any of the two cases ---\eqref{Eq:P1} or \eqref{Eq:P2}---, the following problem:
+	$$
+	\beqc{\PDEsystem} 
+	L w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subset H_\lambda,\\ 
+	w_\lambda &\geq& 0 &\textrm{ in } H_\lambda\setminus\Sigma_\lambda,\\ 
+	w_\lambda(x) &=& w_\lambda(x_\lambda) &\textrm{ in } \R^n, 
+	\eeqc 
+	$$
+	where $\Sigma_\lambda := \left\{ x = (x',x_n) \ : \ 0<x_n<\lambda \right\}$ and $H_\lambda := \left\{ x = (x',x_n) \ : \ x_n<\lambda \right\}$ and $c_\lambda$ is a bounded function. Note that $w_\lambda$ is odd with respect to $\partial H_\lambda$. Then, using the maximum principle in narrow domains  Proposition~\ref{Prop:MaxPrpNarrowOdd} one shows that, if $\lambda$ is small enough, $w_\lambda>0$ in $\Sigma_\lambda$. To conclude the proof, we define
+	$$
+	\lambda^* := \sup\{\lambda \ : \ w_\eta>0 \,\, \text{ in } \,\, \Sigma_\lambda \,\, \text{ for all } \,\, \eta<\lambda\}.
+	$$
+	Note that $\lambda^*$ is well defined by the previous argument. Then, to conclude the proof one has to show that $\lambda^*=\infty$. This is done by showing that, if $\lambda^*$ is finite, then there exists a small $\delta_0 > 0$ such that for every $\delta \in (0,\delta_0]$ we have
+	$$
+	w_{\lambda^* +  \delta} (x) > 0 \quad \text{ in } \Sigma_{\lambda^*-\varepsilon}\setminus \Sigma_{\varepsilon}
+	$$
+	for some small $\varepsilon$.
+	This is established using a compactness argument exactly as in Lemma~3.1 \cite{QuaasXia}. Finally, by the maximum principle in narrow domains we can deduce that $w_{\lambda^* +  \delta} (x) > 0 $ in $\Sigma_{\lambda^*+\delta}$, contradicting the definition of $\lambda^*$.
+\end{proof}
+
+\todo[inline]{habría que citar la harnack q se usa en Lemma 3.1, seguramente la de Matteo funciona}
+
+
+
+
+
+
+
+The other important ingredient needed in the proof of Theorem~\ref{Th:SymmHalfSpace} is the following symmetry result.
+
+\begin{proposition}
+\label{Prop:HalfSpaceLimUnif}
+Let $L\in \lcal_0(n,\s)$ and let $v$ be a bounded solution of one of the following problems
+\begin{equation}
+\leqnomode
+\tag{P3}
+\label{Eq:P3}
+\beqc{\PDEsystem}
+L v &=& f(v)  &\textrm{ in }\R^n\,,\\
+\ds \lim_{x_n \to \pm \infty} v(x',x_n) &=& \pm 1 \,\,\, &\textrm{ uniformly}.
+\eeqc
+\end{equation}
+
+\begin{equation}
+\leqnomode
+\tag{P4}
+\label{Eq:P4}
+\beqc{\PDEsystem}
+L v &=& f(v)  &\textrm{ in }\R^n_+ = \{ x_n>0\} \,,\\
+v &=& 0  &\textrm{ in }\overline{\R^n_-} = \{ x_n\leq 0\}\,,\\
+\ds \lim_{x_n \to + \infty} v(x',x_n) &=& 1 \,\,\, &\textrm{ uniformly}.
+\eeqc
+\end{equation}
+
+\reqnomode
+
+Assume that there exists a $\delta > 0$ such that
+$$ f'(t) \leq 0 \quad \text{ in } \quad [-1,-1+\delta]\cup[1-\delta,1], $$
+for problem \eqref{Eq:P3} and
+$$ f'(t) \leq 0 \quad \text{ in } \quad [1-\delta,1] $$
+for problem \eqref{Eq:P4}.
+
+Then, $u$ only depends on $x_n$ and is increasing in that direction.
+\end{proposition}
+
+\begin{proof}
+It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual,   to define $ v^t(x) := v(x+\nu t) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$ and the aim is to show that $v^t(x)-v(x)\geq 0$ for all $t\geq 0$. Despite the fact that $L$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the symmetry result of Theorem~\ref{Th:SymmetryWholeSpace}. Therefore, we do not include here the details.
+\end{proof}
+
+
+
+
+
+
+Finally, we can proceed with the proof of Theorem~\ref{Th:SymmHalfSpace}.
+
+\begin{proof}[Proof of Theorem~\ref{Th:SymmHalfSpace}]
+Note that by Proposition~\ref{Prop:HalfSpaceLimUnif} we only need to prove that
+$$
+\ds \lim_{x_n\to \infty} v(x',x_n) = 1
+$$
+uniformly. Therefore we divide the proof in two steps: first, we prove that the limit exists and is $1$, and then we prove that it is uniform.
+
+
+\textbf{Step 1:} Given $x'\in \R^{n-1}$, then  $\ds \lim_{x_n\to \infty} v(x',x_n) = 1$.
+
+By Proposition \ref{Prop:MonotonyHalfSpace} we know that $v$ is strictly increasing in the direction $x_n$. Since $v$ is also bounded by hypothesis, we know that, given $x'\in\R^{n-1}$, the one variable function $v(x',\cdot)$ has a limit, that we call $\overline{v}(x')$. Note that, since $v(x',0) = 0$ and $v_{x_n}>0$, we deduce that $\overline{v}(x') > 0$.
+
+Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x',x_n) := v(x',x_n+x_n^k)$. By the regularity theory of the operator $L$ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ that is a solution to
+\begin{equation}
+\label{Eq:ProofSymmHalf-SemilinearEqWholeSpace}
+\beqc{\PDEsystem}
+Lv_\infty &=& f(v_\infty)   &\textrm{ in } \,\R^n,\\
+v_\infty &\geq& 0   &\textrm{ in } \,\R^n.
+\eeqc
+\end{equation}
+By Theorem \ref{Th:SymmetryWholeSpace}, either $v_\infty\equiv 0$ or $v_\infty \equiv 1$. But, by construction,
+$$ v_\infty(x',0) = \lim_{k\to \infty} v_k(x',0) = \lim_{k\to \infty} v(x',x_n^k) = \overline{v}(x') > 0, $$
+and therefore the only possibility is
+$$ \lim_{x_n\to \infty} v(x',x_n) = 1 \quad \text{ for all } \ x'\in\R^{n-1}. $$
+
+\textbf{Step 2:}The limit is uniform in $x'$.
+
+Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_k',x_n^k)$ with $x_n^k\to \infty$ such that $v(x_k',x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x',x_n) = v(x'+x_k',x_n+x_n^k)$ converge uniformly on compact sets to a function $\tilde{v}_\infty$ that solves also \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:SymmetryWholeSpace}, it is clear that $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
+$$ \tilde{v}_\infty(0,0) = \lim_{k\to \infty} \tilde{v}_k(0,0) = \lim_{k\to \infty} v(x'_k,x_n^k) = 1-\varepsilon, $$
+which is a contradiction for $\varepsilon>0$ small enough. Thus, the limit is uniform.
+
+By applying Proposition~\ref{Prop:HalfSpaceLimUnif}, we get that $v$ depends only on $x_n$ and is increasing in that direction.
+\end{proof}

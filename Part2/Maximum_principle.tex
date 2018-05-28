@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Maximum principles for the linearized operator and uniqueness of the saddle-shaped solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{Sec:MaximumPrinciple}
+
+In this section we show that the linearized operator $L -f'(u)$ satisfies the maximum principle in $\ocal$. This result combined with the asymptotic result of Theorem~\ref{Thm:AsymptoticBehaviourSaddleSolution} gives the uniqueness of the saddle-shaped solution.
+
+The maximum principle we establish is the following.
+
+\begin{proposition}
+	\label{Prop:MaximumPrincipleInO}
+	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\Omega \subset \ocal$ a domain (not necessarily bounded) and let $L \in \lcal_\star$. Assume that $v$ satisfies
+	$$
+	\beqc{\PDEsystem}
+	Lv - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
+	v &\leq & 0 &\textrm{ in } \ocal \setminus \Omega\,,\\
+	- v(x^\star) & = & v(x) &\textrm{ in } \R^{2m},\\
+	\ds \limsup_{x\in \Omega, \ |x|\to \infty} v(x) &\leq & 0\,,
+	\eeqc
+	$$
+	with $c\leq 0$ in $\Omega$.
+	Then, $v \leq 0$ in $\Omega$.
+\end{proposition}
+
+In order to prove this result we need a maximum principle in narrow domains, stated next.
+
+\begin{proposition}
+	\label{Prop:MaximumPrincipleNarrowDomainsOdd}
+	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\varepsilon>0$ and let
+	$$
+	H \subset \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
+	$$ 
+	be a domain (not necessarily bounded). Let $L \in \lcal_\star$ and assume that $v$ satisfies
+	\begin{equation}
+	\label{Eq:AssumptionsMaxPNarrow}
+	\beqc{\PDEsystem}
+	Lv + cv&\leq & 0 &\textrm{ in } H\,,\\
+	v &\leq & 0 &\textrm{ in } \ocal \setminus H\,,\\
+	- v(x^\star) & = & v(x) &\textrm{ in } \R^{2m},\\
+	\ds \limsup_{x\in H, \ |x|\to \infty} v(x) &\leq & 0\,.
+	\eeqc
+	\end{equation}
+	Under these assumptions there exists $\overline{\varepsilon}>0$ such that, if $\varepsilon<\overline{\varepsilon}$, then $v \leq 0$ in $H$.
+\end{proposition}
+
+\begin{proof}
+	Assume, by contradiction, that
+	$$
+	M := \sup_H > 0\,.
+	$$
+	Under the assumptions \eqref{Eq:AssumptionsMaxPNarrow}, $M$ must be attained at an interior point $x_0 \in H$, that we can assume without loss of generality that is of the form $x_0 = (|x_0'|e,|x_0''|e)$, with $e=(1,0,...,0)\in\R^m$. Then,
+	\begin{equation}
+	\label{Eq:InequalitiesMaxPNarrowProof}
+	0 \geq L v(x_0) + c(x_0)v(x_0) \geq L v(x_0) - \norm{c_-}_{L^\infty(H)}M\,.
+	\end{equation} 
+	Now, we compute $L v(x_0)$. Then, since $v$ is doubly radial and odd with respect to the Simons cone, by Lemma~\ref{Lemma:PropertiesStar}\todo{Escrbir en este lema la otra expresion} we can write
+	\begin{align*}
+	Lv(x_0) &= \int_{\ocal} \big (M - v(y) \big) \big (\overline{K}(x_0,y) -\overline{K}(x_0,y^\star)\big) \d y + 2M\int_{\ocal} \overline{K}(x_0,y^\star)\d y\\
+    &\geq2M \int_{\ocal} \overline{K}(x_0,y^\star)\d y,
+	\end{align*}
+    where the inequality comes from being $M$ the supremum of $v$ in $\ocal$ and the kernel inequality from Proposition~\ref{Prop:KernelInequalityReflexion}.   
+    
+	Recalling \eqref{Eq:InequalitiesMaxPNarrowProof}, we have
+	$$
+	0 \geq L v(x_0) + c(x_0)v(x_0)  \geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
+	\right\}\,.
+	$$
+	We claim that, for $\varepsilon$ small enough,
+	\begin{equation}
+	\label{Eq:ClaimMaxPNarrowProof}
+	 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y > \norm{c_-}_{L^\infty(H)}\,.
+	\end{equation}
+	If we assume this claim to be true, then we have a contradiction and we conclude that $v \leq 0$ in $H$.
+	
+	Let us show \eqref{Eq:ClaimMaxPNarrowProof} by proving that the left hand-side in that equation can be as big as desired if $\varepsilon$ is small enough. On the one hand, note that
+	$$
+	\int_{\ocal} \overline{K}(x_0,y^\star)\d y = \int_{\ical} \overline{K}(x_0,y)\d y = \int_{\ical} K(|x_0-y|)\d y \geq \lambda c_{2m,\s}\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
+	$$
+	by the ellipticity of the kernel. On the other hand, by Lemma~4.2 in \cite{CabreTerraI} and the narrow condition, there exists a point $\overline{x_0}=(\mu e, \mu e)$ with $\mu>0$, which is a projection of $x_0$ in the Simons cone, such that
+    $$ |x_0-\overline{x_0}| = \frac{|x_0'|-|x_0''|}{\sqrt[]{2}} \leq \frac{\sqrt[]{2}}{2} \varepsilon. $$
+	Therefore, $	|x_0 - y| \leq |x_0 - \overline{x_0}| + |\overline{x_0} - y| \leq \sqrt{2}\varepsilon/2 + |\overline{x_0} - y|$ and we obtain
+	$$
+	\int_{\ical} |x_0-y|^{-2m-2\s}\d y  \geq
+	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y
+	$$
+	By monotone convergence, we get
+	$$
+	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y \to \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y 
+	$$
+	as $\varepsilon \to 0$. 
+	Since $\overline{x_0} \in \ccal$, $|\overline{x_0}^\star - y|= |\overline{x_0}^\star - y|= |\overline{x_0} - y|$. Therefore, the previous integral is infinite. Indeed,
+    \begin{align*}
+    \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y &\geq \int_{\ical\cap B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s}\d y \\
+    &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})}  |\overline{x_0} - y|^{-2m-2\s} \d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} |\overline{x_0} - y^\star|^{-2m-2\s}\d y\\
+    &= \frac{1}{2}\int_{B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s} \d y = \frac{1}{2}\int_{B_R} |z|^{-2m-2\s} \d z = +\infty.
+    \end{align*}
+    Note that the fact that $\overline{x_0} = (\mu e, \mu e)$ is fundamental in order to have $(\ical\cap B_R(\overline{x_0}))^\star = \ocal\cap B_R(\overline{x_0})$. Therefore, for $\varepsilon$ small enough,
+	$$
+	\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
+	$$
+	is as big as we want, in particular bigger than $\norm{c_-}_{L^\infty(H)}$. This shows \eqref{Eq:ClaimMaxPNarrowProof} and concludes the proof.
+\end{proof}
+
+Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleInO}.
+
+\begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleInO}]
+    
+
+
+	For the sake of simplicity, we will denote 
+	$$
+	\mathscr{L} w := Lw - f'(u)w - cw\,.
+	$$
+	Let $\varepsilon > 0$ be such that the maximum principle of Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} is valid and define the following sets:
+	$$
+	\Omega_\varepsilon := \Omega \cap \{|x'| > |x''| + \varepsilon\}\quad \textrm{ and } \quad 
+	\ncal_\varepsilon := \Omega \cap \{|x''| < |x'| < |x''| + \varepsilon\}\,.
+	$$
+	Recall that, by the asymptotic result, we have 
+	$$
+	u \geq \delta > 0 \quad \textrm{ in } \overline{\Omega}_\varepsilon\,,
+	$$
+	for some $\delta >0$. \todo{Ponerlo en una remark en la seccion de assymptotic} Moreover, by \eqref{Eq:PropertyConcavityf} we get
+	\begin{equation}
+	\label{Eq:uSupersolLinearized}
+	\mathscr{L} u = Lu - f'(u)u - cu \geq f(u) - f'(u)u > 0 \quad \textrm{ in } \Omega \subset \ocal\,,
+	\end{equation}
+	where in the first inequality we have used that $u>0$ in $\ocal$ and that $c\leq 0$.
+	
+    
+    By contradiction, assume that there exists $x_0\in \Omega$ such that $v(x_0)> 0$.
+	Set $w := v - \tau u$. Since in $\overline{\Omega}_\varepsilon$ we have $u \geq \delta > 0$, we see that for $\tau$ big enough, $w < 0$ in $\overline{\Omega}_\varepsilon$. Moreover, since $v\leq 0$ in $\ocal\setminus\Omega$, we have 
+	$$
+	w \leq 0 \quad \textrm{ in } \ocal \setminus \ncal_\varepsilon\,.
+	$$
+	Furthermore, we also have
+	$$
+	\limsup_{x\in \ncal_\varepsilon, \ |x|\to \infty} w(x) \leq 0
+	$$
+	and, by \eqref{Eq:uSupersolLinearized},
+	$$
+	\mathscr{L} w = \mathscr{L} v - \tau \mathscr{L} u \leq 0 \textrm{ in } \ncal_\varepsilon\,.
+	$$
+	Therefore, since $w$ is odd with respect to $\ccal$, we can apply Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} with $H = \ncal_\varepsilon$ to deduce that
+	$$
+	w \leq 0 \quad \textrm{ in } \Omega\,,
+	$$
+	if $\tau$ is big enough.
+	
+	Now, define 
+	$$
+	\overline{\tau}:= \inf \setcond{\lambda > 0}{v - \tau u \leq 0 \ \textrm{ in } \Omega}\,.
+	$$
+	By the previous reasoning, $\overline{\tau}$ is well defined. Clearly, $v - \overline{\tau} u \leq 0 $ in $\Omega$. In addition, since $v(x_0)>0$ and $u(x_0)>0$, we have $-\overline{\tau} u(x_0) < v(x_0) - \overline{\tau} u (x_0) \leq 0$ and therefore $\overline{\tau} > 0$.
+	
+	We claim that $v - \overline{\tau} u \not \equiv 0$. Indeed, if $v - \overline{\tau} u \equiv 0$ then $v = \overline{\tau} u$ and thus, since $\overline{\tau} > 0$, we get
+	$$
+	0 \geq \mathscr{L} v(x_0) = \overline{\tau} \mathscr{L} u(x_0) > 0\,, 
+	$$
+	which is a contradiction.
+	
+	Then, since $v - \overline{\tau} u \not \equiv 0$, the strong maximum principle (Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) yields
+	$$
+	v - \overline{\tau} u < 0 \quad \textrm{ in }\Omega\,.
+	$$
+	Therefore, by continuity and the assumption on $v$ at infinity, there exists $0 < \eta <\overline{\tau}$ such that 
+	$$
+	\tilde{w} := v - (\overline{\tau} - \eta) u < 0 \quad \textrm{ in }\overline{\Omega}_\varepsilon\,.
+	$$
+	Using again the maximum principle in narrow domains with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that 
+	$$
+	v - (\overline{\tau} - \eta) u \leq 0 \quad \textrm{ in }\Omega\,,
+	$$
+	and this contradicts the definition of $\overline{\tau}$. Hence, $v\leq 0$ in $\Omega$.
+\end{proof}
+
+
+
+With these ingredients available, we can finally establish the uniqueness of the saddle-shaped solution.
+
+
+
+\begin{proof}[Proof of Theorem~\ref{Th:Uniqueness}]
+	Let $u_1$ and $u_2$ be two saddle-shaped solutions. Define $v := u_1 - u_2$ which is a doubly radial function that is odd with respect to $\ccal$. Then,
+	$$
+	L v = f(u_1) - f(u_2) \leq f'(u_2) (u_1 - u_2) = f'(u_2) v \quad \textrm{ in } \ocal\,,
+	$$
+	since $f$ is concave in $(0,1)$. Moreover, by the asymptotic result (see Theorem~\ref{Thm:AsymptoticBehaviourSaddleSolution}), we have
+	$$
+	\limsup_{x\in \ocal, \ |x|\to \infty} v(x) = 0\,.
+	$$
+	Then, by the maximum principle in $\ocal$ for the linearized operator $L - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleInO}), we are lead to $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
+\end{proof}
+
+
