@@ -192,7 +192,7 @@ $$ v(x,t) \leq 0 \,\,\,\,\,\text{ in } \,\,\, \R^n\times[0,+\infty). $$
 First of all, note that with the change of function $\tilde{v}(x,t) = \e^{-\alpha\,t} v(x,t)$ we can reduce the initial problem to
 \begin{equation*}
 \beqc{\PDEsystem}
-\partial_t \tilde{v} + L \tilde{v} &\leq& 0 & \textrm{ in } \Omega \subseteq\R^n\times(0,+\infty)\,,\\
+\partial_t \tilde{v} + L \tilde{v} &\leq& 0 & \textrm{ in } \Omega \subset\R^n\times(0,+\infty)\,,\\
 \tilde{v} &\leq& 0 & \textrm{ in }  \left(\R^n\times(0,+\infty)\right) \setminus  \Omega\,,\\
 \tilde{v}_0 &\leq& 0 & \textrm{ in } \R^n\,,
 \eeqc
@@ -404,7 +404,7 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 	Assume that $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfies
 	\begin{equation*}
 	\beqc{\PDEsystem}
-	L v &\geq& c(x)\,v  &\textrm{ in } \Omega\subseteq H,\\
+	L v &\geq& c(x)\,v  &\textrm{ in } \Omega\subset H,\\
 	v &\geq& 0 &\textrm{ in } H\setminus\Omega,\\
 	v(x) &=& -v(x^*) &\textrm{ in } \R^n.
 	\eeqc
@@ -478,11 +478,11 @@ The maximum principle in narrow domains for odd functions with respect to a hype
 \begin{proof}
 	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ one defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in any of the two cases ---\eqref{Eq:P1} or \eqref{Eq:P2}---, the following problem:
 	$$
-	\beqc{\PDEsystem}
-	L w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subseteq H_\lambda,\\
-	w_\lambda &\geq& 0 &\textrm{ in } H_\lambda\setminus\Sigma_\lambda,\\
-	w_\lambda(x) &=& w_\lambda(x_\lambda) &\textrm{ in } \R^n,
-	\eeqc
+	\beqc{\PDEsystem} 
+	L w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subset H_\lambda,\\ 
+	w_\lambda &\geq& 0 &\textrm{ in } H_\lambda\setminus\Sigma_\lambda,\\ 
+	w_\lambda(x) &=& w_\lambda(x_\lambda) &\textrm{ in } \R^n, 
+	\eeqc 
 	$$
 	where $\Sigma_\lambda := \left\{ x = (x',x_n) \ : \ 0<x_n<\lambda \right\}$ and $H_\lambda := \left\{ x = (x',x_n) \ : \ x_n<\lambda \right\}$ and $c_\lambda$ is a bounded function. Note that $w_\lambda$ is odd with respect to $\partial H_\lambda$. Then, using the maximum principle in narrow domains  Proposition~\ref{Prop:MaxPrpNarrowOdd} one shows that, if $\lambda$ is small enough, $w_\lambda>0$ in $\Sigma_\lambda$. To conclude the proof, we define
 	$$
