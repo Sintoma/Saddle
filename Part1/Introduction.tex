@@ -200,11 +200,11 @@ The usual strategy to deal with doubly radial solutions (and in particular saddl
 $$
 s = |x'| \quad \text{ and } \quad t=|x''|\,.
 $$
-This is specially useful when dealing with the Laplacian, since the operator can be written very easily in these coordinates and then the resulting PDE in $(0,+\infty)\times (0,+\infty)$ is suitable to work with. The same happens in the case of the fractional Laplacian thanks to the local extension problem. When we try to follow the same strategy by writing a general operator such as $L_K$ in $(s,t)$ variables, the expression of the new operator is more complex (see Appendix~\ref{Sec:stcomputations}). Despite the fact that all computations can be done in these radial variables, the notation becomes cumbersome. For this reason, we follow a different approach that consists of rewriting the operator $L_K$ without any change of coordinates but with a different kernel that is doubly radial. As it is explained with more detail in Section~\ref{Sec:Preliminaries}, if $K$ is a radially symmetric kernel, then we find the following expression:
+This is specially useful when dealing with the Laplacian, since the operator can be written very easily in these coordinates and then the resulting PDE in $(0,+\infty)\times (0,+\infty)$ is suitable to work with. The same happens in the case of the fractional Laplacian thanks to the local extension problem. When we try to follow the same strategy by writing a general operator such as $L_K$ in $(s,t)$ variables, the expression of the new operator is more complex (see Appendix~\ref{Sec:stcomputations}). Despite the fact that all computations can be done in these radial variables, the notation becomes cumbersome. For this reason, we follow a different approach that consists of rewriting the operator $L_K$ without any change of coordinates but with a different kernel that is doubly radial. As it is explained with more details in Section~\ref{Sec:Preliminaries}, if $K$ is a radially symmetric kernel, then we find the following expression:
 $$
 L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
-where $\overline{K}$ is doubly radial in both variables and defined by
+where $\overline{K}$ is doubly radial in both variables and is defined by
 \begin{equation}
 \label{Eq:KbarDef'}
 \overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,.
@@ -212,7 +212,7 @@ where $\overline{K}$ is doubly radial in both variables and defined by
 Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$ (see Section~\ref{Sec:Preliminaries} for the details).
 
 
-One of them main ingredients needed in our proofs (mostly in \cite{FelipeSanz-Perela:IntegroDifferentialII}) is a maximum principle for this operator, but for odd functions with respect to the cone $\ccal$. The classical maximum principle holds for the operator $L_K$ thanks to the positivity of the kernel and reads as follows. For $\Omega \subset \R^n$, if $L_K w \geq 0$ in $\Omega$ and $w \geq 0$ in $\R^n \setminus \Omega$, then $w\geq 0$ in $\Omega$. Such a statement is not suitable for odd functions in general (note that if $w$ is odd, so is $L_K w$ and therefore it makes more sense to assume $L_K w \geq 0$ in a subset  at one side of the cone \todo{Mejorar}). For this reason, we need to use the symmetry of the functions to rewrite the operator taking only into account ``what happens'' in $\ocal$. Using the change of variables given by $(\cdot)^\star$ ---defined in \eqref{Eq:DefStar}---, we find that $L_K$ acting on an odd function $w$ corresponds to apply the following operator to $w$. 
+One of them main ingredients needed in our proofs (mostly in \cite{FelipeSanz-Perela:IntegroDifferentialII}) is a maximum principle for this operator, but for odd functions with respect to the cone $\ccal$. The classical maximum principle holds for the operator $L_K$ thanks to the positivity of the kernel and reads as follows. For $\Omega \subset \R^n$, if $L_K w \geq 0$ in $\Omega$ and $w \geq 0$ in $\R^n \setminus \Omega$, then $w\geq 0$ in $\Omega$. Such a statement is not suitable for odd functions in general (note that if $w$ is odd, so is $L_K w$ and therefore it makes more sense to assume $L_K w \geq 0$ in a subset  at one side of the cone \todo{Mejorar}). For this reason, we need to use the symmetry of the functions to rewrite the operator taking only into account ``what happens'' in $\ocal$. Using the change of variables given by $(\cdot)^\star$ ---defined in \eqref{Eq:DefStar}---, we find that $L_K$ acting on a doubly radial odd function $w$ corresponds to apply the following operator to $w$. 
 \begin{equation}
 	L_K' w (x) := \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
 \end{equation}
@@ -220,10 +220,10 @@ One of them main ingredients needed in our proofs (mostly in \cite{FelipeSanz-Pe
 
 Another point of view is considering the previous expression as an operator acting on doubly radial functions $w$ defined only on $\ocal$. Then, $L_K'$ corresponds to consider the odd extension of  $w$ with respect to the Simons cone and apply the operator $L_K$ to this extended function. Since in this article we will always consider odd functions, we will do an abuse of notation and we will denote both operators by $L_K$, since they are the same.
 
-Note that this last expression has an integro-differental term plus a zero order term with the good sign. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. Indeed, we show in Section~\ref{Sec:Preliminaries} that this assumption guarantees that $L_K$ has a maximum principle for odd functions. The previous positivity assumption motivates the following definition.
+Note that this last expression has an integro-differential term plus a zero order term with a nonnegative coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. Indeed, we show in Section~\ref{Sec:Preliminaries} that this assumption guarantees that $L_K$ has a maximum principle for odd functions. The previous positivity assumption motivates the following definition.
 
 \begin{definition}
-	Let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$ be an integro-differential operator with a radially symmetric kernel $K$. We say that $L_K\in \lcal_\star$ whenever the associated kernel $\overline{K}$ satisfies
+	Let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies
 	\begin{equation}
 		\label{Eq:KernelInequality}
 		\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
@@ -270,7 +270,7 @@ Using the same type of arguments as for the operator $L_K$, we can rewrite the e
 
 
 
-This result has been proved in the case of the fractional Laplacian by Cinti \cite{Cinti-Saddle,Cinti-Saddle2}, but using the local extension problem. In our case, since this technique is not available, we follow the proof of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they prove a similar energy estimate for minimizers without any symmetry. The strategy to establish the result is to compare the energy of $u$ with the energy of a suitable competitor built after ``cutting'' $u$ with some radial functions. Such competitor is not permitted in our case since it is not odd with respect to the Simons cone. In Section~\ref{Sec:Nonlocal_AllenCahn_Energy} we show how to adapt the ideas of \cite{SavinValdinoci-EnergyEstimate} to our setting in order to establish Theorem~\ref{Th:EnergyEstimate}. In the arguments, the assumption \eqref{Eq:KernelInequality} is crucial.
+This result has been proved in the case of the fractional Laplacian by Cinti \cite{Cinti-Saddle,Cinti-Saddle2}, but using the local extension problem. In our case, since this technique is not available, we follow the arguments of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they prove a similar energy estimate for minimizers without any symmetry. The strategy to establish their result is to compare the energy of $u$ with the energy of a suitable competitor built after ``cutting'' $u$ with some radial functions. Such competitor is not permitted in our case since it is not odd with respect to the Simons cone. In Section~\ref{Sec:Nonlocal_AllenCahn_Energy} we show how to adapt the ideas of \cite{SavinValdinoci-EnergyEstimate} to our setting in order to establish Theorem~\ref{Th:EnergyEstimate}. In the arguments, the assumption \eqref{Eq:KernelInequality} is crucial.
 
 
 
