@@ -177,18 +177,19 @@ $$
 where we have used the right invariance of the Haar measure.
 \end{proof}
 
-In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by \eqref{Eq:DefStar} and its relation with the doubly radial kernel $\overline{K}$.
+
+
+In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by \eqref{Eq:DefStar} and its relation with the doubly radial kernel $\overline{K}$ and the transformations of $O(m)^2$. In particular, in the proof of Theorem~\ref{Th:CharacterizationLstar} it will be useful to consider the following transformation. For every $R\in O(m)^2$, we define  $R_\star\in O(m)^2$ by 
+$$
+R_\star := (R(\cdot)^\star)^\star\,.$$
+Equivalently, if $R = (R_1, R_2)$ with $R_1$, $R_2 \in O(m)$, then $R_\star = (R_2, R_1)$.
 
 \begin{lemma}
 \label{Lemma:PropertiesStar}
 Let $(\cdot)^\star$ be the isometry defined by $x^\star = (x',x'')^\star = (x'', x')$
-(see \eqref{Eq:DefStar}).
+---see \eqref{Eq:DefStar}.
 Then,
 \begin{enumerate}
-\item 	
-For every $R\in O(m)^2$, there exists  $R_\star\in O(m)^2$ defined by $R_\star :=
-(R(\cdot)^\star)^\star$. Equivalently, if $R = (R_1, R_2)$ with $R_1$, $R_2 \in O(m)$, then
-$R_\star = (R_2, R_1)$.
 \item
 The Haar integral on $O(m)^2$ has the following invariance:
 \begin{equation}
@@ -198,7 +199,7 @@ The Haar integral on $O(m)^2$ has the following invariance:
 for every $g \in L^1(O(m)^2)$.
 \item $\overline{K}(x^\star,y) = \overline{K} (x,y^\star)$.
 \item $\overline{K}(x^\star,y^\star) = \overline{K} (x,y)$.
-\item Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L_K in \Lr$. Then,
+\item Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L_K \in \Lr$. Then,
 \begin{align*}
 L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
 &= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
@@ -207,13 +208,13 @@ L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\oca
 \end{lemma}
 
 \begin{proof}
-The first statement is trivial. To check \eqref{Eq:InvarianceByStar}, we use Fubini:
+The first statement is easy to check \eqref{Eq:InvarianceByStar} by using Fubini:
 \begin{align*}
 \int_{O(m)^2} g(R_\star) \d R & = \int_{O(m)} \!\! \d R_1 \int_{O(m)} \!\! \d R_2 \ \ g(R_2, R_1)  =  \int_{O(m)} \!\! \d R_2 \int_{O(m)} \!\! \d R_1 \ \ g(R_2, R_1) \\
 & =  \int_{O(m)} \!\! \d R_1 \int_{O(m)} \!\! \d R_2 \ \ g(R_1, R_2)  =  \int_{O(m)^2} g(R) \d R\,.
 \end{align*}
 
-To show the third statement, we use the definition of $R_\star$ and \eqref{Eq:InvarianceByStar}
+To show the second statement, we use the definition of $R_\star$ and \eqref{Eq:InvarianceByStar}
 to see that
 \begin{align*}
 \overline{K}(x^\star,y) &= \average_{O(m)^2} K(|Rx^\star - y|) \d R = \average_{O(m)^2} K(|(Rx^\star - y)^\star|) \d R \\
@@ -244,9 +245,12 @@ L_K w (x) \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y
 $$
 \end{proof}
 
-To finish the subsection, we prove an important result that will be used repeatedly throughout the
-paper. It states a crucial inequality for the kernel $\overline{K}$ that is valid when the original
-kernel $K$ satisfies that $K(\sqrt{|\cdot|})$ is convex.
+
+\subsection{Characterization of $\lcal_\star$}
+
+In this subsection, we establish Theorem~\ref{Th:CharacterizationLstar}.
+
+...
 
 \begin{proposition}
 \label{Prop:KernelInequalityReflexion} Assume that the kernel $K$ is radially symmetric, satisfies
