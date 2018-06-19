@@ -24,7 +24,7 @@ Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, we deduce th
 \begin{equation}
 \label{Eq:ProofExistenceProblemBR}
 	\beqc{\PDEsystem}
-	L u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
+	L_K  u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
 	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
 	\eeqc
 \end{equation}
@@ -32,7 +32,7 @@ Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, we deduce th
 
 The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. Let $S>0$ and $T =4\lceil 1/\s\rceil$ and consider the family $\{u_R\}$, for $R> S + T$, of solutions in $B_{S+T}$. By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} in balls of radius $1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2,\alpha}(\overline{B_S})$ bound for $u_R$. By the Arzela-Ascoli theorem, a subsequence of $\{u_R\}$ converges in $C^2(\overline{B_S})$ to a solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging in $C^2_{\loc}(\R^{2m})$ to a solution $u \in C^2(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
 
-Therefore, we have $u$ a solution of $Lu = f(u)$ in $\R^{2m}$ which is doubly radial. Furthermore, $u$ is odd with respect to the Simons cone $\ccal$, i.e., $u(x) = -u(x^\star)$ for $x\in \R^{2m}$, and $0 \leq u\leq 1$ in $\ocal$.
+Therefore, we have that $u$ is a solution of $L_K u = f(u)$ in $\R^{2m}$ which is doubly radial. Furthermore, $u$ is odd with respect to the Simons cone $\ccal$, i.e., $u(x) = -u(x^\star)$ for $x\in \R^{2m}$, and $0 \leq u\leq 1$ in $\ocal$.
 
 Finally, we show that $0<u<1$ in $\ocal$. This will ensure that $u$ is a saddle-shaped solution. First, note that $|u| < 1$ by the strong maximum principle (since $u$ vanishes at $\ccal$, $u \not \equiv 1$  and $u\not\equiv -1$). Let us show that $u\not\equiv 0$. To do this, we use the energy estimate of Theorem~\ref{Th:EnergyEstimate}. That is, if we consider $u_R$ the minimizer of $\ecal(\cdot, B_R)$ with $R > 2$, we have
 $$

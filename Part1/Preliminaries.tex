@@ -17,7 +17,7 @@ We start with a result on the interior regularity for linear equations.
 
 \begin{proposition}
 \label{Prop:InteriorRegularity}
-Let $L\in\lcal_0$ and let $w\in L^\infty (\R^n)$ be a weak solution to $Lw = h$ in $B_1$. Then,
+Let $L_K \in\lcal_0$ and let $w\in L^\infty (\R^n)$ be a weak solution to $L_K w = h$ in $B_1$. Then,
 \begin{equation}
 \label{Eq:C2sEstimate}
 \norm{w}_{C^{2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (\R^n)} }\,.
@@ -47,7 +47,7 @@ Then, we use estimate \eqref{Eq:Calpha->Calpha+2sEstimate} repeatedly and  the s
 arguments lead to the following conclusion.
 
 \begin{corollary}
-\label{Cor:C2regularity} Let $f\in C^{1}([-1,1])$, $L\in \lcal_0$ and let $-1 \leq u \leq 1$ be a
+\label{Cor:C2regularity} Let $f\in C^{1}([-1,1])$, $L_K \in \lcal_0$ and let $-1 \leq u \leq 1$ be a
 bounded weak solution to \eqref{Eq:NonlocalAllenCahn}. Then $u\in C^{\alpha}(\R^n)$ for some
 $\alpha
 > 1+ 2 \s$. Moreover, the following estimate holds:
@@ -64,7 +64,7 @@ following result.
 
 \begin{corollary}
 \label{Cor:InteriorRegularityBalls}
-Let $L\in\lcal_0$ and let $w\in L^\infty (\R^n)$ be a weak solution to $Lw = h$ in $B_1$. Then,
+Let $L_K \in\lcal_0$ and let $w\in L^\infty (\R^n)$ be a weak solution to $Lw = h$ in $B_1$. Then,
 \begin{equation}
 \label{Eq:C2sEstimateBalls}
 \norm{w}_{C^{2\s} (B_{1/4})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (B_1)} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} }\,.
@@ -78,7 +78,7 @@ Moreover, let $\alpha > 0$ and assume additionally that $w \in C^\alpha (\R^n)$.
 where $C$ is a constant that depends only on $n$, $\s$, $\lambda$ and $\Lambda$.
 \end{corollary}
 
-Therefore, assume now that $u$ solves $Lu = f(u)$ in $B_R$ and that $|u|\leq 1$ in $\R^n$ with
+Therefore, assume now that $u$ solves $L_K u = f(u)$ in $B_R$ and that $|u|\leq 1$ in $\R^n$ with
 $f\in C^{\alpha}([-1,1])$ for some $\alpha > 0$. Then, the combination of \eqref{Eq:C2sEstimate}
 and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} yields
 \begin{equation}
@@ -93,7 +93,7 @@ reference. The result is an easy consequence of the Arzelà-Ascoli theorem and t
 $C^\alpha \subset \subset C^\beta$ when $\beta < \alpha$.
 
 \begin{lemma}
-\label{Lemma:CompactnessLemma} Let $\Omega\subset \R^n$ a bounded domain, $L\in \lcal_0$ and let
+\label{Lemma:CompactnessLemma} Let $\Omega\subset \R^n$ a bounded domain, $L_K \in \lcal_0$ and let
 $w_k$ be a sequence of functions satisfying
 \begin{itemize}
 \item $w_k \in C^\alpha (\overline{\Omega})$ with $\alpha > 2\s$ and
@@ -101,11 +101,11 @@ $$
 \norm{w_k}_{C^\alpha (\overline{\Omega})} \leq C
 $$
 with a constant $C$ independent of $k$.
-\item $L w_k = h_k$ with $h_k \in C^{\alpha'}(\overline{\Omega})$ for some $\alpha' > 0$ and such
+\item $L_K  w_k = h_k$ with $h_k \in C^{\alpha'}(\overline{\Omega})$ for some $\alpha' > 0$ and such
     that $h_k \to h \in C^{\alpha'}(\overline{\Omega})$ uniformly.
 \end{itemize}
 Then, for every $\beta \in (2\s, \alpha)$, a subsequence of $w_k$ converges to some $w \in C^\beta
-(\overline{\Omega})$ with the $C^\beta (\overline{\Omega})$ norm and satisfies $Lw = h$ in
+(\overline{\Omega})$ with the $C^\beta (\overline{\Omega})$ norm and satisfies $L_K w = h$ in
 $\Omega$.
 \end{lemma}
 
@@ -115,27 +115,27 @@ $\Omega$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The main purpose of this subsection is to deduce an alternative expression for an operator $L\in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Recall that the operators in the class $\Lr$ are always uniformly elliptic ($L\in \lcal_0$) and have a radially symmetric kernel, i.e., $K(y) = K(|y|)$.
+The main purpose of this subsection is to deduce an alternative expression for an operator $L_K \in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Recall that the operators in the class $\Lr$ are always uniformly elliptic ($L_K \in \lcal_0$) and have a radially symmetric kernel, i.e., $K(y) = K(|y|)$.
 
 Our first remark is that if $w$ is invariant by $O(m)^2$, so is $Lw$. Indeed, for every $R \in
 O(m)^2$,
 \begin{align*}
-Lw (Rx)
+L_K w (Rx)
 & = \int_{\R^{2m}} \{w(Rx) - w(y)\} K(|Rx - y|)  \d y\\
 & = \int_{\R^{2m}} \{w(Rx) - w(R\tilde{y})\} K(|Rx - R\tilde{y}|) \d \tilde{y}\\
 & = \int_{\R^{2m}} \{w(x) - w(\tilde{y})\} K(|x-\tilde{y}|) \d \tilde{y}\\
-& = Lw (x)\,.
+& = L_K w (x)\,.
 \end{align*}
 Here we have used that $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$ and the change $y =
 R\tilde{y}$.
 
 
-Next, we present an alternative expression for the operator $L$ acting on doubly radial functions.
+Next, we present an alternative expression for the operator $L_K $ acting on doubly radial functions.
 
 \begin{lemma} \label{Lemma:AlternativeOperatorExpression}
-Let $L\in \Lr$ and let $w$ be a doubly radial function for which $Lw$ is well-defined. Then, $Lw$ can be expressed as
+Let $L_K \in \Lr$ and let $w$ be a doubly radial function for which $L_K w$ is well-defined. Then, $L_K w$ can be expressed as
 $$
-Lw(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
+L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
 where $\overline{K}$ is symmetric, invariant by $O(m)^2$ in both arguments and is defined by
 \begin{equation}
@@ -158,9 +158,9 @@ for every subset $\Sigma \subset O(m)^2$ and every $R\in O(m)^2$. Moreover, it h
 for every $g\in L^1(O(m)^2)$ ---see \cite{Nachbin} for the details.
 
 \begin{proof}[Proof of Lemma~\ref{Lemma:AlternativeOperatorExpression}]
-Since $Lw$ is invariant by $O(m)^2$ and $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$,
+Since $L_K w$ is invariant by $O(m)^2$ and $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$,
 \begin{align*}
-Lw(x) &= \average_{O(m)^2} Lw(Rx)\d R =  \average_{O(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
+L_K w(x) &= \average_{O(m)^2} Lw(Rx)\d R =  \average_{O(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
 &= \int_{\R^{2m}} \{w(x) - w(y)\}  \average_{O(m)^2} K(|Rx - y|) \d R  \d y = \int_{\R^{2m}} \{w(x) - w(y)\}  \overline{K}(x,y) \d y\,.
 \end{align*}
 Now, we show that $\overline{K}$ is symmetric:
@@ -198,9 +198,9 @@ The Haar integral on $O(m)^2$ has the following invariance:
 for every $g \in L^1(O(m)^2)$.
 \item $\overline{K}(x^\star,y) = \overline{K} (x,y^\star)$.
 \item $\overline{K}(x^\star,y^\star) = \overline{K} (x,y)$.
-\item Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L\in \Lr$. Then,
+\item Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L_K in \Lr$. Then,
 \begin{align*}
-Lw (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
+L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
 &= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
 \end{align*}
 \end{enumerate}
@@ -234,13 +234,13 @@ change $\bar{y} = y^\star$ and the odd symmetry of $u$, we see that
 \end{align*}
 Hence,
 \begin{align*}
-Lw (x) &= \int_{\R^{2m}}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
+L_K w (x) &= \int_{\R^{2m}}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
 &= \int_{\ocal}  \{w(x) - w(y) \} \overline{K}(x, y)\d y +\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
 &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \,.
 \end{align*}
 By adding and subtracting $w(x)\overline{K}(x, y^\star)$ in the last integrand we immediately deduce
 $$
-Lw (x) \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y\,.
+L_K w (x) \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y\,.
 $$
 \end{proof}
 
@@ -524,10 +524,10 @@ inequality of Proposition~\ref{Prop:KernelInequalityReflexion}.
 \begin{proposition}[Weak maximum principle for odd functions with respect to $\ccal$]
 \label{Prop:WeakMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}(\R^{2m})$ with
 $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let
-$\Omega \subset \ocal$ and let $L \in \lcal_\star$. Assume that
+$\Omega \subset \ocal$ and let $L_K  \in \lcal_\star$. Assume that
 $$
 \beqc{\PDEsystem}
-Lu & \geq & 0 & \text{ in } \Omega\,,\\
+L_K u & \geq & 0 & \text{ in } \Omega\,,\\
 u & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
 \eeqc
 $$
@@ -547,7 +547,7 @@ u(x_0) = \min_{\Omega} u =: m < 0\,.
 $$
 Then, using the expression of $L$ for odd functions (see Lemma~\ref{Lemma:PropertiesStar}), we have
 $$
-Lu (x_0) = \int_{\ocal} \{m - u(y) \} \overline{K}(x_0, y) \d y +  \int_{\ocal} \{m + u(y) \} \overline{K}(x_0, y^\star) \d y\,.
+L_K u (x_0) = \int_{\ocal} \{m - u(y) \} \overline{K}(x_0, y) \d y +  \int_{\ocal} \{m + u(y) \} \overline{K}(x_0, y^\star) \d y\,.
 $$
 Now, since $m - u(y) \leq 0$ in $\ocal$ and $\overline{K}(x_0, y) \geq \overline{K}(x_0, y^\star)$ (see Proposition~\ref{Prop:KernelInequalityReflexion}), we have
 $$
@@ -555,7 +555,7 @@ $$
 $$
 and therefore, since $m<0$, we get
 $$
-0 \leq L u(x_0) \leq 2m \int_{\ocal} \overline{K}(x_0, y^\star) \d y < 0\,,
+0 \leq L_K  u(x_0) \leq 2m \int_{\ocal} \overline{K}(x_0, y^\star) \d y < 0\,,
 $$
 a contradiction.
 \end{proof}
@@ -565,17 +565,17 @@ The following is a strong maximum principle for odd functions.
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
 \label{Prop:StrongMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}(\R^{2m})$ with
 $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone.  Let
-$\Omega \subset \ocal$ and assume that $Lu \geq 0$ in $\Omega$, where $L \in \lcal_\star$. Assume also that $u\geq 0$ in $\ocal$.
+$\Omega \subset \ocal$ and assume that $L_K u \geq 0$ in $\Omega$, where $L_K  \in \lcal_\star$. Assume also that $u\geq 0$ in $\ocal$.
 Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
 \end{proposition}
 
 \begin{proof}
 Assume that $u \not \equiv 0$. We shall prove that $u > 0$ in $\Omega$. By contradiction, assume
-that there exists a point $x_0\in \Omega$ such that $u(x_0)= 0$. Then, using the expression of $L$
+that there exists a point $x_0\in \Omega$ such that $u(x_0)= 0$. Then, using the expression of $L_K $
 for odd functions given in Lemma~\ref{Lemma:PropertiesStar}, the kernel inequality of	
 Proposition~\ref{Prop:KernelInequalityReflexion} and the fact that $u\geq 0$ in $\ocal$, we obtain
 $$
-0 \leq Lu(x_0) = \int_{\ocal} u(y)\big \{\overline{K}(x_0, y^\star) - \overline{K}(x_0, y) \big \}\d y < 0\,,
+0 \leq L_K u(x_0) = \int_{\ocal} u(y)\big \{\overline{K}(x_0, y^\star) - \overline{K}(x_0, y) \big \}\d y < 0\,,
 $$
 a contradiction.
 \end{proof}
