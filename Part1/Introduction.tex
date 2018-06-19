@@ -196,82 +196,92 @@ We should also mention \cite{DipierroSerraValdinoci}\todo{CHECK} where they stud
 \bigskip
 \bigskip
 
-
-
-
-
-
-
-
-
-The second variation of the energy is
+The usual strategy to deal with doubly radial solutions (and in particular saddle-shaped solutions) to a semilinear equation like \eqref{Eq:NonlocalAllenCahn} is to work with the radial variables 
+$$
+s = |x'| \quad \text{ and } \quad t=|x''|\,.
+$$
+This is specially useful when dealing with the Laplacian, since the operator can be written very easily in these coordinates and then the resulting PDE in $(0,+\infty)\times (0,+\infty)$ is suitable to work with. The same happens in the case of the fractional Laplacian thanks to the local extension problem. When we try to follow the same strategy by writing a general operator such as $L_K$ in $(s,t)$ variables, the expression of the new operator is more complex (see Appendix~\ref{Sec:stcomputations}). Despite the fact that all computations can be done in these radial variables, the notation becomes cumbersome. For this reason, we follow a different approach that consists of rewriting the operator $L_K$ without any change of coordinates but with a different kernel that is doubly radial. As it is explained with more detail in Section~\ref{Sec:Preliminaries}, if $K$ is a radially symmetric kernel, then we find the following expression:
+$$
+L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
+$$
+where $\overline{K}$ is doubly radial in both variables and defined by
 \begin{equation}
- \label{Eq:SecondVariation}	
- Q_u(\xi) := \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\R^{2m}} f'(u) \xi^2 \d x\,.
+\label{Eq:KbarDef'}
+\overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,.
+\end{equation}
+Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$ (see Section~\ref{Sec:Preliminaries} for the details).
+
+
+One of them main ingredients needed in our proofs (mostly in \cite{FelipeSanz-Perela:IntegroDifferentialII}) is a maximum principle for this operator, but for odd functions with respect to the cone $\ccal$. The classical maximum principle holds for the operator $L_K$ thanks to the positivity of the kernel and reads as follows. For $\Omega \subset \R^n$, if $L_K w \geq 0$ in $\Omega$ and $w \geq 0$ in $\R^n \setminus \Omega$, then $w\geq 0$ in $\Omega$. Such a statement is not suitable for odd functions in general (note that if $w$ is odd, so is $L_K w$ and therefore it makes more sense to assume $L_K w \geq 0$ in a subset  at one side of the cone \todo{Mejorar}). For this reason, we need to use the symmetry of the functions to rewrite the operator taking only into account ``what happens'' in $\ocal$. Using the change of variables given by $(\cdot)^\star$ ---defined in \eqref{Eq:DefStar}---, we find that $L_K$ acting on an odd function $w$ corresponds to apply the following operator to $w$. 
+\begin{equation}
+	L_K' w (x) := \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
 \end{equation}
 
+
+Another point of view is considering the previous expression as an operator acting on doubly radial functions $w$ defined only on $\ocal$. Then, $L_K'$ corresponds to consider the odd extension of  $w$ with respect to the Simons cone and apply the operator $L_K$ to this extended function. Since in this article we will always consider odd functions, we will do an abuse of notation and we will denote both operators by $L_K$, since they are the same.
+
+Note that this last expression has an integro-differental term plus a zero order term with the good sign. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. Indeed, we show in Section~\ref{Sec:Preliminaries} that this assumption guarantees that $L_K$ has a maximum principle for odd functions. The previous positivity assumption motivates the following definition.
+
 \begin{definition}
-	\label{Def:Stability}
-	We say that a solution $u$ of \eqref{Eq:NonlocalAllenCahn} is \emph{stable} in a set $\Omega \subset \R^{2m}$ if 
+	Let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$ be an integro-differential operator with a radially symmetric kernel $K$. We say that $L_K\in \lcal_\star$ whenever the associated kernel $\overline{K}$ satisfies
 	\begin{equation}
-	\label{Eq:StablityCondition}	
-	Q_u(\xi) = \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\Omega} f'(u) \xi^2 \d x \geq 0
+		\label{Eq:KernelInequality}
+		\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
 	\end{equation}
-	for every $\xi \in C^\infty_c (\Omega)$.
 \end{definition}
 
-\begin{lemma}[see \cite{HamelRosOtonSireValdinoci}]
-	\label{Lemma:EquivalenceStability}
-	A solution $u$ is stable in $\Omega$ (in the sense of Definition~\ref{Def:Stability}) if and only if there exists a continuous function $\varphi$ such that $\varphi > 0$ in $\Omega$ and $L\varphi \geq f'(u) \varphi$ in $\Omega$.
-\end{lemma}
+Our first main result is a partial characterization of the kernels corresponding to the operators in the class $\lcal_\star$.
 
-The proof of this result can be found in \cite{HamelRosOtonSireValdinoci}. Nevertheless, one of the implications is quite simple and since is an argument that will be repeated in the paper, we show it here. 
+\begin{theorem}
+	\label{Th:CharacterizationLstar}
+	Let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$ and assume that 
+	\begin{equation}
+		\label{Eq:SqrtConvex}	
+		K(\sqrt{\tau}) \text{ is a convex function of }\tau\,.
+	\end{equation}
+	Then, $L_K\in \lcal_\star$. Moreover, if $K\in C^1((0,+\infty))$, then \eqref{Eq:SqrtConvex} is a necessary condition for $L_K$ to belong to $\lcal_\star$.
+\end{theorem}
 
-Assume that $\varphi > 0$ is a supersolution of the linearized operator in $\Omega$. Then, let $\xi \in C^\infty_c (\Omega)$ and we compute
-\begin{align*}
-	\int_\Omega f'(u) \xi^2 \d x &= \int_\Omega f'(u) \varphi \dfrac{\xi^2}{\varphi} \d x \\
-	&\leq \int_\Omega L\varphi \dfrac{\xi^2}{\varphi}  \d x \\ 
-	&= \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} \big ( \varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } K(x - y) \d x \d y
-	 \\ 
-	&\leq \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y\,.
-\end{align*}
-Here we have used that the kernel is positive and that
-$$
-\big ( \varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
-$$
-Indeed, developing the squares and the products, this last inequality is equivalent to
-$$
-2 \xi(x) \xi(y) \leq \dfrac{\varphi(x)}{\varphi(y)} \xi^2(y) +  \dfrac{\varphi(y)}{\varphi(x)} \xi^2 (x)\,,
-$$
-which is equivalent to
-$$
-\bpar{\xi (x)\sqrt{\dfrac{\varphi(y)}{\varphi(x)}} - \xi(y) \sqrt{\dfrac{\varphi(x)}{\varphi(y)} } }^2 \geq 0\,.
-$$
-
-\todo[inline]{Esto lo quitaremos que no hacemos nada de estabilidad}
-
-\bigskip
-\bigskip
-\bigskip
--------------
-\bigskip
-\bigskip
-\bigskip
+This theorem is proved in Section~\ref{Sec:Preliminaries} (see Propositions~\ref{Prop:KernelInequalityReflexion} and \ref{Prop:ContraryKernelInequalityReflexion}). It is based on a suitable division of the space $O(m)^2$ and a result on convex functions proved in the Appendix~\ref{Sec:AuxiliaryResults} (Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}).
 
 
-\bigskip
-\bigskip
-\bigskip
--------------
-\bigskip
-\bigskip
-\bigskip
 
-\begin{theorem}[Existence of the saddle-shaped solution]
-	\label{Th:Existence}
-    Let $f$ satisfy .... and let $L\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$ and \todo{Poner algo más?}.
+\todo[inline]{conectar}
+
+The energy functional associated to \eqref{Eq:NonlocalAllenCahn} is the following.
+\begin{equation}
+\label{Eq:Energy}
+\ecal(w, \Omega) := \dfrac{1}{4}\int\int_{\R^{2n} \setminus (\R^n\setminus\Omega)^2} |w(x) - w(y)|^2 K(x-y) \d x \d y + \int_{\Omega} G(w)\,.
+\end{equation}
+Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial and odd functions with a suitable expression with the kernel $\overline{K}$ (see Section~\ref{Sec:Nonlocal_AllenCahn_Energy}). Thanks to this new expression we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial and odd minimizers of $\ecal$. In the next statement, $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ denotes the space of doubly radial and odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:Nonlocal_AllenCahn_Energy} for the precise definition).
+
+\begin{theorem}
+	\label{Th:EnergyEstimate} 
+	Let $K$ be a kernel such that $L_K\in \lcal_\star(2m, \s, \lambda, \Lambda)$. Let $S>0$ and let $u$ be a minimizer of the energy $\ecal$ in $B_{R}$, with $R>S+2$, among functions that are in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. \todo{Cuando se define esto..}Then
+	%$$ \lim_{R\to +\infty} \frac{1}{S^n} \ecal (u,B_S) = 0. $$
+	%More precisely,
+	$$ \ecal (u,B_S) \leq \begin{cases}
+	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
+	C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
+	\end{cases} $$
+	with $C$ a positive constant depending only on $m$, $\s$, $\Lambda$ and $G$.
 \end{theorem}
 
 
 
-\todo[inline]{juntar teoremas?}
+This result has been proved in the case of the fractional Laplacian by Cinti \cite{Cinti-Saddle,Cinti-Saddle2}, but using the local extension problem. In our case, since this technique is not available, we follow the proof of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they prove a similar energy estimate for minimizers without any symmetry. The strategy to establish the result is to compare the energy of $u$ with the energy of a suitable competitor built after ``cutting'' $u$ with some radial functions. Such competitor is not permitted in our case since it is not odd with respect to the Simons cone. In Section~\ref{Sec:Nonlocal_AllenCahn_Energy} we show how to adapt the ideas of \cite{SavinValdinoci-EnergyEstimate} to our setting in order to establish Theorem~\ref{Th:EnergyEstimate}. In the arguments, the assumption \eqref{Eq:KernelInequality} is crucial.
+
+
+
+As an application of the previous results, we are able to prove, by using standard variational methods, the existence of saddle-shaped solutions to the Allen-Cahn equation \eqref{Eq:NonlocalAllenCahn}.
+
+\begin{theorem}[Existence of saddle-shaped solutions]
+	\label{Th:Existence}
+    Let $f$ satisfy \eqref{Eq:HipothesisfOdd} and \eqref{Eq:HipothesisGWells}\todo{Quitar positiva}, and let $L_K\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
+\end{theorem}
+
+In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we establish the same result with other techniques (monotone iteration and maximum principle). In both proofs, the assumtion \eqref{Eq:KernelInequality} is crucial.
+
+
+The paper is organized as follows. Section~\ref{Sec:Preliminaries} is devoted to study the operator $L_K$ acting on doubly radial and odd functions. We deduce the expression of the doubly radial kernel $\overline{K}$ and we prove some properties. We also show Theorem~\ref{Th:CharacterizationLstar} and some maximum principles. In Section~\ref{Sec:Nonlocal_AllenCahn_Energy} we study the energy functional associated to \eqref{Eq:NonlocalAllenCahn} and we establish the energy estimate stated in Theorem~\ref{Th:EnergyEstimate}. Finally, in Section~\ref{Sec:Existence} we prove the existence of the saddle-shaped solution to the Allen-Cahn equation. At the end of the paper there are three appendices. Appendix~\ref{Sec:AuxiliaryResults} is devoted to some results on convex functions, and Appendix~\ref{Sec:AuxiliaryResults2} contains some auxiliary computations. Both are used in the proof of Theorem~\ref{Th:CharacterizationLstar}. In Appendix~\ref{Sec:stcomputations} we include some computations in $(s,t)$ variables for future reference.
