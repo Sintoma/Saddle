@@ -158,9 +158,9 @@ for every subset $\Sigma \subset O(m)^2$ and every $R\in O(m)^2$. Moreover, it h
 for every $g\in L^1(O(m)^2)$ ---see \cite{Nachbin} for the details.
 
 \begin{proof}[Proof of Lemma~\ref{Lemma:AlternativeOperatorExpression}]
-Since $L_K w$ is invariant by $O(m)^2$ and $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$,
+Since $L_K w (x) = L_K w (Rx)$ for every $R\in O(m)^2$, by taking the mean over all the transformations in $O(m)^2$, we get
 \begin{align*}
-L_K w(x) &= \average_{O(m)^2} Lw(Rx)\d R =  \average_{O(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
+L_K w(x) &= \average_{O(m)^2} L_K w(Rx)\d R =  \average_{O(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
 &= \int_{\R^{2m}} \{w(x) - w(y)\}  \average_{O(m)^2} K(|Rx - y|) \d R  \d y = \int_{\R^{2m}} \{w(x) - w(y)\}  \overline{K}(x,y) \d y\,.
 \end{align*}
 Now, we show that $\overline{K}$ is symmetric:
@@ -180,8 +180,10 @@ where we have used the right invariance of the Haar measure.
 
 
 In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by \eqref{Eq:DefStar} and its relation with the doubly radial kernel $\overline{K}$ and the transformations of $O(m)^2$. In particular, in the proof of Theorem~\ref{Th:CharacterizationLstar} it will be useful to consider the following transformation. For every $R\in O(m)^2$, we define  $R_\star\in O(m)^2$ by 
-$$
-R_\star := (R(\cdot)^\star)^\star\,.$$
+\begin{equation}
+	\label{Eq:DefRStar}
+	R_\star := (R(\cdot)^\star)^\star\,.
+\end{equation}
 Equivalently, if $R = (R_1, R_2)$ with $R_1$, $R_2 \in O(m)$, then $R_\star = (R_2, R_1)$.
 
 \begin{lemma}
@@ -275,7 +277,7 @@ To see this, let $R_x$, $R_y \in O(m)^2$ satisfying $x = R_x x_0$ and $y = R_y y
 $$
 \overline{K}(x,y) = \overline{K}(R_x x_0,R_y y_0)  = \overline{K}(x_0, y_0)
 $$
-and, using that $(R_y y_0)^\star = (R_y)_\star y_0^\star$ (see Lemma~\ref{Lemma:PropertiesStar}),
+and, using that $(R_y y_0)^\star = (R_y)_\star y_0^\star$ ---see \eqref{Eq:DefRStar}---,
 $$
 \overline{K}(x,y^\star) = \overline{K}(R_x x_0,(R_y y_0)^\star) = \overline{K}(R_x x_0,(R_y)_\star y_0^\star)  = \overline{K}(x_0, y_0^\star)\,.
 $$
@@ -360,7 +362,7 @@ We define now
 $$
 g(t) := K \bpar{\sqrt{|x|^2 + |y|^2 + 2 t}} + K \bpar{\sqrt{|x|^2 + |y|^2 - 2 t}}
 $$
-we see that \eqref{Eq:InequalityIntegrandKernelInequalityProof} is equivalent to
+and we see that \eqref{Eq:InequalityIntegrandKernelInequalityProof} is equivalent to
 \begin{equation}
 \label{Eq:InequalityIntegrandKernelInequalityProof2}
 \begin{split}
@@ -391,7 +393,7 @@ the open interval $I = (-(|x|^2 + |y|^2)/2,\ (|x|^2 + |y|^2)/2)$ and that $A_{\a
 $B_{\alpha,\beta}$, $C_{\alpha,\beta}$, $D_{\alpha,\beta} \in I$.
 
 To show \eqref{Eq:InequalityIntegrandKernelInequalityProof3}, we use
-Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} of the appendix. Hence, we should
+Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} of the Appendix~\ref{Sec:AuxiliaryResults}. Hence, we should
 check that
 $$
 \begin{cases}
@@ -400,9 +402,7 @@ $$
 \end{cases}
 $$
 The verification of these inequalities is a simple but tedious computation and it is presented in
-the appendix (see point (1) of Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities,
-by Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} we deduce
-\eqref{Eq:InequalityIntegrandKernelInequalityProof3}.
+Appendix~\ref{Sec:AuxiliaryResults2} (see point (1) of Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, by Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} we deduce \eqref{Eq:InequalityIntegrandKernelInequalityProof3}.
 
 To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelInequalityProof3} is
 never attained. By Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}, we know that a
