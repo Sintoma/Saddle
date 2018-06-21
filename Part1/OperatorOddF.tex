@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:OperatorOddF}
 
-
+This section is devoted to study the operators of the class $\Lr$ when they act on doubly radial and odd functions. First, we deduce an alternative expression for the kernel $K$ and a suitable formula for the operator $L_K$ when it acts on a doubly radial odd function. Then, we present a partial characterization of the class $\lcal_\star$ (we establish Theorem~\ref{Th:CharacterizationLstar}). Finally, we show two maximum principle for odd functions. Recall that the operators in the class $\Lr$ are always uniformly elliptic ($L_K \in \lcal_0$) and have a radially symmetric kernel, i.e., $K(y) = K(|y|)$.  
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,10 +12,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The main purpose of this subsection is to deduce an alternative expression for an operator $L_K \in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Recall that the operators in the class $\Lr$ are always uniformly elliptic ($L_K \in \lcal_0$) and have a radially symmetric kernel, i.e., $K(y) = K(|y|)$.
-
-Our first remark is that if $w$ is invariant by $O(m)^2$, so is $Lw$. Indeed, for every $R \in
-O(m)^2$,
+The main purpose of this subsection is to deduce an alternative expression for an operator $L_K \in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Our first remark is that if $w$ is invariant by $O(m)^2$, so is $Lw$. Indeed, for every $R \in O(m)^2$,
 \begin{align*}
 L_K w (Rx)
 & = \int_{\R^{2m}} \{w(Rx) - w(y)\} K(|Rx - y|)  \d y\\
@@ -23,11 +20,9 @@ L_K w (Rx)
 & = \int_{\R^{2m}} \{w(x) - w(\tilde{y})\} K(|x-\tilde{y}|) \d \tilde{y}\\
 & = L_K w (x)\,.
 \end{align*}
-Here we have used that $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$ and the change $y =
-R\tilde{y}$.
+Here we have used the change $y = R\tilde{y}$ and the fact that $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$.
 
-
-Next, we present an alternative expression for the operator $L_K $ acting on doubly radial functions.
+Next, we present an alternative expression for the operator $L_K $ acting on doubly radial functions. This expression involves a new kernel which is also doubly radial.
 
 \begin{lemma} \label{Lemma:AlternativeOperatorExpression}
 Let $L_K \in \Lr$ and let $w$ be a doubly radial function for which $L_K w$ is well-defined. Then, $L_K w$ can be expressed as
@@ -35,14 +30,14 @@ $$
 L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
 where $\overline{K}$ is symmetric, invariant by $O(m)^2$ in both arguments and is defined by
-\begin{equation}
-\label{Eq:KbarDef}
+\begin{equation*}
+%\label{Eq:KbarDef}
 \overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,.
-\end{equation}
+\end{equation*}
 Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$.
 \end{lemma}
 
-Recall (see for instance 99) that the Haar measure on $O(m)^2$ exists and it is unique up to a
+Recall (see for instance \cite{Nachbin}) that the Haar measure on $O(m)^2$ exists and it is unique up to a
 multiplicative constant. Let us state next the properties that will be used in the rest of the
 paper. In the following, the Haar measure is denoted by $\mu$. First, since $O(m)^2$ is a compact
 group, it is unimodular (see Chapter~II, Proposition~ 13 of \cite{Nachbin}). As a consequence, the
@@ -98,16 +93,11 @@ The Haar integral on $O(m)^2$ has the following invariance:
 for every $g \in L^1(O(m)^2)$.
 \item $\overline{K}(x^\star,y) = \overline{K} (x,y^\star)$.
 \item $\overline{K}(x^\star,y^\star) = \overline{K} (x,y)$.
-\item Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L_K \in \Lr$. Then,
-\begin{align*}
-L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
-&= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
-\end{align*}
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-The first statement is easy to check \eqref{Eq:InvarianceByStar} by using Fubini:
+The first statement is easy to check by using Fubini:
 \begin{align*}
 \int_{O(m)^2} g(R_\star) \d R & = \int_{O(m)} \!\! \d R_1 \int_{O(m)} \!\! \d R_2 \ \ g(R_2, R_1)  =  \int_{O(m)} \!\! \d R_2 \int_{O(m)} \!\! \d R_1 \ \ g(R_2, R_1) \\
 & =  \int_{O(m)} \!\! \d R_1 \int_{O(m)} \!\! \d R_2 \ \ g(R_1, R_2)  =  \int_{O(m)^2} g(R) \d R\,.
@@ -122,51 +112,51 @@ to see that
 \end{align*}
 As a consequence, we have that
 $$\overline{K}(x^\star,y^\star) = \overline{K}(x,(y^\star)^\star) = \overline{K}(x,y)\,.$$
-
-
-
-Finally, the last statement is just a computation with a change of variables. First, using the
-change $\bar{y} = y^\star$ and the odd symmetry of $u$, we see that
-\begin{align*}
-\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y &= \int_{\ocal^\star} \{w(x) - w(y) \}\overline{K}(x, y)\d y \\
-&= \int_{\ocal} \{w(x) - w(y^\star) \}\overline{K}(x, y^\star)\d y \\
-&= \int_{\ocal} \{w(x) + w(y) \}\overline{K}(x, y^\star)\d y\,.
-\end{align*}
-Hence,
-\begin{align*}
-L_K w (x) &= \int_{\R^{2m}}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
-&= \int_{\ocal}  \{w(x) - w(y) \} \overline{K}(x, y)\d y +\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
-&= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \,.
-\end{align*}
-By adding and subtracting $w(x)\overline{K}(x, y^\star)$ in the last integrand we immediately deduce
-$$
-L_K w (x) \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y\,.
-$$
 \end{proof}
 
+To conclude this subsection, we present two alternative expressions for the operator $L_K$ when it acts on doubly radial odd functions. These expressions are suitable in the rest of the paper and also in the forthcoming one \cite{FelipeSanz-Perela:IntegroDifferentialII}, since the integrals appearing in the expression are computed only in $\ocal$, and this is important to prove maximum principle and other properties.
+
+\begin{lemma}
+	\label{Lemma:OperatorOddF}
+	Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L_K \in \Lr$. Then,
+	\begin{align*}
+	L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
+	&= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
+	\end{align*}
+\end{lemma}
+
+\begin{proof}
+	It is just a computation. First,  using a change of variables  $\bar{y} = y^\star$ and the odd symmetry of $u$, we see that
+	\begin{align*}
+	\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y &= \int_{\ocal^\star} \{w(x) - w(y) \}\overline{K}(x, y)\d y \\
+	&= \int_{\ocal} \{w(x) - w(y^\star) \}\overline{K}(x, y^\star)\d y \\
+	&= \int_{\ocal} \{w(x) + w(y) \}\overline{K}(x, y^\star)\d y\,.
+	\end{align*}
+	Hence,
+	\begin{align*}
+	L_K w (x) &= \int_{\R^{2m}}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
+	&= \int_{\ocal}  \{w(x) - w(y) \} \overline{K}(x, y)\d y +\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
+	&= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \,.
+	\end{align*}
+	By adding and subtracting $w(x)\overline{K}(x, y^\star)$ in the last integrand we immediately deduce
+	$$
+	L_K w (x) \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y\,.
+	$$
+\end{proof}
 
 \subsection{Characterization of $\lcal_\star$}
 
-In this subsection, we establish Theorem~\ref{Th:CharacterizationLstar}.
+In this subsection, we establish Theorem~\ref{Th:CharacterizationLstar}. As we have mentioned in the introduction, property \eqref{Eq:KernelInequality} is crucial in the rest of the results (including the ones in \cite{FelipeSanz-Perela:IntegroDifferentialII}), since it guarantees for instance that the operator $L_K$ has a maximum principle for odd functions (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
 
-...
+First, we give a sufficient condition on the kernel $K$ so that the operator $L_K$ belongs to the the class $\lcal_\star$. It is the following result.
 
 \begin{proposition}
-\label{Prop:KernelInequalityReflexion} Assume that the kernel $K$ is radially symmetric, satisfies
-hypothesis \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity}, and that
-$K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$. Then,
-\begin{equation}
-\label{Eq:KernelInequalityReflexion}
-\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,,
-\end{equation}
-where $\overline{K}$ is defined by \eqref{Eq:KbarDef}.
+\label{Prop:KernelInequalitySufficientCondition} Assume that the kernel $K$ is radially symmetric, satisfies hypothesis \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity}, and that $K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$. Then, \eqref{Eq:KernelInequality} holds.
 \end{proposition}
 
 \todo[inline]{La condicion de convexidad da que es decreciente y luego ya te da que la g es creciente, mirar si eso hay que decirlo o va incluido en los lemas del final}
 \begin{proof}
-Let $x$, $y \in \ocal$ and let $x_0 = (|x'|e, |x''|e)$ and $y_0 = (|y'|e, |y''|e)$, for an
-arbitrary unitary vector $e \in \Sph^{m-1} \subset \R^m$. Hence, since $\overline{K}$ is invariant
-by $O(m)^2$,
+Let $x$, $y \in \ocal$ and let $x_0 = (|x'|e, |x''|e)$ and $y_0 = (|y'|e, |y''|e)$, for an arbitrary unitary vector $e \in \Sph^{m-1} \subset \R^m$. Hence, since $\overline{K}$ is invariant by $O(m)^2$,
 $$
 \overline{K}(x,y) = \overline{K}(x_0, y_0) \quad \text{ and } \quad \overline{K}(x,y^\star) = \overline{K}(x_0, y_0^\star)\,.
 $$
@@ -178,9 +168,7 @@ and, using that $(R_y y_0)^\star = (R_y)_\star y_0^\star$ ---see \eqref{Eq:DefRS
 $$
 \overline{K}(x,y^\star) = \overline{K}(R_x x_0,(R_y y_0)^\star) = \overline{K}(R_x x_0,(R_y)_\star y_0^\star)  = \overline{K}(x_0, y_0^\star)\,.
 $$
-Therefore, it is enough to show \eqref{Eq:KernelInequalityReflexion} for points $x$ and $y$ of the
-form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$, with $e \in \Sph^{m-1}$ an arbitrary unitary
-vector.
+Therefore, it is enough to show \eqref{Eq:KernelInequality} for points $x$ and $y$ of the form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$, with $e \in \Sph^{m-1}$ an arbitrary unitary vector.
 
 Now, define
 \begin{align*}
@@ -226,11 +214,7 @@ K(|x - R y|) + K(|x + R y|) + K(|x - R_\star y|) + K(|x + R_\star y|)
 K(|x - R y^\star|) + K(|x + R y^\star|)+K(|x - R_\star y^\star|) + K(|x + R_\star y^\star|)\,,
 \end{split}
 \end{equation}
-for every $R\in Q_1$, we immediately deduce \eqref{Eq:KernelInequalityReflexion} with a non strict
-inequality. \todo{Decir que todos los términos son finitos, los del rhs pq cada punto esta en un
-lado del cono y los otros pq sino implicaria que $e \cdot R_2 e =1$ y esto no puede pasar en
-$Q_1$.}To see that it is indeed a strict one, we must show that the inequality in
-\eqref{Eq:InequalityIntegrandKernelInequalityProof} is strict for a.e. $R \in Q_1$.
+for every $R\in Q_1$, we immediately deduce \eqref{Eq:KernelInequality} with a non strict inequality. To see that it is indeed a strict one, we must show that the inequality in \eqref{Eq:InequalityIntegrandKernelInequalityProof} is strict for a.e. $R \in Q_1$.
 
 
 For a short notation, we call
@@ -285,52 +269,38 @@ With this notation and taking into account that $g$ is even,
 \label{Eq:InequalityIntegrandKernelInequalityProof3}
 g(|A_{\alpha,\beta}|) + g(|D_{\alpha,\beta}|) \geq g(|C_{\alpha,\beta}|) + g(|B_{\alpha,\beta}|)\,,
 \end{equation}
-for every $\alpha$, $\beta \in [-1,1]$ such that $\alpha > |\beta|$. Note that $g$ is defined in
-the open interval $I = (-(|x|^2 + |y|^2)/2,\ (|x|^2 + |y|^2)/2)$ and that $A_{\alpha,\beta}$,
-$B_{\alpha,\beta}$, $C_{\alpha,\beta}$, $D_{\alpha,\beta} \in I$.
+for every $\alpha$, $\beta \in [-1,1]$ such that $\alpha > |\beta|$. Note that $g$ is defined in the open interval $I = (-(|x|^2 + |y|^2)/2,\ (|x|^2 + |y|^2)/2)$ and that $A_{\alpha,\beta}$, $B_{\alpha,\beta}$, $C_{\alpha,\beta}$, $D_{\alpha,\beta} \in I$.
 
-To show \eqref{Eq:InequalityIntegrandKernelInequalityProof3}, we use
-Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} of the Appendix~\ref{Sec:AuxiliaryResults}. Hence, we should
-check that
+To show \eqref{Eq:InequalityIntegrandKernelInequalityProof3}, we use Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} of the Appendix~\ref{Sec:AuxiliaryResults}. Hence, we should check that
 $$
 \begin{cases}
 |A_{\alpha,\beta}| \geq |B_{\alpha,\beta}|,\ |A_{\alpha,\beta}| \geq |C_{\alpha,\beta}|, \ |A_{\alpha,\beta}| \geq |D_{\alpha,\beta}|\,, \\
 |A_{\alpha,\beta}| + |D_{\alpha,\beta}| \geq |B_{\alpha,\beta}| + |C_{\alpha,\beta}|\,.
 \end{cases}
 $$
-The verification of these inequalities is a simple but tedious computation and it is presented in
-Appendix~\ref{Sec:AuxiliaryResults2} (see point (1) of Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, by Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} we deduce \eqref{Eq:InequalityIntegrandKernelInequalityProof3}.
+The verification of these inequalities is a simple but tedious computation and it is presented in Appendix~\ref{Sec:AuxiliaryResults2} (see point (1) of Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, by Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} we deduce \eqref{Eq:InequalityIntegrandKernelInequalityProof3}.
 
-To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelInequalityProof3} is
-never attained. By Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}, we know that a
-necessary condition for the equality to hold is that either $|A_{\alpha,\beta}| =
-|B_{\alpha,\beta}|$ and $|C_{\alpha,\beta}| = |D_{\alpha,\beta}|$, or $|A_{\alpha,\beta}| =
-|C_{\alpha,\beta}|$ and $|B_{\alpha,\beta}| = |D_{\alpha,\beta}|$. Nevertheless, by point (2) of
-Lemma~\eqref{Lemma:ComputationABCD}, this yields $\alpha = \beta = 0$, but this cannot happen.
+To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelInequalityProof3} is never attained. By Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}, we know that a necessary condition for the equality to hold is that either $|A_{\alpha,\beta}| = |B_{\alpha,\beta}|$ and $|C_{\alpha,\beta}| = |D_{\alpha,\beta}|$, or $|A_{\alpha,\beta}| = |C_{\alpha,\beta}|$ and $|B_{\alpha,\beta}| = |D_{\alpha,\beta}|$. Nevertheless, by point (2) of Lemma~\eqref{Lemma:ComputationABCD}, this yields $\alpha = \beta = 0$, but this cannot happen.
 \end{proof}
 
-Once we have presented a sufficient condition of the kernel to be positive, we can also obtain a
-necessary condition.
 
+Now, we give a necessary condition on the kernel $K$ so that inequality \eqref{Eq:KernelInequality} holds.
 
 \begin{proposition}
-\label{Prop:ContraryKernelInequalityReflexion} Assume that the kernel $K$ is radially symmetric,
+\label{Prop:KernelInequalityNecessaryCondition} Assume that the kernel $K$ is radially symmetric,
 nonincreasing and satisfies the hypotheses \eqref{Eq:Symmetry&IntegrabilityOfK} and
 \eqref{Eq:Ellipticity}. If
 \begin{equation}
-\label{Eq:KernelInequalityReflexion2}
+\label{Eq:KernelInequalityAE}
 \overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for almost every }x,y \in \mathcal{O}\,,
 \end{equation}
 then $K(\sqrt{\cdot})$ cannot be concave in any interval $I\subset [0,+\infty)$.
 \end{proposition}
 
 \begin{proof}
-We prove it by contraposition. In fact, we will show that the existence of an interval where
-$K(\sqrt{\cdot})$ is concave means the existence of a open set in $\ocal \times \ocal$ with
-positive measure where \eqref{Eq:KernelInequalityReflexion2} is not satisfied.
+We prove it by contraposition. In fact, we will show that the existence of an interval where $K(\sqrt{\cdot})$ is concave means the existence of a open set in $\ocal \times \ocal$ with positive measure where \eqref{Eq:KernelInequalityAE} is not satisfied.
 
-Let $t_2>t_1>0$ be such that $K(\sqrt{t})$ is concave in $(t_1,t_2)$ and define the set
-$\Omega_{t_1,t_2}\subset \R^{4m}$ as the points $(x,y)\in \ocal\times \ocal$ satisfying
+Let $t_2>t_1>0$ be such that $K(\sqrt{t})$ is concave in $(t_1,t_2)$ and define the set $\Omega_{t_1,t_2}\subset \R^{4m}$ as the points $(x,y)\in \ocal\times \ocal$ satisfying
 \begin{equation}
 \label{eq:OmegaSetDefinition}
 \beqc{\PDEsystem}
@@ -341,10 +311,7 @@ $\Omega_{t_1,t_2}\subset \R^{4m}$ as the points $(x,y)\in \ocal\times \ocal$ sat
 \eeqc
 \end{equation}
 
-First, it is easy to see that $\Omega_{t_1,t_2}$ is a nonempty open set. In fact, points of the
-form $(x',0,y',0)\in (\R^m)^4$ such that $t_1\leq |x'|^2+|y'|^2<t_2$ belong to $\Omega_{t_1,t_2}$.
-Then, if we prove that $\overline{K}(x,y) \leq \overline{K}(x, y^\star)$ in $\Omega_{t_1,t_2}$ we
-are done.
+First, it is easy to see that $\Omega_{t_1,t_2}$ is a nonempty open set. In fact, points of the form $(x',0,y',0)\in (\R^m)^4$ such that $t_1\leq |x'|^2+|y'|^2<t_2$ belong to $\Omega_{t_1,t_2}$. Then, if we prove that $\overline{K}(x,y) \leq \overline{K}(x, y^\star)$ in $\Omega_{t_1,t_2}$ we are done.
 
 Let $x,y\in \Omega_{t_1,t_2}$, we are going to show that
 \begin{equation}
@@ -357,11 +324,7 @@ K(|x - R y|) + K(|x + R y|) + K(|x - R_\star y|) + K(|x + R_\star y|)
 K(|x - R y^\star|) + K(|x + R y^\star|)+K(|x - R_\star y^\star|) + K(|x + R_\star y^\star|)\,,
 \end{split}
 \end{equation}
-for any $R$ in $Q_1$, where $Q_1$ is defined in the proof of
-Proposition~\ref{Prop:KernelInequalityReflexion}. As before, we can assume that $x$ and $y$ are of
-the form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$, with $e \in \Sph^{m-1}$ an arbitrary
-unitary vector. Then, defining $\alpha$ and $\beta$ as in the previous proof we see that proving
-\eqref{Eq:InequalityIntegrandKernelInequalityProof4} is equivalent to prove that
+for any $R$ in $Q_1$, where $Q_1$ is defined in the proof of Proposition~\ref{Prop:KernelInequalitySufficientCondition}. As before, we can assume that $x$ and $y$ are of the form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$, with $e \in \Sph^{m-1}$ an arbitrary unitary vector. Then, defining $\alpha$ and $\beta$ as in the previous proof we see that proving \eqref{Eq:InequalityIntegrandKernelInequalityProof4} is equivalent to prove that
 \begin{equation}
 \label{Eq:InequalityIntegrandKernelInequalityProof5}
 g(A_{\alpha,\beta}) + g(D_{\alpha,\beta}) \leq g(B_{\alpha,\beta}) + g(C_{\alpha,\beta})\,,
@@ -380,37 +343,25 @@ and
 g(t) &= K\left( \sqrt{|x|^2+|y|^2+2t} \right) + K\left( \sqrt{|x|^2+|y|^2-2t} \right).
 \end{align*}
 
-Now, from being $K(\sqrt{t})$ concave in $(t_1,t_2)$ and $t_1<|x|^2+|y|^2<t_2$, we obtain by Remark
-99 that $g$ is concave in $ \left( -\overline{t}, \overline{t}\right) $, and decreasing in
-$(0,\overline{t})$ with $\overline{t} =
-\min{\left(\frac{t_2-|x|^2-|y|^2}{2},\frac{|x|^2+|y|^2-t_1}{2}\right)}$.
+Now, from being $K(\sqrt{t})$ concave in $(t_1,t_2)$ and $t_1<|x|^2+|y|^2<t_2$, we obtain by Remark 99\todo{?} that $g$ is concave in $ \left( -\overline{t}, \overline{t}\right) $, and decreasing in $(0,\overline{t})$ with $\overline{t} = \min{\left(\frac{t_2-|x|^2-|y|^2}{2},\frac{|x|^2+|y|^2-t_1}{2}\right)}$.
 
-On the other hand it is easy to check that $A_{\alpha,\beta}, B_{\alpha,\beta}, C_{\alpha,\beta}$
-and $D_{\alpha,\beta}$ belong to the open interval $(-|x'||y'|-|x''||y''|,|x'||y'|+|x''||y''|)$ for
-every $\alpha, \beta \in [-1,1]$ such that $\alpha>|\beta|$.
+On the other hand it is easy to check that $A_{\alpha,\beta}, B_{\alpha,\beta}, C_{\alpha,\beta}$ and $D_{\alpha,\beta}$ belong to the open interval $(-|x'||y'|-|x''||y''|,|x'||y'|+|x''||y''|)$ for every $\alpha, \beta \in [-1,1]$ such that $\alpha>|\beta|$.
 
-Therefore, since $x,y \in \Omega_{t_1,t_2}$, we obtain from the last inequalities in
-\eqref{eq:OmegaSetDefinition} that
+Therefore, since $x,y \in \Omega_{t_1,t_2}$, we obtain from the last inequalities in \eqref{eq:OmegaSetDefinition} that
 $$
 \beqc{\PDEsystem}
 |x'||y'|+|x''||y''|&<&\dfrac{t_2-|x|^2-|y|^2}{2}\\
 |x'||y'|+|x''||y''|&<&\dfrac{|x|^2+|y|^2-t_1}{2}
 \eeqc \Longrightarrow  |x'||y'|+|x''||y''|<\overline{t},
 $$
-which means that $A_{\alpha,\beta}, B_{\alpha,\beta}, C_{\alpha,\beta}$ and $D_{\alpha,\beta}$
-belong to $(-\overline{t},\overline{t})$ for every $\alpha, \beta \in [-1,1]$ such that
-$\alpha>|\beta|$. Hence, by applying Lemma~\ref{Lemma:InequalitConvexFunctions} to the function
-$-g$ (taking into account Remark~\ref{Remark:InequalitConvexFunctions}) we obtain that inequality
-\eqref{Eq:InequalityIntegrandKernelInequalityProof4} is satisfied. Finally, from integrating
-\eqref{Eq:InequalityIntegrandKernelInequalityProof3} with respect to all the rotations $R\in Q_1$
-we get
-$$ \overline{K}(x,y) \leq \overline{K}(x, y^\star),$$
-for every $(x,y)\in \Omega_{t_1,t_2}$, contradicting \eqref{Eq:KernelInequalityReflexion2}.
+which means that $A_{\alpha,\beta}, B_{\alpha,\beta}, C_{\alpha,\beta}$ and $D_{\alpha,\beta}$ belong to $(-\overline{t},\overline{t})$ for every $\alpha, \beta \in [-1,1]$ such that $\alpha>|\beta|$. Hence, by applying Lemma~\ref{Lemma:InequalitConvexFunctions} to the function $-g$ (taking into account Remark~\ref{Remark:InequalitConvexFunctions}) we obtain that inequality \eqref{Eq:InequalityIntegrandKernelInequalityProof4} is satisfied. Finally, from integrating \eqref{Eq:InequalityIntegrandKernelInequalityProof3} with respect to all the rotations $R\in Q_1$ we get $$ \overline{K}(x,y) \leq \overline{K}(x, y^\star),$$ for every $(x,y)\in \Omega_{t_1,t_2}$, contradicting \eqref{Eq:KernelInequalityAE}.
 \end{proof}
 
-The inequality given in Proposition~\ref{Prop:KernelInequalityReflexion} is crucial to have a maximum principle, a key tool in the developement of the rest of the paper. Therefore, while studying saddle-shaped solutions we will consider operators in the class $\Lr$ whose kernel satisfies \eqref{Eq:KernelInequalityReflexion}. The class of such operators will be denoted by $\lcal_\star$.
+From the two previous results, Theorem~\ref{Th:CharacterizationLstar} follows immediately.
 
-\todo[inline]{Supongo que esto irá en la introducción}
+\begin{proof}[Proof of Theorem~\ref{Th:CharacterizationLstar}]
+	The first statement is exactly the same as Proposition~\ref{Prop:KernelInequalitySufficientCondition}. Assume now that $K$ is a $C^1$ function and that \eqref{Eq:KernelInequality} holds. Then, by Proposition~\ref{Prop:KernelInequalityNecessaryCondition}, $K(\sqrt{\cdot})$ is not concave in any interval of $[0,+\infty)$. By the regularity of $K$, this automatically yields that $K(\sqrt{\cdot})$ is strictly convex.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -418,22 +369,20 @@ The inequality given in Proposition~\ref{Prop:KernelInequalityReflexion} is cruc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this subsection we prove a weak and a strong maximum principles for doubly radial functions that
-are odd with respect to the Simons cone. The key ingredient in these proofs is the kernel
-inequality of Proposition~\ref{Prop:KernelInequalityReflexion}.
+In this subsection we prove a weak and a strong maximum principles for doubly radial functions that are odd with respect to the Simons cone. The formulation of these maximum principle is very suitable since it only assumes hypotheses on $\ocal$. The key ingredient in the proofs is the kernel inequality \eqref{Eq:KernelInequality}.
+
+
+We first establish a weak maximum principle.
 
 \begin{proposition}[Weak maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}(\R^{2m})$ with
-$\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let
-$\Omega \subset \ocal$ and let $L_K  \in \lcal_\star$. Assume that
+\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star$. Assume that
 $$
 \beqc{\PDEsystem}
 L_K u & \geq & 0 & \text{ in } \Omega\,,\\
 u & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
 \eeqc
 $$
-and that either $\Omega$ is bounded or \todo{Pensar si sabemos hacerlo para no acotados. En el
-paper no se usa pero quedaría mejor un resultado un poco más general}
+and that either $\Omega$ is bounded or 
 $$
 \liminf_{x \in \ocal,\,|x|\to \infty} u(x) \geq 0\,.
 $$
@@ -441,20 +390,15 @@ Then, $u \geq 0$ in $\Omega$.
 \end{proposition}
 
 \begin{proof}
-By contradiction, assume that $u$ takes negative values in $\Omega$. Under the hypotheses we are
-assuming, a negative minimum must be achieved. Thus, there exists $x_0\in \Omega$ such that
+By contradiction, assume that $u$ takes negative values in $\Omega$. Under the hypotheses we are assuming, a negative minimum must be achieved. Thus, there exists $x_0\in \Omega$ such that
 $$
 u(x_0) = \min_{\Omega} u =: m < 0\,.
 $$
-Then, using the expression of $L$ for odd functions (see Lemma~\ref{Lemma:PropertiesStar}), we have
+Then, using the expression of $L$ for odd functions (see Lemma~\ref{Lemma:OperatorOddF}), we have
 $$
-L_K u (x_0) = \int_{\ocal} \{m - u(y) \} \overline{K}(x_0, y) \d y +  \int_{\ocal} \{m + u(y) \} \overline{K}(x_0, y^\star) \d y\,.
+L_K u (x_0) = \int_{\ocal} \{m - u(y) \} \{\overline{K}(x_0, y) - \overline{K}(x_0, y^\star)  \} \d y +  2 m \int_{\ocal} \overline{K}(x_0, y^\star) \d y\,.
 $$
-Now, since $m - u(y) \leq 0$ in $\ocal$ and $\overline{K}(x_0, y) \geq \overline{K}(x_0, y^\star)$ (see Proposition~\ref{Prop:KernelInequalityReflexion}), we have
-$$
-\{m - u(y) \} \overline{K}(x_0, y) \leq \{m - u(y) \} \overline{K}(x_0, y^\star)
-$$
-and therefore, since $m<0$, we get
+Now, since $m - u(y) \leq 0$ in $\ocal$, $m<0$ and $\overline{K}(x_0, y) \geq \overline{K}(x_0, y^\star)$ (since $L_K\in \lcal_\star$), we get
 $$
 0 \leq L_K  u(x_0) \leq 2m \int_{\ocal} \overline{K}(x_0, y^\star) \d y < 0\,,
 $$
@@ -464,19 +408,13 @@ a contradiction.
 The following is a strong maximum principle for odd functions.
 
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}(\R^{2m})$ with
-$\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone.  Let
-$\Omega \subset \ocal$ and assume that $L_K u \geq 0$ in $\Omega$, where $L_K  \in \lcal_\star$. Assume also that $u\geq 0$ in $\ocal$.
-Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
+\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let $\Omega \subset \ocal$ and assume that $L_K u \geq 0$ in $\Omega$, where $L_K  \in \lcal_\star$. Assume also that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
 \end{proposition}
 
 \begin{proof}
-Assume that $u \not \equiv 0$. We shall prove that $u > 0$ in $\Omega$. By contradiction, assume
-that there exists a point $x_0\in \Omega$ such that $u(x_0)= 0$. Then, using the expression of $L_K $
-for odd functions given in Lemma~\ref{Lemma:PropertiesStar}, the kernel inequality of	
-Proposition~\ref{Prop:KernelInequalityReflexion} and the fact that $u\geq 0$ in $\ocal$, we obtain
+Assume that $u \not \equiv 0$. We shall prove that $u > 0$ in $\Omega$. By contradiction, assume that there exists a point $x_0\in \Omega$ such that $u(x_0)= 0$. Then, using the expression of $L_K $ for odd functions given in Lemma~\ref{Lemma:OperatorOddF}, the kernel inequality \eqref{Eq:KernelInequality} and the fact that $u\geq 0$ in $\ocal$, we obtain
 $$
-0 \leq L_K u(x_0) = \int_{\ocal} u(y)\big \{\overline{K}(x_0, y^\star) - \overline{K}(x_0, y) \big \}\d y < 0\,,
+0 \leq L_K u(x_0) = - \int_{\ocal} u(y)\big \{\overline{K}(x_0, y) - \overline{K}(x_0, y^\star) \big \}\d y < 0\,,
 $$
 a contradiction.
 \end{proof}
