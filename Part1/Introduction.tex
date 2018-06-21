@@ -57,9 +57,13 @@ G\geq G(\pm 1 )=0 \textrm{ in } \R\,
 
 Note that the previous conditions on $G$ yields that $f$ is an odd function with $f(0)=f(\pm 1)=0$.
 
+
+
 This is the first of two articles concerning the semilinear equation \eqref{Eq:NonlocalAllenCahn}. In the present paper we address the problem of studying odd solutions with respect to the Simons cone (see \eqref{Eq:SimonsCone} below). In particular, we find a suitable expression for the operator $L_K$  acting on this type of functions, as well as for its associated energy. We deduce necessary and sufficient conditions for the operator to have a maximum principle in this setting. Under these assumptions we establish an energy estimate for doubly radial odd minimizers. Finally, as an application of these results we prove, by using variational arguments, the existence of saddle-shaped solutions to problem \eqref{Eq:NonlocalAllenCahn}.
 
 In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we focus our study on saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}. Using the results of the present paper, we give an alternative proof of the existence based on the monotone iteration scheme. Moreover, we show the uniqueness of the saddle-shaped solution by establishing its asymptotic behavior, as well as a maximum principle for the linearized operator.
+
+
 
 The Simons cone will be a central object along this paper. It is defined in $\R^{2m}$ by
 \begin{equation}
@@ -139,16 +143,12 @@ Our first main result is a partial characterization of the kernels corresponding
 
 This theorem is proved in Section~\ref{Sec:Preliminaries} (see Propositions~\ref{Prop:KernelInequalityReflexion} and \ref{Prop:ContraryKernelInequalityReflexion}). It is based on a suitable division of the space $O(m)^2$ and a result on convex functions proved in the Appendix~\ref{Sec:AuxiliaryResults} (Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}).
 
-
-
-\todo[inline]{conectar}
-
-The energy functional associated to \eqref{Eq:NonlocalAllenCahn} is the following.
+Equation \eqref{Eq:NonlocalAllenCahn} is the Euler-Lagrange equation associated to the energy functional
 \begin{equation}
 \label{Eq:Energy}
 \ecal(w, \Omega) := \dfrac{1}{4}\int\int_{\R^{2n} \setminus (\R^n\setminus\Omega)^2} |w(x) - w(y)|^2 K(x-y) \d x \d y + \int_{\Omega} G(w)\,.
 \end{equation}
-Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial and odd functions with a suitable expression with the kernel $\overline{K}$ (see Section~\ref{Sec:Nonlocal_AllenCahn_Energy}). Thanks to this new expression we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial and odd minimizers of $\ecal$. In the next statement, $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ denotes the space of doubly radial and odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:Nonlocal_AllenCahn_Energy} for the precise definition).
+Then, using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial and odd functions with a suitable expression with the kernel $\overline{K}$ (see Section~\ref{Sec:Nonlocal_AllenCahn_Energy}). Thanks to this new expression we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial and odd minimizers of $\ecal$. In the next statement, $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ denotes the space of doubly radial and odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:Nonlocal_AllenCahn_Energy} for the precise definition).
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
@@ -164,7 +164,6 @@ Using the same type of arguments as for the operator $L_K$, we can rewrite the e
 \end{theorem}
 
 
-
 This result has been proved in the case of the fractional Laplacian by Cinti \cite{Cinti-Saddle,Cinti-Saddle2}, but using the local extension problem. In our case, since this technique is not available, we follow the arguments of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they prove a similar energy estimate for minimizers without any symmetry. The strategy to establish their result is to compare the energy of $u$ with the energy of a suitable competitor built after ``cutting'' $u$ with some radial functions. Such competitor is not permitted in our case since it is not odd with respect to the Simons cone. In Section~\ref{Sec:Nonlocal_AllenCahn_Energy} we show how to adapt the ideas of \cite{SavinValdinoci-EnergyEstimate} to our setting in order to establish Theorem~\ref{Th:EnergyEstimate}. In the arguments, the assumption \eqref{Eq:KernelInequality} is crucial.
 
 
@@ -176,7 +175,12 @@ As an application of the previous results, we prove, by using standard variation
     Let $f=-G'$ satisfy \eqref{Eq:HipothesisfOdd} and \eqref{Eq:HipothesisGWells}, and assume additionally that $G(0)>0$. Let $L_K\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
 \end{theorem}
 
-In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we establish the same result with other techniques (monotone iteration and maximum principle). In both proofs, the assumtion \eqref{Eq:KernelInequality} is crucial.
+Saddle-shaped solutions for the classical Allen-Cahn equation involving the Laplacian were studied in \cite{DangFifePeletier, Schatzman, CabreTerraI,CabreTerraII, Cabre-Saddle}. In these works, they established the existence, uniqueness and some qualitative properties of this type of solutions, such as instability when $2m\leq 6$ and stability if $2m\geq 14$.
+
+In the fractional framework, there are only three works concerning saddle-shaped solutions to the equation $\fraclaplacian u = f(u)$. In  \cite{Cinti-Saddle,Cinti-Saddle2}, Cinti proved the existence of a saddle-shaped solution as well as some qualitative properties such as asymptotic behavior, monotonicity properties, and instability in low dimensions. In a previous paper by the authors \cite{Felipe-Sanz-Perela:SaddleFractional}, further properties of these solutions have been proved, the main ones being uniqueness and, when $2m\geq 14$, stability. To our knowledge, the present paper is the first one studying saddle-shaped solution for general integro-differential equations of the form \eqref{Eq:NonlocalAllenCahn}. In the three previous papers \cite{Cinti-Saddle, Cinti-Saddle2, Felipe-Sanz-Perela:SaddleFractional}, the main tool used is the extension problem for the fractional Laplacian (see \cite{CaffarelliSilvestre}). Nevertheless, this technique has the limitation that it cannot be carried out for general integro-differential operators different from the fractional Laplacian. Therefeore, some purely nonlocal techniques are developed through this paper.
+
+In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we establish an alternative proof for the existence by using other techniques (monotone iteration and maximum principle). In both proofs, the assumtion \eqref{Eq:KernelInequality} is crucial. In this paper we also show the uniqueness of the saddle-shaped solution through its asymptotic behavior and a maximum principle for the linearized operator.
+
 
 
  The paper is organized as follows. Section~\ref{Sec:Preliminaries} is devoted to study the operator $L_K$ acting on doubly radial and odd functions. We deduce the expression of the doubly radial kernel $\overline{K}$ and we prove some properties. We also show Theorem~\ref{Th:CharacterizationLstar} and some maximum principles. In Section~\ref{Sec:Nonlocal_AllenCahn_Energy} we study the energy functional associated to \eqref{Eq:NonlocalAllenCahn} and we establish the energy estimate stated in Theorem~\ref{Th:EnergyEstimate}. Finally, in Section~\ref{Sec:Existence} we prove the existence of the saddle-shaped solution to the Allen-Cahn equation. At the end of the paper there are three appendices. Appendix~\ref{Sec:AuxiliaryResults} is devoted to some results on convex functions, and Appendix~\ref{Sec:AuxiliaryResults2} contains some auxiliary computations. Both are used in the proof of Theorem~\ref{Th:CharacterizationLstar}. In Appendix~\ref{Sec:stcomputations} we include some computations in $(s,t)$ variables for future reference.
