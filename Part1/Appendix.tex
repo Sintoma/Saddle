@@ -13,7 +13,7 @@ and the same is true for strict convexity with an strict inequality
 (see Chapter~1 of \cite{Niculescu} and the references therein).
 
 
-The main result, used in the characterization of $\lcal_\star$ in Theorem \todo{Poner teorema en la introducción}, is the following.
+The main result, used in the characterization of $\lcal_\star$ in Theorem~\ref{Th:CharacterizationLstar}, is the following.
 
 \begin{proposition}
 	\label{Prop:EquivalenceK(sqrt)Convex<->Inequality}
@@ -48,7 +48,7 @@ The main result, used in the characterization of $\lcal_\star$ in Theorem \todo{
 
 
 
-To prove this result, we need some lemmas on convex functions. The first one is the following.
+To prove this proposition, we need some lemmas on convex functions. The first one is the following.
 
 \begin{lemma}
 \label{Lemma:Convex<->AllReflectionsConvex} Let $h: I \subset \R \to \R$ be a function defined in
@@ -289,7 +289,7 @@ that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this appendix we present an auxiliary computation that is needed in Section~\ref{Sec:Preliminaries} in order to characterize the operators that belong to $\lcal_\star$.
+In this appendix we present an auxiliary computation that is needed in Section~\ref{Sec:OperatorOddF} in order to characterize the operators that belong to $\lcal_\star$.
 
 \begin{lemma}
 \label{Lemma:ComputationABCD} Let $\alpha$, $\beta$ be two real numbers satisfying $\alpha \geq
@@ -450,16 +450,16 @@ an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset
 \begin{lemma}
 \label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$ and let $w\in
 C_{\loc}^\alpha(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function, i.e., depending only on
-the variables $s$ and $t$. Let $L$ be a rotational invariant operator ($K(y) = K(|y|)$) of the form
+the variables $s$ and $t$. Let $L_K$ be a rotational invariant operator ($K(y) = K(|y|)$) of the form
 \eqref{Eq:DefOfLu}. Then, if we define $\tilde{w}:(0,+\infty)\times (0,+\infty) \to \R$ as
 $\tilde{w}(s,t) = w(s,0,...,0,t,0,...,0)$, it satisfies
-$$ Lw(x) = \tilde{L} \tilde{w} (|x'|,|x''|), $$
+$$ L_Kw(x) = \tilde{L}_K \tilde{w} (|x'|,|x''|), $$
 with
 %Then, for any $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ ($x_s$, $x_t = \pm 1$ in the
 %case $m=1$), $Lu(x)$ can be written in the following way:\todo{Is singular in $s=0$ or $t=0$??}
 \begin{equation*}
 \label{Eq:OperatorInSTVariables}
-\widetilde{L} \tilde{w} (s,t) := \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)  \d \sigma\d \tau\,,
+\widetilde{L}_K \tilde{w} (s,t) := \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)  \d \sigma\d \tau\,,
 \end{equation*}
 where:
 \begin{enumerate}
@@ -561,7 +561,7 @@ Let $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ and $y = (\sigma y_\
 y_\tau)$ with $y_\sigma$, $y_\tau$ $\in \Sph^{m-1}$. Then, decomposing $\R^{2m} = \R^m \times \R^m$
 and using polar coordinates in each $\R^m$ we obtain
 \begin{align*}
-Lu(x) &= \int_{\R^{2m}} \big( u(x) - u(y)\big) K( |x-y|) \d y &\\
+L_Ku(x) &= \int_{\R^{2m}} \big( u(x) - u(y)\big) K( |x-y|) \d y &\\
 &= \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big)  \\
 &\quad \quad \quad \quad  \bpar{\int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 } \Big) \d y_\sigma \d y_\tau } \d \sigma \d \tau
 \end{align*}
@@ -621,7 +621,7 @@ $\R^{m-1}$.
 In the case the operator is the fractional Laplacian we can obtain an alternative expression of the
 kernel $J$ in terms of some hypergeometric functions.
 \begin{lemma}
-\label{Lemma:Appell} If $L = (-\Delta)^\s$ and $m\geq 2$, then
+\label{Lemma:Appell} If $L_K = (-\Delta)^\s$ and $m\geq 2$, then
 \begin{equation}
 \label{Eq:Appell}
 J(s,t,\sigma,\tau) = \frac{\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\frac{m-1}{2}\right)^2\Gamma\left(\frac{m+1}{2}\right)^2} \frac{F_2\left( m+\s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right)}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}},
@@ -651,7 +651,7 @@ J(s,t,\sigma, \tau) &= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \
 We finally obtain \eqref{Eq:Appell} by using the duplication formula for the $\Gamma$-function.
 \end{proof}
 
-Now we rewrite the kernel inequality \eqref{Eq:KernelInequalityReflexion} in $(s,t)$ variables. We
+Now we rewrite the kernel inequality \eqref{Eq:KernelInequality} in $(s,t)$ variables. We
 do not present a proof of this result since it is identical to the one of
 Proposition~\ref{Prop:KernelInequalityReflexion} but changing the notation.
 
