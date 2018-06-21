@@ -29,7 +29,7 @@ and
 	\label{Fig:PsiSandOmegaS}
 \end{figure}
 
-Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$.
+Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$ (see Figure~\ref{Fig:PsiSandOmegaS}), we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$.
 
 Now we show some auxiliary results concerning the previous definitions, needed in the proof of Theorem~\ref{Th:EnergyEstimate}.
 
@@ -41,7 +41,7 @@ with $C>0$ independent of $S$.
 \end{lemma}
 
 \begin{proof}
-Note first that if $x\in \Omega_S \cap \ocal$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$. Hence, we only need to establish the result for the case $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. Under these hypotheses, we have that $\Psi_S(x)=-1$ and $d_S(x) = \min\{S+1-|x|,\dist(x,\ccal)\}$. Moreover, since $x\in B_S$ and $\dist(x,\ccal)\geq 1$ we get $d_S(x) \leq S+1-|x|$. Therefore, if $|x-y|\leq d_S(x)$ we obtain
+Note first that if $x\in \Omega_S \cap \ocal$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$. Hence, we only need to establish the result for the case $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. Under these hypotheses, we have that $\Psi_S(x)=-1$ (see Figure~\ref{Fig:PsiSandOmegaS}) and $d_S(x) = \min\{S+1-|x|,\dist(x,\ccal)\}$. Moreover, since $x\in B_S$ and $\dist(x,\ccal)\geq 1$ we get $d_S(x) \leq S+1-|x|$. Therefore, if $|x-y|\leq d_S(x)$ we obtain
 $$ |y|\leq |x-y| + |x| \leq d_S(x)+|x| \leq S+1. $$
 
 Now we distinguish two cases, either $\{\dist(\cdot,\ccal)\geq 1\}$ or $\{\dist(\cdot,\ccal)\leq 1\}$. Assume first that $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal$. Then, $\Psi_S(y)=-1$ and the result is trivial from being also $\Psi_S(x)=-1$. Thus, it only remains to show the result in the case $x\in B_S \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal$ and $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\leq 1\}\cap \ocal$. Note that under these assumptions, $\Psi_S(x)=-1$ and $\Psi_S(y)=-\dist(y,\ccal)$.
