@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section{Nonlocal Allen-Cahn energy}
+\section{The energy functional for doubly radial odd functions}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:Nonlocal_AllenCahn_Energy}
 
@@ -149,7 +149,7 @@ We show now the result for $w$. Let us show that  $\ecal_\mathrm{K}(w) = \ecal_\
 
 
 
-Next we present a result that will be used later to show that a function $u\in \widetilde{\H}^K_{0}(\Omega)$ that minimizes the nonlocal Allen-Cahn energy, only among odd functions, is actually a weak solution of a semilinear Dirichlet problem in $\Omega$.
+Next we present a result that will be used later to show that a function $u\in \widetilde{\H}^K_{0}(\Omega)$ that minimizes the nonlocal Allen-Cahn energy, only among doubly radial functions, is actually a weak solution of a semilinear Dirichlet problem in $\Omega$. In its proof we do not need to use the kernel $\overline{K}$.
 
 \begin{proposition}
 	\label{Prop:WeakSolutionForAllTestFunctions}
@@ -207,12 +207,41 @@ Next we present a result that will be used later to show that a function $u\in \
 	and thus the result is proved.
 \end{proof}
 
-Note that in the previous result we do not need to use the kernel $\overline{K}$.
+
+
+\begin{remark}
+	\label{Remark:InteriorRegularity}
+	This proposition combined with some regularity results for operators in the class $\lcal_0(n,\s,\lambda, \Lambda)$ yield that bounded minimizers among doubly radial functions of the energy $\ecal(\cdot,\Omega)$ are classical solutions to $L_K u = f(u)$ in $\Omega$. Indeed, if $w\in L^\infty (\R^n)$ is a weak solution to $L_K w = h$ in $B_1$. Then,
+	\begin{equation}
+	\label{Eq:C2sEstimate}
+	\norm{w}_{C^{2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (\R^n)} },
+	\end{equation} 
+	and if, in addition, $w \in C^\alpha (\R^n)$ with $\alpha + 2\s$ not an integer, then
+	\begin{equation}
+	\label{Eq:Calpha->Calpha+2sEstimate}
+	\norm{w}_{C^{\alpha + 2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{C^{\alpha} (B_1)} + \norm{w}_{C^\alpha (\R^n)} },
+	\end{equation}
+	where the previous two constants depend only on $n$, $\s$, $\lambda$ and $\Lambda$ (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein).
+	
+	From the previous estimates and using the same argument as in Corollaries 2.4 and 2.5 of \cite{RosOtonSerra-Regularity}, \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimate} can be rewriten, respectively, as
+	\begin{equation}
+	\label{Eq:C2sEstimateBalls}
+	\norm{w}_{C^{2\s} (B_{1/4})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (B_1)} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} },
+	\end{equation}
+	and 
+	\begin{equation}
+	\label{Eq:Calpha->Calpha+2sEstimateBalls}
+	\norm{w}_{C^{\alpha + 2\s} (B_{1/4})} \leq C\bpar{\norm{h}_{C^{\alpha} (\overline{B_1})} + \norm{w}_{C^\alpha (\overline{B_1})} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} }.
+	\end{equation}
+	Therefore, by applying these estimates (maybe a translated and rescaled version of them) to a weak solution $u\in L^\infty(\R^{2m})$ of $L_K u = f(u)$ in $\Omega$, with $f$ a $C^1$ nonlinearity, we easily conclude that $u$ is a classical solution, that is, the equation makes sense pointwise.
+\end{remark}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Energy estimate}
+\section{An energy estimate for doubly radial and odd minimizers}
 
 In this section we present a sharp estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ of the energy in $B_R$.
 
@@ -402,7 +431,7 @@ $$
 $$
 for every $\xi \in C^\infty_0(\Omega)$ that is double radially symmetric. 
 
-By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, $u$ is a weak solution of \eqref{Eq:ProofEnergyEstimateProblemBR}, and by the regularity result of Corollary \ref{Cor:C2regularity}, since $u$ is bounded, it is a classical solution.
+By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, $u$ is a weak solution of \eqref{Eq:ProofEnergyEstimateProblemBR}, and in view of the regularity theory for operators in $\lcal_0$ (see Remark~\ref{Remark:InteriorRegularity}), since $u$ is bounded, it is a classical solution.
 
 From being $u$ a classical solution it is easy to show that it cannot be $1$ or $-1$ and therefore that it satisfies $0\leq u < 1$ in $\ocal$. That is, let us suppose that there exists $x_0\in\R^{2m}$ such that $|u(x_0)|=1$. Without loss of generality we can assume that $x_0\in\ocal\cap B_R$. Then, from equation \eqref{Eq:ProofEnergyEstimateProblemBR} and the fact of being $x_0$ an absolute maximum, we can arrive at a contradiction:
 \begin{align*}
