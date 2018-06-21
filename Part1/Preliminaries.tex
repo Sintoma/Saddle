@@ -4,110 +4,7 @@
 \label{Sec:Preliminaries}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Regularity theory for nonlocal operators in the class $\lcal_0$}
-\label{Subsec:Regularity}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-This section is devoted to present the regularity results that will be used in the paper. For
-further reference, see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein.
-
-We start with a result on the interior regularity for linear equations.
-
-\begin{proposition}
-\label{Prop:InteriorRegularity}
-Let $L_K \in\lcal_0$ and let $w\in L^\infty (\R^n)$ be a weak solution to $L_K w = h$ in $B_1$. Then,
-\begin{equation}
-\label{Eq:C2sEstimate}
-\norm{w}_{C^{2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (\R^n)} }\,.
-\end{equation}
-Moreover, let $\alpha > 0$ and assume additionally that $w \in C^\alpha (\R^n)$. Then, if $\alpha +
-2\s$ is not an integer,
-\begin{equation}
-\label{Eq:Calpha->Calpha+2sEstimate}
-\norm{w}_{C^{\alpha + 2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{C^{\alpha} (B_1)} + \norm{w}_{C^\alpha (\R^n)} }\,,
-\end{equation}
-where $C$ is a constant that depends only on $n$, $\s$, $\lambda$ and $\Lambda$.
-\end{proposition}
-
-Throughout the paper we consider solutions $u$ to \eqref{Eq:NonlocalAllenCahn} that satisfy
-$|u|\leq 1$ in $\R^n$. Hence, by applying \eqref{Eq:C2sEstimate} we find that for any $x_0\in
-\R^n$,
-\begin{align*}
-\norm{u}_{C^{2\s} (B_{1/2} (x_0))} &\leq C\bpar{\norm{f(u)}_{L^\infty (B_1(x_0))} + \norm{u}_{L^\infty  (\R^n)} } \\
-&\leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }\,.
-\end{align*}
-Note, that the estimate is independent of the point $x_0$, and thus since the equation is satisfied
-in the whole $\R^n$,
-$$
-\norm{u}_{C^{2\s}(\R^n)} \leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }\,.
-$$
-Then, we use estimate \eqref{Eq:Calpha->Calpha+2sEstimate} repeatedly and  the same kind of
-arguments lead to the following conclusion.
-
-\begin{corollary}
-\label{Cor:C2regularity} Let $f\in C^{1}([-1,1])$, $L_K \in \lcal_0$ and let $-1 \leq u \leq 1$ be a
-bounded weak solution to \eqref{Eq:NonlocalAllenCahn}. Then $u\in C^{\alpha}(\R^n)$ for some
-$\alpha
-> 1+ 2 \s$. Moreover, the following estimate holds:
-\begin{equation}
-\norm{u}_{C^{\alpha}(\R^n)} \leq C\,,
-\end{equation}
-for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$.
-\end{corollary}
-
-
-Sometimes we will need estimates in balls. With the same argument as in Corollaries 2.4 and 2.5 of
-\cite{RosOtonSerra-Regularity}, we deduce from Proposition~\ref{Prop:InteriorRegularity} the
-following result.
-
-\begin{corollary}
-\label{Cor:InteriorRegularityBalls}
-Let $L_K \in\lcal_0$ and let $w\in L^\infty (\R^n)$ be a weak solution to $Lw = h$ in $B_1$. Then,
-\begin{equation}
-\label{Eq:C2sEstimateBalls}
-\norm{w}_{C^{2\s} (B_{1/4})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (B_1)} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} }\,.
-\end{equation}
-Moreover, let $\alpha > 0$ and assume additionally that $w \in C^\alpha (\R^n)$. Then, if $\alpha +
-2\s$ is not an integer,
-\begin{equation}
-\label{Eq:Calpha->Calpha+2sEstimateBalls}
-\norm{w}_{C^{\alpha + 2\s} (B_{1/4})} \leq C\bpar{\norm{h}_{C^{\alpha} (\overline{B_1})} + \norm{w}_{C^\alpha (\overline{B_1})} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} }\,,
-\end{equation}
-where $C$ is a constant that depends only on $n$, $\s$, $\lambda$ and $\Lambda$.
-\end{corollary}
-
-Therefore, assume now that $u$ solves $L_K u = f(u)$ in $B_R$ and that $|u|\leq 1$ in $\R^n$ with
-$f\in C^{\alpha}([-1,1])$ for some $\alpha > 0$. Then, the combination of \eqref{Eq:C2sEstimate}
-and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} yields
-\begin{equation}
-\label{Eq:UniformC2alphaEstimateBalls}
-\norm{u}_{C^{2s + \varepsilon}(B_{R/8})} \leq C \bpar{n,\ \s ,\ \lambda,\ \Lambda ,\ \norm{f}_{C^{\alpha}([-1,1])} }\,.
-\end{equation}
-for some $\varepsilon > 0$.
-
-Sometimes the previous regularity results will be used together with a compactness argument. Since
-it will be used repeatedly through the paper, we find it useful to state it here for easy
-reference. The result is an easy consequence of the Arzelà-Ascoli theorem and the compact embedding
-$C^\alpha \subset \subset C^\beta$ when $\beta < \alpha$.
-
-\begin{lemma}
-\label{Lemma:CompactnessLemma} Let $\Omega\subset \R^n$ a bounded domain, $L_K \in \lcal_0$ and let
-$w_k$ be a sequence of functions satisfying
-\begin{itemize}
-\item $w_k \in C^\alpha (\overline{\Omega})$ with $\alpha > 2\s$ and
-$$
-\norm{w_k}_{C^\alpha (\overline{\Omega})} \leq C
-$$
-with a constant $C$ independent of $k$.
-\item $L_K  w_k = h_k$ with $h_k \in C^{\alpha'}(\overline{\Omega})$ for some $\alpha' > 0$ and such
-    that $h_k \to h \in C^{\alpha'}(\overline{\Omega})$ uniformly.
-\end{itemize}
-Then, for every $\beta \in (2\s, \alpha)$, a subsequence of $w_k$ converges to some $w \in C^\beta
-(\overline{\Omega})$ with the $C^\beta (\overline{\Omega})$ norm and satisfies $L_K w = h$ in
-$\Omega$.
-\end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,9 +55,9 @@ for every subset $\Sigma \subset O(m)^2$ and every $R\in O(m)^2$. Moreover, it h
 for every $g\in L^1(O(m)^2)$ ---see \cite{Nachbin} for the details.
 
 \begin{proof}[Proof of Lemma~\ref{Lemma:AlternativeOperatorExpression}]
-Since $L_K w$ is invariant by $O(m)^2$ and $w(R \cdot) = w(\cdot)$ for every $R\in O(m)^2$,
+Since $L_K w (x) = L_K w (Rx)$ for every $R\in O(m)^2$, by taking the mean over all the transformations in $O(m)^2$, we get
 \begin{align*}
-L_K w(x) &= \average_{O(m)^2} Lw(Rx)\d R =  \average_{O(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
+L_K w(x) &= \average_{O(m)^2} L_K w(Rx)\d R =  \average_{O(m)^2} \int_{\R^{2m}} \{w(x) - w(y)\}K(|Rx - y|) \d y \d R\\
 &= \int_{\R^{2m}} \{w(x) - w(y)\}  \average_{O(m)^2} K(|Rx - y|) \d R  \d y = \int_{\R^{2m}} \{w(x) - w(y)\}  \overline{K}(x,y) \d y\,.
 \end{align*}
 Now, we show that $\overline{K}$ is symmetric:
@@ -180,8 +77,10 @@ where we have used the right invariance of the Haar measure.
 
 
 In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by \eqref{Eq:DefStar} and its relation with the doubly radial kernel $\overline{K}$ and the transformations of $O(m)^2$. In particular, in the proof of Theorem~\ref{Th:CharacterizationLstar} it will be useful to consider the following transformation. For every $R\in O(m)^2$, we define  $R_\star\in O(m)^2$ by 
-$$
-R_\star := (R(\cdot)^\star)^\star\,.$$
+\begin{equation}
+	\label{Eq:DefRStar}
+	R_\star := (R(\cdot)^\star)^\star\,.
+\end{equation}
 Equivalently, if $R = (R_1, R_2)$ with $R_1$, $R_2 \in O(m)$, then $R_\star = (R_2, R_1)$.
 
 \begin{lemma}
@@ -275,7 +174,7 @@ To see this, let $R_x$, $R_y \in O(m)^2$ satisfying $x = R_x x_0$ and $y = R_y y
 $$
 \overline{K}(x,y) = \overline{K}(R_x x_0,R_y y_0)  = \overline{K}(x_0, y_0)
 $$
-and, using that $(R_y y_0)^\star = (R_y)_\star y_0^\star$ (see Lemma~\ref{Lemma:PropertiesStar}),
+and, using that $(R_y y_0)^\star = (R_y)_\star y_0^\star$ ---see \eqref{Eq:DefRStar}---,
 $$
 \overline{K}(x,y^\star) = \overline{K}(R_x x_0,(R_y y_0)^\star) = \overline{K}(R_x x_0,(R_y)_\star y_0^\star)  = \overline{K}(x_0, y_0^\star)\,.
 $$
@@ -360,7 +259,7 @@ We define now
 $$
 g(t) := K \bpar{\sqrt{|x|^2 + |y|^2 + 2 t}} + K \bpar{\sqrt{|x|^2 + |y|^2 - 2 t}}
 $$
-we see that \eqref{Eq:InequalityIntegrandKernelInequalityProof} is equivalent to
+and we see that \eqref{Eq:InequalityIntegrandKernelInequalityProof} is equivalent to
 \begin{equation}
 \label{Eq:InequalityIntegrandKernelInequalityProof2}
 \begin{split}
@@ -391,7 +290,7 @@ the open interval $I = (-(|x|^2 + |y|^2)/2,\ (|x|^2 + |y|^2)/2)$ and that $A_{\a
 $B_{\alpha,\beta}$, $C_{\alpha,\beta}$, $D_{\alpha,\beta} \in I$.
 
 To show \eqref{Eq:InequalityIntegrandKernelInequalityProof3}, we use
-Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} of the appendix. Hence, we should
+Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} of the Appendix~\ref{Sec:AuxiliaryResults}. Hence, we should
 check that
 $$
 \begin{cases}
@@ -400,9 +299,7 @@ $$
 \end{cases}
 $$
 The verification of these inequalities is a simple but tedious computation and it is presented in
-the appendix (see point (1) of Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities,
-by Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} we deduce
-\eqref{Eq:InequalityIntegrandKernelInequalityProof3}.
+Appendix~\ref{Sec:AuxiliaryResults2} (see point (1) of Lemma~\ref{Lemma:ComputationABCD}). Once we have these inequalities, by Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} we deduce \eqref{Eq:InequalityIntegrandKernelInequalityProof3}.
 
 To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelInequalityProof3} is
 never attained. By Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}, we know that a
