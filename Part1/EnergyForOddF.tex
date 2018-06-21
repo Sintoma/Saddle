@@ -4,11 +4,10 @@
 \label{Sec:EnergyForOddF}
 
 
-This section is devoted to the energy functional associated to the semilinear equation \eqref{Eq:NonlocalAllenCahn}. We first define appropriately the functional spaces where we are going to apply classic techniques of calculus of variations. We also rewrite the energy in terms of the new kernel $\overline{K}$ and give an alternative expression for the energy of doubly radial odd functions. We alse establish some results that are useful when using variational techniques. %Through all the section we follow the notation of \cite{CozziPassalacqua}.
+This section is devoted to the energy functional associated to the semilinear equation \eqref{Eq:NonlocalAllenCahn}. We first define appropriately the functional spaces where we are going to apply classic techniques of calculus of variations. We also rewrite the energy in terms of the new kernel $\overline{K}$ and give an alternative expression for the energy of doubly radial odd functions. We also establish some results that are useful when using variational techniques. %Through all the section we follow the notation of \cite{CozziPassalacqua}.
 
 
-
-Let us start by defining the functional spaces that we are going to consider in this paper. Given a set $\Omega \subset \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
+Let us start by defining the functional spaces that we are going to consider in the rest of the paper. Given a set $\Omega \subset \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
 $$
 \H^K(\Omega) := \setcond{w \in L^2(\Omega)}{[w]^2_{\H^K(\Omega)} < + \infty},
 $$
@@ -49,10 +48,10 @@ which is the space associated to the kernel of the fractional Laplacian, $K(y) =
 Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, the usual fractional Sobolev space (see
 \cite{HitchhikerGuide}).  For more comments on this, see~\cite{CozziPassalacqua}.
 
-Once presented the functional setting of our problem, we define now  the energy functional associated to the Allen-Cahn equation. 
+Once presented the functional setting of our problem, we define now  the energy functional associated to the equation \eqref{Eq:NonlocalAllenCahn}. 
 
 \begin{definition}
-	Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, a potential $G$ and a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we define the \emph{nonlocal Allen-Cahn energy} by
+	Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, a potential $G$ and a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we define the following energy:
 	$$
 	\ecal(w, \Omega) := \ecal_\mathrm{K}(w,\Omega) + \ecal_\mathrm{P}(w,\Omega)\,,
 	$$
@@ -116,7 +115,7 @@ where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 The following are two lemmas regarding the decrease of the energy under some operations.
 \begin{lemma}
 \label{Lemma:DecreaseEnergy} 
-Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:KernelInequalityReflexion}. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
+Let $K$ be a kernel such that $L_K \in \lcal_\star$. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
 \begin{equation*}
 v(x) = \begin{cases}
 \hspace{3.2mm}|u(x)| \,\,\, &\text{if } \,\,\, x\in\ocal,\\
