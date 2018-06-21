@@ -1,15 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{An energy estimate for doubly radial and odd minimizers}
+\section{An energy estimate for doubly radial odd minimizers}
 \label{Sec:EnergyEstimate}
 
-In this section we present a sharp estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ of the energy in $B_R$.
-
-
-
-\todo[inline]{Rellenar}
-
-In order to prove this result, we follow the ideas of Savin and Valdinocci in \cite{SavinValdinoci-EnergyEstimate}, where they establish the same estimate but for minimizers without any symmetry. The strategy is to compare $u$ with a suitable competitor which is constructed combining $u$ with an auxiliary function. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with  respect to the Simons cone $\ccal$.
+In this section we present an estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ of the energy in $B_R$. We prove Theorem~\ref{Th:EnergyEstimate}. In order to prove this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they establish the same estimate but for minimizers without any symmetry. The strategy is to compare $u$ with a suitable competitor which is constructed combining $u$ with an auxiliary function. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with  respect to the Simons cone $\ccal$.
 
 The auxiliary function needed to build the competitor is defined as follows. For points $x\in \ocal$, we set
 $$ \Psi_S(x) := \max\left\{-1+2\min\{(|x|-S-1)_+,1\},-\dist(x,\ccal) \right\},  $$
@@ -35,10 +29,9 @@ and
 	\label{Fig:PsiSandOmegaS}
 \end{figure}
 
-Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of
-$S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$.
+Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$.
 
-Now we show some auxiliary results concerning the previous definitions.
+Now we show some auxiliary results concerning the previous definitions, needed in the proof of Theorem~\ref{Th:EnergyEstimate}.
 
 \begin{lemma}
 \label{Lemma: AdaptedLipschitzConditionWith_dFunction}
@@ -125,7 +118,7 @@ $$\begin{cases}
 \omega = \phi \leq \varphi \ \ \ \ \textrm{in } \ \ \ \ocal \setminus A\,,\\
 \omega = \varphi \leq \phi \ \ \ \ \textrm{in } \ \ \ \ocal \cap A\,.
 \end{cases}$$
-Then, if $K$ satisfies \eqref{Eq:KernelInequalityReflexion}, it holds
+Then, if $K$ satisfies \eqref{Eq:KernelInequality}, it holds
 \begin{align*}
 I_\omega(\ocal\cap A, \ocal \setminus A) \leq I_\phi(\ocal\cap A, \ocal \setminus A) + I_\varphi(\ocal\cap A, \ocal \setminus A)\,,
 \end{align*}
@@ -143,7 +136,7 @@ Indeed,
 &= \left( \phi(x) - \varphi(y)\right) ^2+2\left( \phi(x)-\varphi(x) \right) \left( \varphi(y)-\phi(y) \right) \\
 &\geq 0.
 \end{align*}
-Therefore, by using this inequality and the reflexion property of the kernel, \eqref{Eq:KernelInequalityReflexion}, we obtain
+Therefore, by using this inequality and the reflexion property of the kernel, \eqref{Eq:KernelInequality}, we obtain
 \begin{align*}
 I_\phi(\ocal\cap A, \ocal \setminus A) &+ I_\varphi(\ocal\cap A, \ocal \setminus A) - I_\omega(\ocal\cap A, \ocal \setminus A) = \\
 &\hspace{-26mm}= \int_{\ocal\cap A} \d x \int_{\ocal\setminus A} \d y \left\{|\phi(x)-\phi(y)|^2+|\varphi(x)-\varphi(y)|^2-|\omega(x)-\omega(y)|^2 \right\} \left\{\overline{K}(x,y)-\overline{K}(x,y^\star)\right\} \\
@@ -175,9 +168,7 @@ To see this, we consider on the one hand perturbations $u +  \varepsilon \xi$, w
 $$
 0 = \dfrac{\d}{\d \varepsilon}\evalat{\varepsilon = 0} \ecal(u +  \varepsilon \xi, B_R) = \langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} - \langle f(u),\xi \rangle_{L^2(B_R)}\,.
 $$
-On the other hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{even}}(B_R)$. Since $u$ is odd with
-respect to the Simons cone, so is $f(u)$. Then, by Remark~\ref{Remark:DecompositionHK} and the same
-decomposition in $L^2(B_R)$, we find that
+On the other hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{even}}(B_R)$. Since $u$ is odd with respect to the Simons cone, so is $f(u)$. Then, by Remark~\ref{Remark:DecompositionHK} and the same decomposition in $L^2(B_R)$, we find that
 $$
 \langle v_R,\xi \rangle_{\widetilde{\H}^K_0(B_R)} = 0 \quad \textrm{ and } \quad  \langle f(v_R),\xi \rangle_{L^2(B_R)} = 0\,.
 $$

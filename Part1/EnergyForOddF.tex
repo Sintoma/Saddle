@@ -64,8 +64,7 @@ Once presented the functional setting of our problem, we define now  the energy 
 \end{definition}
 
 
-For short, we will denote $\ecal(w, \R^n) =: \ecal(w)$. Note that, for functions $w\in \H^K_0(\Omega)$, $\ecal_\mathrm{K}(w,\Omega) = \ecal_\mathrm{K}(w)$. Moreover, if $G\geq 0$, the energy satisfies $
-\ecal(w, \Omega) \leq \ecal(w, \Omega')$  whenever $ \Omega \subset \Omega'$.
+Note that, for functions $w\in \H^K_0(\Omega)$, $\ecal_\mathrm{K}(w,\Omega) = \ecal_\mathrm{K}(w,\R^n)$. Moreover, if $G\geq 0$, the energy satisfies $\ecal(w, \Omega) \leq \ecal(w, \Omega')$  whenever $ \Omega \subset \Omega'$.
 
 Sometimes is it useful to rewrite the kinetic energy as
 \begin{equation}
@@ -89,21 +88,21 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 \begin{lemma}
 	\label{Lemma:ShortExpressionEnergy}
 Let $\Omega\subset \R^{2m}$ be a domain of double revolution and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\Omega)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
-\begin{align*}
-\label{Eq:EnergyOddInOcal2}
+\begin{align}
+\label{Eq:ShortExpressionEnergy}
 \ecal_\mathrm{K}(w, \Omega) = \frac{1}{2} I_w(\Omega\cap\ocal,\Omega\cap\ocal) + I_w(\Omega\cap\ocal,\ocal\setminus\Omega),
-\end{align*}
+\end{align}
 where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 \end{lemma}
 
 \begin{proof}
 	
-	First, in \eqref{Eq:KineticEnergyInteractions} we consider the change $ y = R\tilde{y}$. Then, since $w$ is doubly radial and $\Omega$ is of double revolution, by taking the average among all $R\in SO(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}, we obtain
-	$$
-	\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \int_{\Omega} \int_{\Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y + \frac{1}{2} \int_{\Omega} \int_{\R^n \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y\,.
-	$$
-	Now we split $\Omega$ into $\Omega \cap \ocal$ and $\Omega \setminus \ocal$. By using the change of variables given by $(\cdot)^\star$ and the odd symmetry of $w$, we get	
-	\begin{align*}
+First, in \eqref{Eq:KineticEnergyInteractions} we consider the change $ y = R\tilde{y}$. Then, since $w$ is doubly radial and $\Omega$ is of double revolution, by taking the average among all $R\in SO(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}, we obtain
+$$
+\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \int_{\Omega} \int_{\Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y + \frac{1}{2} \int_{\Omega} \int_{\R^n \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y\,.
+$$
+Now we split $\Omega$ into $\Omega \cap \ocal$ and $\Omega \setminus \ocal$. By using the change of variables given by $(\cdot)^\star$ and the odd symmetry of $w$, we get	
+\begin{align*}
 \ecal_\mathrm{K}(w, \Omega) =  & \frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
 & + \int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
 = & \frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\}  +2 \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
@@ -112,7 +111,7 @@ where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 \end{align*}
 \end{proof}
 
-The following are two lemmas regarding the decrease of the energy under some operations.
+Using the previous expression for the energy, we can establish now the following lemma, regarding the decrease of the energy under some operations.
 \begin{lemma}
 \label{Lemma:DecreaseEnergy} 
 Let $K$ be a kernel such that $L_K \in \lcal_\star$. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
@@ -136,7 +135,7 @@ $$ \ecal(v,\Omega) \leq \ecal(u,\Omega) \quad
 \end{lemma}
 
 \begin{proof}
-We first establish the result for $v$. Let us show that  $\ecal_\mathrm{K}(v) = \ecal_\mathrm{K}(u)$. Note that $v\in \widetilde{\H}^K_{\mathrm{odd}}(\Omega)$. Thus, by the expression of the kinetic energy given in Lemma~\ref{Lemma:ShortExpressionEnergy} and the fact that $\overline{K}(x,y) > \overline{K}(x,y^\star)> 0$ if $x,y\in \ocal$ ---see \eqref{Eq:KernelInequalityReflexion}---, we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x)\leq u^2(x)$ whenever $x,y\in\ocal$. The first condition follows from
+We first establish the result for $v$. Let us show that  $\ecal_\mathrm{K}(v) = \ecal_\mathrm{K}(u)$. Note that $v\in \widetilde{\H}^K_{\mathrm{odd}}(\Omega)$. Thus, by the expression of the kinetic energy given in \eqref{Eq:ShortExpressionEnergy} and the fact that $\overline{K}(x,y) > \overline{K}(x,y^\star)> 0$ if $x,y\in \ocal$ ---see \eqref{Eq:KernelInequality}---, we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x)\leq u^2(x)$ whenever $x,y\in\ocal$. The first condition follows from
 $$ \big||u(x)|-|u(y)|\big|^2\leq |u(x)-u(y)|^2 \Longleftrightarrow w(x)w(y) \leq |w(x)w(y)|,  
 $$
 while the second one is trivial and it is in fact an equality. Concerning the potential energy, since $G$ is an even function we have that $\ecal_\mathrm{P}(v) = \ecal_\mathrm{P}(u)$, and therefore we get the desired result for $v$ by adding the kinetic and potential energies.
