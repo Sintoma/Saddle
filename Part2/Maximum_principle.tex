@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:MaximumPrinciple}
 
-In this section we show that the linearized operator $L_K  -f'(u)$ satisfies the maximum principle in $\ocal$. This result combined with the asymptotic result of Theorem~\ref{Thm:AsymptoticBehaviourSaddleSolution} gives the uniqueness of the saddle-shaped solution.
+In this section we show that the linearized operator $L_K  -f'(u)$ satisfies the maximum principle in $\ocal$. This result combined with the asymptotic result of Theorem~\ref{Thm:AsymptoticBehaviourSaddleSolution} yields the uniqueness of the saddle-shaped solution.
 
 The maximum principle we establish is the following.
 
@@ -34,7 +34,7 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	\begin{equation}
 	\label{Eq:AssumptionsMaxPNarrow}
 	\beqc{\PDEsystem}
-	L_K v + cv&\leq & 0 &\textrm{ in } H\,,\\
+	L_K v + c(x)v&\leq & 0 &\textrm{ in } H\,,\\
 	v &\leq & 0 &\textrm{ in } \ocal \setminus H\,,\\
 	- v(x^\star) & = & v(x) &\textrm{ in } \R^{2m},\\
 	\ds \limsup_{x\in H, \ |x|\to \infty} v(x) &\leq & 0\,.
@@ -46,25 +46,24 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 \begin{proof}
 	Assume, by contradiction, that
 	$$
-	M := \sup_H > 0\,.
+	M := \sup_H v > 0\,.
 	$$
 	Under the assumptions \eqref{Eq:AssumptionsMaxPNarrow}, $M$ must be attained at an interior point $x_0 \in H$, that we can assume without loss of generality that is of the form $x_0 = (|x_0'|e,|x_0''|e)$, with $e=(1,0,...,0)\in\R^m$. Then,
 	\begin{equation}
 	\label{Eq:InequalitiesMaxPNarrowProof}
 	0 \geq L_K  v(x_0) + c(x_0)v(x_0) \geq L_K  v(x_0) - \norm{c_-}_{L^\infty(H)}M\,.
 	\end{equation} 
-	Now, we compute $L_K  v(x_0)$. Then, since $v$ is doubly radial and odd with respect to the Simons cone, we can use the expression \eqref{Eq:OperatorOddF} to write
+	Now, we compute $L_K  v(x_0)$. Since $v$ is doubly radial and odd with respect to the Simons cone, we can use the expression \eqref{Eq:OperatorOddF} to write
 	\begin{align*}
 	L_K v(x_0) &= \int_{\ocal} \big (M - v(y) \big) \big (\overline{K}(x_0,y) -\overline{K}(x_0,y^\star)\big) \d y + 2M\int_{\ocal} \overline{K}(x_0,y^\star)\d y\\
     &\geq2M \int_{\ocal} \overline{K}(x_0,y^\star)\d y,
 	\end{align*}
-    where the inequality comes from being $M$ the supremum of $v$ in $\ocal$ and the kernel inequality from Proposition~\ref{Prop:KernelInequalityReflexion}.   
-    
-	Recalling \eqref{Eq:InequalitiesMaxPNarrowProof}, we have
+    where the inequality follows from being $M$ the supremum of $v$ in $\ocal$ and the kernel inequality \eqref{Eq:KernelInequality}. Combining this last inequality with \eqref{Eq:InequalitiesMaxPNarrowProof}, we obtain
 	$$
 	0 \geq L_K  v(x_0) + c(x_0)v(x_0)  \geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
 	\right\}\,.
 	$$
+	
 	We claim that, for $\varepsilon$ small enough,
 	\begin{equation}
 	\label{Eq:ClaimMaxPNarrowProof}
@@ -87,14 +86,13 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	$$
 	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y \to \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y 
 	$$
-	as $\varepsilon \to 0$. 
-	Since $\overline{x_0} \in \ccal$, $|\overline{x_0}^\star - y|= |\overline{x_0}^\star - y|= |\overline{x_0} - y|$. Therefore, the previous integral is infinite. Indeed,
+	as $\varepsilon \to 0$ and this last integral is infinite. Indeed,
     \begin{align*}
     \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y &\geq \int_{\ical\cap B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s}\d y \\
     &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})}  |\overline{x_0} - y|^{-2m-2\s} \d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} |\overline{x_0} - y^\star|^{-2m-2\s}\d y\\
     &= \frac{1}{2}\int_{B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s} \d y = \frac{1}{2}\int_{B_R} |z|^{-2m-2\s} \d z = +\infty.
     \end{align*}
-    Note that the fact that $\overline{x_0} = (\mu e, \mu e)$ is fundamental in order to have $(\ical\cap B_R(\overline{x_0}))^\star = \ocal\cap B_R(\overline{x_0})$. Therefore, for $\varepsilon$ small enough,
+    Here we have used the change of variables given by $(\cdot)^\star$ and the fact that, since $\overline{x_0} \in \ccal$, $|\overline{x_0}^\star - y|= |\overline{x_0}^\star - y|= |\overline{x_0} - y|$. Note that the assumption $\overline{x_0} = (\mu e, \mu e)$ is fundamental in order to have $(\ical\cap B_R(\overline{x_0}))^\star = \ocal\cap B_R(\overline{x_0})$. Therefore, for $\varepsilon$ small enough,
 	$$
 	\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
 	$$
@@ -111,25 +109,28 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	\mathscr{L} w := L_K w - f'(u)w - cw\,.
 	$$
-	Let $\varepsilon > 0$ be such that the maximum principle of Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} is valid and define the following sets:
-	$$
-	\Omega_\varepsilon := \Omega \cap \{|x'| > |x''| + \varepsilon\}\quad \textrm{ and } \quad 
-	\ncal_\varepsilon := \Omega \cap \{|x''| < |x'| < |x''| + \varepsilon\}\,.
-	$$
-	Recall that, by the asymptotic result, we have 
-	$$
-	u \geq \delta > 0 \quad \textrm{ in } \overline{\Omega}_\varepsilon\,,
-	$$
-	for some $\delta >0$. \todo{Ponerlo en una remark en la seccion de assymptotic} Moreover, by \eqref{Eq:PropertyConcavityf} we get
+	The crucial point in this proof is the fact that $u$ is a positive supersolution of the operator $\mathscr{L}$. Indeed, by \eqref{Eq:PropertyConcavityf} we get
 	\begin{equation}
 	\label{Eq:uSupersolLinearized}
 	\mathscr{L} u = L_K u - f'(u)u - cu \geq f(u) - f'(u)u > 0 \quad \textrm{ in } \Omega \subset \ocal\,,
 	\end{equation}
 	where in the first inequality we have used that $u>0$ in $\ocal$ and that $c\leq 0$.
 	
+	Let $\varepsilon > 0$ be such that the maximum principle of Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} is valid and define the following sets:
+	$$
+	\Omega_\varepsilon := \Omega \cap \{|x'| > |x''| + \varepsilon\}\quad \textrm{ and } \quad 
+	\ncal_\varepsilon := \Omega \cap \{|x''| < |x'| < |x''| + \varepsilon\}\,.
+	$$
+	
+	
     
     By contradiction, assume that there exists $x_0\in \Omega$ such that $v(x_0)> 0$.
-	Set $w := v - \tau u$. Since in $\overline{\Omega}_\varepsilon$ we have $u \geq \delta > 0$, we see that for $\tau$ big enough, $w < 0$ in $\overline{\Omega}_\varepsilon$. Moreover, since $v\leq 0$ in $\ocal\setminus\Omega$, we have 
+	Set $w := v - \tau u$. By the asymptotic result, we have 
+	\begin{equation}
+		\label{Eq:u>delta}
+		u \geq \delta > 0 \quad \textrm{ in } \overline{\Omega}_\varepsilon\,,
+	\end{equation}
+	for some $\delta >0$ (see Remark~\ref{Remark:u>delta}). Therefore,  $w < 0$ in $\overline{\Omega}_\varepsilon$ if $\tau$ is big enough,. Moreover, since $v\leq 0$ in $\ocal\setminus\Omega$, we have 
 	$$
 	w \leq 0 \quad \textrm{ in } \ocal \setminus \ncal_\varepsilon\,.
 	$$
@@ -141,7 +142,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	\mathscr{L} w = \mathscr{L} v - \tau \mathscr{L} u \leq 0 \textrm{ in } \ncal_\varepsilon\,.
 	$$
-	Therefore, since $w$ is odd with respect to $\ccal$, we can apply Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} with $H = \ncal_\varepsilon$ to deduce that
+	Thus, since $w$ is odd with respect to $\ccal$, we can apply Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} with $H = \ncal_\varepsilon$ to deduce that
 	$$
 	w \leq 0 \quad \textrm{ in } \Omega\,,
 	$$
@@ -149,29 +150,29 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	
 	Now, define 
 	$$
-	\overline{\tau}:= \inf \setcond{\lambda > 0}{v - \tau u \leq 0 \ \textrm{ in } \Omega}\,.
+	\underline{\tau}:= \inf \setcond{\tau > 0}{v - \tau u \leq 0 \ \textrm{ in } \Omega}.
 	$$
-	By the previous reasoning, $\overline{\tau}$ is well defined. Clearly, $v - \overline{\tau} u \leq 0 $ in $\Omega$. In addition, since $v(x_0)>0$ and $u(x_0)>0$, we have $-\overline{\tau} u(x_0) < v(x_0) - \overline{\tau} u (x_0) \leq 0$ and therefore $\overline{\tau} > 0$.
+	By the previous reasoning, $\underline{\tau}$ is well defined. Clearly, $v - \underline{\tau} u \leq 0 $ in $\Omega$. In addition, since $v(x_0)>0$, we have $-\underline{\tau} u(x_0) < v(x_0) - \underline{\tau} u (x_0) \leq 0$ and therefore, since $u(x_0)>0$, we deduce that  $\underline{\tau} > 0$.
 	
-	We claim that $v - \overline{\tau} u \not \equiv 0$. Indeed, if $v - \overline{\tau} u \equiv 0$ then $v = \overline{\tau} u$ and thus, since $\overline{\tau} > 0$, we get
+	We claim that $v - \underline{\tau} u \not \equiv 0$. Indeed, if $v - \underline{\tau} u \equiv 0$ then $v = \underline{\tau} u$ and thus, since $\underline{\tau} > 0$, we get 
 	$$
-	0 \geq \mathscr{L} v(x_0) = \overline{\tau} \mathscr{L} u(x_0) > 0\,, 
+	0 \geq \mathscr{L} v(x_0) = \underline{\tau} \mathscr{L} u(x_0) > 0\,, 
 	$$
 	which is a contradiction.
 	
-	Then, since $v - \overline{\tau} u \not \equiv 0$, the strong maximum principle (Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) yields
+	Then, since $v - \underline{\tau} u \not \equiv 0$, the strong maximum principle (Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) yields
 	$$
-	v - \overline{\tau} u < 0 \quad \textrm{ in }\Omega\,.
+	v - \underline{\tau} u < 0 \quad \textrm{ in }\Omega\,.
 	$$
-	Therefore, by continuity and the assumption on $v$ at infinity, there exists $0 < \eta <\overline{\tau}$ such that 
+	Therefore, by continuity, the assumption on $v$ at infinity and \eqref{Eq:u>delta}, there exists $0 < \eta <\underline{\tau}$ such that 
 	$$
-	\tilde{w} := v - (\overline{\tau} - \eta) u < 0 \quad \textrm{ in }\overline{\Omega}_\varepsilon\,.
+	\tilde{w} := v - (\underline{\tau} - \eta) u < 0 \quad \textrm{ in }\overline{\Omega}_\varepsilon\,.
 	$$
 	Using again the maximum principle in narrow domains with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that 
 	$$
-	v - (\overline{\tau} - \eta) u \leq 0 \quad \textrm{ in }\Omega\,,
+	v - (\underline{\tau} - \eta) u \leq 0 \quad \textrm{ in }\Omega\,,
 	$$
-	and this contradicts the definition of $\overline{\tau}$. Hence, $v\leq 0$ in $\Omega$.
+	and this contradicts the definition of $\underline{\tau}$. Hence, $v\leq 0$ in $\Omega$.
 \end{proof}
 
 
