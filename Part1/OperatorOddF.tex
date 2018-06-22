@@ -151,10 +151,9 @@ In this subsection, we establish Theorem~\ref{Th:CharacterizationLstar}. As we h
 First, we give a sufficient condition on the kernel $K$ so that the operator $L_K$ belongs to the the class $\lcal_\star$. It is the following result.
 
 \begin{proposition}
-\label{Prop:KernelInequalitySufficientCondition} Assume that the kernel $K$ is radially symmetric, satisfies hypothesis \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity}, and that $K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$. Then, \eqref{Eq:KernelInequality} holds.
+\label{Prop:KernelInequalitySufficientCondition} Assume that the kernel $K$ is radially symmetric, nonincreasing, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$ and $\lim_{z\to\infty} K(z) = 0$. Then, \eqref{Eq:KernelInequality} holds.
 \end{proposition}
 
-\todo[inline]{La condicion de convexidad da que es decreciente y luego ya te da que la g es creciente, mirar si eso hay que decirlo o va incluido en los lemas del final}
 \begin{proof}
 Let $x$, $y \in \ocal$ and let $x_0 = (|x'|e, |x''|e)$ and $y_0 = (|y'|e, |y''|e)$, for an arbitrary unitary vector $e \in \Sph^{m-1} \subset \R^m$. Hence, since $\overline{K}$ is invariant by $O(m)^2$,
 $$
@@ -287,9 +286,8 @@ To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelI
 Now, we give a necessary condition on the kernel $K$ so that inequality \eqref{Eq:KernelInequality} holds.
 
 \begin{proposition}
-\label{Prop:KernelInequalityNecessaryCondition} Assume that the kernel $K$ is radially symmetric,
-nonincreasing and satisfies the hypotheses \eqref{Eq:Symmetry&IntegrabilityOfK} and
-\eqref{Eq:Ellipticity}. If
+\label{Prop:KernelInequalityNecessaryCondition} Assume that the kernel $K$ is radially symmetric and
+nonincreasing. If
 \begin{equation}
 \label{Eq:KernelInequalityAE}
 \overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for almost every }x,y \in \mathcal{O}\,,
@@ -343,7 +341,7 @@ and
 g(t) &= K\left( \sqrt{|x|^2+|y|^2+2t} \right) + K\left( \sqrt{|x|^2+|y|^2-2t} \right).
 \end{align*}
 
-Now, from being $K(\sqrt{t})$ concave in $(t_1,t_2)$ and $t_1<|x|^2+|y|^2<t_2$, we obtain by Remark 99\todo{?} that $g$ is concave in $ \left( -\overline{t}, \overline{t}\right) $, and decreasing in $(0,\overline{t})$ with $\overline{t} = \min{\left(\frac{t_2-|x|^2-|y|^2}{2},\frac{|x|^2+|y|^2-t_1}{2}\right)}$.
+Now, from being $K(\sqrt{t})$ concave in $(t_1,t_2)$ and $t_1<|x|^2+|y|^2<t_2$, we obtain by Remark~\ref{Remark:Concavity} that $g$ is concave in $ \left( -\overline{t}, \overline{t}\right) $, and decreasing in $(0,\overline{t})$ with $\overline{t} = \min{\left(\frac{t_2-|x|^2-|y|^2}{2},\frac{|x|^2+|y|^2-t_1}{2}\right)}$.
 
 On the other hand it is easy to check that $A_{\alpha,\beta}, B_{\alpha,\beta}, C_{\alpha,\beta}$ and $D_{\alpha,\beta}$ belong to the open interval $(-|x'||y'|-|x''||y''|,|x'||y'|+|x''||y''|)$ for every $\alpha, \beta \in [-1,1]$ such that $\alpha>|\beta|$.
 
