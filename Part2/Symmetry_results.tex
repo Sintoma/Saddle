@@ -16,7 +16,7 @@ one is a result for positive solutions in the whole space.
 	\begin{equation}
 	\label{Eq:PositiveWholeSpace}
 	\beqc{\PDEsystem}
-	L v &=& f(v) & \textrm{ in }\R^n\,,\\
+	L_K v &=& f(v) & \textrm{ in }\R^n\,,\\
 	v &\geq& 0 & \textrm{ in } \R^n\,,
 	\eeqc
 	\end{equation}
@@ -79,8 +79,7 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 
 
 The result in the case of problem \eqref{Eq:P2} will not be used in this paper. However, since the
-proof is analogous as the one for \eqref{Eq:P1}, we include it here for completeness and further
-reference.
+proof is analogous as the one for \eqref{Eq:P1}, we include it here for completeness and future reference.
 
 \subsection{Preliminary: Parabolic Maximum principle}
 
@@ -314,11 +313,11 @@ $$
 If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small.
 
 
-An important result that we need is the following ABP-type estimate. It is proved in \cite{QuaasXia} for the fractional Laplacian, following the arguments in \cite{Cabre-ABP} (see also \cite{Cabre-Topics}). The proof for a general operator $L$ do not differ significantly from the one for the fractional Laplacian. Nevertheless, but we include it here for the sake of completeness.
+An important result that we need is the following ABP-type estimate. It is proved in \cite{QuaasXia} for the fractional Laplacian, following the arguments in \cite{Cabre-ABP} (see also \cite{Cabre-Topics}). The proof for a general operator $L_K$ do not differ significantly from the one for the fractional Laplacian. Nevertheless, but we include it here for the sake of completeness.
 
 \begin{theorem}
 	\label{Th:ABPEstimate}
-	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L \in \lcal_0(n,\s)$\todo{Esta es buena notacion?} and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $\sup_{\Omega} v < +\infty$ and satisfying
+	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L_K \in \lcal_0(n,\s)$\todo{Esta es buena notacion?} and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $\sup_{\Omega} v < +\infty$ and satisfying
 	$$
 	\beqc{\PDEsystem}
 	L_K v - c(x)v &\leq & h & \text{ in } \Omega\,, \\

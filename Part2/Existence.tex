@@ -20,7 +20,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	\usub & \leq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
 	$$
-	with $f$ an odd $C^2$ function and $\varphi$ a doubly radial function satisfying $\varphi (x) = - \varphi(Sx)$.
+	with $f$ an odd $C^2$ function and $\varphi$ a doubly radial function satisfying $\varphi (x) = - \varphi(x^\star)$.
 	
 	Then, there exists $u\in C^2(B_R)$ a solution of
 	$$
@@ -44,7 +44,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	$$
 	and
 	$$
-	g(\theta) := f'(\theta) + b \theta\,.
+	g(\theta) := f(\theta) + b \theta\,.
 	$$
 	Therefore, our problem is equivalent to find a solution to
 	$$
@@ -53,9 +53,9 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	u &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
 	$$
-	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(\theta) \geq $ for $\theta \geq 0$. Moreover, since $b \geq 0$, $\tilde{L}$ satisfies the maximum principle for odd functions in $\ocal$ (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
+	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(\theta) \geq 0$ for $\theta \geq 0$. Moreover, since $b \geq 0$, $\tilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
 	
-	We define $u_0 = \usub$ and, for $k\geq 1$, $u_k$ as the solution to the linear problem
+	We define $u_0 = \usub$ and, for $k\geq 1$, let $u_k$ be the solution to the linear problem
 	$$
 	\beqc{\PDEsystem}
 	\tilde{L}_K u_k & = & g(u_{k-1}) & \textrm{ in } B_R\,, \\
@@ -69,7 +69,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by a compactness argument we see that, up to a subsequence, $u_k$ converges in $C^2$ to the desired solution.
 \end{proof}
 
-In order to construct a positive supersolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L$, which are presented next.
+In order to construct a positive supersolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next.
 
 \begin{lemma}
 	\label{Lemma:FirstOddEigenfunction}
@@ -87,7 +87,7 @@ In order to construct a positive supersolution, we also need a characterization 
 	\eeqc
 	$$
 	and satisfies that $\phi \geq 0$ in $\ocal$ and $\phi > 0$ in $\Omega \cap \ocal$.
-	We call such function the \emph{first odd eigenfunction of $L$ in $\Omega$} and $\lambda_{1, \, \mathrm{odd}}(\Omega, L_K) $ the \emph{first odd eigenvalue}. 
+	We call such function the \emph{first odd eigenfunction of $L_K$ in $\Omega$} and $\lambda_{1, \, \mathrm{odd}}(\Omega, L_K) $ the \emph{first odd eigenvalue}. 
 	
 	Moreover, in the case $\Omega = B_R$, there exists a constant $C$ depending only on $n$, $\s$ and $\Lambda$ such that
 	$$
@@ -97,7 +97,7 @@ In order to construct a positive supersolution, we also need a characterization 
 
 
 \begin{proof}
-	The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, with the help of Lemma~\ref{Lemma:DecreaseEnergy} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions})
+	The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, using the same arguments as in  Lemma~99 of \cite{FelipeSanz-Perela:IntegroDifferentialI} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}).
 	
 	We show the third statement. Let $\widetilde{w} (x):= w(Rx)$ for every $w\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)$. Then,
 	\begin{align*}
@@ -111,9 +111,9 @@ In order to construct a positive supersolution, we also need a characterization 
 \end{proof}
 
 
-With these ingredients, we can proceed with the alternative argument to show Theorem~\ref{Th:Existence}.
+With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existence}.
 
-\begin{proof}[Alternative proof of Theorem~\ref{Th:Existence}]
+\begin{proof}[Proof of Theorem~\ref{Th:Existence}]
 	The strategy is to build a suitable solution $u_R$ of 
 	\begin{equation}
 	\label{Eq:ProofExistenceProblemBR}
