@@ -6,37 +6,36 @@
 In this section, we establish...
 
 
-The main difference between a general operator $L$ and the fractional Laplacian is that $L$ is, in some sense, invariant with respect to the dimension 
+The main difference between a general operator $L$ and the fractional Laplacian is that $L_K$ is, in some sense, invariant with respect to the dimension 
 Layer solution
 
 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
-	Let $L$ and $L_1$ be two symmetric and translation invariant integral operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
+	Let $L_K $ and $L_{K_1}$ be two symmetric and translation invariant integral operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
 	
 	If,
 	$$ K_1(t) = |t|^{n-1} \int_{\R^{n-1}} K\left((t\sigma,t)\right) \d \sigma, $$
 	then
 	\begin{enumerate}[label=(\roman{*})]
-		\item $Lu(x) = L_1 v(x_n)$.
-		\item If $L\in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_1 \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$.
+		\item $L_K u(x) = L_{K_1} v(x_n)$.
+		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$.
 	\end{enumerate}
 \end{proposition}
 
-Note that if $L$ is the fractional Laplacian in dimension $n$, then $L_1$ is also the fractional Laplacian, but in dimension $1$.
+Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is also the fractional Laplacian, but in dimension $1$.
 
 \begin{proof}
-	
 	We start proving point $(i)$. We write $y=(y',y_n)$, with $y'\in \R^{n-1}$.
 	\begin{align*}
-	Lu(x) &= \int_{\R^n} \left\{ u(x)-u(y) \right\} K(x-y) \d y \\
+	L_K u(x) &= \int_{\R^n} \left\{ u(x)-u(y) \right\} K(x-y) \d y \\
 	&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left((x'-y',x_n-y_n)\right) \d y' \d y_n.
 	\end{align*}
 	Now we make the change of variables $y' = x'-(x_n-y_n)\sigma$. That is,
 	\begin{align*}
-	Lu(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} \d \sigma \d y_n \\
+	L_K u(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} \d \sigma \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((x_n-y_n)(\sigma,1)\right) \d\sigma \d y_n \\
-	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = \tilde{L}v(x_n). \\
+	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n). \\
 	\end{align*}
 	
 	We establish now point $(ii)$. To do it, we bound the kernel $K_1$. 
@@ -45,7 +44,7 @@ Note that if $L$ is the fractional Laplacian in dimension $n$, then $L_1$ is als
 	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^{n-1}} \frac{\d\sigma}{(|\sigma|^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} \\
 	&= c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
 	\end{align*}
-	where the only inequality that appears comes from the lower bound of the kernel $K$ for being $L$ in $\mathcal{L}_0$. The upper bound for $K_1$ is obtained in the same way.
+	where the only inequality that appears comes from the lower bound of the kernel $K$ for being $L_K $ in $\mathcal{L}_0$. The upper bound for $K_1$ is obtained in the same way.
 \end{proof}
 
 
@@ -58,9 +57,9 @@ Note that if $L$ is the fractional Laplacian in dimension $n$, then $L_1$ is als
 \label{Thm:AsymptoticBehaviourSaddleSolution}
 Let $f\in \cp{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution of
 $$
-Lu = f(u) \ \textrm{in } \R,
+L_K u = f(u) \ \textrm{in } \R,
 $$
-with $L\in \lcal_\star$.
+with $L_K \in \lcal_\star$.
 
 Then,
 $$
@@ -90,12 +89,12 @@ w_k(x) = u(x+x_k)  \ \textrm{for } x\in B_{d_k}(0),
 $$
 which satisfies $0<w_k<1$ and
 $$
-Lw_k = f(w_k) \ \textrm{in } B_k.
+L_K w_k = f(w_k) \ \textrm{in } B_k.
 $$
 By letting $k$ tend to infinity and using compactness \todo{Atencion} we have that $w_k$ converges to $w$, up to a subsequence, satisfying
 $$
 \beqc{\PDEsystem}
-L w &=& f(w) & \textrm{ in }\R^n\,,\\
+L_K  w &=& f(w) & \textrm{ in }\R^n\,,\\
 w &\geq& 0 & \textrm{ in } \R^n\,.
 \eeqc
 $$
@@ -114,14 +113,14 @@ Then, at least for a subsequence $d_k \rightarrow d$. Now, define for each $x_k$
 Define as before
 $$ w_k (x) = u(x+x_k^0), $$
 which solves
-$$ L w_k = f(w_k) \ \text{in } \R^n. $$
+$$ L_K  w_k = f(w_k) \ \text{in } \R^n. $$
 By letting $k$ tend to infinity and using compactness \todo{Atencion} we have that $w_k$ converges to $w$, up to a subsequence, satisfying
 $$
 \beqc{\PDEsystem}
 %L w &=& f(w)  \textrm{ in } &H:=\{x\cdot \nu >0\}\,,\\
 %w &\geq& 0  \textrm{ in } &H\,,\\
 %w &\text{ odd}& \hspace{-2mm} \text{with respect} \text{to} &H \,.
-L w &=& f(w)  &\textrm{ in } H:=\{x\cdot \nu >0\}\,,\\
+L_K  w &=& f(w)  &\textrm{ in } H:=\{x\cdot \nu >0\}\,,\\
 w &\geq& 0  &\textrm{ in } H\,,\\
 \,\,w \text{ odd with respect to } H. \span\span\span \,
 \eeqc

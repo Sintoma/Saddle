@@ -12,7 +12,7 @@ one is a result for positive solutions in the whole space.
 
 \begin{theorem}
 	\label{Th:SymmetryWholeSpace}
-	Let $L\in \lcal_0$ and let $v$ be a bounded solution to
+	Let $L_K \in \lcal_0$ and let $v$ be a bounded solution to
 	\begin{equation}
 	\label{Eq:PositiveWholeSpace}
 	\beqc{\PDEsystem}
@@ -35,14 +35,14 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 
 \begin{theorem}
 	\label{Th:SymmHalfSpace}
-	Let $L\in \lcal_0$ and let $v$ be a bounded solution to one of these two problems
+	Let $L_K\in \lcal_0$ and let $v$ be a bounded solution to one of these two problems
 	
 	\begin{equation}
 	\leqnomode
 	\tag{P1}
 	\label{Eq:P1}
 	\beqc{\PDEsystem}
-	Lv &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	L_K v &=& f(v)   &\textrm{ in } \,\R^n_+,\\
 	v &>& 0   &\textrm{ in } \,\R^n_+,\\
 	v(x',x_n) &=& -v(x',-x_n)   &\textrm{ in } \,\R^n.
 	\eeqc
@@ -53,7 +53,7 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 	\tag{P2}
 	\label{Eq:P2}
 	\beqc{\PDEsystem}
-	Lu &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	L_K v &=& f(v)   &\textrm{ in } \,\R^n_+,\\
 	v &>& 0   &\textrm{ in } \,\R^n_+,\\
 	v &=& 0   &\textrm{ in } \,\overline{\R^n_-},
 	\eeqc
@@ -90,12 +90,12 @@ reference.
 
 \begin{theorem}
 \label{Th:ParabolicmaxPrpBdd}
-Let  $v \in C^{2\s+\epsilon}(B_R\times(0,T])$ be bounded by above and let $L$ be an integro-differential operator of the form \eqref{Eq:DefOfLu}
+Let  $v \in C^{2\s+\epsilon}(B_R\times(0,T])$ be bounded by above and let $L_K$ be an integro-differential operator of the form \eqref{Eq:DefOfLu}
 
 Assume that $v$ satisfies
 \begin{equation*}
 \beqc{\PDEsystem}
-\partial_t v + L v &\leq& 0 & \textrm{ in }B_R\times(0,T]\,,\\
+\partial_t v + L_K v &\leq& 0 & \textrm{ in }B_R\times(0,T]\,,\\
 v_0:=v(x,0) &\leq& 0 & \textrm{ in } B_R\,,\\
 v &\leq& 0 & \textrm{ in } \left( \R^n\setminus B_R\right) \times (0,T] \,.
 \eeqc
@@ -104,31 +104,31 @@ Then, $v\leq 0$ in $\R^n\times (0,T]$.
 \end{theorem}
 
 \begin{proof}
-By contradiction, assume that $v$ attains a positive absolute maximum at a point $(x_0,t_0)$. By the exterior conditions, $x_0$ must be in $B_R$. If $t_0\in(0,T)$, then $(x_0,t_0)$ is an interior global maximum and it must satisfy $v_t(x_0,t_0)=0$ and $Lv(x_0,t_0)>0$, which contradicts the equation. If $t_0 = T$, then $v_t(x_0,t_o)\geq 0$ and $Lv(x_0,t_0)>0$, which is also a contradiction with the equation.
+By contradiction, assume that $v$ attains a positive absolute maximum at a point $(x_0,t_0)$. By the exterior conditions, $x_0$ must be in $B_R$. If $t_0\in(0,T)$, then $(x_0,t_0)$ is an interior global maximum and it must satisfy $v_t(x_0,t_0)=0$ and $L_K v(x_0,t_0)>0$, which contradicts the equation. If $t_0 = T$, then $v_t(x_0,t_o)\geq 0$ and $L_K v(x_0,t_0)>0$, which is also a contradiction with the equation.
 \end{proof}
 
 \begin{lemma}
 \label{Lemma:NoBddSolL=1}
-There is no bounded solution to $Lv=1$ in $\R^n$ for any $L\in \lcal_0$.
+There is no bounded solution to $L_K v=1$ in $\R^n$ for any $L_K \in \lcal_0$.
 \end{lemma}
 
 \begin{proof}
 Assume by contradiction that such solution exists. Then, by interior regularity (see Section~\ref{Sec:Preliminaries}) $v\in C^1(\R^n)$ and $|\nabla v|\leq C$ in $\R^n$. For every $i = 1,\ldots, n$, we differentiate the equation with respect to $x_i$ to obtain
 \begin{equation*}
 \beqc{\PDEsystem}
-L v_{x_i} &=& 0 & \textrm{ in } \R^n\,,\\
+L_K  v_{x_i} &=& 0 & \textrm{ in } \R^n\,,\\
 |v_{x_i}| &\leq& C & \textrm{ in } \R^n\,.
 \eeqc
 \end{equation*}
-By the Liouville Theorem for the operator $L$ (it is proved exactly as in \cite{RosOtonSerra-Stable}, see also \cite{SerraC2s+alphaRegularity}), $v_{x_i}$ is constant. Hence, $\nabla v$ is constant, and thus $v$ is affine. But since $u$ is bounded, $v$ must be constant too, and we arrive to a contradiction with $Lv=1$.
+By the Liouville Theorem for the operator $L_K $ (it is proved exactly as in \cite{RosOtonSerra-Stable}, see also \cite{SerraC2s+alphaRegularity}), $v_{x_i}$ is constant. Hence, $\nabla v$ is constant, and thus $v$ is affine. But since $u$ is bounded, $v$ must be constant too, and we arrive to a contradiction with $L_K v=1$.
 \end{proof}
 
 \begin{lemma}
 \label{Lemma:SolBall}
-Let $L\in \lcal_0$ and let $R>0$ be given. Then, there exists $\phi_R$ a solution of
+Let $L_K \in \lcal_0$ and let $R>0$ be given. Then, there exists $\phi_R$ a solution of
 \begin{equation*}
 \beqc{\PDEsystem}
-L \phi_R &=& 1 & \textrm{ in } B_R\,,\\
+L_K  \phi_R &=& 1 & \textrm{ in } B_R\,,\\
 \phi_R &=& 0 & \textrm{ in } \R^n\setminus B_R\,,
 \eeqc
 \end{equation*}
@@ -144,13 +144,13 @@ Since $M_R$ is increasing (use the maximum principle to compare $\phi_R$ and $\p
 \begin{equation}
 \label{Eq:varphi}
 \beqc{\PDEsystem}
-L \varphi_R &=& 1/M_R & \textrm{ in } B_R\,,\\
+L_K  \varphi_R &=& 1/M_R & \textrm{ in } B_R\,,\\
 \varphi_R &=& 0 & \textrm{ in } \R^n\setminus B_R\,, \\
 \varphi_R &\leq & 1\,.
 \eeqc
 \end{equation}
 
-Therefore, applying Lemma \ref{Lemma:CompactnessLemma} we deduce that $\varphi_R$ converges (up to a subsequence) to a function $\varphi$ that is solution to $L \varphi = 1/M$ in $\R^n$ and satisfies  $|\varphi| \leq 1$. This contradicts Lemma~\ref{Lemma:NoBddSolL=1} and therefore, $M_R \to +\infty$.
+Therefore, applying Lemma~\ref{Lemma:CompactnessLemma} we deduce that $\varphi_R$ converges (up to a subsequence) to a function $\varphi$ that is solution to $L_K  \varphi = 1/M$ in $\R^n$ and satisfies  $|\varphi| \leq 1$. This contradicts Lemma~\ref{Lemma:NoBddSolL=1} and therefore, $M_R \to +\infty$.
 \end{proof}
 
 \begin{lemma}
@@ -158,7 +158,7 @@ Therefore, applying Lemma \ref{Lemma:CompactnessLemma} we deduce that $\varphi_R
 Let $M_R$ be as in the previous lemma. Then, there exists a function $\psi_R\geq 0$ solution to
 \begin{equation*}
 \beqc{\PDEsystem}
-L \psi_R &=& -1/M_R & \textrm{ in } B_R\,,\\
+L_K  \psi_R &=& -1/M_R & \textrm{ in } B_R\,,\\
 \psi_R &=& 1 & \textrm{ in } \R^n\setminus B_R\,,
 \eeqc
 \end{equation*}
@@ -171,16 +171,16 @@ We define $ \psi_R := 1-\phi_R/M_R = 1-\varphi_R$, where $\phi_R$ and $\varphi_R
 the previous proof. Thus, we only need to show the limit condition. We will see that $\varphi_R \to
 1$ as $R\to +\infty$. Recall that $\varphi_R$ solves problem \eqref{Eq:varphi}, and by the previous
 arguments, letting $R\to +\infty$ we deduce that $\varphi_R$ converges to a function $\varphi\geq
-0$ that solves $ L\varphi = 0 $ in $\R^n$. By Liouville Theorem, $\varphi$ must be constant, and
+0$ that solves $ L_K \varphi = 0 $ in $\R^n$. By Liouville Theorem, $\varphi$ must be constant, and
 since its $L^\infty$-norm is $1$ and $\varphi\geq 0$, we conclude $\varphi\equiv 1$.
 \end{proof}
 
 \begin{theorem}
 \label{Th:ParaMaxPrp}
-Let $L\in \lcal_0$ and let $v$ be a bounded function such that
+Let $L_K \in \lcal_0$ and let $v$ be a bounded function such that
 \begin{equation*}
 \beqc{\PDEsystem}
-\partial_t v + L v + c\,v &\leq& 0 & \textrm{ in }\R^n\times(0,+\infty)\,,\\
+\partial_t v + L_K  v + c\,v &\leq& 0 & \textrm{ in }\R^n\times(0,+\infty)\,,\\
 v_0:=v(x,0) &\leq& 0 & \textrm{ in } \R^n\,,
 \eeqc
 \end{equation*}
@@ -192,7 +192,7 @@ $$ v(x,t) \leq 0 \,\,\,\,\,\text{ in } \,\,\, \R^n\times[0,+\infty). $$
 First of all, note that with the change of function $\tilde{v}(x,t) = \e^{-\alpha\,t} v(x,t)$ we can reduce the initial problem to
 \begin{equation*}
 \beqc{\PDEsystem}
-\partial_t \tilde{v} + L \tilde{v} &\leq& 0 & \textrm{ in } \Omega \subset\R^n\times(0,+\infty)\,,\\
+\partial_t \tilde{v} + L_K  \tilde{v} &\leq& 0 & \textrm{ in } \Omega \subset\R^n\times(0,+\infty)\,,\\
 \tilde{v} &\leq& 0 & \textrm{ in }  \left(\R^n\times(0,+\infty)\right) \setminus  \Omega\,,\\
 \tilde{v}_0 &\leq& 0 & \textrm{ in } \R^n\,,
 \eeqc
@@ -202,7 +202,7 @@ if we take $\alpha > ||c||_{L^\infty}$ and $\Omega = \{(x,t)\in \R^n\times(0,+\i
 Now, consider the function $ w_R(x,t) := \norm{v}_{L^\infty} ( \psi_R + t/M_R )$, which satisfies
 \begin{equation*}
 \beqc{\PDEsystem}
-\partial_t w_R + L w_R &=& 0 & \textrm{ in }B_R\times(0,T]\,,\\
+\partial_t w_R + L_K  w_R &=& 0 & \textrm{ in }B_R\times(0,T]\,,\\
 w_R(x,0) &\geq& 0 & \textrm{ in } B_R\,,\\
 w_R(x,t) &\geq& \norm{v}_{L^\infty}  & \textrm{ in } \left( \R^n\setminus B_R\right) \times (0,T] \,.
 \eeqc
@@ -251,11 +251,11 @@ enough. Therefore, from this and \eqref{Eq:Harnack}  we deduce that there exists
 that
 \begin{align}
 \label{Eq:WholeSpace2}
-L v - \frac{f'(0)}{2}v \geq 0 \,\,\textrm{ in }\ B_R(x_{M(R)})\,.
+L_K  v - \frac{f'(0)}{2}v \geq 0 \,\,\textrm{ in }\ B_R(x_{M(R)})\,.
 \end{align}
 On the other hand, let us define
 $$ \lambda_R^{x_0} = \inf_{\substack{\varphi\in C^1_0(B_R(x_0))\\ \varphi\not\equiv 0}} \frac{\ds \int_{\R^n}\int_{\R^n}|\varphi(x)-\varphi(y)|^2\,K(x-y) \d x \d y}{\ds \int_{\R^n}\varphi(x)^2 \d x}, $$
-which decreases to zero uniformly in $x_0$ as $R$ goes to infinity from being $L\in\mathcal{L}_0$ (see the proof of Lemma~\ref{Lemma:FirstOddEigenfunction} and also Proposition~9 of \cite{ServadeiValdinoci}). Therefore, there exists $R_0>0$ such that $ \lambda_R^x < f'(0)/2$ for all $x\in \R^n$ and $R\geq R_0$. In particular, by choosing $x=x_{M(R_0)}$ there exists $w\in C^1_0(B_{R_0}(x_{M(R_0)}))$ such that $w\not\equiv 0$ and
+which decreases to zero uniformly in $x_0$ as $R$ goes to infinity from being $L_K \in\mathcal{L}_0$ (see the proof of Lemma~\ref{Lemma:FirstOddEigenfunction} and also Proposition~9 of \cite{ServadeiValdinoci}). Therefore, there exists $R_0>0$ such that $ \lambda_R^x < f'(0)/2$ for all $x\in \R^n$ and $R\geq R_0$. In particular, by choosing $x=x_{M(R_0)}$ there exists $w\in C^1_0(B_{R_0}(x_{M(R_0)}))$ such that $w\not\equiv 0$ and
 \begin{equation}
 \label{Eq:Eigenfunction}
 \int_{\R^n}\int_{\R^n}|w(x)-w(y)|^2\,K(x-y) \d x \d y < \frac{f'(0)}{2}\int_{\R^n}w^2 \d x.
@@ -263,7 +263,7 @@ which decreases to zero uniformly in $x_0$ as $R$ goes to infinity from being $L
 
 If we multiply \eqref{Eq:WholeSpace2} by $w^2/v\geq 0$ and integrate in $\R^n$, we get
 \begin{align*}
-0 &\leq \int_{\R^n} Lv\,\frac{w^2}{v} \d x - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
+0 &\leq \int_{\R^n} L_K v\,\frac{w^2}{v} \d x - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
 &= \int_{\R^n}\int_{\R^n}\left\{ v(x)-v(y) \right\} \left( \frac{w^2(x)}{v(x)}-\frac{w^2(y)}{v(y)} \right) K(x-y) \d x \d y - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
 &\leq \int_{\R^n}\int_{\R^n} |w(x)-w(y)|^2 K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x ,
 \end{align*}
@@ -291,7 +291,7 @@ $$
 Since $f>0$ in $(0,1)$ and $f(1) = 0$ we have that $\dot{\xi}(t)>0$ for all $t\geq 0$ and $\ds \lim_{t\to 0} \xi(t) = 1$.
 
 Now, note that both $v(x)$ and $\xi(t)$ solve the parabolic equation
-$$ \partial_t w + Lw = f(w) \,\,\, \textrm{ in }\R^n\times (0,\infty)\,, $$
+$$ \partial_t w + L_K w = f(w) \,\,\, \textrm{ in }\R^n\times (0,\infty)\,, $$
 and satisfy
 $$ v(x) \geq m \geq \xi_0 = \xi(0). $$
 Thus, by the parabolic maximum principle, Theorem \ref{Th:ParaMaxPrp}, $v(x)\geq \xi(t)$ for all $x\in\R^n$ and $t\in(0,\infty)$. By letting $t \to \infty$ we obtain
@@ -321,7 +321,7 @@ An important result that we need is the following ABP-type estimate. It is prove
 	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L \in \lcal_0(n,\s)$\todo{Esta es buena notacion?} and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $\sup_{\Omega} v < +\infty$ and satisfying
 	$$
 	\beqc{\PDEsystem}
-	Lv - c(x)v &\leq & h & \text{ in } \Omega\,, \\
+	L_K v - c(x)v &\leq & h & \text{ in } \Omega\,, \\
 	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
 	\eeqc
 	$$
@@ -344,7 +344,7 @@ The only ingredient needed to show Theorem~\ref{Th:ABPEstimate} is the following
 	We are going to show it for $v$ satisfying,
 	$$
 	\beqc{\PDEsystem}
-	Lv &\leq & h & \text{ in } \Omega\,, \\
+	L_K v &\leq & h & \text{ in } \Omega\,, \\
 	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
 	\eeqc
 	$$
@@ -373,18 +373,18 @@ As a consequence of this result, one can deduce easily a maximum principle in ``
 	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$ and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfy
 	$$
 	\beqc{\PDEsystem}
-	Lv + c(x)v &\leq & 0 & \text{ in } \Omega\,, \\
+	L_K v + c(x)v &\leq & 0 & \text{ in } \Omega\,, \\
 	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
 	\eeqc
 	$$
-	with $c(x)$ bounded below and $L\in \lcal_0(n,\s)$.
+	with $c(x)$ bounded below and $L_K \in \lcal_0(n,\s)$.
 	
 	Then, there exists a number $\bar{R} > 0$ such that $v \leq 0$ in $\Omega$ whenever $R(\Omega)< \bar{R}$.
 	
 \end{corollary}
 
 \begin{proof}
-	We write $c= c^+ - c^-$, and therefore $Lv -(-c^+)v \leq c^- v^+	$. By Theorem~\ref{Th:ABPEstimate} we get
+	We write $c= c^+ - c^-$, and therefore $L_K v -(-c^+)v \leq c^- v^+	$. By Theorem~\ref{Th:ABPEstimate} we get
 	$$
 	\sup_\Omega v \leq C R(\Omega)^{2\s} \norm{c^- v^+}_{L^\infty(\Omega)} \leq C R(\Omega)^{2\s} \norm{c^-}_{L^\infty(\Omega)} \sup_\Omega v
 	$$
@@ -396,7 +396,7 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 
 \begin{proposition}
 	\label{Prop:MaxPrpNarrowOdd}
-	Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L\in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying
+	Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L_K \in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying
 	\begin{equation}
 	\label{Eq:KernelSymmetry}
 	K(x-y) \geq K(x-y^*), \,\,\,\,\text{for all } \,\, x,y\in H.
@@ -404,7 +404,7 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 	Assume that $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfies
 	\begin{equation*}
 	\beqc{\PDEsystem}
-	L v &\geq& c(x)\,v  &\textrm{ in } \Omega\subset H,\\
+	L_K  v &\geq& c(x)\,v  &\textrm{ in } \Omega\subset H,\\
 	v &\geq& 0 &\textrm{ in } H\setminus\Omega,\\
 	v(x) &=& -v(x^*) &\textrm{ in } \R^n.
 	\eeqc
@@ -430,7 +430,7 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 	\end{equation*}
 	Let us first show that $Lv_2\leq 0$ in $\Omega_-$. To see this, let us take $x\in\Omega_-$ and thus
 	$$
-	Lv_2(x) = \int_{\R^n\setminus\Omega_-} -v_2(y)K(x-y) \d y = -\int_{\R^n\setminus\Omega_-} v(y)K(x-y) \d y.
+	L_K v_2(x) = \int_{\R^n\setminus\Omega_-} -v_2(y)K(x-y) \d y = -\int_{\R^n\setminus\Omega_-} v(y)K(x-y) \d y.
 	$$
 	Now, we split $\R^n\setminus\Omega_-$ into
 	$$
@@ -446,12 +446,12 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 	-\int_{A_2} v(y)K(x-y) \d y = -\int_{H\setminus\Omega_-} v(y)K(x-y) \d y  -\int_{H\setminus\Omega_-} v(y^*)K(x-y^*) \d y \\
 	= -\int_{H\setminus\Omega_-} v(y)\left\{K(x-y)-K(x-y^*)\right\} \d y \leq 0,
 	\end{align*}
-	where we have use the kernel condition \eqref{Eq:KernelSymmetry} and the odd symmetry of $v$. Thus, we get $Lv_2 \leq 0$ in $\Omega_-$, which means
-	$$ Lv_1 = Lv-Lv_2 \geq Lv \geq c(x)\,v = c(x)\,v_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
+	where we have use the kernel condition \eqref{Eq:KernelSymmetry} and the odd symmetry of $v$. Thus, we get $L_K v_2 \leq 0$ in $\Omega_-$, which means
+	$$ L_K v_1 = L_K v-L_K v_2 \geq L_K v \geq c(x)\,v = c(x)\,v_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
 	Therefore $v_1$ solves
 	\begin{equation*}
 	\beqc{\PDEsystem}
-	Lv_1 &\geq& c(x)\,v_1   &\textrm{ in } \,\Omega_-,\\
+	L_K v_1 &\geq& c(x)\,v_1   &\textrm{ in } \,\Omega_-,\\
 	v_1 &=& 0 &\textrm{ in }\,\R^n\setminus\Omega_-,
 	\eeqc
 	\end{equation*}
@@ -468,7 +468,7 @@ The maximum principle in narrow domains for odd functions with respect to a hype
 \todo[inline]{Mirar lo que hacen Barrios, Quaas, etc en MR3624935 (2017) por si hay que citarlo}
 \begin{proposition}
 	\label{Prop:MonotonyHalfSpace}
-	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L\in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
+	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
 	$$
 	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
 	$$
@@ -479,7 +479,7 @@ The maximum principle in narrow domains for odd functions with respect to a hype
 	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ one defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in any of the two cases ---\eqref{Eq:P1} or \eqref{Eq:P2}---, the following problem:
 	$$
 	\beqc{\PDEsystem} 
-	L w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subset H_\lambda,\\ 
+	L_K  w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subset H_\lambda,\\ 
 	w_\lambda &\geq& 0 &\textrm{ in } H_\lambda\setminus\Sigma_\lambda,\\ 
 	w_\lambda(x) &=& w_\lambda(x_\lambda) &\textrm{ in } \R^n, 
 	\eeqc 
@@ -508,13 +508,13 @@ The other important ingredient needed in the proof of Theorem~\ref{Th:SymmHalfSp
 
 \begin{proposition}
 \label{Prop:HalfSpaceLimUnif}
-Let $L\in \lcal_0(n,\s)$ and let $v$ be a bounded solution of one of the following problems
+Let $L_K \in \lcal_0(n,\s)$ and let $v$ be a bounded solution of one of the following problems
 \begin{equation}
 \leqnomode
 \tag{P3}
 \label{Eq:P3}
 \beqc{\PDEsystem}
-L v &=& f(v)  &\textrm{ in }\R^n\,,\\
+L_K  v &=& f(v)  &\textrm{ in }\R^n\,,\\
 \ds \lim_{x_n \to \pm \infty} v(x',x_n) &=& \pm 1 \,\,\, &\textrm{ uniformly}.
 \eeqc
 \end{equation}
@@ -524,7 +524,7 @@ L v &=& f(v)  &\textrm{ in }\R^n\,,\\
 \tag{P4}
 \label{Eq:P4}
 \beqc{\PDEsystem}
-L v &=& f(v)  &\textrm{ in }\R^n_+ = \{ x_n>0\} \,,\\
+L_K  v &=& f(v)  &\textrm{ in }\R^n_+ = \{ x_n>0\} \,,\\
 v &=& 0  &\textrm{ in }\overline{\R^n_-} = \{ x_n\leq 0\}\,,\\
 \ds \lim_{x_n \to + \infty} v(x',x_n) &=& 1 \,\,\, &\textrm{ uniformly}.
 \eeqc
@@ -564,11 +564,11 @@ uniformly. Therefore we divide the proof in two steps: first, we prove that the 
 
 By Proposition \ref{Prop:MonotonyHalfSpace} we know that $v$ is strictly increasing in the direction $x_n$. Since $v$ is also bounded by hypothesis, we know that, given $x'\in\R^{n-1}$, the one variable function $v(x',\cdot)$ has a limit, that we call $\overline{v}(x')$. Note that, since $v(x',0) = 0$ and $v_{x_n}>0$, we deduce that $\overline{v}(x') > 0$.
 
-Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x',x_n) := v(x',x_n+x_n^k)$. By the regularity theory of the operator $L$ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ that is a solution to
+Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x',x_n) := v(x',x_n+x_n^k)$. By the regularity theory of the operator $L_K $ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ that is a solution to
 \begin{equation}
 \label{Eq:ProofSymmHalf-SemilinearEqWholeSpace}
 \beqc{\PDEsystem}
-Lv_\infty &=& f(v_\infty)   &\textrm{ in } \,\R^n,\\
+L_K v_\infty &=& f(v_\infty)   &\textrm{ in } \,\R^n,\\
 v_\infty &\geq& 0   &\textrm{ in } \,\R^n.
 \eeqc
 \end{equation}
