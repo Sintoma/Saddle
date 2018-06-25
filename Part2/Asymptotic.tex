@@ -3,11 +3,14 @@
 \label{Sec:Asymptotic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, we establish...
+In this section, we establish Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}, concerning the asymptotic behavior of the saddle-shaped solution. 
 
 
-The main difference between a general operator $L_K$ and the fractional Laplacian is that $L_K$ is, in some sense, invariant with respect to the dimension 
-Layer solution
+
+To study the asymptotic behavior of the saddle-shaped solution it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. This happens also for the fractional Laplacian
+
+Nevertheless, for a general operator $L_K$ this is not true anymore (note that in dimension $n$ there can be more kernels that in dimension $1$, in particular the class of kernels in dimension $n$ include all the one-dimensional ones). Therefore, we need a way to associate a solution of a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result.
+
 
 
 \begin{proposition}
