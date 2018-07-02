@@ -3,11 +3,14 @@
 \label{Sec:Asymptotic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, we establish...
+In this section, we establish Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}, concerning the asymptotic behavior of the saddle-shaped solution. 
 
 
-The main difference between a general operator $L$ and the fractional Laplacian is that $L_K$ is, in some sense, invariant with respect to the dimension 
-Layer solution
+
+To study the asymptotic behavior of the saddle-shaped solution it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. This happens also for the fractional Laplacian
+
+Nevertheless, for a general operator $L_K$ this is not true anymore (note that in dimension $n$ there can be more kernels that in dimension $1$, in particular the class of kernels in dimension $n$ include all the one-dimensional ones). Therefore, we need a way to associate a solution of a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result.
+
 
 
 \begin{proposition}
@@ -51,47 +54,40 @@ Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$
 
 
 
-
+\todo[inline]{Esto va a ir en la intro}
 
 \begin{theorem}
-\label{Thm:AsymptoticBehaviourSaddleSolution}
-Let $f\in \cp{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution of
-$$
-L_K u = f(u) \ \textrm{in } \R,
-$$
-with $L_K \in \lcal_\star$.
+\label{Th:AsymptoticBehaviourSaddleSolution}
+Let $f\in C^{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by 99.
 
 Then,
 $$
-\norm{u-\mathcal{U}}_{L^\infty(\R^n\setminus B_R)}+\norm{\nabla u-\nabla \mathcal{U}}_{L^\infty(\R^n\setminus B_R)}+\norm{D^2u-D^2\mathcal{U}}_{L^\infty(\R^n\setminus B_R)} \xrightarrow{\text{as } R\to \infty}{} 0,
+\norm{u-U}_{L^\infty(\R^n\setminus B_R)}
++\norm{\nabla u-\nabla U}_{L^\infty(\R^n\setminus B_R)}
++\norm{D^2u-D^2U}_{L^\infty(\R^n\setminus B_R)} \to 0
 $$
-where
-$$
-\mathcal{U}(x) = u_0(z),
-$$
-with $z$ the distance to the cone and $u_0$ the layer 1D solution.
+as $ R\to +\infty$.
 \end{theorem}
 
 \begin{proof}
-By contradiction, assume that the result does not hold. Then, there exists $\epsilon>0$ and a sequence $\{x_k\}$, that we may assume without loss of generality in $\overline{\ocal}$ and by continuity out of ${\ccal}$, such that
+By contradiction, assume that the result does not hold. Then, there exists an $\varepsilon>0$ and a sequence $\{x_k\}$, such that
 \begin{equation}
 \label{Eq:ContradictionAsymptotic}
-|u(x_k)-\mathcal{U}(x_k)|+|\nabla u(x_k)-\nabla \mathcal{U}(x_k)|+|D^2u(x_k)-D^2\mathcal{U}(x_k)| > \epsilon.
+|u(x_k)-U(x_k)|+|\nabla u(x_k)-\nabla U(x_k)|+|D^2u(x_k)-D^2U(x_k)| > \varepsilon.
 \end{equation}
+By the symmetry of $u$, we may assume without loss of generality that $x_k \in \overline{\ocal}$, and by continuity we can further assume $ x_k \notin \ccal$. 
 
+Let $d_k:=\dist(x_k,\ccal)$. We distinguish two cases:
 
-We distinguish two cases:
-
-CASE 1. $\{d_k:=\dist(x_k,\ccal)\}$ is an unbounded sequence. We may assume $d_k \geq 2k$.\\
-In such case, we define
+\textbf{Case 1: $\{d_k\}$ is an unbounded sequence.} In this situation, we may assume that $d_k \geq 2k$. Define
 $$
-w_k(x) = u(x+x_k)  \ \textrm{for } x\in B_{d_k}(0), 
+w_k(x) := u(x+x_k), 
 $$
-which satisfies $0<w_k<1$ and
+which satisfies $0<w_k<1$ in $\overline{B_k}$ and
 $$
-L_K w_k = f(w_k) \ \textrm{in } B_k.
+L_K w_k = f(w_k) \ \textrm{ in } B_k.
 $$
-By letting $k$ tend to infinity and using compactness \todo{Atencion} we have that $w_k$ converges to $w$, up to a subsequence, satisfying
+By letting $k\to +\infty$, by the uniform estimates for the operators of the class $\lcal_0$ and the Arzelà-Ascoli theorem, we have that, up to a subsequence, $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
 $$
 \beqc{\PDEsystem}
 L_K  w &=& f(w) & \textrm{ in }\R^n\,,\\
@@ -99,22 +95,22 @@ w &\geq& 0 & \textrm{ in } \R^n\,.
 \eeqc
 $$
 
-By Theorem~\ref{Thm:SymmetryWholeSpace}, $w\equiv 0$ or $w\equiv 1$. First, $w$ cannot be zero. Indeed, since $w_k$ are stable in $B_k$, $w$ is stable in $\R^n$, which means that the linear operator $L-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, the linear operator $L-f'(w) = L-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L$ is of order $R^{-2\s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
+By Theorem~\ref{Th:SymmetryWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable\todo{Decir en algun sitio! Remark dp de existencia} with respect to perturbations supported in $B_k$, $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
 
-On the other hand, since $d_k\rightarrow \infty$  and $\mathcal{U}(x_k) = u_0(z_k) = u_0(d_k)$ we get by the properties of the layer solution \todo{ver bien} that $\mathcal{U}(x_k) \rightarrow 1$, $\nabla \mathcal{U}(x_k) \rightarrow 0$ and $D^2\mathcal{U}(x_k) \rightarrow 0$. From this and condition \eqref{Eq: ContradictionAsymptotic} we get
+On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution \todo{poner en la intro de la seccion} that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
 $$
-|u(x_k)-1|+|\nabla u(x_k)|+|D^2u(x_k)| > \epsilon/2,
+|u(x_k)-1|+|\nabla u(x_k)|+|D^2u(x_k)| > \varepsilon/2,
 $$
-which means that $w \not\equiv 1$. Therefore we arrive to a contradiction with Theorem \ref{Thm:SymmetryWholeSpace}.
+which means that $w \not\equiv 1$. Therefore we arrive to a contradiction with Theorem~\ref{Th:SymmetryWholeSpace}.
 
-CASE 2. $\{d_k:=\dist(x_k,\ccal)\}$ is a bounded sequence.
-Then, at least for a subsequence $d_k \rightarrow d$. Now, define for each $x_k$ its projection on $\ccal$, $x_k^0$ and then we have that $ \nu_k^0 := \frac{x_k-x_k^0}{d_k}$ is the unit normal to $\ccal$. Through a subsequence, $ \nu_k^0 \rightarrow \nu$ with $|\nu|=1$.
+\textbf{Case 2: $\{d_k\}$ is a bounded sequence.}
+In this situation, at least for a subsequence, we have that $d_k \rightarrow d$. Now, for each $x_k$ we define $x_k^0$ as its projection on $\ccal$. Therefore, we have that $ \nu_k^0 := (x_k-x_k^0)/d_k$ is the unit normal to $\ccal$. Through a subsequence, $ \nu_k^0 \rightarrow \nu$ with $|\nu|=1$.
 
-Define as before
-$$ w_k (x) = u(x+x_k^0), $$
+We define
+$$ w_k (x) := u(x+x_k^0), $$
 which solves
 $$ L_K  w_k = f(w_k) \ \text{in } \R^n. $$
-By letting $k$ tend to infinity and using compactness \todo{Atencion} we have that $w_k$ converges to $w$, up to a subsequence, satisfying
+Similarly as before, by letting $k\to +\infty$, up to a subsequence $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
 $$
 \beqc{\PDEsystem}
 %L w &=& f(w)  \textrm{ in } &H:=\{x\cdot \nu >0\}\,,\\
@@ -125,9 +121,9 @@ w &\geq& 0  &\textrm{ in } H\,,\\
 \,\,w \text{ odd with respect to } H. \span\span\span \,
 \eeqc
 $$
-For the detail of the proof of how $\ocal \rightarrow H$ see \cite{CabreTerra1}.
+For the details about the fact that $\ocal \rightarrow H$, see \cite{CabreTerraI}.
 
-As in the previous case, by stability $w$ cannot be zero, and then, by Theorem \ref{Thm:SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Therefore, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
+As in the previous case, by stability $w$ cannot be zero, and then, by Theorem \ref{Th:SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Therefore, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
 \begin{align*}
 u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + o(1) \\
 &= u_0((x_k-x_k^0)\cdot \nu) + o(1) \\
