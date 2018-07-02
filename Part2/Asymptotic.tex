@@ -7,12 +7,12 @@ In this section, we establish Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}
 
 
 
-To study the asymptotic behavior of the saddle-shaped solution it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. This happens also for the fractional Laplacian
+To study the asymptotic behavior of the saddle-shaped solution it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. This happens also for the fractional Laplacian, thanks to the local extension problem.
 
 Nevertheless, for a general operator $L_K$ this is not true anymore (note that in dimension $n$ there can be more kernels that in dimension $1$, in particular the class of kernels in dimension $n$ include all the one-dimensional ones). Therefore, we need a way to associate a solution of a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result.
 
 
-
+\todo[inline]{Esto es nuestro o hay que citar a alguien?}
 \begin{proposition}
 	\label{Prop:KernelsDimension}
 	Let $L_K $ and $L_{K_1}$ be two symmetric and translation invariant integral operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
@@ -37,7 +37,7 @@ Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$
 	Now we make the change of variables $y' = x'-(x_n-y_n)\sigma$. That is,
 	\begin{align*}
 	L_K u(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} \d \sigma \d y_n \\
-	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((x_n-y_n)(\sigma,1)\right) \d\sigma \d y_n \\
+	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) \d\sigma \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n). \\
 	\end{align*}
 	
@@ -47,9 +47,42 @@ Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$
 	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^{n-1}} \frac{\d\sigma}{(|\sigma|^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} \\
 	&= c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
 	\end{align*}
-	where the only inequality that appears comes from the lower bound of the kernel $K$ for being $L_K $ in $\mathcal{L}_0$. The upper bound for $K_1$ is obtained in the same way.
+	\todo[inline]{Poner el cálculo detallado? Apendice?}
+	where the only inequality that appears follows from the lower bound of the kernel $K$ for being $L_K $ in $\mathcal{L}_0$. The upper bound for $K_1$ is obtained in the same way.
 \end{proof}
 
+
+Thanks to this result, we can now define the concept of layer solution.
+
+\begin{definition}
+	Let $u_0$ the unique solution of the following problem.
+	$$
+	\beqc{\PDEsystem}
+	L_{K_1}  u_0 &=& f(w) & \textrm{ in }\R\,,\\
+	u_0 &>& 0 & \textrm{ in } (0,+\infty)\,,\\
+	u_0(x) & = &-u_0(-x)  & \textrm{ in }\R\,,\\
+	\ds \lim_{x \to \pm \infty} u_0(x) &=& \pm 1, & 
+	\eeqc
+	$$
+	Then, if $K$ and $K_1$ are related as in Proposition~\ref{Prop:KernelsDimension}, we say that $u_0$ is the \emph{layer solution} associated to the problem $L_K u = f(u)$ in $\R^{2m}$.
+	
+	We define also the associated function
+	\begin{equation}
+		\label{Eq:DefOfU}
+		U(x):= u_0 \left( \dfrac{|x'| - |x''|}{\sqrt{2}} \right)\,.
+	\end{equation}
+\end{definition}
+Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone.
+
+The existence of the layer solution was proved in \cite{CabreSolaMorales,CabreSireII} for the fractional Laplacian and later in \cite{CozziPassalacqua} for a general class of operators including the ones considered in this paper. In addition, some properties of the layer solution that will be used in the proof of Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution} are the following:
+
+\todo[inline]{Poner propiedades} 
+
+
+\begin{equation}
+	\label{Eq:PropertiesLayer}
+	|\dot{u_0} (x)| \leq C...
+\end{equation}
 
 
 
@@ -58,7 +91,7 @@ Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$
 
 \begin{theorem}
 \label{Th:AsymptoticBehaviourSaddleSolution}
-Let $f\in C^{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by 99.
+Let $f\in C^{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by \eqref{Eq:DefOfU}.
 
 Then,
 $$
@@ -69,7 +102,7 @@ $$
 as $ R\to +\infty$.
 \end{theorem}
 
-\begin{proof}
+\begin{proof}[Proof of Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}]
 By contradiction, assume that the result does not hold. Then, there exists an $\varepsilon>0$ and a sequence $\{x_k\}$, such that
 \begin{equation}
 \label{Eq:ContradictionAsymptotic}
@@ -87,7 +120,7 @@ which satisfies $0<w_k<1$ in $\overline{B_k}$ and
 $$
 L_K w_k = f(w_k) \ \textrm{ in } B_k.
 $$
-By letting $k\to +\infty$, by the uniform estimates for the operators of the class $\lcal_0$ and the Arzelà-Ascoli theorem, we have that, up to a subsequence, $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
+By letting $k\to +\infty$, by the uniform estimates for the operators of the class $\lcal_0$ and the Arzelà-Ascoli theorem, we have that, up to a subsequence, $w_k$ converges on compact sets to a function $w$ which is a pointwise solution of
 $$
 \beqc{\PDEsystem}
 L_K  w &=& f(w) & \textrm{ in }\R^n\,,\\
@@ -95,13 +128,17 @@ w &\geq& 0 & \textrm{ in } \R^n\,.
 \eeqc
 $$
 
-By Theorem~\ref{Th:SymmetryWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable\todo{Decir en algun sitio! Remark dp de existencia} with respect to perturbations supported in $B_k$, $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$. Therefore $w\equiv 1$. 
+By Theorem~\ref{Th:SymmetryWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see Remark~\ref{Remark:Stability}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}). Therefore $w\equiv 1$. 
 
-On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution \todo{poner en la intro de la seccion} that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
+On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$ ---see \eqref{Eq:PropertiesLayer}. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
 $$
 |u(x_k)-1|+|\nabla u(x_k)|+|D^2u(x_k)| > \varepsilon/2,
 $$
-which means that $w \not\equiv 1$. Therefore we arrive to a contradiction with Theorem~\ref{Th:SymmetryWholeSpace}.
+for $k$ big enough. This yields that 
+$$
+|w_k(0)-1|+|\nabla w_k(0)|+|D^2w_k(0)| > \varepsilon/2,
+$$
+and this contradicts $w \equiv 1$. 
 
 \textbf{Case 2: $\{d_k\}$ is a bounded sequence.}
 In this situation, at least for a subsequence, we have that $d_k \rightarrow d$. Now, for each $x_k$ we define $x_k^0$ as its projection on $\ccal$. Therefore, we have that $ \nu_k^0 := (x_k-x_k^0)/d_k$ is the unit normal to $\ccal$. Through a subsequence, $ \nu_k^0 \rightarrow \nu$ with $|\nu|=1$.

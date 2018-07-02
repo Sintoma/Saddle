@@ -143,3 +143,43 @@ With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existen
 
 \todo[inline]{Revisar lo de las subsoluciones}
 
+
+
+The fact of being $u$ positive in $\ocal$ yields that it is stable in this set. Recall that we say that a bounded solution $w$ to $L_K w = f(w)$ in $\Omega\subset \R^n$ is \emph{stable} if the second variation of the energy at $w$ is nonnegative. That is, if
+\begin{equation}
+	\label{Eq:StablityCondition}	
+	Q_w(\xi) := \dfrac{1}{2} \int_{\R^n} \int_{\R^n} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\Omega} f'(w) \xi^2 \d x \geq 0
+\end{equation}
+for every $\xi \in C^\infty_0 (\Omega)$.
+
+\todo[inline]{poner esto de antes en la intro y la remark aqui?? mejorar un poco la estructura}
+
+
+\begin{remark}
+	\label{Remark:Stability}
+	Note that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a domain $\Omega\subset \R^n$, then $w$ is stable. The proof of this is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
+	
+	On the one hand, note that by \eqref{Eq:PropertyConcavityf}, we have that $f'(w)w<f(w)$ in $\Omega$. On the other hand, the following holds for all functions $\varphi$ and $\xi$:
+	\begin{equation}
+	\label{Eq:IdentityStability}
+	\big (\varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
+	\end{equation}
+	Indeed, developing the squares and the products, this last inequality is equivalent to
+	$$
+	2 \xi(x) \xi(y) \leq \dfrac{\varphi(x)}{\varphi(y)} \xi^2(y) +  \dfrac{\varphi(y)}{\varphi(x)} \xi^2 (x)\,,
+	$$
+	which in turn is equivalent to
+	$$
+	\bpar{\xi (x)\sqrt{\dfrac{\varphi(y)}{\varphi(x)}} - \xi(y) \sqrt{\dfrac{\varphi(x)}{\varphi(y)} } }^2 \geq 0\,.
+	$$
+	Using these two facts, for every $\xi\in C^\infty_0(\Omega)$ we have
+	\begin{align*}
+	\int_\Omega f'(w) \xi^2 \d x & \leq \int_\Omega  \dfrac{\xi^2}{w} f(w) \d x = \int_\Omega  \dfrac{\xi^2}{w} L_Kw \d x \\ 
+	&= \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} \big ( w(x) - w(y) \big) \bpar{\dfrac{\xi^2(x)}{w(x)} - \dfrac{\xi^2(y)}{w(y)} } K(x - y) \d x \d y
+	\\ 
+	&\leq \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y\,.
+	\end{align*}
+	Thus, $w$ is stable in $\Omega$.	
+\end{remark}
+
+

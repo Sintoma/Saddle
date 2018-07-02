@@ -260,23 +260,13 @@ which decreases to zero uniformly in $x_0$ as $R$ goes to infinity from being $L
 \int_{\R^n}\int_{\R^n}|w(x)-w(y)|^2\,K(x-y) \d x \d y < \frac{f'(0)}{2}\int_{\R^n}w^2 \d x.
 \end{equation}
 
-If we multiply \eqref{Eq:WholeSpace2} by $w^2/v\geq 0$ and integrate in $\R^n$, we get
+Now, multiply \eqref{Eq:WholeSpace2} by $w^2/v\geq 0$ and integrate in $\R^n$, we get
 \begin{align*}
-0 &\leq \int_{\R^n} L_K v\,\frac{w^2}{v} \d x - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
+0 &\leq \int_{\R^n} \frac{w^2}{v}  L_K v \d x - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
 &= \int_{\R^n}\int_{\R^n}\left\{ v(x)-v(y) \right\} \left( \frac{w^2(x)}{v(x)}-\frac{w^2(y)}{v(y)} \right) K(x-y) \d x \d y - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x \\
 &\leq \int_{\R^n}\int_{\R^n} |w(x)-w(y)|^2 K(x-y) - \frac{f'(0)}{2}\int_{\R^n} w^2 \d x ,
 \end{align*}
-which contradicts \eqref{Eq:Eigenfunction}. Here we have used that the kernel is positive and that
-$$
-\left\{ v(x)-v(y) \right\} \left( \frac{w^2(x)}{v(x)}-\frac{w^2(y)}{v(y)} \right)  \leq |w (x) - w(y)|^2\,.
-$$
-Indeed, developing the squares and the products, this last inequality is equivalent to $ 2 w(x) w(y) \leq v(x) w^2(y)/v(y) +  v(y) \xi^2 (x) /v(x)$, which is equivalent to
-$$
-\bpar{w (x)\sqrt{\dfrac{v(y)}{v(x)}} - w(y) \sqrt{\dfrac{v(x)}{v(y)} } }^2 \geq 0\,.
-$$
-
-
-Thus, $\inf_{\R^n} v >0$.\\
+which contradicts \eqref{Eq:Eigenfunction}. Here we have used that the kernel is positive and \eqref{Eq:IdentityStability}. Therefore, $\inf_{\R^n} v >0$.
 
 \textbf{Step 2:} We show that $v\equiv 1$.
 
