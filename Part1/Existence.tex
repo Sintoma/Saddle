@@ -11,9 +11,9 @@ Since $\ecal(w,B_R)$ is bounded below ---by $0$---, we can take a minimizing seq
 
 Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$ and the fact that $u_R^j$ is a minimizing sequence, we deduce that 
 $$
-[u_R^j]_{H^s(B_R)} \leq \dfrac{c_{n,s}}{\lambda}  [u_R^j]_{\H^K(B_R)}\leq \dfrac{2 c_{n,s}}{\lambda}\ecal(u_R^j,B_R) \leq C
+[u_R^j]_{H^\s(B_R)} \leq \dfrac{c_{n,\s}}{\lambda}  [u_R^j]_{\H^K(B_R)}\leq \dfrac{2 c_{n,\s}}{\lambda}\ecal(u_R^j,B_R) \leq C
 $$
-for a constant $C$ that does not depend on $j$. Therefore, $\{u_R^j\}$ is bounded in $H^s(B_R)$ and then, by the compact embedding $H^s(B_R) \subset \subset L^2(B_R)$ (see Theorem~7.1 of \cite{HitchhikerGuide}), there exists a subsequence, still denoted by $u_R^j$,  that converges to some $u_R \in L^2(B_R)$, and thus, a.e. in $B_R$. By Fatou's lemma, we have
+for a constant $C$ that does not depend on $j$. Therefore, $\{u_R^j\}$ is bounded in $H^\s(B_R)$ and then, by the compact embedding $H^\s(B_R) \subset \subset L^2(B_R)$ (see Theorem~7.1 of \cite{HitchhikerGuide}), there exists a subsequence, still denoted by $u_R^j$,  that converges to some $u_R \in L^2(B_R)$, and thus, a.e. in $B_R$. By Fatou's lemma, we have
 $$
 \ecal(u_R, B_R)
 \leq \liminf_{j\to \infty} \ecal(u_R^j, B_R) = \inf \setcond{\ecal(w, B_R)}{w \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)}.
@@ -21,13 +21,13 @@ $$
 Therefore, $u_R \in \widetilde{\H}^K_0(B_R)$ is a minimizer of $\ecal(\cdot, B_R)$ in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Moreover, it satisfies $-1\leq u_R \leq 1$ in $B_R$, $u_R\geq 0$ in $\ocal$, $u_R(x) = - u_R(x^\star)$ for every $x\in \R^{2m}$ and $u_R \equiv 0 $ in $\R^{2m} \setminus B_R$.
 
 Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, we deduce that $u_R$ is a classical solution of
-\begin{equation}
-\label{Eq:ProofExistenceProblemBR}
+\begin{equation*}
+%\label{Eq:ProofExistenceProblemBR}
 	\beqc{\PDEsystem}
 	L_K  u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
 	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
 	\eeqc
-\end{equation}
+\end{equation*}
 
 
 The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. This is done using a compactness argument. Let $S>0$ and consider the family $\{u_R\}$, for $R> S + 8$, of solutions to $L_K u_R = f(u_R)$ in $B_{S}$. Note first that, if $w$ solves $L_K w = f(w)$ in $B_\rho$ and  $|w|\leq 1$ in $\R^{2m}$ with $f\in C^{\alpha}([-1,1])$ for some $\alpha > 0$, the combination of \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} yields

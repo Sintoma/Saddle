@@ -30,12 +30,12 @@ where $c_{n, \s}$ is a normalizing constant (for its exact value see for instanc
 Throughout the paper, we assume that the operators we study are uniformly elliptic. That is, their kernels are bounded from above and below by the one of the fractional Laplacian:
 \begin{equation}
 \label{Eq:Ellipticity}
-c_{n,\s}\dfrac{\lambda}{|y|^{n+2\s}} \leq K(y) \leq c_{n,\s}\dfrac{\Lambda}{|y|^{n+2\s}}\,, \quad 0< \lambda \leq \Lambda \,,
+\lambda \dfrac{c_{n,\s}}{|y|^{n+2\s}} \leq K(y) \leq \Lambda\dfrac{c_{n,\s}}{|y|^{n+2\s}}\,, \quad 0< \lambda \leq \Lambda \,,
 \end{equation}
-where $c_{n,\s}$ is the constant appearing in the definition of the fractional Laplacian. This condition is one of the most frequently adopted when dealing with nonlocal operators of the form \eqref{Eq:DefOfLu} since it is known to yield Hölder regularity of solutions (see \cite{RosOton-Survey,SerraC2s+alphaRegularity}). The family of linear operators satisfying conditions \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity} are said to belong to the $\lcal_0(n,\s,\lambda, \Lambda)$ ellipticity class.
-%The bounds of (K3') allow the kernels to be very oscillating and irregular, and that is why they are sometimes called rough kernels.\todo{Igual esto de los rough kernels no toca si luego los nuestros son convexos}
+where $c_{n,\s}$ is the constant appearing in the definition of the fractional Laplacian. This condition is one of the most frequently adopted when dealing with nonlocal operators of the form \eqref{Eq:DefOfLu}, since it is known to yield Hölder regularity of solutions (see \cite{RosOton-Survey,SerraC2s+alphaRegularity}). The family of linear operators satisfying conditions \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity} is the so-called $\lcal_0(n,\s,\lambda, \Lambda)$ ellipticity class. Note that, under the assumption \eqref{Eq:Ellipticity}, $L_K u$ is well-defined if $u\in C^\alpha_{\loc}(\R^{2m})\cap L^\infty(\R^{2m})$.
 
-Moreover, for some purposes we will need the operators to be invariant under rotations (with kernel being radially symmetric). When the operator $L_K$ belongs to the ellipticity class $\lcal_0(n,\s,\lambda, \Lambda)$ and is invariant under rotations, we will say that it is in the ellipticity class $\Lr(n,\s,\lambda, \Lambda)$. For short we will usually write $\lcal_0$ or $\Lr$, and we will make explicit the parameters only when needed.
+
+Moreover, for some purposes we will need the operators to be invariant under rotations. This is equivalent to saying that their kernel is radially symmetric. When the operator $L_K$ belongs to the ellipticity class $\lcal_0(n,\s,\lambda, \Lambda)$ and is invariant under rotations, we will say that it is in the ellipticity class $\Lr(n,\s,\lambda, \Lambda)$. For short we will usually write $\lcal_0$ or $\Lr$, and we will make explicit the parameters only when needed.
 
 Concerning the nonlinearity of the equation, given $f$ a $C^1$ function, we define
 $$
@@ -53,7 +53,7 @@ G\geq G(\pm 1 )=0 \textrm{ in } \R\,
 \end{equation}
 Note that the previous conditions on $G$ yield that $f$ is an odd function with $f(0)=f(\pm 1)=0$.
 
-This is the first of two articles concerning the semilinear equation \eqref{Eq:NonlocalAllenCahn}. In the present paper we address the problem of studying odd solutions with respect to the Simons cone ---see \eqref{Eq:SimonsCone} below. In particular, we find a suitable expression for the operator $L_K$  acting on this type of functions, given by \eqref{Eq:OperatorOddF}, as well as for its associated energy. We deduce necessary and sufficient conditions for the operator to have a maximum principle in this setting (see Theorem~\ref{Th:CharacterizationLstar}). Under these assumptions we establish an energy estimate for doubly radial odd minimizers (Theorem~\ref{Th:EnergyEstimate} below). Finally, as an application of these results we prove, by using variational arguments, the existence of saddle-shaped solutions to problem \eqref{Eq:NonlocalAllenCahn} when $f$ is of Allen-Cahn type (that is, we further assume $G(0)>0$ and the equation can be seen as a model for phase transitions). This is Theorem~\ref{Th:Existence}.
+This is the first of two articles concerning the semilinear equation \eqref{Eq:NonlocalAllenCahn}. In the present paper we address the problem of studying odd solutions with respect to the Simons cone (this terminology is precisely defined below). In particular, we find a suitable expression for the operator $L_K$  acting on this type of functions, given by \eqref{Eq:OperatorOddF}, as well as for its associated energy. We deduce necessary and sufficient conditions for the operator to have a maximum principle in this setting (see Theorem~\ref{Th:CharacterizationLstar}). Under these assumptions, we establish an energy estimate for doubly radial odd minimizers (Theorem~\ref{Th:EnergyEstimate} below). Finally, as an application of these results we prove, by using variational arguments, the existence of saddle-shaped solutions to problem \eqref{Eq:NonlocalAllenCahn} when $f$ is of Allen-Cahn type (that is, we further assume $G(0)>0$ and the equation can be seen as a model for phase transitions). This is Theorem~\ref{Th:Existence}.
 
 In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we focus our study on saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn} (assuming $f$ of Allen-Cahn type). Using the setting for odd functions established in the present paper, we give an alternative proof of the existence based on the monotone iteration scheme. Moreover, we show the uniqueness of the saddle-shaped solution by establishing its asymptotic behavior, as well as a maximum principle for the linearized operator.
 
@@ -66,7 +66,7 @@ The Simons cone will be a central object along this paper. It is defined in $\R^
 \end{equation}
 This cone is of importance in the theory of minimal surfaces. It has zero mean curvature at every point $x\in \ccal \setminus \{0\}$, in all even dimensions, and it is a minimizer of the perimeter functional when $2m\geq 8$. Concerning the nonlocal setting, $\ccal$ has also zero nonlocal mean curvature in all even dimensions, although it is not known if it is a minimizer of the nonlocal perimeter in dimensions $2m\geq 4$ (in \cite{SavinValdinoci-Cones} it is proven that all nonlocal minimal cones in $\R^2$ are flat, see also the introduction of \cite{Felipe-Sanz-Perela:SaddleFractional} and the references therein for more details).
 
-Through the paper we will also use the letters $\ocal$ and $\ical$ to denote both sides of the cone:
+Through the paper we will also use the letters $\ocal$ and $\ical$ to denote each of the parts in which $\R^{2m}$ is divided by the cone $\ccal$:
 $$
 \ocal:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| > |x''|} \textrm{ and } \,
 \ical:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| < |x''|}\!.
@@ -88,7 +88,7 @@ In order to define certain symmetries of a function with respect to the Simons c
 \end{equation}
 Note that this isometry is actually an involution that maps $\ocal$ into $\ical$ (and vice versa) and leaves the cone $\ccal$ invariant. Taking into account this transformation, we say that a doubly radial function $w$ is \emph{odd with respect to the Simons cone} if $w(x) = -w(x^\star)$. Similarly, we say that a doubly radial function $w$ is \emph{even with respect to the Simons cone} if $w(x) = w(x^\star)$.
 
-The usual strategy ---see \cite{CabreTerraI, CabreTerraII,Cabre-Saddle, CabreRosOton-DoubleRev, Cinti-Saddle, Cinti-Saddle2}--- to deal with doubly radial solutions (and in particular saddle-shaped solutions) to a semilinear equation like \eqref{Eq:NonlocalAllenCahn} is to work with the radial variables 
+The usual strategy ---see \cite{CabreTerraI, CabreTerraII,Cabre-Saddle, CabreRosOton-DoubleRev, Cinti-Saddle, Cinti-Saddle2}--- to study with doubly radial solutions (and in particular saddle-shaped solutions) to a semilinear equation like \eqref{Eq:NonlocalAllenCahn} is to work with the radial variables 
 $$
 s = |x'| \quad \text{ and } \quad t=|x''|\,.
 $$
@@ -117,7 +117,7 @@ Some of our arguments are inspired by the techniques developed in \cite{ChenLiLi
 
 
 
-Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential part plus a zero order term with a nonnegative coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$ for every $x,y\in \ocal$. Indeed, we show in Section~\ref{Sec:OperatorOddF} that this assumption guarantees that $L_K$ has a maximum principle for odd functions. 
+Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential part plus a zero order term with a nonnegative coefficient. Moreover, the zero order term is bounded from above by $\dist(x,\ccal)^{-2\s}$ and goes to infinity when $x$ tends to the cone (see Lemma~\ref{Lemma:OperatorOddF}). The natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$ for every $x,y\in \ocal$. Indeed, we show in Section~\ref{Sec:OperatorOddF} that this assumption guarantees that $L_K$ has a maximum principle for odd functions. 
 
 \begin{remark}
 	Another way of interpreting the expression \eqref{Eq:OperatorOddF} is the following. We can consider $L_K'$ as an operator acting on doubly radial functions $w$ defined only on $\ocal$. Then, $L_K'$ corresponds to consider the odd extension of  $w$ with respect to the Simons cone and apply the operator $L_K$ to this extended function. Since in this article we will always consider odd functions, we will do an abuse of notation and we will denote both operators by $L_K$, since they are the same.
