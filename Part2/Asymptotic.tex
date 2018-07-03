@@ -9,24 +9,22 @@ In this section, we establish Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}
 
 To study the asymptotic behavior of the saddle-shaped solution it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. This happens also for the fractional Laplacian, thanks to the local extension problem.
 
-Nevertheless, for a general operator $L_K$ this is not true anymore (note that in dimension $n$ there can be more kernels that in dimension $1$, in particular the class of kernels in dimension $n$ include all the one-dimensional ones). Therefore, we need a way to associate a solution of a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result.
+Nevertheless, for a general operator $L_K$ this is not true anymore and we need a way to associate a solution of a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result. Some of its points appear in \cite{CozziPassalacqua} with a different notation. We state and prove it here for completeness.
 
-
-\todo[inline]{Esto es nuestro o hay que citar a alguien? Está en el paper de Matteo pero con una notación ligeramente diferente}
 \begin{proposition}
 	\label{Prop:KernelsDimension}
-	Let $L_K $ and $L_{K_1}$ be two symmetric and translation invariant integral operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. Let also be $u:\R^n\to\R$ and $v:\R\to\R$ such that $u(x) = v(x_n)$.
+	Let $L_K $ and $L_{K_1}$ be two symmetric and translation invariant integral operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. 
 	
 	If,
 	$$ K_1(t) = |t|^{n-1} \int_{\R^{n-1}} K\left((t\sigma,t)\right) \d \sigma, $$
 	then
 	\begin{enumerate}[label=(\roman{*})]
-		\item $L_K u(x) = L_{K_1} v(x_n)$.
+		\item Let $v:\R\to\R$ and consider $u:\R^n\to\R$ defined by $u(x) = v(x_n)$. Then, $L_K u(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K u(x) = L_{K_1} v(x \cdot e)$.
 		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$.
+		\item In particular, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
+		
 	\end{enumerate}
 \end{proposition}
-
-Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is also the fractional Laplacian, but in dimension $1$.
 
 \begin{proof}
 	We start proving point $(i)$. We write $y=(y',y_n)$, with $y'\in \R^{n-1}$.
@@ -38,8 +36,9 @@ Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$
 	\begin{align*}
 	L_K u(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} \d \sigma \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) \d\sigma \d y_n \\
-	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n). \\
+	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n).
 	\end{align*}
+	In the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables using the previous computations.
 	
 	We establish now point $(ii)$. To do it, we bound the kernel $K_1$. 
 	\begin{align*}
@@ -47,8 +46,10 @@ Note that if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$
 	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^{n-1}} \frac{\d\sigma}{(|\sigma|^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} \\
 	&= c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
 	\end{align*}
-	\todo[inline]{Poner el cálculo detallado? Apendice?}
 	where the only inequality that appears follows from the lower bound of the kernel $K$ for being $L_K $ in $\mathcal{L}_0$. The upper bound for $K_1$ is obtained in the same way.
+	\todo[inline]{Poner el cálculo detallado? Apendice?}
+	
+	Finally, point $(iii)$ follows from noticing that the previous computation is an equality with $\lambda = 1$ in the case of the fractional Laplacian.
 \end{proof}
 
 
@@ -56,14 +57,15 @@ Thanks to this result, we can now define the concept of layer solution.
 
 \begin{definition}
 	Let $u_0$ the unique solution of the following problem.
-	$$
-	\beqc{\PDEsystem}
-	L_{K_1}  u_0 &=& f(w) & \textrm{ in }\R\,,\\
-	u_0 &>& 0 & \textrm{ in } (0,+\infty)\,,\\
-	u_0(x) & = &-u_0(-x)  & \textrm{ in }\R\,,\\
-	\ds \lim_{x \to \pm \infty} u_0(x) &=& \pm 1, & 
-	\eeqc
-	$$
+	\begin{equation}
+		\label{Eq:LayerSolution}
+			\beqc{\PDEsystem}
+			L_{K_1}  u_0 &=& f(w) & \textrm{ in }\R\,,\\
+			u_0 &>& 0 & \textrm{ in } (0,+\infty)\,,\\
+			u_0(x) & = &-u_0(-x)  & \textrm{ in }\R\,,\\
+			\ds \lim_{x \to \pm \infty} u_0(x) &=& \pm 1. & 
+			\eeqc
+	\end{equation}
 	Then, if $K$ and $K_1$ are related as in Proposition~\ref{Prop:KernelsDimension}, we say that $u_0$ is the \emph{layer solution} associated to the problem $L_K u = f(u)$ in $\R^{2m}$.
 	
 	We also define the associated function
@@ -74,20 +76,38 @@ Thanks to this result, we can now define the concept of layer solution.
 \end{definition}
 Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone.
 
-The existence of the layer solution was proved in \cite{CabreSolaMorales,CabreSireII} for the fractional Laplacian and later in \cite{CozziPassalacqua} for a general class of operators including the ones considered in this paper. In addition, some properties of the layer solution that will be used in the proof of Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution} are the following:
-
-\todo[inline]{Poner propiedades} 
+The existence of the layer solution was proved in \cite{CabreSolaMorales,CabreSireII} for the fractional Laplacian and later in \cite{CozziPassalacqua} for a general class of operators including the ones considered in this paper. 
 
 
+
+In the proof of Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution} we will use some properties of the layer solution, which are presented next. First, in \cite{CozziPassalacqua} it is proved that there exists a constant $C$ such that
 \begin{equation}
 	\label{Eq:PropertiesLayer}
-	|\dot{u_0} (x)| \leq C...
+	|u_0 (x)| \leq C |x|^{-2\s}  \quad \text{ and } \quad |\dot{u_0} (x)| \leq C |x|^{-1-2\s}  \quad \text{ for large }|x|.
 \end{equation}
+In our arguments we need also to show that the second derivative of the layer goes to zero at infinity. This is the statement of the following lemma.
+
+\begin{lemma}
+	\label{Lemma:SecondDerivativeLayer}
+	Let $u_0$ be the layer solution associated to the kernel $K_1$, that is, $u_0$ solving \eqref{Eq:LayerSolution}. Then, $\ddot{u}_0 (x) \to 0$ as $x\to \pm \infty$.	
+\end{lemma}
+
+\begin{proof}
+	By contradiction, suppose that there exists an unbounded sequence $\{x_j\}$ satisfying $|u_0(x_j)|>\varepsilon$ for some $\varepsilon>0$. Note that by the symmetry of $u_0$ we may assume that $x_j\to + \infty$. Now define $w_j (x) := \ddot{u}_0(x+x_j)$. By differentiating twice the equation of the layer solution, we see that $\ddot{u}_0$ solves
+	$$
+	L_{K_1} \ddot{u}_0 = f''(u_0)\dot{u}_0^2 + f'(u_0)\ddot{u}_0 \text{ in }\R.
+	$$
+	Hence, as $x_j \to +\infty$ a standard compactness argument combined with \eqref{Eq:PropertiesLayer} yield that $w_j$ converges on compact sets to a function $w$ solution of
+	$$
+	L_{K_1}  w = f'(1)w \quad \text{ in }\R.
+	$$
+	In addition, since $|u_0(x_j)|>\varepsilon$ we have $|w(0)|\geq \varepsilon$.
+	
+	At this point we use Lemma~4.3 of \cite{CozziPassalacqua} to deduce that, since $f'(1)<1$, then $w\to 0$ as $|x| \to +\infty$. Therefore, if $w$ is not identically zero, it has either a positive maximum or a negative minimum, but this contradicts the maximum principle (recall that $f'(1)<1$). We conclude that $w\equiv0$ in $\R$, but this is a contradiction with $|w(0)|\geq \varepsilon$.
+\end{proof}
 
 
-
-
-\todo[inline]{Esto va a ir en la intro}
+Now we have all the ingredients to establish the asymptotic behavior of the saddle-solution.
 
 \begin{theorem}
 \label{Th:AsymptoticBehaviourSaddleSolution}
@@ -130,7 +150,7 @@ $$
 
 By Theorem~\ref{Th:SymmetryWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see Remark~\ref{Remark:Stability}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}). Therefore $w\equiv 1$. 
 
-On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$ ---see \eqref{Eq:PropertiesLayer}. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
+On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$ ---see \eqref{Eq:PropertiesLayer} and Lemma~\ref{Lemma:SecondDerivativeLayer}. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
 $$
 |u(x_k)-1|+|\nabla u(x_k)|+|D^2u(x_k)| > \varepsilon/2,
 $$
@@ -166,14 +186,12 @@ u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + o(1) \\
 &= u_0((x_k-x_k^0)\cdot \nu) + o(1) \\
 &= u_0((x_k-x_k^0)\cdot \nu_k^0) + o(1) \\
 &= u_0(d_k |\nu_k^0|^2) + o(1) \\
-&= u_0(d_k) + o(1) = \ucal (x_k) + o(1),
+&= u_0(d_k) + o(1) = U (x_k) + o(1),
 \end{align*}
 contradicting \eqref{Eq:ContradictionAsymptotic}. The same is done for $\nabla u$ and $D^2 u$.
 \end{proof}
 
 \begin{remark}
 	\label{Remark:u>delta}
-	The previous result yields that, for small $\delta$, the level set $\{0<u<\delta\}$ of the saddle-shaped solution is contained in a $\varepsilon$-neighborhood of the cone. Indeed, consider the set $\ocal_\varepsilon := \{(x',x'')\in \R^m\times\R^m \ : \ |x''|+\varepsilon <|x'| \}$. 
-	
-	Since $u_0$ is monotone, for every small $\delta$ we can take $\varepsilon$ small enough and $R$ big enough so that $U(x)\geq 2\delta$ in $\ocal_\varepsilon \setminus B_R$. Thus, by taking $R$ big enough so that $|u-U|< \delta$ in $\ocal \setminus B_R$, we have that $u(x) \geq U(x)-\delta \geq \delta$ whenever $x\in \ocal_\varepsilon \setminus B_R$. Finally, since $\overline{B_R \cap \ocal}$ is a compact and $u$ is positive there, we can take $\varepsilon$ small enough so that $u\geq \delta$ in $B_R\cap \ocal_\varepsilon$.
+	The previous result yields that, for small $\delta$, the level set $\{0<u<\delta\}$ of the saddle-shaped solution is contained in a $\varepsilon$-neighborhood of the cone. Indeed, consider the set $\ocal_\varepsilon := \{(x',x'')\in \R^m\times\R^m \ : \ |x''|+\varepsilon <|x'| \}$. Since $u_0$ is monotone, for every small $\delta$ we can take $\varepsilon$ small enough and $R$ big enough so that $U(x)\geq 2\delta$ in $\ocal_\varepsilon \setminus B_R$. Thus, by taking $R$ big enough so that $|u-U|< \delta$ in $\ocal \setminus B_R$, we have that $u(x) \geq U(x)-\delta \geq \delta$ whenever $x\in \ocal_\varepsilon \setminus B_R$. Finally, since $\overline{B_R \cap \ocal}$ is a compact and $u$ is positive there, we can take $\varepsilon$ small enough so that $u\geq \delta$ in $B_R\cap \ocal_\varepsilon$.
 \end{remark}
