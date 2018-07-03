@@ -8,8 +8,9 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
-	Let $\usub \leq \usup$ be two bounded functions that are doubly radial and odd with respect to the Simons cone. Let $L_K\in \lcal_\star$  and assume that
-	$$
+	Let $L_K\in \lcal_\star(2m,\s)$ for some $0<\s<1$. Assume that $\usub \leq \usup$ are two bounded functions being doubly radial and odd with respect to the Simons cone with $\usub\in C^\s(\R^{2m})$ and satisfying   
+	\begin{equation}
+	\label{Eq:SemilinearSubSuperSolutionInBall}
 	\beqc{\PDEsystem}
 	L_K\usup & \geq & f(\usup) & \textrm{ in } B_R \cap \ocal\,, \\
 	\usup & \geq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
@@ -19,18 +20,20 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	L_K\usub & \leq & f(\usub) & \textrm{ in } B_R \cap \ocal\,, \\
 	\usub & \leq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
-	$$
-	with $f$ an odd $C^2$ function and $\varphi$ a doubly radial \todo{doubly radial odd function mejor??} function satisfying $\varphi (x) = - \varphi(x^\star)$.
+	\end{equation}
+	with $f$ an odd $C^2$ function and $\varphi$ a doubly radial odd function.
 	
-	Then, there exists $u\in C^2(B_R)$ a solution of
-	$$
+	Then, there exists $u\in C^{2s+\varepsilon}(B_R)$ for some $\varepsilon>0$, a solution of
+	\begin{equation}
+	\label{Eq:SemilinearSolutionInBall}
 	\beqc{\PDEsystem}
 	L_K u & = & f(u) & \textrm{ in } B_R\,, \\
 	u &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
-	$$
+	\end{equation}
 	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$.
 \end{proposition}
+Note that along this section we will called odd supersolutions and subsolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are odd with respect to the Simons cone and satisfy \eqref{Eq:SemilinearSubSuperSolutionInBall}.
 
 \begin{proof}
 	The proof follows the classical monotone iteration method for elliptic equations (see for instance \cite{Evans}). We just give here a sketch of the proof. 
@@ -62,11 +65,13 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	u_k &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,. 
 	\eeqc
 	$$
+	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $u_k\in L^\infty(B_R) \cap C^{2\s+2\epsilon}(B_R)$ for some $\epsilon>0$. Moreover, given $\Omega\subset B_R$ a compact set, then $||u_k||_{C^{2s+2\epsilon}(\Omega)}$ is uniformly bounded in $k$.
+	
 	Them, using the maximum principle it is not difficult to show by induction that 
 	$$
 	\usub = u_0 \leq u_1 \leq \ldots \leq u_k \leq u_{k+1} \leq \ldots \usup \quad \text{ in }\ocal\,,
 	$$
-	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by a compactness \todo{quizas decir algo mas de esto} argument we see that, up to a subsequence, $u_k$ converges in $C^2$ to the desired solution.
+	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelá-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $u_k$ converges in $C^{2s+\epsilon}$ to the desired solution.
 \end{proof}
 
 In order to construct a positive supersolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next.
@@ -79,7 +84,7 @@ In order to construct a positive supersolution, we also need a characterization 
 	\lambda_{1, \, \mathrm{odd}}(\Omega, L_K) := \inf_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_\Omega w(x)^2 \d x}\,.
 	\end{equation}
 	
-	Then, such infimum is attained at a function $\phi_1\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)$ which solves
+	Then, such infimum is attained at a function $\phi_1\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)\cap L^\infty(\Omega)$ which solves
 	$$
 	\beqc{\PDEsystem}
 	L_K \phi_1 &=& \lambda_{1, \, \mathrm{odd}}(\Omega, L) \phi_1 & \textrm{ in } \Omega\,,\\
@@ -124,24 +129,25 @@ With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existen
 	\end{equation}
 	and then let $R\to \infty$ to get a saddle-shaped solution.
 	
-	Let $\phi_1^R$ be the first odd eigenfunction of $L_K$ in $B_R \subset \R^{2m}$, given by Lemma~\ref{Lemma:FirstOddEigenfunction}, and let  $\lambda_1^R := \lambda_{1, \, \mathrm{odd}}(B_R, L_K)$. Then, we claim that for $R$ big enough and $\varepsilon$ small enough, $\usub_R:= \varepsilon\phi_1^R $ is an odd subsolution of \eqref{Eq:ProofExistenceProblemBR}. To see this, first note that, without loss of generality, we can assume that $\norm{\phi_1^R}_{L^\infty(B_R)}=1$. Then, since $\varepsilon \phi_1^R>0$ in $B_R\cap \ocal$ and using \eqref{Eq:PropertyConcavityf}, we see that for every $x\in B_R$,
+	Let $\phi_1^{R_0}$ be the first odd eigenfunction of $L_K$ in $B_{R_0} \subset \R^{2m}$, given by Lemma~\ref{Lemma:FirstOddEigenfunction}, and let  $\lambda_1^{R_0} := \lambda_{1, \, \mathrm{odd}}(B_{R_0}, L_K)$. Then, we claim that for $R_0$ big enough and $\varepsilon$ small enough, $\usub_R = \varepsilon\phi_1^{R_0} $ is an odd subsolution of \eqref{Eq:ProofExistenceProblemBR} for every $R\geq R_0$. To see this, first note that, without loss of generality, we can assume that $\norm{\phi_1^{R_0}}_{L^\infty(B_R)}=1$. Then, since $\varepsilon \phi_1^{R_0}>0$ in $B_{R_0}\cap \ocal$ and using \eqref{Eq:PropertyConcavityf}, we see that for every $x\in B_{R_0}\cap \ocal$,
 	$$
-	\dfrac{f(\varepsilon \phi_1^R(x))}{\varepsilon \phi_1^R(x)} > f'(\varepsilon \phi_1^R(x)) \geq f'(0)/2 > 0
+	\dfrac{f(\varepsilon \phi_1^{R_0}(x))}{\varepsilon \phi_1^{R_0}(x)} > f'(\varepsilon \phi_1^{R_0}(x)) \geq f'(0)/2
 	$$
-	if $\varepsilon$ is small enough, independently of $x\in B_R$. Therefore, taking $R$ big enough so that $\lambda_1 < f'(0)/2$ (see the last statement of Lemma~\ref{Lemma:FirstOddEigenfunction}), we have that for every $x\in B_R$,  $f(\varepsilon \phi_1^R(x)) > \lambda_1 \varepsilon \phi_1^R(x)$ and thus
+	if $\varepsilon$ is small enough, independently of $x$. Therefore, since $f'(0)>0$, taking $R_0$ big enough so that $\lambda_1^{R_0} < f'(0)/2$ (see the last statement of Lemma~\ref{Lemma:FirstOddEigenfunction}), we have that for every $x\in B_{R_0}\cap \ocal$,  $f(\varepsilon \phi_1^{R_0}(x)) > \lambda_1 \varepsilon \phi_1^R(x)$. Thus,
 	$$
-	L_K \usub_R = \lambda_1^R \varepsilon \phi_1^R < f(\varepsilon\phi_1^R) = f(\usub_R) \quad \textrm{ in } B_R\,.
+	L_K \usub_R = \lambda_1^{R_0} \varepsilon \phi_1^{R_0} < f(\varepsilon\phi_1^{R_0}) = f(\usub_R) \quad \textrm{ in } B_{R_0}\cap \ocal\,.
 	$$
+	In addition, if $x\in (B_R\setminus B_{R_0})\cap\ocal$, it is easy to conclude, by using \eqref{Eq:OperatorOddF}, that
+	$$
+	L_K \usub_R < 0 = f(0) =  f(\usub_R) \quad \textrm{ in } (B_R\setminus B_{R_0})\cap \ocal\,.
+	$$
+	Hence, the claim is proved.
 	
-	Now, if we define $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, it is easy to see that it is an odd supersolution of \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure (see Proposition~\ref{Prop:MonotoneIterationOdd}), we obtain a solution $u_R$ of \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone and $\usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_R$, so is $u_R$.
+	Now, if we define $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, a simple computation shows that it is an odd supersolution of \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure (see Proposition~\ref{Prop:MonotoneIterationOdd}), we obtain a solution $u_R$ of \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone and $\varepsilon \phi_1^{R_0} = \usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_{R_0}$, so is $u_R$.
 	
-	\todo[inline]{Acortar}
-	The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. Let $S>0$ and $T =4\lceil 1/\s\rceil$ and consider the family $\{u_R\}$, for $R> S + T$, of solutions in $B_{S+T}$. By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} in balls of radius $1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2,\alpha}(\overline{B_S})$ bound for $u_R$. By the Arzela-Ascoli theorem, a subsequence of $\{u_R\}$ converges in $C^2(\overline{B_S})$ to a solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging in $C^2_{\loc}(\R^{2m})$ to a solution $u \in C^2(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
-	
-	Therefore, $u$ is a solution of $L_K u = f(u)$ in $\R^{2m}$ such that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that, indeed, $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. That is, given $R'>R>0$, it is easy to check that $u_R$ is an odd subsolution of \eqref{Eq:ProofExistenceProblemBR} in $B_{R'}$. Therefore by applying the maximum principle (Proposition~\ref{Prop:MaximumPrincipleInO}) we obtain that $u_{R'}\geq u_R>0$ in $B_R\cap \ocal$ and also the limit $u>0$ in $B_R\cap \ocal$. On the other hand, $u < 1$ in $\ocal$ by the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}).
+	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging in $C^{2\s + \eta}_{\loc}(\R^{2m})$, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. Indeed, the strong maximum principle yields $u<1$ in $\ocal$. Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$, also the limit $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. Therefore by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
 \end{proof}
 
-\todo[inline]{Revisar lo de las subsoluciones}
 
 
 
