@@ -89,7 +89,7 @@ proof is analogous as the one for \eqref{Eq:P1}, we include it here for complete
 
 \begin{theorem}
 \label{Th:ParabolicmaxPrpBdd}
-Let  $v \in C^{2\s+\epsilon}(B_R\times(0,T])$ be bounded by above and let $L_K$ be an integro-differential operator of the form \eqref{Eq:DefOfLu}
+Let  $v \in C^{2\s+\varepsilon}(B_R\times(0,T])$ be bounded by above and let $L_K$ be an integro-differential operator of the form \eqref{Eq:DefOfLu}
 
 Assume that $v$ satisfies
 \begin{equation*}
@@ -303,11 +303,11 @@ $$
 If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small.
 
 
-An important result that we need is the following ABP-type estimate. It is proved in \cite{QuaasXia} for the fractional Laplacian, following the arguments in \cite{Cabre-ABP} (see also \cite{Cabre-Topics}). The proof for a general operator $L_K$ do not differ significantly from the one for the fractional Laplacian. Nevertheless, but we include it here for the sake of completeness.
+An important result that we need is the following ABP-type estimate. It is proved in \cite{QuaasXia} for the fractional Laplacian, following the arguments in \cite{Cabre-ABP} (see also \cite{Cabre-Topics}). The proof for a general operator $L_K$ do not differ significantly from the one for the fractional Laplacian. Nevertheless, we include it here for the sake of completeness.
 
 \begin{theorem}
 	\label{Th:ABPEstimate}
-	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L_K \in \lcal_0(n,\s)$ and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $\sup_{\Omega} v < +\infty$ and satisfying
+	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L_K \in \lcal_0(n,\s,\lambda, \Lambda)$ and let $v\in L^1_\s(\R^n)\cap C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $\sup_{\Omega} v < +\infty$ and satisfying
 	$$
 	\beqc{\PDEsystem}
 	L_K v - c(x)v &\leq & h & \text{ in } \Omega\,, \\
@@ -320,56 +320,61 @@ An important result that we need is the following ABP-type estimate. It is prove
 	$$
 	\sup_\Omega v \leq C R(\Omega)^{2\s} \norm{h}_{L^{\infty}(\Omega)}\,,
 	$$
-	where $C$ is a constant depending on \todo{Poner, depende de la weak harnack}.
+	where $C$ is a constant depending on $n$, $\s$ and $\Lambda$.
 \end{theorem}
 
 
-The only ingredient needed to show Theorem~\ref{Th:ABPEstimate} is the following weak Harnack inequality, which follows easily from \cite{DiCastoKuusiPalatucci}
+The only ingredient needed to show Theorem~\ref{Th:ABPEstimate} is the following weak Harnack inequality proved in  \cite{Cozzi-DeGiorgiClassesShort}.
 
-\todo[inline]{De hecho seguro que está en lo de Matteo, CHECK!!
-	De momento no la pongo}
+\begin{proposition}[see Corollary 4.4 of \cite{Cozzi-DeGiorgiClassesShort}]
+	
+	\label{Prop:WeakHarnack}
+		
+	Let $\Omega \subset \R^n$ and $L_K\in (n,\s,\lambda, \Lambda)$. Let $w \in L^1_\s(\R^n)\cap C^{\beta}(\Omega)$, with $\beta > 2\s$, such that $w\geq 0$ in $\R^n$. Assume that $w$ satisfies weakly $L_K w \geq h$ in $\Omega$, for some $h\in L^\infty (\Omega)$. Then, there exists an exponent $\varepsilon > 0 $  and a constant $C > 1$, both depending on $n$, $\s$ and $\Lambda$, such that
+	$$
+	 \bpar{ \fint_{B_{R/2}(x_0)} w^\varepsilon}^{1/\varepsilon} \leq C \bpar{\inf_{B_{R}(x_0)} w + R^{2\s} \norm{h}_{L^{\infty}(\Omega)} }
+	$$
+	for every $x_0\in \Omega$ and $0<R<\dist(x_0, \partial \Omega)$.
+\end{proposition}
 
-\begin{proof}
-	We are going to show it for $v$ satisfying,
+With the previous weak Harnack inequality we can now establish the ABP estimate.
+
+\begin{proof}[Proof of Theorem~\ref{Th:ABPEstimate}]
+	First, note that it is enough to show it for $v > 0$ in $\Omega$ satisfying
 	$$
 	\beqc{\PDEsystem}
 	L_K v &\leq & h & \text{ in } \Omega\,, \\
-	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
+	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,.
 	\eeqc
 	$$
-	since the case $c\neq 0$ can be reduced to this one. Indeed, if we consider $\Omega_0 = \{x \in \Omega \ : \ v > 0\}$, then $Lv \leq Lv - c(x)v \leq h$ in $\Omega_0$.
+	Indeed, if we consider $\Omega_0 = \{x \in \Omega \ : \ v > 0\}$, then since $c \leq 0$ we have $L_K v \leq L_K v - c(x)v \leq h$ in $\Omega_0$.
 	
-	Assume first that $\Omega$ is bounded. Then the supremum of $v$ must be achieved at an interior point $x_0\in \Omega$. Define	$M:= v(x_0) = \sup_\Omega v$ and consider the function $w := M - v^+$. Note that $0 \leq v \leq M$, $v(x_0) = 0$ and $v \equiv M$ in $\R^n \setminus \Omega$. If we extend $h$ to be $0$ outside $\Omega$, we see that $Lv \geq -h$ in $B_R(x_0)$.
+	Assume first that $\Omega$ is bounded. Then the supremum of $v$ must be achieved at an interior point $x_0\in \Omega$. Define	$M:= v(x_0) = \sup_\Omega v$ and consider the function $w := M - v^+$. Note that $0 \leq w \leq M$, $w(x_0) = 0$ and $w \equiv M$ in $\R^n \setminus \Omega$. If we extend $h$ to be $0$ outside $\Omega$, we can easily see that $L_K w \geq -h$ in $B_R(x_0)$.
 	
-	Now, by choosing $R= 2R(\Omega)$, and using the weak Harnack inequality \todo{citar o poner bien} we get
+	Now, by choosing $R= 2R(\Omega)$, and using the weak Harnack inequality of Proposition~\ref{Prop:WeakHarnack}, we get
 	\begin{align*}
-	M \dfrac{1}{2^\varepsilon} & \leq \bpar{M^{\varepsilon}\dfrac{|B_{R/2}(x_0)\setminus \Omega|}{|B_{R/2}(x_0)|}}^{1/\varepsilon}= \bpar{\dfrac{1}{|B_{R/2}(x_0)|} \int_{B_{R/2}(x_0)\setminus \Omega} v^\varepsilon}^{1/\varepsilon} \\
-	& \leq \bpar{ \fint_{B_{R/2}(x_0)} v^\varepsilon}^{1/\varepsilon} \leq C \bpar{\inf_{B_{R}(x_0)} v + R^{2\s} \norm{h}_{L^{\infty}(\Omega)} }\,.
+	M \dfrac{1}{2^\varepsilon} & \leq \bpar{M^{\varepsilon}\dfrac{|B_{R/2}(x_0)\setminus \Omega|}{|B_{R/2}(x_0)|}}^{1/\varepsilon}= \bpar{\dfrac{1}{|B_{R/2}(x_0)|} \int_{B_{R/2}(x_0)\setminus \Omega} w^\varepsilon}^{1/\varepsilon} \\
+	& \leq \bpar{ \fint_{B_{R/2}(x_0)} w^\varepsilon}^{1/\varepsilon} \leq C \bpar{\inf_{B_{R}(x_0)} w + R^{2\s} \norm{h}_{L^{\infty}(\Omega)} }\,.
 	\end{align*}
-	The conclusion follows from the fact that $v(x_0)= \inf_{B_{R}(x_0)} v = 0$.
+	The conclusion follows from the fact that $w(x_0)= \inf_{B_{R}(x_0)} w = 0$.
 	
 	In the case of $\Omega$ being unbounded, the proof is the same with minor changes. We define $M$ as before and we consider, for every $\delta > 0$, a point $x_0$ such that $M-\delta \leq v(x_0)$. We proceed as before and the desired estimate follows by letting $\delta \to 0$.
 \end{proof}
-
-
-\todo[inline]{Ellos lo demuestran dentro de la demo de los moving planes. En realidad sirve para los dos problemas. De todas formas, como el argumento es interesante y corto, lo ponemos aqui por completitud y para futura referencia. Hay que poner que es de ellos justo en el enunciado¿¿¿???}
-
 
 As a consequence of this result, one can deduce easily a maximum principle in ``narrow'' domains.
 
 \begin{corollary}
 	\label{Cor:MaxPpleNarrowDomains}
-	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$ and let $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfy
+	Let $\Omega \subset \R^n$ with $R(\Omega) < +\infty$. Let $L_K \in \lcal_0(n,\s,\lambda, \Lambda)$ and let $v\in L^1_\s(\R^n)\cap C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfy
 	$$
 	\beqc{\PDEsystem}
 	L_K v + c(x)v &\leq & 0 & \text{ in } \Omega\,, \\
 	v & \leq & 0 & \text{ in } \R^n\setminus \Omega\,,
 	\eeqc
 	$$
-	with $c(x)$ bounded below and $L_K \in \lcal_0(n,\s)$.
+	with $c(x)$ bounded below.
 	
-	Then, there exists a number $\bar{R} > 0$ such that $v \leq 0$ in $\Omega$ whenever $R(\Omega)< \bar{R}$.
-	
+	Then, there exists a number $\bar{R} > 0$ such that $v \leq 0$ in $\Omega$ whenever $R(\Omega)< \bar{R}$.	
 \end{corollary}
 
 \begin{proof}
@@ -449,7 +454,7 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 
 
 \begin{remark}
-	A maximum principle such as Proposition~\ref{Prop:MaxPrpNarrowOdd} was already proved for the fractional Laplacian in \cite{ChenLiLi-DirectMethod}, but with the additional hypothesis that $\Omega$ is bounded or, if it is unbounded, that $\liminf_{x\in  \Omega,\ |x|\to \infty} v(x) \geq 0$. In the proof of Theorem~3.1 in \cite{QuaasXia}, Quaas and Xia find a suitable argument (the one used in the previous proof) to avoid the requirement of such additional hypotheses on $\Omega$ or $v$.
+	A maximum principle such as Proposition~\ref{Prop:MaxPrpNarrowOdd} was already proved for the fractional Laplacian in \cite{ChenLiLi}, but with the additional hypothesis that $\Omega$ is bounded or, if it is unbounded, that $\liminf_{x\in  \Omega,\ |x|\to \infty} v(x) \geq 0$. In the proof of Theorem~3.1 in \cite{QuaasXia}, Quaas and Xia find a suitable argument (the one used in the previous proof) to avoid the requirement of such additional hypotheses on $\Omega$ or $v$.
 \end{remark}
 
 The maximum principle in narrow domains for odd functions with respect to a hyperplane is the main tool to use the moving plane argument. Now we can show the following result.
@@ -457,7 +462,7 @@ The maximum principle in narrow domains for odd functions with respect to a hype
 \todo[inline]{Mirar lo que hacen Barrios, Quaas, etc en MR3624935 (2017) por si hay que citarlo}
 \begin{proposition}
 	\label{Prop:MonotonyHalfSpace}
-	Let $v$ be a bounded solution of one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying \eqref{Eq:KernelSymmetry} and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
+	Let $v$ be a bounded solution to one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0(n,\s)$ such that the kernel $K$ satisfies \eqref{Eq:KernelSymmetry}, and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
 	$$
 	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
 	$$
@@ -465,7 +470,7 @@ The maximum principle in narrow domains for odd functions with respect to a hype
 
 
 \begin{proof}
-	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ one defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in any of the two cases ---\eqref{Eq:P1} or \eqref{Eq:P2}---, the following problem:
+	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ one defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in each of the two cases ---\eqref{Eq:P1} or \eqref{Eq:P2}---, the following problem:
 	$$
 	\beqc{\PDEsystem} 
 	L_K  w_\lambda &=& c_\lambda(x)\,w_\lambda  &\textrm{ in } \Sigma_\lambda\subset H_\lambda,\\ 

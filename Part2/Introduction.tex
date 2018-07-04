@@ -24,7 +24,12 @@ The most canonical example of such operators is the fractional Laplacian
 $$
 \fraclaplacian u = c_{n, \s} \PV \int_{\R^n} \dfrac{u(x) - u(y)}{|x-y|^{n + 2\s}}\d y\,,
 $$
-where $c_{n, \s}$ is a normalizing constant (for its exact value see for instance \cite{HitchhikerGuide}).
+where $c_{n, \s}$ is a normalizing constant given by
+\begin{equation}
+	\label{Eq:ConstantFracLaplacian}
+	c_{n,\s} = s\dfrac{2^{2\s} \Gamma(\frac{n}{2}+\s) }{\pi^{n/2} \Gamma(1-\s)}
+\end{equation}
+(see for instance \cite{BucurValdinoci}).
 
 Throughout the paper, we assume that the operators we study are uniformly elliptic. That is, their kernels are bounded from above and below by the one of the fractional Laplacian:
 \begin{equation}
@@ -38,6 +43,9 @@ Moreover, for some purposes we will need the operators to be invariant under rot
 
 
 For short we will usually write $\lcal_0$ or $\Lr$, and we will make explicit the parameters only when needed.
+
+\todo[inline]{Decir cuando esta definido el $L_K$ i definir $ L^1_\s(\R^n)$}
+
 
 Given $f$ a $C^1$ nonlinearity, we define
 $$
