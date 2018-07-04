@@ -40,7 +40,7 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	\ds \limsup_{x\in H, \ |x|\to \infty} v(x) &\leq & 0\,.
 	\eeqc
 	\end{equation}
-	Under these assumptions there exists $\overline{\varepsilon}>0$ such that, if $\varepsilon<\overline{\varepsilon}$, then $v \leq 0$ in $H$.
+	Under these assumptions there exists $\overline{\varepsilon}>0$ depending only on $\lambda, m, \s$ and $||c_-||_{L^\infty}$ such that, if $\varepsilon<\overline{\varepsilon}$, then $v \leq 0$ in $H$.
 \end{proposition}
 
 \begin{proof}
@@ -86,7 +86,7 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	$$
 	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y \to \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y 
 	$$
-	as $\varepsilon \to 0$ and this last integral is infinite. Indeed,
+	as $\varepsilon \to 0$ and this last integral is infinite. \todo{Creo recordar que dijo Xavier que lo siguiente era trivial y que no hacía falta ponerlo}Indeed,
     \begin{align*}
     \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y &\geq \int_{\ical\cap B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s}\d y \\
     &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})}  |\overline{x_0} - y|^{-2m-2\s} \d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} |\overline{x_0} - y^\star|^{-2m-2\s}\d y\\

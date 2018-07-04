@@ -13,7 +13,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
-	Let $L_K $ and $L_{K_1}$ be two symmetric and translation invariant integral operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. 
+	Let $L_K $ and $L_{K_1}$ be two symmetric and translation invariant intego-differential operators with kernels $K$ and $K_1$ in dimensions $n$ and $1$ respectively. 
 	
 	If,
 	$$ K_1(t) = |t|^{n-1} \int_{\R^{n-1}} K\left((t\sigma,t)\right) \d \sigma, $$
@@ -83,7 +83,7 @@ The existence of the layer solution was proved in \cite{CabreSolaMorales,CabreSi
 In the proof of Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution} we will use some properties of the layer solution, which are presented next. First, in \cite{CozziPassalacqua} it is proved that there exists a constant $C$ such that
 \begin{equation}
 	\label{Eq:PropertiesLayer}
-	|u_0 (x)| \leq C |x|^{-2\s}  \quad \text{ and } \quad |\dot{u_0} (x)| \leq C |x|^{-1-2\s}  \quad \text{ for large }|x|.
+	|u_0 (x)-\sign(x)| \leq C |x|^{-2\s}  \quad \text{ and } \quad |\dot{u_0} (x)| \leq C |x|^{-1-2\s}  \quad \text{ for large }|x|.
 \end{equation}
 In our arguments we need also to show that the second derivative of the layer goes to zero at infinity. This is the statement of the following lemma.
 
@@ -111,7 +111,7 @@ Now we have all the ingredients to establish the asymptotic behavior of the sadd
 
 \begin{theorem}
 \label{Th:AsymptoticBehaviourSaddleSolution}
-Let $f\in C^{2,\alpha}(\R)$ of the Allen-Cahn type. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by \eqref{Eq:DefOfU}.
+Let $f\in C^{2,\alpha}(\R)$ of Allen-Cahn type. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by \eqref{Eq:DefOfU}.
 
 Then,
 $$
