@@ -3,11 +3,11 @@
 \section{An energy estimate for doubly radial odd minimizers}
 \label{Sec:EnergyEstimate}
 
-In this section we present an estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ of the energy in $B_R$. We prove Theorem~\ref{Th:EnergyEstimate}. In order to prove this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they establish the same estimate but for minimizers without any symmetry. The strategy is to compare $u$ with a suitable competitor which is constructed combining $u$ with an auxiliary function. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with  respect to the Simons cone $\ccal$.
+In this section we present an estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same estimate but for minimizers without any symmetry. The strategy is to compare $u$ with a suitable competitor which is constructed combining $u$ with an auxiliary function. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with  respect to the Simons cone $\ccal$.
 
 The auxiliary function needed to build the competitor is defined as follows. For points $x\in \ocal$, we set
 $$ \Psi_S(x) := \max\left\{-1+2\min\{(|x|-S-1)_+,1\},-\dist(x,\ccal) \right\},  $$
-and we define it in $\ical$ by considering its odd reflection. In our arguments we will also use the following function and set:
+and we define it in $\ical$ by considering its odd reflection. It is clear that it is a bounded function with $||\Psi_S||_{L^\infty(\R^{2m})}=1$. In our arguments we will also use the following function and set:
 $$ d_S(x) := \max\left\{1,\min\{S+1-|x|,\dist(x,\ccal)\} \right\},  $$
 and
 \begin{equation}
@@ -29,7 +29,12 @@ and
 	\label{Fig:PsiSandOmegaS}
 \end{figure}
 
-Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$ (see Figure~\ref{Fig:PsiSandOmegaS}), we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$.
+Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$ (see Figure~\ref{Fig:PsiSandOmegaS}). Furthermore, its measure is well known to be of order $2m-1$ (see the proof of the energy estimate in \cite{CabreTerraI}). That is,
+\begin{equation}
+\label{Eq:MeasureOmegaS}
+|\Omega_S| \leq C\,S^{2m-1}.
+\end{equation}
+
 
 Now we show some auxiliary results concerning the previous definitions, needed in the proof of Theorem~\ref{Th:EnergyEstimate}.
 
@@ -81,8 +86,9 @@ C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 with $C>0$ independent of $S$ and only depending on $m$ and $\s$.
 \end{lemma}
 
+
 \begin{proof}
-In order to prove this result we first note that $d_S(x)=1$ in $\Omega_S$. Thus, the contribution to the integral of this part is just its measure, which is well known to be of order $2m-1$ (see the proof of the energy estimate in \cite{CabreTerraI}). That is,
+In order to prove this result we first note that $d_S(x)=1$ in $\Omega_S$. Thus, the contribution to the integral of this part is just the measure of the set $\Omega_S$ (see equation \eqref{Eq:MeasureOmegaS}). That is,
 $$\int_{\Omega_S} d_S(x)^{-2\s} \d x = |\Omega_S| \leq C\,S^{2m-1}.$$
 
 For the other part of the integral we can write
@@ -108,6 +114,7 @@ C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1).\\
 \end{align*}
 \end{proof}
 
+Note that $(y,z)$ variables are very useful when dealing with doubly radial odd functions ---see \cite{CabreTerraI, CabreTerraII, Cabre-Saddle, Cinti-Saddle,Cinti-Saddle2, Felipe-Sanz-Perela:SaddleFractional}.
 
 The last auxiliary result we need in order to establish the energy estimate is the following inequality.
 
@@ -180,11 +187,11 @@ for every $\xi \in\widetilde{\H}^K_0(B_R)$ with compact support in  $B_R$. Thus,
 $$
 \int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \xi(x) \d x
 $$
-for every $\xi \in C^\infty_0(\Omega)$ that is double radially symmetric. 
+for every $\xi \in C^\infty_0(\Omega)$ that is doubly radial. 
 
 By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, $u$ is a weak solution of \eqref{Eq:ProofEnergyEstimateProblemBR}, and in view of the regularity theory for operators in $\lcal_0$ (see Remark~\ref{Remark:InteriorRegularity}), since $u$ is bounded, it is a classical solution.
 
-From being $u$ a classical solution it is easy to show that it cannot be $1$ or $-1$ and therefore that it satisfies $0\leq u < 1$ in $\ocal$. That is, let us suppose that there exists $x_0\in\R^{2m}$ such that $|u(x_0)|=1$. Without loss of generality we can assume that $x_0\in\ocal\cap B_R$. Then, from equation \eqref{Eq:ProofEnergyEstimateProblemBR} and the fact of being $x_0$ an absolute maximum, we can arrive at a contradiction:
+From being $u$ a classical solution it is easy to show that it cannot be $1$ or $-1$ and therefore that it satisfies $0\leq u < 1$ in $\ocal$. In order to see this, let us suppose that there exists $x_0\in\R^{2m}$ such that $|u(x_0)|=1$. Without loss of generality we can assume that $x_0\in\ocal\cap B_R$. Then, from equation \eqref{Eq:ProofEnergyEstimateProblemBR} and the fact of being $x_0$ an absolute maximum, we can arrive at a contradiction:
 \begin{align*}
 0 &= f(1) = f(u(x_0)) = L_K u(x_0) = \int_\ocal (1-u(y)) \overline{K}(x,y) + (1+u(y)) \overline{K}(x,y^\star)  \d y \\
 &\geq \int_\ocal (1-u(y)) \overline{K}(x,y^\star) + (1+u(y)) \overline{K}(x,y^\star)  \d y = 2\int_\ocal \overline{K}(x,y^\star) \d y\\
@@ -206,11 +213,11 @@ Then, it is easy to check that we have the inclusions
 \label{Eq:EnergyEstimateProofInclusionsA}
 	B_{S+1} \subset A \subset B_{S+2}\,.
 \end{equation}
-To do it, note first that we only need to prove it inside $\ocal$, by the symmetry of $A$ with respect to the Simons cone. On the one hand, if $ x\in B_{S+1}\cap \ocal$, then $\Psi_S(x) = \max\{-1,-\dist(x,\ccal)\} \leq 0 \leq u(x)$, which yields $v(x) = \Psi_S(x)$ Thus, $x\in A\cap \ocal$. On the other hand, if $ x\in A\cap \ocal$ then $\Psi_S(x) \leq u(x) < 1$. This can only happen if $x\in B_{S+2}$.
+Indeed, note first that we only need to prove it inside $\ocal$, by the symmetry of $A$ with respect to the Simons cone. On the one hand, if $ x\in B_{S+1}\cap \ocal$, then $\Psi_S(x) = \max\{-1,-\dist(x,\ccal)\} \leq 0 \leq u(x)$, which yields $v(x) = \Psi_S(x)$ Thus, $x\in A\cap \ocal$. On the other hand, if $ x\in A\cap \ocal$ then $\Psi_S(x) \leq u(x) < 1$. This can only happen if $x\in B_{S+2}$.
 
 Note that both $u$ and $v$ are equal outside $B_{S+2} \subset B_R$, and therefore $v$ is an admissible competitor. By comparing the energies of $u$ and $v$ we will obtain the desired estimate. 
 
-Let us decompose the energy of $u$ in $B_R$ in terms of interactions between sets that involve $A$. That is,
+Let us decompose the energy of $u$ in $B_R$ in terms of interactions between sets that involve $A$. That is, using expression \eqref{Eq:ShortExpressionEnergy}, we get
 \begin{align*}
 \ecal(u,B_R) &= \frac{1}{2}I_u(\ocal \cap A, \ocal \cap A) + I_u(\ocal \cap A, \ocal \setminus A) \\
 & \hspace{5mm} + \frac{1}{2}I_u\big((\ocal \setminus A) \cap B_R, (\ocal \setminus A) \cap B_R\big) + I_u\big((\ocal \setminus A) \cap B_R, \ocal \setminus B_R\big) \\
@@ -219,9 +226,9 @@ Let us decompose the energy of $u$ in $B_R$ in terms of interactions between set
 Since $u$ is a minimizer, $v=\Psi_S$ in $A$ and $u=v$ outside of $A$,  from the previous expression we obtain
 \begin{align*}
 0 &\leq \ecal(v,B_R)-\ecal(u,B_R) = \frac{1}{2}I_{\Psi_S}(\ocal \cap A, \ocal \cap A) - \frac{1}{2}I_u(\ocal \cap A, \ocal \cap A)\\
-& \hspace{5mm} + I_v(\ocal \cap A, \ocal \setminus A) - I_u(\ocal \cap A, \ocal \setminus A) + \int_A G(\Psi_S) - \int_{A} G(u)
+& \hspace{5mm} + I_v(\ocal \cap A, \ocal \setminus A) - I_u(\ocal \cap A, \ocal \setminus A) + \int_A G(\Psi_S) - \int_{A} G(u).
 \end{align*}
-Since $v = \min\{u,\Psi_S\}$ in $\ocal$ we can apply Lemma \ref{Lemma: InteractionInequalityMinimumFunction} with $\omega = v$, $\Psi_S = \varphi$, and $u= \phi$, to get
+Since $v = \min\{u,\Psi_S\}$ in $\ocal$ we can apply Lemma \ref{Lemma: InteractionInequalityMinimumFunction} with $\omega = v$, $\Psi_S = \varphi$, and $u= \phi$, to get $I_v(\ocal \cap A, \ocal\setminus A) \leq I_u(\ocal \cap A, \ocal\setminus A) + I_{\Psi_S}(\ocal \cap A, \ocal\setminus A)$. Therefore,
 \begin{align*}
 \frac{1}{2}I_u(\ocal \cap A, \ocal \cap A) + \int_{A} G(u) &\leq \frac{1}{2}I_{\Psi_S}(\ocal \cap A, \ocal \cap A) + I_{\Psi_S}(\ocal \cap A, \ocal \setminus A) + \int_A G(\Psi_S)  \\
 &= \ecal(\Psi_S, A) \leq \ecal(\Psi_S,B_{S+2})
@@ -239,61 +246,58 @@ Thus, to obtain the desired energy estimate we only have to bound the right-hand
 In the following arguments, we use the definition of the energy that involves the original kernel $K$ and not $\overline{K}$.
 
 \textbf{3.1. Estimate for $\ecal(\Psi_S,B_{S+2})$.}
-First, by using the change of variables given by $(\cdot)^\star$ and the ellipticity of $K$, \eqref{Eq:Ellipticity}, we obtain
+First, by using the change of variables given by $(\cdot)^\star$ and the ellipticity of $K$, condition \eqref{Eq:Ellipticity}, we obtain
 \begin{align*}
-\ecal(\Psi_S,B_{S+2}) &= \frac{1}{4} \int_{B_{S+2}} \int_{B_{S+2}} |\Psi_S(x)-\Psi(y)|^2K(|x-y|) \d x\d y \\
-&\hspace{5mm} +\frac{1}{2} \int_{B_{S+2}} \int_{\R^{2m} \setminus B_{S+2}} |\Psi_S(x)-\Psi(y)|^2K(|x-y|) \d x\d y + \int_{B_{S+2}} G(\Psi_S) \\
-&\leq \frac{1}{2} \int_{B_{S+2}} \int_{\R^{2m}} |\Psi_S(x)-\Psi(y)|^2K(|x-y|) \d x\d y + \int_{B_{S+2}} G(\Psi_S) \\
-&= \int_{B_{S+2} \cap \ocal} \int_{\R^{2m}} |\Psi_S(x)-\Psi(y)|^2K(|x-y|) \d x\d y + \int_{B_{S+2}} G(\Psi_S) \\
-&= \Lambda \int_{B_{S+2} \cap \ocal} \int_{\R^{2m}} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y + \int_{B_{S+2}} G(\Psi_S).
+\ecal(\Psi_S,B_{S+2}) &= \frac{1}{4} \int_{B_{S+2}} \d x \int_{B_{S+2}} \d y\ |\Psi_S(x)-\Psi_S(y)|^2K(|x-y|)  \\
+&\hspace{5mm} +\frac{1}{2} \int_{B_{S+2}} \d x \int_{\R^{2m} \setminus B_{S+2}} \d y \ |\Psi_S(x)-\Psi_S(y)|^2K(|x-y|) + \int_{B_{S+2}} G(\Psi_S) \\
+&\leq \frac{1}{2} \int_{B_{S+2}} \d x \int_{\R^{2m}} \d y\ |\Psi_S(x)-\Psi_S(y)|^2K(|x-y|) + \int_{B_{S+2}} G(\Psi_S) \\
+&= \int_{B_{S+2} \cap \ocal} \d x \int_{\R^{2m}} \d y\ |\Psi_S(x)-\Psi_S(y)|^2K(|x-y|) \d x\d y + \int_{B_{S+2}} G(\Psi_S) \\
+&\leq \Lambda\, c_{n,\s} \int_{B_{S+2} \cap \ocal} \d x \int_{\R^{2m}} \d y \ \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} + \int_{B_{S+2}} G(\Psi_S).
 \end{align*}
 Now, we split the domain of integration of the kinetic energy into three parts.
 \begin{align*}
-\ecal(\Psi_S,B_{S+2}) &\leq \Lambda \int_{B_{S+2} \cap \ocal} \int_{\ocal} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y \\
-&\hspace{5mm} + \Lambda \int_{\Omega_S \cap \ocal} \int_{\ical} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y \\
-&\hspace{5mm} + \Lambda \int_{(B_{S+2}\setminus \Omega_S) \cap \ocal} \int_{\ical} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y + \int_{B_{S+2}} G(\Psi_S) \\
-&=:I_1+I_2+I_3+I_G,
+\ecal(\Psi_S,B_{S+2}) &\leq \Lambda\, c_{n,\s} \int_{B_{S+2} \cap \ocal} \d x \int_{\ocal} \d y \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} \\
+&\hspace{5mm} + \Lambda\, c_{n,\s} \int_{\Omega_S \cap \ocal} \d x \int_{\ical} \d y \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} \\
+&\hspace{5mm} + \Lambda\, c_{n,\s} \int_{(B_{S+2}\setminus \Omega_S) \cap \ocal} \d x \int_{\ical} \d y \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} + \int_{B_{S+2}} G(\Psi_S) \\
+&=:\Lambda\, c_{n,\s} (I_1+I_2+I_3)+I_G,
 \end{align*}
 where $\Omega_S$ is defined in \eqref{Eq:DefOmegaS}. 
 
-Let us estimate this four integrals. 
+Let us estimate this four integrals. To estimate $I_1$, we use Lemma~\eqref{Lemma: AdaptedLipschitzConditionWith_dFunction} and the fact that $\Psi_S$ is bounded by $1$.
 \begin{align*}
-I_1 &= \Lambda \int_{B_{S+2} \cap \ocal} \int_{\ocal} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y\\
-&= \Lambda \int_{B_{S+2} \cap \ocal} \int_{\ocal\cap\{|x-y|\leq d_S(x)\}} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y\\
-&\hspace{5mm} + \Lambda \int_{B_{S+2} \cap \ocal} \int_{\ocal\cap\{|x-y|\geq d_S(x)\}} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y\\
-&\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2}\int_{\ocal\cap\{|x-y|\leq d_S(x)\}} |x-y|^{2-n-2\s} \d y\d x\\
-&\hspace{5mm} + C \int_{B_{S+2} \cap \ocal} \int_{\ocal\cap\{|x-y|\geq d_S(x)\}} |x-y|^{-n-2\s} \d x\d y\\
-&\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2}\int_0^{d_S(x)} \rho^{1-2\s} \d \rho\d x + C \int_{B_{S+2} \cap \ocal}  \int_{d_S(x)}^\infty \rho^{-1-2\s} \d\rho \d x\\
-&\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x,
+I_1 &= \int_{B_{S+2} \cap \ocal} \int_{\ocal} \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} \d y\d x\\
+&= \int_{B_{S+2} \cap \ocal} \int_{\ocal\cap\{|x-y|\leq d_S(x)\}} \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} \d y\d x\\
+&\hspace{5mm} + \int_{B_{S+2} \cap \ocal} \int_{\ocal\cap\{|x-y|\geq d_S(x)\}} \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} \d y\d x\\
+&\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2}\left(\int_{\ocal\cap\{|x-y|\leq d_S(x)\}} |x-y|^{2-n-2\s} \d y\right)\d x\\
+&\hspace{5mm} + C \int_{B_{S+2} \cap \ocal} \left(\int_{\ocal\cap\{|x-y|\geq d_S(x)\}} |x-y|^{-n-2\s} \d y \right)\d x\\
+&\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2}\left(\int_0^{d_S(x)} \rho^{1-2\s} \d \rho\right)\d x + C \int_{B_{S+2} \cap \ocal}  \left(\int_{d_S(x)}^\infty \rho^{-1-2\s} \d\rho\right) \d x\\
+&\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x.
 \end{align*}
-where in the first inequality we have used Lemma~\ref{Lemma: AdaptedLipschitzConditionWith_dFunction} and the uniform bound of $\Psi_S$. The bound of $I_2$ is essentially the same using also Lemma~\ref{Lemma: AdaptedLipschitzConditionWith_dFunction} and the inclusion $\Omega_S \subset B_{S+2}$. That is,
+The bound of $I_2$ is essentially the same using also Lemma~\ref{Lemma: AdaptedLipschitzConditionWith_dFunction} and the inclusion $\Omega_S \subset B_{S+2}$. That is,
 \begin{align*}
-I_2 &= \Lambda \int_{\Omega_S \cap \ocal} \int_{\ical} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y\\
-&= \Lambda \int_{\Omega_S \cap \ocal} \int_{\ical\cap\{|x-y|\leq d_S(x)\}} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y\\
-&\hspace{5mm} + \Lambda \int_{\Omega_S \cap \ocal} \int_{\ical\cap\{|x-y|\geq d_S(x)\}} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y\\
-&\leq C \int_{\Omega_S \cap \ocal} d_S(x)^{-2}\int_0^{d_S(x)} \rho^{1-2\s} \d \rho\d x + C \int_{\Omega_S \cap \ocal}  \int_{d_S(x)}^\infty \rho^{-1-2\s} \d\rho \d x\\
+I_2 &\leq C \int_{\Omega_S \cap \ocal} d_S(x)^{-2}\left(\int_0^{d_S(x)} \rho^{1-2\s} \d \rho\right)\d x + C \int_{\Omega_S \cap \ocal} \left( \int_{d_S(x)}^\infty \rho^{-1-2\s} \d\rho \right) \d x\\
 &\leq C \int_{\Omega _S\cap \ocal} d_S(x)^{-2\s} \d x \leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x.
 \end{align*}
-For the case of $I_3$, we use the fact that given $x\in (B_{S+2}\setminus \Omega_S)\cap \ocal$, then $\dist(x,\ccal)\geq d_S(x)$ and therefore $\ical \subset \R^{2m}\setminus B_{d_S(x)}(x)$.
+For the case of $I_3$, we use the fact that given $x\in (B_{S+2}\setminus \Omega_S)\cap \ocal$, then $\dist(x,\ccal)\geq d_S(x)$ and therefore $\ical \subset \R^{2m}\setminus B_{d_S(x)}(x)$. We obtain
 \begin{align*}
-I_3 &= \Lambda \int_{(B_{S+2}\setminus \Omega_S) \cap \ocal} \int_{\ical} \frac{|\Psi_S(x)-\Psi(y)|^2}{|x-y|^{n+2\s}} \d x\d y \leq C \int_{(B_{S+2}\setminus \Omega_S) \cap \ocal} \int_{\R^{2m}\setminus B_{d_S(x)}(x)} |x-y|^{-n-2\s} \\
-&\leq C \int_{B_{S+2} \cap \ocal} \int_{d_S(x)}^\infty \rho^{-1-2\s} \d \rho\d x \leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x.
+I_3 &= \int_{(B_{S+2}\setminus \Omega_S) \cap \ocal} \d x \int_{\ical} \d y \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-y|^{n+2\s}} \leq C \int_{(B_{S+2}\setminus \Omega_S) \cap \ocal} \d x \int_{\R^{2m}\setminus B_{d_S(x)}(x)} \d y \ |x-y|^{-n-2\s} \\
+&\leq C \int_{B_{S+2} \cap \ocal} \left(\int_{d_S(x)}^\infty \rho^{-1-2\s} \d \rho \right)\d x \leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x.
 \end{align*}
 Finally, we estimate $I_G$. Since $\Psi_S$ is either $1$ or $-1$ in $B_{S+2}\setminus \Omega_S$, and $G(-1)=G(1)=0$, we have
 \begin{align*}
-I_G = \int_{B_{S+2}} G(\Psi_S) = \int_{\Omega_S} G(\Psi_S) \leq C | \Omega_S| \leq C\,S^{2m-1}\,.
+I_G = \int_{B_{S+2}} G(\Psi_S) = \int_{\Omega_S} G(\Psi_S) \leq C | \Omega_S| \leq C\,S^{2m-1}\,,
 \end{align*}
-Therefore, we obtain
+where we have used \eqref{Eq:MeasureOmegaS}.Therefore, we obtain
 \begin{align*}
 \ecal(\Psi_S,B_{S+2}) &\leq C \left(\int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x + S^{2m-1} \right)\leq C\left(\int_{B_{S} \cap \ocal} d_S(x)^{-2\s} \d x + S^{2m-1} \right).
 \end{align*}
 
 %%%%%%%%%
 
-\textbf{3.2. Estimate for $I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S)$.} First, we claim that $|x-y|\geq d_S(x)$ whenever $x\in B_S\cap \ocal$ and $y\in \R^{2m}\setminus B_{S+1}$. Indeed, if $x\in B_S$, then $d_S(x) \leq S+1-|x|$ and therefore we have $|x-y|\geq |y|-|x|\geq |y|+d_S(x)-S-1 \geq  d_S(x)$, since $|y| \geq S+1$. Thus, using this and the ellipticity of $K$ we get
+\textbf{3.2. Estimate for $I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S)$.} First, we claim that $|x-y|\geq d_S(x)$ whenever $x\in B_S\cap \ocal$ and $y\in \R^{2m}\setminus B_{S+1}$. Indeed, if $x\in B_S$, then it is easy to see that $d_S(x) \leq S+1-|x|$ and therefore we have $|x-y|\geq |y|-|x|\geq |y|+d_S(x)-S-1 \geq  d_S(x)$, since $|y| \geq S+1$. Thus, using this inequality and the ellipticity of $K$, we get
 \begin{align*}
 I_u(\ocal \setminus B_{S+1}, \ocal \cap B_S) &\leq C \int_{B_S \cap \ocal} \d x \int_{\R^{2m}\setminus B_{S+1}} \d y \ \frac{|u(x)-u(y)|^2}{|x-y|^{2m+2\s}} \\
-& C \leq \int_{B_S \cap \ocal} \d x \int_{|x-y|\geq d_S(x)} \d y \ |x-y|^{-2m-2\s} \\
+& \leq C \int_{B_S \cap \ocal} \d x \int_{|x-y|\geq d_S(x)} \d y \ |x-y|^{-2m-2\s} \\
 &\leq C \int_{B_S \cap \ocal} d_S(x)^{-2\s} \d x.
 \end{align*}
 

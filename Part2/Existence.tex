@@ -4,80 +4,36 @@
 \label{Sec:Existence}
 
 
-In this section we give two different proofs of the existence of saddle-shaped solutions. The first one is based on the direct method of the calculus of variations, and it uses all the results appearing in Section~\ref{Sec:Nonlocal_AllenCahn_Energy}.
-
-\begin{proof}[Proof of Theorem~\ref{Th:Existence}]
-Since $\ecal(w,B_R)$ is bounded below ---by $0$---, we can take a minimizing sequence $u_R^j\in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Note that, by Lemma~\ref{Lemma:DecreaseEnergy} we can assume that $-1 \leq u_R^j \leq 1$ and that $u_R^j \geq 0$ in $\ocal$ and $u_R^j \leq 0$ in $\ical$. 
-
-Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$ and the fact that $u_R^j$ is a minimizing sequence, we deduce that 
-$$
-[u_R^j]_{H^s(B_R)} \leq \dfrac{c_{n,s}}{\lambda}  [u_R^j]_{\H^K(B_R)}\leq \dfrac{2 c_{n,s}}{\lambda}\ecal(u_R^j,B_R) \leq C
-$$
-for a constant $C$ that does not depend on $j$. Therefore, $\{u_R^j\}$ is bounded in $H^s(B_R)$ and then, by the compact embedding $H^s(B_R) \subset \subset L^2(B_R)$ (see Theorem~7.1 of \cite{HitchhikerGuide}), there exists a subsequence, still denoted by $u_R^j$,  that converges to some $u_R \in L^2(B_R)$, and thus, a.e. in $B_R$. By Fatou's lemma, we have
-$$
-\ecal(u_R, B_R)
-\leq \liminf_{j\to \infty} \ecal(u_R^j, B_R) = \inf \setcond{\ecal(w, B_R)}{w \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)}.
-$$
-Therefore, $u_R \in \widetilde{\H}^K_0(B_R)$ is a minimizer of $\ecal(\cdot, B_R)$ in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Moreover, it satisfies $-1\leq u_R \leq 1$ in $B_R$, $u_R\geq 0$ in $\ocal$, $u_R(x) = - u_R(x^\star)$ for every $x\in \R^{2m}$ and $u_R \equiv 0 $ in $\R^{2m} \setminus B_R$.
-
-Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, we deduce that $u_R$ is a classical solution of
-\begin{equation}
-\label{Eq:ProofExistenceProblemBR}
-	\beqc{\PDEsystem}
-	L u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
-	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
-	\eeqc
-\end{equation}
-
-
-The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. Let $S>0$ and $T =4\lceil 1/\s\rceil$ and consider the family $\{u_R\}$, for $R> S + T$, of solutions in $B_{S+T}$. By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} in balls of radius $1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2,\alpha}(\overline{B_S})$ bound for $u_R$. By the Arzela-Ascoli theorem, a subsequence of $\{u_R\}$ converges in $C^2(\overline{B_S})$ to a solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging in $C^2_{\loc}(\R^{2m})$ to a solution $u \in C^2(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
-
-Therefore, we have $u$ a solution of $Lu = f(u)$ in $\R^{2m}$ which is doubly radial. Furthermore, $u$ is odd with respect to the Simons cone $\ccal$, i.e., $u(x) = -u(x^\star)$ for $x\in \R^{2m}$, and $0 \leq u\leq 1$ in $\ocal$.
-
-Finally, we show that $0<u<1$ in $\ocal$. This will ensure that $u$ is a saddle-shaped solution. First, note that $|u| < 1$ by the strong maximum principle (since $u$ vanishes at $\ccal$, $u \not \equiv 1$  and $u\not\equiv -1$). Let us show that $u\not\equiv 0$. To do this, we use the energy estimate of Theorem~\ref{Th:EnergyEstimate}. That is, if we consider $u_R$ the minimizer of $\ecal(\cdot, B_R)$ with $R > 2$, we have
-$$
-\ecal (u_R,B_S) \leq \begin{cases}
-C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
-C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
-\end{cases} $$
-for every $0 < S < R-2$ and with a constant $C$ independent of $R$ and $S$. By letting $R \to \infty$ we obtain the same estimate for $u$. By contradiction, assume $u\equiv 0$. Then, the previous estimate leads to
-$$
-c_m G(0)S^{2m} = \ecal(0, B_S) \leq \begin{cases}
-C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
-C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
-\end{cases} $$
-and this is a contradiction for $S$ large enough. Therefore, since $u \not \equiv 0$, the strong maximum principle for odd functions (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) yields that $u>0$ in $\ocal$. 
-\end{proof}
-
-We now give an alternative proof of Theorem~\ref{Th:Existence}, based only on the maximum principle and the existence of a positive subsolution. To do this correctly, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons Cone $\ccal$.
+In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maximum principle and the existence of a positive subsolution. To do this, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$. Along this section we will call odd super/subsolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}.
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
-	Let $\usub \leq \usup$ be two bounded functions that are doubly radial and odd with respect to the Simons cone. Let $L\in \Lr$  and assume that
-	$$
+	Let $L_K\in \lcal_\star(2m,\s)$ for some $0<\s<1$. Assume that $\usub \leq \usup$ are two bounded functions being doubly radial and odd with respect to the Simons cone with $\usub\in C^\s(\R^{2m})$ and satisfying   
+	\begin{equation}
+	\label{Eq:SemilinearSubSuperSolutionInBall}
 	\beqc{\PDEsystem}
-	L\usup & \geq & f(\usup) & \textrm{ in } B_R \cap \ocal\,, \\
+	L_K\usup & \geq & f(\usup) & \textrm{ in } B_R \cap \ocal\,, \\
 	\usup & \geq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
- \quad \textrm{ and } \quad 
+	\quad \textrm{ and } \quad 
 	\beqc{\PDEsystem}
-	L\usub & \leq & f(\usub) & \textrm{ in } B_R \cap \ocal\,, \\
+	L_K\usub & \leq & f(\usub) & \textrm{ in } B_R \cap \ocal\,, \\
 	\usub & \leq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
-	$$
-	with $f$ an odd $C^2$ function and $\varphi$ a doubly radial function satisfying $\varphi (x) = - \varphi(Sx)$.
+	\end{equation}
+	with $f$ an odd $C^2$ function and $\varphi$ a doubly radial odd function.
 	
-	Then, there exists $u\in C^2(B_R)$ a solution of
-	$$
+	Then, there exists $u\in C^{2s+\varepsilon}(B_R)$ for some $\varepsilon>0$, a solution of
+	\begin{equation}
+	\label{Eq:SemilinearSolutionInBall}
 	\beqc{\PDEsystem}
-	Lu & = & f(u) & \textrm{ in } B_R\,, \\
+	L_K u & = & f(u) & \textrm{ in } B_R\,, \\
 	u &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
-	$$
+	\end{equation}
 	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$.
 \end{proposition}
+
 
 \begin{proof}
 	The proof follows the classical monotone iteration method for elliptic equations (see for instance \cite{Evans}). We just give here a sketch of the proof. 
@@ -87,105 +43,145 @@ We now give an alternative proof of Theorem~\ref{Th:Existence}, based only on th
 	$$
 	Then one defines 
 	$$
-	\tilde{L}w := Lw + b w
-	$$
-	and
-	$$
-	g(\theta) := f'(\theta) + b \theta\,.
+	\tilde{L}_K w := L_Kw + b w 	\quad \text{ and } \quad 	g(t) := f(t) + b t\,.
 	$$
 	Therefore, our problem is equivalent to find a solution to
 	$$
 	\beqc{\PDEsystem}
-	\tilde{L}u & = & g(u) & \textrm{ in } B_R\,, \\
+	\tilde{L}_Ku & = & g(u) & \textrm{ in } B_R\,, \\
 	u &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
 	$$
-	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(\theta) \geq $ for $\theta \geq 0$. Moreover, since $b \geq 0$, $\tilde{L}$ satisfies the maximum principle for odd functions in $\ocal$ (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
+	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(t) \geq 0$ for $t \in [-M,M]$. Moreover, since $b \geq 0$, $\tilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (as in Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
 	
-	We define $u_0 = \usub$ and, for $k\geq 1$, $u_k$ as the solution to the linear problem
+	We define $u_0 = \usub$ and, for $k\geq 1$, let $u_k$ be the solution to the linear problem
 	$$
 	\beqc{\PDEsystem}
-	\tilde{L}u_k & = & g(u_{k-1}) & \textrm{ in } B_R\,, \\
+	\tilde{L}_K u_k & = & g(u_{k-1}) & \textrm{ in } B_R\,, \\
 	u_k &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,. 
 	\eeqc
 	$$
+	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $u_k\in L^\infty(B_R) \cap C^{2\s+2\epsilon}(B_R)$ for some $\epsilon>0$. Moreover, given $\Omega\subset B_R$ a compact set, then $||u_k||_{C^{2s+2\epsilon}(\Omega)}$ is uniformly bounded in $k$.
+	
 	Them, using the maximum principle it is not difficult to show by induction that 
 	$$
 	\usub = u_0 \leq u_1 \leq \ldots \leq u_k \leq u_{k+1} \leq \ldots \usup \quad \text{ in }\ocal\,,
 	$$
-	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by a compactness argument we see that, up to a subsequence, $u_k$ converges in $C^2$ to the desired solution.
+	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $u_k$ converges in $C^{2s+\epsilon}$ to the desired solution.
 \end{proof}
 
-In order to construct a positive supersolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L$, which are presented next.
+In order to construct a positive subsolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next.
 
 \begin{lemma}
-\label{Lemma:FirstOddEigenfunction}
-Let $\Omega\subset \R^{2m} $ be a bounded set of double revolution and let $L\in \lcal_\star(2m,\s,\lambda, \Lambda)$. Define 
-\begin{equation}
-\label{Eq:DefLambda1}
-\lambda_{1, \, \mathrm{odd}}(\Omega, L) := \min_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_\Omega w(x)^2 \d x}\,.
-\end{equation}
-
-Then, such minimum is attained at a function $\phi_1\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)$ which solves
-$$
-\beqc{\PDEsystem}
-L\phi_1 &=& \lambda_{1, \, \mathrm{odd}}(\Omega, L) \phi_1 & \textrm{ in } \Omega\,,\\
-\phi_1 & = & 0 & \textrm{ in } \R^{2m}\setminus \Omega\,,
-\eeqc
-$$
-and satisfies that $\phi \geq 0$ in $\ocal$ and $\phi > 0$ in $\Omega \cap \ocal$.
-We call such function the \emph{first odd eigenfunction of $L$ in $\Omega$} and $\lambda_{1, \, \mathrm{odd}}(\Omega, L) $ the \emph{first odd eigenvalue}. 
-
-Moreover, in the case $\Omega = B_R$, there exists a constant $C$ depending only on $n$, $\s$ and $\Lambda$ such that
-$$
-\lambda_{1, \, \mathrm{odd}}(B_R, L) \leq C R^{-2\s}\,. 
-$$ 
+	\label{Lemma:FirstOddEigenfunction}
+	Let $\Omega\subset \R^{2m} $ be a bounded set of double revolution and let $L_K\in \lcal_\star(2m,\s,\lambda, \Lambda)$. Define 
+	\begin{equation}
+	\label{Eq:DefLambda1}
+	\lambda_{1, \, \mathrm{odd}}(\Omega, L_K) := \inf_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_\Omega w(x)^2 \d x}\,.
+	\end{equation}
+	
+	Then, such infimum is attained at a function $\phi_1\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)\cap L^\infty(\Omega)$ which solves
+	$$
+	\beqc{\PDEsystem}
+	L_K \phi_1 &=& \lambda_{1, \, \mathrm{odd}}(\Omega, L) \phi_1 & \textrm{ in } \Omega\,,\\
+	\phi_1 & = & 0 & \textrm{ in } \R^{2m}\setminus \Omega\,,
+	\eeqc
+	$$
+	and satisfies that $\phi \geq 0$ in $\ocal$ and $\phi > 0$ in $\Omega \cap \ocal$.
+	We call such function the \emph{first odd eigenfunction of $L_K$ in $\Omega$} and $\lambda_{1, \, \mathrm{odd}}(\Omega, L_K) $ the \emph{first odd eigenvalue}. 
+	
+	Moreover, in the case $\Omega = B_R$, there exists a constant $C$ depending only on $n$, $\s$ and $\Lambda$ such that
+	$$
+	\lambda_{1, \, \mathrm{odd}}(B_R, L_K) \leq C R^{-2\s}\,. 
+	$$ 
 \end{lemma}
 
 
 \begin{proof}
-The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, with the help of Lemma~\ref{Lemma:DecreaseEnergy} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions})
-
-We show the third statement. Let $\widetilde{w} (x):= w(Rx)$ for every $w\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)$. Then,
-\begin{align*}
- & \min_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_{B_R} w(x)^2 \d x} \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad\\
- &  \quad \quad \quad \quad \quad \quad \quad \quad \leq \min_{\widetilde{w} \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x/R) - \widetilde{w}(y/R)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_R} \widetilde{w}(x/R)^2 \d x}
-\\
-& \quad \quad \quad \quad \quad \quad \quad \quad = R^{-2 \s }\min_{\widetilde{w} \in \widetilde{\H}^s_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x) - \widetilde{w}(y)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_1} \widetilde{w}(x)^2 \d x}
-\\
-& \quad \quad \quad \quad \quad \quad \quad \quad = \lambda_{1, \, \mathrm{odd}}(B_1, \fraclaplacian) \Lambda R^{-2 \s } \,.
-\end{align*}
+	The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, using the same arguments as in  Lemma~3.4. of \cite{FelipeSanz-Perela:IntegroDifferentialI} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}).
+	
+	We show the third statement. Let $\widetilde{w} (x):= w(Rx)$ for every $w\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)$. Then,
+	\begin{align*}
+	& \min_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_{B_R} w(x)^2 \d x} \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad\\
+	&  \quad \quad \quad \quad \quad \quad \quad \quad \leq \min_{\widetilde{w} \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x/R) - \widetilde{w}(y/R)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_R} \widetilde{w}(x/R)^2 \d x}
+	\\
+	& \quad \quad \quad \quad \quad \quad \quad \quad = R^{-2 \s }\min_{\widetilde{w} \in \widetilde{\H}^s_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x) - \widetilde{w}(y)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_1} \widetilde{w}(x)^2 \d x}
+	\\
+	& \quad \quad \quad \quad \quad \quad \quad \quad = \lambda_{1, \, \mathrm{odd}}(B_1, \fraclaplacian) \Lambda R^{-2 \s } \,.
+	\end{align*}
 \end{proof}
 
 
-With these ingredients, we can proceed with the alternative argument to show Theorem~\ref{Th:Existence}.
+With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existence}.
 
-\begin{proof}[Alternative proof of Theorem~\ref{Th:Existence}]
-The strategy is to build a suitable solution $u_R$ of 
-\begin{equation}
-\label{Eq:ProofExistenceProblemBR'}
+\begin{proof}[Proof of Theorem~\ref{Th:Existence}]
+	The strategy is to build a suitable solution $u_R$ of 
+	\begin{equation}
+	\label{Eq:ProofExistenceProblemBR}
 	\beqc{\PDEsystem}
-	L u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
+	L_K u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
 	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R\,,
 	\eeqc
-\end{equation}
-and then let $R\to \infty$ to get a saddle-shaped solution.
-
-Let $\phi_1$ be the first odd eigenfunction of $L$ in $B_R \subset \R^{2m}$, given by Lemma~\ref{Lemma:FirstOddEigenfunction}, and let  $\lambda_1 := \lambda_{1, \, \mathrm{odd}}(B_R, L)$. Let $\usub_R := \varepsilon \phi_1$. We claim that for $R$ big enough and $\varepsilon$ small enough, $\usub_R$ is a subsolution of \eqref{Eq:ProofExistenceProblemBR'}. To see this, first note that, without loss of generality, we can assume that $\norm{\phi_1}_{L^\infty(B_R)}=1$. Then, since $\varepsilon \phi_1>0$ in $B_R$ and using \eqref{Eq:PropertyConcavityf}, we see that for every $x\in B_R$,
-$$
-\dfrac{f(\varepsilon \phi_1(x))}{\varepsilon \phi_1(x)} > f'(\varepsilon \phi_1(x)) \geq f'(0)/2 > 0
-$$
-if $\varepsilon$ is small enough, independently of $x\in B_R$. Therefore, taking $R$ big enough so that $\lambda_1 < f'(0)/2$ (see the last statement of Lemma~\ref{Lemma:FirstOddEigenfunction}), we have that for every $x\in B_R$,  $f(\varepsilon \phi_1(x)) > \lambda_1 \varepsilon \phi_1(x)$ and thus
-$$
-L(\usub_R) = \lambda_1 \varepsilon \phi_1 < f(\varepsilon \phi_1) = f(\usub_R) \quad \textrm{ in } B_R\,.
-$$
-
-Now, let $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, which is a supersolution of \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure (see Proposition~\ref{Prop:MonotoneIterationOdd}), we obtain a solution $u_R$ of \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone and $\usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_R$, so is $u_R$.
-
-The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. Let $S>0$ and $T =4\lceil 1/\s\rceil$ and consider the family $\{u_R\}$, for $R> S + T$, of solutions in $B_{S+T}$. By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} in balls of radius $1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2,\alpha}(\overline{B_S})$ bound for $u_R$. By the Arzela-Ascoli theorem, a subsequence of $\{u_R\}$ converges in $C^2(\overline{B_S})$ to a solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging in $C^2_{\loc}(\R^{2m})$ to a solution $u \in C^2(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
-
-Therefore, $u$ is a solution of $Lu = f(u)$ in $\R^{2m}$ such that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that, indeed, $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. The fact that $u>0$ in $\ocal$ follows directly from the monotone iteration procedure, since $u_{R} > 0$ in $\ocal \cap B_R$ and $u_{2R} \geq u_{R}$ in $\ocal$ ---that is, $u_{R}$ is a subsolution for the problem in $B_{2R}$. On the other hand, $u < 1$ in $\ocal$ by the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}).
+	\end{equation}
+	and then let $R\to \infty$ to get a saddle-shaped solution.
+	
+	Let $\phi_1^{R_0}$ be the first odd eigenfunction of $L_K$ in $B_{R_0} \subset \R^{2m}$, given by Lemma~\ref{Lemma:FirstOddEigenfunction}, and let  $\lambda_1^{R_0} := \lambda_{1, \, \mathrm{odd}}(B_{R_0}, L_K)$. Then, we claim that for $R_0$ big enough and $\varepsilon$ small enough, $\usub_R = \varepsilon\phi_1^{R_0} $ is an odd subsolution of \eqref{Eq:ProofExistenceProblemBR} for every $R\geq R_0$. To see this, first note that, without loss of generality, we can assume that $\norm{\phi_1^{R_0}}_{L^\infty(B_R)}=1$. Then, since $\varepsilon \phi_1^{R_0}>0$ in $B_{R_0}\cap \ocal$ and using \eqref{Eq:PropertyConcavityf}, we see that for every $x\in B_{R_0}\cap \ocal$,
+	$$
+	\dfrac{f(\varepsilon \phi_1^{R_0}(x))}{\varepsilon \phi_1^{R_0}(x)} > f'(\varepsilon \phi_1^{R_0}(x)) \geq f'(0)/2
+	$$
+	if $\varepsilon$ is small enough, independently of $x$. Therefore, since $f'(0)>0$, taking $R_0$ big enough so that $\lambda_1^{R_0} < f'(0)/2$ (see the last statement of Lemma~\ref{Lemma:FirstOddEigenfunction}), we have that for every $x\in B_{R_0}\cap \ocal$,  $f(\varepsilon \phi_1^{R_0}(x)) > \lambda_1 \varepsilon \phi_1^R(x)$. Thus,
+	$$
+	L_K \usub_R = \lambda_1^{R_0} \varepsilon \phi_1^{R_0} < f(\varepsilon\phi_1^{R_0}) = f(\usub_R) \quad \textrm{ in } B_{R_0}\cap \ocal\,.
+	$$
+	In addition, if $x\in (B_R\setminus B_{R_0})\cap\ocal$, it is easy to conclude, by using \eqref{Eq:OperatorOddF}, that
+	$$
+	L_K \usub_R < 0 = f(0) =  f(\usub_R) \quad \textrm{ in } (B_R\setminus B_{R_0})\cap \ocal\,.
+	$$
+	Hence, the claim is proved.
+	
+	Now, if we define $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, a simple computation shows that it is an odd supersolution of \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure (see Proposition~\ref{Prop:MonotoneIterationOdd}), we obtain a solution $u_R$ of \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone and $\varepsilon \phi_1^{R_0} = \usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_{R_0}$, so is $u_R$.
+	
+	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging in $C^{2\s + \eta}_{\loc}(\R^{2m})$, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. Indeed, the strong maximum principle yields $u<1$ in $\ocal$. Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$, also the limit $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. Therefore by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
 \end{proof}
 
-\todo[inline]{Revisar lo de las subsoluciones}
+
+
+
+The fact of being $u$ positive in $\ocal$ yields that it is stable in this set. Recall that we say that a bounded solution $w$ to $L_K w = f(w)$ in $\Omega\subset \R^n$ is \emph{stable} if the second variation of the energy at $w$ is nonnegative. That is, if
+\begin{equation}
+	\label{Eq:StablityCondition}	
+	Q_w(\xi) := \dfrac{1}{2} \int_{\R^n} \int_{\R^n} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\Omega} f'(w) \xi^2 \d x \geq 0
+\end{equation}
+for every $\xi \in C^\infty_0 (\Omega)$.
+
+\todo[inline]{poner esto de antes en la intro y la remark aqui?? mejorar un poco la estructura}
+
+
+\begin{remark}
+	\label{Remark:Stability}
+	Note that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a domain $\Omega\subset \R^n$, then $w$ is stable. The proof of this is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
+	
+	On the one hand, note that by \eqref{Eq:PropertyConcavityf}, we have that $f'(w)w<f(w)$ in $\Omega$. On the other hand, the following holds for all functions $\varphi$ and $\xi$:
+	\begin{equation}
+	\label{Eq:IdentityStability}
+	\big (\varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
+	\end{equation}
+	Indeed, developing the squares and the products, this last inequality is equivalent to
+	$$
+	2 \xi(x) \xi(y) \leq \dfrac{\varphi(x)}{\varphi(y)} \xi^2(y) +  \dfrac{\varphi(y)}{\varphi(x)} \xi^2 (x)\,,
+	$$
+	which in turn is equivalent to
+	$$
+	\bpar{\xi (x)\sqrt{\dfrac{\varphi(y)}{\varphi(x)}} - \xi(y) \sqrt{\dfrac{\varphi(x)}{\varphi(y)} } }^2 \geq 0\,.
+	$$
+	Using these two facts, for every $\xi\in C^\infty_0(\Omega)$ we have
+	\begin{align*}
+	\int_\Omega f'(w) \xi^2 \d x & \leq \int_\Omega  \dfrac{\xi^2}{w} f(w) \d x = \int_\Omega  \dfrac{\xi^2}{w} L_Kw \d x \\ 
+	&= \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} \big ( w(x) - w(y) \big) \bpar{\dfrac{\xi^2(x)}{w(x)} - \dfrac{\xi^2(y)}{w(y)} } K(x - y) \d x \d y
+	\\ 
+	&\leq \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y\,.
+	\end{align*}
+	Thus, $w$ is stable in $\Omega$.	
+\end{remark}
+
 

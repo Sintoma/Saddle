@@ -63,7 +63,7 @@ First, let us assume that $h$ is convex in $I$. We call
 $$
 x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
 $$
-Therefore, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in(0,1)$,
+Then, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in(0,1)$,
 \begin{align*}
 t\widetilde{h}_c(x) + (1-t)\widetilde{h}_c(y)
 &=  th(x_+) + (1-t)h(y_+) + t h(x_-) + (1-t)h(y_-) \\
@@ -136,7 +136,7 @@ A + D \geq B + C\,,
 \end{equation}
 it is satisfied that
 $$
-g(A) + g(D) \geq g(B) + g(C)
+g(A) + g(D) \geq g(B) + g(C),
 $$
 and equality holds if and only if
 $$ A = B \ \ \ \ \textrm{ and} \ \ \ \ C=D, $$
@@ -153,7 +153,7 @@ Without loss of generality, we can assume that $B \geq C$. Now, we distinguish t
 
 $\bullet$ $D \geq C$
 
-The inequality $g(A) + g(D) \geq g(B) + g(C)$ is trivial by the monotonicity of $g$. Moreover, if $A>B$ or $D>C$ we obtain the strict inequality since $g$ is in fact increasing.
+The inequality $g(A) + g(D) \geq g(B) + g(C)$ is trivial by the monotonicity of $g$. Moreover, if $A>B$ or $D>C$ we obtain the strict inequality since $g$ is increasing.
 
 $\bullet$ $D < C$
 
@@ -214,13 +214,13 @@ equivalences:
 \begin{enumerate}
 \item[i)] $h$ is convex in $I$.
 \item[ii)] For any given real numbers $a$, $b$, $c$, $d$ $\in I$ such that
-\begin{equation}
-\label{Eq:AssumptionsInequalitiesabcd}
+\begin{equation*}
+%\label{Eq:AssumptionsInequalitiesabcd}
 \begin{cases}
 a \geq b \geq c \geq d \,, \\
-a + d \leq b + c\,.
+a + d \leq b + c\,,
 \end{cases}
-\end{equation}
+\end{equation*}
 it is satisfied that
 $$ h(a) + h(d) \geq h(b) + h(c)\,.$$
 \end{enumerate}
@@ -272,13 +272,13 @@ With all these results at hand we can now prove Proposition~\ref{Prop:Equivalenc
 
 \begin{proof}[Proof of Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}]
 $i)\, \Rightarrow \,ii)$ By Lemma~\ref{Lemma:gNondecreasing} and
-Corollary~\ref{Cor:gConvex<->K(sqrt)convex}, $g$ is nondecreasing and strictly convex in
-$(-1/c_2,1/c_2)$ for all $c_1>0$. Therefore, point $ii)$ follows from
+Corollary~\ref{Cor:gConvex<->K(sqrt)convex}, $g$ is strictly convex in
+$(-1/c_2,1/c_2)$ and nondecreasing in $(0,1/c_2)$ for all $c_2>0$. Therefore, point $ii)$ follows from
 Lemma~\ref{Lemma:InequalitConvexFunctions}.
 
 $ii)\, \Rightarrow \,i)$ By Lemma~\ref{Lemma:InequalitConvexFunctions} and in view of
 Remark~\ref{Remark:LeftImplicationDoNotRequireNondecreasing}, $g$ is strictly convex in
-$(-1/c_2,1/c_2)$ for all $c_1>0$. Hence, using Corollary~\ref{Cor:gConvex<->K(sqrt)convex} we deduce
+$(-1/c_2,1/c_2)$ for all $c_2>0$. Hence, using Corollary~\ref{Cor:gConvex<->K(sqrt)convex} we deduce
 that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 \end{proof}
 
@@ -439,7 +439,7 @@ Finally, if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \si
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The integro-differential operator $L$ in the $(s,t)$ variables}
+\section{The integro-differential operator $L_K$ in the $(s,t)$ variables}
 \label{Sec:stcomputations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -615,7 +615,7 @@ J(s,t,\sigma, \tau) &= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{s^2+\si
 & \quad \quad \quad \quad \quad K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega_1 \d \tilde\omega_1.
 \end{align*}
 where $\rho(r) = \sqrt{1-r^2}$. Finally, we obtain \eqref{Eq:KernelSTVariables2} once we replace
-$|\partial B_{r}|=c_m\,r^{m-2}$, where $c_m$ es the surface of the ball of radius one in
+$|\partial B_{r}|=c_m\,r^{m-2}$, where $c_m$ is the measure of the boundary of the ball of radius one in
 $\R^{m-1}$.
 \end{proof}
 
@@ -629,7 +629,7 @@ J(s,t,\sigma,\tau) = \frac{\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\f
 \end{equation}
 where $F_2$ is the so-called Appell hypergeometric function (see \cite{Appell}).
 \end{lemma}
-Although we are not using this result in this work, we think that it could be very useful in future
+Although we are not using the previous result in this work, we think that it could be very useful in future
 works since we are writing the kernel in terms of functions that have already been studied and have
 interesting well-known properties.
 
@@ -657,7 +657,7 @@ do not present a proof of this result since it is identical to the one of
 Proposition~\ref{Prop:KernelInequalitySufficientCondition} but changing the notation.
 
 \begin{lemma}
-\label{Lemma:KernelInequalityCone} Let $m\geq 2$ and let $J$ the kernel defined in
+\label{Lemma:KernelInequalityCone} Let $m\geq 1$ and let $J$ the kernel defined in
 \eqref{Eq:KernelSTVariables2} with $K(\sqrt{\cdot})$ strictly convex. Then, if $s>t$ and $\sigma > \tau$, we have
 \begin{equation*}
 %\label{Eq:KernelInequalityCone}
