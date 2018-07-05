@@ -123,13 +123,16 @@ To conclude this subsection, we present two alternative expressions for the oper
 	L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
 	&= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
 	\end{align*}
-	Moreover, 
-	$$ 2 \int_{\ocal} \overline{K}(x, y^\star) \d y \leq C \dist(x,\ccal)^{-2\s}, $$
-	with $C>0$ only depending on $m, \s$ and $\Lambda$.
+	Moreover,
+	\begin{equation}
+	\label{Eq:ZeroOrderTerm}
+		c \dist(x,\ccal)^{-2\s} \leq \int_{\ocal} \overline{K}(x, y^\star) \d y \leq C \dist(x,\ccal)^{-2\s},
+	\end{equation}
+	with $C\geq c>0$ only depending on $m, \s, \lambda$ and $\Lambda$.
 \end{lemma}
 
 \begin{proof}
-	It is just a computation. First,  using a change of variables  $\bar{y} = y^\star$ and the odd symmetry of $u$, we see that
+	The first statement is just a computation. Indeed,  using the change of variables  $\bar{y} = y^\star$ and the odd symmetry of $u$, we see that
 	\begin{align*}
 	\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y &= \int_{\ocal} \{w(x) - w(y^\star) \}\overline{K}(x, y^\star)\d y \\
 	&= \int_{\ocal} \{w(x) + w(y) \}\overline{K}(x, y^\star)\d y\,.
@@ -140,16 +143,38 @@ To conclude this subsection, we present two alternative expressions for the oper
 	&= \int_{\ocal}  \{w(x) - w(y) \} \overline{K}(x, y)\d y +\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y \\
 	&= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \,.
 	\end{align*}
-	By adding and subtracting $2\,w(x)\overline{K}(x, y^\star)$ in the last integrand we immediately deduce
+	By adding and subtracting $2\,w(x)\overline{K}(x, y^\star)$ in the last integrand, we immediately deduce
 	$$
 	L_K w (x) \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y\,.
 	$$
-	Note that we can add and subtract $2\,w(x)\overline{K}(x, y^\star)$ in the last integral since it is integrable with respect to $y$ in $\ocal$. That is,
+	Note that we can add and subtract $2\,w(x)\overline{K}(x, y^\star)$ in the last integral since it is integrable with respect to $y$ in $\ocal$. This is a consequence of \eqref{Eq:ZeroOrderTerm}. 
+	
+	Let us show now \eqref{Eq:ZeroOrderTerm}. The upper bound is the simplest one since we only need to use the ellipticity of the kernel and the inclusion $\ical \subset \{y\in\R^{2m}:|x-y|\geq \dist(x,\ccal)\}$. That is,
 	\begin{align*}
-\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ical} K(|x-y|) \d y \leq \int_{|x-y|\geq \dist(x,\ccal)} K(|x-y|) \d y \\
-&\leq \Lambda \int_{|x-y|\geq \dist(x,\ccal)} |x-y|^{-2m-2\s} \d y = \Lambda C_m \int_{\dist(x,\ccal)}^\infty \rho^{-1-2s} \d \rho \\
+\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ocal} K(|x-y^\star|) \d y = \int_{\ical} K(|x-y|) \d y \leq \int_{|x-y|\geq \dist(x,\ccal)} K(|x-y|) \d y \\
+&\leq C \int_{|x-y|\geq \dist(x,\ccal)} |x-y|^{-2m-2\s} \d y = C \int_{\dist(x,\ccal)}^\infty \rho^{-1-2s} \d \rho \\
 &= C \dist(x,\ccal)^{-2s}.
 	\end{align*}
+	For the lower bound, let us define $x_0 = x/\dist(x,\ccal)$. Then,
+	\begin{align*}
+	\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ical} K(|x-y|) \d y \\
+	&\geq c \int_{\ical} |x-y|^{-2m-2\s} \d y \\
+	&= c \int_{\ical} |x_0\dist(x,\ccal)-y|^{-2m-2\s} \d y \\
+	&= c \,\dist(x,\ccal)^{-2s}\, \int_{\ical} |x_0-\tilde{y}|^{-2m-2\s} \d \tilde{y}.
+	\end{align*}
+	
+	To conclude the proof, we claim that
+	$$ \int_{\ical} |x_0-y|^{-2m-2\s} \d y \geq c>0\quad \textrm{for every } x_0 \textrm{ such that } \dist(x_0,\ccal) = 1,$$
+	with a constant independent of $x_0$. To establish this claim we will use three facts. The first one is that, since $\dist(x_0,\ccal) = 1$, then $B_{3k+3}(\overline{x_0}) \setminus B_{3k+2}(\overline{x_0}) \subset  B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)$ for every $k\geq 0$, where $\overline{x_0}$ is the projection of $x_0$ into the cone $\ccal$. The second one is the identity $\ical = \ical \cap B_1^c(x_0)$, that also follows from being $\dist(x_0,\ccal) = 1$. Finally, we use a property of the Simons cone: $|B_R(z) \cap \ical| = 1/2 |B_R|$ if $z\in \ccal$ (see Lemma 2.5 in \cite{Felipe-Sanz-Perela:SaddleFractional} for the proof). Therefore,
+	\begin{align*}
+	\int_{\ical} |x_0-y|^{-2m-2\s} \d y &= \sum_{k=0}^\infty \int_{I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)} |x_0-y|^{-2m-2\s} \d y\\
+	&\geq \sum_{k=0}^\infty \int_{I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)} (3k+4)^{-2m-2\s} \d y \\
+	&= \sum_{k=0}^\infty (3k+4)^{-2m-2\s} |I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)|\\
+	&\geq \sum_{k=0}^\infty (3k+4)^{-2m-2\s} |I\cap \left( B_{3k+3}(\overline{x_0}) \setminus B_{3k+2}(\overline{x_0}) \right)|\\
+	&= c \sum_{k=0}^\infty (3k+4)^{-2m-2\s} \left\{(3k+3)^{2m} -(3k+2)^{2m}\right\}\\
+	&\geq c \sum_{k=0}^\infty (3k+4)^{-1-2\s} = c,
+	\end{align*}
+	with $c>0$ independent of $x_0$.
 \end{proof}
 
 \subsection{Characterization of $\lcal_\star$}
