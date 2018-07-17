@@ -63,7 +63,7 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 	
 	\reqnomode
 	
-	Assume that the kernel $K$ of the operator $L$ satisfies
+	Assume that the kernel $K$ of the operator $L_K$ satisfies
 	$$
 	K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+,
 	$$ \todo{Es mejor ponerlo como que K es decreciente en la dirección $x_n$?}
@@ -303,14 +303,23 @@ In a similar way, taking $\tilde{\xi}_0>\norm{v}_{L^\infty} \geq 1$, using $f<0$
 
 \subsection{A one-dimensional symmetry result for positive solutions ``in a half-space''}
 
-In this subsection we establish Theorem~\ref{Th:SymmHalfSpace}. To do it, we proceed in three steps. First, we show that the solution is monotone in the $x_n$ direction by using a moving planes argument (see Proposition~\ref{Prop:MonotonyHalfSpace}). Once this is shown, we can deduce that the solution $v$ has uniform limits as $x_n\pm\to \infty$. Finally, by using the sliding method (see Proposition~\ref{Prop:HalfSpaceLimUnif}), we deduce the one-dimensional symmetry of the solution.
+In this subsection we establish Theorem~\ref{Th:SymmHalfSpace}. To do it, we proceed in three steps. First, we show that the solution is monotone in the $x_n$ direction by using a moving planes argument (see Proposition~\ref{Prop:MonotonyHalfSpace} below). Once this is shown, we can deduce that the solution $v$ has uniform limits as $x_n\pm\to \infty$. Finally, by using the sliding method (see Proposition~\ref{Prop:HalfSpaceLimUnif} below), we deduce the one-dimensional symmetry of the solution.
 
-We proceed now with the details of the arguments. As we have said, the first step is to show that the solution is monotone (we establish Proposition~\ref{Prop:MonotonyHalfSpace}). We do it using a moving planes argument, and for this reason we need a maximum principle in ``narrow'' domains. Recall that for a domain $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
+We proceed now with the details of the arguments. As we have said, the first step is to show that the solution is monotone. We establish the following result.
+
+\begin{proposition}
+	\label{Prop:MonotonyHalfSpace}
+	Let $v$ be a bounded solution to one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0(n,\s)$ such that the kernel $K$ satisfies \eqref{Eq:KernelSymmetry}, and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
+	$$
+	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
+	$$
+\end{proposition}
+
+To prove it, we use a moving planes argument, and for this reason we need a maximum principle in ``narrow'' domains for odd functions with respect to a hyperplane. Recall that for a domain $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
 $$
 \dfrac{|B_R(x)\setminus \Omega|}{|B_R(x)|}\geq \dfrac{1}{2} \quad \text{ for every } x \in \Omega.
 $$
-If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small.
-
+If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small depending on certain quantities.
 
 An important result that we need is the following ABP-type estimate. It is proved in \cite{QuaasXia} for the fractional Laplacian, following the arguments in \cite{Cabre-ABP} (see also \cite{Cabre-Topics}). The proof for a general operator $L_K$ do not differ significantly from the one for the fractional Laplacian. Nevertheless, we include it here for the sake of completeness.
 
@@ -370,7 +379,7 @@ With the previous weak Harnack inequality we can now establish the ABP estimate.
 	In the case of $\Omega$ being unbounded, the proof is the same with minor changes. We define $M$ as before and we consider, for every $\delta > 0$, a point $x_0$ such that $M-\delta \leq v(x_0)$. We proceed as before and the desired estimate follows by letting $\delta \to 0$.
 \end{proof}
 
-As a consequence of this result, one can deduce easily a maximum principle in ``narrow'' domains.
+As a consequence of this result, one can deduce easily a general maximum principle in ``narrow'' domains.
 
 \begin{corollary}
 	\label{Cor:MaxPpleNarrowDomains}
@@ -466,19 +475,11 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 	A maximum principle such as Proposition~\ref{Prop:MaxPrpNarrowOdd} was already proved for the fractional Laplacian in \cite{ChenLiLi}, but with the additional hypothesis that $\Omega$ is bounded or, if it is unbounded, that $\liminf_{x\in  \Omega,\ |x|\to \infty} v(x) \geq 0$. In the proof of Theorem~3.1 in \cite{QuaasXia}, Quaas and Xia find a suitable argument (the one used in the previous proof) to avoid the requirement of such additional hypotheses on $\Omega$ or $v$.
 \end{remark}
 
-The maximum principle in narrow domains for odd functions with respect to a hyperplane is the main tool to use the moving plane argument. Now we can show the following result.
-
 \todo[inline]{Mirar lo que hacen Barrios, Quaas, etc en MR3624935 (2017) por si hay que citarlo}
-\begin{proposition}
-	\label{Prop:MonotonyHalfSpace}
-	Let $v$ be a bounded solution to one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0(n,\s)$ such that the kernel $K$ satisfies \eqref{Eq:KernelSymmetry}, and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
-	$$
-	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
-	$$
-\end{proposition}
 
+With the maximum principle in narrow domains for odd functions with respect to a hyperplane we can use the moving plane argument. Now we can show Proposition~\ref{Prop:MonotonyHalfSpace}.
 
-\begin{proof}
+\begin{proof}[Proof of Proposition~\ref{Prop:MonotonyHalfSpace}]
 	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ one defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in each of the two cases ---\eqref{Eq:P1} or \eqref{Eq:P2}---, the following problem:
 	$$
 	\beqc{\PDEsystem} 
@@ -500,7 +501,7 @@ The maximum principle in narrow domains for odd functions with respect to a hype
 \end{proof}
 
 
-The other important ingredient needed in the proof of Theorem~\ref{Th:SymmHalfSpace} is the following symmetry result.
+Now, we present the other important ingredient needed in the proof of Theorem~\ref{Th:SymmHalfSpace}. It is the following symmetry result.
 
 \begin{proposition}
 \label{Prop:HalfSpaceLimUnif}
