@@ -83,14 +83,20 @@ In the proof of Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution} we will use s
 	\label{Eq:PropertiesLayer}
 	|u_0 (x)-\sign(x)| \leq C |x|^{-2\s}  \quad \text{ and } \quad |\dot{u}_0 (x)| \leq C |x|^{-1-2\s}  \quad \text{ for large }|x|.
 \end{equation}
-In our arguments we need also to show that the second derivative of the layer goes to zero at infinity. This is the statement of the following lemma.
+In our arguments we need also to show that the second derivative of the layer goes to zero at infinity. This is the first statement of the following lemma.
 
 \begin{lemma}
 	\label{Lemma:SecondDerivativeLayer}
-	Let $u_0$ be the layer solution associated to the kernel $K_1$, that is, $u_0$ solving \eqref{Eq:LayerSolution}. Then, $\ddot{u}_0 (x) \to 0$ as $x\to \pm \infty$.	
+	Let $u_0$ be the layer solution associated to the kernel $K_1$, that is, $u_0$ solving \eqref{Eq:LayerSolution}. Then, 
+	\begin{enumerate}[label=(\roman{*})]
+		\item $\ddot{u}_0 (x) \to 0$ as $x\to \pm \infty$.	
+		\item  $\ddot{u}_0 (x) < 0$ in $(0,+\infty)$.
+	\end{enumerate}
 \end{lemma}
 
-\begin{proof}
+We prove here the first statement of this lemma, and we postpone the proof of the second one until the next section, since we need to use a maximum principle for the linearized operator $L_{K_1} - f'(u_0)$.
+
+\begin{proof}[Proof of point (i) of Lemma~\ref{Lemma:SecondDerivativeLayer}]
 	By contradiction, suppose that there exists an unbounded sequence $\{x_j\}$ satisfying $|u_0(x_j)|>\varepsilon$ for some $\varepsilon>0$. Note that by the symmetry of $u_0$ we may assume that $x_j\to + \infty$. Now define $w_j (x) := \ddot{u}_0(x+x_j)$. By differentiating twice the equation of the layer solution, we see that $\ddot{u}_0$ solves
 	$$
 	L_{K_1} \ddot{u}_0 = f''(u_0)\dot{u}_0^2 + f'(u_0)\ddot{u}_0 \text{ in }\R.
@@ -103,6 +109,8 @@ In our arguments we need also to show that the second derivative of the layer go
 	
 	At this point we use Lemma~4.3 of \cite{CozziPassalacqua} to deduce that, since $f'(1)<1$, then $w\to 0$ as $|x| \to +\infty$. Therefore, if $w$ is not identically zero, it has either a positive maximum or a negative minimum, but this contradicts the maximum principle (recall that $f'(1)<1$). We conclude that $w\equiv0$ in $\R$, but this is a contradiction with $|w(0)|\geq \varepsilon$.
 \end{proof}
+
+
 
 
 Now we have all the ingredients to establish the asymptotic behavior of the saddle-solution.

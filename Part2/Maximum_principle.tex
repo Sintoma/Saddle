@@ -8,7 +8,7 @@ In this section we show that the linearized operator $L_K  -f'(u)$ satisfies the
 The maximum principle we establish is the following.
 
 \begin{proposition}
-	\label{Prop:MaximumPrincipleInO}
+	\label{Prop:MaximumPrincipleLinearized}
 	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\Omega \subset \ocal$ a domain (not necessarily bounded) and let $L_K  \in \lcal_\star$. Assume that $v$ satisfies
 	$$
 	\beqc{\PDEsystem}
@@ -72,9 +72,10 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	Therefore, for $\varepsilon$ small enough, we arrive at a contradiction that comes from assuming that the supremum is positive.
 \end{proof}
 
-Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleInO}.
 
-\begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleInO}]
+Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}.
+
+\begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}]
     
 
 
@@ -149,6 +150,34 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 \end{proof}
 
 
+The same argument used in the previous proof can be used to establish the remaining statement of Lemma~\ref{Lemma:SecondDerivativeLayer}.
+
+\begin{proof}[Proof of point (ii) of Lemma~\ref{Lemma:SecondDerivativeLayer}]
+	
+	Let $v = \ddot{u}_0$. First we show that $v\leq 0$ in $(0,+\infty)$. To see this, note that since $f$ is concave and by point (i) of Lemma~\ref{Lemma:SecondDerivativeLayer}, it follows that
+	$$
+	\beqc{\PDEsystem}
+	L_{K_1} v - f'(u_0)v &\leq &0 & \text{ in } (0,+\infty)\,.\\
+	v(x) &= &-v(-x) & \text{ for every } x\in \R\,,\\
+	\ds \limsup_{x\to \infty} v(x) &= & 0\,.
+	\eeqc
+	$$
+	Now, we follow the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized} but with the previous problem, replacing $u$ by $u_0$ and using that
+	$$
+	L_{K_1} u_0 - f'(u_0)u_0 > 0 \quad \text{ in } (0,+\infty)\,. 
+	$$
+	All the arguments are the same and yield that $v\leq 0$ in $(0,+\infty)$.
+	
+	The fact that the inequality is strict follows from the strong maximum principle for odd functions in $\R$, as follows. Suppose by contradiction that there exists a point $x_0\in (0,+\infty)$ such that $v(x_0) = 0$. Then,
+	$$
+	0 \geq L_{K_1} v (x_0) = - \int_{-\infty}^{+\infty}	v(y) K_1(x_0 - y) \d y = - \int_{-\infty}^{+\infty} v(y) \{ K_1(x_0 - y) - K_1(x_0 + y)\} \d y > 0\,,$$
+	arriving at a contradiction. Here we have used that $v\not \equiv 0$ and that $K_1(x - y) \geq  K_1(x + y)$ for every $x>0$ and $y>0$. \todo{Check!}
+\end{proof}
+
+
+
+
+
 
 With these ingredients available, we can finally establish the uniqueness of the saddle-shaped solution.
 
@@ -163,7 +192,7 @@ With these ingredients available, we can finally establish the uniqueness of the
 	$$
 	\limsup_{x\in \ocal, \ |x|\to \infty} v(x) = 0\,.
 	$$
-	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleInO}), we are lead to $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
+	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleLinearized}), we are lead to $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
 \end{proof}
 
 
