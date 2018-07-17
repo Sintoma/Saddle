@@ -64,39 +64,12 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	\right\}\,.
 	$$
 	
-	We claim that, for $\varepsilon$ small enough,
-	\begin{equation}
-	\label{Eq:ClaimMaxPNarrowProof}
-	 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y > \norm{c_-}_{L^\infty(H)}\,.
-	\end{equation}
-	If we assume this claim to be true, then we have a contradiction and we conclude that $v \leq 0$ in $H$.
-	
-	Let us show \eqref{Eq:ClaimMaxPNarrowProof} by proving that the left hand-side in that equation can be as big as desired if $\varepsilon$ is small enough. On the one hand, note that
-	$$
-	\int_{\ocal} \overline{K}(x_0,y^\star)\d y = \int_{\ical} \overline{K}(x_0,y)\d y = \int_{\ical} K(|x_0-y|)\d y \geq \lambda c_{2m,\s}\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
-	$$
-	by the ellipticity of the kernel. On the other hand, by Lemma~4.2 in \cite{CabreTerraI} and the narrow condition, there exists a point $\overline{x_0}=(\mu e, \mu e)$ with $\mu>0$, which is a projection of $x_0$ in the Simons cone, such that
-    $$ |x_0-\overline{x_0}| = \frac{|x_0'|-|x_0''|}{\sqrt[]{2}} \leq \frac{\sqrt[]{2}}{2} \varepsilon. $$
-	Therefore, $	|x_0 - y| \leq |x_0 - \overline{x_0}| + |\overline{x_0} - y| \leq \sqrt{2}\varepsilon/2 + |\overline{x_0} - y|$ and we obtain
-	$$
-	\int_{\ical} |x_0-y|^{-2m-2\s}\d y  \geq
-	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y
-	$$
-	By monotone convergence, we get
-	$$
-	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y \to \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y 
-	$$
-	as $\varepsilon \to 0$ and this last integral is infinite. \todo{Creo recordar que dijo Xavier que lo siguiente era trivial y que no hacía falta ponerlo}Indeed,
-    \begin{align*}
-    \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y &\geq \int_{\ical\cap B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s}\d y \\
-    &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})}  |\overline{x_0} - y|^{-2m-2\s} \d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} |\overline{x_0} - y^\star|^{-2m-2\s}\d y\\
-    &= \frac{1}{2}\int_{B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s} \d y = \frac{1}{2}\int_{B_R} |z|^{-2m-2\s} \d z = +\infty.
-    \end{align*}
-    Here we have used the change of variables given by $(\cdot)^\star$ and the fact that, since $\overline{x_0} \in \ccal$, $|\overline{x_0}^\star - y|= |\overline{x_0}^\star - y|= |\overline{x_0} - y|$. Note that the assumption $\overline{x_0} = (\mu e, \mu e)$ is fundamental in order to have $(\ical\cap B_R(\overline{x_0}))^\star = \ocal\cap B_R(\overline{x_0})$. Therefore, for $\varepsilon$ small enough,
-	$$
-	\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
-	$$
-	is as big as we want, in particular bigger than $\norm{c_-}_{L^\infty(H)}$. This shows \eqref{Eq:ClaimMaxPNarrowProof} and concludes the proof.
+	Finally, if we use the lower bound of the integral term from Lemma~2.3. in \cite{FelipeSanz-Perela:IntegroDifferentialI} and the fact that $\dist(x_0,\ccal) \leq \varepsilon/\sqrt{2}$, we get
+	\begin{align*}
+	0 &\geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
+	\right\} \geq M \left(\frac{1}{C}\dist(x_0,\ccal)^{-2\s}-\norm{c_-}_{L^\infty(H)}\right) \\ &\geq M \left(\frac{1}{C}\varepsilon^{-2\s}-\norm{c_-}_{L^\infty(H)}\right).
+	\end{align*}
+	Therefore, for $\varepsilon$ small enough, we arrive at a contradiction that comes from assuming that the supremum is positive.
 \end{proof}
 
 Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleInO}.
