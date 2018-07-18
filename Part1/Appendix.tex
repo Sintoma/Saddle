@@ -146,51 +146,16 @@ $$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
 
 \end{lemma}
 \begin{proof}
-$i)\, \Rightarrow \,ii)$ First note that if $g$ is strictly convex, then $g$ is continuous in $I$ and differentiable except for, at most, a countable set of points. Moreover, $g'$ is increasing in the regular points. In addition, since $g$ is strictly convex and nondecreasing, it is in fact increasing.
+$i)\, \Rightarrow \,ii)$ First let us point out some properties of $g$. Since $g$ is strictly convex, then $g$ is continuous in $I$ and differentiable except for, at most, a countable set of points.  Moreover, its left derivative $g'_-$ is well defined at every point of $I$ and the fundamental theorem of calculus holds. Furthermore, since the convexity is strict, $g'_-$ is increasing. For more details on these results on convex functions and their differentiability properties, see Chapter~V of \cite{Rockafellar1970}, in particular Corollaries 24.2.1 and 26.3.1.
 
-Without loss of generality, we can assume that $B \geq C$. Now, we distinguish two cases:
-
-
-$\bullet$ $D \geq C$
-
-The inequality $g(A) + g(D) \geq g(B) + g(C)$ is trivial by the monotonicity of $g$. Moreover, if $A>B$ or $D>C$ we obtain the strict inequality since $g$ is increasing.
-
-$\bullet$ $D < C$
-
-If $A = B$ we arrive at a contradiction from \eqref{Eq:AssumptionsInequalitiesABCD}. Then, we have
-$A > B \geq C > D$.
-
-Since $g$ is piecewise $C^1$, let $\{z_i\}_{i=1}^{n}$ be the points in the interval $(B,A)$ where
-the function is not differentiable, with $z_0 = B$ and $z_{n+1}=A$, and let
-$\{\bar{z}_i\}_{i=1}^{m}$ be the same for the interval $(D,C)$ with $\bar{z}_0 = D$ and
-$\bar{z}_{m+1}=C$.
-
-By applying Taylor's theorem in each interval of differentiability and adding the expressions we
-obtain
-$$
-g(A) = g(B) + \sum_{i=0}^{n}(z_{i+1}-z_i) g'(\xi_i) \quad \textrm{ with } \xi_i \in (z_i,z_{i+1})\,,
-$$
-and
-$$
-g(C) = g(D) + \sum_{i=0}^{m}(\bar{z}_{i+1}-\bar{z}_i) g'(\bar{\xi}_i) \quad \textrm{ with } \bar{\xi}_i \in (\bar{z}_i,\bar{z}_{i+1})\,,
-$$
-If we define $\xi = \xi_0 $ and $\bar{\xi} = \bar{\xi}_m$, since $g'$ is nondecreasing at the regular points we get
-$$
-g(A) \geq g(B) + \sum_{i=0}^{n}(z_{i+1}-z_i) g'(\xi) = g(B) + (A-B)g'(\xi),
-$$
-and
-$$
-g(C) \leq g(D) + \sum_{i=0}^{m}(\bar{z}_{i+1}-\bar{z}_i) g'(\bar{\xi}) = g(D)+(C-D)g'(\bar{\xi}) .
-$$
-It is clear that $\xi > \overline{\xi}$ and thus $g'(\xi) > g'(\overline{\xi})$. Therefore,
+Without loss of generality, we can assume that $B \geq C$. Now, we distinguish two cases: either $D \geq C$ or $D < C$. In the first case, note that since $g$ is strictly convex and nondecreasing, it is in fact increasing and therefore $g(A) + g(D) \geq g(B) + g(C)$ holds trivially. By the same reason, we obtain the strict inequality if $A>B$ or $D>C$. Suppose now that $D < C$. In this case, we can assume $A > B \geq C > D$, since if $A = B$ we arrive at a contradiction with \eqref{Eq:AssumptionsInequalitiesABCD}. Now, by using the fundamental theorem of calculus we obtain
 \begin{align*}
-g(A) + g(D) - g(B) - g(C) &= (g(A) - g(B)) - (g(C) - g(D)) \\
-&\geq (A - B)g'(\xi)  - (C - D)g'(\overline{\xi}) \\
-&= (A - B - C + D)g'(\xi) + (C - D) (g'(\xi) - g'(\overline{\xi}))\\
+g(A) + g(D) - g(B) - g(C) &= \int_B^A g'_-(x) \d x - \int_D^C g'_-(x) \d x \\
+&\geq \int_B^{B+C-D} g'_-(x) \d x - \int_D^C g'_-(x) \d x  \\
+&= \int_D^C g'_-(x+B-D) - g'_-(x) \d x  \\
 & > 0\,,
 \end{align*}
-where we have used that $A - B - C + D \geq 0$, $C - D > 0$, $g'\geq 0$ in the regular points and
-$g'(\xi) > g'(\overline{\xi})$.
+since $g'_-$ is nonnegative and increasing.
 
 $ii)\, \Rightarrow \,i)$ Given $x\neq y$ in $I$, that we can suppose $x>y$ without loss of generality, we take $A=x$, $B=C=(x+y)/2$ and $D=y$. Then we get $ g(x)+g(y) > 2g\left( (x+y)/2 \right)$.
 \end{proof}
