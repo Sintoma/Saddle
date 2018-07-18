@@ -8,7 +8,7 @@ In this section we show that the linearized operator $L_K  -f'(u)$ satisfies the
 The maximum principle we establish is the following.
 
 \begin{proposition}
-	\label{Prop:MaximumPrincipleInO}
+	\label{Prop:MaximumPrincipleLinearized}
 	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\Omega \subset \ocal$ a domain (not necessarily bounded) and let $L_K  \in \lcal_\star$. Assume that $v$ satisfies
 	$$
 	\beqc{\PDEsystem}
@@ -64,44 +64,18 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	\right\}\,.
 	$$
 	
-	We claim that, for $\varepsilon$ small enough,
-	\begin{equation}
-	\label{Eq:ClaimMaxPNarrowProof}
-	 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y > \norm{c_-}_{L^\infty(H)}\,.
-	\end{equation}
-	If we assume this claim to be true, then we have a contradiction and we conclude that $v \leq 0$ in $H$.
-	
-	Let us show \eqref{Eq:ClaimMaxPNarrowProof} by proving that the left hand-side in that equation can be as big as desired if $\varepsilon$ is small enough. On the one hand, note that
-	$$
-	\int_{\ocal} \overline{K}(x_0,y^\star)\d y = \int_{\ical} \overline{K}(x_0,y)\d y = \int_{\ical} K(|x_0-y|)\d y \geq \lambda c_{2m,\s}\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
-	$$
-	by the ellipticity of the kernel. On the other hand, by Lemma~4.2 in \cite{CabreTerraI} and the narrow condition, there exists a point $\overline{x_0}=(\mu e, \mu e)$ with $\mu>0$, which is a projection of $x_0$ in the Simons cone, such that
-    $$ |x_0-\overline{x_0}| = \frac{|x_0'|-|x_0''|}{\sqrt[]{2}} \leq \frac{\sqrt[]{2}}{2} \varepsilon. $$
-	Therefore, $	|x_0 - y| \leq |x_0 - \overline{x_0}| + |\overline{x_0} - y| \leq \sqrt{2}\varepsilon/2 + |\overline{x_0} - y|$ and we obtain
-	$$
-	\int_{\ical} |x_0-y|^{-2m-2\s}\d y  \geq
-	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y
-	$$
-	By monotone convergence, we get
-	$$
-	\int_{\ical} (\sqrt{2}\varepsilon/2 + |\overline{x_0} - y| )^{-2m-2\s}\d y \to \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y 
-	$$
-	as $\varepsilon \to 0$ and this last integral is infinite. \todo{Creo recordar que dijo Xavier que lo siguiente era trivial y que no hacía falta ponerlo}Indeed,
-    \begin{align*}
-    \int_{\ical} |\overline{x_0} - y|^{-2m-2\s} \d y &\geq \int_{\ical\cap B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s}\d y \\
-    &= \frac{1}{2}\int_{\ical\cap B_R(\overline{x_0})}  |\overline{x_0} - y|^{-2m-2\s} \d y + \frac{1}{2}\int_{\ocal\cap B_R(\overline{x_0})} |\overline{x_0} - y^\star|^{-2m-2\s}\d y\\
-    &= \frac{1}{2}\int_{B_R(\overline{x_0})} |\overline{x_0} - y|^{-2m-2\s} \d y = \frac{1}{2}\int_{B_R} |z|^{-2m-2\s} \d z = +\infty.
-    \end{align*}
-    Here we have used the change of variables given by $(\cdot)^\star$ and the fact that, since $\overline{x_0} \in \ccal$, $|\overline{x_0}^\star - y|= |\overline{x_0}^\star - y|= |\overline{x_0} - y|$. Note that the assumption $\overline{x_0} = (\mu e, \mu e)$ is fundamental in order to have $(\ical\cap B_R(\overline{x_0}))^\star = \ocal\cap B_R(\overline{x_0})$. Therefore, for $\varepsilon$ small enough,
-	$$
-	\int_{\ical} |x_0-y|^{-2m-2\s}\d y 
-	$$
-	is as big as we want, in particular bigger than $\norm{c_-}_{L^\infty(H)}$. This shows \eqref{Eq:ClaimMaxPNarrowProof} and concludes the proof.
+	Finally, if we use the lower bound of the integral term from Lemma~2.3. in \cite{FelipeSanz-Perela:IntegroDifferentialI} and the fact that $\dist(x_0,\ccal) \leq \varepsilon/\sqrt{2}$, we get
+	\begin{align*}
+	0 &\geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
+	\right\} \geq M \left(\frac{1}{C}\dist(x_0,\ccal)^{-2\s}-\norm{c_-}_{L^\infty(H)}\right) \\ &\geq M \left(\frac{1}{C}\varepsilon^{-2\s}-\norm{c_-}_{L^\infty(H)}\right).
+	\end{align*}
+	Therefore, for $\varepsilon$ small enough, we arrive at a contradiction that comes from assuming that the supremum is positive.
 \end{proof}
 
-Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleInO}.
 
-\begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleInO}]
+Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}.
+
+\begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}]
     
 
 
@@ -176,6 +150,34 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 \end{proof}
 
 
+The same argument used in the previous proof can be used to establish the remaining statement of Lemma~\ref{Lemma:SecondDerivativeLayer}.
+
+\begin{proof}[Proof of point (ii) of Lemma~\ref{Lemma:SecondDerivativeLayer}]
+	
+	Let $v = \ddot{u}_0$. First we show that $v\leq 0$ in $(0,+\infty)$. To see this, note that since $f$ is concave and by point (i) of Lemma~\ref{Lemma:SecondDerivativeLayer}, it follows that
+	$$
+	\beqc{\PDEsystem}
+	L_{K_1} v - f'(u_0)v &\leq &0 & \text{ in } (0,+\infty)\,.\\
+	v(x) &= &-v(-x) & \text{ for every } x\in \R\,,\\
+	\ds \limsup_{x\to \infty} v(x) &= & 0\,.
+	\eeqc
+	$$
+	Now, we follow the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized} but with the previous problem, replacing $u$ by $u_0$ and using that
+	$$
+	L_{K_1} u_0 - f'(u_0)u_0 > 0 \quad \text{ in } (0,+\infty)\,. 
+	$$
+	All the arguments are the same and yield that $v\leq 0$ in $(0,+\infty)$.
+	
+	The fact that the inequality is strict follows from the strong maximum principle for odd functions in $\R$, as follows. Suppose by contradiction that there exists a point $x_0\in (0,+\infty)$ such that $v(x_0) = 0$. Then,
+	$$
+	0 \geq L_{K_1} v (x_0) = - \int_{-\infty}^{+\infty}	v(y) K_1(x_0 - y) \d y = - \int_{-\infty}^{+\infty} v(y) \{ K_1(x_0 - y) - K_1(x_0 + y)\} \d y > 0\,,$$
+	arriving at a contradiction. Here we have used that $v\not \equiv 0$ and that $K_1(x - y) \geq  K_1(x + y)$ for every $x>0$ and $y>0$. \todo{Check!}
+\end{proof}
+
+
+
+
+
 
 With these ingredients available, we can finally establish the uniqueness of the saddle-shaped solution.
 
@@ -190,7 +192,7 @@ With these ingredients available, we can finally establish the uniqueness of the
 	$$
 	\limsup_{x\in \ocal, \ |x|\to \infty} v(x) = 0\,.
 	$$
-	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleInO}), we are lead to $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
+	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleLinearized}), we are lead to $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
 \end{proof}
 
 
