@@ -30,8 +30,9 @@ one is a result for positive solutions in the whole space.
 	Then, $v\equiv 0$ or $v \equiv 1$.
 \end{theorem}
 
-The second one is a symmetry result for equations in a half-space. Here we use the notation $\R^n_+
-= \{x_n > 0\}$ and $\R^n_- = \{x_n < 0\}$ .
+\todo[inline]{Some references}
+
+The second one is a symmetry result for equations in a half-space. Here we use the notation $\R^n_+= \{x_n > 0\}$.
 
 \begin{theorem}
 	\label{Th:SymmHalfSpace}
@@ -55,18 +56,16 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 	\beqc{\PDEsystem}
 	L_K v &=& f(v)   &\textrm{ in } \,\R^n_+,\\
 	v &>& 0   &\textrm{ in } \,\R^n_+,\\
-	v &=& 0   &\textrm{ in } \,\overline{\R^n_-},
+	v &=& 0   &\textrm{ in } \,\R^n \setminus \R^n_+,
 	\eeqc
 	\end{equation}
-	
-
-	
+		
 	\reqnomode
 	
-	Assume that the kernel $K$ of the operator $L_K$ satisfies
+	Assume that, in $\R^n_+$, the kernel $K$ of the operator $L_K$ is decreasing in the direction of $x_n$, that is, it satisfies
 	$$
 	K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+,
-	$$ \todo{Es mejor ponerlo como que K es decreciente en la dirección $x_n$?}
+	$$ 
 	where $y^*$ is the reflection of $y$ with respect to $\{x_n = 0\}$. Suppose that the nonlinearity $f$ is Lipsitchz and
 	\begin{itemize}
 		\item $f(0) = f(1) = 0$,
@@ -77,9 +76,7 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 	Then, $v$ depends only on $x_n$ and it is increasing in that direction.
 \end{theorem}
 
-
-The result in the case of problem \eqref{Eq:P2} will not be used in this paper. However, since the
-proof is analogous as the one for \eqref{Eq:P1}, we include it here for completeness and future reference.
+The result for \eqref{Eq:P2} has been proved for the fractional Laplacian under some assumptions on $f$ (weaker than the ones in Theorem~\ref{Th:SymmHalfSpace}) in \cite{QuaasXia, BarriosEtAl,FallWethMonotonicity}. Instead, to the best of our knowledge \eqref{Eq:P1} has not been treated even for the fractional Laplacian. In our case, the fact that $f$ is of Allen-Cahn type allows us to use rather simple arguments that work for both problems \eqref{Eq:P1} and \eqref{Eq:P2}. Moreover, the fact that we replace the kernel of the operator by a general $K$ satisfying \eqref{Eq:Ellipticity} do not affect significantly the proof. Although \eqref{Eq:P2} will not be used in this paper, we state it and prove it here for future reference, since the proof is analogous to the one of \eqref{Eq:P1}.
 
 \subsection{A symmetry result for positive solutions in the whole space}
 
@@ -87,7 +84,7 @@ In the proof of Theorem~\ref{Th:SymmetryWholeSpace} we will need two main ingred
 
 \begin{proposition}
 	\label{Prop:HarnackSemilinear}
-	Let $L_K\in\mathcal{L}_0(n,\s,\lambda,\Lambda)$ and let $w$ be a solution to \eqref{Eq:PositiveWholeSpace} with $f$ a Lipschitz nonlinearity such that $f(0) = 0$. Then,
+	Let $L_K\in\mathcal{L}_0(n,\s,\lambda,\Lambda)$ and let $w$ be a solution to \eqref{Eq:PositiveWholeSpace} with $f$ a Lipschitz nonlinearity such that $f(0) = 0$. Then, 
 	$$ \sup_{B_R(x_0)} w \leq C  \inf_{B_R(x_0)} w, $$
 	with $C>0$ only depending on $n,\s,\lambda,\Lambda$ and $R$.
 \end{proposition}
@@ -183,7 +180,7 @@ With this result we can introduce the auxiliary function that we will use to pro
 	\phi_R &=& 0 & \textrm{ in } \R^n\setminus B_R\,.
 	\eeqc
 	\end{equation}
-	Note that the existence of a weak solution to the previous problem is given by the Riesz representation theorem. Moreover, by standard regularity results (see Section \ref{Subsec:Regularity})\todo{Igual lo quitamos}, $\phi_R$ is in fact a classical solution and by the maximum principle, $\phi_R>0$ in $B_R$.
+	Note that the existence of a weak solution to the previous problem is given by the Riesz representation theorem. Moreover, by standard regularity results (see Section \ref{Subsec:Regularity}), $\phi_R$ is in fact a classical solution and by the maximum principle, $\phi_R>0$ in $B_R$.
 	
 	Define $M_R := \sup_{B_R} \phi_R$. Since $M_R$ is increasing (use the maximum principle to compare $\phi_R$ and $\phi_{R'}$ with $R>R'$), it must have a limit $M$. Assume by contradiction that $M<+\infty$. Now, consider the new function $ \varphi_R := \phi_R/M_R$, which satisfies
 	\begin{equation}
@@ -475,8 +472,6 @@ The previous maximum principle in narrow domains is not powerful enough to apply
 	A maximum principle such as Proposition~\ref{Prop:MaxPrpNarrowOdd} was already proved for the fractional Laplacian in \cite{ChenLiLi}, but with the additional hypothesis that $\Omega$ is bounded or, if it is unbounded, that $\liminf_{x\in  \Omega,\ |x|\to \infty} v(x) \geq 0$. In the proof of Theorem~3.1 in \cite{QuaasXia}, Quaas and Xia find a suitable argument (the one used in the previous proof) to avoid the requirement of such additional hypotheses on $\Omega$ or $v$.
 \end{remark}
 
-\todo[inline]{Mirar lo que hacen Barrios, Quaas, etc en MR3624935 (2017) por si hay que citarlo}
-
 With the maximum principle in narrow domains for odd functions with respect to a hyperplane we can use the moving plane argument. Now we can show Proposition~\ref{Prop:MonotonyHalfSpace}.
 
 \begin{proof}[Proof of Proposition~\ref{Prop:MonotonyHalfSpace}]
@@ -522,7 +517,7 @@ L_K  v &=& f(v)  &\textrm{ in }\R^n\,,\\
 \label{Eq:P4}
 \beqc{\PDEsystem}
 L_K  v &=& f(v)  &\textrm{ in }\R^n_+ = \{ x_n>0\} \,,\\
-v &=& 0  &\textrm{ in }\overline{\R^n_-} = \{ x_n\leq 0\}\,,\\
+v &=& 0  &\textrm{ in } \R^n \setminus \R^n_+ = \{ x_n\leq 0\}\,,\\
 \ds \lim_{x_n \to + \infty} v(x',x_n) &=& 1 \,\,\, &\textrm{ uniformly}.
 \eeqc
 \end{equation}

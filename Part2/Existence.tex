@@ -21,7 +21,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	\usub & \leq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
 	\end{equation}
-	with $f$ an odd $C^2$ function and $\varphi$ a doubly radial odd function.
+	with $f$ an odd $C^1$ function and $\varphi$ a doubly radial odd function.
 	
 	Then, there exists $u\in C^{2s+\varepsilon}(B_R)$ for some $\varepsilon>0$, a solution to
 	\begin{equation}
@@ -147,14 +147,7 @@ With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existen
 
 
 
-The fact of being $u$ positive in $\ocal$ yields that it is stable in this set. Recall that we say that a bounded solution $w$ to $L_K w = f(w)$ in $\Omega\subset \R^n$ is \emph{stable} if the second variation of the energy at $w$ is nonnegative. That is, if
-\begin{equation}
-	\label{Eq:StablityCondition}	
-	Q_w(\xi) := \dfrac{1}{2} \int_{\R^n} \int_{\R^n} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\Omega} f'(w) \xi^2 \d x \geq 0
-\end{equation}
-for every $\xi \in C^\infty_0 (\Omega)$.
-
-\todo[inline]{poner esto de antes en la intro y la remark aqui?? mejorar un poco la estructura}
+The fact of being $u$ positive in $\ocal$ yields that it is stable in this set, as explained in the following remark. 
 
 
 \begin{remark}
