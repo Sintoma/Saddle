@@ -1,0 +1,87 @@
+	\definecolor{lila_custom}{RGB}{201,69,254}
+	\definecolor{naranja_custom}{RGB}{255,148,0}
+	\definecolor{azul_custom}{RGB}{66,240,209}
+
+
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+	
+	% region
+  \path[fill=azul_custom,line cap=round,miter limit=4.00,line width=1.216pt]
+    (240.7102,301.4986) .. controls (239.5378,290.8229) and (235.2655,275.5999) ..
+    (233.1111,270.2708) .. controls (231.6679,266.7011) and (226.2450,256.2894) ..
+    (223.3441,251.9059) .. controls (221.5540,253.8819) and (220.4231,254.7485) ..
+    (218.3094,256.8178) .. controls (217.7125,257.4023) and (204.6450,270.4255) ..
+    (191.4950,283.5915) .. controls (179.5924,295.5087) and (167.5986,307.5806) ..
+    (165.1544,309.9625) .. controls (163.2221,309.9625) and (153.1194,309.6590) ..
+    (127.0089,309.7371) .. controls (127.0089,300.7477) and (126.8614,286.4484) ..
+    (126.8614,272.6599) .. controls (136.0761,263.4053) and (175.6111,223.8545) ..
+    (186.0972,213.3320) .. controls (180.3420,209.5795) and (175.3240,207.1994) ..
+    (169.6768,204.7974) .. controls (163.9273,202.3520) and (148.5079,197.8607) ..
+    (143.8117,197.5422) .. controls (141.7467,197.4022) and (137.5280,196.8184) ..
+    (132.0264,196.3783) -- (127.1106,195.8886) -- (126.9159,170.6802) .. controls
+    (126.7753,152.4619) and (126.5883,146.8272) .. (126.9992,146.8284) .. controls
+    (148.8713,146.8873) and (165.0099,150.8658) .. (171.8668,152.9098) .. controls
+    (178.7236,154.9539) and (205.4822,164.6967) .. (222.2893,177.4248) .. controls
+    (239.0964,190.1529) and (248.1852,199.1364) .. (260.0405,214.8300) .. controls
+    (271.8959,230.5235) and (280.0450,251.7862) .. (285.3515,268.6864) .. controls
+    (290.6580,285.5866) and (290.7556,300.0855) .. (290.7580,302.4373) --
+    (290.5690,309.7572) -- (266.4295,309.9904) -- (241.2950,309.7858) -- cycle;
+    
+    %y-axis
+  \path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+    (127.0562,310.7463) -- (127.0562,101.8267);
+
+	%x-axis	
+  \path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+    (127.0562,309.8063) -- (336.0045,309.8063);
+
+    %x-axis cap
+  \path[draw=black,fill=black,even odd rule,line width=0.497pt]
+    (334.8795,309.8063) -- (332.5416,312.1289) -- (340.7243,309.8063) --
+     (332.5416,307.4838) -- cycle;
+
+	%y-axis cap    
+  \path[draw=black,fill=black,even odd rule,line width=0.497pt]
+	(127.0562,101.8267) -- (129.3788,104.1646) -- (127.0562,95.9819) --
+	(124.7336,104.1646) -- cycle;
+
+    %big circle
+  \path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+    (126.9994,146.8284) .. controls (167.1343,146.8284) and (209.4390,161.7596) ..
+    (242.3289,194.6494) .. controls (275.2187,227.5392) and (290.5691,269.5958) ..
+    (290.5691,309.7573);
+
+	%medium circle  
+  \path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+	(126.9953,171.9000) .. controls (152.9707,171.9000) and (193.8433,181.6465) ..
+	(224.6682,212.4714) .. controls (255.4931,243.2963) and (266.4295,283.9895) ..
+	(266.4295,309.9915);
+
+	%small circle
+  \path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+	(127.1106,195.8887) .. controls (153.0860,195.8887) and (181.3563,204.4607) ..
+	(206.6037,229.7081) .. controls (231.3251,254.4296) and (241.2951,283.7839) ..
+	(241.2951,309.7858);
+
+	%cone 	
+   \path[draw=black,line join=miter,line cap=butt,miter limit=4.00,even odd
+	rule,line width=1.570pt] (127.1858,309.6361) -- (313.9782,122.8288);
+
+    %cone+1    
+  \path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.504pt]
+    (165.1544,309.9625) -- (306.3176,168.7989);
+
+    %cone-1  
+  \path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.504pt]
+    (127.0825,272.3606) -- (268.2467,131.1961);
+
+\node at (127,87) {\normalsize $|x''|$};
+\node at (353, 311) {\normalsize $|x'|$};
+\node at (238,320) {\normalsize $S$};
+\node at (263, 320) {\normalsize $S\!+\!1$};
+\node at (295, 320) {\normalsize $S\!+\!2$};
+\node at (323, 117) {\normalsize $\ccal$};
+\node at (266, 250) {\normalsize $\Omega_S$};
+
+\end{tikzpicture}
+
