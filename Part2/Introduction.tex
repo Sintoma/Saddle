@@ -57,11 +57,6 @@ f'(\tau)\tau \leq f(\tau) \quad \textrm{ for all } \tau \in (0,1)\,.
 This is a strict inequality whenever the concavity is strict.
 
 
-
-\todo[inline]{Esto cuando la layer}
-Comentario: $f'(\pm 1) < 0$ equivale a $G''(\pm 1) > 0\,,$ que es la hipotesis junto con las otras para que exista el Layer
-\todo[inline]{Hasta aqui}
-
 Before introducing saddle-shaped solutions, we need to recall some definitions. First, we present the Simons cone, which is a central object along this paper. It is defined in $\R^{2m}$ by
 \begin{equation}
 \label{Eq:SimonsCone}
@@ -199,32 +194,29 @@ Note that the previous theorem was already proved in \cite{FelipeSanz-Perela:Int
 The second main result of this paper is Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution} below, on the asymptotic behavior of saddle-shaped solutions at infinity. Before state it, let us introduce an important function in the study of the integro-differential Allen-Cahn equation: the layer solution.
 
 
-We say....
+We say that a solution $v$ to $L_K v = f(v)$ in $\R^n$ is a \emph{layer solution} if $v$ is increasing in one direction, say $e\in \Sph^{n-1}$ and $v(x) \to \pm 1$ as $x\cdot e \to \pm 1$ (not necessarily uniformly). By a result of Cozzi and Passalacqua in \cite{CozziPassalacqua}, under the assumptions \eqref{Eq:Hypothesesf} on $f$, for every kernel $K$ such that $L_K\in \lcal_0(1,\s,\Lambda, \lambda)$ there exist a layer solution  to $L_K v = f(v)$ in $\R$ which is odd with respect to some point and is unique up to translations. 
+
+From this solution in $\R$, it is easy to construct a layer solution to a problem in $\R^n$ for an operator with a different (but related kernel). This relation is given in Proposition~\ref{Prop:KernelsDimension}. 
 
 
-
-\begin{definition}
-	Let $u_0$ the unique solution of the following problem.
+Now, let $K\in\lcal_0(n,\s,\Lambda, \lambda)$ be a $n$-dimensional kernel and $K_1\in \lcal_0(1,\s,\Lambda, \lambda)$ be a $1$-dimensional one, and assume that they are related as in Proposition~\ref{Prop:KernelsDimension}. Let $u_0$ be the unique solution of the following problem.
 	\begin{equation}
 	\label{Eq:LayerSolution}
 	\beqc{\PDEsystem}
-	L_{K_1}  u_0 &=& f(w) & \textrm{ in }\R\,,\\
-	u_0 &>& 0 & \textrm{ in } (0,+\infty)\,,\\
+	L_{K_1}  u_0 &=& f(u_0) & \textrm{ in }\R\,,\\
+	\dot{u}_0 &>& 0 & \textrm{ in } \R\,,\\
 	u_0(x) & = &-u_0(-x)  & \textrm{ in }\R\,,\\
 	\ds \lim_{x \to \pm \infty} u_0(x) &=& \pm 1. & 
 	\eeqc
 	\end{equation}
-	Then, if $K$ and $K_1$ are related as in Proposition~\ref{Prop:KernelsDimension}, we say that $u_0$ is the \emph{layer solution} associated to the problem $L_K u = f(u)$ in $\R^{2m}$.
-\end{definition}
-Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone.
+Then, we say that $u_0$ is the layer solution associated to the problem $L_K w = f(w)$ in $\R^{n}$. Note that $u_0(x\cdot e)$ is a layer solution of the previous equation in $\R^n$ for some $e\in \Sph^{n-1}$ (see the details in Section~\ref{Sec:Asymptotic}).
 
-
-The importance of the layer solution $u_0$ in relation with saddle-shaped solution $u$ is that the associated function
+The importance of the layer solution $u_0$ in relation with saddle-shaped solutions is that the associated function
 	\begin{equation}
 	\label{Eq:DefOfU}
 	U(x):= u_0 \left( \dfrac{|x'| - |x''|}{\sqrt{2}} \right)\,,
 	\end{equation}
-describes the asymptotic behavior of $u$ at infinity. Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone (see Lemma~4.2 in \cite{CabreTerraII}). Therefore, we can understand the function $U$ as the layer solution centered at each point of the Simons cone and oriented in the normal direction to the cone.
+describes the asymptotic behavior of saddle solutions at infinity. Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone (see Lemma~4.2 in \cite{CabreTerraII}). Therefore, we can understand the function $U$ as the layer solution centered at each point of the Simons cone and oriented in the normal direction to the cone.
 
 The precise statement on the asymptotic behavior of saddle-shaped solutions at infinity is the following.
 
@@ -241,7 +233,7 @@ The precise statement on the asymptotic behavior of saddle-shaped solutions at i
 	as $ R\to +\infty$.
 \end{theorem}
 
-To establish the asymptotic behavior of saddle-shaped solutions we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. ....\todo{Seguir}
+To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for odd solutions to to a semilinear equation that are nonnegative in a half-space.
 
 The last main result of this paper is the uniqueness of the saddle shaped solution, stated next.
 
@@ -250,11 +242,11 @@ The last main result of this paper is the uniqueness of the saddle shaped soluti
     Let $f$ satisfy \eqref{Eq:Hypothesesf} and let $L\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists at most one saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}.
 \end{theorem}
 
-To prove this result we need two ingredients. The first one is the asymptotic behavior of saddle-solutions given in Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}. The second one is \todo{SAeguir} 
+To prove this result we need two ingredients. The first one is the asymptotic behavior of saddle-solutions given in Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}. The second one is a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ which is given in Proposition~\ref{Prop:MaximumPrincipleLinearized}. To establish it, we will need to use a maximum principle in ``narrow'' domains that we also prove in Section~\ref{Sec:MaximumPrinciple}.
 
+To conclude this introduction, let us make some comments on the importance of problem \eqref{Eq:NonlocalAllenCahn} and its relation with a famous conjecture raised by De Giorgi and the theory of (classical and nonlocal) minimal surfaces.
 
-
-A main open problem (even in the local case) is to determine whether the saddle-shaped solution is a minimizer of the energy functional associated to the equation (see \eqref{Eq:Energy}), depending on the dimension $2m$. This question is deeply related to the regularity theory of local and nonlocal minimal surfaces, as explained next.
+A main open problem (even in the local case) is to determine whether the saddle-shaped solution is a minimizer of the energy functional associated to the equation, depending on the dimension $2m$. This question is deeply related to the regularity theory of local and nonlocal minimal surfaces, as explained next.
 
 In the seventies, Modica and Mortola (see \cite{Modica,ModicaMortola}) proved that, considering an appropriately rescaled version of the (local) Allen-Cahn equation, the corresponding energy functionals $\Gamma$-converge to the perimeter functional. Thus, the minimizers of the equation converge to the characteristic function of a set of minimal perimeter. This same fact holds for the equation with the fractional Laplacian, though we have two different scenarios depending on the parameter $\s \in (0,1)$. If $\s \geq 1/2$, the rescaled energy functionals associated to the equation $\Gamma$-converge to the classical perimeter (see \cite{GiovanniBouchitteSeppecher,Gonzalez}), while in the case $\s \in (0,1/2)$ they $\Gamma$-converge to the fractional perimeter (see \cite{SavinValdinoci-GammaConvergence}). As a consequence, if the saddle-shaped solution was proved to be a minimizer in a certain dimension for some $\s \in (0,1/2)$, it would follow that the Simons cone $\ccal$ would be a minimizing nonlocal $\s$-minimal surface in such dimensions. This last statement is an open problem in any dimension. The only available result related to this question is the recent result in \cite{Felipe-Sanz-Perela:SaddleFractional} that states that the Simons cone is a stable nonlocal $\s$-minimal surface in dimensions $2m\geq 14$.
 
@@ -281,14 +273,7 @@ Concerning the conjecture with more general operators like $L_K$, fewer results 
 
 
 
-
-\bigskip
-\bigskip
-\bigskip
--------------
-\bigskip
-\bigskip
-\bigskip
+The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present some preliminary results that will be used in the rest of the article. Section~\ref{Sec:Existence} is devoted to the proof of Theorem~\ref{Th:Existence} on the existence of saddle-shaped solutions. In Section~\ref{Sec:SymmetryResults} we establish two symmetry results, Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. Section~\ref{Sec:Asymptotic} is devoted to the layer solution of problem \eqref{Eq:NonlocalAllenCahn} and the proof of the asymptotic behavior of saddle-shaped solutions, Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}. Finally, Section~\ref{Sec:MaximumPrinciple} concerns the proof of a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}), and the proof of Theorem~\ref{Th:Uniqueness}, establishing the uniqueness of the saddle-shaped solution.
 
 
 
