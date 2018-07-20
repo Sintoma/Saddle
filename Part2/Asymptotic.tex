@@ -115,18 +115,7 @@ We prove here the first statement of this lemma, and we postpone the proof of th
 
 Now we have all the ingredients to establish the asymptotic behavior of the saddle-solution.
 
-\begin{theorem}
-\label{Th:AsymptoticBehaviourSaddleSolution}
-Let $f\in C^{2,\alpha}(\R)$ of Allen-Cahn type. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by \eqref{Eq:DefOfU}.
 
-Then,
-$$
-\norm{u-U}_{L^\infty(\R^n\setminus B_R)}
-+\norm{\nabla u-\nabla U}_{L^\infty(\R^n\setminus B_R)}
-+\norm{D^2u-D^2U}_{L^\infty(\R^n\setminus B_R)} \to 0
-$$
-as $ R\to +\infty$.
-\end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}]
 By contradiction, assume that the result does not hold. Then, there exists an $\varepsilon>0$ and a sequence $\{x_k\}$, such that
@@ -188,11 +177,11 @@ For the details about the fact that $\ocal \rightarrow H$, see \cite{CabreTerraI
 
 As in the previous case, by stability $w$ cannot be zero, and then, by Theorem \ref{Th:SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Therefore, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
 \begin{align*}
-u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + o(1) \\
-&= u_0((x_k-x_k^0)\cdot \nu) + o(1) \\
-&= u_0((x_k-x_k^0)\cdot \nu_k^0) + o(1) \\
-&= u_0(d_k |\nu_k^0|^2) + o(1) \\
-&= u_0(d_k) + o(1) = U (x_k) + o(1),
+u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + \mathrm{o}(1) \\
+&= u_0((x_k-x_k^0)\cdot \nu) + \mathrm{o}(1) \\
+&= u_0((x_k-x_k^0)\cdot \nu_k^0) + \mathrm{o}(1) \\
+&= u_0(d_k |\nu_k^0|^2) + \mathrm{o}(1) \\
+&= u_0(d_k) + \mathrm{o}(1) = U (x_k) + \mathrm{o}(1),
 \end{align*}
 contradicting \eqref{Eq:ContradictionAsymptotic}. The same is done for $\nabla u$ and $D^2 u$.
 \end{proof}
