@@ -51,30 +51,6 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 \end{proof}
 
 
-Thanks to this result, we can now define the concept of layer solution.
-
-\begin{definition}
-	Let $u_0$ the unique solution of the following problem.
-	\begin{equation}
-		\label{Eq:LayerSolution}
-			\beqc{\PDEsystem}
-			L_{K_1}  u_0 &=& f(w) & \textrm{ in }\R\,,\\
-			u_0 &>& 0 & \textrm{ in } (0,+\infty)\,,\\
-			u_0(x) & = &-u_0(-x)  & \textrm{ in }\R\,,\\
-			\ds \lim_{x \to \pm \infty} u_0(x) &=& \pm 1. & 
-			\eeqc
-	\end{equation}
-	Then, if $K$ and $K_1$ are related as in Proposition~\ref{Prop:KernelsDimension}, we say that $u_0$ is the \emph{layer solution} associated to the problem $L_K u = f(u)$ in $\R^{2m}$.
-	
-	We also define the associated function
-	\begin{equation}
-		\label{Eq:DefOfU}
-		U(x):= u_0 \left( \dfrac{|x'| - |x''|}{\sqrt{2}} \right)\,.
-	\end{equation}
-\end{definition}
-Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone.
-
-The existence of the layer solution was proved in \cite{CabreSolaMorales,CabreSireII} for the fractional Laplacian and later in \cite{CozziPassalacqua} for a general class of operators including the ones considered in this paper. 
 
 
 
