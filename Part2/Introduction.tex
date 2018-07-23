@@ -27,7 +27,7 @@ $$
 where $\s \in (0,1)$ and $c_{n, \s}$ is a normalizing constant given by
 \begin{equation}
   \label{Eq:ConstantFracLaplacian}
-  c_{n,\s} = s\dfrac{2^{2\s} \Gamma(\frac{n}{2}+\s) }{\pi^{n/2} \Gamma(1-\s)}
+  c_{n,\s} = \s\dfrac{2^{2\s} \Gamma(\frac{n}{2}+\s) }{\pi^{n/2} \Gamma(1-\s)}
 \end{equation}
 (see for instance \cite{BucurValdinoci}).
 
@@ -81,7 +81,7 @@ $$
 \ocal:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| > |x''|} \ \textrm{ and } \
 \ical:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| < |x''|}.
 $$
-Both domains $\ocal$ and $\ical$ belong to a family of sets in $\R^{2m}$ which are called of \emph{double revolution}. They are sets that are invariant under orthogonal transformations in the first $m$ variables and also under orthogonal transformations in the last $m$ variables. That is, $\Omega\subset \R^{2m}$ is a set of double revolution if $R(\Omega) = \Omega$ for any given transformation $R\in O(m)^2 = O(m) \times O(m)$, where  $O(m)$ is the orthogonal group of $\R^m$.
+Both domains $\ocal$ and $\ical$ belong to a family of sets in $\R^{2m}$ which are called of \emph{double revolution}. They are sets that are invariant under orthogonal transformations in the first $m$ variables and also under orthogonal transformations in the last $m$ variables. That is, $\Omega\subset \R^{2m}$ is a set of double revolution if $R\Omega = \Omega$ for any given transformation $R\in O(m)^2 = O(m) \times O(m)$, where  $O(m)$ is the orthogonal group of $\R^m$.
 
 In this paper we deal with functions that are \emph{doubly radial}. These are functions $w:\R^{2m}  \to \R$ that only depend on the modulus of the first $m$ variables and on the modulus of the last $m$ ones, i.e., $w(x) = w(|x'|,|x''|)$. Equivalently, $w(Rx) = w(x)$ for every $R \in O(m)^2$.
 
@@ -145,9 +145,9 @@ L_K w (x) = \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x,
 Furthermore,
 \begin{equation}
 \label{Eq:ZeroOrderTerm}
-c \dist(x,\ccal)^{-2\s} \leq \int_{\ocal} \overline{K}(x, y^\star) \d y \leq C \dist(x,\ccal)^{-2\s},
+\frac{1}{C} \dist(x,\ccal)^{-2\s} \leq \int_{\ocal} \overline{K}(x, y^\star) \d y \leq C \dist(x,\ccal)^{-2\s},
 \end{equation}
-with $C\geq c>0$ only depending on $m, \s, \lambda$ and $\Lambda$ (see the details in \cite{FelipeSanz-Perela:IntegroDifferentialI}).
+with $C>0$ only depending on $m, \s, \lambda$ and $\Lambda$ (see the details in \cite{FelipeSanz-Perela:IntegroDifferentialI}).
 
 
 Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential term plus a zero order term with a nonnegative coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. This lead us in \cite{FelipeSanz-Perela:IntegroDifferentialI} to introduce the following definition.
@@ -167,7 +167,7 @@ One of the main results in \cite{FelipeSanz-Perela:IntegroDifferentialI} was a p
 	Let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$ and assume that 
 	\begin{equation}
 	\label{Eq:SqrtConvex}  
-	K(\sqrt{\tau}) \text{ is a convex function of }\tau\,.
+	K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,.
 	\end{equation}
 	Then, $L_K\in \lcal_\star$. Moreover, if $K\in C^1((0,+\infty))$, then \eqref{Eq:SqrtConvex} is a necessary condition for $L_K$ to belong to $\lcal_\star$.
 \end{theorem}
@@ -190,7 +190,7 @@ We say that a solution $v$ to $L_K v = f(v)$ in $\R^n$ is a \emph{layer solution
 From this solution in $\R$, it is easy to construct a layer solution to a problem in $\R^n$ for an operator with a different (but related kernel). This relation is given in Proposition~\ref{Prop:KernelsDimension}. 
 
 
-Now, let $K\in\lcal_0(n,\s,\Lambda, \lambda)$ be a $n$-dimensional kernel and $K_1\in \lcal_0(1,\s,\Lambda, \lambda)$ be a $1$-dimensional one, and assume that they are related as in Proposition~\ref{Prop:KernelsDimension}. Let $u_0$ be the unique solution of the following problem.
+Now, let $K\in\lcal_0(n,\s,\Lambda, \lambda)$ be a $n$-dimensional kernel and $K_1\in \lcal_0(1,\s,\Lambda, \lambda)$ be a $1$-dimensional one, and assume that they are related as in Proposition~\ref{Prop:KernelsDimension}. We define $u_0$ to be the unique solution of the following problem.
 \begin{equation}
 \label{Eq:LayerSolution}
 \beqc{\PDEsystem}
@@ -200,14 +200,14 @@ u_0(x) & = &-u_0(-x)  & \textrm{ in }\R\,,\\
 \ds \lim_{x \to \pm \infty} u_0(x) &=& \pm 1. & 
 \eeqc
 \end{equation}
-Then, we say that $u_0$ is the layer solution associated to the problem $L_K w = f(w)$ in $\R^{n}$. Note that $u_0(x\cdot e)$ is a layer solution of the previous equation in $\R^n$ for some $e\in \Sph^{n-1}$ (see the details in Section~\ref{Sec:Asymptotic}). Moreover, this last property holds for every $e\in \Sph^{n-1}$ whenever the kernel is radially symmetric.
+Note that $u_0(x_n)$ is a layer solution to $L_k w = f(w)$ in $\R^n$ (see the details in Section~\ref{Sec:Asymptotic}). Moreover, the same holds for $u_0(x\cdot e)$ for every $e\in \Sph^{n-1}$ whenever the kernel is radially symmetric.
 
 The importance of the layer solution $u_0$ in relation with saddle-shaped solutions is that the associated function
 \begin{equation}
 \label{Eq:DefOfU}
-U(x):= u_0 \left( \dfrac{|x'| - |x''|}{\sqrt{2}} \right)\,,
+U(x):= u_0 \left( \dfrac{|x'| - |x''|}{\sqrt{2}} \right)\,
 \end{equation}
-describes the asymptotic behavior of saddle solutions at infinity. Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone (see Lemma~4.2 in \cite{CabreTerraII}). Therefore, we can understand the function $U$ as the layer solution centered at each point of the Simons cone and oriented in the normal direction to the cone.
+describes the asymptotic behavior of saddle solutions at infinity. Note that $(|x'| - |x''| )/\sqrt{2}$ is the signed distance to the Simons cone (see Lemma~4.2 in \cite{CabreTerraII}). Therefore, we can understand the function $U$ as the layer solution $u_0$ centered at each point of the Simons cone and oriented in the normal direction to the cone.
 
 The precise statement on the asymptotic behavior of saddle-shaped solutions at infinity is the following.
 
@@ -224,9 +224,9 @@ The precise statement on the asymptotic behavior of saddle-shaped solutions at i
 	as $ R\to +\infty$.
 \end{theorem}
 
-To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for odd solutions to to a semilinear equation that are nonnegative in a half-space.
+To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for odd solutions to a semilinear equation that are nonnegative in a half-space.
 
-The last main result of this paper is the uniqueness of the saddle shaped solution, stated next.
+The last main result of this paper is the uniqueness of the saddle-shaped solution, stated next.
 
 \begin{theorem}[Uniqueness of the saddle-shaped solution]
 	\label{Th:Uniqueness}
@@ -242,7 +242,7 @@ A main open problem (even in the local case) is to determine whether the saddle-
 In the seventies, Modica and Mortola (see \cite{Modica,ModicaMortola}) proved that, considering an appropriately rescaled version of the (local) Allen-Cahn equation, the corresponding energy functionals $\Gamma$-converge to the perimeter functional. Thus, the minimizers of the equation converge to the characteristic function of a set of minimal perimeter. This same fact holds for the equation with the fractional Laplacian, though we have two different scenarios depending on the parameter $\s \in (0,1)$. If $\s \geq 1/2$, the rescaled energy functionals associated to the equation $\Gamma$-converge to the classical perimeter (see \cite{GiovanniBouchitteSeppecher,Gonzalez}), while in the case $\s \in (0,1/2)$ they $\Gamma$-converge to the fractional perimeter (see \cite{SavinValdinoci-GammaConvergence}). As a consequence, if the saddle-shaped solution was proved to be a minimizer in a certain dimension for some $\s \in (0,1/2)$, it would follow that the Simons cone $\ccal$ would be a minimizing nonlocal $(2\s)$-minimal surface in such dimensions. This last statement on the saddle-shaped solution is an open problem in any dimension (although it is known that the Simons cone is not a minimizer in dimension $2m=2$). The only available result related to this question is the recent result in \cite{Felipe-Sanz-Perela:SaddleFractional} that states that the saddle-shaped solution to the fractional Allen-Cahn equation is stable in dimensions $2m\geq 14$. As a consequence of this and a result in \cite{CabreCintiSerra-Stable}, the Simons cone is a stable nonlocal $(2\s)$-minimal surface in dimensions $ 2m\geq 14$.
 
 
-Moreover, as explained below, saddle-shaped solutions are natural objects to build a counterexample to a famous conjecture raised by De Giorgi, that reads as follows. Let $u$ be a bounded solution of $-\Delta  u = u - u^3$ in $\R^n$ which is monotone in one direction, say $\partial_{x_n} u > 0$. Then, if $n\leq 8$, $u$ is one dimensional, i.e., $u$ depends only on one Euclidean variable. This conjecture was proved true in dimensions $n=2$ and  $n=3$ (see \cite{GhoussoubGui,AmbrosioCabre}), and in dimensions $4\leq n \leq 8$ with the extra assumption of
+Moreover, as explained below, saddle-shaped solutions are natural objects to build a counterexample to a famous conjecture raised by De Giorgi, that reads as follows. Let $u$ be a bounded solution of $-\Delta  u = u - u^3$ in $\R^n$ which is monotone in one direction, say $\partial_{x_n} u > 0$. Then, if $n\leq 8$, $u$ is one dimensional, i.e., $u$ depends only on one Euclidean variable. This conjecture was proved to be true in dimensions $n=2$ and  $n=3$ (see \cite{GhoussoubGui,AmbrosioCabre}), and in dimensions $4\leq n \leq 8$ with the extra assumption of
 \begin{equation}
 \label{Eq:SavinCondition}
 \lim_{x_n \to \pm \infty} u(x',x_n) = \pm 1 \quad \text{ for all } x'\in \R^{n-1}\,,
@@ -260,5 +260,5 @@ Concerning the conjecture with more general operators like $L_K$, fewer results 
 
 
 
-The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present some preliminary results that will be used in the rest of the article. Section~\ref{Sec:Existence} is devoted to the proof of Theorem~\ref{Th:Existence} on the existence of saddle-shaped solutions. In Section~\ref{Sec:SymmetryResults} we establish two symmetry results, Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. Section~\ref{Sec:Asymptotic} is devoted to the layer solution of problem \eqref{Eq:NonlocalAllenCahn} and the proof of the asymptotic behavior of saddle-shaped solutions, Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}. Finally, Section~\ref{Sec:MaximumPrinciple} concerns the proof of a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}), and the proof of Theorem~\ref{Th:Uniqueness}, establishing the uniqueness of the saddle-shaped solution.
+The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present some preliminary results that will be used in the rest of the article. Section~\ref{Sec:Existence} contains the proof of Theorem~\ref{Th:Existence} on the existence of saddle-shaped solutions. In Section~\ref{Sec:SymmetryResults} we establish two symmetry results, Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. Section~\ref{Sec:Asymptotic} is devoted to the layer solution of problem \eqref{Eq:NonlocalAllenCahn} and the proof of the asymptotic behavior of saddle-shaped solutions, Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}. Finally, Section~\ref{Sec:MaximumPrinciple} concerns the proof of a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}), aa well as the proof of Theorem~\ref{Th:Uniqueness}, establishing the uniqueness of the saddle-shaped solution.
 
