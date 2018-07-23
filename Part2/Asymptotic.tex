@@ -42,7 +42,9 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	This shows the first equality in \eqref{Eq:OneDimKernel}. The alternative expression of the kernel $K_1$, that is useful in some cases, can be obtained from the change of variable $\theta = t\sigma$. Furthermore, in the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables using the previous computations.
 	
 	The proof of point $(ii)$ follows directly from the first expression of the unidimensional kernel $K_1$. That is,
-	$$ K_1(t_2)-K_1(t_1) = \int_{\R^{n-1}} \left\{ K(\theta,t_2) - K(\theta,t_1)\right\} \d \theta \geq 0 \quad \text{ for any } \quad t_2>t_1>0. $$
+	$$ 
+	K_1(t_2)-K_1(t_1) = \int_{\R^{n-1}} \left\{ K(\theta,t_2) - K(\theta,t_1)\right\} \d \theta \geq 0 \quad \text{ for any } \quad t_2>t_1>0. 
+	$$
 	
 	We establish now point $(iii)$. To do it, we bound the kernel $K_1$ using the ellipticity condition on $K$:
 	\begin{align*}
@@ -70,7 +72,7 @@ In our arguments we need also to show that the second derivative of the layer go
 
 \begin{lemma}
 	\label{Lemma:SecondDerivativeLayer}
-	Let $u_0$ be the layer solution associated to the kernel $K_1$, that is, $u_0$ solving \eqref{Eq:LayerSolution}. Then, 
+	Let $K_1:\R \setminus \{0\} \to (0,+\infty)$ be a kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and assume that it is decreasing in $(0,+\infty)$. Let $u_0$ be the layer solution associated to the kernel $K_1$, that is, $u_0$ solving \eqref{Eq:LayerSolution}. Then, 
 	\begin{enumerate}[label=(\roman{*})]
 		\item $\ddot{u}_0 (x) \to 0$ as $x\to \pm \infty$.	
 		\item  $\ddot{u}_0 (x) < 0$ in $(0,+\infty)$.
