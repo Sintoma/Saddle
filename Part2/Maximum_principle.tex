@@ -159,7 +159,7 @@ The same argument used in the previous proof can be used to establish the remain
 	\beqc{\PDEsystem}
 	L_{K_1} v - f'(u_0)v &\leq &0 & \text{ in } (0,+\infty)\,.\\
 	v(x) &= &-v(-x) & \text{ for every } x\in \R\,,\\
-	\ds \limsup_{x\to \infty} v(x) &= & 0\,.
+	\ds \limsup_{x\to +\infty} v(x) &= & 0\,.
 	\eeqc
 	$$
 	Now, we follow the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized} but with the previous problem, replacing $u$ by $u_0$ and using that
@@ -171,7 +171,7 @@ The same argument used in the previous proof can be used to establish the remain
 	The fact that the inequality is strict follows from the strong maximum principle for odd functions in $\R$, as follows. Suppose by contradiction that there exists a point $x_0\in (0,+\infty)$ such that $v(x_0) = 0$. Then,
 	$$
 	0 \geq L_{K_1} v (x_0) = - \int_{-\infty}^{+\infty}	v(y) K_1(x_0 - y) \d y = - \int_{-\infty}^{+\infty} v(y) \{ K_1(x_0 - y) - K_1(x_0 + y)\} \d y > 0\,,$$
-	arriving at a contradiction. Here we have used that $v\not \equiv 0$ and that $K_1(x - y) \geq  K_1(x + y)$ for every $x>0$ and $y>0$. \todo{Check!}
+	arriving at a contradiction. Here we have used that $v\not \equiv 0$ and point $(ii)$ from Proposition~\ref{Prop:KernelsDimension}, which yields $K_1(x - y) \geq  K_1(x + y)$ for every $x>0$ and $y>0$.
 \end{proof}
 
 
@@ -188,7 +188,7 @@ With these ingredients available, we can finally establish the uniqueness of the
 	$$
 	L_K v = f(u_1) - f(u_2) \leq f'(u_2) (u_1 - u_2) = f'(u_2) v \quad \textrm{ in } \ocal\,,
 	$$
-	since $f$ is concave in $(0,1)$. Moreover, by the asymptotic result (see Theorem~\ref{Thm:AsymptoticBehaviourSaddleSolution}), we have
+	since $f$ is concave in $(0,1)$. Moreover, by the asymptotic result (see Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}), we have
 	$$
 	\limsup_{x\in \ocal, \ |x|\to \infty} v(x) = 0\,.
 	$$

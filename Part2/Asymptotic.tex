@@ -14,9 +14,10 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
 	Let $L_K $ a symmetric and translation invariant intego-differential operator with kernel $K:\R^n \to \R$. Define the one dimensional kernel $K_1$ by
-	$$ K_1(t) = |t|^{n-1} \int_{\R^{n-1}} K\left((t\sigma,t)\right) \d \sigma. $$
+	$$ K_1(t) := \int_{\R^{n-1}} K\left(\theta,t\right) \d \theta = |t|^{n-1} \int_{\R^{n-1}} K\left(t\sigma,t\right) \d \sigma. $$
 	\begin{enumerate}[label=(\roman{*})]
-		\item Let $v:\R\to\R$ and consider $u:\R^n\to\R$ defined by $u(x) = v(x_n)$. Then, $L_K u(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K u(x) = L_{K_1} v(x \cdot e)$.
+		\item Let $v:\R\to\R$ and consider $w:\R^n\to\R$ defined by $w(x) = v(x_n)$. Then, $L_K w(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens for $w(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K w(x) = L_{K_1} v(x \cdot e)$.
+		\item $K_1(t)$ is nonincreasing/decreasing in $(0,+\infty)$ if $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$.
 		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$.
 		\item In particular, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
 		
@@ -26,18 +27,22 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 \begin{proof}
 	We start proving point $(i)$. We write $y=(y',y_n)$, with $y'\in \R^{n-1}$.
 	\begin{align*}
-	L_K u(x) &= \int_{\R^n} \left\{ u(x)-u(y) \right\} K(x-y) \d y \\
-	&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left((x'-y',x_n-y_n)\right) \d y' \d y_n.
+	L_K w(x) &= \int_{\R^n} \left\{ w(x)-w(y) \right\} K(x-y) \d y \\
+	&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left(x'-y',x_n-y_n\right) \d y' \d y_n.
 	\end{align*}
-	Now we make the change of variables $y' = x'-(x_n-y_n)\sigma$. That is,
+	Now we make the change of variables $\theta = x'-y'$. That is,
 	\begin{align*}
-	L_K u(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) |x_n-y_n|^{n-1} \d \sigma \d y_n \\
-	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} |x_n-y_n|^{n-1} \int_{\R^{n-1}} K\left((\sigma(x_n-y_n),x_n-y_n\right)) \d\sigma \d y_n \\
+	L_K w(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left(\theta,x_n-y_n\right) \d \theta \d y_n \\
+	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left(\theta,x_n-y_n\right) \d\theta \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n).
 	\end{align*}
-	In the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables using the previous computations.
 	
-	We establish now point $(ii)$. To do it, we bound the kernel $K_1$ using the ellipticity condition on $K$:
+	The alternative expression of the kernel $K_1$, that is useful in some cases, can be obtained from the change of variable $\theta = t\sigma$.	In the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables using the previous computations.
+	
+	The proof of point $(ii)$ follows directly from the first expression of the unidimensional kernel $K_1$. That is,
+	$$ K_1(t_2)-K_1(t_1) = \int_{\R^{n-1}} \left\{ K(\sigma,t_2) - K(\sigma,t_1)\right\} \d \sigma \geq 0 \quad \text{ for any } \quad t_2>t_1>0. $$
+	
+	We establish now point $(iii)$. To do it, we bound the kernel $K_1$ using the ellipticity condition on $K$:
 	\begin{align*}
 	K_1(t) &= |t|^{n-1} \int_{\R^{n-1}} K\left(t(\sigma,1)\right) \d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,\s} \frac{\lambda}{|t|^{n+2\s}(|\sigma|^2+1)^{\frac{n+2s}{2}}} \d\sigma \\
 	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^{n-1}} \frac{\d\sigma}{(|\sigma|^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \dfrac{2 \pi^{\frac{n-1}{2}}}{\Gamma(\frac{n-1}{2})} \int_0^\infty \dfrac{r^{n-2}}{(r^2+1)^{\frac{n+2\s}{2}}} \d r \\	
@@ -47,7 +52,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	\end{align*}
 	where we have used \eqref{Eq:ConstantFracLaplacian} and the definition of the Beta and Gamma functions. The upper bound for $K_1$ is obtained in the same way.
 	
-	Finally, point $(iii)$ follows from noticing that the previous computation is an equality with $\lambda = 1$ in the case of the fractional Laplacian.
+	Finally, point $(iv)$ follows from noticing that the previous computation is an equality with $\lambda = 1$ in the case of the fractional Laplacian.
 \end{proof}
 
 
