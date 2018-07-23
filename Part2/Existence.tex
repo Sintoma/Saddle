@@ -8,36 +8,36 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
-	Let $L_K\in \lcal_\star(2m,\s)$ for some $0<\s<1$. Assume that $\usub \leq \usup$ are two bounded functions being doubly radial and odd with respect to the Simons cone with $\usub\in C^\s(\R^{2m})$ and satisfying   
+	Let $L_K\in \lcal_\star(2m,\s)$ for some $0<\s<1$. Assume that $\vsub \leq \vsup$ are two bounded functions being doubly radial and odd with respect to the Simons cone with $\vsub\in C^\s(\R^{2m})$ and satisfying   
 	\begin{equation}
 	\label{Eq:SemilinearSubSuperSolutionInBall}
 	\beqc{\PDEsystem}
-	L_K\usup & \geq & f(\usup) & \textrm{ in } B_R \cap \ocal\,, \\
-	\usup & \geq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
+	L_K\vsup & \geq & f(\vsup) & \textrm{ in } B_R \cap \ocal\,, \\
+	\vsup & \geq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
 	\quad \textrm{ and } \quad 
 	\beqc{\PDEsystem}
-	L_K\usub & \leq & f(\usub) & \textrm{ in } B_R \cap \ocal\,, \\
-	\usub & \leq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
+	L_K\vsub & \leq & f(\vsub) & \textrm{ in } B_R \cap \ocal\,, \\
+	\vsub & \leq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
 	\end{equation}
-	with $f$ an odd $C^1$ function and $\varphi$ a doubly radial odd function.
+	with $f$ a $C^1$ odd function and $\varphi$ a doubly radial odd function.
 	
-	Then, there exists $u\in C^{2s+\varepsilon}(B_R)$ for some $\varepsilon>0$, a solution to
+	Then, there exists $v\in C^{2s+\varepsilon}(B_R)$ for some $\varepsilon>0$, a solution to
 	\begin{equation}
 	\label{Eq:SemilinearSolutionInBall}
 	\beqc{\PDEsystem}
-	L_K u & = & f(u) & \textrm{ in } B_R\,, \\
-	u &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
+	L_K v & = & f(v) & \textrm{ in } B_R\,, \\
+	v &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
 	\end{equation}
-	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$.
+	such that $v$ is doubly radial, odd with respect to the Simons cone and  $\vsub \leq v \leq \vsup$ in $\ocal$.
 \end{proposition}
 
 
 \begin{proof}
 	The proof follows the classical monotone iteration method for elliptic equations (see for instance \cite{Evans}). We just give here a sketch of the proof. 
-	First, let $M \geq 0$ be such that $-M \leq \usub \leq \usup \leq M$ and set
+	First, let $M \geq 0$ be such that $-M \leq \vsub \leq \vsup \leq M$ and set
 	$$
 	b := \max \left \{{0, - \min_{[-M,M]}f'}\right \}\geq 0\,.
 	$$
@@ -48,26 +48,26 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	Therefore, our problem is equivalent to find a solution to
 	$$
 	\beqc{\PDEsystem}
-	\tilde{L}_Ku & = & g(u) & \textrm{ in } B_R\,, \\
-	u &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
+	\tilde{L}_Kv & = & g(v) & \textrm{ in } B_R\,, \\
+	v &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
 	$$
-	such that $u$ is doubly radial, odd with respect to the Simons cone and  $\usub \leq u \leq \usup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(t) \geq 0$ for $t \in [-M,M]$. Moreover, since $b \geq 0$, $\tilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (as in Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
+	such that $v$ is doubly radial, odd with respect to the Simons cone and  $\vsub \leq v \leq \vsup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(t) \geq 0$ for $t \in [-M,M]$. Moreover, since $b \geq 0$, $\tilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (as in Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
 	
-	We define $u_0 = \usub$ and, for $k\geq 1$, let $u_k$ be the solution to the linear problem
+	We define $v_0 = \vsub$ and, for $k\geq 1$, let $v_k$ be the solution to the linear problem
 	$$
 	\beqc{\PDEsystem}
-	\tilde{L}_K u_k & = & g(u_{k-1}) & \textrm{ in } B_R\,, \\
-	u_k &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,. 
+	\tilde{L}_K v_k & = & g(v_{k-1}) & \textrm{ in } B_R\,, \\
+	v_k &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,. 
 	\eeqc
 	$$
-	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $u_k\in L^\infty(B_R) \cap C^{2\s+2\epsilon}(B_R)$ for some $\epsilon>0$. Moreover, given $\Omega\subset B_R$ a compact set, then $||u_k||_{C^{2s+2\epsilon}(\Omega)}$ is uniformly bounded in $k$.
+	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $v_k\in L^\infty(B_R) \cap C^{2\s+2\epsilon}(B_R)$ for some $\epsilon>0$. Moreover, given $\Omega\subset B_R$ a compact set, then $||v_k||_{C^{2s+2\epsilon}(\Omega)}$ is uniformly bounded in $k$.
 	
 	Them, using the maximum principle it is not difficult to show by induction that 
 	$$
-	\usub = u_0 \leq u_1 \leq \ldots \leq u_k \leq u_{k+1} \leq \ldots \usup \quad \text{ in }\ocal\,,
+	\vsub = v_0 \leq v_1 \leq \ldots \leq v_k \leq v_{k+1} \leq \ldots \vsup \quad \text{ in }\ocal\,,
 	$$
-	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $u_k$ converges in $C^{2s+\epsilon}$ to the desired solution.
+	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $v_k$ converges in $C^{2s+\epsilon}$ to the desired solution.
 \end{proof}
 
 In order to construct a positive subsolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next.
