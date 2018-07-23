@@ -12,7 +12,7 @@ one is a result for positive solutions in the whole space.
 
 \begin{theorem}
 	\label{Th:SymmetryWholeSpace}
-	Let $L_K \in \lcal_0$ and let $v$ be a bounded solution to
+	Let $L_K \in \lcal_0(n,\s)$ and let $v$ be a bounded solution to
 	\begin{equation}
 	\label{Eq:PositiveWholeSpace}
 	\beqc{\PDEsystem}
@@ -36,7 +36,7 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 
 \begin{theorem}
 	\label{Th:SymmHalfSpace}
-	Let $L_K\in \lcal_0$ and let $v$ be a bounded solution to one of these two problems
+	Let $L_K\in \lcal_0(n,\s)$ and let $v$ be a bounded solution to one of these two problems
 	
 	\begin{equation}
 	\leqnomode
@@ -102,7 +102,7 @@ The second ingredient that we need in the proof of Theorem~\ref{Th:SymmetryWhole
 
 \begin{proposition}
 	\label{Prop:ParaMaxPrp}
-	Let $L_K \in \lcal_0$ and let $v$ be a bounded function such that
+	Let $L_K \in \lcal_0(n,\s)$ and let $v$ be a bounded function such that
 	\begin{equation*}
 	\beqc{\PDEsystem}
 	\partial_t v + L_K  v + c(x)\,v &\leq& 0 & \textrm{ in }\R^n\times(0,+\infty)\,,\\
@@ -117,7 +117,7 @@ This result can be deduced from the usual parabolic maximum principle in a bound
 
 \begin{lemma}
 \label{Lemma:ParabolicmaxPrpBdd}
-Let $L_K$ be an integro-differential operator of the form \eqref{Eq:DefOfLu} and let  $v$ be a classical solution to
+Let $L_K$ be an integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, and let $v$ be a classical solution to
 \begin{equation*}
 \beqc{\PDEsystem}
 \partial_t v + L_K v &\leq& 0 & \textrm{ in } \Omega \subset B_R\times(0,T)\,,\\
@@ -140,7 +140,7 @@ To establish Proposition~\ref{Prop:ParaMaxPrp} from Lemma~\ref{Lemma:Parabolicma
 
 \begin{lemma}
 \label{Lemma:NoBddSolL=1}
-There is no bounded solution to $L_K v=1$ in $\R^n$ for any $L_K \in \lcal_0$.
+There is no bounded solution to $L_K v=1$ in $\R^n$ for any $L_K \in \lcal_0(n,\s)$.
 \end{lemma}
 
 \begin{proof}
@@ -158,7 +158,7 @@ With this result we can introduce the auxiliary function that we will use to pro
 
 \begin{lemma}
 	\label{Lemma:SolBallToZero}
-	Let $L_K \in \lcal_0$. Then, for every $R>0$ there exists a constant $M_R>0$ and a function $\psi_R\geq 0$ solution to
+	Let $L_K \in \lcal_0(n,\s)$. Then, for every $R>0$ there exists a constant $M_R>0$ and a function $\psi_R\geq 0$ solution to
 	\begin{equation*}
 	\beqc{\PDEsystem}
 	L_K  \psi_R &=& -1/M_R & \textrm{ in } B_R\,,\\
@@ -298,7 +298,7 @@ In a similar way, taking $\tilde{\xi}_0>\norm{v}_{L^\infty} \geq 1$, using $f<0$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{A one-dimensional symmetry result for positive solutions ``in a half-space''}
+\subsection{A one-dimensional symmetry result for positive solutions in a half-space}
 
 In this subsection we establish Theorem~\ref{Th:SymmHalfSpace}. To do it, we proceed in three steps. First, we show that the solution is monotone in the $x_n$ direction by using a moving planes argument (see Proposition~\ref{Prop:MonotonyHalfSpace} below). Once this is shown, we can deduce that the solution $v$ has uniform limits as $x_n\pm\to \infty$. Finally, by using the sliding method (see Proposition~\ref{Prop:HalfSpaceLimUnif} below), we deduce the one-dimensional symmetry of the solution.
 
@@ -306,7 +306,7 @@ We proceed now with the details of the arguments. As we have said, the first ste
 
 \begin{proposition}
 	\label{Prop:MonotonyHalfSpace}
-	Let $v$ be a bounded solution to one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0(n,\s)$ such that the kernel $K$ satisfies \eqref{Eq:KernelSymmetry}, and $f$ a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
+	Let $v$ be a bounded solution to one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0(n,\s)$ such that the kernel $K$ satisfies \eqref{Eq:KernelSymmetry}. Let $f$ be a Lipschitz nonlinearity such that $f>0$ in $(0,||v||_{L^\infty(\R^n_+)})$. Then,
 	$$
 	\frac{\partial v}{\partial x_n} > 0 \,\,\,\, \text{ in } \,\,\R^n_+.
 	$$

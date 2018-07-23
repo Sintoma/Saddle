@@ -4,26 +4,26 @@
 \label{Sec:Existence}
 
 
-In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maximum principle and the existence of a positive subsolution. To do this, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$. Along this section we will call odd super/subsolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}.
+In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maximum principle and the existence of a positive subsolution. To do this, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$. Along this section we will call odd sub/supersolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}.
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
-	Let $L_K\in \lcal_\star(2m,\s)$ for some $0<\s<1$. Assume that $\vsub \leq \vsup$ are two bounded functions being doubly radial and odd with respect to the Simons cone with $\vsub\in C^\s(\R^{2m})$ and satisfying   
+	Let $L_K\in \lcal_\star(2m,\s)$ for some $\s\in (0,1)$. Assume that $\vsub \leq \vsup$ are two bounded functions which are doubly radial and odd with respect to the Simons cone. Furthermore, assume that $\vsub\in C^\s(\R^{2m})$ and that $\vsub$ and $\vsup$ satisfy respectively   
 	\begin{equation}
 	\label{Eq:SemilinearSubSuperSolutionInBall}
-	\beqc{\PDEsystem}
-	L_K\vsup & \geq & f(\vsup) & \textrm{ in } B_R \cap \ocal\,, \\
-	\vsup & \geq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
-	\eeqc
-	\quad \textrm{ and } \quad 
 	\beqc{\PDEsystem}
 	L_K\vsub & \leq & f(\vsub) & \textrm{ in } B_R \cap \ocal\,, \\
 	\vsub & \leq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
 	\eeqc
+	\quad \textrm{ and } \quad 
+	\beqc{\PDEsystem}
+	L_K\vsup & \geq & f(\vsup) & \textrm{ in } B_R \cap \ocal\,, \\
+	\vsup & \geq & \varphi & \textrm{ in } \ocal \setminus B_R\,, 
+	\eeqc
 	\end{equation}
 	with $f$ a $C^1$ odd function and $\varphi$ a doubly radial odd function.
 	
-	Then, there exists $v\in C^{2s+\varepsilon}(B_R)$ for some $\varepsilon>0$, a solution to
+	Then, there exists $v\in C^{2\s+\varepsilon}(B_R)$ for some $\varepsilon>0$, a solution to
 	\begin{equation}
 	\label{Eq:SemilinearSolutionInBall}
 	\beqc{\PDEsystem}
@@ -61,13 +61,13 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	v_k &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,. 
 	\eeqc
 	$$
-	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $v_k\in L^\infty(B_R) \cap C^{2\s+2\epsilon}(B_R)$ for some $\epsilon>0$. Moreover, given $\Omega\subset B_R$ a compact set, then $||v_k||_{C^{2s+2\epsilon}(\Omega)}$ is uniformly bounded in $k$.
+	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $v_k\in L^\infty(B_R) \cap C^{2\s+2\varepsilon}(B_R)$ for some $\varepsilon>0$. Moreover, given $\Omega\subset B_R$ a compact set, then $||v_k||_{C^{2\s+2\varepsilon}(\Omega)}$ is uniformly bounded in $k$.
 	
 	Them, using the maximum principle it is not difficult to show by induction that 
 	$$
 	\vsub = v_0 \leq v_1 \leq \ldots \leq v_k \leq v_{k+1} \leq \ldots \vsup \quad \text{ in }\ocal\,,
 	$$
-	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $v_k$ converges in $C^{2s+\epsilon}$ to the desired solution.
+	and that each function $u_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $v_k$ converges in $C^{2\s+\varepsilon}$ to the desired solution.
 \end{proof}
 
 In order to construct a positive subsolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next.

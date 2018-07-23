@@ -25,7 +25,7 @@ Here we have used the change $y = R\tilde{y}$ and the fact that $w(R \cdot) = w(
 Next, we present an alternative expression for the operator $L_K $ acting on doubly radial functions. This expression involves a new kernel which is also doubly radial.
 
 \begin{lemma} \label{Lemma:AlternativeOperatorExpression}
-Let $L_K \in \Lr$ and let $w$ be a doubly radial function for which $L_K w$ is well-defined. Then, $L_K w$ can be expressed as
+Let $L_K \in \Lr(2m,\s)$ and let $w$ be a doubly radial function for which $L_K w$ is well-defined. Then, $L_K w$ can be expressed as
 $$
 L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
@@ -80,7 +80,7 @@ Equivalently, if $R = (R_1, R_2)$ with $R_1$, $R_2 \in O(m)$, then $R_\star = (R
 
 \begin{lemma}
 \label{Lemma:PropertiesStar}
-Let $(\cdot)^\star$ be the isometry defined by $x^\star = (x',x'')^\star = (x'', x')$
+Let $(\cdot)^\star: \R^{2m} \to \R^{2m}$ be the involution defined by $x^\star = (x',x'')^\star = (x'', x')$
 ---see \eqref{Eq:DefStar}.
 Then,
 \begin{enumerate}
@@ -118,7 +118,7 @@ To conclude this subsection, we present two alternative expressions for the oper
 
 \begin{lemma}
 	\label{Lemma:OperatorOddF}
-	Let $w$ is a doubly radial function which is odd with respect to the Simons cone, and let $L_K \in \Lr$. Then,
+	Let $w$ be a doubly radial function which is odd with respect to the Simons cone, and let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$. Then,
 	\begin{align*}
 	L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
 	&= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
@@ -184,7 +184,7 @@ In this subsection, we establish Theorem~\ref{Th:CharacterizationLstar}. As we h
 First, we give a sufficient condition on the kernel $K$ so that the operator $L_K$ belongs to the the class $\lcal_\star$. It is the following result.
 
 \begin{proposition}
-\label{Prop:KernelInequalitySufficientCondition} Assume that the kernel $K$ is radially symmetric, nonincreasing, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$ and $\lim_{z\to\infty} K(z) = 0$. Then, \eqref{Eq:KernelInequality} holds.
+\label{Prop:KernelInequalitySufficientCondition} Assume that the kernel $K$ is radially symmetric, nonincreasing, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$ and $\lim_{|z|\to+\infty} K(z) = 0$. Then, \eqref{Eq:KernelInequality} holds.
 \end{proposition}
 
 \begin{proof}
@@ -404,7 +404,7 @@ In this subsection we prove a weak and a strong maximum principles for doubly ra
 We first establish a weak maximum principle.
 
 \begin{proposition}[Weak maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}_{\loc}(\R^{2m})\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star$. Assume that
+\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}_{\loc}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that
 $$
 \beqc{\PDEsystem}
 L_K u & \geq & 0 & \text{ in } \Omega\,,\\
@@ -437,7 +437,7 @@ a contradiction.
 The following is a strong maximum principle for odd functions.
 
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $u\in C^{\alpha}_{\loc}(\R^{2m})\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let $\Omega \subset \ocal$ and assume that $L_K u \geq 0$ in $\Omega$, where $L_K  \in \lcal_\star$. Assume also that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
+\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}_{\loc}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u \geq 0$ in $\Omega$, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
 \end{proposition}
 
 \begin{proof}

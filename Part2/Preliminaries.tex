@@ -19,7 +19,7 @@ We start with a result on the interior regularity for linear equations.
 
 \begin{proposition}
 	\label{Prop:InteriorRegularity}
-	Let $L_K \in\lcal_0$ and let $w\in L^\infty (\R^n)$ be a weak solution to $L_K w = h$ in $B_1$. Then,
+	Let $L_K \in\lcal_0(n,\s,\lambda, \Lambda)$ and let $w\in L^\infty (\R^n)$ be a weak solution to $L_K w = h$ in $B_1$. Then,
 	\begin{equation}
 	\label{Eq:C2sEstimate}
 	\norm{w}_{C^{2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (\R^n)} }\,.
@@ -95,27 +95,27 @@ In this last subsection we state the two basic maximum princples for doubly radi
 
 The first result is a weak maximum principle for odd functions with respect to $\ccal$
 
-\begin{proposition}
+\begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
 \label{Prop:WeakMaximumPrincipleForOddFunctions}
-Let $w\in C^{\alpha}(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let $\Omega \subset \ocal$ and let $L_K \in \lcal_\star$. Assume that
-$$
-\beqc{\PDEsystem}
-L_K w & \geq & 0 & \text{ in } \Omega\,,\\
-w & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
-\eeqc
-$$
-and that either $\Omega$ is bounded or 
-$$
-\liminf_{x \in \ocal,\,|x|\to +\infty} w(x) \geq 0\,.
-$$
-Then, $w \geq 0$ in $\Omega$.
+ Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}_{\loc}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that
+ $$
+ \beqc{\PDEsystem}
+ L_K w & \geq & 0 & \text{ in } \Omega\,,\\
+ w & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
+ \eeqc
+ $$
+ and that either $\Omega$ is bounded or 
+ $$
+ \liminf_{x \in \ocal,\,|x|\to +\infty} w(x) \geq 0\,.
+ $$
+ Then, $w \geq 0$ in $\Omega$.
 \end{proposition}
 
 The second result is the strong maximum principle for odd functions with respect to $\ccal$.
 
-\begin{proposition}
+\begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
 \label{Prop:StrongMaximumPrincipleForOddFunctions} 
-Let $w\in C^{\alpha}(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Let $\Omega \subset \ocal$ and assume that $L_K w \geq 0$ in $\Omega$, where $L_K \in \lcal_\star$. Assume also that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ or $w > 0$ in $\Omega$.
+Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}_{\loc}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K w \geq 0$ in $\Omega$, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ or $w > 0$ in $\Omega$.
 \end{proposition}
 
 
