@@ -9,7 +9,7 @@ The maximum principle we establish is the following.
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleLinearized}
-	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\Omega \subset \ocal$ a domain (not necessarily bounded) and let $L_K  \in \lcal_\star$. Assume that $v$ satisfies
+	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $L_K  \in \lcal_\star$. Let $v\in C^\alpha_(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
 	$$
 	\beqc{\PDEsystem}
 	L_K v - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
@@ -26,11 +26,12 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleNarrowDomainsOdd}
-	Let $m\geq 1$, $\gamma \in (0,1)$, $\alpha > 2\gamma$ and let $v\in C^\alpha_{\mathrm{loc}}(\R^{2m})\cap L^\infty(\R^{2m})$ be a doubly radial function. Let $\varepsilon>0$ and let
+	Let $\varepsilon>0$ and let
 	$$
 	H \subset \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
 	$$ 
-	be a domain (not necessarily bounded). Let $L_K  \in \lcal_\star$ and assume that $v$ satisfies
+	be an open set (not necessarily bounded).  
+	Let $L_K  \in \lcal_\star$ and let $v\in C^\alpha_(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
 	\begin{equation}
 	\label{Eq:AssumptionsMaxPNarrow}
 	\beqc{\PDEsystem}
@@ -64,12 +65,12 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	\right\}\,.
 	$$
 	
-	Finally, if we use the lower bound of the integral term from Lemma~2.3. in \cite{FelipeSanz-Perela:IntegroDifferentialI} and the fact that $\dist(x_0,\ccal) \leq \varepsilon/\sqrt{2}$, we get
+	Finally, if we use the lower bound of the integral term from \eqref{Eq:ZeroOrderTerm} and the fact that $\dist(x_0,\ccal) \leq \varepsilon/\sqrt{2}$, we get
 	\begin{align*}
 	0 &\geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
 	\right\} \geq M \left(\frac{1}{C}\dist(x_0,\ccal)^{-2\s}-\norm{c_-}_{L^\infty(H)}\right) \\ &\geq M \left(\frac{1}{C}\varepsilon^{-2\s}-\norm{c_-}_{L^\infty(H)}\right).
 	\end{align*}
-	Therefore, for $\varepsilon$ small enough, we arrive at a contradiction that comes from assuming that the supremum is positive.
+	Therefore, for $\varepsilon$ small enough, we arrive at a contradiction that follows from assuming that the supremum is positive.
 \end{proof}
 
 
