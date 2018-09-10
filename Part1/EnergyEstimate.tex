@@ -3,11 +3,11 @@
 \section{An energy estimate for doubly radial odd minimizers}
 \label{Sec:EnergyEstimate}
 
-In this section we present an estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same estimate but for minimizers without any symmetry. The strategy is to compare $u$ with a suitable competitor which is constructed combining $u$ with an auxiliary function. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with  respect to the Simons cone $\ccal$.
+In this section we present an estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 2$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same estimate but for minimizers without any symmetry. The strategy used in \cite{SavinValdinoci-EnergyEstimate} is to compare $u$ with a suitable competitor which is constructed combining $u$ with an auxiliary function which is radially symmetric. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with respect to the Simons cone $\ccal$.
 
 The auxiliary function needed to build the competitor is defined as follows. For points $x\in \ocal$, we set
 $$ \Psi_S(x) := \max\left\{-1+2\min\{(|x|-S-1)_+,1\},-\dist(x,\ccal) \right\},  $$
-and we define it in $\ical$ by considering its odd reflection. It is clear that it is a bounded function with $||\Psi_S||_{L^\infty(\R^{2m})}=1$. In our arguments we will also use the following function and set:
+and we define it in $\ical$ by considering its odd reflection. It is clear that $\Psi_S$ is a bounded function with $||\Psi_S||_{L^\infty(\R^{2m})}=1$. In our arguments we will also use the following function and set:
 $$ d_S(x) := \max\left\{1,\min\{S+1-|x|,\dist(x,\ccal)\} \right\},  $$
 and
 \begin{equation}
@@ -29,7 +29,7 @@ and
 	\label{Fig:PsiSandOmegaS}
 \end{figure}
 
-Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$ (see Figure~\ref{Fig:PsiSandOmegaS}). Furthermore, its measure is well known to be of order $2m-1$ (see the proof of the energy estimate in \cite{CabreTerraI}). That is,
+Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover, $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$ (see Figure~\ref{Fig:PsiSandOmegaS}). Furthermore, its measure is well known to be of order $2m-1$ (see the proof of the energy estimate in \cite{CabreTerraI}). That is,
 \begin{equation}
 \label{Eq:MeasureOmegaS}
 |\Omega_S| \leq C\,S^{2m-1}.
@@ -39,38 +39,50 @@ Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm i
 Now we show some auxiliary results concerning the previous definitions, needed in the proof of Theorem~\ref{Th:EnergyEstimate}.
 
 \begin{lemma}
-\label{Lemma: AdaptedLipschitzConditionWith_dFunction}
+\label{Lemma:AdaptedLipschitzConditionWith_dFunction}
 Given $S>0$, if either $(x,y) \in \left(\Omega_S\cap \ocal\right) \times \ical$ or $(x,y)\in \left(B_{S+2}\cap \ocal\right) \times \ocal$, then
 $$ |\Psi_S(x) - \Psi_S(y)| \leq C \frac{|x-y|}{d_S(x)} \ \ \ \ \ \textrm{whenever} \ \ |x-y|\leq d_S(x), $$
 with $C>0$ independent of $S$.
 \end{lemma}
 
 \begin{proof}
-Note first that if $x\in \Omega_S \cap \ocal$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$. Hence, we only need to establish the result for the case $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. Under these hypotheses, we have that $\Psi_S(x)=-1$ (see Figure~\ref{Fig:PsiSandOmegaS}) and $d_S(x) = \min\{S+1-|x|,\dist(x,\ccal)\}$. Moreover, since $x\in B_S$ and $\dist(x,\ccal)\geq 1$ we get $d_S(x) \leq S+1-|x|$. Therefore, if $|x-y|\leq d_S(x)$ we obtain
+Note first that if $x\in \Omega_S$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$. Hence, we only need to establish the result for the case $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. Under these assumptions, we have that $\Psi_S(x)=-1$ (see Figure~\ref{Fig:PsiSandOmegaS}) and $d_S(x) = \min\{S+1-|x|,\dist(x,\ccal)\}$. Moreover, since $x\in B_S$ and $\dist(x,\ccal)\geq 1$, we get $d_S(x) \leq S+1-|x|$. Therefore, under the assumption $|x-y|\leq d_S(x)$, it holds
 $$ |y|\leq |x-y| + |x| \leq d_S(x)+|x| \leq S+1. $$
 
-Now we distinguish two cases, either $\{\dist(\cdot,\ccal)\geq 1\}$ or $\{\dist(\cdot,\ccal)\leq 1\}$. Assume first that $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal$. Then, $\Psi_S(y)=-1$ and the result is trivial from being also $\Psi_S(x)=-1$. Thus, it only remains to show the result in the case $x\in B_S \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal$ and $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\leq 1\}\cap \ocal$. Note that under these assumptions, $\Psi_S(x)=-1$ and $\Psi_S(y)=-\dist(y,\ccal)$.
+Thus, we have to show
+\begin{equation}
+\label{Eq:TriangularIneqProof1}
+	|1+\Psi_S(y)|\leq C\dfrac{|x-y|}{\min\{S+1-|x|,\dist(x,\ccal)\}}
+\end{equation}
+for $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y \in B_{S+1}\cap \ocal$.
 
+Now we distinguish two cases, either $\dist(y,\ccal)\geq 1$ or $\dist(y,\ccal)\leq 1$. Assume first that $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\geq 1\}\cap \ocal$. Then, $\Psi_S(y)=-1$ and \eqref{Eq:TriangularIneqProof1} is trivial. Thus, it only remains to show \eqref{Eq:TriangularIneqProof1} in the case $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\leq 1\}\cap \ocal$. Note that under these assumptions, $\Psi_S(x)=-1$ and $\Psi_S(y)=-\dist(y,\ccal)$. 
 
-Given $x,y \in \R^{2m}$ it is easy to prove by using the triangular inequality and the definition of distance to the cone that
-\begin{equation} \label{Eq:TriangularCone}
+We claim that for $x \in \{\dist(\cdot,\ccal)\geq 1\}$ and $y \in \{\dist(\cdot,\ccal)\leq 1\}$ it holds
+\begin{equation}
+\label{Eq:TriangularIneqProof2}
+|1-\dist(y,\ccal)|\leq \dfrac{|x-y|}{\dist(x,\ccal)}
+\end{equation}
+Assuming this claim to be true, we have that if $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in B_{S+1} \cap \{\dist(\cdot,\ccal)\leq 1\}\cap \ocal$, then
+$$ |\Psi_S(x)-\Psi_S(y)| = |1-\dist(y,\ccal)| \leq \frac{|x-y|}{\dist(x,\ccal)} \leq  \frac{|x-y|}{d_S(x)},$$
+completing the proof.
+
+Let us show now \eqref{Eq:TriangularIneqProof2}. Given $x,y \in \R^{2m}$ it is easy to prove by using the triangular inequality and the definition of distance to the cone that
+\begin{equation} 
+\label{Eq:TriangularCone}
 \dist(x,\ccal) \leq |x-y| + \dist(y,\ccal).
 \end{equation}
-Therefore we have
-\begin{equation} \label{Eq:TriangularCone2}
+Therefore, since $\dist(x,\ccal)\geq 1$, we have
+\begin{equation} 
+\label{Eq:TriangularCone2}
 1-|x-y|-\dist(y,\ccal) \leq 1-\dist(x,\ccal) \leq 0
 \end{equation}
-Now, multiplying \eqref{Eq:TriangularCone} by $|1-\dist(y,\ccal)|$ and using \eqref{Eq:TriangularCone2} we obtain
+Now, multiplying \eqref{Eq:TriangularCone} by $|1-\dist(y,\ccal)|$, and using that $\dist(y,\ccal)\leq 1$ and \eqref{Eq:TriangularCone2} we obtain
 \begin{align*}
-|1-\dist(y,\ccal)|\,\dist(x,\ccal) &\leq |1-\dist(y,\ccal)| \left(|x-y| + \dist(y,\ccal)\right) \\
-%&= \left(1-\dist(y,\ccal)\right) \left(|x-y| + \dist(y,\ccal)\right) \\
+|1-\dist(y,\ccal)|\,\dist(x,\ccal) &\leq (1-\dist(y,\ccal)) \left(|x-y| + \dist(y,\ccal)\right) \\
 &= |x-y|+\dist(y,\ccal) \left\{ -|x-y|+ 1- \dist(y,\ccal) \right\} \\
 &\leq |x-y|.
 \end{align*}
-
-Hence,
-$$ |\Psi_S(x)-\Psi_S(y)| = |1-\dist(y,\ccal)| \leq \frac{|x-y|}{\dist(x,\ccal)} \leq  \frac{|x-y|}{d_S(x)},$$
-completing the proof.
 \end{proof}
 
 Another auxiliary result that we will need in the proof of Theorem~\ref{Th:EnergyEstimate} is the following estimate for the function $d_S$. 
@@ -273,7 +285,7 @@ I_1 &= \int_{B_{S+2} \cap \ocal} \int_{\ocal} \frac{|\Psi_S(x)-\Psi_S(y)|^2}{|x-
 &\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2}\left(\int_0^{d_S(x)} \rho^{1-2\s} \d \rho\right)\d x + C \int_{B_{S+2} \cap \ocal}  \left(\int_{d_S(x)}^\infty \rho^{-1-2\s} \d\rho\right) \d x\\
 &\leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x.
 \end{align*}
-The bound of $I_2$ is essentially the same using also Lemma~\ref{Lemma: AdaptedLipschitzConditionWith_dFunction} and the inclusion $\Omega_S \subset B_{S+2}$. That is,
+The bound of $I_2$ is essentially the same using also Lemma~\ref{Lemma:AdaptedLipschitzConditionWith_dFunction} and the inclusion $\Omega_S \subset B_{S+2}$. That is,
 \begin{align*}
 I_2 &\leq C \int_{\Omega_S \cap \ocal} d_S(x)^{-2}\left(\int_0^{d_S(x)} \rho^{1-2\s} \d \rho\right)\d x + C \int_{\Omega_S \cap \ocal} \left( \int_{d_S(x)}^\infty \rho^{-1-2\s} \d\rho \right) \d x\\
 &\leq C \int_{\Omega _S\cap \ocal} d_S(x)^{-2\s} \d x \leq C \int_{B_{S+2} \cap \ocal} d_S(x)^{-2\s} \d x.
