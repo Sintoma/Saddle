@@ -12,7 +12,7 @@ This section is devoted to study the operators of the class $\Lr$ when they act 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The main purpose of this subsection is to deduce an alternative expression for an operator $L_K \in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Our first remark is that if $w$ is invariant by $O(m)^2$, so is $Lw$. Indeed, for every $R \in O(m)^2$,
+The main purpose of this subsection is to deduce an alternative expression for an operator $L_K \in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Our first remark is that if $w$ is invariant by $O(m)^2$, so is $L_Kw$. Indeed, for every $R \in O(m)^2$,
 \begin{align*}
 L_K w (Rx)
 & = \int_{\R^{2m}} \{w(Rx) - w(y)\} K(|Rx - y|)  \d y\\
@@ -29,11 +29,13 @@ Let $L_K \in \Lr(2m,\s)$ and let $w$ be a doubly radial function for which $L_K 
 $$
 L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
-where $\overline{K}$ is symmetric, invariant by $O(m)^2$ in both arguments, and is defined by
+where $\overline{K}$, defined by
 \begin{equation*}
 %\label{Eq:KbarDef}
-\overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,.
+\overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,,
 \end{equation*}
+is symmetric and invariant by $O(m)^2$ in both arguments.
+
 Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$.
 \end{lemma}
 
@@ -62,7 +64,7 @@ Now, we show that $\overline{K}$ is symmetric. Using property \eqref{Eq:Unimodul
 \end{align*}
 It remains to show that
 $\overline{K}$ is invariant by $O(m)^2$ in its two arguments. By the symmetry, it is enough to
-check it for the first one. Let $\tilde{R} \in O^2(m)^2$. Then,
+check it for the first one. Let $\tilde{R} \in O(m)^2$. Then,
 $$
 \overline{K} (\tilde{R}x, y) = \average_{O(m)^2} K(|R \tilde{R} x - y|)\d R  = \average_{O(m)^2} K(|R x - y|)\d R = \overline{K} (x, y)\,,
 $$
