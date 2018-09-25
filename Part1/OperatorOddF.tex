@@ -180,14 +180,21 @@ To conclude this subsection, we present two alternative expressions for the oper
 	with $c>0$ independent of $x_0$.
 \end{proof}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Necessary and sufficient conditions for ellipticity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 In this subsection, we establish Theorem~\ref{Th:CharacterizationLstar}. As we have mentioned in the introduction, property \eqref{Eq:KernelInequality} is crucial in the rest of the results (including the ones in \cite{FelipeSanz-Perela:IntegroDifferentialII}), since it guarantees for instance that the operator $L_K$ has a maximum principle for odd functions (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
 
 First, we give a sufficient condition on the kernel $K$ so that the operator $L_K$ belongs to the the class $\lcal_\star$. It is the following result.
 
 \begin{proposition}
-\label{Prop:KernelInequalitySufficientCondition} Assume that the kernel $K$ is radially symmetric, nonincreasing, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$ and $\lim_{|z|\to+\infty} K(z) = 0$. Then, the associated kernel $\overline{K}$ satisfies
+\label{Prop:KernelInequalitySufficientCondition} 
+Assume that the kernel $K$ is radially symmetric, nonincreasing, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$ and $\lim_{|\tau|\to+\infty} K(\tau) = 0$. Then, the associated kernel $\overline{K}$ satisfies
 	\begin{equation}
 	\label{Eq:KernelInequalityBis}
 	\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
@@ -425,7 +432,7 @@ In this subsection we prove a weak and a strong maximum principles for doubly ra
 We first establish a weak maximum principle.
 
 \begin{proposition}[Weak maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that
+\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that
 $$
 \beqc{\PDEsystem}
 L_K u & \geq & 0 & \text{ in } \Omega\,,\\
@@ -458,7 +465,7 @@ a contradiction.
 The following is a strong maximum principle for odd functions.
 
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}_{\loc}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u \geq 0$ in $\Omega$, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
+\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u \geq 0$ in $\Omega$, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
 \end{proposition}
 
 \begin{proof}

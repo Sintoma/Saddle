@@ -13,7 +13,7 @@ and the same is true for strict convexity with an strict inequality
 (see Chapter~1 of \cite{Niculescu} and the references therein).
 
 
-The main result, used in the characterization of $\lcal_\star$ in Theorem~\ref{Th:CharacterizationLstar}, is the following.
+The main result, used in the proof of Theorem~\ref{Th:CharacterizationLstar}, is the following.
 
 \begin{proposition}
 	\label{Prop:EquivalenceK(sqrt)Convex<->Inequality}
@@ -26,10 +26,10 @@ The main result, used in the characterization of $\lcal_\star$ in Theorem~\ref{T
 		\item[i)] $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 		\item[ii)] For every $c_1$, $c_2$, $A$, $B$, $C$ and $D$ satisfying
 		\begin{enumerate}
-			\item $c_1 > 0$, $c_2>0$.
-			\item $A$, $B$, $C$, $D \in (0, 1/c_2)$.
-			\item $A = \max\{A,\, B,\, C,\, D\}$.
-			\item $A + D \geq B + C$.
+			\item $c_1 > 0$, $c_2>0$,
+			\item $A$, $B$, $C$, $D \in (0, 1/c_2)$,
+			\item $A = \max\{A,\, B,\, C,\, D\}$,
+			\item $A + D \geq B + C$,
 		\end{enumerate}
 		it holds
 		$$
@@ -63,13 +63,13 @@ First, let us assume that $h$ is convex in $I$. We call
 $$
 x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
 $$
-Then, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $t\in(0,1)$,
+Then, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $\tau\in(0,1)$,
 \begin{align*}
-t\widetilde{h}_c(x) + (1-t)\widetilde{h}_c(y)
-&=  th(x_+) + (1-t)h(y_+) + t h(x_-) + (1-t)h(y_-) \\
-&\geq h(tx_+ + (1-t)y_+) + h(tx_- + (1-t)y_-) \\
-&= h(c + tx + (1-t)y) + h(c-tx + (1-t)y) \\
-& = \widetilde{h}_c(tx + (1-t)y)\,.
+\tau\widetilde{h}_c(x) + (1-\tau)\widetilde{h}_c(y)
+&=  \tau h(x_+) + (1-\tau )h(y_+) + \tau  h(x_-) + (1-\tau )h(y_-) \\
+&\geq h(\tau x_+ + (1-\tau )y_+) + h(\tau x_- + (1-\tau )y_-) \\
+&= h(c + \tau x + (1-\tau )y) + h(c-\tau x + (1-\tau )y) \\
+& = \widetilde{h}_c(\tau x + (1-\tau )y)\,.
 \end{align*}
 Therefore, $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$.
 
@@ -121,8 +121,8 @@ convexity of $K(\sqrt{z})$ in $(0, +\infty)$.
 The following is a characterization of the nondecreasing convex functions.
 
 \begin{lemma}
-\label{Lemma:InequalitConvexFunctions} Let $g \colon I\subset \R \to \R$ be a function defined in
-an open interval $I$ such that $g$ is measurable and nondecrasing in $I$. Then, we have the
+\label{Lemma:InequalitConvexFunctions} Let $g \colon I\subset \R \to \R$ be a measurable and nondecreasing function defined in
+an open interval $I$. Then, we have the
 following equivalences:
 \begin{enumerate}
 \item[i)] $g$ is strictly convex in $I$.
@@ -138,7 +138,7 @@ it is satisfied that
 $$
 g(A) + g(D) \geq g(B) + g(C),
 $$
-and equality holds if and only if
+and the equality holds if and only if
 $$ A = B \ \ \ \ \textrm{ and} \ \ \ \ C=D, $$
 or
 $$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
@@ -192,19 +192,14 @@ $$ h(a) + h(d) \geq h(b) + h(c)\,.$$
 \end{corollary}
 
 \begin{proof}
-Let us define $g(z) = h(a-z)$. It is clear that since $h$ is measurable and nonincreasing, then $g$
-is measurable and nondecreasing. On the other hand, let $A=a-d$, $B=a-c$, $C=a-b$ and $D=0$. Then,
-we have that condition $a \geq b \geq c \geq d$ is equivalent to $A\geq B \geq C \geq D$ and
-condition $a+d\leq b+c$ is equivalent to $A+D\geq B+C$. Therefore, we can apply Lemma
-\ref{Lemma:InequalitConvexFunctions}, taking into account Remark
-\ref{Remark:InequalitConvexFunctions}, and the desired equivalence is obtained.
+	The deduction of $i)$ from $ii)$ is exactly the same as in Lemma~\ref{Lemma:InequalitConvexFunctions}. Assume now that $i)$ holds and let us define $g(z) = h(a-z)$. It is clear that since $h$ is measurable and nonincreasing, then $g$ is measurable and nondecreasing. On the other hand, let $A=a-d$, $B=a-c$, $C=a-b$ and $D=0$. Then,we have that condition $a \geq b \geq c \geq d$ is equivalent to $A\geq B \geq C \geq D$ and condition $a+d\leq b+c$ is equivalent to $A+D\geq B+C$. Therefore, we can apply Lemma~\ref{Lemma:InequalitConvexFunctions}, taking into account Remark~\ref{Remark:InequalitConvexFunctions}, and the desired equivalence is obtained.
 \end{proof}
 
 The last result we need to establish Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} is the following.
 
 \begin{lemma}
 \label{Lemma:gNondecreasing}
-Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function such that
+Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function such that\todo{Esto donde se usaba?}
 $$ \lim_{z\to+\infty} K(z) = 0 $$
 and $ K(\sqrt{z}) $ is convex/strictly convex in $(0,+\infty)$. Then, given any $c_1,c_2>0$ the
 function
@@ -218,7 +213,7 @@ is nondecreasing/increasing in $(0, 1/c_2)$.
 First, note that from the hypothesis of $K$ we can deduce that $K(\sqrt{z})$, and also
 $K(c_1\sqrt{z})$, is convex and nonincreasing.
 
-Now, given $x\geq y$, we have
+Now, given $x\geq y$ with $x$, $y\in (0,1/c_2)$, we have
 \begin{align*}
 g(x)-g(y) &= K(c_1\sqrt{1+c_2 x}) + K(c_1\sqrt{1-c_2 x}) \\
 &\ \ \ \ - K(c_1\sqrt{1+c_2 y}) -K(c_1\sqrt{1-c_2 y}) \geq 0,
@@ -255,7 +250,7 @@ that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this appendix we present an auxiliary computation that is needed in Section~\ref{Sec:OperatorOddF} in order to characterize the operators that belong to $\lcal_\star$.
+In this appendix we present an auxiliary computation that is needed in Section~\ref{Sec:OperatorOddF} in order to complete the proof of Proposition~\ref{Prop:KernelInequalitySufficientCondition}.
 
 \begin{lemma}
 \label{Lemma:ComputationABCD} Let $\alpha$, $\beta$ be two real numbers satisfying $\alpha \geq
@@ -295,28 +290,28 @@ $$
 $$
 
 
-We start establishing the first statement. We show that $A\geq 0$ and that
+We start establishing the first statement. We show next that $A\geq 0$ and that
 $$
 A \geq |B|, \ A \geq |C| ,\ A \geq |D|\,.
 $$
 
 
-- $A \geq 0$:
+$\bullet$ $A \geq 0$:
 $$
  A =  |x'||y'|  \alpha + |x''||y''|\beta \geq (|x'||y'|  - |x''||y''|)\alpha \geq 0\,.
 $$
 
-- $A \geq |B|$:
+$\bullet$ $A \geq |B|$:
 $$
 A\pm B = (|x'|\alpha-|x''|\beta)(|y'|\pm |y''|) \geq 0\,.
 $$
 
-- $A \geq |C|$:
+$\bullet$ $A \geq |C|$:
 $$
 A\pm C = (|y'|\alpha-|y''|\beta)(|x'|\pm |x''|)  \geq 0\,.
 $$
 
-- $A \geq |D|$:
+$\bullet$ $A \geq |D|$:
 $$
 A\pm D = (|x'||y'| \pm |x''||y''|)(\alpha \pm \beta) \geq 0\,.
 $$
@@ -344,34 +339,34 @@ A + D + B + C = (|x'|+|x''|)(|y'|+|y''|)(\alpha + \beta) \geq 0 \,,
 \end{equation}
 With these three relations at hand we check the six cases.
 
-- If $B \geq 0$, $C \geq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof1} we have
+$\bullet$ If $B \geq 0$, $C \geq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof1} we have
 $$
 A + |D| - |B| - |C| = A + D - B - C \geq 0\,.
 $$
 
-- If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof1} to
+$\bullet$ If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof1} to
 see that
 $$
 A + |D| - |B| - |C| = A - D - B - C =  (A + D - B - C) + (-2D) \geq 0\,.
 $$
 
-- If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof2} to
+$\bullet$ If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof2} to
 see that
 $$
 A + |D| - |B| - |C| = A + D - B + C =  (A - D - B + C) + 2D \geq 0\,.
 $$
 
-- If $B \geq 0$, $C \leq 0$ and $D \leq 0$, then by \eqref{Eq:LemmaABCDProof2} we have
+$\bullet$ If $B \geq 0$, $C \leq 0$ and $D \leq 0$, then by \eqref{Eq:LemmaABCDProof2} we have
 $$
 A + |D| - |B| - |C| = A - D - B + C \geq 0\,.
 $$
 
-- If $B \leq 0$, $C \leq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof3} we have
+$\bullet$ If $B \leq 0$, $C \leq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof3} we have
 $$
 A + |D| - |B| - |C| = A + D + B + C \geq 0\,.
 $$
 
-- If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof3} to see that
+$\bullet$ If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof3} to see that
 $$
 A + |D| - |B| - |C| = A - D + B + C =  (A + D + B + C) + (-2D) \geq 0\,.
 $$
@@ -415,7 +410,7 @@ an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset
 
 \begin{lemma}
 \label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$ and let $w\in
-C_{\loc}^\alpha(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function, i.e., depending only on the variables $s$ and $t$. Let $L_K$ be a rotational invariant operator, $K(y) = K(|y|)$, of the form \eqref{Eq:DefOfLu}. Then, if we define $\tilde{w}:(0,+\infty)\times (0,+\infty) \to \R$ by $\tilde{w}(s,t) = w(s,0,...,0,t,0,...,0)$, it holds
+C^\alpha(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function, i.e., depending only on the variables $s$ and $t$. Let $L_K$ be a rotational invariant operator, that is, $K(y) = K(|y|)$, of the form \eqref{Eq:DefOfLu}. Then, if we define $\tilde{w}:(0,+\infty)\times (0,+\infty) \to \R$ by $\tilde{w}(s,t) = w(s,0,...,0,t,0,...,0)$, it holds
 $$ L_Kw(x) = \tilde{L}_K \tilde{w} (|x'|,|x''|), $$
 with
 %Then, for any $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ ($x_s$, $x_t = \pm 1$ in the
@@ -522,7 +517,7 @@ where:
 %We deal now with the case $m=2$.
 Let $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ and $y = (\sigma y_\sigma, \tau
 y_\tau)$ with $y_\sigma$, $y_\tau$ $\in \Sph^{m-1}$. Then, decomposing $\R^{2m} = \R^m \times \R^m$
-and using polar coordinates in each $\R^m$ we obtain
+and using spherical coordinates in each $\R^m$ we obtain
 \begin{align*}
 L_Ku(x) &= \int_{\R^{2m}} \big( u(x) - u(y)\big) K( |x-y|) \d y &\\
 &= \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big)  \\
@@ -550,10 +545,10 @@ $M_s( \Sph^{m-1}) = M_t(\Sph^{m-1}) = \Sph^{m-1}$, we find out that
 
 Therefore, we can replace $x_s$ and $x_t$ in \eqref{Eq:KernelSTVariablesProof1} by $e =(1,0,\ldots,
 0) \in \Sph^{m-1}$. Thus, we have
-\begin{equation}
-\label{Eq:KernelSTVariablesProof2}
+\begin{equation*}
+%\label{Eq:KernelSTVariablesProof2}
 J(s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{|s e - \sigma y_\sigma|^2 + |t e - \tau y_\tau|^2 }\Big) \d y_\sigma \d y_\tau \,.
-\end{equation}
+\end{equation*}
 For an easier notation, we rename $\omega = y_\sigma$ and $\tilde\omega = y_\tau$, and thus we have
 \begin{align*}
 |s e - \sigma y_\sigma|^2 + |t e - \tau y_\tau|^2 &= |s e - \sigma \omega|^2 + |t e - \tau \tilde\omega|^2\\
@@ -581,8 +576,7 @@ $|\partial B_{r}|=c_m\,r^{m-2}$, where $c_m$ is the measure of the boundary of t
 $\R^{m-1}$.
 \end{proof}
 
-In the case the operator is the fractional Laplacian we can obtain an alternative expression of the
-kernel $J$ in terms of some hypergeometric functions.
+In the case the operator is the fractional Laplacian we can obtain an alternative expression of the kernel $J$ in terms of some hypergeometric functions. Although we are not using the next result in this work, we think that it could be very useful in future works, since we are writing the kernel in terms of functions that have already been studied and have interesting well-known properties.
 \begin{lemma}
 \label{Lemma:Appell} If $L_K = (-\Delta)^\s$ and $m\geq 2$, then
 \begin{equation}
@@ -591,9 +585,7 @@ J(s,t,\sigma,\tau) = \frac{\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\f
 \end{equation}
 where $F_2$ is the so-called Appell hypergeometric function (see \cite{Appell}).
 \end{lemma}
-Although we are not using the previous result in this work, we think that it could be very useful in future
-works since we are writing the kernel in terms of functions that have already been studied and have
-interesting well-known properties.
+
 
 
 \begin{proof}
@@ -604,11 +596,12 @@ J(s,t,\sigma, \tau) = c_m ^2  \int_{-1}^1  \int_{-1}^1  \frac{(1-\theta^2)^{\fra
 Then, if we make the change of variables $\theta = 2\varpi_1-1$ and $\overline{\theta}=2\varpi_2-1$
 we arrive at
 \begin{align*}
-J(s,t,\sigma, \tau) &= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \int_0^1 \int_0^1
+J(s,t,\sigma, \tau) &= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \cdot \\
+ & \quad \quad \quad \quad  \int_0^1 \int_0^1
 \frac{\varpi_1^\frac{m-2}{2} (1-\varpi_1)^\frac{m-2}{2} \varpi_2^\frac{m-2}{2}
 (1-\varpi_2)^\frac{m-2}{2}}{\left(1-\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2}\,\varpi_1-\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2}\,\varpi_2
 \right)^{m+\s}} \d \varpi_1 \d \varpi_2 \\
-&= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \frac{\Gamma\left(\frac{m}{2} \right)^4}{\Gamma(m)^2} \\
+&= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \frac{\Gamma\left(\frac{m}{2} \right)^4}{\Gamma(m)^2} \cdot \\
 & \quad \quad \quad \quad F_2\left( m+\s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right).
 \end{align*}
 We finally obtain \eqref{Eq:Appell} by using the duplication formula for the $\Gamma$-function.

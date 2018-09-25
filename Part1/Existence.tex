@@ -4,12 +4,12 @@
 \label{Sec:Existence}
 
 
-In this section we establish the existence of saddle-shaped solutions to the Allen-Cahn equation. Is based on the direct method of the calculus of variations, and it uses all the results appearing in the previous sections.
+In this section we establish the existence of saddle-shaped solutions to the integro-differential Allen-Cahn equation. The proof is based on the direct method of the calculus of variations, and it uses all the results appearing in the previous sections.
 
 \begin{proof}[Proof of Theorem~\ref{Th:Existence}]
 Since $\ecal(w,B_R)$ is bounded below ---by $0$---, we can take a minimizing sequence $u_R^j\in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Note that, by Lemma~\ref{Lemma:DecreaseEnergy} we can assume that $-1 \leq u_R^j \leq 1$ and that $u_R^j \geq 0$ in $\ocal$ and $u_R^j \leq 0$ in $\ical$. 
 
-Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$ and the fact that $u_R^j$ is a minimizing sequence, we deduce that 
+Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$, and the fact that $u_R^j$ is a minimizing sequence, we deduce that 
 $$
 [u_R^j]_{H^\s(B_R)} \leq \dfrac{c_{n,\s}}{\lambda}  [u_R^j]_{\H^K(B_R)}\leq \dfrac{2 c_{n,\s}}{\lambda}\ecal(u_R^j,B_R) \leq C
 $$
@@ -20,7 +20,7 @@ $$
 $$
 Therefore, $u_R \in \widetilde{\H}^K_0(B_R)$ is a minimizer of $\ecal(\cdot, B_R)$ in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Moreover, it satisfies $-1\leq u_R \leq 1$ in $B_R$, $u_R\geq 0$ in $\ocal$, $u_R(x) = - u_R(x^\star)$ for every $x\in \R^{2m}$ and $u_R \equiv 0 $ in $\R^{2m} \setminus B_R$.
 
-Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, we deduce that $u_R$ is a classical solution of
+Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate} (using Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}), we deduce that $u_R$ is a classical solution to
 \begin{equation*}
 %\label{Eq:ProofExistenceProblemBR}
 	\beqc{\PDEsystem}
@@ -35,18 +35,18 @@ The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. 
 \label{Eq:UniformC2alphaEstimateBalls}
 \norm{w}_{C^{2\s + \varepsilon}(B_{\rho/8})} \leq C \bpar{n,\ \s ,\ \lambda,\ \Lambda ,\ \norm{f}_{C^{\alpha}([-1,1])} }\,.
 \end{equation}
-for some $\varepsilon > 0$.  By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} to $u_R$ in balls of radius $\rho = 1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2\s + \varepsilon}(\overline{B_S})$ bound for $u_R$. By the Arzelà-Ascoli theorem, as $R\to +\infty$, a subsequence of $\{u_R\}$ converges in $C^{2\s + \varepsilon/2}(\overline{B_S})$ to a (pointwise) solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging in $C^{2\s + \varepsilon/2}_{\loc}(\R^{2m})$ to a solution $u \in C^{2\s + \varepsilon/2}(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
+for some $\varepsilon > 0$.  By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} to $u_R$ in balls of radius $\rho = 1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2\s + \varepsilon}(\overline{B_S})$ bound for $u_R$. By the Arzelà-Ascoli theorem, as $R\to +\infty$, a subsequence of $\{u_R\}$ converges in $C^{2\s + \varepsilon/2}(\overline{B_S})$ to a (pointwise) solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging uniformly on compacts in the $C^{2\s + \varepsilon/2}$ norm to a solution $u \in C^{2\s + \varepsilon/2}(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
 
 Therefore, we have obtained a solution $u$ to $L_K u = f(u)$ in $\R^{2m}$ which is doubly radial. Furthermore, $u$ is odd with respect to the Simons cone $\ccal$, i.e., $u(x) = -u(x^\star)$ for $x\in \R^{2m}$, and $0 \leq u\leq 1$ in $\ocal$.
 
-Finally, we show that $0<u<1$ in $\ocal$. This will ensure that $u$ is a saddle-shaped solution. First, note that $|u| < 1$ by the strong maximum principle (since $u$ vanishes at $\ccal$, $u \not \equiv 1$  and $u\not\equiv -1$). Let us show that $u\not\equiv 0$. To do this, we use the energy estimate of Theorem~\ref{Th:EnergyEstimate}. That is, if we consider $u_R$ the minimizer of $\ecal(\cdot, B_R)$ with $R > 2$, we have
+Finally, we show that $0<u<1$ in $\ocal$. This will ensure that $u$ is a saddle-shaped solution. First, note that $|u| < 1$ by the strong maximum principle (since $u$ vanishes at $\ccal$, $u \not \equiv 1$  and $u\not\equiv -1$). Let us show that $u\not\equiv 0$. To do this, we use the energy estimate of Theorem~\ref{Th:EnergyEstimate}. That is, if we consider $u_R$ the minimizer of $\ecal(\cdot, B_R)$ with $R > 4$, we have
 $$
 \ecal (u_R,B_S) \leq \begin{cases}
 C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
 C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 \end{cases} $$
-for every $0 < S < R-2$ and with a constant $C$ independent of $R$ and $S$. By letting $R \to \infty$ we obtain the same estimate for $u$. By contradiction, assume $u\equiv 0$. Then, the previous estimate leads to
+for every $2 < S < R-2$ and with a constant $C$ independent of $R$ and $S$. By letting $R \to \infty$ we obtain the same estimate for $u$. By contradiction, assume $u\equiv 0$. Then, the previous estimate leads to
 $$
 c_m G(0)S^{2m} = \ecal(0, B_S) \leq \begin{cases}
 C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
