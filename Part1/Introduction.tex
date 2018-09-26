@@ -96,11 +96,9 @@ $$
 $$
 where
 \begin{align*}
-J(s,t,\sigma, \tau) &:= c_m ^2  \int_{-1}^1  \int_{-1}^1  (1-\theta^2)^{\frac{m-2}{2}} (1-\overline{\theta}^2)^{\frac{m-2}{2}} \nonumber\\
-& \quad \quad \quad \quad \quad
-K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \theta -2 t \tau \overline{\theta}}\Big) \d \theta \d \overline{\theta}\,, 
+J(s,t,\sigma, \tau) &:= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega \d \tilde\omega\,.
 \end{align*}
-with $c_m$ a constant depending only on $m$ (see Appendix~\ref{Sec:stcomputations} for more details). 
+For more details on this expression, see Appendix~\ref{Sec:stcomputations}. 
 
 
 Despite the fact that all computations can be done in the radial variables  $(s,t)$, the notation becomes cumbersome. For this reason, we follow a different approach that consists of rewriting the operator $L_K$ without any change of variables but with a different kernel that is doubly radial. As it is explained with more details in Section~\ref{Sec:OperatorOddF}, if $K$ is a radially symmetric kernel, then we write $L_K$ as
