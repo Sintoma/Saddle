@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section{The operators of $\Lr$ acting on doubly radial odd functions}
+\section{Rotation invariant operators acting on doubly radial odd functions}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:OperatorOddF}
 
-This section is devoted to study the operators of the class $\Lr$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present a partial characterization of the class $\lcal_\star$ (we establish Theorem~\ref{Th:CharacterizationLstar}). Finally, we show two maximum principles for odd functions. Recall that the operators in the class $\Lr$ are always uniformly elliptic ($L_K \in \lcal_0$) and have a radially symmetric kernel, i.e., $K(y) = K(|y|)$.  
+This section is devoted to study rotation invariant operators of the class $\lcal_0$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present necessary and sufficient conditions on the kernel $K$ in order to $L_K$ belong to the class $\lcal_\star$ (we establish Theorem~\ref{Th:CharacterizationLstar}). Finally, we show two maximum principles for odd functions.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,7 +12,7 @@ This section is devoted to study the operators of the class $\Lr$ when they act 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The main purpose of this subsection is to deduce an alternative expression for an operator $L_K \in \Lr$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Our first remark is that if $w$ is invariant by $O(m)^2$, so is $L_Kw$. Indeed, for every $R \in O(m)^2$,
+The main purpose of this subsection is to deduce an alternative expression for a rotation invariant operator $L_K \in \lcal_0$ acting on doubly radial functions. This expression is more suitable to work with and it will be used throughout the paper. Our first remark is that if $w$ is invariant by $O(m)^2$, the same holds for $L_Kw$. Indeed, for every $R \in O(m)^2$,
 \begin{align*}
 L_K w (Rx)
 & = \int_{\R^{2m}} \{w(Rx) - w(y)\} K(|Rx - y|)  \d y\\
@@ -25,17 +25,15 @@ Here we have used the change $y = R\tilde{y}$ and the fact that $w(R \cdot) = w(
 Next, we present an alternative expression for the operator $L_K $ acting on doubly radial functions. This expression involves a new kernel which is also doubly radial.
 
 \begin{lemma} \label{Lemma:AlternativeOperatorExpression}
-Let $L_K \in \Lr(2m,\s)$ and let $w$ be a doubly radial function for which $L_K w$ is well-defined. Then, $L_K w$ can be expressed as
+Let $L_K \in \lcal_0(2m,\s)$ with $K$ radially symmetric, and let $w$ be a doubly radial function for which $L_K w$ is well-defined. Then, $L_K w$ can be expressed as
 $$
 L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
 $$
-where $\overline{K}$, defined by
+where $\overline{K}$ is symmetric, invariant by $O(m)^2$ in both arguments, and it is defined by
 \begin{equation*}
 %\label{Eq:KbarDef}
-\overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,,
+\overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,.
 \end{equation*}
-is symmetric and invariant by $O(m)^2$ in both arguments.
-
 Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$.
 \end{lemma}
 
@@ -120,7 +118,11 @@ To conclude this subsection, we present two alternative expressions for the oper
 
 \begin{lemma}
 	\label{Lemma:OperatorOddF}
-	Let $w$ be a doubly radial function which is odd with respect to the Simons cone, and let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$. Then,
+	Let $w$ be a doubly radial function which is odd with respect to the Simons cone. Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ be a rotation invariant operator and let $L_K^\ocal$ be defined by \eqref{Eq:OperatorOddF}. 
+	
+	Then, for every $x\in\ocal$,
+	$$ 	L_K w (x) = L_K^\ocal w(x).   $$
+	Indeed,
 	\begin{align*}
 	L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
 	&= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
@@ -130,11 +132,11 @@ To conclude this subsection, we present two alternative expressions for the oper
 	\label{Eq:ZeroOrderTerm}
 		\dfrac{1}{C} \dist(x,\ccal)^{-2\s} \leq \int_{\ocal} \overline{K}(x, y^\star) \d y \leq C \dist(x,\ccal)^{-2\s},
 	\end{equation}
-	with $C>0$ only depending on $m, \s, \lambda$ and $\Lambda$.
+	with $C>0$ depending only on $m, \s, \lambda$ and $\Lambda$.
 \end{lemma}
 
 \begin{proof}
-	The first statement is just a computation. Indeed,  using the change of variables  $\bar{y} = y^\star$ and the odd symmetry of $u$, we see that
+	The first statement is just a computation. Indeed,  using the change of variables  $\bar{y} = y^\star$ and the odd symmetry of $w$, we see that
 	\begin{align*}
 	\int_{\ical}  \{w(x) - w(y) \} \overline{K}(x, y)\d y &= \int_{\ocal} \{w(x) - w(y^\star) \}\overline{K}(x, y^\star)\d y \\
 	&= \int_{\ocal} \{w(x) + w(y) \}\overline{K}(x, y^\star)\d y\,.
@@ -151,22 +153,20 @@ To conclude this subsection, we present two alternative expressions for the oper
 	$$
 	Note that we can add and subtract the term $w(x)\overline{K}(x, y^\star)$  since it is integrable with respect to $y$ in $\ocal$. This is a consequence of \eqref{Eq:ZeroOrderTerm}.
 	
-	Let us show now \eqref{Eq:ZeroOrderTerm}. The upper bound is the simplest one since we only need to use the ellipticity of the kernel and the inclusion $\ical \subset \{y\in\R^{2m}:|x-y|\geq \dist(x,\ccal)\}$ for every $x\in \ocal$. Indeed,
+	Let us show now \eqref{Eq:ZeroOrderTerm}. In the following arguments we will use the letters $C$ and $c$ to denote positive constants, depending only on $m, \s, \lambda$ and $\Lambda$, that may change its value in each inequality. The upper bound is the simplest one since we only need to use the ellipticity of the kernel and the inclusion $\ical \subset \{y\in\R^{2m}:|x-y|\geq \dist(x,\ccal)\}$ for every $x\in \ocal$. Indeed,
 	\begin{align*}
 	\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ocal} K(|x-y^\star|) \d y = \int_{\ical} K(|x-y|) \d y \leq \int_{|x-y|\geq \dist(x,\ccal)} K(|x-y|) \d y \\
 	&\leq C \int_{|x-y|\geq \dist(x,\ccal)} |x-y|^{-2m-2\s} \d y = C \int_{\dist(x,\ccal)}^\infty \rho^{-1-2s} \d \rho \\
-	&= C \dist(x,\ccal)^{-2s}\,,
+	&= C \dist(x,\ccal)^{-2s}\,.
 	\end{align*}
-	for some positive constant $C$.
-	
+
 	In order to prove the lower bound, let us define $x_0 = x/\dist(x,\ccal)$. Note that $\dist (x_0, \ccal) = 1$. Then, we have
 	\begin{align*}
 	\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ical} K(|x-y|) \d y \\
-	&\geq c_1 \int_{\ical} |x-y|^{-2m-2\s} \d y \\
-	&= c_1 \int_{\ical} |x_0\dist(x,\ccal)-y|^{-2m-2\s} \d y \\
-	&= c_1 \,\dist(x,\ccal)^{-2s}\, \int_{\ical} |x_0-\tilde{y}|^{-2m-2\s} \d \tilde{y}\,,
+	&\geq c \int_{\ical} |x-y|^{-2m-2\s} \d y \\
+	&= c \int_{\ical} |x_0\dist(x,\ccal)-y|^{-2m-2\s} \d y \\
+	&= c \,\dist(x,\ccal)^{-2s}\, \int_{\ical} |x_0-\tilde{y}|^{-2m-2\s} \d \tilde{y}\,.
 	\end{align*}
-	for some positive constant $c_1$ depending only on $n$, $\s$ and $\lambda$.
 	
 	To conclude the proof, we claim that
 	$$ \int_{\ical} |x_0-y|^{-2m-2\s} \d y \geq c>0\quad \textrm{for every } x_0 \textrm{ such that } \dist(x_0,\ccal) = 1,$$
@@ -176,10 +176,9 @@ To conclude this subsection, we present two alternative expressions for the oper
 	&\geq \sum_{k=0}^\infty \int_{I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)} (3k+4)^{-2m-2\s} \d y \\
 	&= \sum_{k=0}^\infty (3k+4)^{-2m-2\s} |I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)|\\
 	&\geq \sum_{k=0}^\infty (3k+4)^{-2m-2\s} |I\cap \left( B_{3k+3}(\overline{x_0}) \setminus B_{3k+2}(\overline{x_0}) \right)|\\
-	&= c_2 \sum_{k=0}^\infty (3k+4)^{-2m-2\s} \left\{(3k+3)^{2m} -(3k+2)^{2m}\right\}\\
-	&\geq c_3 \sum_{k=0}^\infty (3k+4)^{-1-2\s} = c,
+	&= c \sum_{k=0}^\infty (3k+4)^{-2m-2\s} \left\{(3k+3)^{2m} -(3k+2)^{2m}\right\}\\
+	&\geq c \sum_{k=0}^\infty (3k+4)^{-1-2\s} = c.
 	\end{align*}
-	with $c>0$ independent of $x_0$.
 \end{proof}
 
 
@@ -419,7 +418,9 @@ From the two previous results, Theorem~\ref{Th:CharacterizationLstar} follows im
 \end{proof}
 
 \begin{remark}
-	We do not know... si no es $C^1$ \todo{Acabar}
+	Note that there are radially symmetric kernels $K$ that are not $C^1$ for which we do not know if $L_K$ belongs to the class $\lcal_\star$. For instance, given $0<\s<\s'<1$, consider the following kernel:
+	$$ K(\tau) = \min\{\tau^{-2m-2\s},\tau^{-2m-2\s'}\} = \tau^{-2m-2\s} \chi_{(0,1)}(\tau)+\tau^{-2m-2\s'} \chi_{[1,+\infty)}(\tau). $$
+	Then, it is easy to check that $K$ is continuous and decreasing but $K(\sqrt{\tau})$ is not convex in $(0,+\infty)$ even though it does not have any interval of concavity.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
