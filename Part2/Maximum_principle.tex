@@ -9,7 +9,7 @@ The maximum principle we establish is the following.
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleLinearized}
-	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $L_K  \in \lcal_\star$. Let $v\in C^\alpha_(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
+	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $L_K  \in \lcal_\star$. Let $v\in C^\alpha(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
 	$$
 	\beqc{\PDEsystem}
 	L_K v - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
@@ -22,7 +22,7 @@ The maximum principle we establish is the following.
 	Then, $v \leq 0$ in $\Omega$.
 \end{proposition}
 
-In order to prove this result we need a maximum principle in narrow domains, stated next.
+In order to prove this result we need a maximum principle in ``narrow'' domains, stated next.
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleNarrowDomainsOdd}
@@ -31,7 +31,7 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	H \subset \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
 	$$ 
 	be an open set (not necessarily bounded).  
-	Let $L_K  \in \lcal_\star$ and let $v\in C^\alpha_(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
+	Let $L_K  \in \lcal_\star$ and let $v\in C^\alpha(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
 	\begin{equation}
 	\label{Eq:AssumptionsMaxPNarrow}
 	\beqc{\PDEsystem}
@@ -41,7 +41,7 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	\ds \limsup_{x\in H, \ |x|\to \infty} v(x) &\leq & 0\,.
 	\eeqc
 	\end{equation}
-	Under these assumptions there exists $\overline{\varepsilon}>0$ depending only on $\lambda, m, \s$ and $||c_-||_{L^\infty}$ such that, if $\varepsilon<\overline{\varepsilon}$, then $v \leq 0$ in $H$.
+	Under these assumptions there exists $\overline{\varepsilon}>0$ depending only on $\lambda, m, \s$ and $||c_-||_{L^\infty}$ such that, if $\varepsilon<\overline{\varepsilon}$, then $v \leq 0$ in $H$. \todo{Pensar si hace falta la hipotesis en infinito}
 \end{proposition}
 
 \begin{proof}
@@ -49,7 +49,7 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 	$$
 	M := \sup_H v > 0\,.
 	$$
-	Under the assumptions \eqref{Eq:AssumptionsMaxPNarrow}, $M$ must be attained at an interior point $x_0 \in H$, that we can assume without loss of generality that is of the form $x_0 = (|x_0'|e,|x_0''|e)$, with $e=(1,0,...,0)\in\R^m$. Then,
+	Under the assumptions \eqref{Eq:AssumptionsMaxPNarrow}, $M$ must be attained at an interior point $x_0 \in H$. Then,
 	\begin{equation}
 	\label{Eq:InequalitiesMaxPNarrowProof}
 	0 \geq L_K  v(x_0) + c(x_0)v(x_0) \geq L_K  v(x_0) - \norm{c_-}_{L^\infty(H)}M\,.
@@ -74,7 +74,7 @@ In order to prove this result we need a maximum principle in narrow domains, sta
 \end{proof}
 
 
-Once this maximum principle in narrow domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}.
+Once this maximum principle in ``narrow'' domains is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}.
 
 \begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}]
     
@@ -129,7 +129,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	By the previous reasoning, $\underline{\tau}$ is well defined. Clearly, $v - \underline{\tau} u \leq 0 $ in $\Omega$. In addition, since $v(x_0)>0$, we have $-\underline{\tau} u(x_0) < v(x_0) - \underline{\tau} u (x_0) \leq 0$ and therefore, since $u(x_0)>0$, we deduce that  $\underline{\tau} > 0$.
 	
-	We claim that $v - \underline{\tau} u \not \equiv 0$. Indeed, if $v - \underline{\tau} u \equiv 0$ then $v = \underline{\tau} u$ and thus, since $\underline{\tau} > 0$, we get 
+	We claim that $v - \underline{\tau} u \not \equiv 0$. Indeed, if $v - \underline{\tau} u \equiv 0$ then $v = \underline{\tau} u$ and thus, by using \eqref{Eq:uSupersolLinearized}, the equation for $v$ and the fact that $\underline{\tau} > 0$, we get 
 	$$
 	0 \geq \mathscr{L} v(x_0) = \underline{\tau} \mathscr{L} u(x_0) > 0\,, 
 	$$
@@ -143,7 +143,7 @@ Once this maximum principle in narrow domains is available, we can now proceed w
 	$$
 	\tilde{w} := v - (\underline{\tau} - \eta) u < 0 \quad \textrm{ in }\overline{\Omega}_\varepsilon\,.
 	$$
-	Using again the maximum principle in narrow domains with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that 
+	Using again the maximum principle in ``narrow'' domains with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that 
 	$$
 	v - (\underline{\tau} - \eta) u \leq 0 \quad \textrm{ in }\Omega\,,
 	$$
@@ -167,12 +167,14 @@ The same argument used in the previous proof can be used to establish the remain
 	$$
 	L_{K_1} u_0 - f'(u_0)u_0 > 0 \quad \text{ in } (0,+\infty)\,. 
 	$$
-	All the arguments are the same and yield that $v\leq 0$ in $(0,+\infty)$.
+	All the arguments are the same, using the maximum principle of Proposition~\ref{Prop:MaxPrpNarrowOdd} in the domain $(0,\varepsilon)$, and yield that $v\leq 0$ in $(0,+\infty)$.
 	
 	The fact that the inequality is strict follows from the strong maximum principle for odd functions in $\R$, as follows. Suppose by contradiction that there exists a point $x_0\in (0,+\infty)$ such that $v(x_0) = 0$. Then,
-	$$
-	0 \geq L_{K_1} v (x_0) = - \int_{-\infty}^{+\infty}	v(y) K_1(x_0 - y) \d y = - \int_{-\infty}^{+\infty} v(y) \{ K_1(x_0 - y) - K_1(x_0 + y)\} \d y > 0\,,$$
-	arriving at a contradiction. Here we have used that $v\not \equiv 0$ and the fact that $K_1$ is decreasing in $(,+\infty)$, which yields $K_1(x - y) \geq  K_1(x + y)$ for every $x>0$ and $y>0$.
+	\begin{align*}
+		0 &\geq L_{K_1} v (x_0) = - \int_{-\infty}^{+\infty}	v(y) K_1(x_0 - y) \d y \\
+		&= - \int_{-\infty}^{+\infty} v(y) \{ K_1(x_0 - y) - K_1(x_0 + y)\} \d y > 0\,,
+	\end{align*}
+	arriving at a contradiction. Here we have used that $v\not \equiv 0$ and the fact that $K_1$ is decreasing in $(0,+\infty)$, which yields $K_1(x - y) \geq  K_1(x + y)$ for every $x>0$ and $y>0$.
 \end{proof}
 
 

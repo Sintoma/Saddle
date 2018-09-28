@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:Preliminaries}
 
-In this section we collect some preliminary results that will be used in the rest of this paper. First, we give the regularity results needed in the forthcoming sections. Then, we present the functional setting which we are going to work with and finally we state the two basic maximum principles for doubly radial odd functions, proved in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
+In this section we collect some preliminary results that will be used in the rest of this paper. First, we state the regularity results needed in the forthcoming sections. Then, we present the functional setting which we are going to work with and finally we recall the two basic maximum principles for doubly radial odd functions proved in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,23 +12,23 @@ In this section we collect some preliminary results that will be used in the res
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In this subsection we present the regularity results that will be used in the paper. For further reference, see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein. 
+In this subsection we present the regularity results that will be used in the paper. For further details, see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein. 
 
 
 We start with a result on the interior regularity for linear equations.
 
-\begin{proposition}
+\begin{proposition}[\cite{RosOton-Survey,SerraC2s+alphaRegularity}]
 	\label{Prop:InteriorRegularity}
 	Let $L_K \in\lcal_0(n,\s,\lambda, \Lambda)$ and let $w\in L^\infty (\R^n)$ be a weak solution to $L_K w = h$ in $B_1$. Then,
 	\begin{equation}
 	\label{Eq:C2sEstimate}
-	\norm{w}_{C^{2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (\R^n)} }\,.
+	\norm{w}_{C^{2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (\R^n)} }.
 	\end{equation}
 	Moreover, let $\alpha > 0$ and assume additionally that $w \in C^\alpha (\R^n)$. Then, if $\alpha +
 	2\s$ is not an integer,
 	\begin{equation}
 	\label{Eq:Calpha->Calpha+2sEstimate}
-	\norm{w}_{C^{\alpha + 2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{C^{\alpha} (B_1)} + \norm{w}_{C^\alpha (\R^n)} }\,,
+	\norm{w}_{C^{\alpha + 2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{C^{\alpha} (B_1)} + \norm{w}_{C^\alpha (\R^n)} },
 	\end{equation}
 	where $C$ is a constant that depends only on $n$, $\s$, $\lambda$ and $\Lambda$.
 \end{proposition}
@@ -37,17 +37,17 @@ We start with a result on the interior regularity for linear equations.
 Throughout the paper we consider saddle solutions $u$ to \eqref{Eq:NonlocalAllenCahn} that satisfy $|u|\leq 1$ in $\R^n$. Hence, by applying \eqref{Eq:C2sEstimate} we find that for any $x_0\in \R^n$,
 \begin{align*}
 \norm{u}_{C^{2\s} (B_{1/2} (x_0))} &\leq C\bpar{\norm{f(u)}_{L^\infty (B_1(x_0))} + \norm{u}_{L^\infty  (\R^n)} } \\
-&\leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }\,.
+&\leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }.
 \end{align*}
 Note that the estimate is independent of the point $x_0$, and thus since the equation is satisfied in the whole $\R^n$,
 $$
-\norm{u}_{C^{2\s}(\R^n)} \leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }\,.
+\norm{u}_{C^{2\s}(\R^n)} \leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }.
 $$
-Then, we use estimate \eqref{Eq:Calpha->Calpha+2sEstimate} repeatedly and the same kind of arguments wield that, since $f\in C^{1}([-1,1])$, then $u\in C^{\alpha}(\R^n)$ for some $\alpha > 1+ 2 \s$. Moreover, the following estimate holds:
+Then, we use estimate \eqref{Eq:Calpha->Calpha+2sEstimate} repeatedly and the same kind of arguments wield that, if $f\in C^{k}([-1,1])$, then $u\in C^{\alpha}(\R^n)$ for some $\alpha > k+ 2 \s$. Moreover, the following estimate holds:
 $$
 \norm{u}_{C^{\alpha}(\R^n)} \leq C\,,
 $$
-for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$.
+for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, $k$ and $\norm{f}_{C^k([-1,1])}$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,7 +57,7 @@ for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, and $\n
 
 
 
-In this section we define the functional spaces that we are going to consider in some parts of this paper. These were also the spaces considered in the previous paper \cite{FelipeSanz-Perela:IntegroDifferentialI}, and we refer the reader to that article for more details.
+In this section we define the functional spaces that we are going to consider in some parts of this paper. These were also the spaces used in the previous article \cite{FelipeSanz-Perela:IntegroDifferentialI}, and we refer the reader to that work for more details.
 
 Given a set $\Omega \subset \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
 $$
@@ -91,37 +91,36 @@ Recall that when $K$ satisfies \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \
 \label{Subsec:MaxPrinciples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this last subsection we state the two basic maximum princples for doubly radial odd functions. Note that in both results we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. Both results where proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} thanks to the key inequality \eqref{Eq:KernelInequality}.
+In this last subsection, we state two basic maximum principles for doubly radial odd functions. Note that in both results we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. Both results where proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} using the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$.
 
-The first result is a weak maximum principle for odd functions with respect to $\ccal$
+The first result is a weak maximum principle for odd functions with respect to $\ccal$.
 
 \begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
-\label{Prop:WeakMaximumPrincipleForOddFunctions}
- Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}_{\loc}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that
- $$
- \beqc{\PDEsystem}
- L_K w & \geq & 0 & \text{ in } \Omega\,,\\
- w & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
- \eeqc
- $$
- and that either $\Omega$ is bounded or 
- $$
- \liminf_{x \in \ocal,\,|x|\to +\infty} w(x) \geq 0\,.
- $$
- Then, $w \geq 0$ in $\Omega$.
+	\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that
+	$$
+	\beqc{\PDEsystem}
+	L_K w & \geq & 0 & \text{ in } \Omega\,,\\
+	w & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
+	\eeqc
+	$$
+	and that either
+	$$
+	\Omega \text{ is bounded} \quad \text{ or } \liminf_{x \in \ocal,\,|x|\to +\infty} w(x) \geq 0\,.
+	$$
+	Then, $w \geq 0$ in $\Omega$.
 \end{proposition}
+
 
 The second result is the strong maximum principle for odd functions with respect to $\ccal$.
 
 \begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
-\label{Prop:StrongMaximumPrincipleForOddFunctions} 
-Let $\Omega \subset \ocal$ and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}_{\loc}(\Omega)\cap L^\infty(\R^{2m})$ with $\alpha > 2\s$ be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K w \geq 0$ in $\Omega$, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ or $w > 0$ in $\Omega$.
+	\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K w \geq 0$ in $\Omega$, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ or $w > 0$ in $\Omega$.
 \end{proposition}
 
-
-
-
-
+\begin{remark}
+	\label{Remark:MaxPrincipleSingularity}
+	The regularity assumptions on $w$ in the previous results can be weakened allowing $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:Existence} in order to apply this maximum principle with a function that is no more regular than $C^\s$.
+\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
