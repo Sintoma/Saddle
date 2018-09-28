@@ -3,7 +3,7 @@
 \section{An energy estimate for doubly radial odd minimizers}
 \label{Sec:EnergyEstimate}
 
-In this section we present an estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 2$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same estimate but for minimizers without any symmetry. The strategy used in \cite{SavinValdinoci-EnergyEstimate} is to compare the energy of $u$ with the one of a suitable competitor which is constructed combining $u$ with a radially symmetric auxiliary function. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with respect to the Simons cone $\ccal$.
+In this section we present an estimate for the energy in $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 4$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same estimate but for minimizers without any symmetry. The strategy used in \cite{SavinValdinoci-EnergyEstimate} is to compare the energy of $u$ with the one of a suitable competitor which is constructed combining $u$ with a radially symmetric auxiliary function. In our case, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$, we need to adapt the auxiliary function used in \cite{SavinValdinoci-EnergyEstimate} so that the resulting competitor is admissible, i.e., is a doubly radial function which is odd with respect to the Simons cone $\ccal$.
 
 The auxiliary function needed to build the competitor is defined as follows. For points $x\in \ocal$, we set
 \begin{equation}
@@ -32,7 +32,7 @@ and
 	\label{Fig:PsiSandOmegaS}
 \end{figure}
 
-Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover, $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ inside $\overline{B_{S+2}}$ (see Figure~\ref{Fig:PsiSandOmegaS}). Furthermore, its measure is well known to be of order $2m-1$ (see the proof of the energy estimate in \cite{CabreTerraI}). That is,
+Note that both $\Psi_S$ and $d_S$ are Lipschitz functions, with Lipschitz norm independent of $S$. Moreover, $\Psi_S$ is odd and $d_S$ even with respect to the Simons cone. Regarding the set $\overline{\Omega_S}$, we can see it as the preimage of $1$ through $d_S$ in $B_{S+2}$ (see Figure~\ref{Fig:PsiSandOmegaS}). Furthermore, its measure is well known to be of order $2m-1$ (see the proof of the energy estimate in \cite{CabreTerraI}). That is,
 \begin{equation}
 \label{Eq:MeasureOmegaS}
 |\Omega_S| \leq C\,S^{2m-1}.
@@ -49,7 +49,7 @@ with $C>0$ independent of $S$.
 \end{lemma}
 
 \begin{proof}
-Note first that if $x\in \Omega_S$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$. Hence, we only need to establish the result for the case $x\in B_S\cap \{\dist(x,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. Under these assumptions, we have that $\Psi_S(x)=-1$ (see Figure~\ref{Fig:PsiSandOmegaS}) and $d_S(x) = \min\{S+1-|x|,\dist(x,\ccal)\}$. Moreover, since $x\in B_S$ and $\dist(x,\ccal)\geq 1$, we get $d_S(x) \leq S+1-|x|$. Therefore, under the assumption $|x-y|\leq d_S(x)$, it holds
+Note first that if $x\in \Omega_S$, then $d_S(x)=1$ and the result is trivial by the Lipschitz continuity of $\Psi_S$. Hence, we only need to establish the result for the case $x\in B_S\cap \{\dist(\cdot,\ccal)\geq 1\} \cap \ocal$ and $y\in \ocal$. Under these assumptions, we have that $\Psi_S(x)=-1$ (see Figure~\ref{Fig:PsiSandOmegaS}) and $d_S(x) = \min\{S+1-|x|,\dist(x,\ccal)\} \leq S+1-|x|$. Therefore, under the assumption $|x-y|\leq d_S(x)$, it holds
 $$ |y|\leq |x-y| + |x| \leq d_S(x)+|x| \leq S+1. $$
 
 Thus, we have to show
@@ -111,8 +111,8 @@ Since $S>2$, the desired estimate follows straightforward.
 
 For the other part of the integral we can write
 \begin{align*}
-\int_{B_{S+2}\setminus \Omega_S} d_S(x)^{-2\s} \d x &= \int_{B_{S}\cap \dist\{x,\ccal\}>1} d_S(x)^{-2\s} \d x \\
-& \leq \int_{B_{S}\cap \dist\{x,\ccal\}>1} \left( S+1-|x| \right)^{-2\s} \d x + \int_{B_{S}\cap \dist\{x,\ccal\}>1} \dist(x,\ccal)^{-2\s} \d x.
+\int_{B_{S+2}\setminus \Omega_S} d_S(x)^{-2\s} \d x &= \int_{B_{S}\cap \{\dist(x,\ccal)>1\}} d_S(x)^{-2\s} \d x \\
+& \leq \int_{B_{S}\cap \{\dist(x,\ccal)>1\}} \left( S+1-|x| \right)^{-2\s} \d x + \int_{B_{S}\cap \{\dist(x,\ccal)>1\}} \dist(x,\ccal)^{-2\s} \d x.
 \end{align*}
 The desired estimate for the first integral can be found in \cite{SavinValdinoci-EnergyEstimate}. Therefore, in order to complete the proof it only remains to estimate the second integral. It can be estimated by writing it in $(y,z)$ variables, where
 $$

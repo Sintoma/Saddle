@@ -438,11 +438,11 @@ We first establish a weak maximum principle.
 \label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that
 $$
 \beqc{\PDEsystem}
-L_K u & \geq & 0 & \text{ in } \Omega\,,\\
+L_K u + c(x) u & \geq & 0 & \text{ in } \Omega\,,\\
 u & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
 \eeqc
 $$
-and that either
+with $c \geq 0$, and that either
 $$
 \Omega \text{ is bounded} \quad \text{ or } \liminf_{x \in \ocal,\,|x|\to +\infty} u(x) \geq 0\,.
 $$
@@ -458,23 +458,29 @@ Then, using the expression of $L_K$ for odd functions (see Lemma~\ref{Lemma:Oper
 $$
 L_K u (x_0) = \int_{\ocal} \{m - u(y) \} \{\overline{K}(x_0, y) - \overline{K}(x_0, y^\star)  \} \d y +  2 m \int_{\ocal} \overline{K}(x_0, y^\star) \d y\,.
 $$
-Now, since $m - u(y) \leq 0$ in $\ocal$, $m<0$ and $\overline{K}(x_0, y) \geq \overline{K}(x_0, y^\star)>0$ (since $L_K\in \lcal_\star$), we get
+Now, since $m - u(y) \leq 0$ in $\ocal$, $m<0$, $c\geq 0$ and $\overline{K}(x_0, y) \geq \overline{K}(x_0, y^\star)>0$ (since $L_K\in \lcal_\star$), we get
 $$
-0 \leq L_K  u(x_0) \leq 2m \int_{\ocal} \overline{K}(x_0, y^\star) \d y < 0\,,
+0 \leq L_K  u(x_0) + c(x_0) u(x_0) \leq m \left(2\int_{\ocal} \overline{K}(x_0, y^\star) \d y + c(x_0)\right)  < 0\,,
 $$
 a contradiction.
 \end{proof}
 
+\begin{remark}
+Note that since the operator $L_K$ includes itself a positive zero order term in addition to the integro-differential part, the condition $c\geq 0$ in the previous proposition can be lightly relaxed. Indeed, if we follow the proof of the result, we can deduce that the hypothesis on $c$ that we can assume is 
+$$ c(x) > -2\int_{\ocal} \overline{K}(x, y^\star) \d y. $$
+This hypothesis seems hard to be checked for applications apart from the case $c\geq 0$. Nevertheless, recall that by Lemma~\ref{Lemma:OperatorOddF} we have an explicit lower bound of $ \int_{\ocal} \overline{K}(x, y^\star) \d y $ in terms of the function $\dist(x,\ccal)$ that could be used to check the previous condition.
+\end{remark}
+
 The following is a strong maximum principle for odd functions.
 
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u \geq 0$ in $\Omega$, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
+\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u + c(x) u\geq 0$ in $\Omega$, with $c(x)$ any function, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
 \end{proposition}
 
 \begin{proof}
 Assume that $u \not \equiv 0$. We shall prove that $u > 0$ in $\Omega$. By contradiction, assume that there exists a point $x_0\in \Omega$ such that $u(x_0)= 0$. Then, using the expression of $L_K $ for odd functions given in Lemma~\ref{Lemma:OperatorOddF}, the kernel inequality \eqref{Eq:KernelInequality} and the fact that $u\geq 0$ in $\ocal$, we obtain
 $$
-0 \leq L_K u(x_0) = - \int_{\ocal} u(y)\big \{\overline{K}(x_0, y) - \overline{K}(x_0, y^\star) \big \}\d y < 0\,,
+0 \leq L_K u(x_0) + c(x_0) u(x_0) = - \int_{\ocal} u(y)\big \{\overline{K}(x_0, y) - \overline{K}(x_0, y^\star) \big \}\d y < 0\,,
 $$
 a contradiction.
 \end{proof}
