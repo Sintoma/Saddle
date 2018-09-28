@@ -4,7 +4,7 @@
 \label{Sec:Existence}
 
 
-In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maximum principle and the existence of a positive subsolution. To do this, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$. Along this section we will call odd sub/supersolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}.
+In this section we give a proof of Theorem~\ref{Th:Existence} based on the maximum principle and the existence of a positive subsolution. To do this, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$. Along this section we will call odd sub/supersolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}. In view of Remark~\ref{Remark:MaxPrincipleSingularity}, we do not need the operator to be finite in the whole set when applied to a subsolution (respectively supersolution), it can be $-\infty$ (respectively $+\infty$) at some points.
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
@@ -43,7 +43,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	$$
 	Then one defines 
 	$$
-	\tilde{L}_K w := L_Kw + b w 	\quad \text{ and } \quad 	g(t) := f(t) + b t\,.
+	\tilde{L}_K w := L_Kw + b w 	\quad \text{ and } \quad 	g(\tau) := f(\tau) + b \tau\,.
 	$$
 	Therefore, our problem is equivalent to find a solution to
 	$$
@@ -52,7 +52,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	v &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
 	$$
-	such that $v$ is doubly radial, odd with respect to the Simons cone and  $\vsub \leq v \leq \vsup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(t) \geq 0$ for $t \in [-M,M]$. Moreover, since $b \geq 0$, $\tilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (as in Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
+	such that $v$ is doubly radial, odd with respect to the Simons cone and  $\vsub \leq v \leq \vsup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(\tau) \geq 0$ for $\tau \in [-M,M]$. Moreover, since $b \geq 0$, $\tilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (as in Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
 	
 	We define $v_0 = \vsub$ and, for $k\geq 1$, let $v_k$ be the solution to the linear problem
 	$$
@@ -68,7 +68,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence}, based on the maxi
 	\vsub = v_0 \leq v_1 \leq \ldots \leq v_k \leq v_{k+1} \leq \ldots \vsup \quad \text{ in }\ocal\,,
 	$$
 	and that each function $v
-	_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $v_k$ converges in $C^{2\s+\varepsilon}$ to the desired solution.
+	_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $v_k$ converges uniformly on compacts in $C^{2\s+\varepsilon}$ norm to the desired solution.
 \end{proof}
 
 In order to construct a positive subsolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next.
@@ -88,7 +88,7 @@ In order to construct a positive subsolution, we also need a characterization an
 	\phi_1 & = & 0 & \textrm{ in } \R^{2m}\setminus \Omega\,,
 	\eeqc
 	$$
-	and satisfies that $\phi \geq 0$ in $\ocal$ and $\phi > 0$ in $\Omega \cap \ocal$.
+	and satisfies that $\phi_1 > 0$ in $\Omega \cap \ocal$.
 	We call such function the \emph{first odd eigenfunction of $L_K$ in $\Omega$} and $\lambda_{1, \, \mathrm{odd}}(\Omega, L_K) $ the \emph{first odd eigenvalue}. 
 	
 	Moreover, in the case $\Omega = B_R$, there exists a constant $C$ depending only on $n$, $\s$ and $\Lambda$ such that
@@ -99,19 +99,23 @@ In order to construct a positive subsolution, we also need a characterization an
 
 
 \begin{proof}
-	The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, using the same arguments as in  Lemma~3.4. of \cite{FelipeSanz-Perela:IntegroDifferentialI} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}).
+	The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, using the same arguments as in  Lemma~3.4. of \cite{FelipeSanz-Perela:IntegroDifferentialI} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi_1 > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}).
 	
 	We show the third statement. Let $\widetilde{w} (x):= w(Rx)$ for every $w\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)$. Then,
 	\begin{align*}
 	& \min_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_{B_R} w(x)^2 \d x} \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad\\
-	&  \quad \quad \quad \quad \quad \quad \quad \quad \leq \min_{\widetilde{w} \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x/R) - \widetilde{w}(y/R)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_R} \widetilde{w}(x/R)^2 \d x}
+	&   \quad \quad \quad \quad \quad \quad \leq \min_{\widetilde{w} \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x/R) - \widetilde{w}(y/R)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_R} \widetilde{w}(x/R)^2 \d x}
 	\\
-	& \quad \quad \quad \quad \quad \quad \quad \quad = R^{-2 \s }\min_{\widetilde{w} \in \widetilde{\H}^s_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x) - \widetilde{w}(y)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_1} \widetilde{w}(x)^2 \d x}
+	& \quad \quad \quad \quad \quad \quad = R^{-2 \s }\min_{\widetilde{w} \in \widetilde{\H}^s_{0, \, \mathrm{odd}}(B_1)} \dfrac{\dfrac{c_{n, \s}\Lambda}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |\widetilde{w}(x) - \widetilde{w}(y)|^2 |x - y|^{-n-2 \s}\d x \d y}{ \ds \int_{B_1} \widetilde{w}(x)^2 \d x}
 	\\
-	& \quad \quad \quad \quad \quad \quad \quad \quad = \lambda_{1, \, \mathrm{odd}}(B_1, \fraclaplacian) \Lambda R^{-2 \s } \,.
+	& \quad \quad \quad \quad \quad \quad = \lambda_{1, \, \mathrm{odd}}(B_1, \fraclaplacian) \Lambda R^{-2 \s } \,.
 	\end{align*}
 \end{proof}
 
+\begin{remark}
+	\label{Remark:CsRegularityFirstEigenfunction}
+	Note that, by standard regularity results for $L_K$, we have that $\phi_1 \in C^\s(\overline{\Omega})\cap C^\infty(\Omega)$, and the regularity up to the boundary is optimal (see \cite{RosOton-Survey} and the references therein for the details). Due to this and the fact that $\phi_1 >0$ in $\Omega\cap \ocal$ while $\phi_1=0$ in $\R^{2m}\setminus \Omega$, it is easy to check by using \eqref{Eq:OperatorOddF} that $-\infty <L_K \phi_1 < 0$ in $\ocal\setminus \overline{\Omega}$ and $L_K \phi_1 = -\infty$ in $\partial \Omega \cap \ocal$.
+\end{remark}
 
 With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existence}.
 
@@ -124,7 +128,7 @@ With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existen
 	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R\,,
 	\eeqc
 	\end{equation}
-	and then let $R\to \infty$ to get a saddle-shaped solution.
+	and then let $R\to+ \infty$ to get a saddle-shaped solution.
 	
 	Let $\phi_1^{R_0}$ be the first odd eigenfunction of $L_K$ in $B_{R_0} \subset \R^{2m}$, given by Lemma~\ref{Lemma:FirstOddEigenfunction}, and let  $\lambda_1^{R_0} := \lambda_{1, \, \mathrm{odd}}(B_{R_0}, L_K)$. Then, we claim that for $R_0$ big enough and $\varepsilon$ small enough, $\usub_R = \varepsilon\phi_1^{R_0} $ is an odd subsolution of \eqref{Eq:ProofExistenceProblemBR} for every $R\geq R_0$. To see this, first note that, without loss of generality, we can assume that $\norm{\phi_1^{R_0}}_{L^\infty(B_R)}=1$. Then, since $\varepsilon \phi_1^{R_0}>0$ in $B_{R_0}\cap \ocal$ and using \eqref{Eq:PropertyConcavityf}, we see that for every $x\in B_{R_0}\cap \ocal$,
 	$$
@@ -134,28 +138,26 @@ With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existen
 	$$
 	L_K \usub_R = \lambda_1^{R_0} \varepsilon \phi_1^{R_0} < f(\varepsilon\phi_1^{R_0}) = f(\usub_R) \quad \textrm{ in } B_{R_0}\cap \ocal\,.
 	$$
-	In addition, if $x\in (B_R\setminus B_{R_0})\cap\ocal$, it is easy to conclude, by using \eqref{Eq:OperatorOddF}, that
+	In addition, if $x\in (B_R\setminus B_{R_0})\cap\ocal$, by Remark~\ref{Remark:CsRegularityFirstEigenfunction} we have that
 	$$
 	L_K \usub_R < 0 = f(0) =  f(\usub_R) \quad \textrm{ in } (B_R\setminus B_{R_0})\cap \ocal\,.
 	$$
 	Hence, the claim is proved.
 	
-	Now, if we define $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, a simple computation shows that it is an odd supersolution of \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure (see Proposition~\ref{Prop:MonotoneIterationOdd}), we obtain a solution $u_R$ of \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone and $\varepsilon \phi_1^{R_0} = \usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_{R_0}$, so is $u_R$.
+	Now, if we define $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, a simple computation shows that it is an odd supersolution to \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure given in Proposition~\ref{Prop:MonotoneIterationOdd} (taking into account Remarks~\ref{Remark:MaxPrincipleSingularity} and \ref{Remark:CsRegularityFirstEigenfunction} when using the maximum principle), we obtain a solution $u_R$ to \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone and $\varepsilon \phi_1^{R_0} = \usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_{R_0}$, the same holds for $u_R$.
 	
-	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging in $C^{2\s + \eta}_{\loc}(\R^{2m})$, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. Indeed, the strong maximum principle yields $u<1$ in $\ocal$. Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$, also the limit $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. Therefore by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
+	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging on compacts in  $C^{2\s + \eta}(\R^{2m})$ norm, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. Indeed, the usual strong maximum principle yields $u<1$ in $\ocal$. Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$ for $R>R_0$, also the limit $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. Therefore, by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
 \end{proof}
 
 
-
-
-The fact of being $u$ positive in $\ocal$ yields that it is stable in this set, as explained in the following remark. 
+The fact of being $u$ positive in $\ocal$ yields that $u$ is stable in this set, as explained in the following remark. 
 
 
 \begin{remark}
 	\label{Remark:Stability}
-	Note that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a domain $\Omega\subset \R^n$, then $w$ is stable. The proof of this is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
+	Note that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a domain $\Omega\subset \R^n$, then $w$ is stable, that is, \eqref{Eq:StablityCondition} holds. The proof of this is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
 	
-	On the one hand, note that by \eqref{Eq:PropertyConcavityf}, we have that $f'(w)w<f(w)$ in $\Omega$. On the other hand, the following holds for all functions $\varphi$ and $\xi$:
+	On the one hand, note that by \eqref{Eq:PropertyConcavityf}, we have that $f'(w)w<f(w)$ in $\Omega$, since $w$ is positive in $\Omega$. On the other hand, the following holds for all functions $\varphi$ and $\xi$, with $\varphi>0$:
 	\begin{equation}
 	\label{Eq:IdentityStability}
 	\big (\varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.

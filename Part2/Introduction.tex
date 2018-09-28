@@ -3,42 +3,50 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:Introduction}
  
-In this paper, which is the second part of \cite{FelipeSanz-Perela:IntegroDifferentialI}, we study saddle shaped solutions to the semilinear equation
+In this paper, which is the second part of \cite{FelipeSanz-Perela:IntegroDifferentialI}, we study saddle-shaped solutions to the semilinear equation
 \begin{equation}
 \label{Eq:NonlocalAllenCahn}
 L_K u = f(u) \quad \textrm{ in } \R^{2m},
 \end{equation}
 where $L_K$ is a linear integro-differential operator of the form \eqref{Eq:DefOfLu} and $f$ is of Allen-Cahn type ---see \eqref{Eq:Hypothesesf}. These  solutions (see Definition~\ref{Def:SaddleShapedSol} below) are particularly interesting in relation to the nonlocal version of a conjecture by De Giorgi, with the aim of finding a counterexample in high dimensions (see the details below). Moreover, this problem is related to the regularity theory of nonlocal minimal surfaces.
+
+In the previous paper \cite{FelipeSanz-Perela:IntegroDifferentialI} we established an appropriate setting to study solutions to \eqref{Eq:NonlocalAllenCahn} which are doubly radial and odd with respect to the Simons cone (this terminology is described more precisely below), a property satisfied by saddle-shaped solutions. We deduced an alternative expression for the operator $L_K$ acting on doubly radial odd functions ---see \eqref{Eq:OperatorOddF}. This expression was used to deduce some maximum principles for odd functions under certain assumptions on the kernel of the operator $L_K$. Moreover, we proved an energy estimate for doubly radial and odd minimizers of the energy associated to the equation, as well as the existence of saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}.
+
+Using the results obtained in \cite{FelipeSanz-Perela:IntegroDifferentialI}, in the present paper we study saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}. First, we prove existence of this type of solutions, Theorem~\ref{Th:Existence}, by using the monotone iteration method (as an alternative to the proof in \cite{FelipeSanz-Perela:IntegroDifferentialI}). After this, we establish the asymptotic behavior of saddle-shaped solutions,  Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. To do it, we prove two symmetry results for semilinear equations like \eqref{Eq:NonlocalAllenCahn}: Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. In the study of the asymptotic behavior of saddle-shaped solutions we prove further properties of the so-called \emph{layer solution} (see Section~\ref{Sec:Asymptotic}). Finally, we establish the uniqueness of the saddle-shaped solution, Theorem~\ref{Th:Uniqueness}, by using a maximum principle for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}).
+
  
 As in \cite{FelipeSanz-Perela:IntegroDifferentialI}, equation \eqref{Eq:NonlocalAllenCahn} is driven by a linear integro-differential operator $L_K$ of the form
 \begin{equation}
 \label{Eq:DefOfLu}
-L_K w(x) = \PV \int_{\R^n} \{w(x) - w(y)\} K(x-y)\d y,
+L_K w(x) = \int_{\R^n} \{w(x) - w(y)\} K(x-y)\d y,
 \end{equation}
-where $\PV$ stands for principal value and the kernel $K$ satisfies
+where the kernel $K$ satisfies
 \begin{equation}
 \label{Eq:Symmetry&IntegrabilityOfK}
 K\geq 0\,, \quad K(y) = K(-y) \quad \textrm{ and } \quad \int_{\R^n} \min \left\{ |y|^2, 1 \right\} K(y) \d y < + \infty\,.
 \end{equation}
+The integral in \eqref{Eq:DefOfLu} has to be understood in the principal value sense, as well as all the integrals involving nonlocal operators in the rest of the paper.
 The most canonical example of such operators is the fractional Laplacian
 $$
-\fraclaplacian w = c_{n, \s} \PV \int_{\R^n} \dfrac{w(x) - w(y)}{|x-y|^{n + 2\s}}\d y\,,
+\fraclaplacian w = c_{n, \s} \int_{\R^n} \dfrac{w(x) - w(y)}{|x-y|^{n + 2\s}}\d y\,,
 $$
 where $\s \in (0,1)$ and $c_{n, \s}$ is a normalizing constant given by
 \begin{equation}
   \label{Eq:ConstantFracLaplacian}
-  c_{n,\s} = \s\dfrac{2^{2\s} \Gamma(\frac{n}{2}+\s) }{\pi^{n/2} \Gamma(1-\s)}
+  c_{n,\s} = \s\dfrac{2^{2\s} \Gamma(\frac{n}{2}+\s) }{\pi^{n/2} \Gamma(1-\s)},
 \end{equation}
-(see for instance \cite{BucurValdinoci}).
+see for instance \cite{BucurValdinoci}.
 
-Throughout the paper, we assume that the operators we study are uniformly elliptic. That is, their kernels are bounded from above and below by the one of the fractional Laplacian:
+Throughout the paper, we assume that the operators of our study are uniformly elliptic. That is, their kernels are bounded from above and below by a positive multiple of the one of the fractional Laplacian:
 \begin{equation}
 \label{Eq:Ellipticity}
-\lambda\dfrac{c_{n,\s}}{|y|^{n+2\s}} \leq K(y) \leq \Lambda \dfrac{c_{n,\s}}{|y|^{n+2\s}}\,, \quad 0< \lambda \leq \Lambda \,,
+\lambda \dfrac{c_{n,\s}}{|y|^{n+2\s}} \leq K(y) \leq \Lambda\dfrac{c_{n,\s}}{|y|^{n+2\s}}\,, \quad \text{ with }  0< \lambda \leq \Lambda \,,
 \end{equation}
-where $c_{n,\s}$ is given in \eqref{Eq:ConstantFracLaplacian}. This condition is one of the most frequently adopted when dealing with nonlocal operators of the form \eqref{Eq:DefOfLu} since it is known to yield Hölder regularity of solutions (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and Section~2). The family of linear operators satisfying conditions \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity} is the so-called $\lcal_0(n,\s,\lambda, \Lambda)$ ellipticity class. If, in addition, the operators are invariant under rotations (that is, their kernel is radially symmetric), we will say that the operators are in the ellipticity class $\Lr(n,\s,\lambda, \Lambda)$. For short we will usually write $\lcal_0$ or $\Lr$, and we will make explicit the parameters only when needed.
+where $c_{n,\s}$ is given in \eqref{Eq:ConstantFracLaplacian}. This condition is very frequently adopted when dealing with nonlocal operators of the form \eqref{Eq:DefOfLu} since it is known to yield Hölder regularity of solutions (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and Section~2). The family of linear operators satisfying conditions \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity} is the so-called $\lcal_0(n,\s,\lambda, \Lambda)$ ellipticity class. For short we will usually write $\lcal_0$, and we will make explicit the parameters only when needed.
 
-Note that, for operators in the class $\lcal_0$, the minimal assumption on $w$ so that $L_K w$ is well defined in a domain $\Omega$ is that $w\in C^\alpha_\loc (\Omega)\cap L^1_\s(\R^n)$ for some $\alpha > 2\s$, where $w\in L^1_\s(\R^n)$ means that
+Following \cite{FelipeSanz-Perela:IntegroDifferentialI}, in this paper we will sometimes assume that the operator $L_K$ is rotationally invariant, that is, its kernel is radially symmetric. This extra assumption allows us to rewrite the operator in the setting of doubly radial odd functions, as explained in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
+
+Note that, for operators in the class $\lcal_0$, the minimal assumption on $w$ so that $L_K w$ is well defined in a domain $\Omega$ is that $w\in C^\alpha (\Omega)\cap L^1_\s(\R^n)$ for some $\alpha > 2\s$, where $w\in L^1_\s(\R^n)$ means that
 $$
 \int_{\R^n} \dfrac{|w(x)|}{1+|x|^{n+2\s}}\d x < +\infty\,.
 $$
@@ -65,25 +73,15 @@ $$
 $$
 This cone is of importance in the theory of minimal surfaces. It has zero mean curvature at every point $x\in \ccal \setminus \{0\}$, in all even dimensions, and it is a minimizer of the perimeter functional when $2m\geq 8$. Concerning the nonlocal setting, $\ccal$ has also zero nonlocal mean curvature in all even dimensions, although it is not known if it is a minimizer of the nonlocal perimeter (see the introduction of \cite{Felipe-Sanz-Perela:SaddleFractional} and the references therein).
 
-%This is the first of two articles concerning the semilinear equation \eqref{Eq:NonlocalAllenCahn}. In the present paper we address the problem of studying odd solutions with respect to the Simons cone (see \eqref{Eq:SimonsCone} below). In particular, we find a suitable expression for the operator $L_K$  acting on this type of functions, as well as for its associated energy. We deduce necessary and sufficient conditions for the operator to have a maximum principle in this setting. Under these assumptions we establish an energy estimate for doubly radial odd minimizers. Finally, as an application of these results we prove, by using variational arguments, the existence of saddle-shaped solutions to problem \eqref{Eq:NonlocalAllenCahn}.
 
-%In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we focus our study on saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}. Using the results of the present paper, we give an alternative proof of the existence based on the monotone iteration scheme. Moreover, we show the uniqueness of the saddle-shaped solution by establishing its asymptotic behavior, as well as a maximum principle for the linearized operator.
-
-%The Simons cone will be a central object along this paper. It is defined in $\R^{2m}$ by
-%\begin{equation}
-%\label{Eq:SimonsCone}
-%\mathscr{C} = \setcond{x = (x', x'') \in \R^{2m}}{|x'| = |x''|}\,.
-%\end{equation}
-%This cone is of importance in the theory of minimal surfaces. It has zero mean curvature at every point $x\in \ccal \setminus \{0\}$, in all even dimensions, and it is a minimizer of the perimeter functional when $2m\geq 8$. Concerning the nonlocal setting, $\ccal$ has also zero nonlocal mean curvature in all even dimensions, although it is not known if it is a minimizer of the nonlocal perimeter (see the introduction of \cite{Felipe-Sanz-Perela:SaddleFractional} and the references therein).
-
-As in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we will use the letters $\ocal$ and $\ical$ to denote both sides of the cone:
+As in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we will use the letters $\ocal$ and $\ical$ to denote each of the parts in which $\R^{2m}$ is divided by the cone $\ccal$:
 $$
 \ocal:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| > |x''|} \ \textrm{ and } \
 \ical:= \setcond{x = (x', x'') \in \R^{2m}}{|x'| < |x''|}.
 $$
-Both domains $\ocal$ and $\ical$ belong to a family of sets in $\R^{2m}$ which are called of \emph{double revolution}. They are sets that are invariant under orthogonal transformations in the first $m$ variables and also under orthogonal transformations in the last $m$ variables. That is, $\Omega\subset \R^{2m}$ is a set of double revolution if $R\Omega = \Omega$ for any given transformation $R\in O(m)^2 = O(m) \times O(m)$, where  $O(m)$ is the orthogonal group of $\R^m$.
+Both sets $\ocal$ and $\ical$ belong to a family of sets in $\R^{2m}$ which are called of \emph{double revolution}. They are sets that are invariant under orthogonal transformations in the first $m$ variables and also under orthogonal transformations in the last $m$ variables. That is, $\Omega\subset \R^{2m}$ is a set of double revolution if $R\Omega = \Omega$ for any given transformation $R\in O(m)^2 = O(m) \times O(m)$, where  $O(m)$ is the orthogonal group of $\R^m$.
 
-In this paper we deal with functions that are \emph{doubly radial}. These are functions $w:\R^{2m}  \to \R$ that only depend on the modulus of the first $m$ variables and on the modulus of the last $m$ ones, i.e., $w(x) = w(|x'|,|x''|)$. Equivalently, $w(Rx) = w(x)$ for every $R \in O(m)^2$.
+In this paper we deal with functions that are \emph{doubly radial}. These are functions $w:\R^{2m}  \to \R$ that depend only on the modulus of the first $m$ variables and on the modulus of the last $m$ ones, i.e., $w(x) = w(|x'|,|x''|)$. Equivalently, $w(Rx) = w(x)$ for every $R \in O(m)^2$.
 
 In order to define certain symmetries of a function with respect to the Simons cone, we consider the following isometry, that will play a significant role in this article:
 \begin{equation}
@@ -109,12 +107,8 @@ With these definitions at hand we can now introduce saddle-shaped solutions.
 Note that these solutions are even with respect to the coordinate axis and that their zero level set is the Simons cone $\mathscr{C} = \{|x'|=|x''|\}$. 
 
 
-%
-%Therefore, saddle-shaped solutions are candidates to build a counterexample of the De Giorgi conjecture in high dimensions, since if one could prove that they are global minimizers in $\R^8$, by the result in \cite{JerisonMonneau} one would have a counterexample of the De Giorgi conjecture in $\R^9$ (as an alternative to that of \cite{delPinoKowalczykWei}).
+Saddle-shaped solutions to the classical Allen-Cahn equation involving the Laplacian were studied in \cite{DangFifePeletier, Schatzman, CabreTerraI,CabreTerraII, Cabre-Saddle}. In these works, they established the existence, uniqueness and some qualitative properties of this type of solutions, such as instability when $2m\leq 6$ and stability if $2m\geq 14$. The possible stability in dimensions $8$, $10$ and $12$ is still an open problem, as well as the possible minimality of this solution in dimensions $2m \geq 8$.
 
-Saddle-shaped solutions for the classical Allen-Cahn equation involving the Laplacian were studied in \cite{DangFifePeletier, Schatzman, CabreTerraI,CabreTerraII, Cabre-Saddle}. In these works, they established the existence, uniqueness and some qualitative properties of this type of solutions, such as instability when $2m\leq 6$ and stability if $2m\geq 14$.
-
-%Saddle-shaped solutions for the classical Allen-Cahn equation involving the Laplacian were first studied by Dang, Fife, and Peletier in \cite{DangFifePeletier} in dimension $2m=2$. They established the existence and uniqueness of this type of solutions, as well as some monotonicity properties and asymptotic behavior. In \cite{Schatzman}, Schatzman studied the instability property of saddle solutions in $\R^2$. Later, Cabré and Terra  proved the existence of a saddle solution in every dimension $2m\geq 2$, and they established some qualitative properties such as asymptotic behavior, monotonicity properties, as well as instability in dimensions $2m = 4$ and $2m = 6$ (see \cite{CabreTerraI,CabreTerraII}). The uniqueness in dimensions higher than $2$ was established by Cabré in \cite{Cabre-Saddle}, where he also proved that the saddle solution is stable in dimensions $2m \geq 14$.
 
 In the fractional framework, there are only three works concerning saddle-shaped solutions to the equation $\fraclaplacian u = f(u)$. In  \cite{Cinti-Saddle,Cinti-Saddle2}, Cinti proved the existence of a saddle-shaped solution as well as some qualitative properties such as asymptotic behavior, monotonicity properties, and instability in low dimensions. In a previous paper by the authors \cite{Felipe-Sanz-Perela:SaddleFractional}, further properties of these solutions were proved, the main ones being uniqueness and, when $2m\geq 14$, stability. Recall that we say that a bounded solution $w$ to $L_K w = f(w)$ in $\Omega\subset \R^n$ is \emph{stable} in $\Omega$ if the second variation of the energy at $w$ is nonnegative. That is, if
 \begin{equation}
@@ -126,9 +120,9 @@ for every $\xi \in C^\infty_0 (\Omega)$.
 
 To our knowledge, the present paper together with its first part \cite{FelipeSanz-Perela:IntegroDifferentialI} are the first ones studying saddle-shaped solutions for general integro-differential equations of the form \eqref{Eq:NonlocalAllenCahn}. In the three previous papers \cite{Cinti-Saddle, Cinti-Saddle2, Felipe-Sanz-Perela:SaddleFractional}, the main tool used is the extension problem for the fractional Laplacian (see \cite{CaffarelliSilvestre}). Nevertheless, this technique has the limitation that it cannot be carried out for general integro-differential operators different from the fractional Laplacian. Therefore, some purely nonlocal techniques were developed in \cite{FelipeSanz-Perela:IntegroDifferentialI} to study saddle-shaped solutions, and we exploit them in the present paper.
 
-Let us collect now the main results of the previous paper \cite{FelipeSanz-Perela:IntegroDifferentialI} that will be used in the present one. Recall that, if $K$ is a radially symmetric kernel, then we can rewrite the operator $L_K$ acting on a doubly radial function as
+Let us collect now the main results of the previous paper \cite{FelipeSanz-Perela:IntegroDifferentialI} that will be used in the present one. Recall that, if $K$ is a radially symmetric kernel, then we can rewrite the operator $L_K$ acting on a doubly radial function $w$ as
 $$
-L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y
+L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y\,,
 $$
 where $\overline{K}$ is doubly radial in both variables and is defined by
 \begin{equation}
@@ -147,13 +141,13 @@ Furthermore,
 \label{Eq:ZeroOrderTerm}
 \frac{1}{C} \dist(x,\ccal)^{-2\s} \leq \int_{\ocal} \overline{K}(x, y^\star) \d y \leq C \dist(x,\ccal)^{-2\s},
 \end{equation}
-with $C>0$ only depending on $m, \s, \lambda$ and $\Lambda$ (see the details in \cite{FelipeSanz-Perela:IntegroDifferentialI}).
+with $C>0$ depending only on $m, \s, \lambda$ and $\Lambda$ (see the details in \cite{FelipeSanz-Perela:IntegroDifferentialI}).
 
 
 Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential term plus a zero order term with a nonnegative coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. This lead us in \cite{FelipeSanz-Perela:IntegroDifferentialI} to introduce the following definition.
 
-\begin{definition}
-	Let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies
+\begin{definition}[Ellipticity class $\lcal_\star$]
+	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies
 	\begin{equation}
 	\label{Eq:KernelInequality}
 	\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
@@ -164,9 +158,9 @@ One of the main results in \cite{FelipeSanz-Perela:IntegroDifferentialI} was a p
 
 \begin{theorem}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
 	\label{Th:CharacterizationLstar}
-	Let $L_K \in \Lr(2m,\s,\lambda, \Lambda)$ and assume that 
+	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric, and assume that 
 	\begin{equation}
-	\label{Eq:SqrtConvex}  
+	\label{Eq:SqrtConvex}	
 	K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,.
 	\end{equation}
 	Then, $L_K\in \lcal_\star(2m,\s,\lambda, \Lambda)$. Moreover, if $K\in C^1((0,+\infty))$, then \eqref{Eq:SqrtConvex} is a necessary condition for $L_K$ to belong to $\lcal_\star$.
@@ -179,15 +173,15 @@ The importance of $\lcal_\star$ is that the operators in this class have a maxim
 	Let $f$ satisfy \eqref{Eq:Hypothesesf} and let $L_K\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
 \end{theorem}
 
-Note that the previous theorem was already proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} using variational techniques. Here instead we use the monotone iteration method and the existence of a positive supersolution to a semilinear Dirichlet problem in a ball (see Section~\ref{Sec:Existence} for the details). Let us remark that in both proofs the crucial ingredient is inequality \eqref{Eq:KernelInequality}.
+The previous theorem was already proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} using variational techniques. Here instead we use the monotone iteration method and the existence of a positive supersolution to a semilinear Dirichlet problem in a ball (see Section~\ref{Sec:Existence} for the details). Let us remark that in both proofs the crucial ingredient is inequality \eqref{Eq:KernelInequality}.
 
 
-The second main result of this paper is Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution} below, on the asymptotic behavior of saddle-shaped solutions at infinity. Before state it, let us introduce an important type of solutions in the study of the integro-differential Allen-Cahn equation: the layer solutions.
+The second main result of this paper is Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution} below, on the asymptotic behavior of saddle-shaped solutions at infinity. Before state it, let us introduce an important type of solutions in the study of the integro-differential Allen-Cahn equation: the layer solutions.
 
 
-We say that a solution $v$ to $L_K v = f(v)$ in $\R^n$ is a \emph{layer solution} if $v$ is increasing in one direction, say $e\in \Sph^{n-1}$ and $v(x) \to \pm 1$ as $x\cdot e \to \pm 1$ (not necessarily uniformly). By a result of Cozzi and Passalacqua in \cite{CozziPassalacqua}, under the assumptions \eqref{Eq:Hypothesesf} on $f$, for every kernel $K$ such that $L_K\in \lcal_0(1,\s,\Lambda, \lambda)$ there exist a layer solution  to $L_K v = f(v)$ in $\R$ which is odd with respect to some point and is unique up to translations (in the case of the fractional Laplacian this result was proved in \cite{CabreSolaMorales,CabreSireII} by using the extension problem). 
+We say that a solution $v$ to $L_K v = f(v)$ in $\R^n$ is a \emph{layer solution} if $v$ is increasing in one direction, say $e\in \Sph^{n-1}$ and $v(x) \to \pm 1$ as $x\cdot e \to \pm 1$ (not necessarily uniformly). By a result of Cozzi and Passalacqua in \cite{CozziPassalacqua}, under the assumptions \eqref{Eq:Hypothesesf} on $f$, for every kernel $K_1$ such that $L_{K_1}\in \lcal_0(1,\s,\Lambda, \lambda)$ there exist a layer solution  to $L_{K_1} v = f(v)$ in $\R$ which is odd with respect to some hyperplane and is unique up to translations (in the case of the fractional Laplacian this result was proved in \cite{CabreSolaMorales,CabreSireII} by using the extension problem). 
 
-From this solution in $\R$, it is easy to construct a layer solution to a problem in $\R^n$ for an operator with a different (but related kernel). This relation is given in Proposition~\ref{Prop:KernelsDimension}. 
+From this solution in $\R$, it is easy to construct a layer solution to a problem in $\R^n$ for an operator with a different (but related) kernel. This relation is given in Proposition~\ref{Prop:KernelsDimension} (see Section~\ref{Sec:Asymptotic} for more details). 
 
 
 Now, let $K\in\lcal_0(n,\s,\Lambda, \lambda)$ be a $n$-dimensional kernel and $K_1\in \lcal_0(1,\s,\Lambda, \lambda)$ be a $1$-dimensional one, and assume that they are related as in Proposition~\ref{Prop:KernelsDimension}. We define $u_0$ to be the unique solution of the following problem.
@@ -212,8 +206,8 @@ describes the asymptotic behavior of saddle solutions at infinity. Note that $(|
 The precise statement on the asymptotic behavior of saddle-shaped solutions at infinity is the following.
 
 \begin{theorem}
-	\label{Th:AsymptoticBehaviourSaddleSolution}
-	Let $f\in C^2(\R)$ of Allen-Cahn type. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by \eqref{Eq:DefOfU}.
+	\label{Th:AsymptoticBehaviorSaddleSolution}
+	Let $f\in C^2(\R)$ satisfy \eqref{Eq:Hypothesesf}. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} with $L_K \in \lcal_\star$. Let $U$ be the function defined by \eqref{Eq:DefOfU}.
 	
 	Then,
 	$$
@@ -224,7 +218,7 @@ The precise statement on the asymptotic behavior of saddle-shaped solutions at i
 	as $ R\to +\infty$.
 \end{theorem}
 
-To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for odd solutions to a semilinear equation that are nonnegative in a half-space.
+To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for odd solutions to a semilinear equation that are nonnegative in a half-space. Both results are well known for the classical Laplacian, and are also available for $\fraclaplacian$ (although some of the proofs are only available by using the extension problem). Here we present the proof for a general integro-differential operator $L_K$, following some arguments that are used for the analogous results for $-\Delta$ and $\fraclaplacian$.
 
 The last main result of this paper is the uniqueness of the saddle-shaped solution, stated next.
 
@@ -233,13 +227,13 @@ The last main result of this paper is the uniqueness of the saddle-shaped soluti
 	Let $f$ satisfy \eqref{Eq:Hypothesesf} and let $L\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists at most one saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}.
 \end{theorem}
 
-To prove this result we need two ingredients. The first one is the asymptotic behavior of saddle-solutions given in Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}. The second one is a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ which is given in Proposition~\ref{Prop:MaximumPrincipleLinearized}. To establish it, we will need to use a maximum principle in ``narrow'' domains that we also prove in Section~\ref{Sec:MaximumPrinciple}.
+To prove this result we need two ingredients. The first one is the asymptotic behavior of saddle-solutions given in Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. The second one is a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ which is given in Proposition~\ref{Prop:MaximumPrincipleLinearized}. To establish it, we will need to use a maximum principle in ``narrow'' domains that we also prove in Section~\ref{Sec:MaximumPrinciple}.
 
 To conclude this introduction, let us make some comments on the importance of problem \eqref{Eq:NonlocalAllenCahn} and its relation with the theory of (classical and nonlocal) minimal surfaces and  a famous conjecture raised by De Giorgi.
 
 A main open problem (even in the local case) is to determine whether the saddle-shaped solution is a minimizer of the energy functional associated to the equation, depending on the dimension $2m$. This question is deeply related to the regularity theory of local and nonlocal minimal surfaces, as explained next.
 
-In the seventies, Modica and Mortola (see \cite{Modica,ModicaMortola}) proved that, considering an appropriately rescaled version of the (local) Allen-Cahn equation, the corresponding energy functionals $\Gamma$-converge to the perimeter functional. Thus, the minimizers of the equation converge to the characteristic function of a set of minimal perimeter. This same fact holds for the equation with the fractional Laplacian, though we have two different scenarios depending on the parameter $\s \in (0,1)$. If $\s \geq 1/2$, the rescaled energy functionals associated to the equation $\Gamma$-converge to the classical perimeter (see \cite{GiovanniBouchitteSeppecher,Gonzalez}), while in the case $\s \in (0,1/2)$ they $\Gamma$-converge to the fractional perimeter (see \cite{SavinValdinoci-GammaConvergence}). As a consequence, if the saddle-shaped solution was proved to be a minimizer in a certain dimension for some $\s \in (0,1/2)$, it would follow that the Simons cone $\ccal$ would be a minimizing nonlocal $(2\s)$-minimal surface in such dimensions. This last statement on the saddle-shaped solution is an open problem in any dimension (although it is known that the Simons cone is not a minimizer in dimension $2m=2$). The only available result related to this question is the recent result in \cite{Felipe-Sanz-Perela:SaddleFractional} that states that the saddle-shaped solution to the fractional Allen-Cahn equation is stable in dimensions $2m\geq 14$. As a consequence of this and a result in \cite{CabreCintiSerra-Stable}, the Simons cone is a stable nonlocal $(2\s)$-minimal surface in dimensions $ 2m\geq 14$.
+In the seventies, Modica and Mortola (see \cite{Modica,ModicaMortola}) proved that, considering an appropriately rescaled version of the (local) Allen-Cahn equation, the corresponding energy functionals $\Gamma$-converge to the perimeter functional. Thus, the minimizers of the equation converge to the characteristic function of a set of minimal perimeter. This same fact holds for the equation with the fractional Laplacian, though we have two different scenarios depending on the parameter $\s \in (0,1)$. If $\s \geq 1/2$, the rescaled energy functionals associated to the equation $\Gamma$-converge to the classical perimeter (see \cite{GiovanniBouchitteSeppecher,Gonzalez}), while in the case $\s \in (0,1/2)$ they $\Gamma$-converge to the fractional perimeter (see \cite{SavinValdinoci-GammaConvergence}). As a consequence, if the saddle-shaped solution was proved to be a minimizer in a certain dimension for some $\s \in (0,1/2)$, it would follow that the Simons cone $\ccal$ would be a minimizing nonlocal $(2\s)$-minimal surface in such dimensions. This last statement on the saddle-shaped solution is an open problem in any dimension (although it is known that the Simons cone is not a minimizer in dimension $2m=2$). The only available result related to this question is the recent result in \cite{Felipe-Sanz-Perela:SaddleFractional} that states that the saddle-shaped solution to the fractional Allen-Cahn equation is stable in dimensions $2m\geq 14$. As a consequence of this and a result in \cite{CabreCintiSerra-Stable}, the Simons cone is a stable nonlocal $(2\s)$-minimal surface in dimensions $ 2m\geq 14$ (see the details in \cite{Felipe-Sanz-Perela:SaddleFractional}).
 
 
 Moreover, as explained below, saddle-shaped solutions are natural objects to build a counterexample to a famous conjecture raised by De Giorgi, that reads as follows. Let $u$ be a bounded solution of $-\Delta  u = u - u^3$ in $\R^n$ which is monotone in one direction, say $\partial_{x_n} u > 0$. Then, if $n\leq 8$, $u$ is one dimensional, i.e., $u$ depends only on one Euclidean variable. This conjecture was proved to be true in dimensions $n=2$ and  $n=3$ (see \cite{GhoussoubGui,AmbrosioCabre}), and in dimensions $4\leq n \leq 8$ with the extra assumption of
@@ -256,9 +250,6 @@ The corresponding conjecture in the fractional setting, where one replaces the o
 Concerning the conjecture with more general operators like $L_K$, fewer results are known. In dimension $n=2$ the conjecture is proved in \cite{HamelRosOtonSireValdinoci, Bucur, FazlySire}, under different assumptions on the kernel $K$ and even for more general nonlinear operators. Note also that the results of \cite{DipierroSerraValdinoci} also hold for a particular class of kernels in $\lcal_0$.
 
 
-%While studying the conjecture raised by De Giorgi, another natural question has appeared: do global minimizers in $\R^n$ of the Allen-Cahn energy have one-dimensional symmetry? A deep result from Savin \cite{Savin-DeGiorgi} states that in dimension $n \leq 7$ this is indeed true. On the other hand, it is conjectured that this is false for $n\geq 8$ and that the saddle-shaped solution is a counterexample (since the Simons cone is a global minimizer of the perimeter functional in these dimensions). The answer to this question would provide some insights to the original conjecture of De Giorgi.
 
-
-
-The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present some preliminary results that will be used in the rest of the article. Section~\ref{Sec:Existence} contains the proof of Theorem~\ref{Th:Existence} on the existence of saddle-shaped solutions. In Section~\ref{Sec:SymmetryResults} we establish two symmetry results, Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. Section~\ref{Sec:Asymptotic} is devoted to the layer solution of problem \eqref{Eq:NonlocalAllenCahn} and the proof of the asymptotic behavior of saddle-shaped solutions, Theorem~\ref{Th:AsymptoticBehaviourSaddleSolution}. Finally, Section~\ref{Sec:MaximumPrinciple} concerns the proof of a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}), aa well as the proof of Theorem~\ref{Th:Uniqueness}, establishing the uniqueness of the saddle-shaped solution.
+The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present some preliminary results that will be used in the rest of the article. Section~\ref{Sec:Existence} contains the proof of Theorem~\ref{Th:Existence} on the existence of saddle-shaped solutions. In Section~\ref{Sec:SymmetryResults} we establish two symmetry results, Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. Section~\ref{Sec:Asymptotic} is devoted to the layer solution of problem \eqref{Eq:NonlocalAllenCahn} and the proof of the asymptotic behavior of saddle-shaped solutions, Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. Finally, Section~\ref{Sec:MaximumPrinciple} concerns the proof of a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}), as well as the proof of Theorem~\ref{Th:Uniqueness}, establishing the uniqueness of the saddle-shaped solution.
 
