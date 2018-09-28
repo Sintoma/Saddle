@@ -9,18 +9,18 @@ In this section, we establish Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution},
 
 To study the asymptotic behavior of the saddle-shaped solution it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. This happens also for the fractional Laplacian, thanks to the local extension problem.
 
-Nevertheless, for a general operator $L_K$ this is not true anymore and we need a way to associate a solution of a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result. Some of its points appear in \cite{CozziPassalacqua} with a different notation. We state and prove them here for completeness.
+Nevertheless, for a general operator $L_K$ this is not true anymore and we need a way to relate a solution to a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result. Some of its points appear in \cite{CozziPassalacqua} with a different notation. We state and prove them here for completeness.
 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
-	Let $L_K $ a symmetric and translation invariant intego-differential operator of the form \eqref{Eq:DefOfLu} with kernel $K:\R^n \to \R$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Define the one dimensional kernel $K_1$ by
+	Let $L_K $ be a symmetric and translation invariant integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel $K:\R^n \to \R$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Define the one dimensional kernel $K_1$ by
 	\begin{equation}
 	\label{Eq:OneDimKernel}
 	K_1(t) := \int_{\R^{n-1}} K\left(\theta,t\right) \d \theta = |t|^{n-1} \int_{\R^{n-1}} K\left(t\sigma,t\right) \d \sigma.
 	\end{equation}
 	\begin{enumerate}[label=(\roman{*})]
-		\item Let $v:\R\to\R$ and consider $w:\R^n\to\R$ defined by $w(x) = v(x_n)$. Then, $L_K w(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens for $w(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K w(x) = L_{K_1} v(x \cdot e)$.
-		\item $K_1(t)$ is nonincreasing/decreasing in $(0,+\infty)$ if $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$.
+		\item Let $v:\R\to\R$ and consider $w:\R^n\to\R$ defined by $w(x) = v(x_n)$. Then, $L_K w(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens with $w(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K w(x) = L_{K_1} v(x \cdot e)$.
+		\item  If $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$, then $K_1(t)$ is nonincreasing/decreasing in $(0,+\infty)$.
 		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$.
 		\item In particular, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
 		
@@ -35,8 +35,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	\end{align*}
 	Now we make the change of variables $\theta = x'-y'$. That is,
 	\begin{align*}
-	L_K w(x) &= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left(\theta,x_n-y_n\right) \d \theta \d y_n \\
-	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left(\theta,x_n-y_n\right) \d\theta \d y_n \\
+	L_K w(x) 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left(\theta,x_n-y_n\right) \d \theta \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n).
 	\end{align*}
 	This shows the first equality in \eqref{Eq:OneDimKernel}. The alternative expression of the kernel $K_1$, that is useful in some cases, can be obtained from the change of variable $\theta = t\sigma$. Furthermore, in the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables using the previous computations.
@@ -86,7 +85,7 @@ We prove here the first statement of this lemma, and we postpone the proof of th
 	$$
 	L_{K_1} \ddot{u}_0 = f''(u_0)\dot{u}_0^2 + f'(u_0)\ddot{u}_0 \text{ in }\R.
 	$$
-	Hence, as $x_j \to +\infty$ a standard compactness argument combined with \eqref{Eq:PropertiesLayer} yield that $w_j$ converges on compact sets to a function $w$ solution of
+	Hence, as $x_j \to +\infty$ a standard compactness argument combined with \eqref{Eq:PropertiesLayer} yield that $w_j$ converges on compact sets to a function $w$ that solves
 	$$
 	L_{K_1}  w = f'(1)w \quad \text{ in }\R.
 	$$
@@ -103,7 +102,7 @@ Now we have all the ingredients to establish the asymptotic behavior of the sadd
 
 
 \begin{proof}[Proof of Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}]
-By contradiction, assume that the result does not hold. Then, there exists an $\varepsilon>0$ and a sequence $\{x_k\}$, such that
+By contradiction, assume that the result does not hold. Then, there exists an $\varepsilon>0$ and an unbounded sequence $\{x_k\}$, such that
 \begin{equation}
 \label{Eq:ContradictionAsymptotic}
 |u(x_k)-U(x_k)|+|\nabla u(x_k)-\nabla U(x_k)|+|D^2u(x_k)-D^2U(x_k)| > \varepsilon.
@@ -120,7 +119,7 @@ which satisfies $0<w_k<1$ in $\overline{B_k}$ and
 $$
 L_K w_k = f(w_k) \ \textrm{ in } B_k.
 $$
-By letting $k\to +\infty$, by the uniform estimates for the operators of the class $\lcal_0$ and the Arzelà-Ascoli theorem, we have that, up to a subsequence, $w_k$ converges on compact sets to a function $w$ which is a pointwise solution of
+By letting $k\to +\infty$, by the uniform estimates for the operators of the class $\lcal_0$ and the Arzelà-Ascoli theorem, we have that, up to a subsequence, $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
 $$
 \beqc{\PDEsystem}
 L_K  w &=& f(w) & \textrm{ in }\R^n\,,\\
@@ -160,13 +159,11 @@ w &\geq& 0  &\textrm{ in } H\,,\\
 $$
 For the details about the fact that $\ocal \rightarrow H$, see \cite{CabreTerraI}.
 
-As in the previous case, by stability $w$ cannot be zero, and then, by Theorem \ref{Th:SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Therefore, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
+As in the previous case, by stability $w$ cannot be zero, and thus $w>0$ in $H$ (by the strong maximum principle for odd functions with respect to a hyperplane, see \cite{ChenLiLi}). Hence, by Theorem \ref{Th:SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Finally, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
 \begin{align*}
 u(x_k) &= w_k(x_k-x_k^0) = w(x_k-x_k^0) + \mathrm{o}(1) \\
-&= u_0((x_k-x_k^0)\cdot \nu) + \mathrm{o}(1) \\
-&= u_0((x_k-x_k^0)\cdot \nu_k^0) + \mathrm{o}(1) \\
-&= u_0(d_k |\nu_k^0|^2) + \mathrm{o}(1) \\
-&= u_0(d_k) + \mathrm{o}(1) = U (x_k) + \mathrm{o}(1),
+&= u_0((x_k-x_k^0)\cdot \nu) + \mathrm{o}(1) = u_0((x_k-x_k^0)\cdot \nu_k^0) + \mathrm{o}(1) \\
+&= u_0(d_k |\nu_k^0|^2) + \mathrm{o}(1) = u_0(d_k) + \mathrm{o}(1) = U (x_k) + \mathrm{o}(1),
 \end{align*}
 contradicting \eqref{Eq:ContradictionAsymptotic}. The same is done for $\nabla u$ and $D^2 u$.
 \end{proof}
