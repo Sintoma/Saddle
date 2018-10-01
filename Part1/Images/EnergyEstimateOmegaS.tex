@@ -1,0 +1,242 @@
+\documentclass[12pt,reqno]{amsart}
+
+\usepackage[utf8]{inputenc}
+
+%%---AMS packages---%% (automatically loaded in amsart or amsbook)
+\usepackage{amsmath} %General package for maths (loads also amsbsy to make bold symbols)
+\usepackage{amsthm} %Package for theorems
+\usepackage{amssymb} %Symbols (loads also amsfonts)
+\usepackage{amscd} %Package for rectangular diagrams
+%\usepackage{amsrefs} %Gestió de referències
+
+
+\usepackage{emptypage}
+%\usepackage{pdfpages} %Include pdf documents
+
+%\usepackage{dsfont} % Double stroke roman fonts
+\usepackage{enumitem} %Enumerations
+\usepackage{mathtools} %More symbols, etc.
+\usepackage{mathrsfs} %Calligraphic symbols with \mathscr
+%\usepackage{fancyhdr} %Customize the header
+\usepackage{hyperref} %Makes references hyperlinks
+\hypersetup{
+	%true = make page number, not text, be link
+	linktocpage = true,
+	%set to all if you want both sections and subsections linked
+	%linktoc=all,
+	colorlinks=true,
+	linkcolor=red,
+}
+\usepackage{esint} %To write averaged integrals
+
+%%%FIGURES AND IMAGES
+\usepackage{graphicx} %For using \includegraphics
+%\usepackage{wrapfig} %For figures wrapped inside the text
+%\usepackage{float} %Interface for defining floating objects
+%\usepackage{caption} %Customize the captions in floating environments
+%\usepackage{subfigure}
+\usepackage{subcaption}
+%\usepackage{tcolorbox} %For boxing
+%\tcbuselibrary{theorems}
+%\tcbuselibrary{skins}
+
+\usepackage{pgf,tikz,pgfplots}
+\usetikzlibrary{arrows}
+\usetikzlibrary{intersections}
+\usetikzlibrary{fadings}
+
+
+%%%EDITION HELP
+\usepackage[colorinlistoftodos]{todonotes} %Package to add TODO notes in colors
+\setlength{\marginparwidth}{2.3cm} % make todonotes appear wider
+%\usepackage{showlabels} %Show the labels of equations and theorems
+%\usepackage{showkeys} %Show the keys of all references
+\usepackage{refcheck}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   THEOREM ENVIRONMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{remark*}{Remark}
+\newtheorem{observation}[theorem]{Observation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   MACROS/ABREVIATIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\con}[1]{\mathbb{#1}}
+\newcommand{\C}{\con{C}} %Complex
+\newcommand{\R}{\con{R}} %Real
+\newcommand{\Q}{\con{Q}} %Rational
+\newcommand{\Z}{\con{Z}} %Integer
+\newcommand{\N}{\con{N}} %Natural
+\newcommand{\T}{\con{T}} %Torus
+\newcommand{\Sph}{\con{S}} %Sphere
+\renewcommand{\H}{\con{H}}
+\newcommand{\ccal}{\mathscr{C}}
+\newcommand{\ecal}{\mathcal{E}}
+\newcommand{\ical}{\mathcal{I}}
+\newcommand{\lcal}{\mathcal{L}}
+\newcommand{\ncal}{\mathcal{N}}
+\newcommand{\ocal}{\mathcal{O}}
+\newcommand{\ucal}{\mathcal{U}}
+\newcommand{\e}{\mathrm{e}}
+
+
+\makeatletter
+\newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
+\newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
+\makeatother
+
+\newcommand{\limn}{\displaystyle\lim_{n \rightarrow \infty}} %limit n to infinity
+\newcommand{\norm}[1]{\left | \left |{#1} \right | \right |}
+\newcommand{\seminorm}[1]{\left [ {#1} \right ] }
+\newcommand{\laplacian}{\Delta}
+\newcommand{\s}{\gamma}
+\newcommand{\fraclaplacian}{(-\Delta)^\s}
+\newcommand{\Lr}{\mathcal{L}_{\mathrm{r}}}
+\newcommand{\loc}{\mathrm{loc}}
+\renewcommand{\d}{\,\mathrm{d}} %straight d with small space before
+\newcommand{\dx}{\,\mathrm{d}x} %The usual differential of x
+\newcommand{\ddt}[1][]{\dfrac{\d{#1}}{\d t}} %Derivative with respect t
+\newcommand{\ddtpar}[1]{ \dfrac{\d}{\d t}\Big ( {#1} \Big)} %Derivative with respect t with parenthesis
+\newcommand{\lp}[1]{\mathrm{L}^{#1}}%L^p spaces
+\newcommand{\hp}[1]{\mathrm{H}^{#1}}%H^p spaces
+\newcommand{\sobolev}[1]{\mathrm{W}^{#1}}%Sobolev spaces
+\newcommand{\cp}[1]{\mathcal{C}^{#1}}%C^p spaces
+\newcommand{\bpar}[1]{\left ( {#1}\right )}
+\newcommand{\setcond}[2]{\left \{ #1 \ : \ #2  \right \}}
+\newcommand\evalat[1]{_{\mkern1.5mu\big\vert_{\scriptstyle #1}}}
+\newcommand{\normLinf}[1]{\left | \left |{#1} \right | \right |_{\lp{\infty}}}
+%\newcommand{\averageline}{{\mathchoice
+%{\kern1ex\vcenter{\hrule height.4pt width 6pt depth0pt} \kern-9.3pt} {}
+%{\kern1ex\vcenter{\hrule height.4pt width 4.3pt depth0pt} \kern-7pt}
+%{} {} }}
+%\newcommand{\average}{\averageline \!\int}
+
+\newcommand{\average}{\fint}
+
+\newcommand\beqc[1]{\left\{\begin{array}{#1}}
+	\newcommand\eeqc{\end{array} \right.}
+\def\PDEsystem{rcll}
+\def\bmatrix{\begin{pmatrix}}
+	\def\ematrix{\end{pmatrix}}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Det}{Det}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\PV}{P.V.}
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+\newcommand{\usub}{\underline{u}}
+\newcommand{\usup}{\overline{u}}
+\def\ds{\displaystyle}
+
+
+
+
+
+\begin{document}
+	\definecolor{lila_custom}{RGB}{201,69,254}
+	\definecolor{naranja_custom}{RGB}{255,148,0}
+	\definecolor{azul_custom}{RGB}{66,240,209}
+
+
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+  
+	%region
+	\path[fill=azul_custom,line cap=round,miter limit=4.00,line width=1.216pt]
+    	(210.3958,249.7906) .. controls (188.0101,272.1763) and (172.1936,287.9233) ..
+    	(150.1544,309.9625) .. controls (148.2221,309.9625) and (137.7690,309.7049) ..
+    	(127.0089,309.7371) .. controls (127.0089,300.7477) and (127.0826,301.1491) ..
+    	(127.0826,287.3606) .. controls (136.2973,278.1061) and (177.3049,237.1011) ..
+    	(187.7910,226.5786) .. controls (170.0299,214.0930) and (149.7638,207.7938) ..
+    	(127.0312,207.7938) .. controls (127.0312,190.9391) and (126.9993,161.0751) ..
+    	(126.9993,146.8284) .. controls (170.9394,146.8284) and (208.6039,162.4681) ..
+    	(243.0000,193.8560) .. controls (271.9385,225.9716) and (289.9164,263.3638) ..
+    	(289.9164,309.8622) .. controls (260.7310,309.8622) and (257.9656,309.8622) ..
+	    (229.1006,309.8622) .. controls (229.1006,279.3951) and (221.7362,269.4328) ..
+    	(210.3958,249.7907) -- cycle;
+    
+	%x-axis    
+	\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+		(126.5055,309.8063) -- (368.4872,309.8063);
+
+	%x-axis cap    
+	\path[draw=black,fill=black,even odd rule,line width=0.497pt]
+		(368.4872,309.8063) -- (366.1493,312.1289) -- (374.3320,309.8063) --
+		(366.1493,307.4838) -- cycle;
+
+	%y-axis
+		\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+		(127.0562,310.9866) -- (127.0562,61.5223);
+
+	%y-axis cap    
+		\path[draw=black,fill=black,even odd rule,line width=0.497pt] (127.0562,61.5223)
+		-- (129.3788,63.8602) -- (127.0562,55.6775) -- (124.7336,63.8602) -- cycle;
+
+	%big BIG circle    
+	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+		(126.6467,86.2660) .. controls (181.4585,86.2660) and (241.2077,105.6745) ..
+		(286.1250,150.7685) .. controls (331.0423,195.8624) and (350.0320,254.5876) ..
+		(350.0320,309.6513);   
+
+	%big circle
+	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+		(127.0312,146.9770) .. controls (166.9982,146.9770) and (210.2478,160.9750) ..
+		(243.0000,193.8560) .. controls (275.7522,226.7370) and (289.9164,269.7115) ..
+		(289.9164,309.8622);
+
+	%medium circle
+	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+		(127.0312,177.3949) .. controls (151.7088,177.3949) and (192.2090,185.8302) ..
+		(221.4938,215.3997) .. controls (250.7785,244.9692) and (259.4986,284.9193) ..
+		(259.4986,309.8622);
+
+	%small circle    
+	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+		(127.0312,207.7933) .. controls (150.2506,207.7933) and (177.3815,214.3180) ..
+		(199.9500,236.9435) .. controls (222.0483,259.0975) and (229.1002,286.5606) ..
+		(229.1002,309.8622);
+
+	%cone   
+	\path[draw=black,line join=miter,line cap=butt,miter limit=4.00,even odd
+		rule,line width=1.57pt] (126.7629,310.0643) -- (364.1869,72.8844);
+
+	%cone+1    
+	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
+		(150.2563,309.8481) -- (362.4204,97.6870);
+
+	%cone-1 
+	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
+		(127.1847,287.2416) -- (337.4946,76.9526); 
+
+\node at (127,47) {\normalsize $|x''|$};
+\node at (388, 311) {\normalsize $|x'|$};
+\node at (228,320) {\normalsize $S$};
+\node at (255, 320) {\normalsize $S\!+\!1$};
+\node at (292, 320) {\normalsize $S\!+\!2$};
+\node at (350, 320) {\normalsize $S\!+\!4$};
+\node at (372, 63) {\normalsize $\ccal$};
+\node at (264, 250) {\normalsize $\Omega_S$};
+
+\end{tikzpicture}
+\end{document}
+
