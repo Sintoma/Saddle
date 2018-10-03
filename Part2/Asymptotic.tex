@@ -7,9 +7,9 @@ In this section, we establish Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution},
 
 
 
-To study the asymptotic behavior of the saddle-shaped solution it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. This happens also for the fractional Laplacian, thanks to the local extension problem.
+In order to study this behavior, it is important to relate the Allen-Cahn equation in $\R^{2m}$ with the same equation in $\R$. In the local case, this is very easy, since if $v$ is a solution to $-\ddot{v} = f(v)$ in $\R$,  then $w(x) = v(x\cdot e)$ solves $-\Delta w = f(w)$ in $\R^n$ for every unitary vector $e\in \R^n$. The same fact also happens for the fractional Laplacian, that is, if $v$ is a solution to $\fraclaplacian v = f(v)$ in $\R$, then $w(x)= v(x\cdot e)$ solves the same equation in $\R^n$. We can easily see this relation via the local extension problem.
 
-Nevertheless, for a general operator $L_K$ this is not true anymore and we need a way to relate a solution to a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result. Some of its points appear in \cite{CozziPassalacqua} with a different notation. We state and prove them here for completeness.
+Nevertheless, for a general operator $L_K$ this is not true anymore and we need a way to relate a solution to a one-dimensional problem with a one-dimensional solution to a $n$-dimensional problem. This is given in the next result. Some of its points appear in \cite{CozziPassalacqua} with a different notation but we state and prove them here for completeness.
 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
@@ -21,8 +21,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	\begin{enumerate}[label=(\roman{*})]
 		\item Let $v:\R\to\R$ and consider $w:\R^n\to\R$ defined by $w(x) = v(x_n)$. Then, $L_K w(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens with $w(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K w(x) = L_{K_1} v(x \cdot e)$.
 		\item  If $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$, then $K_1(t)$ is nonincreasing/decreasing in $(0,+\infty)$.
-		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$.
-		\item In particular, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
+		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$. In particular, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
 		
 	\end{enumerate}
 \end{proposition}
@@ -53,9 +52,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	\dfrac{\pi^{\frac{n-1}{2}} \Gamma(\frac{1}{2}+\s)}{\Gamma(\frac{n}{2}+\s)} 
 	= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} = c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
 	\end{align*}
-	where we have used \eqref{Eq:ConstantFracLaplacian} and the definition of the Beta and Gamma functions. The upper bound for $K_1$ is obtained in the same way.
-	
-	Finally, point $(iv)$ follows from noticing that the previous computation is an equality with $\lambda = 1$ in the case of the fractional Laplacian.
+	where we have used \eqref{Eq:ConstantFracLaplacian} and the definition of the Beta and Gamma functions. The upper bound for $K_1$ is obtained in the same way. Note that the previous computation is an equality with $\lambda = 1$ in the case of the fractional Laplacian.
 \end{proof}
 
 
@@ -81,7 +78,7 @@ In our arguments we need also to show that the second derivative of the layer go
 We prove here the first statement of this lemma, and we postpone the proof of the second one until the next section, since we need to use a maximum principle for the linearized operator $L_{K_1} - f'(u_0)$.
 
 \begin{proof}[Proof of point (i) of Lemma~\ref{Lemma:SecondDerivativeLayer}]
-	By contradiction, suppose that there exists an unbounded sequence $\{x_j\}$ satisfying $|u_0(x_j)|>\varepsilon$ for some $\varepsilon>0$. Note that by the symmetry of $u_0$ we may assume that $x_j\to + \infty$. Now define $w_j (x) := \ddot{u}_0(x+x_j)$. By differentiating twice the equation of the layer solution, we see that $\ddot{u}_0$ solves
+	By contradiction, suppose that there exists an unbounded sequence $\{x_j\}$ satisfying $|\ddot{u}_0(x_j)|>\varepsilon$ for some $\varepsilon>0$. Note that by the symmetry of $u_0$ we may assume that $x_j\to + \infty$. Now define $w_j (x) := \ddot{u}_0(x+x_j)$. By differentiating twice the equation of the layer solution, we see that $\ddot{u}_0$ solves
 	$$
 	L_{K_1} \ddot{u}_0 = f''(u_0)\dot{u}_0^2 + f'(u_0)\ddot{u}_0 \text{ in }\R.
 	$$
@@ -89,7 +86,7 @@ We prove here the first statement of this lemma, and we postpone the proof of th
 	$$
 	L_{K_1}  w = f'(1)w \quad \text{ in }\R.
 	$$
-	In addition, since $|u_0(x_j)|>\varepsilon$ we have $|w(0)|\geq \varepsilon$.
+	In addition, since $|\ddot{u}_0(x_j)|>\varepsilon$ we have $|w(0)|\geq \varepsilon$.
 	
 	At this point we use Lemma~4.3 of \cite{CozziPassalacqua} to deduce that, since $f'(1)<1$, then $w\to 0$ as $|x| \to +\infty$. Therefore, if $w$ is not identically zero, it has either a positive maximum or a negative minimum, but this contradicts the maximum principle (recall that $f'(1)<1$). We conclude that $w\equiv0$ in $\R$, but this is a contradiction with $|w(0)|\geq \varepsilon$.
 \end{proof}
@@ -127,7 +124,7 @@ w &\geq& 0 & \textrm{ in } \R^n\,.
 \eeqc
 $$
 
-By Theorem~\ref{Th:SymmetryWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see Remark~\ref{Remark:Stability}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}). Therefore $w\equiv 1$. 
+Then, by Theorem~\ref{Th:SymmetryWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see Remark~\ref{Remark:Stability}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}). Therefore $w\equiv 1$. 
 
 On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$ ---see \eqref{Eq:PropertiesLayer} and Lemma~\ref{Lemma:SecondDerivativeLayer}. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
 $$
@@ -170,5 +167,5 @@ contradicting \eqref{Eq:ContradictionAsymptotic}. The same is done for $\nabla u
 
 \begin{remark}
 	\label{Remark:u>delta}
-	The previous result yields that, for small $\delta$, the level set $\{0<u<\delta\}$ of the saddle-shaped solution is contained in a $\varepsilon$-neighborhood of the cone. Indeed, consider the set $\ocal_\varepsilon := \{(x',x'')\in \R^m\times\R^m \ : \ |x''|+\varepsilon <|x'| \}$. Since $u_0$ is monotone, for every small $\delta$ we can take $\varepsilon$ small enough and $R$ big enough so that $U(x)\geq 2\delta$ in $\ocal_\varepsilon \setminus B_R$. Thus, by taking $R$ big enough so that $|u-U|< \delta$ in $\ocal \setminus B_R$, we have that $u(x) \geq U(x)-\delta \geq \delta$ whenever $x\in \ocal_\varepsilon \setminus B_R$. Finally, since $\overline{B_R \cap \ocal}$ is a compact and $u$ is positive there, we can take $\varepsilon$ small enough so that $u\geq \delta$ in $B_R\cap \ocal_\varepsilon$.
+	The previous result yields that, for $\varepsilon>0$ the saddle-shaped solution satisfies $u\geq\delta$ in the set $\ocal_\varepsilon := \{(x',x'')\in \R^m\times\R^m \ : \ |x''|+\varepsilon <|x'| \}$, for some positive constant $\delta$. That is, thanks to the asymptotic result, and since $U(x)\geq u_0(\varepsilon/\sqrt{2})$ for $x\in \ocal_\varepsilon$, there exists a radius $R>0$ such that $u(x)\geq U(x)/2\geq u_0(\varepsilon/\sqrt{2})/2$ if $x\in \ocal_\varepsilon\setminus B_R$. Moreover, since $u$ is positive in the compact set $\overline{\ocal_\varepsilon}\cap\overline{B_R}$ it has a positive minimum in this set, say $m>0$. Therefore, if we choose $\delta = \min\{m,u_0(\varepsilon/\sqrt{2})/2\}$ we obtain the desired result.
 \end{remark}

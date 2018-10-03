@@ -73,7 +73,7 @@ We also define
 &\ = \setcond{w \in \H^K(\R^n)}{ w = 0 \quad \textrm{a.e. in } \R^n \setminus \Omega}.
 \end{align*}
 
-Assume that $\Omega \subset \R^{2m}$ is a domain of double revolution. Then, we define
+Assume that $\Omega \subset \R^{2m}$ is a set of double revolution. Then, we define
 $$
 \widetilde{\H}^K(\Omega) := \setcond{w \in \H^K(\Omega)}{w \textrm{ is doubly radial a.e.}}.
 $$
@@ -96,14 +96,14 @@ In this last subsection, we state two basic maximum principles for doubly radial
 The first result is a weak maximum principle for odd functions with respect to $\ccal$.
 
 \begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
-	\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that
+	\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone.  Assume that
 	$$
 	\beqc{\PDEsystem}
-	L_K w & \geq & 0 & \text{ in } \Omega\,,\\
+	L_K w + c(x) w & \geq & 0 & \text{ in } \Omega\,,\\
 	w & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
 	\eeqc
 	$$
-	and that either
+	with $c \geq 0$, and that either
 	$$
 	\Omega \text{ is bounded} \quad \text{ or } \liminf_{x \in \ocal,\,|x|\to +\infty} w(x) \geq 0\,.
 	$$
@@ -114,7 +114,7 @@ The first result is a weak maximum principle for odd functions with respect to $
 The second result is the strong maximum principle for odd functions with respect to $\ccal$.
 
 \begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
-	\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K w \geq 0$ in $\Omega$, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ or $w > 0$ in $\Omega$.
+	\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K w + c(x) w\geq 0$ in $\Omega$, with $c(x)$ any function, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ or $w > 0$ in $\Omega$.
 \end{proposition}
 
 \begin{remark}

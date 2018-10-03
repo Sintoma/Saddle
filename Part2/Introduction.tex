@@ -10,7 +10,7 @@ L_K u = f(u) \quad \textrm{ in } \R^{2m},
 \end{equation}
 where $L_K$ is a linear integro-differential operator of the form \eqref{Eq:DefOfLu} and $f$ is of Allen-Cahn type ---see \eqref{Eq:Hypothesesf}. These  solutions (see Definition~\ref{Def:SaddleShapedSol} below) are particularly interesting in relation to the nonlocal version of a conjecture by De Giorgi, with the aim of finding a counterexample in high dimensions (see the details below). Moreover, this problem is related to the regularity theory of nonlocal minimal surfaces.
 
-In the previous paper \cite{FelipeSanz-Perela:IntegroDifferentialI} we established an appropriate setting to study solutions to \eqref{Eq:NonlocalAllenCahn} which are doubly radial and odd with respect to the Simons cone (this terminology is described more precisely below), a property satisfied by saddle-shaped solutions. We deduced an alternative expression for the operator $L_K$ acting on doubly radial odd functions ---see \eqref{Eq:OperatorOddF}. This expression was used to deduce some maximum principles for odd functions under certain assumptions on the kernel of the operator $L_K$. Moreover, we proved an energy estimate for doubly radial and odd minimizers of the energy associated to the equation, as well as the existence of saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}.
+In the previous paper \cite{FelipeSanz-Perela:IntegroDifferentialI} we established an appropriate setting to study solutions to \eqref{Eq:NonlocalAllenCahn} which are doubly radial and odd with respect to the Simons cone (this terminology is described more precisely below), a property satisfied by saddle-shaped solutions. We deduced an alternative expression for the operator $L_K$ when acting on doubly radial odd functions ---see \eqref{Eq:OperatorOddF}. This expression was used to deduce some maximum principles for odd functions under certain assumptions on the kernel of the operator $L_K$. Moreover, we proved an energy estimate for doubly radial and odd minimizers of the energy associated to the equation, as well as the existence of saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}.
 
 Using the results obtained in \cite{FelipeSanz-Perela:IntegroDifferentialI}, in the present paper we study saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}. First, we prove existence of this type of solutions, Theorem~\ref{Th:Existence}, by using the monotone iteration method (as an alternative to the proof in \cite{FelipeSanz-Perela:IntegroDifferentialI}). After this, we establish the asymptotic behavior of saddle-shaped solutions,  Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. To do it, we prove two symmetry results for semilinear equations like \eqref{Eq:NonlocalAllenCahn}: Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. In the study of the asymptotic behavior of saddle-shaped solutions we prove further properties of the so-called \emph{layer solution} (see Section~\ref{Sec:Asymptotic}). Finally, we establish the uniqueness of the saddle-shaped solution, Theorem~\ref{Th:Uniqueness}, by using a maximum principle for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}).
 
@@ -44,9 +44,9 @@ Throughout the paper, we assume that the operators of our study are uniformly el
 \end{equation}
 where $c_{n,\s}$ is given in \eqref{Eq:ConstantFracLaplacian}. This condition is very frequently adopted when dealing with nonlocal operators of the form \eqref{Eq:DefOfLu} since it is known to yield Hölder regularity of solutions (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and Section~2). The family of linear operators satisfying conditions \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity} is the so-called $\lcal_0(n,\s,\lambda, \Lambda)$ ellipticity class. For short we will usually write $\lcal_0$, and we will make explicit the parameters only when needed.
 
-Following \cite{FelipeSanz-Perela:IntegroDifferentialI}, in this paper we will sometimes assume that the operator $L_K$ is rotationally invariant, that is, its kernel is radially symmetric. This extra assumption allows us to rewrite the operator in the setting of doubly radial odd functions, as explained in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
+Following \cite{FelipeSanz-Perela:IntegroDifferentialI}, in this paper we will sometimes assume that the operator $L_K$ is rotational invariant, that is, its kernel is radially symmetric. This extra assumption allows us to rewrite the operator in the setting of doubly radial odd functions, as explained in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
 
-Note that, for operators in the class $\lcal_0$, the minimal assumption on $w$ so that $L_K w$ is well defined in a domain $\Omega$ is that $w\in C^\alpha (\Omega)\cap L^1_\s(\R^n)$ for some $\alpha > 2\s$, where $w\in L^1_\s(\R^n)$ means that
+Note that, for operators in the class $\lcal_0$, the minimal assumption on $w$ so that $L_K w$ is well defined in a set $\Omega$ is that $w\in C^\alpha (\Omega)\cap L^1_\s(\R^n)$ for some $\alpha > 2\s$, where $w\in L^1_\s(\R^n)$ means that
 $$
 \int_{\R^n} \dfrac{|w(x)|}{1+|x|^{n+2\s}}\d x < +\infty\,.
 $$
@@ -144,7 +144,7 @@ Furthermore,
 with $C>0$ depending only on $m, \s, \lambda$ and $\Lambda$ (see the details in \cite{FelipeSanz-Perela:IntegroDifferentialI}).
 
 
-Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential term plus a zero order term with a nonnegative coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. This lead us in \cite{FelipeSanz-Perela:IntegroDifferentialI} to introduce the following definition.
+Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential term plus a zero order term with a positive coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. This lead us in \cite{FelipeSanz-Perela:IntegroDifferentialI} to introduce the following definition.
 
 \begin{definition}[Ellipticity class $\lcal_\star$]
 	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies
@@ -179,12 +179,15 @@ The previous theorem was already proved in \cite{FelipeSanz-Perela:IntegroDiffer
 The second main result of this paper is Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution} below, on the asymptotic behavior of saddle-shaped solutions at infinity. Before state it, let us introduce an important type of solutions in the study of the integro-differential Allen-Cahn equation: the layer solutions.
 
 
-We say that a solution $v$ to $L_K v = f(v)$ in $\R^n$ is a \emph{layer solution} if $v$ is increasing in one direction, say $e\in \Sph^{n-1}$ and $v(x) \to \pm 1$ as $x\cdot e \to \pm 1$ (not necessarily uniformly). By a result of Cozzi and Passalacqua in \cite{CozziPassalacqua}, under the assumptions \eqref{Eq:Hypothesesf} on $f$, for every kernel $K_1$ such that $L_{K_1}\in \lcal_0(1,\s,\Lambda, \lambda)$ there exist a layer solution  to $L_{K_1} v = f(v)$ in $\R$ which is odd with respect to some hyperplane and is unique up to translations (in the case of the fractional Laplacian this result was proved in \cite{CabreSolaMorales,CabreSireII} by using the extension problem). 
+We say that a solution $v$ to $L_K v = f(v)$ in $\R^n$ is a \emph{layer solution} if $v$ is increasing in one direction, say $e\in \Sph^{n-1}$ and $v(x) \to \pm 1$ as $x\cdot e \to \pm \infty$ (not necessarily uniformly). By a result of Cozzi and Passalacqua in \cite{CozziPassalacqua}, under the assumptions \eqref{Eq:Hypothesesf} on $f$, for every kernel $K_1$ such that $L_{K_1}\in \lcal_0(1,\s,\Lambda, \lambda)$ there exist a layer solution  to $L_{K_1} v = f(v)$ in $\R$ which is unique up to translations and is odd with respect to some point (in the case of the fractional Laplacian this result was proved in \cite{CabreSolaMorales,CabreSireII} by using the extension problem).
 
-From this solution in $\R$, it is easy to construct a layer solution to a problem in $\R^n$ for an operator with a different (but related) kernel. This relation is given in Proposition~\ref{Prop:KernelsDimension} (see Section~\ref{Sec:Asymptotic} for more details). 
+In $\R^n$, a special case of layer solutions are the one-dimensional ones. Actually, in relation with the available results concerning a conjecture by De Giorgi, in low dimensions all layer solutions are one-dimensional (see the comments at the end of this introduction). One-dimensional layer solutions in $\R^n$ are in correspondence with the ones in $\R$ as explained next. Let $v$ be a layer solution to $L_K v = f(v)$ in $\R^n$ depending only on one direction, say $v(x) = w(x_n)$, and assume that $L_{K}\in \lcal_0(n,\s,\Lambda, \lambda)$. Then $w$ is a layer solution to $L_{K_1} w = f(w)$ in $\R$ with $K_1$ given by
 
+$$K_1(t) := \int_{\R^{n-1}} K\left(\theta,t\right) \d \theta = |t|^{n-1} \int_{\R^{n-1}} K\left(t\sigma,t\right) \d \sigma.$$
 
-Now, let $K\in\lcal_0(n,\s,\Lambda, \lambda)$ be a $n$-dimensional kernel and $K_1\in \lcal_0(1,\s,\Lambda, \lambda)$ be a $1$-dimensional one, and assume that they are related as in Proposition~\ref{Prop:KernelsDimension}. We define $u_0$ to be the unique solution of the following problem.
+Moreover $L_{K_1}\in \lcal_0(1,\s,\Lambda, \lambda)$. For more details see Proposition~\ref{Prop:KernelsDimension} in Section~\ref{Sec:Asymptotic}. 
+
+A particular layer solution, denoted by $u_0$, plays an important role in this paper. It is defined to be the unique solution of the following problem.
 \begin{equation}
 \label{Eq:LayerSolution}
 \beqc{\PDEsystem}
@@ -194,7 +197,7 @@ u_0(x) & = &-u_0(-x)  & \textrm{ in }\R\,,\\
 \ds \lim_{x \to \pm \infty} u_0(x) &=& \pm 1. & 
 \eeqc
 \end{equation}
-Note that $u_0(x_n)$ is a layer solution to $L_k w = f(w)$ in $\R^n$ (see the details in Section~\ref{Sec:Asymptotic}). Moreover, the same holds for $u_0(x\cdot e)$ for every $e\in \Sph^{n-1}$ whenever the kernel is radially symmetric.
+Note that $v(x) = u_0(x_n)$ is a layer solution to $L_K v = f(v)$ in $\R^n$. Moreover, the same holds for $u_0(x\cdot e)$ for every $e\in \Sph^{n-1}$ whenever the kernel is radially symmetric.
 
 The importance of the layer solution $u_0$ in relation with saddle-shaped solutions is that the associated function
 \begin{equation}
@@ -218,16 +221,16 @@ The precise statement on the asymptotic behavior of saddle-shaped solutions at i
 	as $ R\to +\infty$.
 \end{theorem}
 
-To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for odd solutions to a semilinear equation that are nonnegative in a half-space. Both results are well known for the classical Laplacian, and are also available for $\fraclaplacian$ (although some of the proofs are only available by using the extension problem). Here we present the proof for a general integro-differential operator $L_K$, following some arguments that are used for the analogous results for $-\Delta$ and $\fraclaplacian$.
+To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for odd solutions with respect to a hyperplane to a semilinear equation that are nonnegative in a half-space. Both results are well known for the classical Laplacian, and are also available for $\fraclaplacian$ (although some of the proofs are only available by using the extension problem). Here we present the proof for a general integro-differential operator $L_K$, following some arguments that are used for the analogous results for $-\Delta$ and $\fraclaplacian$.
 
 The last main result of this paper is the uniqueness of the saddle-shaped solution, stated next.
 
 \begin{theorem}[Uniqueness of the saddle-shaped solution]
 	\label{Th:Uniqueness}
-	Let $f$ satisfy \eqref{Eq:Hypothesesf} and let $L\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists at most one saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}.
+	Let $f$ satisfy \eqref{Eq:Hypothesesf} and let $L\in \lcal_\star$. Then, for every dimension $2m \geq 2$, there exists a unique saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}.
 \end{theorem}
 
-To prove this result we need two ingredients. The first one is the asymptotic behavior of saddle-solutions given in Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. The second one is a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ which is given in Proposition~\ref{Prop:MaximumPrincipleLinearized}. To establish it, we will need to use a maximum principle in ``narrow'' domains that we also prove in Section~\ref{Sec:MaximumPrinciple}.
+To prove this result we need two ingredients. The first one is the asymptotic behavior of saddle solutions given in Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. The second one is a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$, which is given in Proposition~\ref{Prop:MaximumPrincipleLinearized}. To establish it, we will need to use a maximum principle in ``narrow'' sets that we also prove in Section~\ref{Sec:MaximumPrinciple}.
 
 To conclude this introduction, let us make some comments on the importance of problem \eqref{Eq:NonlocalAllenCahn} and its relation with the theory of (classical and nonlocal) minimal surfaces and  a famous conjecture raised by De Giorgi.
 
