@@ -64,7 +64,7 @@ The second one is a symmetry result for equations in a half-space. Here we use t
 	$$
 	K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+,
 	$$ 
-	where $y^*$ is the reflection of $y$ with respect to $\{x_n = 0\}$. Suppose that the nonlinearity $f$ is Lipsitchz and
+	where $y^*$ is the reflection of $y$ with respect to $\{x_n = 0\}$. Suppose that the nonlinearity $f\in C^1$ and
 	\begin{itemize}
 		\item $f(0) = f(1) = 0$,
 		\item $f'(0)>0$, and $f'(t)\leq 0$ for all $t\in[1-\delta,1]$ for some $\delta>0$,
@@ -82,7 +82,7 @@ In the proof of Theorem~\ref{Th:SymmetryWholeSpace} we will need two main ingred
 
 \begin{proposition}
 	\label{Prop:HarnackSemilinear}
-	Let $L_K\in\mathcal{L}_0(n,\s,\lambda,\Lambda)$ and let $w$ be a solution to \eqref{Eq:PositiveWholeSpace} with $f$ a Lipschitz nonlinearity such that $f(0) = 0$. Then, for every $x_0 \in \R^n$ and every $R>$, it holds
+	Let $L_K\in\mathcal{L}_0(n,\s,\lambda,\Lambda)$ and let $w$ be a solution to \eqref{Eq:PositiveWholeSpace} with $f$ a Lipschitz nonlinearity such that $f(0) = 0$. Then, for every $x_0 \in \R^n$ and every $R>0$, it holds
 	$$
 	\sup_{B_R(x_0)} w \leq C  \inf_{B_R(x_0)} w, 
 	$$
@@ -98,7 +98,7 @@ In the proof of Theorem~\ref{Th:SymmetryWholeSpace} we will need two main ingred
 \end{proof}
 
 
-The second ingredient that we need in the proof of Theorem~\ref{Th:SymmetryWholeSpace} is the following parabolic maximum principle in the unbounded domain $\R^n \times (0,+\infty)$. 
+The second ingredient that we need in the proof of Theorem~\ref{Th:SymmetryWholeSpace} is the following parabolic maximum principle in the unbounded set $\R^n \times (0,+\infty)$. 
 
 \begin{proposition}
 	\label{Prop:ParaMaxPrp}
@@ -113,7 +113,7 @@ The second ingredient that we need in the proof of Theorem~\ref{Th:SymmetryWhole
 	$$ v(x,t) \leq 0 \,\,\,\,\,\text{ in } \,\,\, \R^n\times[0,+\infty). $$
 \end{proposition}
 
-This result can be deduced from the usual parabolic maximum principle in a bounded (in space and time) domain with a rather simple argument. Since we have not found a specific reference where such result is stated, let us present its proof with full detail for the sake of clarity. First of all, we present the usual parabolic maximum principle in a bounded domain. The proof for cylindrical domains can be found for instance in \cite{BarriosPeralSoriaValdinoci}. Although the argument is essentially the same, since it is short we include here the complete proof for the sake of completeness.
+This result can be deduced from the usual parabolic maximum principle in a bounded (in space and time) set with a rather simple argument. Since we have not found a specific reference where such result is stated, let us present its proof with full detail for the sake of clarity. First of all, we present the usual parabolic maximum principle in a bounded set. The proof for cylindrical sets can be found for instance in \cite{BarriosPeralSoriaValdinoci}. Although the argument is essentially the same, since it is short we include here the complete proof for the sake of completeness.
 
 \begin{lemma}
 \label{Lemma:ParabolicmaxPrpBdd}
@@ -313,11 +313,14 @@ We proceed now with the details of the arguments. As we have said, the first ste
 	$$
 \end{proposition}
 
-To prove it, we use a moving planes argument, and for this reason we need a maximum principle in ``narrow'' domains for odd functions with respect to a hyperplane. Recall that for a domain $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
-$$
-\dfrac{|B_R(x)\setminus \Omega|}{|B_R(x)|}\geq \dfrac{1}{2} \quad \text{ for every } x \in \Omega.
-$$
-If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a domain $\Omega$ is ``narrow'' ir $R(\Omega)$ is small depending on certain quantities.
+To prove it, we use a moving planes argument, and for this reason we need a maximum principle in ``narrow'' sets for odd functions with respect to a hyperplane. Recall that for a set $\Omega \subset \R^n$, we define the quantity $R(\Omega)$ as the smallest positive $R$ for which
+
+\begin{equation}
+	\label{Eq:DefNarrow}
+	\dfrac{|B_R(x)\setminus \Omega|}{|B_R(x)|}\geq \dfrac{1}{2} \quad \text{ for every } x \in \Omega.
+\end{equation}
+
+If no such radius exists, we define $R(\Omega) = +\infty$. Thus, we say that a set $\Omega$ is ``narrow'' ir $R(\Omega)$ is small depending on certain quantities.
 
 An important result that we need is the following ABP-type estimate. It is proved in \cite{QuaasXia} for the fractional Laplacian, following the arguments in \cite{Cabre-ABP} (see also \cite{Cabre-Topics}). The proof for a general operator $L_K$ do not differ significantly from the one for the fractional Laplacian. Nevertheless, we include it here for the sake of completeness.
 
@@ -377,7 +380,7 @@ With the previous weak Harnack inequality we can now establish the ABP estimate.
 	In the case of $\Omega$ being unbounded, the proof is the same with minor changes. We define $M$ as before and we consider, for every $\delta > 0$, a point $x_0$ such that $M-\delta \leq v(x_0)$. We proceed as before and the desired estimate follows by letting $\delta \to 0$.
 \end{proof}
 
-As a consequence of this result, one can deduce easily a general maximum principle in ``narrow'' domains.
+As a consequence of this result, one can deduce easily a general maximum principle in ``narrow'' sets.
 
 \begin{corollary}
 	\label{Cor:MaxPpleNarrowDomains}
@@ -402,7 +405,7 @@ As a consequence of this result, one can deduce easily a general maximum princip
 \end{proof}
 
 
-The previous maximum principle in ``narrow'' domains is not powerful enough to apply the moving planes method. The reason for this is that in the hypotheses of Corollary~\ref{Cor:MaxPpleNarrowDomains} there is a prescribed constant sign of a function outside the domain. Nevertheless, in the application of the moving planes argument, since our functions are odd with respect to a hyperplane, they cannot have a constant sign in the exterior of a ``narrow'' band. Thus, we need another version of a maximum principle in ``narrow'' domains that applies to odd functions and only requires a constant sign of the function at one side of a hyperplane.
+The previous maximum principle in ``narrow'' sets is not powerful enough to apply the moving planes method. The reason for this is that in the hypotheses of Corollary~\ref{Cor:MaxPpleNarrowDomains} there is a prescribed constant sign of a function outside the set. Nevertheless, in the application of the moving planes argument, since our functions are odd with respect to a hyperplane, they cannot have a constant sign in the exterior of a ``narrow'' band. Thus, we need another version of a maximum principle in ``narrow'' sets that applies to odd functions and only requires a constant sign of the function at one side of a hyperplane.
 
 \begin{proposition}
 	\label{Prop:MaxPrpNarrowOdd}
@@ -465,7 +468,7 @@ The previous maximum principle in ``narrow'' domains is not powerful enough to a
 	v_1 &=& 0 &\textrm{ in }\,\R^n\setminus\Omega_-,
 	\eeqc
 	\end{equation*}
-	and we can apply the usual maximum principle for ``narrow'' domains (Corollary~\ref{Cor:MaxPpleNarrowDomains}) to $v_1$ in $\Omega_-$ in order to deduce that $v_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $v_1$ and the fact that the set $\Omega_-$ is not empty.
+	and we can apply the usual maximum principle for ``narrow'' sets (Corollary~\ref{Cor:MaxPpleNarrowDomains}) to $v_1$ in $\Omega_-$ in order to deduce that $v_1\geq 0$ in all $\R^n$. But this is a contradiction with the definition of $v_1$ and the fact that the set $\Omega_-$ is not empty.
 \end{proof}
 
 
@@ -473,7 +476,7 @@ The previous maximum principle in ``narrow'' domains is not powerful enough to a
 	A maximum principle such as Proposition~\ref{Prop:MaxPrpNarrowOdd} was already proved for the fractional Laplacian in \cite{ChenLiLi}, but with the additional hypothesis that either $\Omega$ is bounded or $\liminf_{x\in  \Omega,\ |x|\to \infty} v(x) \geq 0$. In the proof of Theorem~3.1 in \cite{QuaasXia}, Quaas and Xia use a suitable argument (the truncation used in the previous proof, previously used by Felmer and Wang in \cite{FelmerWang}) to avoid the requirement of such additional hypotheses on $\Omega$ or $v$.
 \end{remark}
 
-With the maximum principle in ``narrow'' domains for odd functions with respect to a hyperplane we can use the moving plane argument. Now we can show Proposition~\ref{Prop:MonotonyHalfSpace}.
+With the maximum principle in ``narrow'' sets for odd functions with respect to a hyperplane we can use the moving plane argument. Now we can show Proposition~\ref{Prop:MonotonyHalfSpace}.
 
 \begin{proof}[Proof of Proposition~\ref{Prop:MonotonyHalfSpace}]
 	The proof is based on the moving planes method, and is exactly the same as the analogue proof of Theorem~3.1 in \cite{QuaasXia}, where Quaas and Xia establish an equivalent result for the fractional Laplacian. For this reason, we give here just a sketch. As usual, for $\lambda > 0$ we defines $w_\lambda (x) = v(x',2\lambda - x_n)-v(x',x_n)$ and since the nonlinearity is Lipschitz, $w_\lambda$ solves, in both cases ---\eqref{Eq:P1} or \eqref{Eq:P2}---, the following problem:
@@ -484,7 +487,7 @@ With the maximum principle in ``narrow'' domains for odd functions with respect 
 	w_\lambda(x',2\lambda - x_n) &=& - w_\lambda(x',x_n)  &\textrm{ in } \R^n, 
 	\eeqc 
 	$$
-	where $\Sigma_\lambda := \left\{ x = (x',x_n) \ : \ 0<x_n<\lambda \right\}$ and $H_\lambda := \left\{ x = (x',x_n) \ : \ x_n<\lambda \right\}$ and $c_\lambda$ is a bounded function. Note that $w_\lambda$ is odd with respect to $\partial H_\lambda$. Then, using the maximum principle in ``narrow'' domains  Proposition~\ref{Prop:MaxPrpNarrowOdd} one shows that, if $\lambda$ is small enough, $w_\lambda>0$ in $\Sigma_\lambda$. To conclude the proof, we define
+	where $\Sigma_\lambda := \left\{ x = (x',x_n) \ : \ 0<x_n<\lambda \right\}$ and $H_\lambda := \left\{ x = (x',x_n) \ : \ x_n<\lambda \right\}$ and $c_\lambda$ is a bounded function. Note that $w_\lambda$ is odd with respect to $\partial H_\lambda$. Then, using the maximum principle in ``narrow'' sets  Proposition~\ref{Prop:MaxPrpNarrowOdd} one shows that, if $\lambda$ is small enough, $w_\lambda>0$ in $\Sigma_\lambda$. To conclude the proof, we define
 	$$
 	\lambda^* := \sup\{\lambda \ : \ w_\eta>0 \,\, \text{ in } \,\, \Sigma_\lambda \,\, \text{ for all } \,\, \eta<\lambda\}.
 	$$
@@ -492,7 +495,7 @@ With the maximum principle in ``narrow'' domains for odd functions with respect 
 	$$
 	w_{\lambda^* +  \delta} (x) > 0 \quad \text{ in } \Sigma_{\lambda^*-\varepsilon}\setminus \Sigma_{\varepsilon}
 	$$
-	for some small $\varepsilon$. This is established using a compactness argument exactly as in Lemma~3.1 of \cite{QuaasXia} (in the argument a Harnack inequality is needed, one can use for instance Proposition~\ref{Prop:HarnackSemilinear}). Finally, by the maximum principle in ``narrow'' domains we can deduce that $w_{\lambda^* +  \delta} (x) > 0 $ in $\Sigma_{\lambda^*+\delta}$ if $\delta$ is small enough, contradicting the definition of $\lambda^*$.
+	for some small $\varepsilon$. This is established using a compactness argument exactly as in Lemma~3.1 of \cite{QuaasXia} (in the argument a Harnack inequality is needed, one can use for instance Proposition~\ref{Prop:HarnackSemilinear}). Finally, by the maximum principle in ``narrow'' sets we can deduce that $w_{\lambda^* +  \delta} (x) > 0 $ in $\Sigma_{\lambda^*+\delta}$ if $\delta$ is small enough, contradicting the definition of $\lambda^*$.
 \end{proof}
 
 
