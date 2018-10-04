@@ -126,9 +126,6 @@ Note that this operator (in contrast with $L_K$) acts on functions that only nee
 
 Expression \eqref{Eq:OperatorOddF} has an integro-differential part plus a zero order term with a nonnegative coefficient, which is comparable to $\dist(x,\ccal)^{-2\s}$ (see Lemma~\ref{Lemma:OperatorOddF}). Therefore, the natural assumption to make for that operator to have a maximum principle is that the kernel of the integro-differential term is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$ for every $x,y\in \ocal$. Indeed, we show in Section~\ref{Sec:OperatorOddF} that this assumption guarantees that $L_K$ has a maximum principle for odd functions. 
 
-\todo{Este parrafo quizas se quita}
-Since in this article we will always consider odd functions, we will do an abuse of notation and we will denote both operators by $L_K$, since they are the same.
-
 The previous positivity assumption motivates the following definition.
 
 \begin{definition}[Ellipticity class $\lcal_\star$]
@@ -175,7 +172,7 @@ Using the same type of arguments as for the operator $L_K$, we can rewrite the e
 
 
 
-This result has been proved in the case of the half-Laplacian by Cabré and Cinti \cite{CabreCinti-EnergyHalfL}, and extended to all the powers $0<s<1$ by Cinti \cite{Cinti-Saddle2}, both using the local extension problem (see \cite{CabreCinti-SharpEnergy} for non-doubly radial minimizers). In our case, since this technique is not available, we follow the arguments of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they prove a similar energy estimate for minimizers without any symmetry. The strategy they follow to establish the result is to compare the energy of $u$ with the one of a suitable competitor which is constructed combining $u$ with a radially symmetric auxiliary function. Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyForOddF} how to adapt the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to our setting in order to establish Theorem~\ref{Th:EnergyEstimate}. In the arguments, the assumption \eqref{Eq:KernelInequality} is crucial.
+This result has been proved in the case of the half-Laplacian by Cabré and Cinti \cite{CabreCinti-EnergyHalfL}, and extended to all the powers $0<\s<1$ by Cinti \cite{Cinti-Saddle2}, both using the local extension problem (see \cite{CabreCinti-SharpEnergy} for non-doubly radial minimizers). In our case, since this technique is not available, we follow the arguments of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they prove a similar energy estimate for minimizers without any symmetry. The strategy they follow to establish the result is to compare the energy of $u$ with the one of a suitable competitor which is constructed by taking the minimum between $u$ and a radially symmetric auxiliary function ---see \eqref{Eq:DefPhiS} . Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyForOddF} how to adapt the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to our setting in order to establish Theorem~\ref{Th:EnergyEstimate}. In the arguments, the assumption \eqref{Eq:KernelInequality} is crucial.
 
 
 As an application of the previous results, we prove, by using standard variational methods, the existence of saddle-shaped solutions to  \eqref{Eq:NonlocalAllenCahn} when $f$ is of Allen-Cahn type. We say that a bounded solution $u$ to \eqref{Eq:NonlocalAllenCahn} is a \emph{saddle-shaped} solution if $u$ is doubly radial, odd with respect to the Simons cone and positive in $\ocal$. 
