@@ -418,9 +418,26 @@ From the two previous results, Theorem~\ref{Th:CharacterizationLstar} follows im
 \end{proof}
 
 \begin{remark}
-	Note that there are radially symmetric kernels $K$ that are not $C^1$ for which we do not know if $L_K$ belongs to the class $\lcal_\star$. For instance, given $0<\s<\s'<1$, consider the following kernel:
-	$$ K(\tau) = \min\{\tau^{-2m-2\s},\tau^{-2m-2\s'}\} = \tau^{-2m-2\s} \chi_{(0,1)}(\tau)+\tau^{-2m-2\s'} \chi_{[1,+\infty)}(\tau). $$
-	Then, it is easy to check that $K$ is continuous and decreasing but $K(\sqrt{\tau})$ is not convex in $(0,+\infty)$ even though it does not have any interval of concavity.
+	Note that there are radially symmetric kernels $K$ that are not $C^1$ for which we do not know if $L_K$ belongs to the class $\lcal_\star$. For instance, given $0<\s<1$, if we consider the kernel
+	$$ K(\tau) = \frac{1}{\tau^{2m+2\s}} \chi_{(0,1)}(\tau)+\frac{1}{10\tau^{2m+2\s}-9} \chi_{[1,+\infty)}(\tau), $$
+	it is easy to check that $K$ is continuous and decreasing but $K(\sqrt{\tau})$ is not convex in $(0,+\infty)$ even though it does not have any interval of concavity (see Figure~\ref{Fig:Grafica}).
+	\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+	axis x line=middle, axis y line=left,
+	every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+	every axis y label/.style={at={(current axis.north west)},above=2mm},
+	ymin=0, ymax=3, ylabel=$K(\sqrt{\tau})$,
+	xmin=0.4, xmax=2, xlabel=$\tau$
+	]
+	\addplot[domain=0.4:1, samples=100] {1/(x^1.5)};
+	\addplot[domain=1:2, samples=100] {0.1/(x^1.5-0.9)};
+	\end{axis}
+	\end{tikzpicture}
+	\caption{$K(\sqrt{\tau})$ for $m=1$ and $\s=1/2$.}
+	\label{Fig:Grafica}
+	\end{figure}
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
