@@ -205,20 +205,6 @@ Assume that the kernel $K$ is radially symmetric, nonincreasing, with $K(\sqrt{\
 \begin{proof}
 Since $\overline{K}$ is invariant by $O(m)^2$, it is enough to show \eqref{Eq:KernelInequalityBis} for points $x, y\in \ocal$ of the form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$, with $e \in \Sph^{m-1}$ an arbitrary unitary vector.
 
-%let $x_0 = (|x'|e, |x''|e)$ and $y_0 = (|y'|e, |y''|e)$, for an arbitrary unitary vector $e \in \Sph^{m-1} \subset \R^m$. Hence, since $\overline{K}$ is invariant by $O(m)^2$,
-%$$
-%\overline{K}(x,y) = \overline{K}(x_0, y_0) \quad \text{ and } \quad \overline{K}(x,y^\star) = \overline{K}(x_0, y_0^\star)\,.
-%$$
-%To see this, let $R_x$, $R_y \in O(m)^2$ satisfying $x = R_x x_0$ and $y = R_y y_0$. Then,
-%$$
-%\overline{K}(x,y) = \overline{K}(R_x x_0,R_y y_0)  = \overline{K}(x_0, y_0)
-%$$
-%and, using that $(R_y y_0)^\star = (R_y)_\star y_0^\star$ ---see \eqref{Eq:DefRStar}---,
-%$$
-%\overline{K}(x,y^\star) = \overline{K}(R_x x_0,(R_y y_0)^\star) = \overline{K}(R_x x_0,(R_y)_\star y_0^\star)  = \overline{K}(x_0, y_0^\star)\,.
-%$$
-%Therefore, it is enough to show \eqref{Eq:KernelInequality} for points $x$ and $y$ of the form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$, with $e \in \Sph^{m-1}$ an arbitrary unitary vector.
-
 Now, define
 \begin{equation}
 \label{Eq:DefQ}
@@ -229,7 +215,7 @@ Now, define
 	Q_4 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_2 e < - |e\cdot R_1 e|}.
 	\end{split}
 \end{equation}
-Note that the sets $Q_i$ are disjoint, have the same measure and cover all $O(m)^2$ up to a set of zero measure. Moreover, they satisfy the following:
+Note that the sets $Q_i$ are disjoint, have the same measure and cover all $O(m)^2$ up to a set of measure zero. Moreover, they satisfy the following:
 \begin{itemize}
 \item If $R = (R_1, R_2)\in Q_2$, then $R_\star = (R_2, R_1) \in Q_1$.
 \item If $R = (R_1, R_2)\in Q_3$, then $-R = (-R_1, -R_2) \in Q_1$.
@@ -262,7 +248,7 @@ K(|x - R y|) + K(|x + R y|) + K(|x - R_\star y|) + K(|x + R_\star y|)
 K(|x - R y^\star|) + K(|x + R y^\star|)+K(|x - R_\star y^\star|) + K(|x + R_\star y^\star|)\,,
 \end{split}
 \end{equation}
-for every $R\in Q_1$, we immediately deduce \eqref{Eq:KernelInequalityBis} with a non strict inequality. To see that it is indeed a strict one, we must show that the inequality in \eqref{Eq:InequalityIntegrandKernelInequalityProof} is strict for a.e. $R \in Q_1$.
+for every $R\in Q_1$, we immediately deduce \eqref{Eq:KernelInequalityBis} with a non strict inequality. To see that it is indeed a strict one, we will show that the inequality in \eqref{Eq:InequalityIntegrandKernelInequalityProof} is strict for a.e. $R \in Q_1$.
 
 
 For a short notation, we call
@@ -330,7 +316,7 @@ $$
 $$
 The verification of these inequalities is a simple but tedious computation and it is presented in Appendix~\ref{Sec:AuxiliaryResults2} ---see point (1) of Lemma~\ref{Lemma:ComputationABCD}. Once we have these inequalities, by Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} we deduce \eqref{Eq:InequalityIntegrandKernelInequalityProof3}.
 
-To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelInequalityProof3} is never attained. By Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}, we know that a necessary condition for the equality to hold is that either $|A_{\alpha,\beta}| = |B_{\alpha,\beta}|$ and $|C_{\alpha,\beta}| = |D_{\alpha,\beta}|$, or $|A_{\alpha,\beta}| = |C_{\alpha,\beta}|$ and $|B_{\alpha,\beta}| = |D_{\alpha,\beta}|$. Nevertheless, by point (2) of Lemma~\ref{Lemma:ComputationABCD}, this yields $\alpha = \beta = 0$, but this cannot happen.
+To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelInequalityProof3} is never attained. By Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}, we know that a necessary condition for the equality to hold is that either $|A_{\alpha,\beta}| = |B_{\alpha,\beta}|$ and $|C_{\alpha,\beta}| = |D_{\alpha,\beta}|$, or $|A_{\alpha,\beta}| = |C_{\alpha,\beta}|$ and $|B_{\alpha,\beta}| = |D_{\alpha,\beta}|$. Nevertheless, by point (2) of Lemma~\ref{Lemma:ComputationABCD}, this yields $\alpha = \beta = 0$, and this cannot happen. Thus, the inequality in \eqref{Eq:InequalityIntegrandKernelInequalityProof} is strict, and this leads to \eqref{Eq:KernelInequalityBis}.
 \end{proof}
 
 
@@ -347,7 +333,7 @@ then $K(\sqrt{\cdot})$ cannot be concave in any interval $I\subset [0,+\infty)$.
 \end{proposition}
 
 \begin{proof}
-We prove it by contraposition. In fact, we will show that the existence of an interval where $K(\sqrt{\cdot})$ is concave means the existence of a nonempty open set in $\ocal \times \ocal$ with positive measure where \eqref{Eq:KernelInequalityAE} is not satisfied.
+We prove it by contraposition. In fact, we will show that if there exists an interval where $K(\sqrt{\cdot})$ is concave, then we can find an open set in $\ocal \times \ocal$ with positive measure where \eqref{Eq:KernelInequalityAE} is not satisfied.
 
 Let $\ell_2>\ell_1>0$ be such that $K(\sqrt{\cdot})$ is concave in $(\ell_1,\ell_2)$ and define the set $\Omega_{\ell_1,\ell_2}\subset \R^{4m}$ as the points $(x,y)\in \ocal\times \ocal$ satisfying
 \begin{equation}
@@ -393,7 +379,7 @@ g(\tau) &= K\left( \sqrt{|x|^2+|y|^2+2\tau} \right) + K\left( \sqrt{|x|^2+|y|^2-
 
 
 
-Now, by \eqref{Eq:OmegaSetDefinition}, we have $\ell_1 < |x|^2+|y|^2 <\ell_2$. As a consequence of this and the concavity of $K(\sqrt{\cdot})$ in $(\ell_1,\ell_2)$, we obtain by Lemma~\ref{Lemma:Convex<->AllReflectionsConvex} that $g$ is concave in $ \left( -\overline{\ell}, \overline{\ell}\right) $, and decreasing in $(0,\overline{\ell})$, where 
+Now, by \eqref{Eq:OmegaSetDefinition}, we have $\ell_1 < |x|^2+|y|^2 <\ell_2$. As a consequence of this and the concavity of $K(\sqrt{\cdot})$ in $(\ell_1,\ell_2)$, it is easy to see (by using Lemma~\ref{Lemma:ConvexFunctions} in the Appendix~\ref{Sec:AuxiliaryResults}) that $g$ is concave in $ \left( -\overline{\ell}, \overline{\ell}\right) $, and decreasing in $(0,\overline{\ell})$, where 
 $$
 \overline{\ell} := \min{\left\{\frac{\ell_2-|x|^2-|y|^2}{2},\frac{|x|^2+|y|^2-\ell_1}{2}\right\}}.$$
 Note that, since $\ell_1 < |x|^2+|y|^2 <\ell_2$, we have $\overline{\ell}>0$.
@@ -406,9 +392,9 @@ $$
 |x'||y'|+|x''||y''|&<&\dfrac{|x|^2+|y|^2-\ell_1}{2}
 \eeqc 
 $$
-and thus $ |x'||y'|+|x''||y''|<\overline{\ell}$.
+and thus $ |x'||y'|+|x''||y''|<\overline{\ell}$ and the claim is proved.
 
-Finally, by applying Lemma~\ref{Lemma:InequalitConvexFunctions} and Lemma~\ref{Lemma:ComputationABCD} to the function $-g$ (taking into account Remark~\ref{Remark:InequalitConvexFunctions}), we obtain that inequality \eqref{Eq:InequalityIntegrandKernelInequalityProof5} is satisfied, which yields \eqref{Eq:InequalityIntegrandKernelInequalityProof4}. Finally, by integrating \eqref{Eq:InequalityIntegrandKernelInequalityProof4} with respect to all the rotations $R\in Q_1$ we get $$ \overline{K}(x,y) \leq \overline{K}(x, y^\star),$$ for every $(x,y)\in \Omega_{\ell_1,\ell_2}$, contradicting \eqref{Eq:KernelInequalityAE}.
+Finally, by applying Lemma~\ref{Lemma:ConvexFunctions} to the function $-g$, we obtain that inequality \eqref{Eq:InequalityIntegrandKernelInequalityProof5} is satisfied, which yields \eqref{Eq:InequalityIntegrandKernelInequalityProof4}. Finally, by integrating \eqref{Eq:InequalityIntegrandKernelInequalityProof4} with respect to all the rotations $R\in Q_1$ we get $$ \overline{K}(x,y) \leq \overline{K}(x, y^\star),$$ for every $(x,y)\in \Omega_{\ell_1,\ell_2}$, contradicting \eqref{Eq:KernelInequalityAE}.
 \end{proof}
 
 From the two previous results, Theorem~\ref{Th:CharacterizationLstar} follows immediately.
