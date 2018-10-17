@@ -5,15 +5,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this appendix we present some auxiliary results concerning convex functions. Recall that for measurable functions $f:\R\to \R$, convexity in an open interval $I$ is equivalent to midpoint convexity, i.e.,
-$$
-\dfrac{f(x) + f(y)}{2} \geq f \left( \dfrac{x+y}{2}\right) \quad \textrm{ for every } x,\, y \in I\,,
-$$
-and the same is true for strict convexity with an strict inequality
-(see Chapter~1 of \cite{Niculescu} and the references therein).
+In this appendix we present some auxiliary results concerning convex functions. The main result, used in the proof of Theorem~\ref{Th:CharacterizationLstar}, is the following.
 
 
-The main result, used in the proof of Theorem~\ref{Th:CharacterizationLstar}, is the following.
+%Recall that for measurable functions $f:\R\to \R$, convexity in an open interval $I$ is equivalent to midpoint convexity, i.e.,
+%$$
+%\dfrac{f(x) + f(y)}{2} \geq f \left( \dfrac{x+y}{2}\right) \quad \textrm{ for every } x,\, y \in I\,,
+%$$
+%and the same is true for strict convexity with an strict inequality
+%(see Chapter~1 of \cite{Niculescu} and the references therein).
 
 \begin{proposition}
 	\label{Prop:EquivalenceK(sqrt)Convex<->Inequality}
@@ -21,13 +21,14 @@ The main result, used in the proof of Theorem~\ref{Th:CharacterizationLstar}, is
 	\begin{enumerate}
 		\item[i)] $K(\sqrt{\cdot})$ is strictly convex in $(0, +\infty)$.
 		\item[ii)] For every positive constants $c_1$ and $c_2$, the function $g:(0,1/c_2)\to \R$ defined by
-		$$
-		g(z) := K(c_1 \sqrt{1 + c_2z}) + K(c_1 \sqrt{1 - c_2z})\,.
-		$$
+		\begin{equation}
+		\label{Eq:DefinitiongFromK}
+		g(z) := K(c_1 \sqrt{1 + c_2z}) + K(c_1 \sqrt{1 - c_2z})
+		\end{equation}
 		satisfies 
 		\begin{equation}
 		\label{Eq:InequalityConvexFunctions}
-		g(A) + g(D) \geq g(B) + g(C)\,.
+		g(A) + g(D) \geq g(B) + g(C)
 		\end{equation}
 		whenever $A$, $B$, $C$ and $D$ belong to $(0, 1/c_2)$ and satisfy
 		$$
@@ -45,7 +46,7 @@ To prove this proposition, we need a lemma on convex functions.
 
 \begin{lemma}
 	\label{Lemma:ConvexFunctions}
-	Let $M\leq +\infty$ and let $h:(0,M)\to \R$ be a measurable nondecreasing function. Then, the following statements are equivalent.
+	Let $0<M\leq +\infty$ and let $h:(0,M)\to \R$ be a measurable nondecreasing function. Then, the following statements are equivalent.
 	
 	\begin{enumerate}[label=(\alph*)]
 		\item $h$ is convex in $(0,M)$.
@@ -59,24 +60,24 @@ To prove this proposition, we need a lemma on convex functions.
 		it holds
 		\begin{equation}
 			\label{Eq:InequalityConvexFunctionsbis}
-			g(A) + g(D) \geq g(B) + g(C)\,.
+			h(A) + h(D) \geq h(B) + h(C)\,.
 		\end{equation}
 	\end{enumerate}
 \end{lemma}
 
 \begin{proof}
-	$(a)\Rightarrow (c)$.	Since $B$ and $C$ are interchangeable and $h$ is nondecreasing, we may assume that $A \geq B \geq C \geq D$. Now, let $M_C$ be the maximum slope of the supporting lines of $h$ at $C$, and let $m_B$ be the minimum slope of the supporting lines of $h$ at $B$. By the convexity of $h$, it holds $m_B \geq M_C$ and also
+	$(a)\Rightarrow (c)$.	Since $B$ and $C$ are interchangeable and $h$ is nondecreasing, we may assume that $A \geq B \geq C \geq D$. Now, let $M_C$ be the maximum slope of the supporting lines of $h$ at $C$, and let $m_B$ be the minimum slope of the supporting lines of $h$ at $B$. By the convexity and monotonicity of $h$, it holds $m_B \geq M_C\geq 0$ and also
 	$$
 	h(x) \geq h(B) + m_B (x-B) \quad \text{ and } \quad h(x) \geq h(C) + M_C (x-C) 
 	$$
 	for every $x \in (0,M)$.
 	
-	Hence, since $A-B \geq C-D$, we have
+	Hence, since $A-B \geq C-D\geq 0$, we have
 	$$
 	h(A)-h(B) \geq m_B(A-B) \geq M_C (C-D) \geq h(C) - h(D)\,.
 	$$
 	
-	$(c) \Rightarrow (b)$. Let $x$, $y\in (\max \{L-M,0\}, \min \{L,M\})$ and assume that $x>y$. By taking $A=x$, $B=C=(x+y)/2$, and $D = y$ in \eqref{Eq:InequalityConvexFunctions}, we get 
+	$(c) \Rightarrow (b)$. Let $x$, $y\in (\max \{L-M,0\}, \min \{L,M\})$ and assume that $x>y$. By taking $A=x$, $B=C=(x+y)/2$, and $D = y$ in \eqref{Eq:InequalityConvexFunctionsbis}, we get 
 	$$
 	\dfrac{h(x) + h(y)}{2} \geq h \left( \dfrac{x+y}{2}\right). 
 	$$ 
@@ -118,10 +119,10 @@ To prove this proposition, we need a lemma on convex functions.
 With this result available we can show now Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}
 
 \begin{proof}
-	$i) \Rightarrow ii)$ We take $M = +\infty$ and $h(\cdot) = K(\sqrt{\cdot})$ in Lemma~\ref{Lemma:ConvexFunctions}. Since $h$ is strictly convex, the function $\tilde{h}_L$ is strictly convex in $(0,L)$ for every $L\geq 0$ (recall that we do not need to assume that $h$ is monotone to deduce this, see Remark~\ref{Remark:hypothesisNondecreasing}). Moreover, by Remark~\ref{Remark:h_Lincreasing}, $\tilde{h}_L$ is nondecreasing in $(L/2,L)$. Thus, the function $\phi(\cdot) = \tilde{h}_L(\cdot - L/2)$ is strictly convex in $(-L/2,L/2)$ and nondecreasing in $(0,L/2)$. If we choose $L=2c_1^2$, we have that $g(\cdot) = \phi((L/2)c_2 \cdot)$. Therefore, $g$ is convex in $(-1/c_2, 1/c_2)$ and nondecreasing in $(0,1/c_2)$ and the result follows by applying  Lemma~\ref{Lemma:ConvexFunctions} to $g$ in $(0,1/c_2)$ (taking into account Remark~\ref{Remark:StrictConvexity}).
+	$i) \Rightarrow ii)$ We take $M = +\infty$ and $h(\cdot) = K(\sqrt{\cdot})$ in Lemma~\ref{Lemma:ConvexFunctions}. Since $h$ is strictly convex, the function $\tilde{h}_L$ is strictly convex in $(0,L)$ for every $L> 0$ (recall that we do not need to assume that $h$ is monotone to deduce this, see Remark~\ref{Remark:hypothesisNondecreasing}). Moreover, by Remark~\ref{Remark:h_Lincreasing}, $\tilde{h}_L$ is nondecreasing in $(L/2,L)$. Thus, the function $\phi(\cdot) = \tilde{h}_L(\cdot + L/2)$ is strictly convex in $(-L/2,L/2)$ and nondecreasing in $(0,L/2)$. If we choose $L=2c_1^2$, we have that $\phi((L/2)c_2 \cdot) = g(\cdot)$, where $g$ is defined by \eqref{Eq:DefinitiongFromK}. Therefore, $g$ is strictly convex in $(-1/c_2, 1/c_2)$ and nondecreasing in $(0,1/c_2)$ and the result follows by applying  Lemma~\ref{Lemma:ConvexFunctions} to $g$ in $(0,1/c_2)$ (taking into account Remark~\ref{Remark:StrictConvexity}).
 	
 	
-	$ii) \Rightarrow i)$ By Lemma~\ref{Lemma:ConvexFunctions} applied to $g$ we deduce that $g$ is strictly convex in $(0,1/c_2)$ ---recall that by Remark~\ref{Remark:hypothesisNondecreasing} we do not need to assume that $g$ is monotone. Thus, $\varphi(\cdot) = g(\cdot/(c_1^2 c_2))$ is strictly convex in $(-c_1^2, c_1^2)$. Hence, if we call $h(\cdot) := K(\sqrt{\cdot})$ and $L:= 2c_1^2$, we have that $\tilde{h}_L(\cdot) = h(\cdot) + h(L-\cdot)= \varphi(\cdot - c_1^2)$, and thus $\tilde{h}_L$ is strictly convex in $(0,L)$. Note that since $c_1>0$ is arbitrary, $\tilde{h}_L$ is strictly convex in $(0,L)$ for all $L>0$. Therefore, by Lemma~\ref{Lemma:ConvexFunctions}, with  $M = +\infty$, we conclude that $h(\cdot) = K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$.
+	$ii) \Rightarrow i)$ By Lemma~\ref{Lemma:ConvexFunctions} applied to $g$ we deduce that $g$ is strictly convex in $(0,1/c_2)$ ---recall that by Remark~\ref{Remark:hypothesisNondecreasing} we do not need to assume that $g$ is monotone. Thus, $\varphi(\cdot) = g(\cdot/(c_1^2 c_2))$ is strictly convex in $(-c_1^2, c_1^2)$. Hence, if we call $h(\cdot) := K(\sqrt{\cdot})$ and $L:= 2c_1^2$, we have that $\varphi(\cdot - c_1^2) = h(\cdot) + h(L-\cdot) =:  \tilde{h}_L(\cdot)$, and thus $\tilde{h}_L$ is strictly convex in $(0,L)$. Note that since $c_1>0$ is arbitrary, $\tilde{h}_L$ is strictly convex in $(0,L)$ for all $L>0$. Therefore, by Lemma~\ref{Lemma:ConvexFunctions}, with  $M = +\infty$, we conclude that $h(\cdot) = K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$.
 \end{proof}
 
 

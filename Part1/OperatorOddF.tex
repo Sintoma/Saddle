@@ -195,7 +195,7 @@ First, we give a sufficient condition on the kernel $K$ so that the operator $L_
 
 \begin{proposition}
 \label{Prop:KernelInequalitySufficientCondition} 
-Assume that the kernel $K$ is radially symmetric, nonincreasing, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$ and $\lim_{|\tau|\to+\infty} K(\tau) = 0$. Then, the associated kernel $\overline{K}$ satisfies
+Assume that the kernel $K$ is radially symmetric, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$. Then, the associated kernel $\overline{K}$ satisfies
 	\begin{equation}
 	\label{Eq:KernelInequalityBis}
 	\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
@@ -210,17 +210,19 @@ Now, define
 \label{Eq:DefQ}
 	\begin{split}
 	Q_1 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_1 e > |e\cdot R_2 e|},\\
-	Q_2 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_2 e > |e\cdot R_1 e|},\\
-	Q_3 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_1 e < -|e\cdot R_2 e|},\\
-	Q_4 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_2 e < - |e\cdot R_1 e|}.
+	Q_2 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_2 e > |e\cdot R_1 e|} = (Q_1)_\star,\\
+	Q_3 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_1 e < -|e\cdot R_2 e|} = -Q_1,\\
+	Q_4 &:= \setcond{R = (R_1,R_2) \in O(m)^2}{e\cdot R_2 e < - |e\cdot R_1 e|} = -(Q_1)_\star.
 	\end{split}
 \end{equation}
-Note that the sets $Q_i$ are disjoint, have the same measure and cover all $O(m)^2$ up to a set of measure zero. Moreover, they satisfy the following:
-\begin{itemize}
-\item If $R = (R_1, R_2)\in Q_2$, then $R_\star = (R_2, R_1) \in Q_1$.
-\item If $R = (R_1, R_2)\in Q_3$, then $-R = (-R_1, -R_2) \in Q_1$.
-\item If $R = (R_1, R_2)\in Q_4$, then $-R_\star = (-R_2, -R_1) \in Q_1$.
-\end{itemize}
+Recall that given $R=(R_1,R_2)\in O(m)^2$, then $R_\star=(R_2,R_1)\in O(m)^2$. Moreover, note that the sets $Q_i$ are disjoint, have the same measure and cover all $O(m)^2$ up to a set of measure zero. 
+
+%Moreover, they satisfy the following:
+%\begin{itemize}
+%\item If $R = (R_1, R_2)\in Q_2$, then $R_\star = (R_2, R_1) \in Q_1$.
+%\item If $R = (R_1, R_2)\in Q_3$, then $-R = (-R_1, -R_2) \in Q_1$.
+%\item If $R = (R_1, R_2)\in Q_4$, then $-R_\star = (-R_2, -R_1) \in Q_1$.
+%\end{itemize}
 Therefore,
 \begin{align*}
 4\overline{K} (x, y) &= 4\average_{O(m)^2} K(|x - R y|)\d R \\
