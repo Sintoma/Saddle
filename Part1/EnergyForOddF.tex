@@ -51,9 +51,9 @@ Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, the usual fractional Sobolev 
 Once presented the functional setting of our problem, we define now  the energy functional associated to equation \eqref{Eq:NonlocalAllenCahn}. 
 
 
-Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, a potential $G$ and a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we define the following energy:
+Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and a potential $G$, and given a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we write the energy defined in \eqref{Eq:Energy} as
 $$
-\ecal(w, \Omega) := \ecal_\mathrm{K}(w,\Omega) + \ecal_\mathrm{P}(w,\Omega)\,,
+\ecal(w, \Omega) = \ecal_\mathrm{K}(w,\Omega) + \ecal_\mathrm{P}(w,\Omega)\,,
 $$
 where
 $$
@@ -73,7 +73,7 @@ Sometimes is it useful to rewrite the kinetic energy as
 	+\left. 2 \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y \right \}\,.
 	\end{split}	
 \end{equation}
-Roughly speaking, we have split the kinetic energy into two parts: ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is, as in the previous section, to rewrite the kinetic energy in terms of the doubly radial kernel $\overline{K}$ and with integrals computed only in $\ocal$. In particular, we are interested in finding an expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. For $A$, $B\subset \ocal$ of double revolution, we define
+Roughly speaking, we have split the kinetic energy into two parts: ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is to rewrite the kinetic energy in terms of the doubly radial kernel $\overline{K}$ and with integrals computed only in $\ocal$, in the same spirit as in the previous section for $L_K$. In particular, we are interested in finding an expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. For $A$, $B\subset \ocal$ of double revolution, we define
 \begin{equation}
 	\label{Eq:DefIw}
 	\begin{split}
@@ -89,7 +89,7 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 Let $\Omega\subset \R^{2m}$ be a domain of double revolution and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\Omega)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
 \begin{align}
 \label{Eq:ShortExpressionEnergy}
-\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \{I_w(\Omega\cap\ocal,\Omega\cap\ocal) +  2I_w(\Omega\cap\ocal,\ocal\setminus\Omega)\},
+\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \big \{I_w(\Omega\cap\ocal,\Omega\cap\ocal) +  2I_w(\Omega\cap\ocal,\ocal\setminus\Omega) \big \},
 \end{align}
 where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 \end{lemma}

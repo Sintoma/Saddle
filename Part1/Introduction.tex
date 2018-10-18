@@ -152,12 +152,9 @@ This theorem is proved in Section~\ref{Sec:OperatorOddF} (see Propositions~\ref{
 
 To simplify the notation, we introduce the following definition. It is the class of all operators which are radially symmetric, uniformly elliptic and have a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone.
 
-\todo[inline]{Escribir bien}
-
 \begin{definition}[Ellipticity class $\lcal_\star$]
 	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies \eqref{Eq:KernelInequality}.
 \end{definition}
-
 
 
 Equation \eqref{Eq:NonlocalAllenCahn} is the Euler-Lagrange equation associated to the energy functional
@@ -165,13 +162,23 @@ Equation \eqref{Eq:NonlocalAllenCahn} is the Euler-Lagrange equation associated 
 \label{Eq:Energy}
 \ecal(w, \Omega) := \dfrac{1}{4}\int\int_{\R^{2n} \setminus (\R^n\setminus\Omega)^2} |w(x) - w(y)|^2 K(x-y) \d x \d y + \int_{\Omega} G(w) \d x \,.
 \end{equation}
-Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial and odd functions with a suitable new expression that involves the kernel $\overline{K}$. Do do it, we introduce the following notation.
+Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial and odd functions with a suitable new expression that involves the kernel $\overline{K}$. To do it, we introduce the following notation.  For $A$, $B\subset \ocal$ of double revolution, we define
+\begin{equation*}
+%\label{Eq:DefIw}
+\begin{split}
+I_w(A,B) := 2\int_A  \int_B  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y  \\
++\, 4 \int_A  \int_B  \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,.
+\end{split}
+\end{equation*}
+Then, as proved in Section~\ref{Sec:EnergyForOddF} (see Lemma~\ref{Lemma:ShortExpressionEnergy}), we can rewrite the energy of a doubly radial odd function $w$ as
+\begin{equation*}
+%\label{Eq:ShortExpressionEnergy}
+\ecal(w, \Omega) = \frac{1}{4} \big \{I_w(\Omega\cap\ocal,\Omega\cap\ocal) +  2I_w(\Omega\cap\ocal,\ocal\setminus\Omega) \big \} + 2\int_{\Omega\cap \ocal} G(w) \d x \,.
+\end{equation*}
+Note that this expression of the energy has only integrals computed in $\ocal$, and this is useful in some arguments (see Sections~\ref{Sec:EnergyForOddF} and \ref{Sec:EnergyEstimate}). 
 
-\todo[inline]{Acabar}
-Then, as proved in in  Section~\ref{Sec:EnergyForOddF} (see Lemma~\ref{Lemma:ShortExpressionEnergy}), we can rewrite the energy of a doubly radial odd function $w$ as
-\todo[inline]{Acabar}
 
-Thanks to this new expression, we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial and odd minimizers of $\ecal$. In the next statement, $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ denotes the space of doubly radial and odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:EnergyForOddF} for the precise definition).
+Thanks to this new expression for the energy, we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial and odd minimizers of $\ecal$. In the next statement, $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ denotes the space of doubly radial and odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:EnergyForOddF} for the precise definition).
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
