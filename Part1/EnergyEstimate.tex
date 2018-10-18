@@ -189,10 +189,9 @@ Indeed, using \eqref{Eq:InteractionMinHyp} we see that
 Therefore, by using this inequality and the reflexion property of the kernel, \eqref{Eq:KernelInequality}, we obtain
 \begin{align*}
 I_\phi(A \cap \ocal, \ocal \setminus A) &+ I_\varphi(A \cap \ocal, \ocal \setminus A) - I_\omega(A \cap \ocal, \ocal \setminus A) =\\
-&\hspace{-26mm}= \int_{A \cap \ocal} \! \d x \int_{\ocal\setminus A} \! \d y \, \Big( 2\left\{\phi^2(x)+\phi^2(y)+\varphi^2(x)+\varphi^2(y)-\omega^2(x)-\omega^2(y) \right\} \overline{K}(x,y^\star) \Big.\\
-&\hspace{-18mm}\Big.+  \left\{|\phi(x)-\phi(y)|^2+|\varphi(x)-\varphi(y)|^2-|\omega(x)-\omega(y)|^2 \right\} \left\{\overline{K}(x,y)-\overline{K}(x,y^\star)\right\}\Big)\\
-&\hspace{-26mm}\geq 2\int_{A \cap \ocal} \! \d x \int_{\ocal\setminus A} \! \d y \, \left\{
-\phi^2(x)+\varphi^2(y)\right\} \overline{K}(x,y^\star) \geq 0.
+&\hspace{-26mm}= \int_{A \cap \ocal} \! \d x \int_{\ocal\setminus A} \! \d y \, \Big( 4\left\{\phi^2(x)+\phi^2(y)+\varphi^2(x)+\varphi^2(y)-\omega^2(x)-\omega^2(y) \right\} \overline{K}(x,y^\star) \Big.\\
+&\hspace{-18mm}\Big.+  2\left\{|\phi(x)-\phi(y)|^2+|\varphi(x)-\varphi(y)|^2-|\omega(x)-\omega(y)|^2 \right\} \left\{\overline{K}(x,y)-\overline{K}(x,y^\star)\right\}\Big)\\
+&\hspace{-26mm}\geq 4\int_{A \cap \ocal} \! \d x \int_{\ocal\setminus A} \! \d y \, \left\{ \phi^2(x)+\varphi^2(y)\right\} \overline{K}(x,y^\star) \geq 0.
 \end{align*}
 \end{proof}
 
@@ -274,26 +273,26 @@ Note that both $u$ and $v$ are equal outside $B_{S+2} \subset B_R$, and therefor
 
 Using the expression \eqref{Eq:ShortExpressionEnergy}, let us decompose the energy of $u$ in $B_R$ in the following way:
 \begin{align*}
-\ecal(u,B_R) &= \frac{1}{2}I_u(A \cap \ocal, A \cap \ocal) + I_u(A \cap \ocal, \ocal \setminus A) \\
-& \hspace{5mm} + \frac{1}{2}I_u\big((\ocal \setminus A) \cap B_R, (\ocal \setminus A) \cap B_R\big) + I_u\big((\ocal \setminus A) \cap B_R, \ocal \setminus B_R\big) \\
+\ecal(u,B_R) &= \frac{1}{4}I_u(A \cap \ocal, A \cap \ocal) + \frac{1}{2}I_u(A \cap \ocal, \ocal \setminus A) \\
+& \hspace{5mm} + \frac{1}{4}I_u\big((\ocal \setminus A) \cap B_R, (\ocal \setminus A) \cap B_R\big) + \frac{1}{2}I_u\big((\ocal \setminus A) \cap B_R, \ocal \setminus B_R\big) \\
 & \hspace{5mm} + \int_A G(u) \d x + \int_{B_R\setminus A} G(u) \d x
 \end{align*}
 Since $u$ is a minimizer, $v=\Psi_S$ in $A\cap \ocal$ and $u=v$ in $\ocal\setminus A$,  from the previous expression we obtain
 \begin{align*}
-0 &\leq \ecal(v,B_R)-\ecal(u,B_R) = \frac{1}{2}I_{\Psi_S}(A \cap \ocal, A \cap \ocal) - \frac{1}{2}I_u(A \cap \ocal, A \cap \ocal)\\
-& \hspace{5mm} + I_v(A \cap \ocal, \ocal \setminus A) - I_u(A \cap \ocal, \ocal \setminus A) + \int_A G(\Psi_S) \d x - \int_{A} G(u) \d x.
+0 &\leq \ecal(v,B_R)-\ecal(u,B_R) = \frac{1}{4}I_{\Psi_S}(A \cap \ocal, A \cap \ocal) - \frac{1}{4}I_u(A \cap \ocal, A \cap \ocal)\\
+& \hspace{5mm} +  \frac{1}{2} I_v(A \cap \ocal, \ocal \setminus A) -  \frac{1}{2} I_u(A \cap \ocal, \ocal \setminus A) + \int_A G(\Psi_S) \d x - \int_{A} G(u) \d x.
 \end{align*}
 
 Now, recalling that $v = \min\{u,\Psi_S\}$ in $\ocal$, we can apply Lemma \ref{Lemma:InteractionInequalityMinimumFunction} with $\omega = v$, $\Psi_S = \varphi$, and $u= \phi$, to get $I_v(A \cap \ocal, \ocal\setminus A) \leq I_u(A \cap \ocal, \ocal\setminus A) + I_{\Psi_S}(A \cap \ocal, \ocal\setminus A)$. Therefore,
 \begin{align*}
-\frac{1}{2}I_u(A \cap \ocal, A \cap \ocal) + \int_{A} G(u) \d x &\leq \frac{1}{2}I_{\Psi_S}(A \cap \ocal, A \cap \ocal) + I_{\Psi_S}(A \cap \ocal, \ocal \setminus A) \\
+\frac{1}{4}I_u(A \cap \ocal, A \cap \ocal) + \int_{A} G(u) \d x &\leq \frac{1}{4}I_{\Psi_S}(A \cap \ocal, A \cap \ocal) +  \frac{1}{2} I_{\Psi_S}(A \cap \ocal, \ocal \setminus A) \\
 & \quad \quad  + \int_A G(\Psi_S)  \d x \\
 &= \ecal(\Psi_S, A) \leq \ecal(\Psi_S,B_{S+2}).
 \end{align*}
 From this and using \eqref{Eq:EnergyEstimateProofInclusionsA}, we deduce an estimate for the energy of $u$ in $B_S$ as follows.
 \begin{align*}
-\ecal(u,B_S) &\leq \frac{1}{2}I_u(A \cap \ocal, A \cap \ocal) + \int_{A} G(u) \d x + I_u(B_S \cap \ocal, \ocal \setminus B_{S+1}) \\
-& \leq  \ecal(\Psi_S,B_{S+2}) + I_u(B_S \cap \ocal, \ocal \setminus B_{S+1}).
+\ecal(u,B_S) &\leq \frac{1}{4}I_u(A \cap \ocal, A \cap \ocal) + \int_{A} G(u) \d x +  \frac{1}{2} I_u(B_S \cap \ocal, \ocal \setminus B_{S+1}) \\
+& \leq  \ecal(\Psi_S,B_{S+2}) +  \frac{1}{2} I_u(B_S \cap \ocal, \ocal \setminus B_{S+1}).
 \end{align*}
 Thus, to obtain the desired energy estimate we only have to bound the right-hand side of the last inequality.
 
@@ -367,7 +366,7 @@ I_u(B_S \cap \ocal, \ocal \setminus B_{S+1}) &\leq C \int_{B_S \cap \ocal} \d x 
 
 Finally, by adding up the estimates of Step~3 and applying Lemma~\ref{Lemma:Integrability_dFunction}, we obtain the desired result. That is,
 \begin{align*}
-\ecal(u,B_S) &\leq \ecal(\Psi_S,B_{S+2}) + I_u(B_S \cap \ocal, \ocal \setminus B_{S+1}) \leq C\left(\int_{B_S \cap \ocal} d_S(x)^{-2\s} \d x + S^{2m-1} \right)\\
+\ecal(u,B_S) &\leq \ecal(\Psi_S,B_{S+2}) +  \frac{1}{2}I_u(B_S \cap \ocal, \ocal \setminus B_{S+1}) \leq C\left(\int_{B_S \cap \ocal} d_S(x)^{-2\s} \d x + S^{2m-1} \right)\\
 &\leq \begin{cases}
 C \ S^{2m-2\s}\ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
 C\ \log(S)\,S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\

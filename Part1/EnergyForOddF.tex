@@ -57,7 +57,7 @@ $$
 $$
 where
 $$
-\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{2} [w]^2_{\H^K(\Omega)} \quad \text{ and } \quad  \ecal_\mathrm{P}(w, \Omega) := \int_{\Omega} G(w)
+\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{2} [w]^2_{\H^K(\Omega)} \quad \text{ and } \quad  \ecal_\mathrm{P}(w, \Omega) := \int_{\Omega} G(w) \d x
 \,.
 $$
 We will call $\ecal_\mathrm{K}$ and $\ecal_\mathrm{P}$ the \emph{kinetic} and \emph{potential} energy respectively.
@@ -69,16 +69,16 @@ Sometimes is it useful to rewrite the kinetic energy as
 \begin{equation}
 	\label{Eq:KineticEnergyInteractions}
 	\begin{split}
-	\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{4} \int_\Omega \int_\Omega |w(x) - w(y)|^2 K(x-y) \d x \d y \qquad \qquad \\
-	+ \dfrac{1}{2} \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y\,.
+	\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{4} \left \{ \int_\Omega \int_\Omega |w(x) - w(y)|^2 K(x-y) \d x \d y \right. \qquad \qquad \\
+	+\left. 2 \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y \right \}\,.
 	\end{split}	
 \end{equation}
 Roughly speaking, we have split the kinetic energy into two parts: ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is, as in the previous section, to rewrite the kinetic energy in terms of the doubly radial kernel $\overline{K}$ and with integrals computed only in $\ocal$. In particular, we are interested in finding an expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. For $A$, $B\subset \ocal$ of double revolution, we define
 \begin{equation}
 	\label{Eq:DefIw}
 	\begin{split}
-	I_w(A,B) := \int_A  \int_B  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y  \\
-	+2 \int_A  \int_B  \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,.
+	I_w(A,B) := 2\int_A  \int_B  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y  \\
+	+\, 4 \int_A  \int_B  \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,.
 	\end{split}
 \end{equation}
 Thanks to this notation, we rewrite the kinetic energy as follows.
@@ -89,7 +89,7 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 Let $\Omega\subset \R^{2m}$ be a domain of double revolution and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\Omega)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
 \begin{align}
 \label{Eq:ShortExpressionEnergy}
-\ecal_\mathrm{K}(w, \Omega) = \frac{1}{2} I_w(\Omega\cap\ocal,\Omega\cap\ocal) + I_w(\Omega\cap\ocal,\ocal\setminus\Omega),
+\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \{I_w(\Omega\cap\ocal,\Omega\cap\ocal) +  2I_w(\Omega\cap\ocal,\ocal\setminus\Omega)\},
 \end{align}
 where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 \end{lemma}
@@ -102,11 +102,13 @@ $$
 $$
 Now we split $\Omega$ into $\Omega \cap \ocal$ and $\Omega \setminus \ocal$. By using the change of variables given by $(\cdot)^\star$ and the odd symmetry of $w$, we get
 \begin{align*}
-\ecal_\mathrm{K}(w, \Omega) =  & \frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
-& + \int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
-= & \frac{1}{2} \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\}  +2 \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
-&+ \int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\}  +2 \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
-= & \frac{1}{2} I_w(\Omega\cap\ocal,\Omega\cap\ocal) + I_w(\Omega\cap\ocal,\ocal\setminus\Omega).
+4\ecal_\mathrm{K}(w, \Omega) =  & 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
+& +  4\int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
+= & 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
+&\quad \quad +4 \int_{\Omega\cap \ocal} \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
+&+ 4\int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y\\
+  &\quad \quad +8 \int_{\Omega\cap \ocal}  \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
+= &  I_w(\Omega\cap\ocal,\Omega\cap\ocal) + 2 I_w(\Omega\cap\ocal,\ocal\setminus\Omega).
 \end{align*}
 \end{proof}
 
