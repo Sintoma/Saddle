@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:OperatorOddF}
 
-This section is devoted to study rotation invariant operators of the class $\lcal_0$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present necessary and sufficient conditions on the kernel $K$ in order to $L_K$ belong to the class $\lcal_\star$ (we establish Theorem~\ref{Th:CharacterizationLstar}). Finally, we show two maximum principles for odd functions.
+This section is devoted to study rotation invariant operators of the class $\lcal_0$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present necessary and sufficient conditions on the kernel $K$ in order to $L_K$ belong to the class $\lcal_\star$ (we establish Theorem~\ref{Th:SufficientNecessaryConditions}). Finally, we show two maximum principles for odd functions.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,7 +71,7 @@ where we have used the right invariance of the Haar measure.
 
 
 
-In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by \eqref{Eq:DefStar} and its relation with the doubly radial kernel $\overline{K}$ and the transformations of $O(m)^2$. In particular, in the proof of Theorem~\ref{Th:CharacterizationLstar} it will be useful to consider the following transformation. For every $R\in O(m)^2$, we define  $R_\star\in O(m)^2$ by 
+In the following lemma we present some properties of the involution $(\cdot)^\star$ defined by \eqref{Eq:DefStar} and its relation with the doubly radial kernel $\overline{K}$ and the transformations of $O(m)^2$. In particular, in the proof of Theorem~\ref{Th:SufficientNecessaryConditions} it will be useful to consider the following transformation. For every $R\in O(m)^2$, we define  $R_\star\in O(m)^2$ by 
 \begin{equation}
 	\label{Eq:DefRStar}
 	R_\star := (R(\cdot)^\star)^\star\,.
@@ -189,13 +189,13 @@ To conclude this subsection, we present two alternative expressions for the oper
 
 
 
-In this subsection, we establish Theorem~\ref{Th:CharacterizationLstar}. As we have mentioned in the introduction, property \eqref{Eq:KernelInequality} is crucial in the rest of the results (including the ones in \cite{FelipeSanz-Perela:IntegroDifferentialII}), since it guarantees for instance that the operator $L_K$ has a maximum principle for odd functions (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
+In this subsection, we establish Theorem~\ref{Th:SufficientNecessaryConditions}. As we have mentioned in the introduction, property \eqref{Eq:KernelInequality} is crucial in the rest of the results (including the ones in \cite{FelipeSanz-Perela:IntegroDifferentialII}), since it guarantees for instance that the operator $L_K$ has a maximum principle for odd functions (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
 
 First, we give a sufficient condition on the kernel $K$ so that the operator $L_K$ belongs to the the class $\lcal_\star$. It is the following result.
 
 \begin{proposition}
 \label{Prop:KernelInequalitySufficientCondition} 
-Assume that the kernel $K$ is radially symmetric, with $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$. Then, the associated kernel $\overline{K}$ satisfies
+Let $K:(0,+\infty) \to \R$ define a positive radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef'}. Assume that $K(\sqrt{\cdot})$ strictly convex in $(0,+\infty)$. Then, the associated kernel $\overline{K}$ satisfies
 	\begin{equation}
 	\label{Eq:KernelInequalityBis}
 	\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
@@ -237,7 +237,7 @@ and
 \begin{align*}
 4\overline{K} (x, y^\star) &= 4\average_{O(m)^2} K(|x - R y^\star|)\d R \\
 & = \average_{Q_1} \{K(|x - R y^\star|) + K(|x + R y^\star|) \\
-&\quad \quad + K(|x - R_\star y^\star|) + K(|x + R_\star y^\star|)\}\d R
+&\quad \quad + K(|x - R_\star y^\star|) + K(|x + R_\star y^\star|)\}\d R.
 \end{align*}
 Thus, if we prove
 \begin{equation}
@@ -325,7 +325,9 @@ To finish, we must see that the equality in \eqref{Eq:InequalityIntegrandKernelI
 Now, we give a necessary condition on the kernel $K$ so that inequality \eqref{Eq:KernelInequality} holds.
 
 \begin{proposition}
-\label{Prop:KernelInequalityNecessaryCondition} Assume that the kernel $K$ is radially symmetric. If
+\label{Prop:KernelInequalityNecessaryCondition} Let $K:(0,+\infty) \to \R$ define a positive radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef'}. 
+
+If
 \begin{equation}
 \label{Eq:KernelInequalityAE}
 \overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for almost every }x,y \in \mathcal{O}\,,
@@ -398,9 +400,9 @@ and thus $ |x'||y'|+|x''||y''|<\overline{\ell}$ and the claim is proved.
 Finally, by applying Lemma~\ref{Lemma:ConvexFunctions} to the function $-g$, we obtain that inequality \eqref{Eq:InequalityIntegrandKernelInequalityProof5} is satisfied, which yields \eqref{Eq:InequalityIntegrandKernelInequalityProof4}. Finally, by integrating \eqref{Eq:InequalityIntegrandKernelInequalityProof4} with respect to all the rotations $R\in Q_1$ we get $$ \overline{K}(x,y) \leq \overline{K}(x, y^\star),$$ for every $(x,y)\in \Omega_{\ell_1,\ell_2}$, contradicting \eqref{Eq:KernelInequalityAE}.
 \end{proof}
 
-From the two previous results, Theorem~\ref{Th:CharacterizationLstar} follows immediately.
+From the two previous results, Theorem~\ref{Th:SufficientNecessaryConditions} follows immediately.
 
-\begin{proof}[Proof of Theorem~\ref{Th:CharacterizationLstar}]
+\begin{proof}[Proof of Theorem~\ref{Th:SufficientNecessaryConditions}]
 	The first statement is exactly the same as Proposition~\ref{Prop:KernelInequalitySufficientCondition}. Assume now that $K$ is a $C^1$ function and that \eqref{Eq:KernelInequality} holds. Then, by Proposition~\ref{Prop:KernelInequalityNecessaryCondition}, $K(\sqrt{\cdot})$ is not concave in any interval of $[0,+\infty)$. By the regularity of $K$, this automatically yields that $K(\sqrt{\cdot})$ is strictly convex.
 \end{proof}
 

@@ -11,7 +11,7 @@ L_K u = f(u) \quad \textrm{ in } \R^{2m}
 \end{equation}
 which are odd with respect to the Simons cone ---see \eqref{Eq:SimonsCone}. The interest on these solutions is motivated by the nonlocal version of a conjecture by De Giorgi (see the details below) with the aim of finding a counterexample in high dimensions through what we call saddle-shaped solutions (see the definition at the end of this introduction). Moreover, this problem is related to the regularity theory of nonlocal minimal surfaces.
 
-This is the first of two articles concerning equation \eqref{Eq:NonlocalAllenCahn}. In the present paper we address the problem of studying odd solutions with respect to the Simons cone (this terminology is  defined more precisely below). In particular, we find a suitable expression for the operator $L_K$  acting on this type of functions, given by \eqref{Eq:OperatorOddF}, as well as for its associated energy (see Lemma~\ref{Lemma:ShortExpressionEnergy}). We deduce necessary and sufficient conditions for the operator to have a maximum principle in this setting (see Theorem~\ref{Th:CharacterizationLstar}) and, under these assumptions, we establish an energy estimate for doubly radial odd minimizers (Theorem~\ref{Th:EnergyEstimate} below). Finally, as an application of these results we prove, by using variational arguments, the existence of saddle-shaped solutions to problem \eqref{Eq:NonlocalAllenCahn} when $f$ is of Allen-Cahn type ---see the comment right after \eqref{Eq:HipothesesG}. This is Theorem~\ref{Th:Existence}.
+This is the first of two articles concerning equation \eqref{Eq:NonlocalAllenCahn}. In the present paper we address the problem of studying odd solutions with respect to the Simons cone (this terminology is  defined more precisely below). In particular, we find a suitable expression for the operator $L_K$  acting on this type of functions, given by \eqref{Eq:OperatorOddF}, as well as for its associated energy (see Lemma~\ref{Lemma:ShortExpressionEnergy}). We deduce necessary and sufficient conditions for the operator to have a maximum principle in this setting (see Theorem~\ref{Th:SufficientNecessaryConditions}) and, under these assumptions, we establish an energy estimate for doubly radial odd minimizers (Theorem~\ref{Th:EnergyEstimate} below). Finally, as an application of these results we prove, by using variational arguments, the existence of saddle-shaped solutions to problem \eqref{Eq:NonlocalAllenCahn} when $f$ is of Allen-Cahn type ---see the comment right after \eqref{Eq:HipothesesG}. This is Theorem~\ref{Th:Existence}.
 
 In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we focus our study on saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn} (assuming $f$ of Allen-Cahn type). Using the setting for odd functions established in the present paper, we give an alternative proof of the existence based on the monotone iteration scheme. In \cite{FelipeSanz-Perela:IntegroDifferentialII}, we also show the uniqueness of the saddle-shaped solution by establishing its asymptotic behavior, as well as a maximum principle for the linearized operator.
 
@@ -24,7 +24,7 @@ L_Ku(x) = \int_{\R^n} \{u(x) - u(y)\} K(x-y)\d y,
 where the kernel $K$ satisfies
 \begin{equation}
 \label{Eq:Symmetry&IntegrabilityOfK}
-K\geq 0\,, \quad K(y) = K(-y) \quad \textrm{ and } \quad \int_{\R^n} \min \left\{ |y|^2, 1 \right\} K(y) \d y < + \infty\,.
+K\geq 0\,, \quad K(z) = K(-z) \quad \textrm{ and } \quad \int_{\R^n} \min \left\{ |z|^2, 1 \right\} K(z) \d z < + \infty\,.
 \end{equation}
 The integral in \eqref{Eq:DefOfLu} has to be understood in the principal value sense, as well as all the integrals involving nonlocal operators in the rest of the paper.
 The most canonical example of such operators is the fractional Laplacian
@@ -38,7 +38,7 @@ Recall that the fractional Laplacian has an associated extension problem (see \c
 Throughout the paper, we assume that the operators of our study are uniformly elliptic. That is, their kernels are bounded from above and below by a positive multiple of the one of the fractional Laplacian:
 \begin{equation}
 \label{Eq:Ellipticity}
-\lambda \dfrac{c_{n,\s}}{|y|^{n+2\s}} \leq K(y) \leq \Lambda\dfrac{c_{n,\s}}{|y|^{n+2\s}}\,, \quad \text{ with }  0< \lambda \leq \Lambda \,,
+\lambda \dfrac{c_{n,\s}}{|z|^{n+2\s}} \leq K(z) \leq \Lambda \dfrac{c_{n,\s}}{|z|^{n+2\s}}\,, \quad \text{ with }  0< \lambda \leq \Lambda \,,
 \end{equation}
 where $c_{n,\s}$ is the constant appearing in the definition of the fractional Laplacian. This condition is one of the most frequently adopted when dealing with nonlocal operators of the form \eqref{Eq:DefOfLu}, since it is known to yield Hölder regularity of solutions (see \cite{RosOton-Survey,SerraC2s+alphaRegularity}). The family of linear operators satisfying conditions \eqref{Eq:Symmetry&IntegrabilityOfK} and \eqref{Eq:Ellipticity} is the so-called $\lcal_0(n,\s,\lambda, \Lambda)$ ellipticity class. For short we will usually write $\lcal_0$ and we will make explicit the parameters only when needed. Note that, under the assumption \eqref{Eq:Ellipticity}, $L_K u$ is well-defined if $u\in C^\alpha(\R^{2m})\cap L^\infty(\R^{2m})$, for some $\alpha > 2 \s$.
 
@@ -105,10 +105,10 @@ $$
 L_K w(x) = \int_{\R^{2m}} \{w(x) - w(y)\} \overline{K}(x,y) \d y\,,
 $$
 where $\overline{K}$ is defined by
-\begin{equation*}
-%\label{Eq:KbarDef'}
+\begin{equation}
+\label{Eq:KbarDef'}
 \overline{K}(x,y) := \average_{O(m)^2} K(|Rx - y|)\d R\,.
-\end{equation*}
+\end{equation}
 Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$ (see Section~\ref{Sec:OperatorOddF} for the details).
 
 The new kernel $\overline{K}$ is symmetric (as $K$), that is, $\overline{K}(x,y) = \overline{K}(y,x)$, but is not translation invariant. Nevertheless, it is doubly radial in its both variables, and this property is crucial to establish some maximum principles for odd functions.
@@ -126,36 +126,52 @@ Note that this operator (in contrast with $L_K$) acts on functions that only nee
 
 Expression \eqref{Eq:OperatorOddF} has an integro-differential part plus a zero order term with a nonnegative coefficient, which is comparable to $\dist(x,\ccal)^{-2\s}$ (see Lemma~\ref{Lemma:OperatorOddF}). Therefore, the natural assumption to make for that operator to have a maximum principle is that the kernel of the integro-differential term is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$ for every $x,y\in \ocal$. Indeed, we show in Section~\ref{Sec:OperatorOddF} that this assumption guarantees that $L_K$ has a maximum principle for odd functions. 
 
-The previous positivity assumption motivates the following definition.
 
-\begin{definition}[Ellipticity class $\lcal_\star$]
-	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies
-	\begin{equation}
-		\label{Eq:KernelInequality}
-		\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
-	\end{equation}
-\end{definition}
 
-Our first main result concerns necessary and sufficient conditions on the original kernel $K$ in order to $L_K$ belong to $\lcal_\star$.
+Our first main result concerns necessary and sufficient conditions on the original kernel $K$ in order to $L_K$ have a maximum principle in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone. As stated next, 
 
 \begin{theorem}
-	\label{Th:CharacterizationLstar}
-	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric, and assume that 
+	\label{Th:SufficientNecessaryConditions}
+	Let $K:(0,+\infty) \to \R$ define a positive radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef'}.
+	
+	If 
 	\begin{equation}
 		\label{Eq:SqrtConvex}	
-		K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,.
+		K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,,
 	\end{equation}
-	Then, $L_K\in \lcal_\star(2m,\s,\lambda, \Lambda)$. Moreover, if $K\in C^1((0,+\infty))$, then \eqref{Eq:SqrtConvex} is a necessary condition for $L_K$ to belong to $\lcal_\star$.
+	then $L_K$ has a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone $\ccal$. More precisely, it holds
+	\begin{equation}
+	\label{Eq:KernelInequality}
+	\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
+	\end{equation}
+	
+	In addition, if $K\in C^2((0,+\infty))$, \eqref{Eq:SqrtConvex} is not only a sufficient condition for \eqref{Eq:KernelInequality} to hold, but also a necessary one.
 \end{theorem}
 
 This theorem is proved in Section~\ref{Sec:OperatorOddF} (see Propositions~\ref{Prop:KernelInequalitySufficientCondition} and \ref{Prop:KernelInequalityNecessaryCondition}). It is based on a suitable division of the group $O(m)^2$ and a result on convex functions proved in Appendix~\ref{Sec:AuxiliaryResults} (Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}).
 
+To simplify the notation, we introduce the following definition. It is the class of all operators which are radially symmetric, uniformly elliptic and have a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone.
+
+\todo[inline]{Escribir bien}
+
+\begin{definition}[Ellipticity class $\lcal_\star$]
+	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies \eqref{Eq:KernelInequality}.
+\end{definition}
+
+
+
 Equation \eqref{Eq:NonlocalAllenCahn} is the Euler-Lagrange equation associated to the energy functional
-\begin{equation*}
-%\label{Eq:Energy}
+\begin{equation}
+\label{Eq:Energy}
 \ecal(w, \Omega) := \dfrac{1}{4}\int\int_{\R^{2n} \setminus (\R^n\setminus\Omega)^2} |w(x) - w(y)|^2 K(x-y) \d x \d y + \int_{\Omega} G(w) \d x \,.
-\end{equation*}
-Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial and odd functions with a suitable new expression that involves the kernel $\overline{K}$ (see Lemma~\ref{Lemma:ShortExpressionEnergy} in  Section~\ref{Sec:EnergyForOddF}). Thanks to this, we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial and odd minimizers of $\ecal$. In the next statement, $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ denotes the space of doubly radial and odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:EnergyForOddF} for the precise definition).
+\end{equation}
+Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial and odd functions with a suitable new expression that involves the kernel $\overline{K}$. Do do it, we introduce the following notation.
+
+\todo[inline]{Acabar}
+Then, as proved in in  Section~\ref{Sec:EnergyForOddF} (see Lemma~\ref{Lemma:ShortExpressionEnergy}), we can rewrite the energy of a doubly radial odd function $w$ as
+\todo[inline]{Acabar}
+
+Thanks to this new expression, we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial and odd minimizers of $\ecal$. In the next statement, $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ denotes the space of doubly radial and odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:EnergyForOddF} for the precise definition).
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
@@ -192,4 +208,4 @@ In the fractional framework, there are only three works concerning saddle-shaped
 
 In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we establish an alternative proof for the existence of a saddle-shaped solution by using other techniques (monotone iteration and maximum principle). In both proofs, the assumtion \eqref{Eq:KernelInequality} is crucial. In such paper we also show the uniqueness of the saddle-shaped solution through its asymptotic behavior and a maximum principle for the linearized operator.
 
-The paper is organized as follows. Section~\ref{Sec:OperatorOddF} is devoted to study the operator $L_K$ acting on doubly radial odd functions. We deduce the expression of the doubly radial kernel $\overline{K}$ and we prove some properties. We also show Theorem~\ref{Th:CharacterizationLstar} and some maximum principles. In Section~\ref{Sec:EnergyForOddF} we study the energy functional associated to \eqref{Eq:NonlocalAllenCahn} and in Section~\ref{Sec:EnergyEstimate} we establish the energy estimate stated in Theorem~\ref{Th:EnergyEstimate}. Finally, in Section~\ref{Sec:Existence} we prove the existence of a saddle-shaped solution to the integro-differential Allen-Cahn equation. At the end of the paper there are three appendices. Appendix~\ref{Sec:AuxiliaryResults} is devoted to some results on convex functions, and Appendix~\ref{Sec:AuxiliaryResults2} contains some auxiliary computations. Both are used in the proof of Theorem~\ref{Th:CharacterizationLstar}. In Appendix~\ref{Sec:stcomputations} we include some computations in $(s,t)$ variables for future reference.
+The paper is organized as follows. Section~\ref{Sec:OperatorOddF} is devoted to study the operator $L_K$ acting on doubly radial odd functions. We deduce the expression of the doubly radial kernel $\overline{K}$ and we prove some properties. We also show Theorem~\ref{Th:SufficientNecessaryConditions} and some maximum principles. In Section~\ref{Sec:EnergyForOddF} we study the energy functional associated to \eqref{Eq:NonlocalAllenCahn} and in Section~\ref{Sec:EnergyEstimate} we establish the energy estimate stated in Theorem~\ref{Th:EnergyEstimate}. Finally, in Section~\ref{Sec:Existence} we prove the existence of a saddle-shaped solution to the integro-differential Allen-Cahn equation. At the end of the paper there are three appendices. Appendix~\ref{Sec:AuxiliaryResults} is devoted to some results on convex functions, and Appendix~\ref{Sec:AuxiliaryResults2} contains some auxiliary computations. Both are used in the proof of Theorem~\ref{Th:SufficientNecessaryConditions}. In Appendix~\ref{Sec:stcomputations} we include some computations in $(s,t)$ variables for future reference.
