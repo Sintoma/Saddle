@@ -5,242 +5,335 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this appendix we present some auxiliary results concerning convex functions. Recall that for measurable functions $f:\R\to \R$, convexity in an open interval $I$ is equivalent to midpoint convexity, i.e.,
-$$
-\dfrac{f(x) + f(y)}{2} \geq f \left( \dfrac{x+y}{2}\right) \quad \textrm{ for every } x,\, y \in I\,,
-$$
-and the same is true for strict convexity with an strict inequality
-(see Chapter~1 of \cite{Niculescu} and the references therein).
+In this appendix we present some auxiliary results concerning convex functions. The main result, used in the proof of Theorem~\ref{Th:SufficientNecessaryConditions}, is the following.
 
 
-The main result, used in the proof of Theorem~\ref{Th:CharacterizationLstar}, is the following.
+%Recall that for measurable functions $f:\R\to \R$, convexity in an open interval $I$ is equivalent to midpoint convexity, i.e.,
+%$$
+%\dfrac{f(x) + f(y)}{2} \geq f \left( \dfrac{x+y}{2}\right) \quad \textrm{ for every } x,\, y \in I\,,
+%$$
+%and the same is true for strict convexity with an strict inequality
+%(see Chapter~1 of \cite{Niculescu} and the references therein).
 
 \begin{proposition}
 	\label{Prop:EquivalenceK(sqrt)Convex<->Inequality}
-	Let $K:(0, +\infty) \to (0,+\infty)$ be a continuous and nonincreasing function such that
-	$$
-	\lim_{z\to +\infty} K(z) = 0\,.
-	$$
-	Then, the following statements are equivalent:
+	Let $K:(0, +\infty) \to (0,+\infty)$ be a measurable function. Then, the following statements are equivalent:
 	\begin{enumerate}
-		\item[i)] $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
-		\item[ii)] For every $c_1$, $c_2$, $A$, $B$, $C$ and $D$ satisfying
-		\begin{enumerate}
-			\item $c_1 > 0$, $c_2>0$,
-			\item $A$, $B$, $C$, $D \in (0, 1/c_2)$,
-			\item $A = \max\{A,\, B,\, C,\, D\}$,
-			\item $A + D \geq B + C$,
-		\end{enumerate}
-		it holds
+		\item[i)] $K(\sqrt{\cdot})$ is strictly convex in $(0, +\infty)$.
+		\item[ii)] For every positive constants $c_1$ and $c_2$, the function $g:(0,1/c_2)\to \R$ defined by
+		\begin{equation}
+		\label{Eq:DefinitiongFromK}
+		g(z) := K(c_1 \sqrt{1 + c_2z}) + K(c_1 \sqrt{1 - c_2z})
+		\end{equation}
+		satisfies 
+		\begin{equation}
+		\label{Eq:InequalityConvexFunctions}
+		g(A) + g(D) \geq g(B) + g(C)
+		\end{equation}
+		whenever $A$, $B$, $C$ and $D$ belong to $(0, 1/c_2)$ and satisfy
 		$$
-		g(A) + g(D) \geq g(B) + g(C)\,,
+		A = \max\{A,\, B,\, C,\, D\} \quad \text{ and } \quad A + D \geq B + C.
 		$$
-		where
-		$$
-		g(z) := K(c_1 \sqrt{1 + c_2z}) + K(c_1 \sqrt{1 - c_2z})\,.
-		$$
-		Moreover, equality holds if and only if
-		$$ A = B \ \ \ \ \textrm{ and} \ \ \ \ C=D, $$
-		or
-		$$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
+		
+		In addition, still assuming $A = \max\{A,\, B,\, C,\, D\}$ and $A + D \geq B + C$, equality holds in \eqref{Eq:InequalityConvexFunctions} if and only if the sets $\{A,D\}$ and $\{C,B\}$ coincide.	
 	\end{enumerate}
 \end{proposition}
 
 
 
-To prove this proposition, we need some lemmas on convex functions. The first one is the following.
+To prove this proposition, we need a lemma on convex functions. 
+
 
 \begin{lemma}
-\label{Lemma:Convex<->AllReflectionsConvex} Let $h: I \subset \R \to \R$ be a function defined in
-an open interval $I$ such that it is measurable. Then, $h(z)$ is convex in $I$ if and only if
-$\widetilde{h}_c(z) := h(c+z) + h(c-z)$ is convex in $I_c := (-\dist\{c, \partial I\}, \dist\{c,
-\partial I\})$ for every $c\in I$. The statement remains true if we replace convexity by strict
-convexity, concavity or strict concavity.
+	\label{Lemma:ConvexFunctions}
+	Let $0<M\leq +\infty$ and let $h:(0,M)\to \R$ be a measurable nondecreasing function. Then, the following statements are equivalent.
+	
+	\begin{enumerate}[label=(\alph*)]
+		\item $h$ is convex in $(0,M)$.
+		
+		\item For every $0\leq L\leq 2M$, the function $\tilde{h}_L (x) := h(x) + h(L-x)$ is convex in $(\max \{L-M,0\}, \min \{L,M\})$.
+		
+		\item For every $A$, $B$, $C$, $D$ in the interval $(0,M)$ such that
+		$$
+		A = \max\{A,\, B,\, C,\, D\} \quad \text{ and } \quad A + D \geq B + C\,,
+		$$
+		it holds
+		\begin{equation}
+			\label{Eq:InequalityConvexFunctionsbis}
+			h(A) + h(D) \geq h(B) + h(C)\,.
+		\end{equation}
+	\end{enumerate}
 \end{lemma}
 
 \begin{proof}
-First, let us assume that $h$ is convex in $I$. We call
-$$
-x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
-$$
-Then, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $\tau\in(0,1)$,
-\begin{align*}
-\tau\widetilde{h}_c(x) + (1-\tau)\widetilde{h}_c(y)
-&=  \tau h(x_+) + (1-\tau )h(y_+) + \tau  h(x_-) + (1-\tau )h(y_-) \\
-&\geq h(\tau x_+ + (1-\tau )y_+) + h(\tau x_- + (1-\tau )y_-) \\
-&= h(c + \tau x + (1-\tau )y) + h(c-\tau x + (1-\tau )y) \\
-& = \widetilde{h}_c(\tau x + (1-\tau )y)\,.
-\end{align*}
-Therefore, $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$.
-
-Assume now that $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$. By contradiction,
-suppose that $h$ is not convex in $I$. Then, there exist some $x$, $y\in I$ such that
-\begin{equation}
-\label{Eq:ContradictionConvexity}
-\dfrac{h(x) + h(y)}{2} < h \left (\dfrac{x+y}{2}\right )\,.
-\end{equation}
-
-Let $c = (x+y)/2$ and thus
-$$
-\widetilde{h}_c(z) = h\left( \dfrac{x+y}{2} + z\right) +  h\left( \dfrac{x+y}{2} - z\right)\,.
-$$
-Define $ x_0 := (x-y)/2$ and $y_0:= (y-x)/2$. It is clear that $x_0$, $y_0\in I_c$. Therefore,
-$$
-h(x) + h(y) = \dfrac{1}{2} \left( \widetilde{h}_c(x_0) + \widetilde{h}_c(y_0)\right )
-\geq \widetilde{h}_c \left( \dfrac{x_0 + y_0}{2}\right )
-= 2 h \left (\dfrac{x+y}{2}\right )\,,
-$$
-and this contradicts \eqref{Eq:ContradictionConvexity}. Hence, $h$ is convex in $I$.
+	$(a)\Rightarrow (c)$.	Since $B$ and $C$ are interchangeable and $h$ is nondecreasing, we may assume that $A \geq B \geq C \geq D$. Now, let $M_C$ be the maximum slope of the supporting lines of $h$ at $C$, and let $m_B$ be the minimum slope of the supporting lines of $h$ at $B$. By the convexity and monotonicity of $h$, it holds $m_B \geq M_C\geq 0$ and also
+	$$
+	h(x) \geq h(B) + m_B (x-B) \quad \text{ and } \quad h(x) \geq h(C) + M_C (x-C) 
+	$$
+	for every $x \in (0,M)$.
+	
+	Hence, since $A-B \geq C-D\geq 0$, we have
+	$$
+	h(A)-h(B) \geq m_B(A-B) \geq M_C (C-D) \geq h(C) - h(D)\,.
+	$$
+	
+	$(c) \Rightarrow (b)$. Let $x$, $y\in (\max \{L-M,0\}, \min \{L,M\})$ and assume that $x>y$. By taking $A=x$, $B=C=(x+y)/2$, and $D = y$ in \eqref{Eq:InequalityConvexFunctionsbis}, we get 
+	$$
+	\dfrac{h(x) + h(y)}{2} \geq h \left( \dfrac{x+y}{2}\right). 
+	$$ 
+	Similarly, by taking $A= L-y$, $B=C=L -(x+y)/2$, and $D = L-x$ in \eqref{Eq:InequalityConvexFunctions}, we get 
+	$$
+	\dfrac{h(L-x) + h(L-y)}{2} \geq h \left(L - \dfrac{x+y}{2}\right). 
+	$$
+	By adding up the previous two inequalities we obtain
+	$$
+	\dfrac{\tilde{h}_L(x) + \tilde{h}_L(y)}{2} \geq \tilde{h}_L \left( \dfrac{x+y}{2}\right). 
+	$$ 
+	
+	$(b) \Rightarrow (a)$. Let $x_0$, $y_0 \in (0,M)$ and choose $L = x_0 + y_0 \leq 2M$. By $(b)$ we have 
+	$$
+	\dfrac{h(x) + h(x_0 + y_0-x) + h(y) + h(x_0 + y_0-y)}{2} \geq h \left( \dfrac{x+y}{2}\right) + h \left(x_0 + y_0 - \dfrac{x+y}{2}\right),
+	$$
+	for every $x$ and $y$ in the interval $(\max \{L-M,0\}, \min \{L,M\})$. By choosing $x=x_0$ and $y=y_0$ we obtain
+	$$
+	h(x_0) + h(y_0)\geq 2 h \left( \dfrac{x_0+y_0}{2}\right). 
+	$$
 \end{proof}
 
-From this result we deduce an immediate corollary.
-
-\begin{corollary}
-\label{Cor:gConvex<->K(sqrt)convex} Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function.
-Then, given any $c_1,c_2>0$, the function
-$$
-g(z) := K \left (c_1 \sqrt{1 + c_2 z}\right) +  K \left (c_1 \sqrt{1 - c_2 z}\right)
-$$
-is  (strictly) convex in $(-1/c_2, 1/c_2)$ for every $c_1>0$ if and only if $K(\sqrt{z})$ is
-(strictly) convex in $(0, +\infty)$.
-\end{corollary}
-\begin{proof}
-Since we can rewrite $g$ as
-$$
-g(z) = K \left (\sqrt{c_1^2 + c_1^2c_2 z}\right) +  K \left (\sqrt{c_1^2 - c_1^2c_2 z}\right),
-$$
-it is clear that $g$ is  (strictly) convex in $(-1/c_2, 1/c_2)$ for every $c_1>0$ if and only if
-$$
-K \left(\sqrt{c_1^2 + z}\right) +  K \left(\sqrt{c_1^2 - z}\right)
-$$
-is (strictly) convex in $(-c_1^2, c_1^2)$ for every $c_1>0$. Then, by applying
-Lemma~\ref{Lemma:Convex<->AllReflectionsConvex} with $I = (0,+\infty)$, this is equivalent to the
-convexity of $K(\sqrt{z})$ in $(0, +\infty)$.
-\end{proof}
-
-The following is a characterization of the nondecreasing convex functions.
-
-\begin{lemma}
-\label{Lemma:InequalitConvexFunctions} Let $g \colon I\subset \R \to \R$ be a measurable and nondecreasing function defined in
-an open interval $I$. Then, we have the
-following equivalences:
-\begin{enumerate}
-\item[i)] $g$ is strictly convex in $I$.
-\item[ii)] For any given real numbers $A$, $B$, $C$, $D$ $\in I$ such that
-\begin{equation}
-\label{Eq:AssumptionsInequalitiesABCD}
-\begin{cases}
-A = \max\{A,B,C,D\}\,, \\
-A + D \geq B + C\,,
-\end{cases}
-\end{equation}
-it is satisfied that
-$$
-g(A) + g(D) \geq g(B) + g(C),
-$$
-and the equality holds if and only if
-$$ A = B \ \ \ \ \textrm{ and} \ \ \ \ C=D, $$
-or
-$$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
-\end{enumerate}
-
-\end{lemma}
-\begin{proof}
-$i)\, \Rightarrow \,ii)$ First let us point out some properties of $g$. Since $g$ is strictly convex, then $g$ is continuous in $I$ and differentiable except for, at most, a countable set of points.  Moreover, its left derivative $g'_-$ is well defined at every point of $I$ and the fundamental theorem of calculus holds. Furthermore, since the convexity is strict, $g'_-$ is increasing. For more details on these results on convex functions and their differentiability properties, see Chapter~V of \cite{Rockafellar1970}, in particular Corollaries 24.2.1 and 26.3.1.
-
-Without loss of generality, we can assume that $B \geq C$. Now, we distinguish two cases: either $D \geq C$ or $D < C$. In the first case, note that since $g$ is strictly convex and nondecreasing, it is in fact increasing and therefore $g(A) + g(D) \geq g(B) + g(C)$ holds trivially. By the same reason, we obtain the strict inequality if $A>B$ or $D>C$. Suppose now that $D < C$. In this case, we can assume $A > B \geq C > D$, since if $A = B$ we arrive at a contradiction with \eqref{Eq:AssumptionsInequalitiesABCD}. Now, by using the fundamental theorem of calculus we obtain
-\begin{align*}
-g(A) + g(D) - g(B) - g(C) &= \int_B^A g'_-(x) \d x - \int_D^C g'_-(x) \d x \\
-&\geq \int_B^{B+C-D} g'_-(x) \d x - \int_D^C g'_-(x) \d x  \\
-&= \int_D^C g'_-(x+B-D) - g'_-(x) \d x  \\
-& > 0\,,
-\end{align*}
-since $g'_-$ is nonnegative and increasing.
-
-$ii)\, \Rightarrow \,i)$ Given $x\neq y$ in $I$, that we can suppose $x>y$ without loss of generality, we take $A=x$, $B=C=(x+y)/2$ and $D=y$. Then we get $ g(x)+g(y) > 2g\left( (x+y)/2 \right)$.
-\end{proof}
 
 \begin{remark}
-\label{Remark:InequalitConvexFunctions} Note that the condition of strict convexity is only needed
-in order to characterize when the equality is satisfied. That is, with only a convexity condition
-we also obtain the inequality of statement $ii)$, although we are not able to determine when equality is satisfied.
+	\label{Remark:StrictConvexity}
+	We can replace convexity by strict convexity in $(a)$ and $(b)$ and then the inequality in \eqref{Eq:InequalityConvexFunctionsbis} is strict unless the sets $\{A,D\}$ and $\{C,B\}$ coincide.
 \end{remark}
-\begin{remark}
-\label{Remark:LeftImplicationDoNotRequireNondecreasing}
-The deduction of $i)$ from $ii)$ does not require $g$ to be nondecreasing.
-\end{remark}
-
-An equivalent version of the previous result but for nonincreasing functions is the following.
-
-\begin{corollary}
-\label{Cor:hDecreasingConvex} Let $h \colon I\subset \R \to \R$ be a measurable and nonincreasing function defined in an open
-interval $I$. Then, we have the following
-equivalences:
-\begin{enumerate}
-\item[i)] $h$ is convex in $I$.
-\item[ii)] For any given real numbers $a$, $b$, $c$, $d$ $\in I$ such that
-\begin{equation*}
-%\label{Eq:AssumptionsInequalitiesabcd}
-\begin{cases}
-a \geq b \geq c \geq d \,, \\
-a + d \leq b + c\,,
-\end{cases}
-\end{equation*}
-it is satisfied that
-$$ h(a) + h(d) \geq h(b) + h(c)\,.$$
-\end{enumerate}
-\end{corollary}
-
-\begin{proof}
-	The deduction of $i)$ from $ii)$ is exactly the same as in Lemma~\ref{Lemma:InequalitConvexFunctions}. Assume now that $i)$ holds and let us define $g(z) = h(a-z)$. It is clear that since $h$ is measurable and nonincreasing, then $g$ is measurable and nondecreasing. On the other hand, let $A=a-d$, $B=a-c$, $C=a-b$ and $D=0$. Then,we have that condition $a \geq b \geq c \geq d$ is equivalent to $A\geq B \geq C \geq D$ and condition $a+d\leq b+c$ is equivalent to $A+D\geq B+C$. Therefore, we can apply Lemma~\ref{Lemma:InequalitConvexFunctions}, taking into account Remark~\ref{Remark:InequalitConvexFunctions}, and the desired equivalence is obtained.
-\end{proof}
-
-The last result we need to establish Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} is the following.
-
-\begin{lemma}
-\label{Lemma:gNondecreasing}
-Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function such that
-$$ \lim_{z\to+\infty} K(z) = 0 $$
-and $ K(\sqrt{z}) $ is convex/strictly convex in $(0,+\infty)$. Then, given any $c_1,c_2>0$ the
-function
-$$
-g(z) := K(c_1 \sqrt{1 + c_2 z}) +  K(c_1 \sqrt{1 - c_2 z})
-$$
-is nondecreasing/increasing in $(0, 1/c_2)$.
-\end{lemma}
-
-\begin{proof}
-First, note that from the hypothesis of $K$ we can deduce that $K(\sqrt{z})$, and also
-$K(c_1\sqrt{z})$, is convex and nonincreasing.
-
-Now, given $x\geq y$ with $x$, $y\in (0,1/c_2)$, we have
-\begin{align*}
-g(x)-g(y) &= K(c_1\sqrt{1+c_2 x}) + K(c_1\sqrt{1-c_2 x}) \\
-&\ \ \ \ - K(c_1\sqrt{1+c_2 y}) -K(c_1\sqrt{1-c_2 y}) \geq 0,
-\end{align*}
-where we have applied Corollary~\ref{Cor:hDecreasingConvex} with $h(z) = K(c_1\sqrt{z})$,
-$a=1+c_2x$, $b=1+c_2y$, $c=1-c_2y$ and $d=1-c_2x$.
-\end{proof}
 
 \begin{remark}
-	\label{Remark:Concavity}
-If we assume that $K$ is nonincreasing and concave, then we can prove in a similar way that $g$ is
-nondecreasing.
+	\label{Remark:h_Lincreasing}
+	Note that the function $\tilde{h}_L$ is even with respect to $L/2$. Thus, if it is convex, it is nondecreasing in $(L/2, \min \{L,M\})$.
 \end{remark}
 
-With all these results at hand we can now prove Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}.
+\begin{remark}
+	\label{Remark:hypothesisNondecreasing}
+	The assumption of $h$ being nondecreasing it is only used to deduce $(c)$ from $(a)$. It is not required to show the equivalence between $(a)$ and $(b)$, neither to deduce $(a)$ from $(c)$.
+\end{remark}
 
-\begin{proof}[Proof of Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}]
-$i)\, \Rightarrow \,ii)$ By Lemma~\ref{Lemma:gNondecreasing} and
-Corollary~\ref{Cor:gConvex<->K(sqrt)convex}, $g$ is strictly convex in
-$(-1/c_2,1/c_2)$ and nondecreasing in $(0,1/c_2)$ for all $c_2>0$. Therefore, point $ii)$ follows from
-Lemma~\ref{Lemma:InequalitConvexFunctions}.
+With this result available we can show now Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}
 
-$ii)\, \Rightarrow \,i)$ By Lemma~\ref{Lemma:InequalitConvexFunctions} and in view of
-Remark~\ref{Remark:LeftImplicationDoNotRequireNondecreasing}, $g$ is strictly convex in
-$(-1/c_2,1/c_2)$ for all $c_2>0$. Hence, using Corollary~\ref{Cor:gConvex<->K(sqrt)convex} we deduce
-that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
+\begin{proof}
+	$i) \Rightarrow ii)$ We take $M = +\infty$ and $h(\cdot) = K(\sqrt{\cdot})$ in Lemma~\ref{Lemma:ConvexFunctions}. Since $h$ is strictly convex, the function $\tilde{h}_L$ is strictly convex in $(0,L)$ for every $L> 0$ (recall that we do not need to assume that $h$ is monotone to deduce this, see Remark~\ref{Remark:hypothesisNondecreasing}). Moreover, by Remark~\ref{Remark:h_Lincreasing}, $\tilde{h}_L$ is nondecreasing in $(L/2,L)$. Thus, the function $\phi(\cdot) = \tilde{h}_L(\cdot + L/2)$ is strictly convex in $(-L/2,L/2)$ and nondecreasing in $(0,L/2)$. If we choose $L=2c_1^2$, we have that $\phi((L/2)c_2 \cdot) = g(\cdot)$, where $g$ is defined by \eqref{Eq:DefinitiongFromK}. Therefore, $g$ is strictly convex in $(-1/c_2, 1/c_2)$ and nondecreasing in $(0,1/c_2)$ and the result follows by applying  Lemma~\ref{Lemma:ConvexFunctions} to $g$ in $(0,1/c_2)$ (taking into account Remark~\ref{Remark:StrictConvexity}).
+	
+	
+	$ii) \Rightarrow i)$ By Lemma~\ref{Lemma:ConvexFunctions} applied to $g$ we deduce that $g$ is strictly convex in $(0,1/c_2)$ ---recall that by Remark~\ref{Remark:hypothesisNondecreasing} we do not need to assume that $g$ is monotone. Thus, $\varphi(\cdot) = g(\cdot/(c_1^2 c_2))$ is strictly convex in $(-c_1^2, c_1^2)$. Hence, if we call $h(\cdot) := K(\sqrt{\cdot})$ and $L:= 2c_1^2$, we have that $\varphi(\cdot - c_1^2) = h(\cdot) + h(L-\cdot) =:  \tilde{h}_L(\cdot)$, and thus $\tilde{h}_L$ is strictly convex in $(0,L)$. Note that since $c_1>0$ is arbitrary, $\tilde{h}_L$ is strictly convex in $(0,L)$ for all $L>0$. Therefore, by Lemma~\ref{Lemma:ConvexFunctions}, with  $M = +\infty$, we conclude that $h(\cdot) = K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$.
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%
+%
+%
+%The first one is the following.
+%
+%\begin{lemma}
+%\label{Lemma:Convex<->AllReflectionsConvex} Let $h: I \subset \R \to \R$ be a function defined in
+%an open interval $I$ such that it is measurable. Then, $h(z)$ is convex in $I$ if and only if
+%$\widetilde{h}_c(z) := h(c+z) + h(c-z)$ is convex in $I_c := (-\dist\{c, \partial I\}, \dist\{c,
+%\partial I\})$ for every $c\in I$. The statement remains true if we replace convexity by strict
+%convexity, concavity or strict concavity.
+%\end{lemma}
+%
+%\begin{proof}
+%First, let us assume that $h$ is convex in $I$. We call
+%$$
+%x_+ = c + x\,, \quad x_- = c - x\,, \quad y_+ = c + y\,, \quad \textrm{ and } \quad y_- = c - y\,.
+%$$
+%Then, if $x$, $y\in I_c$, we have that $x_+$, $x_-$, $y_+$, $y_- \in I$. Hence, for all $\tau\in(0,1)$,
+%\begin{align*}
+%\tau\widetilde{h}_c(x) + (1-\tau)\widetilde{h}_c(y)
+%&=  \tau h(x_+) + (1-\tau )h(y_+) + \tau  h(x_-) + (1-\tau )h(y_-) \\
+%&\geq h(\tau x_+ + (1-\tau )y_+) + h(\tau x_- + (1-\tau )y_-) \\
+%&= h(c + \tau x + (1-\tau )y) + h(c-\tau x + (1-\tau )y) \\
+%& = \widetilde{h}_c(\tau x + (1-\tau )y)\,.
+%\end{align*}
+%Therefore, $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$.
+%
+%Assume now that $\widetilde{h}_c(z)$ is convex in $I_c$ for every $c\in I$. By contradiction,
+%suppose that $h$ is not convex in $I$. Then, there exist some $x$, $y\in I$ such that
+%\begin{equation}
+%\label{Eq:ContradictionConvexity}
+%\dfrac{h(x) + h(y)}{2} < h \left (\dfrac{x+y}{2}\right )\,.
+%\end{equation}
+%
+%Let $c = (x+y)/2$ and thus
+%$$
+%\widetilde{h}_c(z) = h\left( \dfrac{x+y}{2} + z\right) +  h\left( \dfrac{x+y}{2} - z\right)\,.
+%$$
+%Define $ x_0 := (x-y)/2$ and $y_0:= (y-x)/2$. It is clear that $x_0$, $y_0\in I_c$. Therefore,
+%$$
+%h(x) + h(y) = \dfrac{1}{2} \left( \widetilde{h}_c(x_0) + \widetilde{h}_c(y_0)\right )
+%\geq \widetilde{h}_c \left( \dfrac{x_0 + y_0}{2}\right )
+%= 2 h \left (\dfrac{x+y}{2}\right )\,,
+%$$
+%and this contradicts \eqref{Eq:ContradictionConvexity}. Hence, $h$ is convex in $I$.
+%\end{proof}
+%
+%From this result we deduce an immediate corollary.
+%
+%\begin{corollary}
+%\label{Cor:gConvex<->K(sqrt)convex} Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function.
+%Then, given any $c_1,c_2>0$, the function
+%$$
+%g(z) := K \left (c_1 \sqrt{1 + c_2 z}\right) +  K \left (c_1 \sqrt{1 - c_2 z}\right)
+%$$
+%is  (strictly) convex in $(-1/c_2, 1/c_2)$ for every $c_1>0$ if and only if $K(\sqrt{z})$ is
+%(strictly) convex in $(0, +\infty)$.
+%\end{corollary}
+%\begin{proof}
+%Since we can rewrite $g$ as
+%$$
+%g(z) = K \left (\sqrt{c_1^2 + c_1^2c_2 z}\right) +  K \left (\sqrt{c_1^2 - c_1^2c_2 z}\right),
+%$$
+%it is clear that $g$ is  (strictly) convex in $(-1/c_2, 1/c_2)$ for every $c_1>0$ if and only if
+%$$
+%K \left(\sqrt{c_1^2 + z}\right) +  K \left(\sqrt{c_1^2 - z}\right)
+%$$
+%is (strictly) convex in $(-c_1^2, c_1^2)$ for every $c_1>0$. Then, by applying
+%Lemma~\ref{Lemma:Convex<->AllReflectionsConvex} with $I = (0,+\infty)$, this is equivalent to the
+%convexity of $K(\sqrt{z})$ in $(0, +\infty)$.
+%\end{proof}
+%
+%The following is a characterization of the nondecreasing convex functions.
+%
+%\begin{lemma}
+%\label{Lemma:InequalitConvexFunctions} Let $g \colon I\subset \R \to \R$ be a measurable and nondecreasing function defined in
+%an open interval $I$. Then, we have the
+%following equivalences:
+%\begin{enumerate}
+%\item[i)] $g$ is strictly convex in $I$.
+%\item[ii)] For any given real numbers $A$, $B$, $C$, $D$ $\in I$ such that
+%\begin{equation}
+%\label{Eq:AssumptionsInequalitiesABCD}
+%\begin{cases}
+%A = \max\{A,B,C,D\}\,, \\
+%A + D \geq B + C\,,
+%\end{cases}
+%\end{equation}
+%it is satisfied that
+%$$
+%g(A) + g(D) \geq g(B) + g(C),
+%$$
+%and the equality holds if and only if
+%$$ A = B \ \ \ \ \textrm{ and} \ \ \ \ C=D, $$
+%or
+%$$ A = C \ \ \ \ \textrm{ and} \ \ \ \ B=D. $$
+%\end{enumerate}
+%
+%\end{lemma}
+%\begin{proof}
+%$i)\, \Rightarrow \,ii)$ First let us point out some properties of $g$. Since $g$ is strictly convex, then $g$ is continuous in $I$ and differentiable except for, at most, a countable set of points.  Moreover, its left derivative $g'_-$ is well defined at every point of $I$ and the fundamental theorem of calculus holds. Furthermore, since the convexity is strict, $g'_-$ is increasing. For more details on these results on convex functions and their differentiability properties, see Chapter~V of \cite{Rockafellar1970}, in particular Corollaries 24.2.1 and 26.3.1.
+%
+%Without loss of generality, we can assume that $B \geq C$. Now, we distinguish two cases: either $D \geq C$ or $D < C$. In the first case, note that since $g$ is strictly convex and nondecreasing, it is in fact increasing and therefore $g(A) + g(D) \geq g(B) + g(C)$ holds trivially. By the same reason, we obtain the strict inequality if $A>B$ or $D>C$. Suppose now that $D < C$. In this case, we can assume $A > B \geq C > D$, since if $A = B$ we arrive at a contradiction with \eqref{Eq:AssumptionsInequalitiesABCD}. Now, by using the fundamental theorem of calculus we obtain
+%\begin{align*}
+%g(A) + g(D) - g(B) - g(C) &= \int_B^A g'_-(x) \d x - \int_D^C g'_-(x) \d x \\
+%&\geq \int_B^{B+C-D} g'_-(x) \d x - \int_D^C g'_-(x) \d x  \\
+%&= \int_D^C g'_-(x+B-D) - g'_-(x) \d x  \\
+%& > 0\,,
+%\end{align*}
+%since $g'_-$ is nonnegative and increasing.
+%
+%$ii)\, \Rightarrow \,i)$ Given $x\neq y$ in $I$, that we can suppose $x>y$ without loss of generality, we take $A=x$, $B=C=(x+y)/2$ and $D=y$. Then we get $ g(x)+g(y) > 2g\left( (x+y)/2 \right)$.
+%\end{proof}
+%
+%\begin{remark}
+%\label{Remark:InequalitConvexFunctions} Note that the condition of strict convexity is only needed
+%in order to characterize when the equality is satisfied. That is, with only a convexity condition
+%we also obtain the inequality of statement $ii)$, although we are not able to determine when equality is satisfied.
+%\end{remark}
+%\begin{remark}
+%\label{Remark:LeftImplicationDoNotRequireNondecreasing}
+%The deduction of $i)$ from $ii)$ does not require $g$ to be nondecreasing.
+%\end{remark}
+%
+%An equivalent version of the previous result but for nonincreasing functions is the following.
+%
+%\begin{corollary}
+%\label{Cor:hDecreasingConvex} Let $h \colon I\subset \R \to \R$ be a measurable and nonincreasing function defined in an open
+%interval $I$. Then, we have the following
+%equivalences:
+%\begin{enumerate}
+%\item[i)] $h$ is convex in $I$.
+%\item[ii)] For any given real numbers $a$, $b$, $c$, $d$ $\in I$ such that
+%\begin{equation*}
+%%\label{Eq:AssumptionsInequalitiesabcd}
+%\begin{cases}
+%a \geq b \geq c \geq d \,, \\
+%a + d \leq b + c\,,
+%\end{cases}
+%\end{equation*}
+%it is satisfied that
+%$$ h(a) + h(d) \geq h(b) + h(c)\,.$$
+%\end{enumerate}
+%\end{corollary}
+%
+%\begin{proof}
+%	The deduction of $i)$ from $ii)$ is exactly the same as in Lemma~\ref{Lemma:InequalitConvexFunctions}. Assume now that $i)$ holds and let us define $g(z) = h(a-z)$. It is clear that since $h$ is measurable and nonincreasing, then $g$ is measurable and nondecreasing. On the other hand, let $A=a-d$, $B=a-c$, $C=a-b$ and $D=0$. Then,we have that condition $a \geq b \geq c \geq d$ is equivalent to $A\geq B \geq C \geq D$ and condition $a+d\leq b+c$ is equivalent to $A+D\geq B+C$. Therefore, we can apply Lemma~\ref{Lemma:InequalitConvexFunctions}, taking into account Remark~\ref{Remark:InequalitConvexFunctions}, and the desired equivalence is obtained.
+%\end{proof}
+%
+%The last result we need to establish Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality} is the following.
+%
+%\begin{lemma}
+%\label{Lemma:gNondecreasing}
+%Let $K:(0,+\infty) \to (0,+\infty)$ be a measurable function such that
+%$$ \lim_{z\to+\infty} K(z) = 0 $$
+%and $ K(\sqrt{z}) $ is convex/strictly convex in $(0,+\infty)$. Then, given any $c_1,c_2>0$ the
+%function
+%$$
+%g(z) := K(c_1 \sqrt{1 + c_2 z}) +  K(c_1 \sqrt{1 - c_2 z})
+%$$
+%is nondecreasing/increasing in $(0, 1/c_2)$.
+%\end{lemma}
+%
+%\begin{proof}
+%First, note that from the hypothesis of $K$ we can deduce that $K(\sqrt{z})$, and also
+%$K(c_1\sqrt{z})$, is convex and nonincreasing.
+%
+%Now, given $x\geq y$ with $x$, $y\in (0,1/c_2)$, we have
+%\begin{align*}
+%g(x)-g(y) &= K(c_1\sqrt{1+c_2 x}) + K(c_1\sqrt{1-c_2 x}) \\
+%&\ \ \ \ - K(c_1\sqrt{1+c_2 y}) -K(c_1\sqrt{1-c_2 y}) \geq 0,
+%\end{align*}
+%where we have applied Corollary~\ref{Cor:hDecreasingConvex} with $h(z) = K(c_1\sqrt{z})$,
+%$a=1+c_2x$, $b=1+c_2y$, $c=1-c_2y$ and $d=1-c_2x$.
+%\end{proof}
+%
+%\begin{remark}
+%	\label{Remark:Concavity}
+%If we assume that $K$ is nonincreasing and concave, then we can prove in a similar way that $g$ is
+%nondecreasing.
+%\end{remark}
+%
+%With all these results at hand we can now prove Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}.
+%
+%\begin{proof}[Proof of Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}]
+%$i)\, \Rightarrow \,ii)$ By Lemma~\ref{Lemma:gNondecreasing} and
+%Corollary~\ref{Cor:gConvex<->K(sqrt)convex}, $g$ is strictly convex in
+%$(-1/c_2,1/c_2)$ and nondecreasing in $(0,1/c_2)$ for all $c_2>0$. Therefore, point $ii)$ follows from
+%Lemma~\ref{Lemma:InequalitConvexFunctions}.
+%
+%$ii)\, \Rightarrow \,i)$ By Lemma~\ref{Lemma:InequalitConvexFunctions} and in view of
+%Remark~\ref{Remark:LeftImplicationDoNotRequireNondecreasing}, $g$ is strictly convex in
+%$(-1/c_2,1/c_2)$ for all $c_2>0$. Hence, using Corollary~\ref{Cor:gConvex<->K(sqrt)convex} we deduce
+%that $K(\sqrt{z})$ is strictly convex in $(0, +\infty)$.
+%\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -410,14 +503,14 @@ an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset
 
 \begin{lemma}
 \label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$ and let $w\in
-C^\alpha(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function, i.e., depending only on the variables $s$ and $t$. Let $L_K$ be a rotation invariant operator, that is, $K(y) = K(|y|)$, of the form \eqref{Eq:DefOfLu}. Then, if we define $\tilde{w}:(0,+\infty)\times (0,+\infty) \to \R$ by $\tilde{w}(s,t) = w(s,0,...,0,t,0,...,0)$, it holds
+C^\alpha(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function, i.e., depending only on the variables $s$ and $t$. Let $L_K$ be a rotation invariant operator, that is, $K(z) = K(|z|)$, of the form \eqref{Eq:DefOfLu}. Then, if we define $\tilde{w}:(0,+\infty)\times (0,+\infty) \to \R$ by $\tilde{w}(s,t) = w(s,0,...,0,t,0,...,0)$, it holds
 $$ L_Kw(x) = \tilde{L}_K \tilde{w} (|x'|,|x''|), $$
 with
 %Then, for any $x = (s x_s, t x_t)$ with $x_s$, $x_t$ $\in \Sph^{m-1}$ ($x_s$, $x_t = \pm 1$ in the
 %case $m=1$), $Lu(x)$ can be written in the following way:\todo{Is singular in $s=0$ or $t=0$??}
 \begin{equation*}
 \label{Eq:OperatorInSTVariables}
-\widetilde{L}_K \tilde{w} (s,t) := \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)  \d \sigma\d \tau\,,
+\widetilde{L}_K \tilde{w} (s,t) := \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(\tilde{w}(s,t) - \tilde{w}(\sigma, \tau)\big) J(s,t,\sigma, \tau)  \d \sigma\d \tau\,,
 \end{equation*}
 where:
 \begin{enumerate}
