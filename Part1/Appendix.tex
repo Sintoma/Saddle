@@ -30,7 +30,7 @@ In this appendix we present some auxiliary results concerning convex functions. 
 		\label{Eq:InequalityConvexFunctions}
 		g(A) + g(D) \geq g(B) + g(C)
 		\end{equation}
-		whenever $A$, $B$, $C$ and $D$ belong to $(0, 1/c_2)$ and satisfy
+		whenever $A$, $B$, $C$, and $D$ belong to $(0, 1/c_2)$ and satisfy
 		$$
 		A = \max\{A,\, B,\, C,\, D\} \quad \text{ and } \quad A + D \geq B + C.
 		$$
@@ -103,7 +103,7 @@ To prove this proposition, we need a lemma on convex functions.
 
 \begin{remark}
 	\label{Remark:StrictConvexity}
-	We can replace convexity by strict convexity in $(a)$ and $(b)$ and then the inequality in \eqref{Eq:InequalityConvexFunctionsbis} is strict unless the sets $\{A,D\}$ and $\{C,B\}$ coincide.
+	We can replace convexity by strict convexity in $(a)$ and $(b)$, and then the inequality in \eqref{Eq:InequalityConvexFunctionsbis} is strict unless the sets $\{A,D\}$ and $\{C,B\}$ coincide.
 \end{remark}
 
 \begin{remark}
@@ -119,7 +119,7 @@ To prove this proposition, we need a lemma on convex functions.
 With this result available we can show now Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}
 
 \begin{proof}
-	$i) \Rightarrow ii)$ We take $M = +\infty$ and $h(\cdot) = K(\sqrt{\cdot})$ in Lemma~\ref{Lemma:ConvexFunctions}. Since $h$ is strictly convex, the function $h_L$ is strictly convex in $(0,L)$ for every $L> 0$ (recall that we do not need to assume that $h$ is monotone to deduce this, see Remark~\ref{Remark:hypothesisNondecreasing}). Moreover, by Remark~\ref{Remark:h_Lincreasing}, $h_L$ is nondecreasing in $(L/2,L)$. Thus, the function $\phi(\cdot) = h_L(\cdot + L/2)$ is strictly convex in $(-L/2,L/2)$ and nondecreasing in $(0,L/2)$. If we choose $L=2c_1^2$, we have that $\phi((L/2)c_2 \cdot) = g(\cdot)$, where $g$ is defined by \eqref{Eq:DefinitiongFromK}. Therefore, $g$ is strictly convex in $(-1/c_2, 1/c_2)$ and nondecreasing in $(0,1/c_2)$ and the result follows by applying  Lemma~\ref{Lemma:ConvexFunctions} to $g$ in $(0,1/c_2)$ (taking into account Remark~\ref{Remark:StrictConvexity}).
+	$i) \Rightarrow ii)$ We take $M = +\infty$ and $h(\cdot) = K(\sqrt{\cdot})$ in Lemma~\ref{Lemma:ConvexFunctions}. Since $h$ is strictly convex, the function $h_L$ is strictly convex in $(0,L)$ for every $L> 0$ (recall that we do not need to assume that $h$ is monotone to deduce this, see Remark~\ref{Remark:hypothesisNondecreasing}). Moreover, by Remark~\ref{Remark:h_Lincreasing}, $h_L$ is nondecreasing in $(L/2,L)$. Thus, the function $\phi(\cdot) = h_L(\cdot + L/2)$ is strictly convex in $(-L/2,L/2)$ and nondecreasing in $(0,L/2)$. If we choose $L=2c_1^2$, we have that $\phi((L/2)c_2 \cdot) = g(\cdot)$, where $g$ is defined by \eqref{Eq:DefinitiongFromK}. Therefore, $g$ is strictly convex in $(-1/c_2, 1/c_2)$ and nondecreasing in $(0,1/c_2)$. Thus, the result follows by applying  Lemma~\ref{Lemma:ConvexFunctions} to $g$ in $(0,1/c_2)$ (taking into account Remark~\ref{Remark:StrictConvexity}).
 	
 	
 	$ii) \Rightarrow i)$ By Lemma~\ref{Lemma:ConvexFunctions} applied to $g$ we deduce that $g$ is strictly convex and nondecreasing in $(0,1/c_2)$ ---take $C=D$ to see that $g$ is monotone. Thus, since $g$ is even and nondecreasing, $g$ is strictly convex in $(-1/c_2,1/c_2)$ and $\varphi(\cdot) = g(\cdot/(c_1^2 c_2))$ is strictly convex in $(-c_1^2, c_1^2)$. Hence, if we call $h(\cdot) := K(\sqrt{\cdot})$ and $L:= 2c_1^2$, we have that $\varphi(\cdot - c_1^2) = h(\cdot) + h(L-\cdot) =:  h_L(\cdot)$, and thus $h_L$ is strictly convex in $(0,L)$. Note that since $c_1>0$ is arbitrary, $h_L$ is strictly convex in $(0,L)$ for all $L>0$. Therefore, by Lemma~\ref{Lemma:ConvexFunctions}, with  $M = +\infty$, we conclude that $h(\cdot) = K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$.
@@ -410,9 +410,7 @@ It remains to show
 $$
 A + |D| \geq |B| + |C|\,.
 $$
-The proof of this fact is just a computation considering all the eight possible configurations of
-the signs of $B$, $C$ and $D$. Since the roles of $B$ and $C$ are completely interchangeable, we
-may assume that $B \geq C$ and we only need to check six cases. To do it, note first that
+The proof of this fact is just a computation considering all the eight possible configurations of the signs of $B$, $C$, and $D$. Since the roles of $B$ and $C$ are completely interchangeable, we may assume that $B \geq C$ and we only need to check six cases. To do it, note first that
 \begin{equation}
 \label{Eq:LemmaABCDProof1}
 A + D - B - C = (|x'|-|x''|)(|y'|-|y''|)(\alpha + \beta) \geq 0 \,,
@@ -428,42 +426,39 @@ A + D + B + C = (|x'|+|x''|)(|y'|+|y''|)(\alpha + \beta) \geq 0 \,,
 \end{equation}
 With these three relations at hand we check the six cases.
 
-$\bullet$ If $B \geq 0$, $C \geq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof1} we have
+$\bullet$ If $B \geq 0$, $C \geq 0$, and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof1} we have
 $$
 A + |D| - |B| - |C| = A + D - B - C \geq 0\,.
 $$
 
-$\bullet$ If $B \geq 0$, $C \geq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof1} to
-see that
+$\bullet$ If $B \geq 0$, $C \geq 0$, and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof1} to see that
 $$
 A + |D| - |B| - |C| = A - D - B - C =  (A + D - B - C) + (-2D) \geq 0\,.
 $$
 
-$\bullet$ If $B \geq 0$, $C \leq 0$ and $D \geq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof2} to
-see that
+$\bullet$ If $B \geq 0$, $C \leq 0$, and $D \geq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof2} to see that
 $$
 A + |D| - |B| - |C| = A + D - B + C =  (A - D - B + C) + 2D \geq 0\,.
 $$
 
-$\bullet$ If $B \geq 0$, $C \leq 0$ and $D \leq 0$, then by \eqref{Eq:LemmaABCDProof2} we have
+$\bullet$ If $B \geq 0$, $C \leq 0$, and $D \leq 0$, then by \eqref{Eq:LemmaABCDProof2} we have
 $$
 A + |D| - |B| - |C| = A - D - B + C \geq 0\,.
 $$
 
-$\bullet$ If $B \leq 0$, $C \leq 0$ and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof3} we have
+$\bullet$ If $B \leq 0$, $C \leq 0$, and $D \geq 0$, then by \eqref{Eq:LemmaABCDProof3} we have
 $$
 A + |D| - |B| - |C| = A + D + B + C \geq 0\,.
 $$
 
-$\bullet$ If $B \leq 0$, $C \leq 0$ and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof3} to see that
+$\bullet$ If $B \leq 0$, $C \leq 0$, and $D \leq 0$, we use the sign of $D$ and \eqref{Eq:LemmaABCDProof3} to see that
 $$
 A + |D| - |B| - |C| = A - D + B + C =  (A + D + B + C) + (-2D) \geq 0\,.
 $$
 
 This concludes the proof of the first statement.
 
-We prove now the second point of the lemma. Since the roles of $B$ and $C$ are completely
-interchangeable, we only need to show the result in the case $|A| = |B|$ and $|C| = |D|$.
+We prove now the second point of the lemma. Since the roles of $B$ and $C$ are completely interchangeable, we only need to show the result in the case $|A| = |B|$ and $|C| = |D|$.
 
 Recall that $A \geq 0$. Hence, since $A = |B|$ and $|C| = |D|$, a simple computation shows that
 $$
@@ -474,9 +469,7 @@ Hence, combining both equalities we obtain
 $$
 \alpha = \sign (B) \sign (C) \sign(D) \dfrac{|x''|^2}{|x'|^2} \alpha.
 $$
-Finally, if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \sign(D)=1$ and $|x'|
-= |x''|$, but this is a contradiction with $x\in \ocal$. Therefore, $\alpha = 0$ and thus $\beta =
-0$.
+Finally, if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \sign(D)=1$ and $|x'|= |x''|$, but this is a contradiction with $x\in \ocal$. Therefore, $\alpha = 0$ and thus $\beta =0$.
 \end{proof}
 
 
@@ -618,11 +611,7 @@ Now, we define the kernel
 J(x_s, x_t, s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 }\Big ) \d y_\sigma \d y_\tau \,.
 \end{equation}
 
-First of all, it is easy to see that $J$ does not depend on $x_s$ nor $x_t$. Indeed, consider a
-different point $(z_s, z_t)\in \Sph^{m-1} \times \Sph^{m-1}$ and let $M_s$ and $M_t$ be two
-orthogonal transformations such that $M_s(x_s) = z_s$ and $M_t(x_t) = z_t$. Then, making the change
-of variables $y_\sigma = M_s(\tilde{y}_\sigma)$ and $y_\tau = M_t(\tilde{y}_\tau)$, and using that
-$M_s( \Sph^{m-1}) = M_t(\Sph^{m-1}) = \Sph^{m-1}$, we find out that
+First of all, it is easy to see that $J$ does not depend on $x_s$ nor $x_t$. Indeed, consider a different point $(z_s, z_t)\in \Sph^{m-1} \times \Sph^{m-1}$ and let $M_s$ and $M_t$ be two orthogonal transformations such that $M_s(x_s) = z_s$ and $M_t(x_t) = z_t$. Then, making the change of variables $y_\sigma = M_s(\tilde{y}_\sigma)$ and $y_\tau = M_t(\tilde{y}_\tau)$, and using that $M_s( \Sph^{m-1}) = M_t(\Sph^{m-1}) = \Sph^{m-1}$, we find out that
 \begin{align*}
 & \hspace{-1cm} J(z_s, z_t, s,t,\sigma, \tau) = \\
 &= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|s M_s(x_s) - \sigma y_\sigma|^2 + |t M_t(x_t) - \tau y_\tau|^2 }\Big) \d y_\sigma \d y_\tau \\
@@ -632,8 +621,7 @@ $M_s( \Sph^{m-1}) = M_t(\Sph^{m-1}) = \Sph^{m-1}$, we find out that
 &= J(x_s, x_t, s,t,\sigma, \tau) \,.
 \end{align*}
 
-Therefore, we can replace $x_s$ and $x_t$ in \eqref{Eq:KernelSTVariablesProof1} by $e =(1,0,\ldots,
-0) \in \Sph^{m-1}$. Thus, we have
+Therefore, we can replace $x_s$ and $x_t$ in \eqref{Eq:KernelSTVariablesProof1} by $e =(1,0,\ldots,0) \in \Sph^{m-1}$. Thus, we have
 \begin{equation*}
 %\label{Eq:KernelSTVariablesProof2}
 J(s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{|s e - \sigma y_\sigma|^2 + |t e - \tau y_\tau|^2 }\Big) \d y_\sigma \d y_\tau \,.
