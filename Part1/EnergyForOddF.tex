@@ -13,7 +13,7 @@ $$
 $$
 where
 $$
-[w]^2_{\H^K(\Omega)} := \dfrac{1}{2}\int\int_{\R^{2n} \setminus (\R^n\setminus\Omega)^2} |w(x) - w(y)|^2 K(x-y) \d x \d y\,.
+[w]^2_{\H^K(\Omega)} := \dfrac{1}{2}\int\int_{(\R^{n})^2 \setminus (\R^n\setminus\Omega)^2} |w(x) - w(y)|^2 K(x-y) \d x \d y\,.
 $$
 We also define
 \begin{align*}
@@ -21,7 +21,7 @@ We also define
 	&\ = \setcond{w \in \H^K(\R^n)}{ w = 0 \quad \textrm{a.e. in } \R^n \setminus \Omega}.
 \end{align*}
 
-Assume that $\Omega \subset \R^{2m}$ is a domain of double revolution. Then, we define
+Assume that $\Omega \subset \R^{2m}$ is a set of double revolution. Then, we define
 $$
 \widetilde{\H}^K(\Omega) := \setcond{w \in \H^K(\Omega)}{w \textrm{ is doubly radial a.e.}}.
 $$
@@ -44,11 +44,11 @@ direct sum of $\widetilde{\H}^K_{0,\, \mathrm{even}}(\Omega)$ and $\widetilde{\H
 \end{remark}
 
 Note that when $K$ satisfies \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \H^\s_0 (\Omega)$,
-which is the space associated to the kernel of the fractional Laplacian, $K(y) = |y|^{-n-2\s}$.
+which is the space associated to the kernel of the fractional Laplacian, $K(z) = c_{n,\s} |z|^{-n-2\s}$.
 Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, the usual fractional Sobolev space (see
 \cite{HitchhikerGuide}).  For more comments on this, see~\cite{CozziPassalacqua}, and the references therein.
 
-Once presented the functional setting of our problem, we define now  the energy functional associated to equation \eqref{Eq:NonlocalAllenCahn}. 
+Once presented the functional setting of our problem, we proceed with the study of the energy functional associated to equation \eqref{Eq:NonlocalAllenCahn}. 
 
 
 Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and a potential $G$, and given a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we write the energy defined in \eqref{Eq:Energy} as
@@ -65,15 +65,15 @@ We will call $\ecal_\mathrm{K}$ and $\ecal_\mathrm{P}$ the \emph{kinetic} and \e
 
 Note that, for functions $w\in \H^K_0(\Omega)$, it holds $\ecal_\mathrm{K}(w,\Omega) = \ecal_\mathrm{K}(w,\R^n)$. Moreover, if $G\geq 0$, the energy satisfies $\ecal(w, \Omega) \leq \ecal(w, \Omega')$  whenever $ \Omega \subset \Omega'$.
 
-Sometimes is it useful to rewrite the kinetic energy as
+Sometimes it is useful to rewrite the kinetic energy as
 \begin{equation}
 	\label{Eq:KineticEnergyInteractions}
 	\begin{split}
 	\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{4} \left \{ \int_\Omega \int_\Omega |w(x) - w(y)|^2 K(x-y) \d x \d y \right. \qquad \qquad \\
-	+\left. 2 \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y \right \}\,.
+	+\left. 2 \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y \right \}.
 	\end{split}	
 \end{equation}
-Roughly speaking, we have split the kinetic energy into two parts: ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is to rewrite the kinetic energy in terms of the doubly radial kernel $\overline{K}$ and with integrals computed only in $\ocal$, in the same spirit as in the previous section for $L_K$. In particular, we are interested in finding an expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. For $A$, $B\subset \ocal$ of double revolution, we define
+Roughly speaking, we have split the kinetic energy into two parts: ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is to rewrite the kinetic energy in terms of the doubly radial kernel $\overline{K}$ and with integrals computed only in $\ocal$, in the same spirit as in the previous section for the operator $L_K$. In particular, we are interested in finding an expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. Given $A$, $B\subset \ocal$ sets of double revolution, we define
 \begin{equation}
 	\label{Eq:DefIw}
 	\begin{split}
@@ -86,7 +86,7 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 
 \begin{lemma}
 	\label{Lemma:ShortExpressionEnergy}
-Let $\Omega\subset \R^{2m}$ be a domain of double revolution and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\Omega)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
+Let $\Omega\subset \R^{2m}$ be a set of double revolution that is symmetric with respect to the Simons cone, i.e., $\Omega^\star = \Omega$, and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\Omega)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
 \begin{align}
 \label{Eq:ShortExpressionEnergy}
 \ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \big \{I_w(\Omega\cap\ocal,\Omega\cap\ocal) +  2I_w(\Omega\cap\ocal,\ocal\setminus\Omega) \big \},
@@ -96,26 +96,26 @@ where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 
 \begin{proof}
 	
-First, in \eqref{Eq:KineticEnergyInteractions} we consider the change $ y = R\tilde{y}$. Then, since $w$ is doubly radial and $\Omega$ is of double revolution, by taking the average among all $R\in O(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}, we obtain 
+First, in \eqref{Eq:KineticEnergyInteractions} we consider the change $ y = R\tilde{y}$. Since $w$ is doubly radial and $\Omega$ is of double revolution, by taking the average among all $R\in O(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}, we obtain 
 $$
 \ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \int_{\Omega} \int_{\Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y + \frac{1}{2} \int_{\Omega} \int_{\R^n \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y\,.
 $$
-Now we split $\Omega$ into $\Omega \cap \ocal$ and $\Omega \setminus \ocal$. By using the change of variables given by $(\cdot)^\star$ and the odd symmetry of $w$, we get
+Now we split $\Omega$ into $\Omega \cap \ocal$ and $\Omega \setminus \ocal$. By using the change of variables given by $(\cdot)^\star$ and the symmetries of $\Omega$ and $w$, we get
 \begin{align*}
-4\ecal_\mathrm{K}(w, \Omega) =  & 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
+4\ecal_\mathrm{K}(w, \Omega) =   & \hspace{1.3mm} 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
 & +  4\int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
-= & 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
-&\quad \quad +4 \int_{\Omega\cap \ocal} \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
+= & \hspace{1.3mm} 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
+&+4 \int_{\Omega\cap \ocal} \int_{\Omega\cap \ocal} \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
 &+ 4\int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y\\
-  &\quad \quad +8 \int_{\Omega\cap \ocal}  \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
-= &  I_w(\Omega\cap\ocal,\Omega\cap\ocal) + 2 I_w(\Omega\cap\ocal,\ocal\setminus\Omega).
+  & +8 \int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega}  \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
+= & \hspace{1.3mm}  I_w(\Omega\cap\ocal,\Omega\cap\ocal) + 2 I_w(\Omega\cap\ocal,\ocal\setminus\Omega).
 \end{align*}
 \end{proof}
 
 Using the previous expression for the energy, we can establish now the following lemma regarding the decrease of the energy under some operations.
 \begin{lemma}
 \label{Lemma:DecreaseEnergy} 
-Let $K$ be a kernel such that $L_K \in \lcal_\star$. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
+Let $\Omega\subset \R^{2m}$ be a set of double revolution that is symmetric with respect to the Simons cone, and let $K$ be a kernel such that $L_K \in \lcal_\star$. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
 \begin{equation*}
 v(x) = \begin{cases}
 \hspace{3.2mm}|u(x)| \,\,\, &\text{if } \,\,\, x\in\ocal,\\
@@ -129,6 +129,7 @@ w(x) = \begin{cases}
 \,\,\,\max\{-1,u(x)\} \,\,\, &\text{if } \,\,\, x\in\ical\,.
 \end{cases}
 \end{equation*}
+
 If $G$ satisfies \eqref{Eq:HipothesesG}, then
 $$ \ecal(v,\Omega) \leq \ecal(u,\Omega) \quad 
 \text{ and }
@@ -137,7 +138,7 @@ $$ \ecal(v,\Omega) \leq \ecal(u,\Omega) \quad
 
 \begin{proof}
 We first establish the result for $v$. Let us show that  $\ecal_\mathrm{K}(v) \leq \ecal_\mathrm{K}(u)$. Note that $v\in \widetilde{\H}^K_{\mathrm{odd}}(\Omega)$. Thus, by using the expression of the kinetic energy given in \eqref{Eq:ShortExpressionEnergy} and the fact that $\overline{K}(x,y) > \overline{K}(x,y^\star)> 0$ if $x,y\in \ocal$ ---see \eqref{Eq:KernelInequality}---, we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x)\leq u^2(x)$ whenever $x,y\in\ocal$. The first condition follows from the equivalence
-$$ \big||u(x)|-|u(y)|\big|^2\leq |u(x)-u(y)|^2 \Longleftrightarrow w(x)w(y) \leq |w(x)w(y)|,  
+$$ \big||u(x)|-|u(y)|\big|^2\leq |u(x)-u(y)|^2 \Longleftrightarrow u(x)u(y) \leq |u(x)u(y)|,  
 $$
 while the second one is trivial and it is in fact an equality. Concerning the potential energy, since $G$ is an even function we have that $\ecal_\mathrm{P}(v) = \ecal_\mathrm{P}(u)$, and therefore we get the desired result for $v$ by adding the kinetic and potential energies.
 
@@ -146,7 +147,7 @@ We show now the result for $w$. Let us show that  $\ecal_\mathrm{K}(w) \leq \eca
 
 
 
-Next we present a result that will be used later to show that a function $u\in \widetilde{\H}^K_{0}(\Omega)$ that minimizes the energy $\ecal$, only among doubly radial functions, is actually a weak solution to a semilinear Dirichlet problem in $\Omega$. In its proof we do not need to use the kernel $\overline{K}$.
+Next we present a result that will be used later, and concerns weak solutions to semilinear Dirichlet problems. Its main consequence is that a function $u\in \widetilde{\H}^K_{0}(\Omega)$ that minimizes the energy $\ecal$, but only among doubly radial functions, is actually a weak solution to a semilinear Dirichlet problem in $\Omega$. We remark that to show the following result we do not need to use the kernel $\overline{K}$.
 
 \begin{proposition}
 	\label{Prop:WeakSolutionForAllTestFunctions}
@@ -154,7 +155,7 @@ Next we present a result that will be used later to show that a function $u\in \
 	$$
 	\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \xi(x) \d x
 	$$
-	for every $\xi \in C^\infty_0(\Omega)$ that is doubly radial. Then, $u$ is a weak solution to
+	for every $\xi \in C^\infty_c(\Omega)$ that is doubly radial. Then, $u$ is a weak solution to
 	$$
 	\beqc{\PDEsystem}
 	L_K u &=& f(u) & \text{in } \Omega\,,\\
@@ -165,11 +166,11 @@ Next we present a result that will be used later to show that a function $u\in \
 	$$
 	\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\eta(x)-\eta(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \eta(x) \d x
 	$$
-	for every $\eta \in C^\infty_0(\Omega)$ (not necessarily symmetric).
+	for every $\eta \in C^\infty_c(\Omega)$ (not necessarily doubly radial).
 \end{proposition}
 
 \begin{proof}
-	Let $\eta \in C^\infty_0(\Omega)$. We define its associated doubly radial function as
+	Let $\eta \in C^\infty_c(\Omega)$. We define its associated doubly radial function as
 	$$
 	\overline{\eta}(x) := \average_{O(m)^2}\eta(R x)\d R\,.
 	$$
@@ -179,7 +180,7 @@ Next we present a result that will be used later to show that a function $u\in \
 	&\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\eta(x)-\eta(y)\} K(|x-y|) \d x \d y = \\
 	&\quad \quad \quad = \int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\eta(R x)-\eta(R y)\} K(|x-y|) \d x \d y\,.
 	\end{align*}
-	Integrating the previous expression with respect to $R$ and taking the average, we get
+	Taking the average in the previous equality among all $R\in O(m)^2$ we obtain
 	\begin{align*}
 	& \int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\eta(x)-\eta(y)\} K(|x-y|) \d x \d y = \\
 	&\quad \quad \quad =\average_{O(m)^2} \int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\eta(R x)-\eta(R y)\} K(|x-y|) \d x \d y \d R \\
@@ -191,12 +192,12 @@ Next we present a result that will be used later to show that a function $u\in \
 	$$
 	\int_{\Omega} f(u(x)) \eta(x) \d x = \int_{\Omega} f(u(R^{-1}x)) \eta(x) \d x = \int_{\Omega} f(u(x)) \eta(Rx) \d x\,.
 	$$
-	Integrating this expression with respect to $R$ and taking the average, we get
+	Similarly as before, taking the average among all $R\in O(m)^2$, we get
 	$$
 	\int_{\Omega} f(u(x)) \eta(x) \d x = \average_{O(m)^2} \int_{\Omega} f(u(x)) \eta(Rx) \d x \d R = \int_{\Omega} f(u(x))\overline{\eta}(x) \d x\,.
 	$$
 	
-	Hence, since $\overline{\eta} \in C^\infty_0(\Omega)$ is doubly radial, we have
+	Hence, since $\overline{\eta} \in C^\infty_c(\Omega)$ is doubly radial, we have
 	\begin{align*}
 		&\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\eta(x)-\eta(y)\} K(|x-y|) \d x \d y - \int_{\Omega} f(u(x)) \eta(x) \d x \\
 		&\quad \quad= \int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\left \{\overline{\eta}(x) -\overline{\eta}(y)  \right \} K(|x-y|) \d x \d y - \int_{\Omega} f(u(x))\overline{\eta}(x) \d x \\
@@ -219,9 +220,9 @@ Next we present a result that will be used later to show that a function $u\in \
 	\label{Eq:Calpha->Calpha+2sEstimate}
 	\norm{w}_{C^{\alpha + 2\s} (\overline{B_{1/2}})} \leq C\bpar{\norm{h}_{C^{\alpha} (\overline{B_1})} + \norm{w}_{C^\alpha (\R^n)} },
 	\end{equation}
-	where the previous two constants $C$ depend only on $n$, $\s$, $\lambda$ and $\Lambda$ (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein).
+	where the previous two constants $C$ depend only on $n$, $\s$, $\lambda$, and $\Lambda$ (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein).
 	
-	From the previous estimates and using the same argument as in Corollaries 2.4 and 2.5 of \cite{RosOtonSerra-Regularity}, \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimate} can be rewriten, respectively, as
+	From the previous estimates and using the same argument as in Corollaries 2.4 and 2.5 of \cite{RosOtonSerra-Regularity}, \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimate} yield, respectively, the estimates
 	\begin{equation}
 	\label{Eq:C2sEstimateBalls}
 	\norm{w}_{C^{2\s} (\overline{B_{1/4}})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (B_1)} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} },

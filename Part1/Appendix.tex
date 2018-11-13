@@ -51,7 +51,7 @@ To prove this proposition, we need a lemma on convex functions.
 	\begin{enumerate}[label=(\alph*)]
 		\item $h$ is convex in $(0,M)$.
 		
-		\item For every $0\leq L\leq 2M$, the function $\tilde{h}_L (x) := h(x) + h(L-x)$ is convex in $(\max \{L-M,0\}, \min \{L,M\})$.
+		\item For every $0\leq L\leq 2M$, the function $h_L (x) := h(x) + h(L-x)$ is convex in $(\max \{L-M,0\}, \min \{L,M\})$.
 		
 		\item For every $A$, $B$, $C$, $D$ in the interval $(0,M)$ such that
 		$$
@@ -87,7 +87,7 @@ To prove this proposition, we need a lemma on convex functions.
 	$$
 	By adding up the previous two inequalities we obtain
 	$$
-	\dfrac{\tilde{h}_L(x) + \tilde{h}_L(y)}{2} \geq \tilde{h}_L \left( \dfrac{x+y}{2}\right). 
+	\dfrac{h_L(x) + h_L(y)}{2} \geq h_L \left( \dfrac{x+y}{2}\right). 
 	$$ 
 	
 	$(b) \Rightarrow (a)$. Let $x_0$, $y_0 \in (0,M)$ and choose $L = x_0 + y_0 \leq 2M$. By $(b)$ we have 
@@ -108,21 +108,21 @@ To prove this proposition, we need a lemma on convex functions.
 
 \begin{remark}
 	\label{Remark:h_Lincreasing}
-	Note that the function $\tilde{h}_L$ is even with respect to $L/2$. Thus, if it is convex, it is nondecreasing in $(L/2, \min \{L,M\})$.
+	Note that the function $h_L$ is even with respect to $L/2$. Thus, if it is convex, it is nondecreasing in $(L/2, \min \{L,M\})$.
 \end{remark}
 
 \begin{remark}
 	\label{Remark:hypothesisNondecreasing}
-	The assumption of $h$ being nondecreasing it is only used to deduce $(c)$ from $(a)$. It is not required to show the equivalence between $(a)$ and $(b)$, neither to deduce $(a)$ from $(c)$.
+	The assumption of $h$ being nondecreasing is only used to deduce $(c)$ from $(a)$. It is not required to show the equivalence between $(a)$ and $(b)$, neither to deduce $(a)$ from $(c)$.
 \end{remark}
 
 With this result available we can show now Proposition~\ref{Prop:EquivalenceK(sqrt)Convex<->Inequality}
 
 \begin{proof}
-	$i) \Rightarrow ii)$ We take $M = +\infty$ and $h(\cdot) = K(\sqrt{\cdot})$ in Lemma~\ref{Lemma:ConvexFunctions}. Since $h$ is strictly convex, the function $\tilde{h}_L$ is strictly convex in $(0,L)$ for every $L> 0$ (recall that we do not need to assume that $h$ is monotone to deduce this, see Remark~\ref{Remark:hypothesisNondecreasing}). Moreover, by Remark~\ref{Remark:h_Lincreasing}, $\tilde{h}_L$ is nondecreasing in $(L/2,L)$. Thus, the function $\phi(\cdot) = \tilde{h}_L(\cdot + L/2)$ is strictly convex in $(-L/2,L/2)$ and nondecreasing in $(0,L/2)$. If we choose $L=2c_1^2$, we have that $\phi((L/2)c_2 \cdot) = g(\cdot)$, where $g$ is defined by \eqref{Eq:DefinitiongFromK}. Therefore, $g$ is strictly convex in $(-1/c_2, 1/c_2)$ and nondecreasing in $(0,1/c_2)$ and the result follows by applying  Lemma~\ref{Lemma:ConvexFunctions} to $g$ in $(0,1/c_2)$ (taking into account Remark~\ref{Remark:StrictConvexity}).
+	$i) \Rightarrow ii)$ We take $M = +\infty$ and $h(\cdot) = K(\sqrt{\cdot})$ in Lemma~\ref{Lemma:ConvexFunctions}. Since $h$ is strictly convex, the function $h_L$ is strictly convex in $(0,L)$ for every $L> 0$ (recall that we do not need to assume that $h$ is monotone to deduce this, see Remark~\ref{Remark:hypothesisNondecreasing}). Moreover, by Remark~\ref{Remark:h_Lincreasing}, $h_L$ is nondecreasing in $(L/2,L)$. Thus, the function $\phi(\cdot) = h_L(\cdot + L/2)$ is strictly convex in $(-L/2,L/2)$ and nondecreasing in $(0,L/2)$. If we choose $L=2c_1^2$, we have that $\phi((L/2)c_2 \cdot) = g(\cdot)$, where $g$ is defined by \eqref{Eq:DefinitiongFromK}. Therefore, $g$ is strictly convex in $(-1/c_2, 1/c_2)$ and nondecreasing in $(0,1/c_2)$ and the result follows by applying  Lemma~\ref{Lemma:ConvexFunctions} to $g$ in $(0,1/c_2)$ (taking into account Remark~\ref{Remark:StrictConvexity}).
 	
 	
-	$ii) \Rightarrow i)$ By Lemma~\ref{Lemma:ConvexFunctions} applied to $g$ we deduce that $g$ is strictly convex in $(0,1/c_2)$ ---recall that by Remark~\ref{Remark:hypothesisNondecreasing} we do not need to assume that $g$ is monotone. Thus, $\varphi(\cdot) = g(\cdot/(c_1^2 c_2))$ is strictly convex in $(-c_1^2, c_1^2)$. Hence, if we call $h(\cdot) := K(\sqrt{\cdot})$ and $L:= 2c_1^2$, we have that $\varphi(\cdot - c_1^2) = h(\cdot) + h(L-\cdot) =:  \tilde{h}_L(\cdot)$, and thus $\tilde{h}_L$ is strictly convex in $(0,L)$. Note that since $c_1>0$ is arbitrary, $\tilde{h}_L$ is strictly convex in $(0,L)$ for all $L>0$. Therefore, by Lemma~\ref{Lemma:ConvexFunctions}, with  $M = +\infty$, we conclude that $h(\cdot) = K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$.
+	$ii) \Rightarrow i)$ By Lemma~\ref{Lemma:ConvexFunctions} applied to $g$ we deduce that $g$ is strictly convex and nondecreasing in $(0,1/c_2)$ ---take $C=D$ to see that $g$ is monotone. Thus, since $g$ is even and nondecreasing, $g$ is strictly convex in $(-1/c_2,1/c_2)$ and $\varphi(\cdot) = g(\cdot/(c_1^2 c_2))$ is strictly convex in $(-c_1^2, c_1^2)$. Hence, if we call $h(\cdot) := K(\sqrt{\cdot})$ and $L:= 2c_1^2$, we have that $\varphi(\cdot - c_1^2) = h(\cdot) + h(L-\cdot) =:  h_L(\cdot)$, and thus $h_L$ is strictly convex in $(0,L)$. Note that since $c_1>0$ is arbitrary, $h_L$ is strictly convex in $(0,L)$ for all $L>0$. Therefore, by Lemma~\ref{Lemma:ConvexFunctions}, with  $M = +\infty$, we conclude that $h(\cdot) = K(\sqrt{\cdot})$ is strictly convex in $(0,+\infty)$.
 \end{proof}
 
 
@@ -365,11 +365,7 @@ $$
 |A| + |D| \geq |B| + |C|\,.
 \end{cases}
 $$
-\item If either
-$$ |A| = |B| \ \ \ \ \textrm{ and} \ \ \ \ |C| = |D|, $$
-or
-$$ |A| = |C| \ \ \ \ \textrm{ and} \ \ \ \ |B| = |D|, $$
-then necessarily $\alpha = \beta = 0$.
+\item If  the sets $\{|A|,|D|\}$ and $\{|C|,|B|\}$ coincide, then necessarily $\alpha = \beta = 0$.
 \end{enumerate}
 
 \end{lemma}
@@ -499,10 +495,10 @@ Finally, if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \si
 
 The goal of this appendix is to take advantage of the doubly radial symmetry of the functions we
 are dealing with to write equation \eqref{Eq:NonlocalAllenCahn} in $(s,t)$ variables, passing from
-an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset \R^2$.
+an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset \R^2$. Although we do not use these computations in this paper, we include them here for future reference, since we think they could be useful.
 
 \begin{lemma}
-\label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$ and let $w\in
+\label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$, and let $w\in
 C^\alpha(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function, i.e., depending only on the variables $s$ and $t$. Let $L_K$ be a rotation invariant operator, that is, $K(z) = K(|z|)$, of the form \eqref{Eq:DefOfLu}. Then, if we define $\tilde{w}:(0,+\infty)\times (0,+\infty) \to \R$ by $\tilde{w}(s,t) = w(s,0,...,0,t,0,...,0)$, it holds
 $$ L_Kw(x) = \tilde{L}_K \tilde{w} (|x'|,|x''|), $$
 with
@@ -516,7 +512,7 @@ where:
 \begin{enumerate}
 	\item If $m= 1$,
 	\begin{equation}
-		\label{Eq:KernelInSTVariablesR2}
+		\label{Eq:KernelSTVariables1}
 	J(s,t,\sigma, \tau) := \sum_{i=0}^1  \sum_{j =0}^1  K\Big(\sqrt{s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma (-1)^i -2 t \tau (-1)^j}\Big)\,.
 	\end{equation}
 	
@@ -585,7 +581,7 @@ where:
 %I(\{y_2 > |y_1|\}, x) =
 %\int_0^{\infty} \! \! \d \sigma \int_\sigma^{\infty} \! \! \d \tau \ \   \big( u(s,t) - u(\sigma, \tau)\big) J(s,t,\sigma, \tau)\,,
 %$$
-%with $J$ as in \eqref{Eq:KernelInSTVariablesR2}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that
+%with $J$ as in \eqref{Eq:KernelSTVariables1}. Indeed, in $\{y_2 > y_1 > 0\}$ we have that
 %$y=(\sigma, \tau)$, and it is not difficult to check that the expression
 %$$
 %K(|x - y|) + K(|x + y|) + K(|x - \phi_1(y)|) + K(|x + \phi_1(y)|)
@@ -654,7 +650,7 @@ Then, we can rewrite $J$ as
 J(s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega \d \tilde\omega \,.
 \end{equation*}
 At this point we have to distinguish the cases $m=1$ and $m\geq 2$. For the fist one, since
-$\Sph^{0} = \{-1,1\}$ we directly obtain \eqref{Eq:KernelInSTVariablesR2}. For the second one,
+$\Sph^{0} = \{-1,1\}$ we directly obtain \eqref{Eq:KernelSTVariables1}. For the second one,
 since the integrand only depends on $\omega_1$ and $\tilde\omega_1$, we proceed as follows
 \begin{align*}
 \label{Eq:KernelSTVariablesProof4}
@@ -669,44 +665,42 @@ $|\partial B_{r}|=c_m\,r^{m-2}$, where $c_m$ is the measure of the boundary of t
 $\R^{m-1}$.
 \end{proof}
 
-In the case the operator is the fractional Laplacian we can obtain an alternative expression of the kernel $J$ in terms of some hypergeometric functions. Although we are not using the next result in this work, we think that it could be very useful in future works, since we are writing the kernel in terms of functions that have already been studied and have interesting well-known properties.
+If the operator $L_K$ is the fractional Laplacian, the previous expression of the kernel $J$ can be rewritten in terms of a hypergeometric function of two variables, the so-called Appell function $F_2$ (see \cite{Appell} for its definition). This expression does not simplify any of the arguments of this paper. Nevertheless, we think that it is worthy to point out the relation between $J$ and $F_2$, since the known properties of the last one could provide some information about the kernel $J$.
+
 \begin{lemma}
-\label{Lemma:Appell} If $L_K = (-\Delta)^\s$ and $m\geq 2$, then
+\label{Lemma:Appell} Let $F_2$ be the Appell hypergeometric function defined in \cite{Appell}. If $L_K = (-\Delta)^\s$ and $m\geq 2$, then
 \begin{equation}
 \label{Eq:Appell}
-J(s,t,\sigma,\tau) = \frac{\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\frac{m-1}{2}\right)^2\Gamma\left(\frac{m+1}{2}\right)^2} \frac{F_2\left( m+\s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right)}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}},
+J(s,t,\sigma,\tau) = \frac{c_{2m,\s}\pi^m\Gamma\left(\frac{m}{2}\right)^2}{\Gamma\left(\frac{m-1}{2}\right)^2\Gamma\left(\frac{m+1}{2}\right)^2} \frac{F_2\left( m+\s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right)}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}}.
 \end{equation}
-where $F_2$ is the so-called Appell hypergeometric function (see \cite{Appell}).
 \end{lemma}
 
 
 
 \begin{proof}
-If we take $K(z) = |z|^{-2m-2\s}$ in \eqref{Eq:KernelSTVariables2} we get
+If we take $K(z) = c_{2m,\s}|z|^{-2m-2\s}$ in \eqref{Eq:KernelSTVariables2} we get
 \begin{align*}
-J(s,t,\sigma, \tau) = c_m ^2  \int_{-1}^1  \int_{-1}^1  \frac{(1-\theta^2)^{\frac{m-2}{2}} (1-\overline{\theta}^2)^{\frac{m-2}{2}}}{(s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \theta -2 t \tau \overline{\theta})^{m+\s}} \d \theta \d \overline{\theta}\,.
+J(s,t,\sigma, \tau) = c_{2m,\s} c_m ^2  \int_{-1}^1  \int_{-1}^1  \frac{(1-\theta^2)^{\frac{m-2}{2}} (1-\overline{\theta}^2)^{\frac{m-2}{2}}}{(s^2 + t^2 + \sigma^2 + \tau^2 -2 s \sigma \theta -2 t \tau \overline{\theta})^{m+\s}} \d \theta \d \overline{\theta}\,.
 \end{align*}
 Then, if we make the change of variables $\theta = 2\varpi_1-1$ and $\overline{\theta}=2\varpi_2-1$
 we arrive at
 \begin{align*}
-J(s,t,\sigma, \tau) &= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \cdot \\
+J(s,t,\sigma, \tau) &= \frac{ c_{2m,\s} 2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \cdot \\
  & \quad \quad \quad \quad  \int_0^1 \int_0^1
-\frac{\varpi_1^\frac{m-2}{2} (1-\varpi_1)^\frac{m-2}{2} \varpi_2^\frac{m-2}{2}
+\frac{ \varpi_1^\frac{m-2}{2} (1-\varpi_1)^\frac{m-2}{2} \varpi_2^\frac{m-2}{2}
 (1-\varpi_2)^\frac{m-2}{2}}{\left(1-\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2}\,\varpi_1-\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2}\,\varpi_2
 \right)^{m+\s}} \d \varpi_1 \d \varpi_2 \\
-&= \frac{2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \frac{\Gamma\left(\frac{m}{2} \right)^4}{\Gamma(m)^2} \cdot \\
+&= \frac{ c_{2m,\s} 2^{2m-4} c_m^2}{[(s+\sigma)^2+(t+\tau)^2]^{m+\s}} \frac{\Gamma\left(\frac{m}{2} \right)^4}{\Gamma(m)^2} \cdot \\
 & \quad \quad \quad \quad F_2\left( m+\s;\frac{m}{2},m;\frac{m}{2},m;\frac{4s\sigma}{(s+\sigma)^2+(t+\tau)^2},\frac{4t\tau}{(s+\sigma)^2+(t+\tau)^2} \right).
 \end{align*}
 We finally obtain \eqref{Eq:Appell} by using the duplication formula for the $\Gamma$-function.
 \end{proof}
 
-Now we rewrite the kernel inequality \eqref{Eq:KernelInequality} in $(s,t)$ variables. We
-do not present a proof of this result since it is identical to the one of
-Proposition~\ref{Prop:KernelInequalitySufficientCondition} but changing the notation.
+To conclude the appendix, we rewrite the kernel inequality \eqref{Eq:KernelInequality} in $(s,t)$ variables and in terms of the kernel $J$. We do not present a proof of this result since it is identical to the one of Proposition~\ref{Prop:KernelInequalitySufficientCondition} but changing the notation.
 
 \begin{lemma}
 \label{Lemma:KernelInequalityCone} Let $m\geq 1$ and let $J$ the kernel defined in
-\eqref{Eq:KernelSTVariables2} with $K(\sqrt{\cdot})$ strictly convex. Then, if $s>t$ and $\sigma > \tau$, we have
+\eqref{Eq:KernelSTVariables1}-\eqref{Eq:KernelSTVariables2} with $K(\sqrt{\cdot})$ strictly convex. Then, if $s>t$ and $\sigma > \tau$, we have
 \begin{equation*}
 %\label{Eq:KernelInequalityCone}
 J(s,t,\sigma, \tau) > J(s,t,\tau, \sigma)\,.
@@ -741,7 +735,7 @@ J(s,t,\sigma, \tau) > J(s,t,\tau, \sigma)\,.
 %\int_{-1}^1  \int_{-1}^1  (1-\alpha^2)^{\frac{m-3}{2}} (1-\beta^2)^{\frac{m-3}{2}}  \left \{\tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon)(1+\delta) \alpha + \beta\}}\Big) - \tilde{K}\Big(\sqrt{1 -2 t \tau \{(1+\varepsilon) \alpha + (1+\delta)\beta\}}\Big)  \right \}\d \alpha \d \beta \geq 0\,.
 %\end{equation}
 %
-%Now, we make some changes of variables to reduce the domain of integration. First, we divide
+%Now, we make some changes of variables to reduce the  of integration. First, we divide
 %$(-1,1)^2 \setminus \{|\alpha| = |\beta|\}$ into four sectors:
 %$$
 %Q_1 = \{\alpha > |\beta| \}\,, \quad Q_2 = \{\beta > |\alpha| \}\,, \quad Q_3 = \{\alpha < -|\beta|\}\,, \quad \textrm{ and } \quad Q_4 = \{ \beta < -|\alpha|\}\,.
