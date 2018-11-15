@@ -244,12 +244,29 @@
 		
 	%cone+1    
 	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
-		(150.2563,309.8481) -- (362.4204,97.6870);
+		(150.2563,309.8481) -- (356.0555,104.0518);
 		
 	%cone-1 
 	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
 		(127.1847,287.2416) -- (337.4946,76.9526); 
 
+	%Linea Cota
+	\path[draw=black,line join=miter,line cap=butt,line width=0.5pt]
+		(336.3343,104.4919) -- (344.3936,112.7321);
+		
+
+	%Flecha Izquierda Cota
+	\path[draw=black,fill=black,even odd rule,line width=0.200pt]
+		(336.9657,105.1375) -- (338.2914,105.1522) -- (335.3269,103.4619) --
+		(336.9510,106.4632) -- cycle;
+
+	%Flecha Derecha Cota
+	\path[draw=black,fill=black,even odd rule,line width=0.200pt]
+		(343.7622,112.0865) -- (342.4364,112.0718) -- (345.4010,113.7621) --
+		(343.7769,110.7608) -- cycle;
+
+
+\node at (353,100) {\normalsize $\mu^{-1}$};
 \node at (127,47) {\normalsize $|x''|$};
 \node at (388, 311) {\normalsize $|x'|$};
 \node at (228,320) {\normalsize $S$};
