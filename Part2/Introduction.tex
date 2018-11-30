@@ -143,27 +143,33 @@ Furthermore,
 with $C>0$ depending only on $m, \s, \lambda$ and $\Lambda$ (see the details in \cite{FelipeSanz-Perela:IntegroDifferentialI}).
 
 
-Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential part plus a zero order term with a positive coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. This lead us in \cite{FelipeSanz-Perela:IntegroDifferentialI} to introduce the following definition.
+Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential part plus a zero order term with a positive coefficient. Thus, the natural assumption to make for that operator to have a maximum principle is that its ``kernel'' is positive. That is, $\overline{K}(x, y) - \overline{K}(x, y^\star)>0$. 
 
-\begin{definition}[Ellipticity class $\lcal_\star$]
-	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies
-	\begin{equation}
-	\label{Eq:KernelInequality}
-	\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
-	\end{equation}
-\end{definition}
-
-One of the main results in \cite{FelipeSanz-Perela:IntegroDifferentialI} established necessary and sufficient conditions on the original kernel $K$ so that $L_K$ belong to $\lcal_\star$. This is given in the next result.
+One of the main results in \cite{FelipeSanz-Perela:IntegroDifferentialI} established necessary and sufficient conditions on the original kernel $K$ in order to $L_K$ have a maximum principle in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone. This is given in the next result.
 
 \begin{theorem}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
 	\label{Th:CharacterizationLstar}
-	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric, and assume that 
+	Let $K:(0,+\infty) \to \R$ define a positive radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef}.
+	
+	If 
 	\begin{equation}
-	\label{Eq:SqrtConvex}	
-	K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,.
+		\label{Eq:SqrtConvex}	
+		K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,,
 	\end{equation}
-	Then, $L_K\in \lcal_\star(2m,\s,\lambda, \Lambda)$. Moreover, if $K\in C^1((0,+\infty))$, then \eqref{Eq:SqrtConvex} is a necessary condition for $L_K$ to belong to $\lcal_\star$.
+	then $L_K$ has a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone $\ccal$. More precisely, it holds
+	\begin{equation}
+		\label{Eq:KernelInequality}
+		\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
+	\end{equation}
+	
+	In addition, if $K\in C^2((0,+\infty))$, \eqref{Eq:SqrtConvex} is not only a sufficient condition for \eqref{Eq:KernelInequality} to hold, but also a necessary one.
 \end{theorem}
+
+This lead us in \cite{FelipeSanz-Perela:IntegroDifferentialI} to introduce the following definition.
+
+\begin{definition}[Ellipticity class $\lcal_\star$]
+	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies \eqref{Eq:KernelInequality}.
+\end{definition}
 
 The importance of $\lcal_\star$ is that the operators in this class have a maximum principle for doubly radial odd functions (see Section~\ref{Sec:Preliminaries}). This is a key ingredient to prove the first main result of this paper: the existence of saddle-shaped solutions.
 
