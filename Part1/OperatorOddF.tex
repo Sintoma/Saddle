@@ -417,11 +417,11 @@ From the two previous results, Theorem~\ref{Th:SufficientNecessaryConditions} fo
 	axis x line=middle, axis y line=left,
 	every axis x label/.style={at={(current axis.right of origin)},anchor=west},
 	every axis y label/.style={at={(current axis.north west)},above=2mm},
-	ymin=0, ymax=3, ylabel=$K(\sqrt{\tau})$,
-	xmin=0.4, xmax=2, xlabel=$\tau$
+	ymin=0, ymax=3.5, ylabel=$K(\sqrt{\tau})$,
+	xmin=0.4, xmax=2.1, xlabel=$\tau$
 	]
 	\addplot[domain=0.4:1, samples=100] {1/(x^1.5)};
-	\addplot[domain=1:2, samples=100] {0.1/(x^1.5-0.9)};
+	\addplot[domain=1:2.1, samples=100] {0.1/(x^1.5-0.9)};
 	\end{axis}
 	\end{tikzpicture}
 	\caption{An example of kernel $K(\sqrt{\tau})$ ($m=1$ and $\s=1/2$) which is not strictly convex in $(0,+\infty)$ but does not have any interval of concavity. }
