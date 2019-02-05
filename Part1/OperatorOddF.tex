@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:OperatorOddF}
 
-This section is devoted to study rotation invariant operators of the class $\lcal_0$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present necessary and sufficient conditions on the kernel $K$ in order to $L_K$ belong to the class $\lcal_\star$, i.e., in order to \eqref{Eq:KernelInequality} hold (we establish Theorem~\ref{Th:SufficientNecessaryConditions}). Finally, we show two maximum principles for doubly radial odd functions.
+This section is devoted to study rotation invariant operators of the class $\lcal_0$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present necessary and sufficient conditions on the kernel $K$ in order to \eqref{Eq:KernelInequality} hold (we establish Theorem~\ref{Th:SufficientNecessaryConditions}). Finally, we show two maximum principles for doubly radial odd functions.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -441,7 +441,7 @@ In this subsection we prove a weak and a strong maximum principles for doubly ra
 We first establish a weak maximum principle.
 
 \begin{proposition}[Weak maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that
+\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that
 $$
 \beqc{\PDEsystem}
 L_K u + c(x) u & \geq & 0 & \text{ in } \Omega\,,\\
@@ -464,7 +464,7 @@ Then, using the expression of $L_K$ for odd functions (see Lemma~\ref{Lemma:Oper
 $$
 L_K u (x_0) = \int_{\ocal} \{m - u(y) \} \{\overline{K}(x_0, y) - \overline{K}(x_0, y^\star)  \} \d y +  2 m \int_{\ocal} \overline{K}(x_0, y^\star) \d y\,.
 $$
-Now, since $m - u(y) \leq 0$ in $\ocal$, $m<0$, $c\geq 0$, and $\overline{K}(x_0, y) \geq \overline{K}(x_0, y^\star)>0$ (since $L_K\in \lcal_\star$), we get
+Now, since $m - u(y) \leq 0$ in $\ocal$, $m<0$, $c\geq 0$, and $\overline{K}(x_0, y) \geq \overline{K}(x_0, y^\star)>0$ ---by \eqref{Eq:KernelInequality}---, we get
 $$
 0 \leq L_K  u(x_0) + c(x_0) u(x_0) \leq m \left(2\int_{\ocal} \overline{K}(x_0, y^\star) \d y + c(x_0)\right)  < 0\,,
 $$
@@ -480,7 +480,7 @@ This hypothesis seems hard to be checked for applications apart from the case $c
 The following is a strong maximum principle for odd functions.
 
 \begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u + c(x) u\geq 0$ in $\Omega$, with $c(x)$ any function, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
+\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u + c(x) u\geq 0$ in $\Omega$, with $c(x)$ any function, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
 \end{proposition}
 
 \begin{proof}

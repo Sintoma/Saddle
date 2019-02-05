@@ -177,11 +177,11 @@ In \cite{JarohsWeth}, Jarohs and Weth study solutions to general integro-differe
 
 In relation with the sufficient conditions on the kernel $K$, since we are dealing with a more complex symmetry than the one in \cite{JarohsWeth}, the kernel is required to satisfy further assumptions than just monotonicity. First, we assume that $K$ is radially symmetric to be able to write $L_K$ in the form \eqref{Eq:L_KWithKbar}. Moreover, we require the convexity condition \eqref{Eq:SqrtConvex}, which is stronger than the decreasing assumption in \cite{JarohsWeth} (note that if $K$ satisfies \eqref{Eq:Symmetry&IntegrabilityOfK}, an assumption that we make through the paper, then \eqref{Eq:SqrtConvex} yields that $K$ is radially decreasing). 
 
-To simplify the notation, we introduce the following definition. It is the class of all operators which are radially symmetric, uniformly elliptic and have a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone.
-
-\begin{definition}[Ellipticity class $\lcal_\star$]
-	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies \eqref{Eq:KernelInequality}.
-\end{definition}
+%To simplify the notation, we introduce the following definition. It is the class of all operators which are radially symmetric, uniformly elliptic and have a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone.
+%
+%\begin{definition}[Ellipticity class $\lcal_\star$]
+%	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies \eqref{Eq:KernelInequality}.
+%\end{definition}
 
 Let us now turn to the variational problem from which equation \eqref{Eq:NonlocalAllenCahn} comes. As it is well known, \eqref{Eq:NonlocalAllenCahn} is the Euler-Lagrange equation associated to the energy functional
 \begin{equation}
@@ -208,7 +208,7 @@ Thanks to this new expression for the energy, we are able to establish the secon
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
-	Let $K$ be a kernel such that $L_K\in \lcal_\star(2m, \s, \lambda, \Lambda)$ and assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S>2$ and let $u$ be a minimizer of the energy $\ecal$ in $B_{R}$, with $R>S+5$, among functions that are in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. Then
+	Let $K$ be a radially symmetric kernel such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$ and satisfying the positivity condition \eqref{Eq:KernelInequality}. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S>2$ and let $u$ be a minimizer of the energy $\ecal$ in $B_{R}$, with $R>S+5$, among functions that are in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. Then
 	%$$ \lim_{R\to +\infty} \frac{1}{S^n} \ecal (u,B_S) = 0. $$
 	%More precisely,
 	$$ \ecal (u,B_S) \leq \begin{cases}
@@ -228,7 +228,7 @@ As an application of the previous results, we prove, by using standard variation
 
 \begin{theorem}[Existence of saddle-shaped solutions]
 	\label{Th:Existence}
-    Let $f=-G'$ satisfy \eqref{Eq:HipothesesG}, and such that $G(0)>0$. Assume $L_K\in \lcal_\star$. Then, for every even dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
+    Let $f=-G'$ satisfy \eqref{Eq:HipothesesG}, and such that $G(0)>0$. Let $K$ be a radially symmetric kernel such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$ and satisfying the positivity condition \eqref{Eq:KernelInequality}. Then, for every even dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
 \end{theorem}
 
 We are interested in the study of this type of solutions since they are relevant in connection with a famous conjecture for the (classical) Allen-Cahn equation raised by De Giorgi, that reads as follows. Let $u$ be a bounded monotone (in some direction) solution to $-\Delta u = u - u^3$ in $\R^n$, then, if $n \leq 8$, $u$ depends only on one Euclidean variable, that is, all its level sets are hyperplanes. This conjecture is not completely closed (see \cite{FarinaValdinoci-DeGiorgi} and references therein) but a counterexample in dimension $n=9$ was build in \cite{delPinoKowalczykWei} by using the so-called gluing method. Saddle-shaped solutions are natural objects to build a counterexample in a simpler way, as explained next. On the one hand, Jerison and Monneau \cite{JerisonMonneau} showed that a counterexample to the conjecture of De Giorgi in $\R^{n+1}$ can be constructed with a rather natural procedure if there exists a global minimizer of $-\Delta u = f(u)$ in $\R^n$ which is bounded and even with respect to each coordinate, but is not one-dimensional. On the other hand, by the $\Gamma$-converge results from Modica and Mortola (see \cite{Modica,ModicaMortola}) and the fact that the Simons cone is the simplest nonplanar minimizing minimal surface, saddle-shaped solutions are expected to be global minimizers of the Allen-Cahn equation in dimensions $2m\geq 8$ (this is still an open problem).
