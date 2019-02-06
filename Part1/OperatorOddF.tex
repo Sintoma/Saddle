@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:OperatorOddF}
 
-This section is devoted to study rotation invariant operators of the class $\lcal_0$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present necessary and sufficient conditions on the kernel $K$ in order to \eqref{Eq:KernelInequality} hold (we establish Theorem~\ref{Th:SufficientNecessaryConditions}). Finally, we show two maximum principles for doubly radial odd functions.
+This section is devoted to study rotation invariant operators of the class $\lcal_0$ when they act on doubly radial odd functions. First, we deduce an alternative expression for the operator in terms of a doubly radial kernel $\overline{K}$. Then, we present necessary and sufficient conditions on the kernel $K$ in order to \eqref{Eq:KernelInequality} hold (we establish Theorem~\ref{Th:SufficientNecessaryConditions}). Finally, we show two maximum principles for doubly radial odd functions (Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -189,7 +189,7 @@ To conclude this subsection, we present two alternative expressions for the oper
 
 
 
-In this subsection, we establish Theorem~\ref{Th:SufficientNecessaryConditions}. As we have mentioned in the introduction, the kernel inequality \eqref{Eq:KernelInequality} is crucial in the rest of the results of this paper, as well as in the ones in \cite{FelipeSanz-Perela:IntegroDifferentialII}. We will see in the next subsection that this inequality guarantees that the operator $L_K$ has a maximum principle for odd functions (see Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
+In this subsection, we establish Theorem~\ref{Th:SufficientNecessaryConditions}. As we have mentioned in the introduction, the kernel inequality \eqref{Eq:KernelInequality} is crucial in the rest of the results of this paper, as well as in the ones in \cite{FelipeSanz-Perela:IntegroDifferentialII}. We will see in the next subsection that this inequality guarantees that the operator $L_K$ has a maximum principle for odd functions (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}).
 
 First, we give a sufficient condition on a radially symmetric kernel $K$ so that $\overline{K}$ satisfies \eqref{Eq:KernelInequality}. It is the following result.
 
@@ -435,28 +435,11 @@ From the two previous results, Theorem~\ref{Th:SufficientNecessaryConditions} fo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this subsection we prove a weak and a strong maximum principles for doubly radial functions that are odd with respect to the Simons cone. The formulation of these maximum principles is very suitable since all the hypotheses refer to the set $\ocal$ and not $\R^{2m}$. The key ingredient in the proofs is the kernel inequality \eqref{Eq:KernelInequality}.
+In this subsection we prove Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}, a weak and a strong maximum principles for doubly radial functions that are odd with respect to the Simons cone. The formulation of these maximum principles is very suitable since all the hypotheses refer to the set $\ocal$ and not $\R^{2m}$. The key ingredient in the proofs is the kernel inequality \eqref{Eq:KernelInequality}.
 
 
-We first establish a weak maximum principle.
-
-\begin{proposition}[Weak maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that
-$$
-\beqc{\PDEsystem}
-L_K u + c(x) u & \geq & 0 & \text{ in } \Omega\,,\\
-u & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
-\eeqc
-$$
-with $c \geq 0$, and that either
-$$
-\Omega \text{ is bounded} \quad \text{ or } \liminf_{x \in \ocal,\,|x|\to +\infty} u(x) \geq 0\,.
-$$
-Then, $u \geq 0$ in $\Omega$.
-\end{proposition}
-
-\begin{proof}
-By contradiction, assume that $u$ takes negative values in $\Omega$. Under the hypotheses we are assuming, a negative minimum must be achieved. Thus, there exists $x_0\in \Omega$ such that
+\begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}]
+ $(i)$ By contradiction, suppose that $u$ takes negative values in $\Omega$. Under the hypotheses we are assuming, a negative minimum must be achieved. Thus, there exists $x_0\in \Omega$ such that
 $$
 u(x_0) = \min_{\Omega} u =: m < 0\,.
 $$
@@ -469,27 +452,20 @@ $$
 0 \leq L_K  u(x_0) + c(x_0) u(x_0) \leq m \left(2\int_{\ocal} \overline{K}(x_0, y^\star) \d y + c(x_0)\right)  < 0\,,
 $$
 a contradiction.
-\end{proof}
 
-\begin{remark}
-Note that since the operator $L_K$ includes itself a positive zero order term in addition to the integro-differential part, the condition $c\geq 0$ in the previous proposition can be lightly relaxed. Indeed, if we follow the proof of the result, we can deduce that the hypothesis on $c$ that we can assume is 
-$$ c(x) > -2\int_{\ocal} \overline{K}(x, y^\star) \d y. $$
-This hypothesis seems hard to be checked for applications apart from the case $c\geq 0$. Nevertheless, recall that by Lemma~\ref{Lemma:OperatorOddF} we have an explicit lower bound for the quantity $ \int_{\ocal} \overline{K}(x, y^\star) \d y $ in terms of the function $\dist(x,\ccal)$ that could be used to check the previous condition.
-\end{remark}
-
-The following is a strong maximum principle for odd functions.
-
-\begin{proposition}[Strong maximum principle for odd functions with respect to $\ccal$]
-\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K u + c(x) u\geq 0$ in $\Omega$, with $c(x)$ any function, and that $u\geq 0$ in $\ocal$. Then, either $u\equiv 0$ or $u > 0$ in $\Omega$.
-\end{proposition}
-
-\begin{proof}
-Assume that $u \not \equiv 0$. We shall prove that $u > 0$ in $\Omega$. By contradiction, assume that there exists a point $x_0\in \Omega$ such that $u(x_0)= 0$. Then, using the expression of $L_K $ for odd functions given in Lemma~\ref{Lemma:OperatorOddF}, the kernel inequality \eqref{Eq:KernelInequality}, and the fact that $u\geq 0$ in $\ocal$, we obtain
+$(ii)$ 
+Assume that $u \not \equiv 0$ in $\ocal$. We shall prove that $u > 0$ in $\Omega$. By contradiction, assume that there exists a point $x_0\in \Omega$ such that $u(x_0)= 0$. Then, using the expression of $L_K $ for odd functions given in Lemma~\ref{Lemma:OperatorOddF}, the kernel inequality \eqref{Eq:KernelInequality}, and the fact that $u\geq 0$ in $\ocal$, we obtain
 $$
 0 \leq L_K u(x_0) + c(x_0) u(x_0) = - \int_{\ocal} u(y)\big \{\overline{K}(x_0, y) - \overline{K}(x_0, y^\star) \big \}\d y < 0\,,
 $$
 a contradiction.
 \end{proof}
+
+\begin{remark}
+Note that since the operator $L_K$ includes itself a positive zero order term in addition to the integro-differential part, the condition $c\geq 0$ in point $(i)$ of the previous proposition can be lightly relaxed. Indeed, if we follow the proof of the result, we can deduce that the hypothesis on $c$ that we can assume is 
+$$ c(x) > -2\int_{\ocal} \overline{K}(x, y^\star) \d y. $$
+This hypothesis seems hard to be checked for applications apart from the case $c\geq 0$. Nevertheless, recall that by Lemma~\ref{Lemma:OperatorOddF} we have an explicit lower bound for the quantity $ \int_{\ocal} \overline{K}(x, y^\star) \d y $ in terms of the function $\dist(x,\ccal)$ that could be used to check the previous condition.
+\end{remark}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
