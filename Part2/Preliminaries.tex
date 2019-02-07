@@ -91,35 +91,35 @@ Recall that when $K$ satisfies \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \
 \label{Subsec:MaxPrinciples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this last subsection, we state two basic maximum principles for doubly radial odd functions. Note that in both results we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. Both results where proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} using the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$.
-
-The first result is a weak maximum principle for odd functions with respect to $\ccal$.
-
-\begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
-	\label{Prop:WeakMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone.  Assume that
-	$$
-	\beqc{\PDEsystem}
-	L_K w + c(x) w & \geq & 0 & \text{ in } \Omega\,,\\
-	w & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
-	\eeqc
-	$$
-	with $c \geq 0$, and that either
-	$$
-	\Omega \text{ is bounded} \quad \text{ or } \liminf_{x \in \ocal,\,|x|\to +\infty} w(x) \geq 0\,.
-	$$
-	Then, $w \geq 0$ in $\Omega$.
-\end{proposition}
+In this last subsection, we state the basic maximum principles for doubly radial odd functions. Note that in the following result we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. This was proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} and follows readily from the expression \eqref{Eq:OperatorOddF} by using the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$.
 
 
-The second result is the strong maximum principle for odd functions with respect to $\ccal$.
-
-\begin{proposition}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
-	\label{Prop:StrongMaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K  \in \lcal_\star (2m,  \s)$.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. Assume that $L_K w + c(x) w\geq 0$ in $\Omega$, with $c(x)$ any function, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ or $w > 0$ in $\Omega$.
+\begin{proposition}[Maximum principle for odd functions with respect to $\ccal$]
+	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
+	
+	\begin{enumerate}[label=(\roman{*})]
+		\item  (Weak maximum principle)
+		Assume that
+		$$
+		\beqc{\PDEsystem}
+		L_K w + c(x) w & \geq & 0 & \text{ in } \Omega\,,\\
+		w & \geq & 0 & \text{ in } \ocal \setminus \Omega\,,
+		\eeqc
+		$$
+		with $c \geq 0$, and that either
+		$$
+		\Omega \text{ is bounded} \quad \text{ or } \liminf_{x \in \ocal,\,|x|\to +\infty} w(x) \geq 0\,.
+		$$
+		Then, $w \geq 0$ in $\Omega$.
+		
+		\item (Strong maximum principle)  
+		Assume that $L_K w + c(x) w\geq 0$ in $\Omega$, with $c(x)$ any function, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ in $\ocal$ or $w > 0$ in $\Omega$.
+	\end{enumerate} 
 \end{proposition}
 
 \begin{remark}
 	\label{Remark:MaxPrincipleSingularity}
-	The regularity assumptions on $w$ in the previous results can be weakened allowing $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:Existence} in order to apply this maximum principle with a function that is no more regular than $C^\s$.
+	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the regularity assumptions on $w$ in the previous results can be weakened. Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:Existence} in order to apply this maximum principle with a function that is no more regular than $C^\s$.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

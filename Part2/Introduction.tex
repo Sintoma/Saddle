@@ -148,37 +148,32 @@ Note that the expression \eqref{Eq:OperatorOddF} has an integro-differential par
 One of the main results in \cite{FelipeSanz-Perela:IntegroDifferentialI} established necessary and sufficient conditions on the original kernel $K$ in order to $L_K$ have a maximum principle in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone. This is given in the next result.
 
 \begin{theorem}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
-	\label{Th:CharacterizationLstar}
-	Let $K:(0,+\infty) \to \R$ define a positive radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef}.
+	\label{Th:SufficientNecessaryConditions}
+	Let $K:(0,+\infty) \to (0,+\infty)$ and consider the radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef'}.
 	
 	If 
 	\begin{equation}
-		\label{Eq:SqrtConvex}	
-		K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,,
+	\label{Eq:SqrtConvex}	
+	K(\sqrt{\tau}) \text{ is a strictly convex function of }\tau\,,
 	\end{equation}
 	then $L_K$ has a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone $\ccal$. More precisely, it holds
 	\begin{equation}
-		\label{Eq:KernelInequality}
-		\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
+	\label{Eq:KernelInequality}
+	\overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for every }x,y \in \ocal\,.
 	\end{equation}
 	
-	In addition, if $K\in C^2((0,+\infty))$, \eqref{Eq:SqrtConvex} is not only a sufficient condition for \eqref{Eq:KernelInequality} to hold, but also a necessary one.
+	In addition, if $K\in C^2((0,+\infty))$, then \eqref{Eq:SqrtConvex} is not only a sufficient condition for \eqref{Eq:KernelInequality} to hold, but also a necessary one.
 \end{theorem}
 
-This lead us in \cite{FelipeSanz-Perela:IntegroDifferentialI} to introduce the following definition.
 
-\begin{definition}[Ellipticity class $\lcal_\star$]
-	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies \eqref{Eq:KernelInequality}.
-\end{definition}
+The positivity condition \eqref{Eq:KernelInequality} is the key ingredient to prove the first main result of this paper: the existence of saddle-shaped solution.
 
-The importance of $\lcal_\star$ is that the operators in this class have a maximum principle for doubly radial odd functions (see Section~\ref{Sec:Preliminaries}). This is a key ingredient to prove the first main result of this paper: the existence of saddle-shaped solutions.
-
-\begin{theorem}[Existence of saddle-shaped solutions]
+\begin{theorem}[Existence of saddle-shaped solution]
 	\label{Th:Existence}
-	Let $f$ satisfy \eqref{Eq:Hypothesesf} and let $L_K\in \lcal_\star$. Then, for every even dimension $2m \geq 2$, there exists a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
+	Let $f$ satisfy \eqref{Eq:Hypothesesf}. Let $K$ be a radially symmetric kernel such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$ and satisfying the positivity condition \eqref{Eq:KernelInequality}. Then, for every even dimension $2m \geq 2$, there exists a saddle-shaped solution $u$ to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
 \end{theorem}
 
-The previous theorem was already proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} using variational techniques. Here, instead, we use the monotone iteration method and the existence of a positive supersolution to a semilinear Dirichlet problem in a ball (see Section~\ref{Sec:Existence} for the details). Let us remark that in both proofs the crucial ingredient is inequality \eqref{Eq:KernelInequality}.
+This theorem was already proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} using variational techniques. Here, instead, we use the monotone iteration method and the existence of a positive supersolution to a semilinear Dirichlet problem in a ball (see Section~\ref{Sec:Existence} for the details). Let us remark that in both methods it is crucial to have inequality \eqref{Eq:KernelInequality}.
 
 
 The second main result of this paper is Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution} below, on the asymptotic behavior of saddle-shaped solutions at infinity. Before state it, let us introduce an important type of solutions in the study of the integro-differential Allen-Cahn equation: the layer solutions.
