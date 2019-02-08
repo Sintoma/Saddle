@@ -8,7 +8,7 @@ In this section we give a proof of Theorem~\ref{Th:Existence} based on the maxim
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
-	Let $L_K\in \lcal_\star(2m,\s)$ for some $\s\in (0,1)$. Assume that $\vsub \leq \vsup$ are two bounded functions which are doubly radial and odd with respect to the Simons cone. Furthermore, assume that $\vsub\in C^\s(\R^{2m})$ and that $\vsub$ and $\vsup$ satisfy respectively   
+	Let $\s\in (0,1)$ and let $K$ be a radially symmetric kernel such that $L_K\in \lcal_0(2m, \s)$ and satisfying the positivity condition \eqref{Eq:KernelInequality}. Assume that $\vsub \leq \vsup$ are two bounded functions which are doubly radial and odd with respect to the Simons cone. Furthermore, assume that $\vsub\in C^\s(\R^{2m})$ and that $\vsub$ and $\vsup$ satisfy respectively   
 	\begin{equation}
 	\label{Eq:SemilinearSubSuperSolutionInBall}
 	\beqc{\PDEsystem}
@@ -43,16 +43,16 @@ In this section we give a proof of Theorem~\ref{Th:Existence} based on the maxim
 	$$
 	Then one defines 
 	$$
-	\tilde{L}_K w := L_Kw + b w 	\quad \text{ and } \quad 	g(\tau) := f(\tau) + b \tau\,.
+	\widetilde{L}_K w := L_Kw + b w 	\quad \text{ and } \quad 	g(\tau) := f(\tau) + b \tau\,.
 	$$
 	Therefore, our problem is equivalent to find a solution to
 	$$
 	\beqc{\PDEsystem}
-	\tilde{L}_Kv & = & g(v) & \textrm{ in } B_R\,, \\
+	\widetilde{L}_Kv & = & g(v) & \textrm{ in } B_R\,, \\
 	v &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,, 
 	\eeqc
 	$$
-	such that $v$ is doubly radial, odd with respect to the Simons cone and  $\vsub \leq v \leq \vsup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(\tau) \geq 0$ for $\tau \in [-M,M]$. Moreover, since $b \geq 0$, $\tilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (as in Proposition~\ref{Prop:WeakMaximumPrincipleForOddFunctions}).
+	such that $v$ is doubly radial, odd with respect to the Simons cone and  $\vsub \leq v \leq \vsup$ in $\ocal$. Here the main point is that $g$ is also odd but satisfies $g'(\tau) \geq 0$ for $\tau \in [-M,M]$. Moreover, since $b \geq 0$, $\widetilde{L}_K$ satisfies the maximum principle for odd functions in $\ocal$ (as in Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}).
 	
 	We define $v_0 = \vsub$ and, for $k\geq 1$, let $v_k$ be the solution to the linear problem
 	$$
@@ -75,7 +75,7 @@ In order to construct a positive subsolution, we also need a characterization an
 
 \begin{lemma}
 	\label{Lemma:FirstOddEigenfunction}
-	Let $\Omega\subset \R^{2m} $ be a bounded set of double revolution and let $L_K\in \lcal_\star(2m,\s,\lambda, \Lambda)$. Let us define 
+	Let $\Omega\subset \R^{2m} $ be a bounded set of double revolution and let  $K$ be a radially symmetric kernel such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$ and satisfying the positivity condition \eqref{Eq:KernelInequality}. Let us define 
 	\begin{equation}
 	\label{Eq:DefLambda1}
 	\lambda_{1, \, \mathrm{odd}}(\Omega, L_K) := \inf_{w \in \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega)} \dfrac{\dfrac{1}{2}  \ds\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 \overline{K}(x,y) \d x \d y}{ \ds \int_\Omega w(x)^2 \d x}\,.
@@ -99,7 +99,7 @@ In order to construct a positive subsolution, we also need a characterization an
 
 
 \begin{proof}
-	The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, using the same arguments as in  Lemma~3.4. of \cite{FelipeSanz-Perela:IntegroDifferentialI} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi_1 > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}).
+	The first two statements are deduced exactly as in Proposition~9 of \cite{ServadeiValdinoci}, using the same arguments as in  Lemma~3.4. of \cite{FelipeSanz-Perela:IntegroDifferentialI} to guarantee that $\phi_1$ is nonnegative in $\ocal$. The fact that $\phi_1 > 0$ in $\Omega \cap \ocal$ follows from the strong maximum principle (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}).
 	
 	We show the third statement. Let $\widetilde{w} (x):= w(Rx)$ for every $w\in \widetilde{\H}^K_{0, \, \mathrm{odd}}(B_R)$. Then,
 	\begin{align*}
@@ -146,7 +146,7 @@ With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existen
 	
 	Now, if we define $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, a simple computation shows that it is an odd supersolution to \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure given in Proposition~\ref{Prop:MonotoneIterationOdd} (taking into account Remarks~\ref{Remark:MaxPrincipleSingularity} and \ref{Remark:CsRegularityFirstEigenfunction} when using the maximum principle), we obtain a solution $u_R$ to \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone and $\varepsilon \phi_1^{R_0} = \usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_{R_0}$, the same holds for $u_R$.
 	
-	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging on compacts in  $C^{2\s + \eta}(\R^{2m})$ norm, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. Indeed, the usual strong maximum principle yields $u<1$ in $\ocal$. Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$ for $R>R_0$, also the limit $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. Therefore, by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
+	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging on compacts in  $C^{2\s + \eta}(\R^{2m})$ norm, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. Indeed, the usual strong maximum principle yields $u<1$ in $\ocal$. Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$ for $R>R_0$, also the limit $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. Therefore, by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
 \end{proof}
 
 
