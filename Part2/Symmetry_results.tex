@@ -6,75 +6,7 @@
 
 
 
-This section is devoted to prove the following two symmetry results. Both results will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. The first one is a result for positive solutions in the whole space.
-
-\begin{theorem}
-	\label{Th:SymmetryWholeSpace}
-	Let $L_K \in \lcal_0(n,\s)$ and let $v$ be a bounded solution to
-	\begin{equation}
-	\label{Eq:PositiveWholeSpace}
-	\beqc{\PDEsystem}
-	L_K v &=& f(v) & \textrm{ in }\R^n\,,\\
-	v &\geq& 0 & \textrm{ in } \R^n\,,
-	\eeqc
-	\end{equation}
-	with the nonlinearity $f\in C^1$ satisfying
-	\begin{itemize}
-		\item $f(0) = f(1) = 0$,
-		\item $f'(0)>0$,
-		\item $f>0$ in $(0,1)$, and
-		\item $f<0$ in $(1,+\infty)$.
-	\end{itemize}
-	Then, $v\equiv 0$ or $v \equiv 1$.
-\end{theorem}
-
-Similar classification results have been proved for the fractional Laplacian in \cite{ChenLiZhang,LiZhang} (either using the extension problem or not) with the method of moving spheres, which uses crucially the scale invariance of the operator $\fraclaplacian$. To the best of our knowledge, there is no similar result available in the literature for general kernels in the ellipticity class $\lcal_0$ (which are not necessarily scale invariant). Thus, we present here a proof based on the techniques used in \cite{BerestyckiHamelNadi} for a local equation with the classical Laplacian. It relies on the maximum principle and the translation invariance of the operator (combined with a Harnack inequality and a stability argument), and thus can be carried out for all operators in $\lcal_0$.
-
-The second one is a symmetry result for equations in a half-space. Here we use the notation $\R^n_+= \{x_n > 0\}$.  \todo{Notacion primas}
-
-\begin{theorem}
-	\label{Th:SymmHalfSpace}
-	Let $L_K\in \lcal_0(n,\s)$ and let $v$ be a bounded solution to one of these two problems:
-	
-	\begin{equation}
-	\leqnomode
-	\tag{P1}
-	\label{Eq:P1}
-	\beqc{\PDEsystem}
-	L_K v &=& f(v)   &\textrm{ in } \,\R^n_+,\\
-	v &>& 0   &\textrm{ in } \,\R^n_+,\\
-	v(x',x_n) &=& -v(x',-x_n)   &\textrm{ in } \,\R^n.
-	\eeqc
-	\end{equation}
-
-	\begin{equation}
-	\leqnomode
-	\tag{P2}
-	\label{Eq:P2}
-	\beqc{\PDEsystem}
-	L_K v &=& f(v)   &\textrm{ in } \,\R^n_+,\\
-	v &>& 0   &\textrm{ in } \,\R^n_+,\\
-	v &=& 0   &\textrm{ in } \,\R^n \setminus \R^n_+.
-	\eeqc
-	\end{equation}
-		
-	\reqnomode
-	
-	Assume that, in $\R^n_+$, the kernel $K$ of the operator $L_K$ is decreasing in the direction of $x_n$, that is, it satisfies
-	$$
-	K(x-y) \geq K(x-y^*) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+,
-	$$ 
-	where $y^*$ is the reflection of $y$ with respect to $\{x_n = 0\}$. Suppose that the nonlinearity $f\in C^1$ and
-	\begin{itemize}
-		\item $f(0) = f(1) = 0$,
-		\item $f'(0)>0$, and $f'(t)\leq 0$ for all $t\in[1-\delta,1]$ for some $\delta>0$,
-		\item $f>0$ in $(0,1)$, and
-		\item $f$ is odd in the case of \eqref{Eq:P1}.
-	\end{itemize}
-	Then, $v$ depends only on $x_n$ and it is increasing in that direction.
-\end{theorem}
-
-The result for \eqref{Eq:P2} has been proved for the fractional Laplacian under some assumptions on $f$ (weaker than the ones in Theorem~\ref{Th:SymmHalfSpace}) in \cite{QuaasXia, BarriosEtAl-Monotonicity, BarriosEtAl-Symmetry, FallWethMonotonicity}. Instead, to the best of our knowledge \eqref{Eq:P1} has not been treated even for the fractional Laplacian. In our case, the fact that $f$ is of Allen-Cahn type allows us to use rather simple arguments that work for both problems \eqref{Eq:P1} and \eqref{Eq:P2} ---moving planes and sliding methods. Moreover, the fact that we replace the kernel of the operator by a general $K$ satisfying \eqref{Eq:Ellipticity} do not affect significantly the proof. Although \eqref{Eq:P2} will not be used in this paper, we state it and prove it here for future reference, since the proof is analogous to the one of \eqref{Eq:P1}.
+This section is devoted to prove the two symmetry results \ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. Both results will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. 
 
 \subsection{A symmetry result for positive solutions in the whole space}
 
@@ -409,17 +341,17 @@ The previous maximum principle in ``narrow'' sets is not powerful enough to appl
 
 \begin{proposition}
 	\label{Prop:MaxPrpNarrowOdd}
-	Let $H$ be a half-space in $\R^n$, and denote by $x^*$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L_K \in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying
+	Let $H$ be a half-space in $\R^n$, and denote by $x^\#$ the reflection of any point $x$ with respect to the hyperplane $\partial H$. Let $L_K \in \lcal_0(n,\s)$ with a positive kernel $K$ satisfying
 	\begin{equation}
 	\label{Eq:KernelSymmetry}
-	K(x-y) \geq K(x-y^*), \,\,\,\,\text{for all } \,\, x,y\in H.
+	K(x-y) \geq K(x-y^\#), \,\,\,\,\text{for all } \,\, x,y\in H.
 	\end{equation}
 	Assume that $v\in C^{\beta}(\Omega)$, with $\beta > 2\s$, satisfies
 	\begin{equation*}
 	\beqc{\PDEsystem}
 	L_K  v &\geq& c(x)\,v  &\textrm{ in } \Omega\subset H,\\
 	v &\geq& 0 &\textrm{ in } H\setminus\Omega,\\
-	v(x) &=& -v(x^*) &\textrm{ in } \R^n.
+	v(x) &=& -v(x^\#) &\textrm{ in } \R^n.
 	\eeqc
 	\end{equation*}
 	
@@ -447,17 +379,17 @@ The previous maximum principle in ``narrow'' sets is not powerful enough to appl
 	$$
 	Now, we split $\R^n\setminus\Omega_-$ into
 	$$
-	A_1 = \Omega_-^*,\,\,\,\,\,\,\,\text{ and }\,\,\,\,\,\,\, A_2 = \left(H\setminus\Omega_-\right)\cup\left(H\setminus\Omega_-\right)^*,
+	A_1 = \Omega_-^\#,\,\,\,\,\,\,\,\text{ and }\,\,\,\,\,\,\, A_2 = \left(H\setminus\Omega_-\right)\cup\left(H\setminus\Omega_-\right)^\#,
 	$$
 	and we compute the previous integral in these two sets separately. On the one hand,
 	\begin{align*}
-	-\int_{A_1} v(y)K(x-y) \d y = -\int_{\Omega_-} v(y^*)K(x-y^*) \d y  = \int_{\Omega_-} v(y)K(x-y^*) \d y \leq 0,
+	-\int_{A_1} v(y)K(x-y) \d y = -\int_{\Omega_-} v(y^\#)K(x-y^\#) \d y  = \int_{\Omega_-} v(y)K(x-y^\#) \d y \leq 0,
 	\end{align*}
 	where the last inequality follows from being $v$ negative in $\Omega_-$ and the kernel positive in all $\R^n$.
 	On the other hand,
 	\begin{align*}
-	-\int_{A_2} v(y)K(x-y) \d y = -\int_{H\setminus\Omega_-} v(y)K(x-y) \d y  -\int_{H\setminus\Omega_-} v(y^*)K(x-y^*) \d y \\
-	= -\int_{H\setminus\Omega_-} v(y)\left\{K(x-y)-K(x-y^*)\right\} \d y \leq 0,
+	-\int_{A_2} v(y)K(x-y) \d y = -\int_{H\setminus\Omega_-} v(y)K(x-y) \d y  -\int_{H\setminus\Omega_-} v(y^\#)K(x-y^\#) \d y \\
+	= -\int_{H\setminus\Omega_-} v(y)\left\{K(x-y)-K(x-y^\#)\right\} \d y \leq 0,
 	\end{align*}
 	where we have use the kernel condition \eqref{Eq:KernelSymmetry} and the odd symmetry of $v$. Thus, we get $L_K v_2 \leq 0$ in $\Omega_-$, which means
 	$$ L_K v_1 = L_K v-L_K v_2 \geq L_K v \geq c(x)\,v = c(x)\,v_1 \,\,\,\,\text{ in }\,\,\Omega_-. $$
@@ -510,7 +442,7 @@ Let $L_K \in \lcal_0(n,\s)$ and let $v$ be a bounded solution to one of the foll
 \label{Eq:P3}
 \beqc{\PDEsystem}
 L_K  v &=& f(v)  &\textrm{ in }\R^n\,,\\
-\ds \lim_{x_n \to \pm \infty} v(x',x_n) &=& \pm 1 \,\,\, &\textrm{ uniformly}.
+\ds \lim_{x_n \to \pm \infty} v(x_H,x_n) &=& \pm 1 \,\,\, &\textrm{ uniformly}.
 \eeqc
 \end{equation}
 
@@ -521,7 +453,7 @@ L_K  v &=& f(v)  &\textrm{ in }\R^n\,,\\
 \beqc{\PDEsystem}
 L_K  v &=& f(v)  &\textrm{ in }\R^n_+ = \{ x_n>0\} \,,\\
 v &=& 0  &\textrm{ in } \R^n \setminus \R^n_+ = \{ x_n\leq 0\}\,,\\
-\ds \lim_{x_n \to + \infty} v(x',x_n) &=& 1 \,\,\, &\textrm{ uniformly}.
+\ds \lim_{x_n \to + \infty} v(x_H,x_n) &=& 1 \,\,\, &\textrm{ uniformly}.
 \eeqc
 \end{equation}
 
@@ -550,16 +482,16 @@ Finally, we can proceed with the proof of Theorem~\ref{Th:SymmHalfSpace}.
 \begin{proof}[Proof of Theorem~\ref{Th:SymmHalfSpace}]
 Note that by Proposition~\ref{Prop:HalfSpaceLimUnif} we only need to prove that
 $$
-\ds \lim_{x_n\to+ \infty} v(x',x_n) = 1
+\ds \lim_{x_n\to+ \infty} v(x_H,x_n) = 1
 $$
 uniformly. Therefore we divide the proof in two steps: first, we prove that the limit exists and is $1$, and then we prove that it is uniform.
 
 
-\textbf{Step 1:} Given $x'\in \R^{n-1}$, then  $\ds \lim_{x_n\to +\infty} v(x',x_n) = 1$.
+\textbf{Step 1:} Given $x_H\in \R^{n-1}$, then  $\ds \lim_{x_n\to +\infty} v(x_H,x_n) = 1$.
 
-By Proposition \ref{Prop:MonotonyHalfSpace} we know that $v$ is strictly increasing in the direction $x_n$. Since $v$ is also bounded by hypothesis, we know that, given $x'\in\R^{n-1}$, the one variable function $v(x',\cdot)$ has a limit, that we call $\overline{v}(x')$. Note that, since $v(x',0) = 0$ and $v_{x_n}>0$, we deduce that $\overline{v}(x') > 0$.
+By Proposition \ref{Prop:MonotonyHalfSpace} we know that $v$ is strictly increasing in the direction $x_n$. Since $v$ is also bounded by hypothesis, we know that, given $x_H\in\R^{n-1}$, the one variable function $v(x_H,\cdot)$ has a limit, that we call $\overline{v}(x_H)$. Note that, since $v(x_H,0) = 0$ and $v_{x_n}>0$, we deduce that $\overline{v}(x_H) > 0$.
 
-Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x',x_n) := v(x',x_n+x_n^k)$. By the regularity theory of the operator $L_K $ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ that is a classical solution to
+Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x_H,x_n) := v(x_H,x_n+x_n^k)$. By the regularity theory of the operator $L_K $ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ that is a classical solution to
 \begin{equation}
 \label{Eq:ProofSymmHalf-SemilinearEqWholeSpace}
 \beqc{\PDEsystem}
@@ -568,15 +500,15 @@ v_\infty &\geq& 0   &\textrm{ in } \,\R^n.
 \eeqc
 \end{equation}
 By Theorem \ref{Th:SymmetryWholeSpace}, either $v_\infty\equiv 0$ or $v_\infty \equiv 1$. But, by construction,
-$$ v_\infty(x',0) = \lim_{k\to + \infty} v_k(x',0) = \lim_{k\to + \infty} v(x',x_n^k) = \overline{v}(x') > 0, $$
+$$ v_\infty(x_H,0) = \lim_{k\to + \infty} v_k(x_H,0) = \lim_{k\to + \infty} v(x_H,x_n^k) = \overline{v}(x_H) > 0, $$
 and therefore the only possibility is
-$$ \lim_{x_n\to \infty} v(x',x_n) = 1 \quad \text{ for all } \ x'\in\R^{n-1}. $$
+$$ \lim_{x_n\to \infty} v(x_H,x_n) = 1 \quad \text{ for all } \ x_H\in\R^{n-1}. $$
 
-\textbf{Step 2:} The limit is uniform in $x'$.
+\textbf{Step 2:} The limit is uniform in $x_H$.
 
-Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_k',x_n^k)$ with $x_n^k\to +\infty$ such that $v(x_k',x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x',x_n) = v(x'+x_k',x_n+x_n^k)$ converge uniformly on compact sets to a function $\tilde{v}_\infty$ that solves also \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:SymmetryWholeSpace}, either $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
+Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_H^k,x_n^k)$ with $x_n^k\to +\infty$ such that $v(x_H^k,x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x_H,x_n) = v(x_H+x_H^k,x_n+x_n^k)$ converge uniformly on compact sets to a function $\tilde{v}_\infty$ that solves also \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:SymmetryWholeSpace}, either $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
 $$ 
-\tilde{v}_\infty(0,0) = \lim_{k\to +\infty} \tilde{v}_k(0,0) = \lim_{k\to +\infty} v(x'_k,x_n^k) = 1-\varepsilon, 
+\tilde{v}_\infty(0,0) = \lim_{k\to +\infty} \tilde{v}_k(0,0) = \lim_{k\to +\infty} v(x_H^k,x_n^k) = 1-\varepsilon, 
 $$
 which is a contradiction for $\varepsilon>0$ small enough. Thus, the limit is uniform.
 

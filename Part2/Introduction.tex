@@ -12,7 +12,7 @@ where $L_K$ is a linear integro-differential operator of the form \eqref{Eq:DefO
 
 In the previous paper \cite{FelipeSanz-Perela:IntegroDifferentialI} we established an appropriate setting to study solutions to \eqref{Eq:NonlocalAllenCahn} which are doubly radial and odd with respect to the Simons cone (this terminology is described more precisely below), a property satisfied by saddle-shaped solutions. We deduced an alternative expression for the operator $L_K$ when acting on doubly radial odd functions ---see \eqref{Eq:OperatorOddF}. This expression was used to deduce some maximum principles for odd functions under certain assumptions on the kernel $K$ of the operator $L_K$. Moreover, we proved an energy estimate for doubly radial and odd minimizers of the energy associated to the equation, as well as the existence of saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}.
 
-Using the results obtained in \cite{FelipeSanz-Perela:IntegroDifferentialI}, in the present paper we further study saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}. First, we prove existence of this type of solutions, Theorem~\ref{Th:Existence}, by using the monotone iteration method (as an alternative to the proof in \cite{FelipeSanz-Perela:IntegroDifferentialI}). After this, we establish the asymptotic behavior of saddle-shaped solutions,  Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. To do it, we use two symmetry results for semilinear equations similar to \eqref{Eq:NonlocalAllenCahn}: Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}, proved in Section~\ref{Sec:SymmetryResults}. In the study of the asymptotic behavior of saddle-shaped solutions we establish further properties of the so-called \emph{layer solution} $u_0$ (see Section~\ref{Sec:Asymptotic}). Finally, we show the uniqueness of the saddle-shaped solution, Theorem~\ref{Th:Uniqueness}, by using a maximum principle for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}).
+Using the results obtained in \cite{FelipeSanz-Perela:IntegroDifferentialI}, in the present paper we further study saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn}. First, we prove existence of this type of solutions, Theorem~\ref{Th:Existence}, by using the monotone iteration method (as an alternative to the proof in \cite{FelipeSanz-Perela:IntegroDifferentialI} where variational methods are used). After this, we establish the asymptotic behavior of saddle-shaped solutions,  Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. To do it, we use two symmetry results for semilinear equations similar to \eqref{Eq:NonlocalAllenCahn}: Theorems~\ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}, proved in Section~\ref{Sec:SymmetryResults}. In the study of the asymptotic behavior of saddle-shaped solutions we establish further properties of the so-called \emph{layer solution} $u_0$ (see Section~\ref{Sec:Asymptotic}). Finally, we show the uniqueness of the saddle-shaped solution, Theorem~\ref{Th:Uniqueness}, by using a maximum principle for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}).
 
  
 As in \cite{FelipeSanz-Perela:IntegroDifferentialI}, equation \eqref{Eq:NonlocalAllenCahn} is driven by a linear integro-differential operator $L_K$ of the form
@@ -149,7 +149,7 @@ One of the main results in \cite{FelipeSanz-Perela:IntegroDifferentialI} establi
 
 \begin{theorem}[\cite{FelipeSanz-Perela:IntegroDifferentialI}]
 	\label{Th:SufficientNecessaryConditions}
-	Let $K:(0,+\infty) \to (0,+\infty)$ and consider the radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef'}.
+	Let $K:(0,+\infty) \to (0,+\infty)$ and consider the radially symmetric kernel $K(|x-y|)$ in $\R^{2m}$. Define $\overline{K} : \R^{2m}\times \R^{2m} \to \R$ by \eqref{Eq:KbarDef}.
 	
 	If 
 	\begin{equation}
@@ -221,7 +221,75 @@ The precise statement on the asymptotic behavior of saddle-shaped solutions at i
 	as $ R\to +\infty$.
 \end{theorem}
 
-To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. The second one, Theorem~\ref{Th:SymmHalfSpace}, is a symmetry result for solutions to a semilinear equation which are odd with respect to a hyperplane and nonnegative at one of its sides. Both results are well known for the classical Laplacian, and are also available for $\fraclaplacian$. Here we present the proof for a general integro-differential operator $L_K$, following some arguments that are used for the analogous results for $-\Delta$ and $\fraclaplacian$.
+To establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2} and we need two important symmetry results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:SymmetryWholeSpace}, is a symmetry result for nonnegative solutions to a semilinear equation in the whole space. 
+
+\begin{theorem}
+	\label{Th:SymmetryWholeSpace}
+	Let $L_K \in \lcal_0(n,\s)$ and let $v$ be a bounded solution to
+	\begin{equation}
+	\label{Eq:PositiveWholeSpace}
+	\beqc{\PDEsystem}
+	L_K v &=& f(v) & \textrm{ in }\R^n\,,\\
+	v &\geq& 0 & \textrm{ in } \R^n\,,
+	\eeqc
+	\end{equation}
+	with the nonlinearity $f\in C^1$ satisfying
+	\begin{itemize}
+		\item $f(0) = f(1) = 0$,
+		\item $f'(0)>0$,
+		\item $f>0$ in $(0,1)$, and
+		\item $f<0$ in $(1,+\infty)$.
+	\end{itemize}
+	Then, $v\equiv 0$ or $v \equiv 1$.
+\end{theorem}
+
+Similar classification results have been proved for the fractional Laplacian in \cite{ChenLiZhang,LiZhang} (either using the extension problem or not) with the method of moving spheres, which uses crucially the scale invariance of the operator $\fraclaplacian$. To the best of our knowledge, there is no similar result available in the literature for general kernels in the ellipticity class $\lcal_0$ (which are not necessarily scale invariant). Thus, we present here a proof based on the techniques used in \cite{BerestyckiHamelNadi} for a local equation with the classical Laplacian. It relies on the maximum principle and the translation invariance of the operator (combined with a Harnack inequality and a stability argument), and thus can be carried out for all operators in $\lcal_0$.
+
+The second one is a symmetry result for equations in a half-space. Here we use the notation $\R^n_+= \{(x_H,x_n)\in \R^{n-1}\times \R \text{ such that } x_n > 0\}$.  \todo{Notacion}
+
+\begin{theorem}
+	\label{Th:SymmHalfSpace}
+	Let $L_K\in \lcal_0(n,\s)$ and let $v$ be a bounded solution to one of these two problems:
+	
+	\begin{equation}
+	\leqnomode
+	\tag{P1}
+	\label{Eq:P1}
+	\beqc{\PDEsystem}
+	L_K v &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	v &>& 0   &\textrm{ in } \,\R^n_+,\\
+	v(x_H,x_n) &=& -v(x_H,-x_n)   &\textrm{ in } \,\R^n.
+	\eeqc
+	\end{equation}
+	
+	\begin{equation}
+	\leqnomode
+	\tag{P2}
+	\label{Eq:P2}
+	\beqc{\PDEsystem}
+	L_K v &=& f(v)   &\textrm{ in } \,\R^n_+,\\
+	v &>& 0   &\textrm{ in } \,\R^n_+,\\
+	v &=& 0   &\textrm{ in } \,\R^n \setminus \R^n_+.
+	\eeqc
+	\end{equation}
+	
+	\reqnomode
+	
+	Assume that, in $\R^n_+$, the kernel $K$ of the operator $L_K$ is decreasing in the direction of $x_n$, that is, it satisfies
+	$$
+	K(x_H-y_H,x_n-y_n) \geq K(x_H-y_H,x_n+y_n) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+.
+	$$ 
+	Suppose that the nonlinearity $f\in C^1$ and
+	\begin{itemize}
+		\item $f(0) = f(1) = 0$,
+		\item $f'(0)>0$, and $f'(t)\leq 0$ for all $t\in[1-\delta,1]$ for some $\delta>0$,
+		\item $f>0$ in $(0,1)$, and
+		\item $f$ is odd in the case of \eqref{Eq:P1}.
+	\end{itemize}
+	Then, $v$ depends only on $x_n$ and it is increasing in that direction.
+\end{theorem}
+
+The result for \eqref{Eq:P2} has been proved for the fractional Laplacian under some assumptions on $f$ (weaker than the ones in Theorem~\ref{Th:SymmHalfSpace}) in \cite{QuaasXia, BarriosEtAl-Monotonicity, BarriosEtAl-Symmetry, FallWethMonotonicity}. Instead, to the best of our knowledge \eqref{Eq:P1} has not been treated even for the fractional Laplacian. In our case, the fact that $f$ is of Allen-Cahn type allows us to use rather simple arguments that work for both problems \eqref{Eq:P1} and \eqref{Eq:P2} ---moving planes and sliding methods. Moreover, the fact that we replace the kernel of the operator by a general $K$ satisfying \eqref{Eq:Ellipticity} do not affect significantly the proof. Although \eqref{Eq:P2} will not be used in this paper, we state it and prove it here for future reference, since the proof is analogous to the one of \eqref{Eq:P1}.
 
 The last main result of this paper is the uniqueness of the saddle-shaped solution, stated next.
 
