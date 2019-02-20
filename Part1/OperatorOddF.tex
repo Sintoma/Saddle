@@ -119,19 +119,17 @@ To conclude this subsection, we present two alternative expressions for the oper
 	\label{Lemma:OperatorOddF}
 	Let $w$ be a doubly radial function which is odd with respect to the Simons cone. Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ be a rotation invariant operator and let $L_K^\ocal$ be defined by \eqref{Eq:OperatorOddF}. 
 	
-	Then, for every $x\in\ocal$,
-	$$ 	L_K w (x) = L_K^\ocal w(x).   $$
-	Indeed,
+	Then, 
 	\begin{align*}
 	L_K w (x) &= \int_{\ocal} \{w(x) - w(y) \} \overline{K}(x, y) \d y +  \int_{\ocal} \{w(x) + w(y) \} \overline{K}(x, y^\star) \d y \\
 	&= \int_{\ocal} \{w(x) - w(y) \} \{\overline{K}(x, y) - \overline{K}(x, y^\star)  \} \d y +  2 w(x) \int_{\ocal} \overline{K}(x, y^\star) \d y \,.
 	\end{align*}
-	Moreover,
+	In particular, the second equality shows that $L_K w (x) = L_K^\ocal w(x)$. 	Moreover,
 	\begin{equation}
 	\label{Eq:ZeroOrderTerm}
 		\dfrac{1}{C} \dist(x,\ccal)^{-2\s} \leq \int_{\ocal} \overline{K}(x, y^\star) \d y \leq C \dist(x,\ccal)^{-2\s},
 	\end{equation}
-	with $C>0$ depending only on $m, \s, \lambda$, and $\Lambda$.
+	where $C>0$ is a constant depending only on $m, \s, \lambda$, and $\Lambda$.
 \end{lemma}
 
 \begin{proof}
@@ -179,6 +177,7 @@ To conclude this subsection, we present two alternative expressions for the oper
 	&= c \sum_{k=0}^\infty (3k+4)^{-2m-2\s} \left\{(3k+3)^{2m} -(3k+2)^{2m}\right\}\\
 	&\geq c \sum_{k=0}^\infty (3k+4)^{-1-2\s} = c.
 	\end{align*}
+	\todo[inline]{Mejorar lo de arriba, más simple.}
 \end{proof}
 
 
@@ -203,7 +202,7 @@ Let $K:(0,+\infty) \to \R$ define a positive radially symmetric kernel $K(|x-y|)
 \end{proposition}
 
 \begin{proof}
-Since $\overline{K}$ is invariant by $O(m)^2$, it is enough to show \eqref{Eq:KernelInequalityBis} for points $x, y\in \ocal$ of the form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$, with $e \in \Sph^{m-1}$ an arbitrary unitary vector.
+Since $\overline{K}$ is invariant by $O(m)^2$, it is enough to choose a unitary vector $e \in \Sph^{m-1}$ and show \eqref{Eq:KernelInequalityBis} for points $x, y\in \ocal$ of the form $x = (|x'|e, |x''|e)$ and $y = (|y'|e, |y''|e)$.
 
 Now, define
 \begin{equation}
@@ -244,7 +243,7 @@ Thus, if we prove
 \label{Eq:InequalityIntegrandKernelInequalityProof}
 \begin{split}
 K(|x - R y|) + K(|x + R y|) + K(|x - R_\star y|) + K(|x + R_\star y|)
-\quad \quad \quad \quad \quad \quad \quad \quad
+\quad \quad \quad \quad 
 \\
 \geq
 K(|x - R y^\star|) + K(|x + R y^\star|)+K(|x - R_\star y^\star|) + K(|x + R_\star y^\star|)\,,
@@ -332,11 +331,11 @@ If
 \label{Eq:KernelInequalityAE}
 \overline{K}(x,y) > \overline{K}(x, y^\star) \quad \text{ for almost every }x,y \in \mathcal{O}\,,
 \end{equation}
-then $K(\sqrt{\cdot})$ cannot be concave in any interval $I\subset [0,+\infty)$.
+then $K(\sqrt{\cdot})$ cannot be concave in any open interval $I\subset [0,+\infty)$.
 \end{proposition}
 
 \begin{proof}
-We prove it by contraposition. In fact, we will show that if there exists an interval where $K(\sqrt{\cdot})$ is concave, then we can find an open set in $\ocal \times \ocal$ with positive measure where \eqref{Eq:KernelInequalityAE} is not satisfied.
+It suffices to show that if there exists an open interval where $K(\sqrt{\cdot})$ is concave, then we can find a nonempty open set in $\ocal \times \ocal$ where \eqref{Eq:KernelInequalityAE} is not satisfied.
 
 Let $\ell_2>\ell_1>0$ be such that $K(\sqrt{\cdot})$ is concave in $(\ell_1,\ell_2)$ and define the set $\Omega_{\ell_1,\ell_2}\subset \R^{4m}$ as the points $(x,y)\in \ocal\times \ocal$ satisfying
 \begin{equation}
@@ -347,9 +346,9 @@ Let $\ell_2>\ell_1>0$ be such that $K(\sqrt{\cdot})$ is concave in $(\ell_1,\ell
 \eeqc
 \end{equation}
 
-First, it is easy to see that $\Omega_{\ell_1,\ell_2}$ is a nonempty open set. In fact, points of the form $(x',0,y',0)\in (\R^m)^4$ such that $(|x'|-|y'|)^2>\ell_1$ and $(|x'|+|y'|)^2 <\ell_2$ belong to $\Omega_{\ell_1,\ell_2}$. Then, if we prove that $\overline{K}(x,y) \leq \overline{K}(x, y^\star)$ in $\Omega_{\ell_1,\ell_2}$ we are done.
+First, it is easy to see that $\Omega_{\ell_1,\ell_2}$ is a nonempty open set. In fact, points of the form $(x',0,y',0)\in (\R^m)^4$ such that $(|x'|-|y'|)^2>\ell_1$ and $(|x'|+|y'|)^2 <\ell_2$ belong to $\Omega_{\ell_1,\ell_2}$. 
 
-Given $x,y\in \Omega_{\ell_1,\ell_2}$, we are going to show, as in the previous proof, that
+We need to prove that $\overline{K}(x,y) \leq \overline{K}(x, y^\star)$ in $\Omega_{\ell_1,\ell_2}$ for any $(x,y)\in \ocal\times \ocal$ satisfying \eqref{Eq:OmegaSetDefinition}. For such points, we are going to show, as in the previous proof, that
 \begin{equation}
 \label{Eq:InequalityIntegrandKernelInequalityProof4}
 \begin{split}
@@ -381,8 +380,7 @@ g(\tau) &= K\left( \sqrt{|x|^2+|y|^2+2\tau} \right) + K\left( \sqrt{|x|^2+|y|^2-
 
 
 
-
-Now, by \eqref{Eq:OmegaSetDefinition}, we have $\ell_1 < |x|^2+|y|^2 <\ell_2$. As a consequence of this and the concavity of $K(\sqrt{\cdot})$ in $(\ell_1,\ell_2)$, it is easy to see (by using Lemma~\ref{Lemma:ConvexFunctions} in the Appendix~\ref{Sec:AuxiliaryResults}) that $g$ is concave in $ \left( -\overline{\ell}, \overline{\ell}\right) $, and decreasing in $(0,\overline{\ell})$, where 
+Now, by \eqref{Eq:OmegaSetDefinition}, we have $\ell_1 < |x|^2+|y|^2 <\ell_2$. As a consequence of this and the concavity of $K(\sqrt{\cdot})$ in $(\ell_1,\ell_2)$, it is easy to see (by using Lemma~\ref{Lemma:ConvexFunctions} stated for $-h$, a concave function, instead of $h$) that $g$ is concave in $ \left( -\overline{\ell}, \overline{\ell}\right) $, and decreasing in $(0,\overline{\ell})$, where 
 $$
 \overline{\ell} := \min{\left\{\frac{\ell_2-|x|^2-|y|^2}{2},\frac{|x|^2+|y|^2-\ell_1}{2}\right\}}.$$
 Note that, since $\ell_1 < |x|^2+|y|^2 <\ell_2$, we have $\overline{\ell}>0$.
@@ -403,11 +401,11 @@ Finally, by applying Lemma~\ref{Lemma:ConvexFunctions} to the function $-g$ in $
 From the two previous results, Theorem~\ref{Th:SufficientNecessaryConditions} follows immediately.
 
 \begin{proof}[Proof of Theorem~\ref{Th:SufficientNecessaryConditions}]
-	The first statement is exactly the same as Proposition~\ref{Prop:KernelInequalitySufficientCondition}. Assume now that $K$ is a $C^2$ function and that \eqref{Eq:KernelInequality} holds. Then, by Proposition~\ref{Prop:KernelInequalityNecessaryCondition}, $K(\sqrt{\cdot})$ is not concave in any interval of $[0,+\infty)$. By the regularity of $K$, this automatically yields that $K(\sqrt{\cdot})$ is strictly convex.
+	The first statement is exactly the same as Proposition~\ref{Prop:KernelInequalitySufficientCondition}. Assume now that $K$ is a $C^2$ function and that \eqref{Eq:KernelInequality} holds. Then, by Proposition~\ref{Prop:KernelInequalityNecessaryCondition}, $h(\cdot) := K(\sqrt{\cdot})$ is not concave in any interval of $[0,+\infty)$. Therefore, we cannot have $h''<0$ at any point. Thus, $h''\geq 0$ in $[0,+\infty)$ or, in other words, $h'$ is nondecreasing. Using again that $h$ is not concave in any interval, we deduce that $h'$ must be, in fact, increasing. It follows that $h(\cdot) = K(\sqrt{\cdot})$ is strictly convex as defined after the statement of Theorem~\ref{Th:SufficientNecessaryConditions}.
 \end{proof}
 
 \begin{remark}
-	Note that a priori we cannot relax the $C^2$ assumption in the necessary condition of Theorem~\ref{Th:SufficientNecessaryConditions}, since there are $C^1$ functions that are neither convex nor concave in any interval (they can be constructed as a primitive of a Weierstrass function, whose graph is a non rectifiable curve with fractal dimension). Besides these ``exotic'' examples, there are also simple radially symmetric kernels $K$ that are not $C^1$ for which we do not know if the kernel inequality \eqref{Eq:KernelInequality} holds. For instance, given $0<\s<1$, if we consider the kernel
+	Note that a priori we cannot relax the $K\in C^2$ assumption in the necessary condition of Theorem~\ref{Th:SufficientNecessaryConditions}, since there are $C^1$ functions that are neither convex nor concave in any interval (they can be constructed as a primitive of a Weierstrass function, whose graph is a non rectifiable curve with fractal dimension). Besides these ``exotic'' examples, there are also simple radially symmetric kernels $K$ that are not $C^1$ for which we do not know if the kernel inequality \eqref{Eq:KernelInequality} holds. For instance, given $0<\s<1$, if we consider the kernel
 	$$ K(\tau) = \frac{1}{\tau^{2m+2\s}} \chi_{(0,1)}(\tau)+\frac{1}{10\tau^{2m+2\s}-9} \chi_{[1,+\infty)}(\tau), $$
 	it is easy to check that $K$ is continuous and decreasing but $K(\sqrt{\tau})$ is not convex in $(0,+\infty)$ even though it does not have any interval of concavity (see Figure~\ref{Fig:Grafica}).
 	\begin{figure}

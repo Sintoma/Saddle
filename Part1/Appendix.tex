@@ -35,7 +35,7 @@ In this appendix we present some auxiliary results concerning convex functions. 
 		A = \max\{A,\, B,\, C,\, D\} \quad \text{ and } \quad A + D \geq B + C.
 		$$
 		
-		In addition, still assuming $A = \max\{A,\, B,\, C,\, D\}$ and $A + D \geq B + C$, equality holds in \eqref{Eq:InequalityConvexFunctions} if and only if the sets $\{A,D\}$ and $\{C,B\}$ coincide.	
+		In addition, still assuming $A = \max\{A,\, B,\, C,\, D\}$ and $A + D \geq B + C$, equality holds in \eqref{Eq:InequalityConvexFunctions} if and only if the sets $\{A,D\}$ and $\{B,C\}$ coincide.	
 	\end{enumerate}
 \end{proposition}
 
@@ -365,7 +365,7 @@ $$
 |A| + |D| \geq |B| + |C|\,.
 \end{cases}
 $$
-\item If  the sets $\{|A|,|D|\}$ and $\{|C|,|B|\}$ coincide, then necessarily $\alpha = \beta = 0$.
+\item If  the sets $\{|A|,|D|\}$ and $\{|B|,|C|\}$ coincide, then necessarily $\alpha = \beta = 0$.
 \end{enumerate}
 
 \end{lemma}
@@ -486,9 +486,7 @@ Finally, if we assume $\alpha \neq 0$, then necessarily $\sign (B) \sign (C) \si
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The goal of this appendix is to take advantage of the doubly radial symmetry of the functions we
-are dealing with to write equation \eqref{Eq:NonlocalAllenCahn} in $(s,t)$ variables, passing from
-an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset \R^2$. Although we do not use these computations in this paper, we include them here for future reference, since we think they could be useful.
+The goal of this appendix is to take advantage of the doubly radial symmetry of the functions we are dealing with to write equation \eqref{Eq:NonlocalAllenCahn} in $(s,t)$ variables, passing from an equation in $\R^{2m}$ to an equation in $(0,+\infty)\times (0,+\infty)\subset \R^2$. Although we do not use these computations in this paper, we include them here to show the usefulness of having introduced the $\overline{K}$ kernel obtained after integration with respect to the Haar measure on $O(m)^2$. Moreover, the following expressions could be useful for future reference. In the case of the fractional Laplacian, the kernel that we obtain involves essentially an hypergeometric function which is the so-called Appell function $F_2$ (see \cite{Appell} for its definition).
 
 \begin{lemma}
 \label{Lemma:OperatorInSTVariables} Let $m \geq 1$, $\s\in(0,1)$, and let $w\in
@@ -603,7 +601,7 @@ and using spherical coordinates in each $\R^m$ we obtain
 \begin{align*}
 L_Ku(x) &= \int_{\R^{2m}} \big( u(x) - u(y)\big) K( |x-y|) \d y &\\
 &= \int_0^{+\infty}  \int_0^{+\infty} \sigma^{m-1} \tau^{m-1} \big(u(s,t) - u(\sigma, \tau)\big)  \\
-&\quad \quad \quad \quad  \bpar{\int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 } \Big) \d y_\sigma \d y_\tau } \d \sigma \d \tau
+&\quad \quad \quad \quad  \bpar{\int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K \Big( \sqrt{|sx_s - \sigma y_\sigma|^2 + |t x_t - \tau y_\tau|^2 } \Big) \d y_\sigma \d y_\tau } \d \sigma \d \tau .
 \end{align*}
 Now, we define the kernel
 \begin{equation}
@@ -639,21 +637,21 @@ J(s,t,\sigma, \tau) := \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{s^2+\si
 \end{equation*}
 At this point we have to distinguish the cases $m=1$ and $m\geq 2$. For the fist one, since
 $\Sph^{0} = \{-1,1\}$ we directly obtain \eqref{Eq:KernelSTVariables1}. For the second one,
-since the integrand only depends on $\omega_1$ and $\tilde\omega_1$, we proceed as follows
+since the integrand only depends on $\omega_1$ and $\tilde\omega_1$, defining $\rho(r) = \sqrt{1-r^2}$ we proceed as follows
 \begin{align*}
 \label{Eq:KernelSTVariablesProof4}
 J(s,t,\sigma, \tau) &= \int_{\Sph^{m-1}}  \int_{\Sph^{m-1}} K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega \d \tilde\omega \,\\
 &= \int_{-1}^1 \d \omega_1 \int_{\partial B_{\rho(\omega_1)}} \d \omega_2\cdot\cdot\cdot\d \omega_m \int_{-1}^1 \d \tilde\omega_1 \int_{\partial B_{\rho(\tilde\omega_1)}} \d \tilde\omega_2\cdot\cdot\cdot\d \tilde\omega_m  \\
 & \quad \quad \quad \quad \quad K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \, \\
 &= \int_{-1}^1 \int_{-1}^1  |\partial B_{\rho(\omega_1)}| |\partial B_{\rho(\tilde\omega_1)}|\,\\
-& \quad \quad \quad \quad \quad K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega_1 \d \tilde\omega_1.
+& \quad \quad \quad \quad \quad K\Big( \sqrt{s^2+\sigma^2- 2 s \sigma \omega_1 + t^2 + \tau^2 - 2t \tau\tilde\omega_1}\Big) \d \omega_1 \d \tilde\omega_1 .
 \end{align*}
-where $\rho(r) = \sqrt{1-r^2}$. Finally, we obtain \eqref{Eq:KernelSTVariables2} once we replace
+Finally, we obtain \eqref{Eq:KernelSTVariables2} once we replace
 $|\partial B_{r}|=c_m\,r^{m-2}$, where $c_m$ is the measure of the boundary of the ball of radius one in
 $\R^{m-1}$.
 \end{proof}
 
-If the operator $L_K$ is the fractional Laplacian, the previous expression of the kernel $J$ can be rewritten in terms of a hypergeometric function of two variables, the so-called Appell function $F_2$ (see \cite{Appell} for its definition). This expression does not simplify any of the arguments of this paper. Nevertheless, we think that it is worthy to point out the relation between $J$ and $F_2$, since the known properties of the last one could provide some information about the kernel $J$.
+If the operator $L_K$ is the fractional Laplacian, the previous expression of the kernel $J$ can be rewritten in terms of a hypergeometric function of two variables, the so-called Appell function $F_2$ (see \cite{Appell}). This expression does not simplify any of the arguments of this paper. Nevertheless, we think that it is worthy to point out the relation between $J$ and $F_2$, since the known properties of the last one could provide some information about the kernel $J$.
 
 \begin{lemma}
 \label{Lemma:Appell} Let $F_2$ be the Appell hypergeometric function defined in \cite{Appell}. If $L_K = (-\Delta)^\s$ and $m\geq 2$, then
