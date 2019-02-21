@@ -152,32 +152,21 @@ To conclude this subsection, we present two alternative expressions for the oper
 	
 	Let us show now \eqref{Eq:ZeroOrderTerm}. In the following arguments we will use the letters $C$ and $c$ to denote positive constants, depending only on $m, \s, \lambda$, and $\Lambda$, that may change its value in each inequality. 
 	
-	The upper bound in \eqref{Eq:ZeroOrderTerm} is the simplest one since we only need to use the ellipticity of the kernel and the inclusion $\ical \subset \{y\in\R^{2m}:|x-y|\geq \dist(x,\ccal)\}$ for every $x\in \ocal$. Indeed,
+	On the one hand, for the upper bound in \eqref{Eq:ZeroOrderTerm} we only need to use the ellipticity of the kernel and the inclusion $\ical \subset \{y\in\R^{2m}:|x-y|\geq \dist(x,\ccal)\}$ for every $x\in \ocal$. Indeed,
 	\begin{align*}
 	\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ocal} K(|x-y^\star|) \d y = \int_{\ical} K(|x-y|) \d y \leq \int_{|x-y|\geq \dist(x,\ccal)} K(|x-y|) \d y \\
 	&\leq C \int_{|x-y|\geq \dist(x,\ccal)} |x-y|^{-2m-2\s} \d y = C \int_{\dist(x,\ccal)}^\infty \rho^{-1-2s} \d \rho \\
 	&= C \dist(x,\ccal)^{-2s}\,.
 	\end{align*}
 
-	In order to prove the lower bound in \eqref{Eq:ZeroOrderTerm}, let us define $x_0 = x/\dist(x,\ccal)$. Note that $\dist (x_0, \ccal) = 1$. Then, we have
+	On the other hand, for the lower bound in \eqref{Eq:ZeroOrderTerm}, let be $\overline{x}\in \ccal$ such that $|x-\overline{x}|=\dist(x,\ccal)$. Then, given $y\in B_{\dist(x,\ccal)}(\overline{x})$, it is clear that $|x-y|\leq |x-\overline{x}|+|\overline{x}-y|\leq 2\dist(x,\ccal)$. Therefore, we have
 	\begin{align*}
-	\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ical} K(|x-y|) \d y \\
-	&\geq c \int_{\ical} |x-y|^{-2m-2\s} \d y = c \int_{\ical} |x_0\dist(x,\ccal)-y|^{-2m-2\s} \d y \\
-	&= c \,\dist(x,\ccal)^{-2s}\, \int_{\ical} |x_0-\tilde{y}|^{-2m-2\s} \d \tilde{y}\,.
+	\int_{\ocal} \overline{K}(x, y^\star) \d y &=  \int_{\ical} K(|x-y|) \d y \geq c \int_{\ical} |x-y|^{-2m-2\s} \d y \\
+	&\geq c \int_{B_{\dist(x,\ccal)}(\overline{x})\cap \ical} |x-y|^{-2m-2\s} \d y\\
+	&\geq c \, (2\dist(x,\ccal))^{-2m-2\s} |B_{\dist(x,\ccal)}(\overline{x})\cap \ical| = c \,\dist(x,\ccal)^{-2\s}.
 	\end{align*}
+	Here we have used a property of the Simons cone: $|B_R(z)\cap \ical|=1/2|B_R|$ for every $z\in \ccal$ (see Lemma 2.5 in \cite{Felipe-Sanz-Perela:SaddleFractional} for the proof).
 	
-	To conclude the proof, we claim that
-	$$ \int_{\ical} |x_0-y|^{-2m-2\s} \d y \geq c>0\quad \textrm{for every } x_0 \textrm{ such that } \dist(x_0,\ccal) = 1,$$
-	with a constant $c$ independent of $x_0$. To establish this claim we will use three facts. The first one is that, since $\dist(x_0,\ccal) = 1$, there exists a point $\overline{x_0}\in \ccal$ realizing this distance. Thus, we can easily deduce that $B_{3k+3}(\overline{x_0}) \setminus \overline{ B_{3k+2}(\overline{x_0})} \subset  B_{3k+4}(x_0)\setminus \overline{ B_{3k+1}(x_0)}$ for every $k\geq 0$. The second fact is the identity $\ical = \ical \cap B_1^c(x_0)$, that also follows from $\dist(x_0,\ccal) = 1$. Finally, the last fact is a property of the Simons cone: $|B_R(z) \cap \ical| = 1/2 |B_R|$ for every $z\in \ccal$ (see Lemma 2.5 in \cite{Felipe-Sanz-Perela:SaddleFractional} for the proof). Combining these three facts, we get
-	\begin{align*}
-	\int_{\ical} |x_0-y|^{-2m-2\s} \d y &= \sum_{k=0}^\infty \int_{I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)} |x_0-y|^{-2m-2\s} \d y\\
-	&\geq \sum_{k=0}^\infty \int_{I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)} (3k+4)^{-2m-2\s} \d y \\
-	&= \sum_{k=0}^\infty (3k+4)^{-2m-2\s} |I\cap \left( B_{3k+4}(x_0)\setminus B_{3k+1}(x_0)\right)|\\
-	&\geq \sum_{k=0}^\infty (3k+4)^{-2m-2\s} |I\cap \left( B_{3k+3}(\overline{x_0}) \setminus B_{3k+2}(\overline{x_0}) \right)|\\
-	&= c \sum_{k=0}^\infty (3k+4)^{-2m-2\s} \left\{(3k+3)^{2m} -(3k+2)^{2m}\right\}\\
-	&\geq c \sum_{k=0}^\infty (3k+4)^{-1-2\s} = c.
-	\end{align*}
-	\todo[inline]{Mejorar lo de arriba, más simple.}
 \end{proof}
 
 
