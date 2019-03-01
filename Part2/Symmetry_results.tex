@@ -1,16 +1,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Liouville type and symmetry results}
+\section{Symmetry and Liouville type results}
 \label{Sec:SymmetryResults}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 
-This section is devoted to prove the two symmetry results \ref{Th:LiouvilleSemilinearWholeSpace} and \ref{Th:SymmHalfSpace}. Both results will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. 
+This section is devoted to prove the Liouville type result of \ref{Th:LiouvilleSemilinearWholeSpace} and the one-dimensional symmetry result of \ref{Th:SymmHalfSpace}. Both of them will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. 
 
-\subsection{A symmetry result for positive solutions in the whole space}
+\subsection{A Liouville type result for positive solutions in the whole space}
 
-In the proof of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace} we will need two main ingredients, that we present next. The first one is a Harnack inequality for a solution to the semilinear problem \eqref{Eq:PositiveWholeSpace}. This inequality follows readily from the results of Cozzi in \cite{Cozzi-DeGiorgiClassesLong}, although the precise result that we need is not stated there. For the reader's convenience and for future reference, we present the result here and indicate how to deduce it from the results in \cite{Cozzi-DeGiorgiClassesLong}.
+In the proof of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace} we will need two main ingredients, that we present next. The first one is a Harnack inequality for solutions to the semilinear problem \eqref{Eq:PositiveWholeSpace}. This inequality follows readily from the results of Cozzi in \cite{Cozzi-DeGiorgiClassesLong}, although the precise result that we need is not stated there. For the reader's convenience and for future reference, we present the result here and indicate how to deduce it from the results in \cite{Cozzi-DeGiorgiClassesLong}.
 
 \begin{proposition}
 	\label{Prop:HarnackSemilinear}
@@ -18,7 +18,7 @@ In the proof of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace} we will need two 
 	$$
 	\sup_{B_R(x_0)} w \leq C  \inf_{B_R(x_0)} w, 
 	$$
-	with $C>0$  depending only on $n,\s,\lambda,\Lambda$ and $R$.
+	with $C>0$  depending only on $n,\s,\lambda,\Lambda$, and $R$.
 \end{proposition}
 
 \begin{proof}
@@ -41,11 +41,11 @@ The second ingredient that we need in the proof of Theorem~\ref{Th:LiouvilleSemi
 	v_0:=v(x,0) &\leq& 0 & \textrm{ in } \R^n\,,
 	\eeqc
 	\end{equation*}
-	with $c(x)$ a bounded function. Then,
+	with $c(x)$ a continuous and bounded function. Then,
 	$$ v(x,t) \leq 0 \,\,\,\,\,\text{ in } \,\,\, \R^n\times[0,+\infty). $$
 \end{proposition}
 
-This result can be deduced from the usual parabolic maximum principle in a bounded (in space and time) set with a rather simple argument. Since we have not found a specific reference where such result is stated, let us present its proof with full detail for the sake of clarity. First of all, we present the usual parabolic maximum principle in a bounded set. The proof for cylindrical sets can be found for instance in \cite{BarriosPeralSoriaValdinoci}. Although the argument is essentially the same, since it is short we include here the complete proof for the sake of completeness.
+This result can be deduced from the usual parabolic maximum principle in a bounded (in space and time) set with a rather simple argument. Since we have not found a specific reference where such result is stated, let us present its proof with full detail for the sake of clarity. First of all, we present the usual parabolic maximum principle in a bounded set in $\R^n \times (0,+\infty)$. The proof for cylindrical sets $\Omega \times (0,T)$ can be found for instance in \cite{BarriosPeralSoriaValdinoci}. Although the argument for general bounded sets is essentially the same,  we include here a short proof for the sake of completeness.
 
 \begin{lemma}
 \label{Lemma:ParabolicmaxPrpBdd}
@@ -65,10 +65,10 @@ By contradiction, for every $\varepsilon > 0$ assume that
 $$
 M:=\sup_{\R^n \times (0,T-\varepsilon)}v > 0
 $$
-By the initial conditions and since $v \leq 0 $ in $(\R^n \times (0,T))\setminus \Omega$, $v$  attains this positive value $M$ at a point $(x_0,t_0) \in \Omega$ with $t_0\leq T-\varepsilon$. If $t_0\in(0,T-\varepsilon)$, then $(x_0,t_0)$ is an interior global maximum (in $\R^n \times (0,T-\varepsilon)$) and it must satisfy $v_t(x_0,t_0)=0$ and $L_K v(x_0,t_0)>0$, which contradicts the equation. If $t_0 = T-\varepsilon$, then $v_t(x_0,t_0)\geq 0$ and $L_K v(x_0,t_0)>0$, which is also a contradiction with the equation. Thus, $v\leq 0$ in $\R^n\times [0,T-\varepsilon)$ and since this holds for $\varepsilon>0$ arbitrarily small, we deduce $v\leq 0$ in $\R^n\times [0,T)$, and by continuity in $\R^n\times [0,T]$.
+By the sign of the initial condition and since $v \leq 0 $ in $(\R^n \times (0,T))\setminus \Omega$, $v$  attains this positive value $M$ at a point $(x_0,t_0) \in \Omega$ with $t_0\leq T-\varepsilon$. If $t_0\in(0,T-\varepsilon)$, then $(x_0,t_0)$ is an interior global maximum (in $\R^n \times (0,T-\varepsilon)$) and it must satisfy $v_t(x_0,t_0)=0$ and $L_K v(x_0,t_0)>0$, which contradicts the equation. If $t_0 = T-\varepsilon$, then $v_t(x_0,t_0)\geq 0$ and $L_K v(x_0,t_0)>0$, which is also a contradiction with the equation. Thus, $v\leq 0$ in $\R^n\times [0,T-\varepsilon)$ and since this holds for $\varepsilon>0$ arbitrarily small, we deduce $v\leq 0$ in $\R^n\times [0,T)$, and by continuity in $\R^n\times [0,T]$.
 \end{proof}
 
-To establish Proposition~\ref{Prop:ParaMaxPrp} from Lemma~\ref{Lemma:ParabolicmaxPrpBdd}, we need to introduce an auxiliary function enjoying certain properties (see Lemma~\ref{Lemma:SolBallToZero} below). Before presenting such function, we need the following result.
+To establish Proposition~\ref{Prop:ParaMaxPrp} from Lemma~\ref{Lemma:ParabolicmaxPrpBdd}, we need to introduce an auxiliary function enjoying certain properties (see Lemma~\ref{Lemma:SolBallToZero} below). Before presenting it, we need the following result.
 
 \begin{lemma}
 \label{Lemma:NoBddSolL=1}
