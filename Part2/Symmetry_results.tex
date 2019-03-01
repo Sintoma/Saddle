@@ -1,16 +1,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Symmetry results}
+\section{Liouville type and symmetry results}
 \label{Sec:SymmetryResults}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 
-This section is devoted to prove the two symmetry results \ref{Th:SymmetryWholeSpace} and \ref{Th:SymmHalfSpace}. Both results will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. 
+This section is devoted to prove the two symmetry results \ref{Th:LiouvilleSemilinearWholeSpace} and \ref{Th:SymmHalfSpace}. Both results will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. 
 
 \subsection{A symmetry result for positive solutions in the whole space}
 
-In the proof of Theorem~\ref{Th:SymmetryWholeSpace} we will need two main ingredients, that we present next. The first one is a Harnack inequality for a solution to the semilinear problem \eqref{Eq:PositiveWholeSpace}. This inequality follows readily from the results of Cozzi in \cite{Cozzi-DeGiorgiClassesLong}, although the precise result that we need is not stated there. For the reader's convenience and for future reference, we present the result here and indicate how to deduce it from the results in \cite{Cozzi-DeGiorgiClassesLong}.
+In the proof of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace} we will need two main ingredients, that we present next. The first one is a Harnack inequality for a solution to the semilinear problem \eqref{Eq:PositiveWholeSpace}. This inequality follows readily from the results of Cozzi in \cite{Cozzi-DeGiorgiClassesLong}, although the precise result that we need is not stated there. For the reader's convenience and for future reference, we present the result here and indicate how to deduce it from the results in \cite{Cozzi-DeGiorgiClassesLong}.
 
 \begin{proposition}
 	\label{Prop:HarnackSemilinear}
@@ -30,7 +30,7 @@ In the proof of Theorem~\ref{Th:SymmetryWholeSpace} we will need two main ingred
 \end{proof}
 
 
-The second ingredient that we need in the proof of Theorem~\ref{Th:SymmetryWholeSpace} is the following parabolic maximum principle in the unbounded set $\R^n \times (0,+\infty)$. 
+The second ingredient that we need in the proof of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace} is the following parabolic maximum principle in the unbounded set $\R^n \times (0,+\infty)$. 
 
 \begin{proposition}
 	\label{Prop:ParaMaxPrp}
@@ -166,9 +166,9 @@ Letting $R \to +\infty$ and using that $\psi_R(x_0) \to 0$ and $M_R \to +\infty$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-By using the Harnack inequality and the parabolic maximum principle we can now establish Theorem~\ref{Th:SymmetryWholeSpace}. The proof follows the ideas of Berestycki, Hamel, and Nadirashvili from Theorem 2.2. in \cite{BerestyckiHamelNadi} but adapted to the whole space and with an integro-differential operator.
+By using the Harnack inequality and the parabolic maximum principle we can now establish Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. The proof follows the ideas of Berestycki, Hamel, and Nadirashvili from Theorem 2.2. in \cite{BerestyckiHamelNadi} but adapted to the whole space and with an integro-differential operator.
 
-\begin{proof}[Proof of Theorem~\ref{Th:SymmetryWholeSpace}]
+\begin{proof}[Proof of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}]
 
 
 Assume $v\not\equiv 0$. Then, by the strong maximum principle $v>0$. Our goal is to show that $v\equiv 1$, and this will be accomplished in two steps.
@@ -469,7 +469,7 @@ Then, $v$ depends only on $x_n$ and is increasing in that direction.
 \end{proposition}
 
 \begin{proof}
-It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual,   to define $ v^t(x) := v(x+\nu t) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^t(x)-v(x)\geq 0$ for all $t\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the symmetry result of Theorem~\ref{Th:SymmetryWholeSpace}. Therefore, we do not include here the details.
+It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual,   to define $ v^t(x) := v(x+\nu t) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^t(x)-v(x)\geq 0$ for all $t\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the symmetry result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. Therefore, we do not include here the details.
 \end{proof}
 
 
@@ -499,14 +499,14 @@ L_K v_\infty &=& f(v_\infty)   &\textrm{ in } \,\R^n,\\
 v_\infty &\geq& 0   &\textrm{ in } \,\R^n.
 \eeqc
 \end{equation}
-By Theorem \ref{Th:SymmetryWholeSpace}, either $v_\infty\equiv 0$ or $v_\infty \equiv 1$. But, by construction,
+By Theorem \ref{Th:LiouvilleSemilinearWholeSpace}, either $v_\infty\equiv 0$ or $v_\infty \equiv 1$. But, by construction,
 $$ v_\infty(x_H,0) = \lim_{k\to + \infty} v_k(x_H,0) = \lim_{k\to + \infty} v(x_H,x_n^k) = \overline{v}(x_H) > 0, $$
 and therefore the only possibility is
 $$ \lim_{x_n\to \infty} v(x_H,x_n) = 1 \quad \text{ for all } \ x_H\in\R^{n-1}. $$
 
 \textbf{Step 2:} The limit is uniform in $x_H$.
 
-Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_H^k,x_n^k)$ with $x_n^k\to +\infty$ such that $v(x_H^k,x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x_H,x_n) = v(x_H+x_H^k,x_n+x_n^k)$ converge uniformly on compact sets to a function $\tilde{v}_\infty$ that solves also \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:SymmetryWholeSpace}, either $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
+Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_H^k,x_n^k)$ with $x_n^k\to +\infty$ such that $v(x_H^k,x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x_H,x_n) = v(x_H+x_H^k,x_n+x_n^k)$ converge uniformly on compact sets to a function $\tilde{v}_\infty$ that solves also \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:LiouvilleSemilinearWholeSpace}, either $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
 $$ 
 \tilde{v}_\infty(0,0) = \lim_{k\to +\infty} \tilde{v}_k(0,0) = \lim_{k\to +\infty} v(x_H^k,x_n^k) = 1-\varepsilon, 
 $$

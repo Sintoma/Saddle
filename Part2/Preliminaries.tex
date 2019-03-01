@@ -34,7 +34,7 @@ We start with a result on the interior regularity for linear equations.
 \end{proposition}
 
 
-Throughout the paper we consider saddle solutions $u$ to \eqref{Eq:NonlocalAllenCahn} that satisfy $|u|\leq 1$ in $\R^n$. Hence, by applying \eqref{Eq:C2sEstimate} we find that for any $x_0\in \R^n$,
+Throughout the paper we consider $u$ to be a saddle solution to \eqref{Eq:NonlocalAllenCahn} that satisfies $|u|\leq 1$ in $\R^n$. Hence, by applying \eqref{Eq:C2sEstimate} we find that for any $x_0\in \R^n$,
 \begin{align*}
 \norm{u}_{C^{2\s} (B_{1/2} (x_0))} &\leq C\bpar{\norm{f(u)}_{L^\infty (B_1(x_0))} + \norm{u}_{L^\infty  (\R^n)} } \\
 &\leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }.
@@ -43,47 +43,43 @@ Note that the estimate is independent of the point $x_0$, and thus since the equ
 $$
 \norm{u}_{C^{2\s}(\R^n)} \leq C\bpar{1 + \norm{f}_{L^\infty ([-1,1])} }.
 $$
-Then, we use estimate \eqref{Eq:Calpha->Calpha+2sEstimate} repeatedly and the same kind of arguments wield that, if $f\in C^{k}([-1,1])$, then $u\in C^{\alpha}(\R^n)$ for some $\alpha > k+ 2 \s$. Moreover, the following estimate holds:
+Then, we use estimate \eqref{Eq:Calpha->Calpha+2sEstimate} repeatedly and the same kind of arguments yield that, if $f\in C^{k}([-1,1])$, then $u\in C^{\alpha}(\R^n)$ for all $\alpha < k+ 2 \s$. Moreover, the following estimate holds:
 $$
 \norm{u}_{C^{\alpha}(\R^n)} \leq C\,,
 $$
 for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, $k$, and $\norm{f}_{C^k([-1,1])}$.
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Functional setting}
-\label{Subsec:Functional setting}
+\subsection{A remark on stability}
+\label{Subsec:RemarkStability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+Here we prove that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a set $\Omega\subset \R^n$, then $w$ is stable, that is, \eqref{Eq:StablityCondition} holds. The proof of this is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
 
-In this section we define the functional spaces that we are going to consider in some parts of this paper. These were also the spaces used in the previous article \cite{FelipeSanz-Perela:IntegroDifferentialI}, and we refer the reader to that work for more details.
-
-Given a set $\Omega \subset \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
+On the one hand, note that by \eqref{Eq:PropertyConcavityf}, we have that $f'(w)w<f(w)$ in $\Omega$, since $w$ is positive in $\Omega$. On the other hand, the following holds for all functions $\varphi$ and $\xi$, with $\varphi>0$:
+\begin{equation}
+\label{Eq:IdentityStability}
+\big (\varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
+\end{equation}
+Indeed, developing the squares and the products, this last inequality is equivalent to
 $$
-\H^K(\Omega) := \setcond{w \in L^2(\Omega)}{[w]^2_{\H^K(\Omega)} < + \infty},
+2 \xi(x) \xi(y) \leq \dfrac{\varphi(x)}{\varphi(y)} \xi^2(y) +  \dfrac{\varphi(y)}{\varphi(x)} \xi^2 (x)\,,
 $$
-where
+which in turn is equivalent to
 $$
-[w]^2_{\H^K(\Omega)} := \dfrac{1}{2}\int\int_{\R^{2n} \setminus (\R^n\setminus\Omega)^2} |w(x) - w(y)|^2 K(x-y) \d x \d y\,.
+\bpar{\xi (x)\sqrt{\dfrac{\varphi(y)}{\varphi(x)}} - \xi(y) \sqrt{\dfrac{\varphi(x)}{\varphi(y)} } }^2 \geq 0\,.
 $$
-We also define
+Using these two facts, for every $\xi\in C^\infty_0(\Omega)$ we have
 \begin{align*}
-\H^K_0(\Omega) &:= \setcond{w \in \H^K(\Omega)}{ w = 0 \quad \textrm{a.e. in } \R^n \setminus \Omega} \\
-&\ = \setcond{w \in \H^K(\R^n)}{ w = 0 \quad \textrm{a.e. in } \R^n \setminus \Omega}.
+\int_\Omega f'(w) \xi^2 \d x & \leq \int_\Omega  \dfrac{\xi^2}{w} f(w) \d x = \int_\Omega  \dfrac{\xi^2}{w} L_Kw \d x \\ 
+&= \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} \big ( w(x) - w(y) \big) \bpar{\dfrac{\xi^2(x)}{w(x)} - \dfrac{\xi^2(y)}{w(y)} } K(x - y) \d x \d y
+\\ 
+&\leq \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y\,.
 \end{align*}
-
-Assume that $\Omega \subset \R^{2m}$ is a set of double revolution. Then, we define
-$$
-\widetilde{\H}^K(\Omega) := \setcond{w \in \H^K(\Omega)}{w \textrm{ is doubly radial a.e.}}.
-$$
-and
-$$
-\widetilde{\H}^K_0(\Omega) := \setcond{w \in \H^K_0(\Omega)}{w \textrm{ is doubly radial a.e.}}.
-$$
-We will add the subscript `odd' and `even' to these spaces to consider only functions that are odd (respectively even) with respect to the Simons cone.
-
-Recall that when $K$ satisfies \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \H^\s_0 (\Omega)$, which is the space associated to the kernel of the fractional Laplacian, $K(y) = c_{n,\s}|y|^{-n-2\s}$. Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, the usual fractional Sobolev space (see \cite{HitchhikerGuide,CozziPassalacqua}). 
+Thus, $w$ is stable in $\Omega$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

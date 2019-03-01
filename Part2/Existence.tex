@@ -71,7 +71,25 @@ In this section we give a proof of Theorem~\ref{Th:Existence} based on the maxim
 	_k$ is doubly radial and odd with respect to $\ccal$. Finally, by Arzelà-Ascoli theorem and the compact embedding of H\"older spaces we see that, up to a subsequence, $v_k$ converges uniformly on compacts in $C^{2\s+\varepsilon}$ norm to the desired solution.
 \end{proof}
 
-In order to construct a positive subsolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next.
+In order to construct a positive subsolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next. This eigenfunction is obtained though a minimization of the corresponding Rayleigh quotient in the appropriate space. Before presenting our result, let us recall some functional spaces that we are going to use next. 
+
+Given a set $\Omega \subset \R^{2m}$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
+$$
+\H^K_0(\Omega) := \setcond{w \in L^2(\Omega)}{w = 0 \quad \textrm{a.e. in } \R^{2m} \setminus \Omega \quad \textrm{ and } [w]^2_{\H^K(\R^{2m})} < + \infty},
+$$
+where
+\begin{equation}
+	\label{Eq:SeminormHK}
+[w]^2_{\H^K(\R^{2m})} := \dfrac{1}{2}\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 K(x-y) \d x \d y\,.
+\end{equation}
+Recall that when $K$ satisfies the ellipticity assumption \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \H^\s_0 (\Omega)$, which is the space associated to the kernel of the fractional Laplacian, $K(y) = c_{n,\s}|y|^{-n-2\s}$. We also define
+$$
+\widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega) := \setcond{w \in \H^K_0(\Omega)}{w \textrm{ is doubly radial a.e. and odd with respect to } \ccal}.
+$$
+Recall that when $K$ is radially symmetric and $w$ is doubly radial, we can replace the kernel $K(x-y)$ in the definition \eqref{Eq:SeminormHK} by the kernel $\overline{K}(x,y)$. This is readily deduced after a change of variables and taking the mean among all $R\in O(m)^2$ (see the details in Secton~3 of \cite{FelipeSanz-Perela:IntegroDifferentialI}).
+
+
+
 
 \begin{lemma}
 	\label{Lemma:FirstOddEigenfunction}
@@ -153,31 +171,5 @@ With these ingredients, we can proceed with the proof of Theorem~\ref{Th:Existen
 The fact of being $u$ positive in $\ocal$ yields that $u$ is stable in this set, as explained in the following remark. 
 
 
-\begin{remark}
-	\label{Remark:Stability}
-	Note that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a set $\Omega\subset \R^n$, then $w$ is stable, that is, \eqref{Eq:StablityCondition} holds. The proof of this is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
-	
-	On the one hand, note that by \eqref{Eq:PropertyConcavityf}, we have that $f'(w)w<f(w)$ in $\Omega$, since $w$ is positive in $\Omega$. On the other hand, the following holds for all functions $\varphi$ and $\xi$, with $\varphi>0$:
-	\begin{equation}
-	\label{Eq:IdentityStability}
-	\big (\varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
-	\end{equation}
-	Indeed, developing the squares and the products, this last inequality is equivalent to
-	$$
-	2 \xi(x) \xi(y) \leq \dfrac{\varphi(x)}{\varphi(y)} \xi^2(y) +  \dfrac{\varphi(y)}{\varphi(x)} \xi^2 (x)\,,
-	$$
-	which in turn is equivalent to
-	$$
-	\bpar{\xi (x)\sqrt{\dfrac{\varphi(y)}{\varphi(x)}} - \xi(y) \sqrt{\dfrac{\varphi(x)}{\varphi(y)} } }^2 \geq 0\,.
-	$$
-	Using these two facts, for every $\xi\in C^\infty_0(\Omega)$ we have
-	\begin{align*}
-	\int_\Omega f'(w) \xi^2 \d x & \leq \int_\Omega  \dfrac{\xi^2}{w} f(w) \d x = \int_\Omega  \dfrac{\xi^2}{w} L_Kw \d x \\ 
-	&= \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} \big ( w(x) - w(y) \big) \bpar{\dfrac{\xi^2(x)}{w(x)} - \dfrac{\xi^2(y)}{w(y)} } K(x - y) \d x \d y
-	\\ 
-	&\leq \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y\,.
-	\end{align*}
-	Thus, $w$ is stable in $\Omega$.	
-\end{remark}
 
 
