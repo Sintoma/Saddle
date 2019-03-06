@@ -3,13 +3,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:MaximumPrinciple}
 
-In this section we show that the linearized operator $L_K  -f'(u)$ satisfies the maximum principle in $\ocal$. This result combined with the asymptotic result of Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution} yields the uniqueness of the saddle-shaped solution.
+In this section we show that the linearized operator $L_K  -f'(u)$ satisfies the maximum principle in $\ocal$. This combined with the asymptotic result of Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution} yields the uniqueness of the saddle-shaped solution.
 
 The maximum principle we establish is the following.
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleLinearized}
-	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel such that $L_K\in \lcal_0(2m,\s)$ and satisfying the positivity condition \eqref{Eq:KernelInequality}. Let $v\in C^\alpha(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
+	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m,\s)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}, and let $v\in C^\s(\overline{\Omega})\cap C^\alpha(\Omega)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
 	$$
 	\beqc{\PDEsystem}
 	L_K v - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
@@ -19,6 +19,7 @@ The maximum principle we establish is the following.
 	\eeqc
 	$$
 	with $c\leq 0$ in $\Omega$.
+	
 	Then, $v \leq 0$ in $\Omega$.
 \end{proposition}
 
@@ -28,31 +29,33 @@ In order to prove this result we need a maximum principle in ``narrow'' sets, st
 	\label{Prop:MaximumPrincipleNarrowDomainsOdd}
 	Let $\varepsilon>0$ and let
 	$$
-	H \subset \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
+	\ncal_\varepsilon \subset \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
 	$$ 
 	be an open set (not necessarily bounded).  
-	Let $K$ be a radially symmetric kernel such that $L_K\in \lcal_0(2m,\s)$ and satisfying the positivity condition \eqref{Eq:KernelInequality}. Let $v\in C^\alpha(\Omega)\cap L^\infty(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
+	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m,\s)$. Let $v\in C^\s(\overline{\ncal_\varepsilon})\cap C^\alpha(\ncal_\varepsilon)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
 	\begin{equation}
 	\label{Eq:AssumptionsMaxPNarrow}
 	\beqc{\PDEsystem}
-	L_K v + c(x)v&\leq & 0 &\textrm{ in } H\,,\\
-	v &\leq & 0 &\textrm{ in } \ocal \setminus H\,,\\
+	L_K v + c(x)v&\leq & 0 &\textrm{ in } \ncal_\varepsilon\,,\\
+	v &\leq & 0 &\textrm{ in } \ocal \setminus \ncal_\varepsilon\,,\\
 	- v(x^\star) & = & v(x) &\textrm{ in } \R^{2m},\\
-	\ds \limsup_{x\in H, \ |x|\to \infty} v(x) &\leq & 0\,.
+	\ds \limsup_{x\in \ncal_\varepsilon, \ |x|\to \infty} v(x) &\leq & 0\,,
 	\eeqc
 	\end{equation}
-	Under these assumptions there exists $\overline{\varepsilon}>0$ depending only on $\lambda, m, \s$ and $||c_-||_{L^\infty}$ such that, if $\varepsilon<\overline{\varepsilon}$, then $v \leq 0$ in $H$. 
+	with $c$ a function bounded by below.
+	
+	Under these assumptions there exists $\overline{\varepsilon}>0$ depending only on $\lambda, m, \s$ and $||c_-||_{L^\infty}$ such that, if $\varepsilon<\overline{\varepsilon}$, then $v \leq 0$ in $\ncal_\varepsilon$. 
 \end{proposition}
 
 \begin{proof}
 	Assume, by contradiction, that
 	$$
-	M := \sup_H v > 0\,.
+	M := \sup_{\ncal_\varepsilon} v > 0\,.
 	$$
-	Under the assumptions \eqref{Eq:AssumptionsMaxPNarrow}, $M$ must be attained at an interior point $x_0 \in H$. Then,
+	Under the assumptions \eqref{Eq:AssumptionsMaxPNarrow}, $M$ must be attained at an interior point $x_0 \in \ncal_\varepsilon$. Then,
 	\begin{equation}
 	\label{Eq:InequalitiesMaxPNarrowProof}
-	0 \geq L_K  v(x_0) + c(x_0)v(x_0) \geq L_K  v(x_0) - \norm{c_-}_{L^\infty(H)}M\,.
+	0 \geq L_K  v(x_0) + c(x_0)v(x_0) \geq L_K  v(x_0) - \norm{c_-}_{L^\infty(\ncal_\varepsilon)}M\,.
 	\end{equation} 
 	Now, we compute $L_K  v(x_0)$. Since $v$ is doubly radial and odd with respect to the Simons cone, we can use the expression \eqref{Eq:OperatorOddF} to write
 	\begin{align*}
@@ -61,14 +64,14 @@ In order to prove this result we need a maximum principle in ``narrow'' sets, st
 	\end{align*}
     where the inequality follows from being $M$ the supremum of $v$ in $\ocal$ and the kernel inequality \eqref{Eq:KernelInequality}. Combining this last inequality with \eqref{Eq:InequalitiesMaxPNarrowProof}, we obtain
 	$$
-	0 \geq L_K  v(x_0) + c(x_0)v(x_0)  \geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
+	0 \geq L_K  v(x_0) + c(x_0)v(x_0)  \geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(\ncal_\varepsilon)}
 	\right\}\,.
 	$$
 	
 	Finally, if we use the lower bound of the integral term from \eqref{Eq:ZeroOrderTerm} and the fact that $\dist(x_0,\ccal) \leq \varepsilon/\sqrt{2}$, we get
 	\begin{align*}
-	0 &\geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(H)}
-	\right\} \geq M \left(\frac{1}{C}\dist(x_0,\ccal)^{-2\s}-\norm{c_-}_{L^\infty(H)}\right) \\ &\geq M \left(\frac{1}{C}\varepsilon^{-2\s}-\norm{c_-}_{L^\infty(H)}\right).
+	0 &\geq M \left\{ 2 \int_{\ocal} \overline{K}(x_0,y^\star)\d y - \norm{c_-}_{L^\infty(\ncal_\varepsilon)}
+	\right\} \geq M \left(\frac{1}{C}\dist(x_0,\ccal)^{-2\s}-\norm{c_-}_{L^\infty(\ncal_\varepsilon)}\right) \\ &\geq M \left(\frac{1}{C}\varepsilon^{-2\s}-\norm{c_-}_{L^\infty(\ncal_\varepsilon)}\right).
 	\end{align*}
 	Therefore, for $\varepsilon$ small enough, we arrive at a contradiction that follows from assuming that the supremum is positive.
 \end{proof}
@@ -78,7 +81,7 @@ In order to prove this result we need a maximum principle in ``narrow'' sets, st
 \end{remark}
 
 
-Once this maximum principle in ``narrow'' sets is available, we can now proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}.
+Once this maximum principle in ``narrow'' sets is available, we can proceed with the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}.
 
 \begin{proof}[Proof of Proposition~\ref{Prop:MaximumPrincipleLinearized}]
     
@@ -88,32 +91,41 @@ Once this maximum principle in ``narrow'' sets is available, we can now proceed 
 	$$
 	\mathscr{L} w := L_K w - f'(u)w - cw\,.
 	$$
-	The crucial point in this proof is the fact that $u$ is a positive supersolution of the operator $\mathscr{L}$. Indeed, by \eqref{Eq:PropertyConcavityf} we get
+	A crucial point in this proof is that $u$ is a positive supersolution of the operator $\mathscr{L}$. Indeed, since $f$ is strictly concave in $(0,1)$ and $f(0)=0$, then $f'(\tau)\tau<f(\tau)$ for all $\tau>0$, and thus 
 	\begin{equation}
 	\label{Eq:uSupersolLinearized}
 	\mathscr{L} u = L_K u - f'(u)u - cu \geq f(u) - f'(u)u > 0 \quad \textrm{ in } \Omega \subset \ocal\,,
 	\end{equation}
 	where in the first inequality we have used that $u>0$ in $\ocal$ and that $c\leq 0$.
 	
+	
+	
+	
+	By contradiction, assume that there exists $x_0\in \Omega$ such that $v(x_0)> 0$. We will show next that, if we assume this, we deduce $v\leq 0$ in $\Omega$, arriving at a contradiction.
+	
+	
+	
+	
 	Let $\varepsilon > 0$ be such that the maximum principle of Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} is valid and define the following sets:
 	$$
 	\Omega_\varepsilon := \Omega \cap \{|x'| > |x''| + \varepsilon\}\quad \textrm{ and } \quad 
 	\ncal_\varepsilon := \Omega \cap \{|x''| < |x'| < |x''| + \varepsilon\}\,.
 	$$
+	Define also, for $\tau \geq 0$, 
+	$$
+	w := v - \tau u.
+	$$
 	
-	
-    
-    By contradiction, assume that there exists $x_0\in \Omega$ such that $v(x_0)> 0$.
-	Set $w := v - \tau u$. By the asymptotic result, we have 
+	First, we claim that $w\leq 0$ in $\Omega$ if $\tau$ is big enough. To see this, note first that by the asymptotic behavior of the saddle-shaped solution, we have 
 	\begin{equation}
 		\label{Eq:u>delta}
 		u \geq \delta > 0 \quad \textrm{ in } \overline{\Omega}_\varepsilon\,,
 	\end{equation}
-	for some $\delta >0$ (see Remark~\ref{Remark:u>delta}). Therefore,  $w < 0$ in $\overline{\Omega}_\varepsilon$ if $\tau$ is big enough. Moreover, since $v\leq 0$ in $\ocal\setminus\Omega$, we have 
+	for some $\delta >0$ (see Remark~\ref{Remark:u>delta}). Therefore, $w < 0$ in $\overline{\Omega}_\varepsilon$ if $\tau$ is big enough. Moreover, since $v\leq 0$ in $\ocal\setminus\Omega$, we have 
 	$$
 	w \leq 0 \quad \textrm{ in } \ocal \setminus \ncal_\varepsilon\,.
 	$$
-	Furthermore, we also have
+	Furthermore, it also holds
 	$$
 	\limsup_{x\in \ncal_\varepsilon, \ |x|\to \infty} w(x) \leq 0
 	$$
@@ -121,7 +133,7 @@ Once this maximum principle in ``narrow'' sets is available, we can now proceed 
 	$$
 	\mathscr{L} w = \mathscr{L} v - \tau \mathscr{L} u \leq 0 \textrm{ in } \ncal_\varepsilon\,.
 	$$
-	Thus, since $w$ is odd with respect to $\ccal$, we can apply Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} with $H = \ncal_\varepsilon$ to deduce that
+	Thus, since $w$ is odd with respect to $\ccal$, we can apply Proposition~\ref{Prop:MaximumPrincipleNarrowDomainsOdd} in $\ncal_\varepsilon$ to deduce that
 	$$
 	w \leq 0 \quad \textrm{ in } \Omega\,,
 	$$
@@ -131,15 +143,15 @@ Once this maximum principle in ``narrow'' sets is available, we can now proceed 
 	$$
 	\tau_0:= \inf \setcond{\tau > 0}{v - \tau u \leq 0 \ \textrm{ in } \Omega}.
 	$$
-	By the previous reasoning, $\tau_0$ is well defined. Clearly, $v - \tau_0 u \leq 0 $ in $\Omega$. In addition, since $v(x_0)>0$, we have $-\tau_0 u(x_0) < v(x_0) - \tau_0 u (x_0) \leq 0$ and therefore, since $u(x_0)>0$, we deduce that  $\tau_0 > 0$.
+	By the previous claim, $\tau_0$ is well defined. Moreover, it is easy to see that $\tau_0 > 0$. Indeed, it is obvious $v - \tau_0 u \leq 0 $ in $\Omega$ and thus, since $v(x_0)>0$, we have $-\tau_0 u(x_0) < v(x_0) - \tau_0 u (x_0) \leq 0$. Using that $u(x_0)>0$, it follows that  $\tau_0 > 0$.
 	
-	We claim that $v - \tau_0 u \not \equiv 0$. Indeed, if $v - \tau_0 u \equiv 0$ then $v = \tau_0 u$ and thus, by using \eqref{Eq:uSupersolLinearized}, the equation for $v$ and the fact that $\tau_0 > 0$, we get 
+	We claim that $v - \tau_0 u \not \equiv 0$. Indeed, if $v - \tau_0 u \equiv 0$ then $v = \tau_0 u$ and thus, by using \eqref{Eq:uSupersolLinearized}, the equation for $v$, and the fact that $\tau_0 > 0$, we get 
 	$$
 	0 \geq \mathscr{L} v(x_0) = \tau_0 \mathscr{L} u(x_0) > 0\,, 
 	$$
 	which is a contradiction.
 	
-	Then, since $v - \tau_0 u \not \equiv 0$, the strong maximum principle (Proposition~\ref{Prop:StrongMaximumPrincipleForOddFunctions}) yields
+	Then, since $v - \tau_0 u \not \equiv 0$, the strong maximum principle for odd functions (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}) yields
 	$$
 	v - \tau_0 u < 0 \quad \textrm{ in }\Omega\,.
 	$$
@@ -147,19 +159,21 @@ Once this maximum principle in ``narrow'' sets is available, we can now proceed 
 	$$
 	\tilde{w} := v - (\tau_0 - \eta) u < 0 \quad \textrm{ in }\overline{\Omega}_\varepsilon\,.
 	$$
-	Using again the maximum principle in ``narrow'' sets with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that 
+	Note that here we used crucially \eqref{Eq:u>delta}, and this is the reason for which we needed to introduce the sets $\Omega_\varepsilon$ and $\ncal_\varepsilon$. Using again the maximum principle in ``narrow'' sets with $\tilde{w}$ in $\ncal_\varepsilon$, we deduce that 
 	$$
 	v - (\tau_0 - \eta) u \leq 0 \quad \textrm{ in }\Omega\,,
 	$$
-	and this contradicts the definition of $\tau_0$. Hence, $v\leq 0$ in $\Omega$.
+	and this contradicts the definition of $\tau_0$. Hence, $v\leq 0$ in $\Omega$ and, as we said, this contradicts our initial assumption on the existence of a point $x_0$ where $v(x_0)>0$.
 \end{proof}
 
+
+Note that if in the previous result we assume that $\partial\Omega \cap \ccal$ is empty, then $\Omega$ is at a positive distance to the cone and the lower bound on $u$ in \eqref{Eq:u>delta} holds in $\Omega$. In this case no maximum principle in ``narrow'' sets is required in the previous argument. Instead, if we want to consider sets with $\partial\Omega \cap \ccal \neq \varnothing$, we need to introduce the set $\Omega_\varepsilon$ to have the uniform lower bound \eqref{Eq:u>delta} and be able to carry out the proof.
 
 The same argument used in the previous proof can be used to establish the remaining statement of Lemma~\ref{Lemma:SecondDerivativeLayer}.
 
 \begin{proof}[Proof of point (ii) of Lemma~\ref{Lemma:SecondDerivativeLayer}]
 	
-	Let $v = \ddot{u}_0$. First we show that $v\leq 0$ in $(0,+\infty)$. To see this, note that since $f$ is concave and by point (i) of Lemma~\ref{Lemma:SecondDerivativeLayer}, it follows that
+	Let $v = \ddot{u}_0$. First we show that $v\leq 0$ in $(0,+\infty)$. To see this, note that since $f$ is concave and by point (i) of Lemma~\ref{Lemma:SecondDerivativeLayer}, we have that
 	$$
 	\beqc{\PDEsystem}
 	L_{K_1} v - f'(u_0)v &\leq &0 & \text{ in } (0,+\infty)\,.\\
@@ -173,7 +187,7 @@ The same argument used in the previous proof can be used to establish the remain
 	$$
 	All the arguments are the same, using the maximum principle of Proposition~\ref{Prop:MaxPrpNarrowOdd} in the set $(0,\varepsilon)$, and yield that $v\leq 0$ in $(0,+\infty)$.
 	
-	The fact that the inequality is strict follows from the strong maximum principle for odd functions in $\R$, as follows. Suppose by contradiction that there exists a point $x_0\in (0,+\infty)$ such that $v(x_0) = 0$. Then,
+	The fact that $\ddot{u}_0 = v < 0$ in $(0,+\infty)$ can be readily deduced from the strong maximum principle for odd functions in $\R$, as follows. Suppose by contradiction that there exists a point $x_0\in (0,+\infty)$ such that $v(x_0) = 0$. Then,
 	\begin{align*}
 		0 &\geq L_{K_1} v (x_0) = - \int_{-\infty}^{+\infty}	v(y) K_1(x_0 - y) \d y \\
 		&= - \int_{-\infty}^{+\infty} v(y) \{ K_1(x_0 - y) - K_1(x_0 + y)\} \d y > 0\,,
@@ -199,7 +213,7 @@ With these ingredients available, we can finally establish the uniqueness of the
 	$$
 	\limsup_{x\in \ocal, \ |x|\to \infty} v(x) = 0\,.
 	$$
-	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleLinearized}), we are lead to $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
+	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleLinearized}), it follows that $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
 \end{proof}
 
 
