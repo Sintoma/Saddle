@@ -13,7 +13,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
-	Let $L_K $ be a symmetric and translation invariant integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel $K:\R^n \to \R$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Define the one dimensional kernel $K_1$ by
+	Let $L_K $ be a symmetric and translation invariant integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel $K:\R^n\setminus \{0\} \to (0,+\infty) $ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Define the one dimensional kernel $K_1 : \R \setminus \{0\} \to (0,+\infty) $ by
 	\begin{equation}
 	\label{Eq:OneDimKernel}
 	K_1(t) := \int_{\R^{n-1}} K\left(\theta,t\right) \d \theta = |t|^{n-1} \int_{\R^{n-1}} K\left(t\sigma,t\right) \d \sigma.
@@ -21,23 +21,23 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	\begin{enumerate}[label=(\roman{*})]
 		\item Let $v:\R\to\R$ and consider $w:\R^n\to\R$ defined by $w(x) = v(x_n)$. Then, $L_K w(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens with $w(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K w(x) = L_{K_1} v(x \cdot e)$.
 		\item  If $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$, then $K_1(t)$ is nonincreasing/decreasing in $(0,+\infty)$.
-		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$. In particular, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
+		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$. Moreover, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
 		
 	\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-	We start proving point $(i)$. We write $y=(y',y_n)$, with $y'\in \R^{n-1}$.
+	We start proving point $(i)$. We write $y=(y_H,y_n)$, with $y_H\in \R^{n-1}$.
 	\begin{align*}
 	L_K w(x) &= \int_{\R^n} \left\{ w(x)-w(y) \right\} K(x-y) \d y \\
-	&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left(x'-y',x_n-y_n\right) \d y' \d y_n.
+	&=\int_{\R^n} \left\{ v(x_n)-v(y_n) \right\} K\left(x_H-y_H,x_n-y_n\right) \d y_H \d y_n.
 	\end{align*}
-	Now we make the change of variables $\theta = x'-y'$. That is,
+	Now we make the change of variables $\theta = x_H-y_H$. That is,
 	\begin{align*}
 	L_K w(x) 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left(\theta,x_n-y_n\right) \d \theta \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n).
 	\end{align*}
-	This shows the first equality in \eqref{Eq:OneDimKernel}. The alternative expression of the kernel $K_1$, that is useful in some cases, can be obtained from the change of variable $\theta = t\sigma$. Furthermore, in the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables using the previous computations.
+	This shows the first equality in \eqref{Eq:OneDimKernel}. The alternative expression of the kernel $K_1$, that is useful in some cases, can be obtained from the change of variables $\theta = t\sigma$. Furthermore, in the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables in the previous computations.
 	
 	The proof of point $(ii)$ follows directly from the first expression of the unidimensional kernel $K_1$. That is,
 	$$ 
@@ -80,9 +80,9 @@ We prove here the first statement of this lemma, and we postpone the proof of th
 \begin{proof}[Proof of point (i) of Lemma~\ref{Lemma:SecondDerivativeLayer}]
 	By contradiction, suppose that there exists an unbounded sequence $\{x_j\}$ satisfying $|\ddot{u}_0(x_j)|>\varepsilon$ for some $\varepsilon>0$. Note that by the symmetry of $u_0$ we may assume that $x_j\to + \infty$. Now define $w_j (x) := \ddot{u}_0(x+x_j)$. By differentiating twice the equation of the layer solution, we see that $\ddot{u}_0$ solves
 	$$
-	L_{K_1} \ddot{u}_0 = f''(u_0)\dot{u}_0^2 + f'(u_0)\ddot{u}_0 \text{ in }\R.
+	L_{K_1} \ddot{u}_0 = f''(u_0)\dot{u}_0^2 + f'(u_0)\ddot{u}_0 \quad \text{ in }\R.
 	$$
-	Hence, as $x_j \to +\infty$ a standard compactness argument combined with \eqref{Eq:PropertiesLayer} yield that $w_j$ converges on compact sets to a function $w$ that solves
+	Hence, as $x_j \to +\infty$ a standard compactness argument combined with the asymptotic behavior given by \eqref{Eq:PropertiesLayer} yields that $w_j$ converges on compact sets to a function $w$ that solves
 	$$
 	L_{K_1}  w = f'(1)w \quad \text{ in }\R.
 	$$
@@ -94,7 +94,7 @@ We prove here the first statement of this lemma, and we postpone the proof of th
 
 
 
-Now we have all the ingredients to establish the asymptotic behavior of the saddle-solution.
+Now we have all the ingredients to establish the asymptotic behavior of the saddle-solution. The proof follows exactly the same compactness arguments used to prove the analogous result in the local case (see \cite{CabreTerraII}) and for the fractional Laplacian using the extension problem (see \cite{Cinti-Saddle, Cinti-Saddle2}). Thus we will omit some details. The main ingredients too establish this results are the translation invariance of the operator, the Liouville type and symmetry results of Theorems~\ref{Th:LiouvilleSemilinearWholeSpace} and \ref{Th:SymmHalfSpace} and a stability argument (recall the comments in Section~\ref{Sec:Preliminaries}). 
 
 
 
@@ -124,7 +124,7 @@ w &\geq& 0 & \textrm{ in } \R^n\,.
 \eeqc
 $$
 
-Then, by Theorem~\ref{Th:SymmetryWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see Remark~\ref{Remark:Stability}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}). Therefore $w\equiv 1$. 
+Then, by Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see the comments in Section~\ref{Sec:Preliminaries}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}, see Proposition~9 of \cite{ServadeiValdinoci}). Therefore $w\equiv 1$. 
 
 On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$ ---see \eqref{Eq:PropertiesLayer} and Lemma~\ref{Lemma:SecondDerivativeLayer}. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
 $$
@@ -151,10 +151,10 @@ $$
 %w &\text{ odd}& \hspace{-2mm} \text{with respect} \text{to} &H \,.
 L_K  w &=& f(w)  &\textrm{ in } H:=\{x\cdot \nu >0\}\,,\\
 w &\geq& 0  &\textrm{ in } H\,,\\
-\,\,w \text{ odd with respect to } H. \span\span\span \,
+\,\,w \text{ is odd with respect to } H. \span\span\span \,
 \eeqc
 $$
-For the details about the fact that $\ocal \rightarrow H$, see \cite{CabreTerraI}.
+For the details about the fact that $\ocal+x_k^0 \rightarrow H$, see \cite{CabreTerraI}.
 
 As in the previous case, by stability $w$ cannot be zero, and thus $w>0$ in $H$ (by the strong maximum principle for odd functions with respect to a hyperplane, see \cite{ChenLiLi}). Hence, by Theorem \ref{Th:SymmHalfSpace}, $w$ only depends on $x\cdot \nu$ and is increasing. Finally, by the uniqueness of the layer solution, $w(x) = u_0(x\cdot \nu)$ and
 \begin{align*}
