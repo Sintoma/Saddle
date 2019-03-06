@@ -38,13 +38,12 @@ If $\widetilde{\H}^K_0(\Omega)$ is equipped with the scalar product
 $$
 \langle v,w \rangle_{\widetilde{\H}^K_0(\Omega)} := \dfrac{1}{2}\int_{\R^{2m}} \int_{\R^{2m}}  \big(v(x) - v(y)\big)\big(w(x) - w(y)\big) K(x-y) \d x \d y\,,
 $$
-then, it is easy to check that $\widetilde{\H}^K_0(\Omega)$ can be decomposed as the orthogonal direct sum of $\widetilde{\H}^K_{0,\, \mathrm{even}}(\Omega)$ and $\widetilde{\H}^K_{0,\,\mathrm{odd}}(\Omega)$.
+then it is easy to check that $\widetilde{\H}^K_0(\Omega)$ can be decomposed as the orthogonal direct sum of $\widetilde{\H}^K_{0,\, \mathrm{even}}(\Omega)$ and $\widetilde{\H}^K_{0,\,\mathrm{odd}}(\Omega)$.
 \end{remark}
 
 Note that when $K$ satisfies \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \H^\s_0 (\Omega)$,
 which is the space associated to the kernel of the fractional Laplacian, $K(z) = c_{n,\s} |z|^{-n-2\s}$.
-Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, the usual fractional Sobolev space (see
-\cite{HitchhikerGuide}).  For more comments on this, see~\cite{CozziPassalacqua}, and the references therein.
+Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, where $\H^\s(\Omega)$ is the usual fractional Sobolev space where interactions of $x$ and $y$ are only computed in $\Omega \times \Omega$ (see \cite{HitchhikerGuide}).  For more comments on this, see~\cite{CozziPassalacqua}, and the references therein.
 
 Once presented the functional setting of our problem, we proceed with the study of the energy functional associated to equation \eqref{Eq:NonlocalAllenCahn}. 
 
@@ -149,7 +148,7 @@ Next we present a result that will be used later, and concerns weak solutions to
 
 \begin{proposition}
 	\label{Prop:WeakSolutionForAllTestFunctions}
-	Let $\Omega \subset \R^{2m}$ be a bounded set of double revolution and let $L_K \in \lcal_0$ with kernel $K$ radially symmetric. Let $u\in \widetilde{\H}^K_{0}(\Omega)$ such that
+	Let $\Omega \subset \R^{2m}$ be a bounded set of double revolution and let $L_K \in \lcal_0$ with kernel $K$ radially symmetric. Let $u\in \widetilde{\H}^K_{0}(\Omega)$ be such that
 	$$
 	\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \xi(x) \d x
 	$$
