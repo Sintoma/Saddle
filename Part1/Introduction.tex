@@ -175,7 +175,7 @@ In \cite{JarohsWeth}, Jarohs and Weth study solutions to general integro-differe
 The first direct consequence of the positivity condition \eqref{Eq:KernelInequality} is the following maximum principle.
 
 \begin{proposition}[Maximum principle for odd functions with respect to $\ccal$]
-	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ be an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
+	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ be an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap C^{\s}(\overline{\Omega})\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
 	
 	\begin{enumerate}[label=(\roman{*})]
 		\item  (Weak maximum principle)
@@ -229,7 +229,9 @@ G \textrm{ is even and } G\geq G(\pm 1 )=0 \textrm{ in } \R\,.
 Note that the previous conditions on $G$ yield that $f$ is a $C^1$ odd function with $f(0)=f(\pm 1)=0$. In some cases, as in Theorem~\ref{Th:Existence} below, we will further assume that $G(0)>0$. In such situation, equation \eqref{Eq:NonlocalAllenCahn} can be seen as a model for phase transitions. The Allen-Cahn nonlinearity, $f(u) = u-u^3$, is the most typical example.
 
 
-Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial odd functions with a suitable new expression that involves the kernel $\overline{K}$ and that only takes into account the values of the functions in $\ocal$. This will be extremely useful in many computations and estimates involving the nonlocal energy $\ecal$ (see Sections~\ref{Sec:EnergyForOddF} and \ref{Sec:EnergyEstimate}). To write this new expression, we introduce the following notation.  For $A$, $B\subset \ocal$, two sets of double revolution, we define
+Using the same type of arguments as for the operator $L_K$, we can rewrite the energy of doubly radial odd functions with a suitable new expression that involves the kernel 
+$$\overline{K}(x,y)-\overline{K}(x,y^\star)>0$$
+and that only takes into account the values of the functions in $\ocal$. This will be extremely useful in many computations and estimates involving the nonlocal energy $\ecal$ (see Sections~\ref{Sec:EnergyForOddF} and \ref{Sec:EnergyEstimate}). To write this new expression, we introduce the following notation.  For $A$, $B\subset \ocal$, two sets of double revolution, we define
 \begin{equation*}
 %\label{Eq:DefIw}
 \begin{split}
@@ -245,7 +247,7 @@ Then, as proved in Section~\ref{Sec:EnergyForOddF} (see Lemma~\ref{Lemma:ShortEx
 
 
 
-Thanks to this new expression for the energy, we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial odd minimizers of $\ecal$. To define such minimizers properly, we denote by $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ the space of doubly radial odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:EnergyForOddF} for the precise definition). Then, we say that $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ is a doubly radial odd minimizers of $\ecal$ in $B_R$ if
+Thanks to this new expression for the energy, we are able to establish the second main result of this paper. It is the following energy estimate for doubly radial odd minimizers of $\ecal$. To define such minimizers properly, we denote by $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ the space of doubly radial odd functions that vanish outside $B_R$ and for which the energy $\ecal$ is well defined (see Section~\ref{Sec:EnergyForOddF} for the precise definition). We say that $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ is a doubly radial odd minimizers of $\ecal$ in $B_R$ if
 $$
 \ecal(u,B_R) \leq \ecal (w,B_R)
 $$
@@ -253,7 +255,9 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
-	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S>2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+5$. Then
+	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S>2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+5$. 
+	
+	Then
 	%$$ \lim_{R\to +\infty} \frac{1}{S^n} \ecal (u,B_S) = 0. $$
 	%More precisely,
 	$$ \ecal (u,B_S) \leq \begin{cases}

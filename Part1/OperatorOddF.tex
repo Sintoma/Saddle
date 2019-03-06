@@ -393,7 +393,7 @@ From the two previous results, Theorem~\ref{Th:SufficientNecessaryConditions} fo
 \end{proof}
 
 \begin{remark}
-	Note that a priori we cannot relax the $K\in C^2$ assumption in the necessary condition of Theorem~\ref{Th:SufficientNecessaryConditions}, since there are $C^1$ functions that are neither convex nor concave in any interval (they can be constructed as a primitive of a Weierstrass function, whose graph is a non rectifiable curve with fractal dimension). Besides these ``exotic'' examples, there are also simple radially symmetric kernels $K$ that are not $C^1$ for which we do not know if the kernel inequality \eqref{Eq:KernelInequality} holds. For instance, given $0<\s<1$, if we consider the kernel
+	Note that a priori we cannot relax the $K\in C^2$ assumption in the necessary condition of Theorem~\ref{Th:SufficientNecessaryConditions}, since there are $C^1$ functions that are neither convex nor concave in any interval (they can be constructed as a primitive of a Weierstrass function, whose graph is a non rectifiable curve with fractal dimension). Besides these ``exotic'' examples, there are also simple radially symmetric kernels $K$ that are not $C^1$ for which we do not know if the positivity condition \eqref{Eq:KernelInequality} holds. For instance, given $0<\s<1$, if we consider the kernel
 	$$ K(\tau) = \frac{1}{\tau^{2m+2\s}} \chi_{(0,1)}(\tau)+\frac{1}{10\tau^{2m+2\s}-9} \chi_{[1,+\infty)}(\tau), $$
 	it is easy to check that $K$ is continuous and decreasing but $K(\sqrt{\tau})$ is not convex in $(0,+\infty)$ even though it does not have any interval of concavity (see Figure~\ref{Fig:Grafica}).
 	\begin{figure}
@@ -448,9 +448,10 @@ a contradiction.
 \end{proof}
 
 \begin{remark}
-Note that since the operator $L_K$ includes itself a positive zero order term in addition to the integro-differential part, the condition $c\geq 0$ in point $(i)$ of the previous proposition can be lightly relaxed. Indeed, if we follow the proof of the result, we can deduce that the hypothesis on $c$ that we can assume is 
-$$ c(x) > -2\int_{\ocal} \overline{K}(x, y^\star) \d y. $$
-This hypothesis seems hard to be checked for applications apart from the case $c\geq 0$. Nevertheless, recall that by Lemma~\ref{Lemma:OperatorOddF} we have an explicit lower bound for the quantity $ \int_{\ocal} \overline{K}(x, y^\star) \d y $ in terms of the function $\dist(x,\ccal)$ that could be used to check the previous condition.
+Note that since the operator $L_K$ includes a term of order zero with positive coefficient in addition to the integro-differential part, the condition $c\geq 0$ in point $(i)$ of the previous proposition can be slightly relaxed. Indeed, following the proof of the result, we see that
+$$ c(x) > -2\int_{\ocal} \overline{K}(x, y^\star) \d y $$
+suffices.
+This hypothesis seems hard to be checked for applications apart from the case $c\geq 0$. Nevertheless, recall that by Lemma~\ref{Lemma:OperatorOddF} we have an explicit lower bound for the quantity $ \int_{\ocal} \overline{K}(x, y^\star) \d y $ in terms of the function $\dist(x,\ccal)$. This fact will be crucial for establishing a maximum principle in ``narrow'' sets close to the Simons cone, .
 \end{remark}
 
 
