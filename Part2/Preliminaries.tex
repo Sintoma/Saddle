@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:Preliminaries}
 
-In this section we collect some preliminary results that will be used in the rest of this paper. First, we state the regularity results needed in the forthcoming sections. Then, we present the functional setting which we are going to work with and finally we recall the two basic maximum principles for doubly radial odd functions proved in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
+In this section we collect some preliminary results that will be used in the rest of this paper. First, we state the regularity results needed in the forthcoming sections. Then, we state a remark on stability that will be used later in this paper, and finally we recall the basic maximum principles for doubly radial odd functions proved in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,29 +57,25 @@ for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, $k$, an
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Here we prove that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a set $\Omega\subset \R^n$, then $w$ is stable, that is, \eqref{Eq:StablityCondition} holds. The proof of this is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
+Here we prove that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a set $\Omega\subset \R^n$, with $f$ satisfying \eqref{Eq:Hypothesesf}, then $w$ is stable in $\Omega$, that is, \eqref{Eq:StablityCondition} holds. We will use this in Sections~\ref{Sec:SymmetryResults} and \ref{Sec:Asymptotic}. The proof of this fact is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
 
-On the one hand, note that by \eqref{Eq:PropertyConcavityf}, we have that $f'(w)w<f(w)$ in $\Omega$, since $w$ is positive in $\Omega$. On the other hand, the following holds for all functions $\varphi$ and $\xi$, with $\varphi>0$:
+On the one hand, since $f$ is strictly concave in $(0,1)$ and $f(0)=0$, then $f'(w)w<f(w)$ in $\Omega$ (recall that $w$ is positive there). On the other hand, the following inequality holds for all functions $\varphi$ and $\xi$, with $\varphi>0$:
 \begin{equation}
 \label{Eq:IdentityStability}
 \big (\varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
 \end{equation}
-Indeed, developing the squares and the products, this last inequality is equivalent to
+Indeed, developing the squares and the products, this last inequality is equivalent to $2 \xi(x) \xi(y) \leq \xi^2(y) \varphi(x)/ \varphi(y) +  \xi^2 (x) \varphi(y) / \varphi(x)$, which in turn is equivalent to
 $$
-2 \xi(x) \xi(y) \leq \dfrac{\varphi(x)}{\varphi(y)} \xi^2(y) +  \dfrac{\varphi(y)}{\varphi(x)} \xi^2 (x)\,,
+\bpar{\xi (x)\sqrt{\varphi(y) / \varphi(x)} - \xi(y) \sqrt{ \varphi(x)/ \varphi(y) } }^2 \geq 0\,.
 $$
-which in turn is equivalent to
-$$
-\bpar{\xi (x)\sqrt{\dfrac{\varphi(y)}{\varphi(x)}} - \xi(y) \sqrt{\dfrac{\varphi(x)}{\varphi(y)} } }^2 \geq 0\,.
-$$
-Using these two facts, for every $\xi\in C^\infty_0(\Omega)$ we have
+Using these two facts and the symmetry of $K$, for every $\xi\in C^\infty_c(\Omega)$ we have
 \begin{align*}
 \int_\Omega f'(w) \xi^2 \d x & \leq \int_\Omega  \dfrac{\xi^2}{w} f(w) \d x = \int_\Omega  \dfrac{\xi^2}{w} L_Kw \d x \\ 
 &= \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} \big ( w(x) - w(y) \big) \bpar{\dfrac{\xi^2(x)}{w(x)} - \dfrac{\xi^2(y)}{w(y)} } K(x - y) \d x \d y
 \\ 
 &\leq \dfrac{1}{2} \int_{\R^{2m}} \int_{\R^{2m}} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y\,.
 \end{align*}
-Thus, $w$ is stable in $\Omega$.
+Thus, $w$ is stable in $\Omega$. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,7 +111,7 @@ In this last subsection, we state the basic maximum principles for doubly radial
 
 \begin{remark}
 	\label{Remark:MaxPrincipleSingularity}
-	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the regularity assumptions on $w$ in the previous results can be weakened. Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:Existence} in order to apply this maximum principle with a function that is no more regular than $C^\s$.
+	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the regularity assumptions on $w$ in the previous results can be weakened. Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:Existence} in order to apply this maximum principle with a function that is no more regular than $C^\s$ in the interior of $\Omega$ (see Remark~\ref{Remark:CsRegularityFirstEigenfunction})
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
