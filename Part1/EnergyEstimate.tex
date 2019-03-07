@@ -3,12 +3,43 @@
 \section{An energy estimate for doubly radial odd minimizers}
 \label{Sec:EnergyEstimate}
 
-In this section we present an estimate for the energy in the ball $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 5$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same type of estimate but for minimizers without any symmetry. The strategy used in \cite{SavinValdinoci-EnergyEstimate} is to compare the energy of $u$, the minimizer, with the energy of a suitable competitor which is constructed taking the minimum between $u$ and the radially symmetric auxiliary function
+In this section we present an estimate for the energy in the ball $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 5$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same type of estimate but for minimizers without any symmetry.
+
+
+First of all, let us comment briefly the strategy used in \cite{SavinValdinoci-EnergyEstimate}. The argument is based in comparing the energy of the minimizer $u$ in $B_R\subset \R^n$ with the energy of a suitable competitor $v$. This function $v$ satisfies, in $B_{S+2}\subset B_R \subset \R^n$, the following assumptions:
+\begin{enumerate}
+	\item $-1 \leq v \leq 1$.
+	\item $v=u$ in $\partial B_{S+2}$.
+	\item The set $\{v\not \equiv -1\}\cap B_{S+2}$ has measure of order $S^{n-1}$.
+	\item $v\in \Lip(\overline{B_{S+2}})$ with a Lipschitz constant independent of $R$ and $S$.
+\end{enumerate} 
+By the second property, $v$ can be extended by $u$ outside $B_{S+2}$, becoming an admissible competitor. Then, the energy estimate follows by finding precise bounds of the energy of $v$ in $B_{S+2}$. The function $v$ is constructed in $B_{S+2}$ as
+$$
+v = \min \{u, \phi_S\}\,
+$$
+where
 \begin{equation}
-	\label{Eq:DefPhiS}
-	\phi_S (x) :=-1+2\min\{(|x|-S-1)_+,1\}\,.
+\label{Eq:DefPhiS}
+\phi_S (x) =-1+2\min\{(|x|-S-1)_+,1\}\,,
 \end{equation}
-In our case, such construction would not give us a doubly radial function which is odd with respect to the Simons cone $\ccal$, and therefore it would not be an admissible competitor ---recall that we consider $u$ to be a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. Thus, we need to adapt the auxiliary function $\phi_S$ to obtain the desired  competitor (that must be doubly radial and odd with respect to the Simons cone).
+and then extended by $u$ outside $B_{S+2}$. Note that $\phi_S \equiv -1$ in $B_{S+1}$ and $\phi_S = 1$ in $\partial B_{S+2}$ and thus, since $-1<u<1$, the first three assumptions on $v$ are satisfied. The fourth follows from interior regularity results and the Lipschitz regularity of $\phi_S$.
+
+To estimate the energy of $v$ in $B_{S+2}$, it is suitable to divide the nonlocal terms with double integrals in sets where $|x-y|\geq d(x)$ and $|x-y|\leq d(x)$, for a suitable function $d(x)$. This allows to have the precise estimate analogous to \eqref{Eq:EnergyEstimate}. The function that is used in \cite{SavinValdinoci-EnergyEstimate} is 
+\begin{equation}
+\label{Eq:DefdSavinValdinoci}
+d (x) = \max \{S+1-|x| , 1\},
+\end{equation}
+which in $B_{S+2}$ coincides with $\max\{ \dist (x, \partial B_{S+1}), 1\}$.
+
+In our case, such construction for $v$ cannot be used, since it would not give us a doubly radial function which is odd with respect to the Simons cone $\ccal$, and therefore $v$ would not be an admissible competitor ---recall that we consider $u$ to be a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. 
+
+To overcome this problem, we will consider a function $v$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions. In addition, we will require that $v$ is doubly radial and that it vanishes on the Simons cone (then we will consider its odd extension through $\ccal$). 
+
+----------------
+
+
+
+Thus, we need to adapt the auxiliary function $\phi_S$ to obtain the desired  competitor (that must be doubly radial and odd with respect to the Simons cone).
 
 The auxiliary function needed to build the competitor is defined as follows. For points $x\in \ocal$ and $\mu$ a positive real number, we set
 \begin{equation}
