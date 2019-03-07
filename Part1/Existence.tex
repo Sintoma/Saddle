@@ -7,9 +7,9 @@
 In this section we establish the existence of saddle-shaped solutions to the integro-differential Allen-Cahn equation. The proof is based on the direct method of the calculus of variations, and it uses most of the results appearing in the previous sections.
 
 \begin{proof}[Proof of Theorem~\ref{Th:Existence}]
-Since $\ecal(w,B_R)$ is bounded from below ---by $0$---, we can take a minimizing sequence $u_R^j\in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Note that, by Lemma~\ref{Lemma:DecreaseEnergy} we can assume that $-1 \leq u_R^j \leq 1$ and that $u_R^j \geq 0$ in $\ocal$ and  $u_R^j \leq 0$ in $\ical$. 
+Since $\ecal(w,B_R)$ is bounded from below ---by $0$---, we can take a minimizing sequence in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$, that we call $u_R^j$ with $j\in \Z^+$. Note that, by Lemma~\ref{Lemma:DecreaseEnergy} we can assume that $-1 \leq u_R^j \leq 1$ and that $u_R^j \geq 0$ in $\ocal$ and  $u_R^j \leq 0$ in $\ical$. 
 
-Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$, and the fact that $u_R^j$ is a minimizing sequence, we deduce that 
+Now, using $\eqref{Eq:Ellipticity}$, $G\geq 0$, and the fact that $u_R^j$ is a minimizing sequence, we deduce using \eqref{Eq:Energy} that 
 $$
 [u_R^j]^2_{H^\s(B_R)} \leq \dfrac{c_{n,\s}}{\lambda}  [u_R^j]^2_{\H^K(B_R)}\leq \dfrac{2 c_{n,\s}}{\lambda}\ecal(u_R^j,B_R) \leq C
 $$
@@ -20,7 +20,7 @@ $$
 $$
 Therefore, $u_R \in \widetilde{\H}^K(B_R)$. In addition, $u_R(x) = - u_R(x^\star)$ for every $x\in \R^{2m}$, and $u_R \equiv 0 $ in $\R^{2m} \setminus B_R$. Thus, $u_R$ is a minimizer of $\ecal(\cdot, B_R)$ in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Moreover, it satisfies $-1\leq u_R \leq 1$ in $B_R$ and $u_R\geq 0$ in $\ocal$.
 
-Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate} (using Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}), we deduce that $u_R$ is a classical solution to
+Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, one checks the hypothesis of Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}. Thus, using in addition the regularity theory for operators in $\lcal_0$ (see Remark~\ref{Remark:InteriorRegularity}) we deduce that $u_R$ is a classical solution to
 \begin{equation*}
 %\label{Eq:ProofExistenceProblemBR}
 	\beqc{\PDEsystem}
@@ -28,6 +28,7 @@ Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate} (using Propos
 	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
 	\eeqc
 \end{equation*}
+
 
 
 The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. This is done using a compactness argument. Let $S>0$ and consider the family $\{u_R\}$, for $R> S + 1$, of solutions to $L_K u_R = f(u_R)$ in $B_{S}$. Note first that, if $w$ solves $L_K w = f(w)$ in $B_\rho$ and  $|w|\leq 1$ in $\R^{2m}$ with $f\in C^{\alpha}([-1,1])$ for some $\alpha > 0$, the combination of \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} yields
@@ -39,7 +40,7 @@ for some $\varepsilon > 0$.  By applying the estimate \eqref{Eq:UniformC2alphaEs
 
 Therefore, we have obtained a solution $u$ to $L_K u = f(u)$ in $\R^{2m}$ which is doubly radial. Furthermore, $u$ is odd with respect to the Simons cone $\ccal$, i.e., $u(x) = -u(x^\star)$ for $x\in \R^{2m}$, and $0 \leq u\leq 1$ in $\ocal$.
 
-Finally, we show that $0<u<1$ in $\ocal$. This will ensure that $u$ is a saddle-shaped solution. First, note that $|u| < 1$ by the usual strong maximum principle (since $u$ vanishes at $\ccal$ and is continuous, we have $u \not \equiv 1$  and $u\not\equiv -1$ in $\R^{2m}$). Let us show that $u\not\equiv 0$. To do this, we use the energy estimate of Theorem~\ref{Th:EnergyEstimate}. That is, if we consider $u_R$ the minimizer of $\ecal(\cdot, B_R)$ with $R > 8$, we have
+Finally, we show that $0<u<1$ in $\ocal$. This will ensure that $u$ is a saddle-shaped solution. First, note that $|u| < 1$ by the usual strong maximum principle (since $u$ vanishes at $\ccal$ and is continuous, we have $u \not \equiv 1$  and $u\not\equiv -1$ in $\R^{2m}$). Let us show now that $u\not\equiv 0$. To do this, we use the energy estimate of Theorem~\ref{Th:EnergyEstimate}. That is, if we consider $u_R$ the minimizer of $\ecal(\cdot, B_R)$ with $R > 8$, we have
 $$
 \ecal (u_R,B_S) \leq \begin{cases}
 C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\

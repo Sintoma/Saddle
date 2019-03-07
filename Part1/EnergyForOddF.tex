@@ -48,7 +48,7 @@ Furthermore, $\H^\s(\Omega) \subset H^\s(\Omega)$, where $\H^\s(\Omega)$ is the 
 Once presented the functional setting of our problem, we proceed with the study of the energy functional associated to equation \eqref{Eq:NonlocalAllenCahn}. 
 
 
-Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and a potential $G$, and given a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we write the energy defined in \eqref{Eq:Energy} as
+Given a kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, a potential $G$, and a function $w\in \H^K(\Omega)$, with $\Omega\subset \R^{n}$, we write the energy defined in \eqref{Eq:Energy} as
 $$
 \ecal(w, \Omega) = \ecal_\mathrm{K}(w,\Omega) + \ecal_\mathrm{P}(w,\Omega)\,,
 $$
@@ -57,20 +57,19 @@ $$
 \ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{2} [w]^2_{\H^K(\Omega)} \quad \text{ and } \quad  \ecal_\mathrm{P}(w, \Omega) := \int_{\Omega} G(w) \d x
 \,.
 $$
-We will call $\ecal_\mathrm{K}$ and $\ecal_\mathrm{P}$ the \emph{kinetic} and \emph{potential} energy respectively.
-
+We will call $\ecal_\mathrm{K}$ and $\ecal_\mathrm{P}$ the \emph{kinetic} and \emph{potential} energies respectively. Recall that sometimes it is useful to rewrite the kinetic energy as
+\begin{equation}
+\label{Eq:KineticEnergyInteractions}
+\begin{split}
+\ecal_\mathrm{K}(w, \Omega) = \dfrac{1}{4} \left \{ \int_\Omega \int_\Omega |w(x) - w(y)|^2 K(x-y) \d x \d y \right. \qquad \qquad \\
++\left. 2 \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y \right \}.
+\end{split}	
+\end{equation}
+Roughly speaking, we have $\ecal_\mathrm{K}$ split into two parts: ``interactions inside-inside'' and ``interactions inside-outside''.
 
 Note that, for functions $w\in \H^K_0(\Omega)$, it holds $\ecal_\mathrm{K}(w,\Omega) = \ecal_\mathrm{K}(w,\R^n)$. Moreover, if $G\geq 0$, the energy satisfies $\ecal(w, \Omega) \leq \ecal(w, \Omega')$  whenever $ \Omega \subset \Omega'$.
 
-Sometimes it is useful to rewrite the kinetic energy as
-\begin{equation}
-	\label{Eq:KineticEnergyInteractions}
-	\begin{split}
-	\ecal_\mathrm{K}(w, \Omega) := \dfrac{1}{4} \left \{ \int_\Omega \int_\Omega |w(x) - w(y)|^2 K(x-y) \d x \d y \right. \qquad \qquad \\
-	+\left. 2 \int_\Omega \int_{\R^n \setminus \Omega} |w(x) - w(y)|^2 K(x-y) \d x \d y \right \}.
-	\end{split}	
-\end{equation}
-Roughly speaking, we have split the kinetic energy into two parts: ``interactions inside-inside'' and ``interactions inside-outside''. Our goal is to rewrite the kinetic energy in terms of the doubly radial kernel $\overline{K}$ and with integrals computed only in $\ocal$, in the same spirit as in the previous section for the operator $L_K$. In particular, we are interested in finding an expression similar to \eqref{Eq:KineticEnergyInteractions} for the kinetic energy. To do this, we introduce the following notation for the interaction. Given $A$, $B\subset \ocal$ sets of double revolution, we define
+Our goal is to rewrite the kinetic energy of doubly radial odd functions in terms of the kernel $\overline{K}$ and with integrals computed only in $\ocal$, in the spirit of the previous section with the operator $L_K$. In particular, we are interested in finding an expression similar to \eqref{Eq:KineticEnergyInteractions}, where the positive kernel $\overline{K}(x,y) - \overline{K}(x,y^\star)$ appears. To do this, we introduce the following notation for the interaction. Given $A$, $B\subset \ocal$ sets of double revolution, we define
 \begin{equation}
 	\label{Eq:DefIw}
 	\begin{split}
@@ -83,36 +82,46 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 
 \begin{lemma}
 	\label{Lemma:ShortExpressionEnergy}
-Let $\Omega\subset \R^{2m}$ be a set of double revolution that is symmetric with respect to the Simons cone, i.e., $\Omega^\star = \Omega$, and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\Omega)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
+Let $\Omega_1, \Omega_2 \subset \R^{2m}$ be two sets of double revolution that are symmetric with respect to the Simons cone, i.e., $\Omega_i^\star = \Omega_i$, and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\R^n)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
+\begin{equation}
+\label{Eq:InteractionsEquality}
+\int_A \int_B |w(x)-w(y)|^2 K(x-y) = I_w(A\cap \ocal,B\cap \ocal),
+\end{equation}
+where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
+
+As a consequence, given a doubly radial set $\Omega\subset \R^{2m}$ with $\Omega^\star = \Omega$, and a function $v\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\Omega)$, we can write the kinetic energy as
 \begin{align}
 \label{Eq:ShortExpressionEnergy}
-\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \big \{I_w(\Omega\cap\ocal,\Omega\cap\ocal) +  2I_w(\Omega\cap\ocal,\ocal\setminus\Omega) \big \},
+\ecal_\mathrm{K}(v, \Omega) = \frac{1}{4} \big \{I_v(\Omega\cap\ocal,\Omega\cap\ocal) +  2I_v(\Omega\cap\ocal,\ocal\setminus\Omega) \big \}.
 \end{align}
-where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
+
 \end{lemma}
 
 \begin{proof}
 	
-First, in \eqref{Eq:KineticEnergyInteractions} we consider the change $ y = R\tilde{y}$. Since $w$ is doubly radial and $\Omega$ is of double revolution, by taking the average among all $R\in O(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}, we obtain 
+First, note that equality \eqref{Eq:ShortExpressionEnergy} for the kinetic energy follows directly combining expressions \eqref{Eq:KineticEnergyInteractions} and \eqref{Eq:InteractionsEquality}. Hence, we only need to prove \eqref{Eq:InteractionsEquality}.
+	
+Now, since $w$ is doubly radial and $\Omega_1, \Omega_2$ are sets of double revolution, we obtain 
 $$
-\ecal_\mathrm{K}(w, \Omega) = \frac{1}{4} \int_{\Omega} \int_{\Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y + \frac{1}{2} \int_{\Omega} \int_{\R^n \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y\,.
+\int_{\Omega_1} \int_{\Omega_2} |w(x)-w(y)|^2 K(x-y) \d x \d y = \int_{\Omega_1} \int_{\Omega_2} |w(x)-w(y)|^2 \overline{K}(x,y) \d x \d y\,,
 $$
-Now we split $\Omega$ into $\Omega \cap \ocal$ and $\Omega \setminus \ocal$. By using the change of variables given by $(\cdot)^\star$ and the symmetries of $\Omega$ and $w$, we get
+once we consider the change $ y = R\tilde{y}$ and take the average among all $R\in O(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}.
+
+Finally, we split $\Omega_i$ into $\Omega_i \cap \ocal$ and $\Omega_i\setminus\ocal = (\Omega_i \cap \ocal)^\star$. By using the change of variables given by $(\cdot)^\star$ and the symmetries of $\Omega_i$ and $w$, we get
 \begin{align*}
-4\ecal_\mathrm{K}(w, \Omega) =   & \hspace{1.3mm} 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
-& +  4\int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
-= & \hspace{1.3mm} 2 \int_{\Omega\cap \ocal} \int_{\Omega \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
-&+4 \int_{\Omega\cap \ocal} \int_{\Omega\cap \ocal} \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
-&+ 4\int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y\\
-  & +8 \int_{\Omega\cap \ocal} \int_{\ocal \setminus \Omega}  \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
-= & \hspace{1.3mm}  I_w(\Omega\cap\ocal,\Omega\cap\ocal) + 2 I_w(\Omega\cap\ocal,\ocal\setminus\Omega).
+\int_{\Omega_1} \int_{\Omega_2} |w(x)&-w(y)|^2 \overline{K}(x,y) \d x \d y \\
+= & \hspace{1.3mm} 2 \int_{\Omega_1\cap \ocal} \int_{\Omega_2 \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
+= & \hspace{1.3mm} 2 \int_{\Omega_1\cap \ocal} \int_{\Omega_2 \cap \ocal}  \ |w(x)-w(y)|^2 \left\{ \overline{K}(x,y) - \overline{K}(x,y^\star) \right\} \d x \d y \\
+&+4 \int_{\Omega_1\cap \ocal} \int_{\Omega_2\cap \ocal} \left\{w^2(x)+w^2(y)\right\} \overline{K}(x,y^\star) \d x \d y\,\\
+= & \hspace{1.3mm}  I_w(\Omega_1\cap\ocal,\Omega_2\cap\ocal).
 \end{align*}
+Here we have used that $\overline{K}(x^\star,y^\star) = \overline{K} (x,y)$ ---see Lemma~\ref{Lemma:PropertiesStar}.
 \end{proof}
 
 Using the previous expression for the energy, we can establish now the following lemma regarding the decrease of the energy under some operations.
 \begin{lemma}
 \label{Lemma:DecreaseEnergy} 
-Let $\Omega\subset \R^{2m}$ be a set of double revolution that is symmetric with respect to the Simons cone, and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality}. Given $u\in\widetilde{\H}^K_{\mathrm{odd}}(\Omega)$, we define
+Let $\Omega\subset \R^{2m}$ be a set of double revolution that is symmetric with respect to the Simons cone, and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality}. Given $u\in\widetilde{\H}^K_{0,\mathrm{odd}}(\Omega)$, we define
 \begin{equation*}
 v(x) = \begin{cases}
 \hspace{3.2mm}|u(x)| \,\,\, &\text{if } \,\,\, x\in\ocal,\\
@@ -134,12 +143,12 @@ $$ \ecal(v,\Omega) \leq \ecal(u,\Omega) \quad
 \end{lemma}
 
 \begin{proof}
-We first establish the result for $v$. Let us show that  $\ecal_\mathrm{K}(v) \leq \ecal_\mathrm{K}(u)$. Note that $v\in \widetilde{\H}^K_{\mathrm{odd}}(\Omega)$. Thus, by using the expression of the kinetic energy given in \eqref{Eq:ShortExpressionEnergy} and the fact that $\overline{K}(x,y) > \overline{K}(x,y^\star)> 0$ if $x,y\in \ocal$ ---see \eqref{Eq:KernelInequality}---, we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x)\leq u^2(x)$ whenever $x,y\in\ocal$. The first condition follows from the equivalence
+We first establish the result for $v$. Let us show that  $\ecal_\mathrm{K}(v) \leq \ecal_\mathrm{K}(u)$. Note that $v\in \widetilde{\H}^K_{0,\mathrm{odd}}(\Omega)$. Thus, by using the expression of the kinetic energy given in \eqref{Eq:ShortExpressionEnergy} and the fact that $\overline{K}(x,y) > \overline{K}(x,y^\star)> 0$ if $x,y\in \ocal$ ---see \eqref{Eq:KernelInequality}---, we only need to check that $|v(x)-v(y)|^2\leq |u(x)-u(y)|^2$ and $v^2(x)\leq u^2(x)$ whenever $x,y\in\ocal$. The first condition follows from the equivalence
 $$ \big||u(x)|-|u(y)|\big|^2\leq |u(x)-u(y)|^2 \Longleftrightarrow u(x)u(y) \leq |u(x)u(y)|,  
 $$
 while the second one is trivial and it is in fact an equality. Concerning the potential energy, since $G$ is an even function we have that $\ecal_\mathrm{P}(v) = \ecal_\mathrm{P}(u)$, and therefore we get the desired result for $v$ by adding the kinetic and potential energies.
 
-We show now the result for $w$. Let us show that  $\ecal_\mathrm{K}(w) \leq \ecal_\mathrm{K}(u)$. As before, $w\in \widetilde{\H}^K_{\mathrm{odd}}(\Omega)$ and thus, in view of \eqref{Eq:ShortExpressionEnergy} and the kernel inequality \eqref{Eq:KernelInequality}, we only need to check that $|w(x)-w(y)|^2\leq |u(x)-u(y)|^2$ and $w^2(x) \leq u^2(x)$ whenever $x,y\in\ocal$. The first inequality is trivial whenever $u(x)\leq 1$ and $u(y)\leq 1$, or $u(x)\geq 1$ and $u(y)\geq 1$. If $u(x)\geq 1$ and $u(y)\leq 1$, then $ |u(x)-u(y)|^2-|w(x)-w(y)|^2 = |u(x)-u(y)|^2-|1-u(y)|^2 = (u(x)-1))^2+2(u(x)-1)(1-u(y)) \geq 0$. The second inequality follows from the fact that $w^2(x) = u^2(x)$ when $u(x)\leq 1$, while $w^2(x) = 1 \leq u^2(x)$ if $u(x)\geq 1$. Concerning the potential energy, since $G$ is such that $G(x)\geq G(1) = G(-1) = 0$ if $|x|\leq 1$, then clearly $\ecal_\mathrm{P}(w) \leq \ecal_\mathrm{P}(u)$, and therefore we get the desired result by adding the kinetic and potential energies.
+We show now the result for $w$. Let us show that  $\ecal_\mathrm{K}(w) \leq \ecal_\mathrm{K}(u)$. As before, $w\in \widetilde{\H}^K_{0,\mathrm{odd}}(\Omega)$ and thus, in view of \eqref{Eq:ShortExpressionEnergy} and the kernel inequality \eqref{Eq:KernelInequality}, we only need to check that $|w(x)-w(y)|^2\leq |u(x)-u(y)|^2$ and $w^2(x) \leq u^2(x)$ whenever $x,y\in\ocal$. The first inequality is trivial whenever $u(x)\leq 1$ and $u(y)\leq 1$, or $u(x)\geq 1$ and $u(y)\geq 1$. If $u(x)\geq 1$ and $u(y)\leq 1$, then $ |u(x)-u(y)|^2-|w(x)-w(y)|^2 = |u(x)-u(y)|^2-|1-u(y)|^2 = (u(x)-1))^2+2(u(x)-1)(1-u(y)) \geq 0$. The second inequality follows from the fact that $w^2(x) = u^2(x)$ when $u(x)\leq 1$, while $w^2(x) = 1 \leq u^2(x)$ if $u(x)\geq 1$. Concerning the potential energy, since $G$ is such that $G(x)\geq G(1) = G(-1) = 0$ if $|x|\leq 1$, then clearly $\ecal_\mathrm{P}(w) \leq \ecal_\mathrm{P}(u)$, and therefore we get the desired result by adding the kinetic and potential energies.
 \end{proof}
 
 
