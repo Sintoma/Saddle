@@ -31,39 +31,148 @@ d (x) = \max \{S+1-|x| , 1\},
 \end{equation}
 which in $B_{S+2}$ coincides with $\max\{ \dist (x, \partial B_{S+1}), 1\}$.
 
-In our case, such construction for $v$ cannot be used, since it would not give us a doubly radial function which is odd with respect to the Simons cone $\ccal$, and therefore $v$ would not be an admissible competitor ---recall that we consider $u$ to be a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. 
+In our case, the strategy is the same but we will need to adapt some ingredients (such as the competitor $v$ and the function $d$). First, note that the previous construction for $v$ cannot be used in our setting, since it would not give us a doubly radial function which is odd with respect to the Simons cone $\ccal$, and therefore $v$ would not be an admissible competitor ---recall that we consider $u$ to be a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. 
 
-To overcome this problem, we will consider a function $v$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions. In addition, we will require that $v$ is doubly radial and that it vanishes on the Simons cone (then we will consider its odd extension through $\ccal$). 
+To overcome this problem, we will consider a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require that $w$ is doubly radial and that it vanishes on the Simons cone (then we will consider its odd extension through $\ccal$). Apart from this, we will need some technical details, described next. 
 
-----------------
+First, to simplify our proof and be more precise, we define the following set (see Figure~\ref{Fig:PsiSandOmegaS}~(b)):
+\begin{equation}
+\label{Eq:DefOmegaS}
+\Omega_S := \left( \overline{B_{S+2}}\setminus B_S \right) \cup \left(  \overline{B_{S+2}} \cap \{\mu \dist(x,\ccal) \leq 1\}\right),
+\end{equation} 
+with $\mu>0$ a positive number that will be chosen later. This will be exactly the set where $w\not \equiv -1$ inside $B_{S+2}$. It is easy to see that its measure is of order $2m-1$. That is,
+ \begin{equation}
+ \label{Eq:MeasureOmegaS}
+ |\Omega_S| \leq C\,S^{2m-1},
+ \end{equation}
+with a constant $C$ depending only on $m$ and $\mu$. To see this, follow the computations in the proof of the energy estimate for the local equation in Theorem~1.3 of \cite{CabreTerraI}.
 
- This function $v$ satisfies, in $B_{S+2}\subset B_R \subset \R^n$, the following assumptions:
-\begin{enumerate}
-	\item $-1 \leq v \leq 1$.
-	\item $v$ doubly radial and $v=0$ in $\ccal$.
-	\item $v=u$ in $\partial B_{S+2} \cap \ocal$.
-	\item $v=-1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
-	\item $v\in \Lip(\overline{B_{S+3}})$ with a Lipschitz constant independent of $R$ and $S$, and
-	$$ |v(x)-v(y)| \leq \frac{C}{\dist(x,\ccal)}|x-y| $$
-	whenever $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$.
-\end{enumerate} 
+In second place, we also need to adapt the function $d(x)$ of \cite{SavinValdinoci-EnergyEstimate} to our setting of odd functions, and we will consider the following one: 
+$$ 
+d_S(x) := \max\left\{1,\min\{S+1-|x|,\mu \dist(x,\ccal)\} \right\},  
+$$
+where $\mu$ is the same number as in \eqref{Eq:DefOmegaS}. Note that the set $\Omega_S$ is the preimage of $1$ through $d_S$ in $\overline{B_{S+2}}$ ---see Figure~\ref{Fig:PsiSandOmegaS}~(b). Furthermore, if $x\in B_{S+2}\setminus \Omega_S = B_S \cap \{\mu\dist(\cdot,\ccal) \geq 1\}$, the expression of $d_S(x)$ is simpler:
+\begin{align*}
+     \restr{d_S}{B_{S+2}\setminus \Omega_S} (x) 
+	 = \min \{\dist(x, \partial_{B_{S+1}}),\mu \dist(x,\ccal)\} .
+\end{align*}
+As we will see in the proof of Theorem~\ref{Th:EnergyEstimate}, by splitting some double integrals in sets where $|x-y|\geq d_S(x)$ and $|x-y|\leq d_S(x)$, we will accomplish the precise bound \eqref{Eq:EnergyEstimate}. 
+
+Last, we mention now a technical detail that we will need when performing our estimates, and that is related with this function $d_S$. We will assume that the competitor $w$ satisfies
+$$ |w(x)-w(y)| \leq \frac{C}{\dist(x,\ccal)}|x-y| $$
+whenever $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$, and with $C$ a constant independent of $R$ and $S$. This will be used in one estimate in the proof of Theorem~\ref{Th:EnergyEstimate}, when $|x-y|\leq d_S(x)$ 
+
+In the following lemma we state the properties that suffice to establish the energy estimate.
+
+\begin{lemma}
+	\label{Lemma:ExistenceCompetitor}
+	Let $S>1$ and $R > S + 4$. Then, there exists a function $w:\overline{ B_{S+2}\cap \ocal} \to \R$ satisfying the following:
+	
+	\begin{enumerate}[label=\textcolor{red}{H\arabic*.}, ref=H\arabic*]
+	\item
+	\label{Eq:wH1} $-1 \leq w \leq 1$.
+	\item
+	\label{Eq:wH2} $w$ doubly radial and $w=0$ in $\ccal$.
+	\item
+	\label{Eq:wH3} $w=u$ in $\partial B_{S+2} \cap \ocal$.
+	\item
+	\label{Eq:wH4} $w\equiv-1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
+	\item
+	\label{Eq:wH5} $w\in \Lip(\overline{B_{S+2}})$ with a Lipschitz constant independent of $R$ and $S$, and
+	$$ |w(x)-w(y)| \leq \frac{C}{\dist(x,\ccal)}|x-y| $$
+	whenever $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$, and with $C$ a constant independent of $R$ and $S$.
+	\end{enumerate} 
+	
+	As a consequence, if we consider the odd extension of $w$ through $\ccal$ and then we set $w=u$ in $B_{S+2}^c$, it follows that $w$ is an admissible competitor for doubly radial minimizers of the energy \eqref{Eq:Energy}. Moreover, $w\in \Lip(\overline{B_{S+3}})$ with a Lipschitz constant independent of $R$ and $S$.
+\end{lemma}
+
+
+To construct this function we will define, in $B_{S+2}$,
+$$
+w:= \min \{u, \Psi_S\}\,
+$$
+where $\Psi_S:B_{S+2} \cap \ocal \to \R$ is essentially the function $\phi_S$ of \eqref{Eq:DefPhiS} but modified in order to vanish at $\ccal$. Its precise expression in $B_{S+2}\cap \ocal$ is
+\begin{equation}
+\label{Eq:DefPsiS}
+\Psi_S(x) :=
+\begin{cases}
+\phi_S (x) \mu\dist(x,\ccal) &  \mu\dist(x,\ccal) \leq 1 \,, \\
+\phi_S (x) &  \mu\dist(x,\ccal) \geq 1\,,
+\end{cases}
+\end{equation}
+where $\mu$ is a positive number that depends on the Lipschitz constant of $u$ in $B_{S+2}$ and makes \cref{Eq:wH3} to be satisfied.
+
+We postpone the proof of this lemma and, assuming it true for the moment, let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
 
 \begin{proof}
-	By definition, it is clear that $v$ is an admissible competitor. Hence, since $u$ is a minimizer
-	$$ \ecal (u, B_R) \leq \ecal (v, B_R). $$
-	But since $u\equiv v$ in $B_{S+2}^c$, it follows that
-	$$ \ecal (u, B_{S+2}) \leq \ecal (v, B_{S+2}), $$
+	By definition, it is clear that $w$ is an admissible competitor. Hence, since $u$ is a minimizer
+	$$ \ecal (u, B_R) \leq \ecal (w, B_R). $$
+	But since $u\equiv w$ in $B_{S+2}^c$, it follows that
+	$$ \ecal (u, B_{S+2}) \leq \ecal (w, B_{S+2}), $$
 	and by the monotonicity of the energy $\ecal$ by inclusions we get
-	$$ \ecal (u, B_{S}) \leq \ecal (v, B_{S+2}). $$
-	Therefore we only need to estimate $\ecal (v, B_{S+2})$. First, note that using the ellipticity of the kernel $K$ and the change of variables given by $(\cdot)^\star$ we obtain
-	$$ \ecal(v,B_{S+2}) \leq C \int_{B_{S+2}\cap \ocal} \d x \int_{\R^n} \d y \frac{|v(x)-v(y)|^2}{|x-y|^{2m+2\s}} + \int_{B_{S+2}} G(v) \d x.  $$
+	$$ \ecal (u, B_{S}) \leq \ecal (w, B_{S+2}). $$
+	Therefore we only need to estimate $\ecal (w, B_{S+2})$. First, note that using the ellipticity of the kernel $K$ and the change of variables given by $(\cdot)^\star$ we obtain
+	$$ \ecal(w,B_{S+2}) \leq C \int_{B_{S+2}\cap \ocal} \d x \int_{\R^n} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} + \int_{B_{S+2}} G(w) \d x.  $$
 	
 	\textbf{Estimate for the potential energy}
-	Since $v=\pm 1$ in $B_{S+2} \setminus \omega_S$ and $G(1) = G(-1) = 0$, it is clear that
-	$$ \int_{B_{S+2}} G(v) = \int_{\Omega_S} G(v) \leq C |\Omega_S| \leq C S^{2m-1}. $$  
+	Since $w=\pm 1$ in $B_{S+2} \setminus \omega_S$ and $G(1) = G(-1) = 0$, it is clear that
+	$$ \int_{B_{S+2}} G(w) = \int_{\Omega_S} G(w) \leq C |\Omega_S| \leq C S^{2m-1}. $$  
 	
 	\textbf{Estimate for the kinetic energy}
+	Here we split the integral in three terms. That is,
+	\begin{align*}
+	\int_{B_{S+2}\cap \ocal} \d x \int_{\R^n} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} &= \int_{\Omega_{S}\cap \ocal} \d x \int_{\R^{2m}} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&\ \ + \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{B_{S+1}\cap \ocal} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&\ \ + \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{(B_{S+1}\cap \ocal)^c} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&= I_1+I_2+I_3.
+	\end{align*}
+	Now we estimate each term separately.
+	\begin{align*}
+	I_1 &= \int_{\Omega_{S}\cap \ocal} \d x \int_{\R^{2m}} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&= \int_{\Omega_{S}\cap \ocal} \d x \int_{|x-y|\leq 1} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} + \int_{\Omega_{S}\cap \ocal} \d x \int_{|x-y|\geq 1} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&\leq C \int_{\Omega_{S}\cap \ocal} \d x \int_0^1 \d r \, r^{1-2\s} + \int_{\Omega_{S}\cap \ocal} \d x \int_1^\infty \d r \, r^{-1-2\s} \\
+	&= C |\Omega_S| \leq C \ S^{2m-1}.
+	\end{align*}
+	In the first addend we have used the Lipschitz condition of $w$ in $\overline{B_{S+3}}$ while in the second one we have only used that it is bounded. 
+	\begin{align*}
+	I_2 &= \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{B_{S+1}\cap \ocal} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \leq \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{\R^{2m}} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}}  \\
+	&= \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{|x-y|\leq d_S(x)} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} + \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{|x-y|\geq d_S(x)} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&\leq C \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x d_S(x)^{-2\s}.
+	\end{align*}
+	Here we have used the fact that $w$ is bounded for the first term, and property (iv) of $w$ for the second one.
 	
+	In order to estimate $I_3$ we first need to show that if $x\in (B_S\setminus \Omega_S) \cap \ocal$ and $y\in (B_{S+1}\cap \ocal)^c = I \cup B_{S+1}^c$, then $|x-y|\geq C d_S(x)$. That is, on the one hand it is clear that if $y\in B_{S+1}^c$ then $|x-y|\geq \dist(x,\partial B_{S+1})\geq d_S(x)$. On the other hand, if $y\in \ical$ then $|x-y|\geq \dist(x,\ccal) \geq \frac{1}{\mu} d_S(x)$. Thus, we obtain
+	\begin{align*}
+	I_3 &= \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{(B_{S+1}\cap \ocal)^c} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&\leq \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{|x-y|\geq C d_S(x)} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	&\leq C \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x d_S(x)^{-2\s}.
+	\end{align*}
+	
+	Now, if we add up $I_1, I_2$ and $I_3$ we get
+	$$ \ecal(w,B_{S+2}) \leq C \left( \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x d_S(x)^{-2\s} + S^{2m-1}\right), $$
+	which can be easily estimate. That is,
+	\begin{align*}
+	\int_{B_{S+2}\setminus \Omega_S} d_S(x)^{-2\s} \d x &= \int_{B_{S}\cap \{\mu \dist(x,\ccal)>1\}} d_S(x)^{-2\s} \d x \\
+	& \leq \int_{B_{S}\cap \{\mu \dist(x,\ccal)>1\}} \left( S+1-|x| \right)^{-2\s} \d x \\
+	& \quad \quad + \int_{B_{S}\cap \{\mu \dist(x,\ccal)>1\}} \dist(x,\ccal)^{-2\s} \d x.
+	\end{align*}
+	The desired estimate for the first integral can be found in \cite{SavinValdinoci-EnergyEstimate}. Therefore, in order to complete the proof, it only remains to estimate the second integral. This can be done by writing it in $(\euscr{y},\euscr{z})$ variables, where
+	%\todo{elegir fuente}
+	$$
+	\euscr{y} := \dfrac{|x'|+|x''|}{\sqrt{2}} \, \quad \text{ and } \euscr{z} := \dfrac{|x'|-|x''|}{\sqrt{2}}\,.
+	$$
+	Note that $\euscr{z}$ is the signed distance to the cone (see Lemma~4.2 in \cite{CabreTerraI}). Thus,
+	\begin{align*}
+	\int_{B_{S}\cap \{\mu \dist(x,\ccal)>1\}} \dist(x,\ccal)^{-2\s} \d x &\leq C \int \int_{B_{S}\cap \{\euscr{y}\geq|\euscr{z}|>1/\mu\}} |\euscr{z}|^{-2\s} \, (\euscr{y}^2-\euscr{z}^2)^{m-1} \d \euscr{y}\d \euscr{z} \\
+	& \leq C \int \int_{B_{S}\cap \{\euscr{y}\geq|\euscr{z}|>1/\mu\}} |\euscr{z}|^{-2\s} \, \euscr{y}^{2m-2} \d \euscr{y}\d \euscr{z} \\
+	& \leq C\, \int_{1/\mu}^S \d \euscr{z}   \ \euscr{z}^{-2\s}\int_0^S \d \euscr{y}\  \euscr{y}^{2m-2} \\
+	& \leq \begin{cases}
+	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
+	C\ \log(S)\,S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1).\\
+	\end{cases}
+	\end{align*}
+	Finally we obtained the desired energy estimate by combaning the ones of the kinetic and potential energy.
 \end{proof}
 
 
