@@ -37,6 +37,38 @@ To overcome this problem, we will consider a function $v$ defined in $B_{S+2}\ca
 
 ----------------
 
+ This function $v$ satisfies, in $B_{S+2}\subset B_R \subset \R^n$, the following assumptions:
+\begin{enumerate}
+	\item $-1 \leq v \leq 1$.
+	\item $v$ doubly radial and $v=0$ in $\ccal$.
+	\item $v=u$ in $\partial B_{S+2} \cap \ocal$.
+	\item $v=-1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
+	\item $v\in \Lip(\overline{B_{S+3}})$ with a Lipschitz constant independent of $R$ and $S$, and
+	$$ |v(x)-v(y)| \leq \frac{C}{\dist(x,\ccal)}|x-y| $$
+	whenever $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$.
+\end{enumerate} 
+
+\begin{proof}
+	By definition, it is clear that $v$ is an admissible competitor. Hence, since $u$ is a minimizer
+	$$ \ecal (u, B_R) \leq \ecal (v, B_R). $$
+	But since $u\equiv v$ in $B_{S+2}^c$, it follows that
+	$$ \ecal (u, B_{S+2}) \leq \ecal (v, B_{S+2}), $$
+	and by the monotonicity of the energy $\ecal$ by inclusions we get
+	$$ \ecal (u, B_{S}) \leq \ecal (v, B_{S+2}). $$
+	Therefore we only need to estimate $\ecal (v, B_{S+2})$. First, note that using the ellipticity of the kernel $K$ and the change of variables given by $(\cdot)^\star$ we obtain
+	$$ \ecal(v,B_{S+2}) \leq C \int_{B_{S+2}\cap \ocal} \d x \int_{\R^n} \d y \frac{|v(x)-v(y)|^2}{|x-y|^{2m+2\s}} + \int_{B_{S+2}} G(v) \d x.  $$
+	
+	\textbf{Estimate for the potential energy}
+	Since $v=\pm 1$ in $B_{S+2} \setminus \omega_S$ and $G(1) = G(-1) = 0$, it is clear that
+	$$ \int_{B_{S+2}} G(v) = \int_{\Omega_S} G(v) \leq C |\Omega_S| \leq C S^{2m-1}. $$  
+	
+	\textbf{Estimate for the kinetic energy}
+	
+\end{proof}
+
+
+
+----------------
 
 
 Thus, we need to adapt the auxiliary function $\phi_S$ to obtain the desired  competitor (that must be doubly radial and odd with respect to the Simons cone).
