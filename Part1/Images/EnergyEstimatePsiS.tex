@@ -160,14 +160,7 @@
 
 
 \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	%region-left
-	\path[scale=0.938,fill=naranja_custom, opacity = 0.7, line width=0.400pt] (135.0335,247.4028) --
-	   (134.7776,188.7174) .. controls (150.3378,188.7174) and (166.1447,192.5954) ..
-	   (174.7403,194.5249) .. controls (183.3359,196.4544) and (193.3107,200.6018) ..
-	   (199.8460,203.7729) .. controls (207.0827,207.2843) and (213.8063,211.4369) ..
-	   (223.6621,218.5894) .. controls (192.9161,248.8853) and (173.2645,268.9189) ..
-	   (135.8052,306.6305) .. controls (135.8915,283.3596) and (135.0335,247.4028) ..
-	   (135.0335,247.4028) -- cycle;
+
     
 	%region-down
 	\path[scale=0.938,fill=lila_custom, opacity = 0.7, line width=0.400pt] (248.0459,242.6193) ..
@@ -176,108 +169,94 @@
 		controls (186.2822,304.6380) and (219.4410,271.2569) .. (248.0459,242.6193) --
 		cycle;
  	
-	%region-up
-	\path[scale=0.938,fill=lila_custom, path fading = north, line width=0.566pt] (134.8750,157.3380) ..
-		controls (134.8750,123.0497) and (135.5877,98.9811) .. (135.5877,82.0121) ..
-		controls (219.8549,82.0121) and (299.5508,81.7317) .. (384.5505,81.7317) ..
-		controls (370.5852,95.6970) and (322.2559,144.5798) .. (304.3549,161.2566) ..
-		controls (297.9172,154.7016) and (296.2860,153.3765) .. (292.5864,149.5391) ..
-		controls (279.8407,162.0559) and (256.4493,185.6665) .. (246.2093,195.6929) ..
-		controls (225.2677,179.4293) and (218.9707,175.0717) .. (196.2229,167.1188) ..
-		controls (177.5818,160.2360) and (159.1322,158.8320) .. (134.8750,157.3380) --
-		cycle;
-
-	%region-right    
-	\path[fill=naranja_custom, path fading = east, line width=0.530pt] (289.9164,309.8622) .. controls
-		(322.0617,309.8622) and (344.6260,309.1940) .. (360.5345,309.1940) .. controls
-		(360.5345,230.1935) and (361.2954,156.2403) .. (361.2954,76.5531) .. controls
-		(348.2029,89.6456) and (301.8773,134.1926) .. (286.2428,150.9748) .. controls
-		(292.3881,157.0102) and (293.3127,158.5320) .. (296.9056,163.1796) .. controls
-		(284.8489,175.1287) and (263.4610,196.3990) .. (254.0613,205.9990) .. controls
-		(269.3084,225.6317) and (272.8223,231.1104) .. (280.2782,252.4364) .. controls
-		(286.7308,269.9125) and (288.5158,287.1211) .. (289.9164,309.8622) -- cycle;
-
-	%x-axis    
-	\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
-		(126.5055,309.8063) -- (368.4872,309.8063);
-
-	%x-axis cap    
-	\path[draw=black,fill=black,even odd rule,line width=0.497pt]
-		(368.4872,309.8063) -- (366.1493,312.1289) -- (374.3320,309.8063) --
-		(366.1493,307.4838) -- cycle;
-
-	%y-axis
-	\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
-		(127.0562,310.9866) -- (127.0562,61.5223);
-
-	%y-axis cap    
-	\path[draw=black,fill=black,even odd rule,line width=0.497pt] (127.0562,61.5223)
-		-- (129.3788,63.8602) -- (127.0562,55.6775) -- (124.7336,63.8602) -- cycle;
-
-	%big BIG circle    
-	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
-		(126.6467,86.2660) .. controls (181.4585,86.2660) and (241.2077,105.6745) ..
-		(286.1250,150.7685) .. controls (331.0423,195.8624) and (350.0320,254.5876) ..
-		(350.0320,309.6513);   
-
-	%big circle
-	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
-		(127.0312,146.9770) .. controls (166.9982,146.9770) and (210.2478,160.9750) ..
-		(243.0000,193.8560) .. controls (275.7522,226.7370) and (289.9164,269.7115) ..
-		(289.9164,309.8622);
-
-	%medium circle
-	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
-		(127.0312,177.3949) .. controls (151.7088,177.3949) and (192.2090,185.8302) ..
-		(221.4938,215.3997) .. controls (250.7785,244.9692) and (259.4986,284.9193) ..
-		(259.4986,309.8622);
-
-	%small circle    
-	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
-		(127.0312,207.7933) .. controls (150.2506,207.7933) and (177.3815,214.3180) ..
-		(199.9500,236.9435) .. controls (222.0483,259.0975) and (229.1002,286.5606) ..
-		(229.1002,309.8622);
- 
-	%cone   
-	\path[draw=black,line join=miter,line cap=butt,miter limit=4.00,even odd
-		rule,line width=1.57pt] (126.7629,310.0643) -- (364.1869,72.8844);
-		
-	%cone+1    
-	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
-		(150.2563,309.8481) -- (356.0555,104.0518);
-		
-	%cone-1 
-	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
-		(127.1847,287.2416) -- (337.4946,76.9526); 
-
-	%Linea Cota
-	\path[draw=black,line join=miter,line cap=butt,line width=0.5pt]
-		(336.3343,104.4919) -- (344.3936,112.7321);
-		
-
-	%Flecha Izquierda Cota
-	\path[draw=black,fill=black,even odd rule,line width=0.200pt]
-		(336.9657,105.1375) -- (338.2914,105.1522) -- (335.3269,103.4619) --
-		(336.9510,106.4632) -- cycle;
-
-	%Flecha Derecha Cota
-	\path[draw=black,fill=black,even odd rule,line width=0.200pt]
-		(343.7622,112.0865) -- (342.4364,112.0718) -- (345.4010,113.7621) --
-		(343.7769,110.7608) -- cycle;
 
 
-\node at (353,100) {\normalsize $\mu^{-1}$};
-\node at (127,47) {\normalsize $|x''|$};
-\node at (388, 311) {\normalsize $|x'|$};
+%big circle
+\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+(127.0312,146.9770) .. controls (166.9982,146.9770) and (210.2478,160.9750) ..
+(243.0000,193.8560) .. controls (275.7522,226.7370) and (289.9164,269.7115) ..
+(289.9164,309.8622);
+
+%big circle2
+\path[draw=naranja_custom,line join=miter,line cap=butt,line width=1.8pt]
+(243.0000+11,193.8560+12) .. controls (275.7522-9,226.7370-6) and (289.9164,258.7115) ..
+(289.9164,309.8622);
+
+%x-axis    
+\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+(126.5055,309.8063) -- (330.4872,309.8063);
+
+%x-axis cap    
+\path[draw=black,fill=black,even odd rule,line width=0.497pt]
+(330.4872,309.8063) -- (328.1493,312.1289) -- (336.3320,309.8063) --
+(328.1493,307.4838) -- cycle;
+
+%y-axis
+\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+(127.0562,310.9866) -- (127.0562,99.5223);
+
+%y-axis cap    
+\path[draw=black,fill=black,even odd rule,line width=0.497pt] (127.0562,99.5223)
+-- (129.3788,101.8602) -- (127.0562,93.6775) -- (124.7336,101.8602) -- cycle;
+
+
+
+%medium circle
+\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+(127.0312,177.3949) .. controls (151.7088,177.3949) and (192.2090,185.8302) ..
+(221.4938,215.3997) .. controls (250.7785,244.9692) and (259.4986,284.9193) ..
+(259.4986,309.8622);
+
+%small circle    
+\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
+(127.0312,207.7933) .. controls (150.2506,207.7933) and (177.3815,214.3180) ..
+(199.9500,236.9435) .. controls (222.0483,259.0975) and (229.1002,286.5606) ..
+(229.1002,309.8622);
+
+%cone   
+\path[draw=black,line join=miter,line cap=butt,miter limit=4.00,even odd
+rule,line width=1.57pt] (126.7629,310.0643) -- (326.1869,110.8844);
+
+%cone+1    
+\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
+(150.2563,309.8481) -- (318.0555,142.0518);
+
+
+%Linea Cota
+\path[draw=black,line join=miter,line cap=butt,line width=0.5pt]
+(298.3343,142.4919) -- (306.3936,150.7321);
+
+
+%Flecha Izquierda Cota
+\path[draw=black,fill=black,even odd rule,line width=0.200pt]
+(298.9657,143.1375) -- (300.2914,143.1522) -- (297.3269,141.4619) --
+(298.9510,144.4632) -- cycle;
+
+%Flecha Derecha Cota
+\path[draw=black,fill=black,even odd rule,line width=0.200pt]
+(305.7622,150.0865) -- (304.4364,150.0718) -- (307.4010,151.7621) --
+(305.7769,148.7608) -- cycle;
+
+%Cota naranja
+\path[draw=black,line join=miter,line cap=butt,line width=0.5pt]
+(300, 230) .. controls (300, 235) and (295, 250) ..
+(285, 250);
+
+%Flecha cota naranja
+\path[draw=black,fill=black,even odd rule,line width=0.200pt]
+(285, 250) -- (285+0.9375, 250+0.9375) -- (285-2.3437, 250) --
+(285+0.9375, 250-0.9375) -- cycle;
+
+\node at (315,138) {\normalsize $\mu^{-1}$};
+\node at (127,85) {\normalsize $|x''|$};
+\node at (350, 311) {\normalsize $|x'|$};
 \node at (228,320) {\normalsize $S$};
 \node at (255, 320) {\normalsize $S\!+\!1$};
 \node at (292, 320) {\normalsize $S\!+\!2$};
-\node at (350, 320) {\normalsize $S\!+\!4$};
-\node at (372, 63) {\normalsize $\ccal$};
+\node at (334, 101) {\normalsize $\ccal$};
 \node at (298, 220) {\normalsize $\Psi_S\! = \!1$};
-\node at (151, 235) {\normalsize $\Psi_S\! = \!1$};
 \node at (220, 286) {\normalsize $\Psi_S\! = \!-1$};
-\node at (212, 136) {\normalsize $\Psi_S\! = \!-1$};
+
 
 \end{tikzpicture}
 \end{document}

@@ -177,26 +177,20 @@
     
 	%x-axis    
 	\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
-		(126.5055,309.8063) -- (368.4872,309.8063);
+		(126.5055,309.8063) -- (330.4872,309.8063);
 
 	%x-axis cap    
 	\path[draw=black,fill=black,even odd rule,line width=0.497pt]
-		(368.4872,309.8063) -- (366.1493,312.1289) -- (374.3320,309.8063) --
-		(366.1493,307.4838) -- cycle;
+		(330.4872,309.8063) -- (328.1493,312.1289) -- (336.3320,309.8063) --
+		(328.1493,307.4838) -- cycle;
 
 	%y-axis
 		\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
-		(127.0562,310.9866) -- (127.0562,61.5223);
+		(127.0562,310.9866) -- (127.0562,99.5223);
 
 	%y-axis cap    
-		\path[draw=black,fill=black,even odd rule,line width=0.497pt] (127.0562,61.5223)
-		-- (129.3788,63.8602) -- (127.0562,55.6775) -- (124.7336,63.8602) -- cycle;
-
-	%big BIG circle    
-	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
-		(126.6467,86.2660) .. controls (181.4585,86.2660) and (241.2077,105.6745) ..
-		(286.1250,150.7685) .. controls (331.0423,195.8624) and (350.0320,254.5876) ..
-		(350.0320,309.6513);   
+		\path[draw=black,fill=black,even odd rule,line width=0.497pt] (127.0562,99.5223)
+		-- (129.3788,101.8602) -- (127.0562,93.6775) -- (124.7336,101.8602) -- cycle;
 
 	%big circle
 	\path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
@@ -218,40 +212,39 @@
 
 	%cone   
 	\path[draw=black,line join=miter,line cap=butt,miter limit=4.00,even odd
-		rule,line width=1.57pt] (126.7629,310.0643) -- (364.1869,72.8844);
+		rule,line width=1.57pt] (126.7629,310.0643) -- (326.1869,110.8844);
 
 	%cone+1    
 	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
-		(150.2563,309.8481) -- (356.0555,104.0518);
+		(150.2563,309.8481) -- (318.0555,142.0518);
 
 	%cone-1 
 	\path[draw=black,line join=miter,line cap=butt,even odd rule,line width=0.704pt]
-		(127.1847,287.2416) -- (337.4946,76.9526); 
+		(127.1847,287.2416) -- (299.4946,114.9526); 
 
 	%Linea Cota
 	\path[draw=black,line join=miter,line cap=butt,line width=0.5pt]
-		(336.3343,104.4919) -- (344.3936,112.7321);
+		(298.3343,142.4919) -- (306.3936,150.7321);
 
 
 	%Flecha Izquierda Cota
 	\path[draw=black,fill=black,even odd rule,line width=0.200pt]
-		(336.9657,105.1375) -- (338.2914,105.1522) -- (335.3269,103.4619) --
-		(336.9510,106.4632) -- cycle;
+		(298.9657,143.1375) -- (300.2914,143.1522) -- (297.3269,141.4619) --
+		(298.9510,144.4632) -- cycle;
 
 	%Flecha Derecha Cota
 	\path[draw=black,fill=black,even odd rule,line width=0.200pt]
-		(343.7622,112.0865) -- (342.4364,112.0718) -- (345.4010,113.7621) --
-		(343.7769,110.7608) -- cycle;
+		(305.7622,150.0865) -- (304.4364,150.0718) -- (307.4010,151.7621) --
+		(305.7769,148.7608) -- cycle;
 
 
-\node at (353,100) {\normalsize $\mu^{-1}$};
-\node at (127,47) {\normalsize $|x''|$};
-\node at (388, 311) {\normalsize $|x'|$};
+\node at (315,138) {\normalsize $\mu^{-1}$};
+\node at (127,85) {\normalsize $|x''|$};
+\node at (350, 311) {\normalsize $|x'|$};
 \node at (228,320) {\normalsize $S$};
 \node at (255, 320) {\normalsize $S\!+\!1$};
 \node at (292, 320) {\normalsize $S\!+\!2$};
-\node at (350, 320) {\normalsize $S\!+\!4$};
-\node at (372, 63) {\normalsize $\ccal$};
+\node at (334, 101) {\normalsize $\ccal$};
 \node at (264, 250) {\normalsize $\Omega_S$};
 
 \end{tikzpicture}
