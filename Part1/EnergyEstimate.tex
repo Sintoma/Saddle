@@ -31,11 +31,11 @@ d (x) = \max \{S+1-|x| , 1\},
 \end{equation}
 which in $B_{S+2}$ coincides with $\max\{ \dist (x, \partial B_{S+1}), 1\}$.
 
-In our case, the strategy is the same but we will need to adapt some ingredients (such as the competitor $v$ and the function $d$). First, note that the previous construction for $v$ cannot be used in our setting, since it would not give us a doubly radial function which is odd with respect to the Simons cone $\ccal$, and therefore $v$ would not be an admissible competitor ---recall that we consider $u$ to be a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. 
+In our case, the strategy that we follow is the same but we need to adapt some ingredients (such as the competitor $v$ and the function $d$). First, note that the previous construction for $v$ cannot be used in our setting, since it would not give us a doubly radial function which is odd with respect to the Simons cone $\ccal$, and therefore $v$ would not be an admissible competitor ---recall that we consider $u$ to be a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. 
 
 To overcome this problem, we will consider a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$). Apart from this, we will need some technical details, described next. 
 
-First, to simplify our proof and be more precise, we define the following set (see Figure~\ref{Fig:PsiSandOmegaS}~(b)):
+First, to simplify our proof and be more precise, we define the following set (see Figure~\ref{Fig:PsiSandOmegaS}~(a)):
 \begin{equation}
 \label{Eq:DefOmegaS}
 \Omega_S := \left( \overline{B_{S+2}}\setminus B_S \right) \cup \left(  \overline{B_{S+2}} \cap \{\mu \dist(x,\ccal) \leq 1\}\right),
@@ -52,14 +52,14 @@ with a constant $C$ depending only on $m$ and $\mu$. This can be checked followi
 	  \hspace{-0.26\textwidth} 
 	\begin{subfigure}{0.21\textwidth}
 		\centering
-		\input{EnergyEstimatePsiS.tex}
+		\input{EnergyEstimateOmegaS.tex}
 	\end{subfigure}
 	  \hspace{0.28\textwidth} 
 	\begin{subfigure}{0.21\textwidth}
 		\centering		
-		\input{EnergyEstimateOmegaS.tex}
+		\input{EnergyEstimatePsiS.tex}
 	\end{subfigure}
-	\caption{(a) The $1$ and $-1$ level sets of $\Psi_S$. (b) The set $\Omega_S$.}
+	\caption{(a) The set $\Omega_S$. (b) The $1$ and $-1$ level sets of $\Psi_S$ in $\overline{B_{S+2}}\cap \ocal$.}
 	\label{Fig:PsiSandOmegaS}
 \end{figure}
 
@@ -120,7 +120,7 @@ where $\Psi_S:B_{S+2} \cap \ocal \to \R$ is essentially the function $\phi_S$ of
 \phi_S (x) &  \mu\dist(x,\ccal) \geq 1\,,
 \end{cases}
 \end{equation}
-where $\mu$ is a positive number that depends on the Lipschitz constant of $u$ in $B_{S+3}$ and makes \eqref{Eq:wH3} to be satisfied.
+where $\mu$ is a positive number that depends on the Lipschitz constant of $u$ in $B_{S+3}$ and makes \eqref{Eq:wH3} to be satisfied. Moreover, $\Psi_S \equiv -1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$ ---see Figure~\ref{Fig:PsiSandOmegaS}~(b)--- and thus \eqref{Eq:wH4} holds.
 
 We postpone the proof of this lemma and, assuming it true for the moment, let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
 
