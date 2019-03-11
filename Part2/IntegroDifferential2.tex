@@ -13,6 +13,9 @@
 \usepackage{amscd} %Package for rectangular diagrams
 %\usepackage{amsrefs} %Gestió de referències
 
+\usepackage{euscript}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\DeclareMathAlphabet\euscr{T1}{qzc}{m}{n}
 
 \usepackage{emptypage}
 %\usepackage{pdfpages} %Include pdf documents
@@ -47,6 +50,7 @@
 \usepackage{pgf,tikz,pgfplots}
 \usetikzlibrary{arrows}
 \usetikzlibrary{intersections}
+\usetikzlibrary{fadings}
 
 
 %%%EDITION HELP
@@ -55,6 +59,8 @@
 %\usepackage{showlabels} %Show the labels of equations and theorems
 %\usepackage{showkeys} %Show the keys of all references
 \usepackage{refcheck}
+
+%\usepackage{newclude} %Use include*{} for no jumps between sections
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,16 +132,11 @@
 \newcommand{\setcond}[2]{\left \{ #1 \ : \ #2  \right \}}
 \newcommand\evalat[1]{_{\mkern1.5mu\big\vert_{\scriptstyle #1}}}
 \newcommand{\normLinf}[1]{\left | \left |{#1} \right | \right |_{\lp{\infty}}}
-%\newcommand{\averageline}{{\mathchoice
-%{\kern1ex\vcenter{\hrule height.4pt width 6pt depth0pt} \kern-9.3pt} {}
-%{\kern1ex\vcenter{\hrule height.4pt width 4.3pt depth0pt} \kern-7pt}
-%{} {} }}
-%\newcommand{\average}{\averageline \!\int}
-
+\newcommand{\restr}[2]{{#1}_{\mkern 1mu \vrule height 2ex\mkern2mu #2}}
 \newcommand{\average}{\fint}
-
 \newcommand\beqc[1]{\left\{\begin{array}{#1}}
 \newcommand\eeqc{\end{array} \right.}
+
 \def\PDEsystem{rcll}
 \def\bmatrix{\begin{pmatrix}}
 \def\ematrix{\end{pmatrix}}
