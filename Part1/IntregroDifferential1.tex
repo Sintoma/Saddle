@@ -481,7 +481,7 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 	\ecal (u,B_S) \leq 
 	\begin{cases}
 	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-	C\ \log(S)\,S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C \ S^{2m-1} \log S\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 	\end{cases}
 	\end{equation}
@@ -490,7 +490,7 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 
 Note that this result does not follow from the energy estimate for general minimizers 
 %in $H^\s_0(B_R)$ 
-stated in \cite{SavinValdinoci-EnergyEstimate} by Savin and Valdinoci. The minimizers that they consider do not have any type of symmetry. In our case, the function $u$ in the previous statement minimizes the energy in a smaller class of functions and the result in \cite{SavinValdinoci-EnergyEstimate} cannot be applied. Nevertheless, we are able to adapt the arguments of Savin and Valdinoci to our setting.  The strategy they follow is to compare the energy of $u$ with the one of a suitable competitor which is constructed by taking the minimum between $u$ and a radially symmetric auxiliary function ---see \eqref{Eq:DefPhiS} below. Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyForOddF} how to modify the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to carry out the same type of arguments. In the proof, the assumption \eqref{Eq:KernelInequality} is crucial.
+stated in \cite{SavinValdinoci-EnergyEstimate} by Savin and Valdinoci. The minimizers that they consider do not have any type of symmetry. In our case, the function $u$ in the previous statement minimizes the energy in a smaller class of functions and the result in \cite{SavinValdinoci-EnergyEstimate} cannot be applied. Nevertheless, we are able to adapt the arguments of Savin and Valdinoci to our setting.  The strategy they follow is to compare the energy of $u$ with the one of a suitable competitor which is constructed by taking the minimum between $u$ and a radially symmetric auxiliary function ---see \eqref{Eq:DefPhiS} below. Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyEstimate} how to modify the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to carry out the same type of arguments. The assumption \eqref{Eq:KernelInequality} will be crucial to guarantee that $0\leq u \leq 1$ in $\ocal$.
 
 The particular result of Theorem~\ref{Th:EnergyEstimate} for the fractional Laplacian has been proved by Cabré and Cinti \cite{CabreCinti-EnergyHalfL} in the case of the half-Laplacian, and extended to all the powers $0<\s<1$ by Cinti \cite{Cinti-Saddle2} (see \cite{CabreCinti-SharpEnergy} for an extension to non-doubly radial minimizers). These papers use the local extension problem and therefore their proofs cannot be extended to general operators like $L_K$. Our proof, following \cite{SavinValdinoci-EnergyEstimate}, overcomes this issue.
 
@@ -975,7 +975,7 @@ In this subsection we prove Proposition~\ref{Prop:MaximumPrincipleForOddFunction
 	Note that since the operator $L_K$ includes a term of order zero with positive coefficient in addition to the integro-differential part, the condition $c\geq 0$ in point $(i)$ of the previous proposition can be slightly relaxed. Indeed, following the proof of the result, we see that
 	$$ c(x) > -2\int_{\ocal} \overline{K}(x, y^\star) \d y $$
 	suffices.
-	This hypothesis seems hard to be checked for applications apart from the case $c\geq 0$. Nevertheless, recall that by Lemma~\ref{Lemma:OperatorOddF} we have an explicit lower bound for the quantity $ \int_{\ocal} \overline{K}(x, y^\star) \d y $ in terms of the function $\dist(x,\ccal)$. This fact will be crucial for establishing a maximum principle in ``narrow'' sets close to the Simons cone, Proposition~6.2 in \cite{FelipeSanz-Perela:IntegroDifferentialII} (part II).
+	This hypothesis seems hard to be checked for applications apart from the case $c\geq 0$. Nevertheless, recall that by Lemma~\ref{Lemma:OperatorOddF} we have an explicit lower bound for the quantity $ \int_{\ocal} \overline{K}(x, y^\star) \d y $ in terms of the function $\dist(x,\ccal)$. This fact will be crucial for establishing a maximum principle in ``narrow'' sets close to the Simons cone ---see Proposition~6.2 in part II \cite{FelipeSanz-Perela:IntegroDifferentialII}.
 \end{remark}
 
 
@@ -990,7 +990,7 @@ In this subsection we prove Proposition~\ref{Prop:MaximumPrincipleForOddFunction
 This section is devoted to the energy functional associated to the semilinear equation \eqref{Eq:NonlocalAllenCahn}. We first define appropriately the functional spaces where we are going to apply classic techniques of calculus of variations. Next we rewrite the energy in terms of the new kernel $\overline{K}$ and we give an alternative expression for the energy of doubly radial odd functions. Finally, we establish some results that are useful when using variational techniques, and that will be exploited in the next section.
 
 
-Let us start by defining the functional spaces that we are going to consider in the rest of the paper. Given a set $\Omega \subset \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the space
+Let us start by defining the functional spaces that we are going to consider in the rest of the paper. Given a set $\Omega \subset \R^n$ and a translation invariant and positive kernel $K$ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}, we define the Hilbert space
 $$
 \H^K(\Omega) := \setcond{w \in L^2(\Omega)}{[w]^2_{\H^K(\Omega)} < + \infty},
 $$
@@ -1068,7 +1068,7 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 	Let $\Omega_1, \Omega_2 \subset \R^{2m}$ be two sets of double revolution that are symmetric with respect to the Simons cone, i.e., $\Omega_i^\star = \Omega_i$, and let $w\in \widetilde{\H}^K_{0,\, \mathrm{odd}}(\R^n)$. Let $K$ be a radially symmetric kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Then, 
 	\begin{equation}
 	\label{Eq:InteractionsEquality}
-	\int_A \int_B |w(x)-w(y)|^2 K(x-y) = I_w(A\cap \ocal,B\cap \ocal),
+	\int_{\Omega_1} \int_{\Omega_2} |w(x)-w(y)|^2 K(x-y) = I_w(\Omega_1\cap \ocal, \Omega_2\cap \ocal),
 	\end{equation}
 	where $I_w(\cdot, \cdot)$ is the interaction defined in \eqref{Eq:DefIw}.
 	
@@ -1145,21 +1145,24 @@ Next we present a result that will be used later, and concerns weak solutions to
 	\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \xi(x) \d x
 	$$
 	for every $\xi \in C^\infty_c(\Omega)$ that is doubly radial. Then, $u$ is a weak solution to
-	$$
+	\begin{equation}
+		\label{Eq:DirichletProblemOmega}
 	\beqc{\PDEsystem}
 	L_K u &=& f(u) & \text{in } \Omega\,,\\
 	u &=& 0 & \text{in } \R^{2m}\setminus \Omega\,,
 	\eeqc
-	$$
+	\end{equation}
 	i.e.,
 	$$
 	\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\eta(x)-\eta(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \eta(x) \d x
 	$$
 	for every $\eta \in C^\infty_c(\Omega)$ (not necessarily doubly radial).
+	
+	As a consequence, if $u\in \widetilde{\H}^K_{0}(\Omega)$ is a doubly minimizer of the energy $\ecal(u,\Omega)$, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}.
 \end{proposition}
 
 \begin{proof}
-	Let $\eta \in C^\infty_c(\Omega)$. We define its associated doubly radial function as
+	Let $\eta \in C^\infty_c(\Omega)$. We define an associated doubly radial function by
 	$$
 	\overline{\eta}(x) := \average_{O(m)^2}\eta(R x)\d R\,.
 	$$
@@ -1192,7 +1195,26 @@ Next we present a result that will be used later, and concerns weak solutions to
 	&\quad \quad= \int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\left \{\overline{\eta}(x) -\overline{\eta}(y)  \right \} K(|x-y|) \d x \d y - \int_{\Omega} f(u(x))\overline{\eta}(x) \d x \\
 	&\quad \quad= 0\,,
 	\end{align*}
-	and thus the result is proved.
+	and thus the first result is proved.
+	
+	
+	We next show that if $u$ is a minimizer, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}. To see this, we consider perturbations $u +  \varepsilon \xi$ with $\varepsilon>0$. On the one hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Then, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$, we get
+	$$
+	0 = \dfrac{\d}{\d \varepsilon}\evalat{\varepsilon = 0} \ecal(u +  \varepsilon \xi, B_R) = \langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} - \langle f(u),\xi \rangle_{L^2(B_R)}\,.
+	$$
+	On the other hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{even}}(B_R)$. Since $u$ is odd with respect to the Simons cone, the same holds for $f(u)$ ---recall that $f$ is odd. Then, by Remark~\ref{Remark:DecompositionHK} we find that
+	$$
+	\langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} = 0 \quad \textrm{ and } \quad  \langle f(u),\xi \rangle_{L^2(B_R)} = 0\,.
+	$$
+	Therefore, 
+	$$
+	\langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} = \langle f(u_R),\xi \rangle_{L^2(B_R)}
+	$$
+	for every $\xi \in\widetilde{\H}^K_0(B_R)$ with compact support in  $B_R$. By approximation, $\xi$ can be taken to be $C^\infty_c(B_R)$. Thus,
+	$$
+	\int_{\R^{2m}}\int_{\R^{2m}} \{u_R(x)-u_R(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u_R(x)) \xi(x) \d x
+	$$
+	for every $\xi \in C^\infty_c(\Omega)$ that is doubly radial, and by the previous reasoning, $u$ is a weak solution to \eqref{Eq:DirichletProblemOmega}.
 \end{proof}
 
 
@@ -1232,49 +1254,42 @@ Next we present a result that will be used later, and concerns weak solutions to
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:EnergyEstimate}
 
-In this section we present an estimate for the energy in the ball $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 4$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same type of estimate but for minimizers without any symmetry.
+In this section we present an estimate for the energy in the ball $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 4$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same estimate but for minimizers without any restriction on their symmetry.
 
 
 First of all, let us comment briefly the strategy used in \cite{SavinValdinoci-EnergyEstimate}. The argument is based in comparing the energy of the minimizer $u$ in $B_R\subset \R^n$ with the energy of a suitable competitor $v$. This function $v$ satisfies, in $B_{S+2}\subset B_R \subset \R^n$, the following assumptions:
 \begin{enumerate}[label=(\textit{\roman*})]
 	\item $-1 \leq v \leq 1$.
 	\item $v=u$ in $\partial B_{S+2}$.
-	\item The set $\{v\not \equiv -1\}\cap B_{S+2}$ has measure of order $n-1$ in $S$.
+	\item The set $\{v\not \equiv -1\}\cap B_{S+2}$ has measure bounded by $C S^{n-1}$ for some constant $C$.
 	\item $v\in \Lip(\overline{B_{S+2}})$ with a Lipschitz constant independent of $R$ and $S$.
 \end{enumerate} 
-By the second property, $v$ can be extended by $u$ outside $B_{S+2}$, becoming an admissible competitor. Then, the desired estimate follows by finding precise bounds of the energy of $v$ in $B_{S+2}$. The function $v$ is constructed in $B_{S+2}$ as
+By the second property, $v$ can be extended to coincide with $u$ outside $B_{S+2}$, becoming an admissible competitor. Then, the desired estimate follows by finding precise bounds on the energy of $v$ in $B_{S+2}$. The function $v$ is constructed in $B_{S+2}$ as $v = \min \{u, \phi_S\}$, where $\phi_S (x) =-1+2\min\{(|x|-S-1)_+,1\}$ ---we will also use this function below, see \eqref{Eq:DefOfPhiS}.
+
+In our case, the strategy will be the same but adapting some ingredients, namely, the competitor $v$. First, note that the previous construction for $v$ cannot be used in our setting, since it would not produce a doubly radial function $v$ which is odd with respect to the Simons cone $\ccal$. To overcome this problem, we will consider a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$).
+
+Let us introduce two definitions. First, let $\mu$ be the Lipschitz constant of $u$ in $\overline{B_{S+3}}$, that is,
+\begin{equation} 
+\label{Eq:ChoiceMu} 
+	\mu = \seminorm{u}_{\mathrm{Lip}(\overline{B_{S+3}})}, 
+\end{equation} 
+By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimateBalls} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points of $B_{S+3}$, it is easy to see that
 $$
-v = \min \{u, \phi_S\}\,
-$$
-where
-\begin{equation}
-\label{Eq:DefPhiS}
-\phi_S (x) =-1+2\min\{(|x|-S-1)_+,1\}\,,
-\end{equation}
-and then extended to be $u$ outside $B_{S+2}$. Note that $\phi_S \equiv -1$ in $B_{S+1}$ and $\phi_S = 1$ in $\partial B_{S+2}$ and thus, since $-1<u<1$, the first three assumptions on $v$ are satisfied. The fourth follows from interior regularity results and the Lipschitz regularity of $\phi_S$.
+\mu = \norm{u}_{\mathrm{Lip}(\overline{B_{S+3}})} \leq C,
+$$ 
+with a constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and thus $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$.
 
-To estimate the energy of $v$ in $B_{S+2}$, it is suitable to divide the nonlocal terms with double integrals in sets where $|x-y|\geq d(x)$ and $|x-y|\leq d(x)$, for a suitable function $d(x)$. This allows to have the precise estimate analogous to \eqref{Eq:EnergyEstimate}. The function that is used in \cite{SavinValdinoci-EnergyEstimate} is 
-\begin{equation}
-\label{Eq:DefdSavinValdinoci}
-d (x) = \max \{S+1-|x| , 1\},
-\end{equation}
-which in $B_{S+2}$ coincides with $\max\{ \dist (x, \partial B_{S+1}), 1\}$.
-
-In our case, the strategy that we follow is the same but we need to adapt some ingredients (such as the competitor $v$ and the function $d$). First, note that the previous construction for $v$ cannot be used in our setting, since it would not give us a doubly radial function which is odd with respect to the Simons cone $\ccal$, and therefore $v$ would not be an admissible competitor ---recall that we consider $u$ to be a minimizer among functions in $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$. 
-
-To overcome this problem, we will consider a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$). Apart from this, we will need some technical details, described next. 
-
-First, to simplify our proof and be more precise, we define the following set (see Figure~\ref{Fig:PsiSandOmegaS}~(a)):
+Now, we define the following set:
 \begin{equation}
 \label{Eq:DefOmegaS}
-\Omega_S := \left( \overline{B_{S+2}}\setminus B_S \right) \cup \left(  \overline{B_{S+2}} \cap \{\mu \dist(x,\ccal) \leq 1\}\right),
+\Omega_S := \left( \overline{B_{S+2}}\setminus B_S \right) \cup \left(  \overline{B_{S+2}} \cap \{\mu \dist(\cdot,\ccal) \leq 1\}\right),
 \end{equation} 
-with $\mu>0$ a positive number that will be chosen later and will depend on the Lipschitz constant of $u$ in $B_{S+3}$. $\Omega_S$ will be exactly the set where $w\not \equiv -1$ inside $B_{S+2}$. It is easy to see that its measure is of order $2m-1$ in $S$. That is,
+---see Figure~\ref{Fig:PsiSandOmegaS}~(a). It is easy to see that 
 \begin{equation}
 \label{Eq:MeasureOmegaS}
 |\Omega_S| \leq C\,S^{2m-1},
 \end{equation}
-with a constant $C$ depending only on $m$ and $\mu$. This can be checked following the computations in the proof of the energy estimate for the local equation in Theorem~1.3 of \cite{CabreTerraI}.
+with a constant $C$ depending only on $m$ and $\mu$. This can be checked following the computations in the proof of the energy estimate for the local equation in Theorem~1.3 of \cite{CabreTerraI}. 
 
 \begin{figure}
 	\centering
@@ -1292,30 +1307,11 @@ with a constant $C$ depending only on $m$ and $\mu$. This can be checked followi
 	\label{Fig:PsiSandOmegaS}
 \end{figure}
 
-
-
-Apart from the previous considerations, we also need to adapt the function $d(x)$ of \cite{SavinValdinoci-EnergyEstimate} to our setting of odd functions. We will consider the following one: 
-$$ 
-d_S(x) := \max\left\{1,\min\{S+1-|x|,\mu \dist(x,\ccal)\} \right\},  
-$$
-where $\mu$ is the same constant as in \eqref{Eq:DefOmegaS}. Note that $d_S(x) = 1$ if $x\in \Omega_S$. Moreover, if $x\in B_{S+2}\setminus \Omega_S = B_S \cap \{\mu\dist(\cdot,\ccal) \geq 1\}$,  the expression of $d_S(x)$ is simpler:
-\begin{align*}
-\restr{d_S}{B_{S+2}\setminus \Omega_S} (x) 
-= \min \{\dist(x, \partial B_{S+1}),\mu \dist(x,\ccal)\} .
-\end{align*}
-As we will see in the proof of Theorem~\ref{Th:EnergyEstimate}, by splitting some double integrals in sets where $|x-y|\geq d_S(x)$ and $|x-y|\leq d_S(x)$, we will obtain the precise bound \eqref{Eq:EnergyEstimate}. 
-
-Last, let us mention a technicality that will be needed when performing our estimates. It is related with the function $d_S$. In one estimate appearing in the proof of Theorem~\ref{Th:EnergyEstimate}, we will need to assume that there exists a positive constant $C$, independent of $R$ and $S$, such that
-$$ 
-|w(x)-w(y)| \leq \frac{C}{\dist(x,\ccal)}|x-y| 
-$$
-whenever $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$, and $\mu \dist(y,\ccal)\leq 1$. For more details, see the proof of Theorem~\ref{Th:EnergyEstimate}.
-
-In the following lemma we state the properties that suffice to establish the energy estimate.
+In the following lemma we state the properties of the competitor $w$ that suffice to establish the energy estimate. In fact, from its properties $\ecal(w,B_{S+2})$ will be bounded exactly by the quantities appearing in \eqref{Eq:EnergyEstimate}.
 
 \begin{lemma}
 	\label{Lemma:ExistenceCompetitor}
-	Let $S\geq 2$ and $R > S + 4$. Let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of the energy \eqref{Eq:Energy}. Then, there exists  a function $w:\overline{ B_{S+2}\cap \ocal} \to \R$, and a positive number $\mu$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{G}_{C^2([-1,1])}$, satisfying the following:
+	Let $S\geq 2$ and $R > S + 4$. Let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of the energy \eqref{Eq:Energy} and let $\mu$ be defined by \eqref{Eq:ChoiceMu}. Then, there exists  a function $w:\overline{ B_{S+2}\cap \ocal} \to \R$ satisfying the following:
 	
 	\begin{enumerate}[label={\normalfont (\textcolor{red}{H\arabic*})}, ref=H\arabic*]
 		\item
@@ -1323,51 +1319,103 @@ In the following lemma we state the properties that suffice to establish the ene
 		\item
 		\label{Eq:wH2} $w$ doubly radial and $w=0$ in $\ccal$.
 		\item
-		\label{Eq:wH3} $w=u$ in $\partial B_{S+2} \cap \ocal$.
+		\label{Eq:wH3} $w=u$ on $\partial B_{S+2} \cap \ocal$.
 		\item
-		\label{Eq:wH4} $w\equiv-1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
+		\label{Eq:wH4} $w\equiv-1$ on $(B_{S+2}\cap \ocal)\setminus \Omega_S = B_S \cap \{ \mu \dist (\cdot, \ccal) > 1\}$.
 		\item
-		\label{Eq:wH5} $w\in \Lip(\overline{B_{S+2}})$ with a Lipschitz constant independent of $R$ and $S$, and
+		\label{Eq:wH5} $w\in \Lip(\overline{B_{S+2}})$ with a Lipschitz constant independent of $R$ and $S$. In addition, 
 		$$ |w(x)-w(y)| \leq \frac{C}{\dist(x,\ccal)}|x-y| $$
 		whenever $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$, and with $C$ a constant independent of $R$ and $S$.
 	\end{enumerate} 
-	
-	As a consequence, if we consider the odd extension of $w$ through $\ccal$ and then we set $w=u$ in $B_{S+2}^c$, it follows that $w$ is an admissible competitor for doubly radial minimizers of the energy \eqref{Eq:Energy}. Moreover, $w\in \Lip(\overline{B_{S+3}})$ with a Lipschitz constant independent of $R$ and $S$.
 \end{lemma}
 
+\begin{proof}
+	To construct the function $w$ we first define
+	\begin{equation}
+		\label{Eq:DefOfPhiS}
+		\phi_S(x):= 
+		\begin{cases}
+		-1 & \textrm{ if }  \ |x| \leq S+1\,, \\
+		-1 + 2 (|x| - S-1)&  \textrm{ if } \ S+1 \leq |x| \leq S+2\,, \\
+		1 & \textrm{ if }  \  S+2 \leq |x|\,,
+		\end{cases}
+	\end{equation}
+	which is the function used in \cite{SavinValdinoci-EnergyEstimate}. Now, we modify it in order to vanish at $\ccal$. We define
+	$$
+	\Psi_S(x) :=
+	\begin{cases}
+	\phi_S (x) \mu\dist(x,\ccal) &  \textrm{ if }  \  \mu\dist(x,\ccal) \leq 1 \,, \\
+	\phi_S (x) & \textrm{ if }  \  \mu\dist(x,\ccal) \geq 1\,,
+	\end{cases}
+	$$
+	---see Figure~\ref{Fig:PsiSandOmegaS}~ (b) for an schematic representation.
+	
+	With this function, we construct the competitor  $w:\overline{B_{S+2} \cap \ocal} \to \R$ as
+	$$
+	w:= \min \{u, \Psi_S\}.
+	$$
+	We check next that \eqref{Eq:wH1}-\eqref{Eq:wH5} hold.
+	
+	First of all, recall that by Lemma~\ref{Lemma:DecreaseEnergy}, $0\leq u \leq 1$ in $\ocal$. Since $-1\leq \Psi_S\leq 1$ in $B_{S+2} \cap \ocal$ \eqref{Eq:wH1} holds trivially. Moreover, since both functions are doubly radial and vanish on $\ccal$, \eqref{Eq:wH2} follows ---recall that the distance to the cone, in $\ocal$, is $(|x'|-|x''|)/\sqrt{2}$. The verification of \eqref{Eq:wH4} is easy, since $\Psi_S \equiv-1 \leq u$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
+	
+	Now, we check that \eqref{Eq:wH3} holds. On the one hand, if $x\in \partial B_{S+2}\cap \ocal$ and $\mu\dist(x,\ccal) \geq 1$, we have $\Psi_S (x) = \phi_S(x) = 1 \geq u(x)$, and therefore $w(x) = u(x)$. On the other hand, for $x\in \partial B_{S+2}\cap \ocal$ with $\mu\dist(x,\ccal) \leq 1$, we have $\Psi_S (x) = \mu \dist (x,\ccal)$. By \eqref{Eq:ChoiceMu},
+	$$ 
+	|u(y) - u(z)|\leq \mu |y-z| \quad \text{ for every } y, \ z \in \overline{B_{S+3}},
+	$$ 
+	and thus, by taking $y=x$ and $z\in \ccal$ to be a point realizing $\dist(x,\ccal)$, we obtain that
+	$$ 
+	u(x) = |u(x)|\leq \mu |x-z|  = \mu \dist (x,\ccal) = \Psi_S (x).
+	$$ 
+	Thus, $w(x) = u(x)$ and \eqref{Eq:wH3} holds.
+	
+	Finally, we check \eqref{Eq:wH5}. Obviously, $w$ is Lipschitz in $\overline{B_{S+2}}$ since it is the minimum of two Lipschitz functions ---with Lipschitz constant depending only on $\mu$. Let us show the last statement of \eqref{Eq:wH5}. Let $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$. Then, $w(x)= \Psi_S(x) = \phi_S(x) = -1$ and $w(y)=\Psi_S(y) = \mu \dist(y,\ccal)$. Therefore, we have to show that
+	$$
+	|1-\mu \dist(y,\ccal)|\leq \dfrac{C}{\dist(x,\ccal)}|x-y|\,.
+	$$
+	We claim that this holds with $C=1$ and for every $x,y \in \R^{2m}$ with $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$. To prove it, note first that by using the triangular inequality and the definition of distance to the Simons cone, it is easy to verify that
+	\begin{equation} 
+	\label{Eq:TriangularCone1}
+	\dist(x,\ccal) \leq |x-y| + \dist(y,\ccal).
+	\end{equation}
+	Therefore, since $\mu \dist(x,\ccal)\geq 1$, we have
+	\begin{equation} 
+	\label{Eq:TriangularCone2}
+	1-\mu |x-y|- \mu \dist(y,\ccal) \leq 1-\mu\dist(x,\ccal) \leq 0
+	\end{equation}
+	Multiplying \eqref{Eq:TriangularCone1} by $|1-\mu\dist(y,\ccal)|$, and using that $\mu \dist(y,\ccal)\leq 1$ and \eqref{Eq:TriangularCone2}, we obtain
+	\begin{align*}
+	|1-\mu\dist(y,\ccal)|\,\dist(x,\ccal) &\leq (1-\mu\dist(y,\ccal)) \left(|x-y| + \dist(y,\ccal)\right) \\
+	&= |x-y|+\dist(y,\ccal) \left\{ 1 -\mu |x-y|- \mu \dist(y,\ccal) \right\} \\
+	&\leq |x-y|,
+	\end{align*}
+	which establishes our claim. As a consequence, \eqref{Eq:wH5} follows.	
+\end{proof}
 
-To construct this function we will define, in $B_{S+2}$,
+
+
+To estimate the energy of $w$ in $B_{S+2}$, it is important to control the double integrals in the nonlocal energy  first in the set where $|x-y|\geq d_S(x)$, and then in $\{|x-y|\leq d_S(x)\}$, where 
+$$ 
+\restr{d_S}{B_{S+2}\setminus \Omega_S} (x) 
+:= \min \{\dist(x, \partial B_{S+1}),\mu \dist(x,\ccal)\},
 $$
-w:= \min \{u, \Psi_S\}\,
-$$
-where $\Psi_S:B_{S+2} \cap \ocal \to \R$ is essentially the function $\phi_S$ of \eqref{Eq:DefPhiS} but modified in order to vanish at $\ccal$. Its precise expression in $B_{S+2}\cap \ocal$ is
-\begin{equation}
-\label{Eq:DefPsiS}
-\Psi_S(x) :=
-\begin{cases}
-\phi_S (x) \mu\dist(x,\ccal) &  \mu\dist(x,\ccal) \leq 1 \,, \\
-\phi_S (x) &  \mu\dist(x,\ccal) \geq 1\,,
-\end{cases}
-\end{equation}
-where $\mu$ is a positive number that depends on the Lipschitz constant of $u$ in $B_{S+3}$ and makes \eqref{Eq:wH3} to be satisfied. 
+---in our proof we will always consider this function in the set $B_{S+2}\setminus \Omega_S$, and thus we do not need to define it outside. A similar technicality was used by Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate} with the function $\dist(x, \partial B_{S+1})$, and it is the key point to get \eqref{Eq:EnergyEstimate}. 
 
-To prove \eqref{Eq:wH1} we need to prove first that the minimizer $u$ satisfies $-1\leq u \leq 1$ and that $0\leq u$ in $\ocal$. To see this we use Lemma~\ref{Lemma:DecreaseEnergy}, which uses crucially the expressions for the energy of doubly radial odd functions developed in the previous section and the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$. Once this is proved, since $\Psi_S \equiv -1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$ ---see Figure~\ref{Fig:PsiSandOmegaS}~(b)---, \eqref{Eq:wH4} holds. The point \eqref{Eq:wH2} follows easily and \eqref{Eq:wH5} requires some computations. For the details, see the proof below.
 
-We postpone the proof of Lemma~\ref{Lemma:ExistenceCompetitor} and, assuming it true for the moment, let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
+Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
 
 \begin{proof}[Proof of Theorem~\ref{Th:EnergyEstimate}]
-	Take $w$ constructed in Lemma~\ref{Lemma:ExistenceCompetitor} as a competitor. Hence, since $u$ is a doubly radial odd minimizer, $ \ecal (u, B_R) \leq \ecal (w, B_R)$. Since $u\equiv w$ in $B_{S+2}^c$, it follows that
+	Take $w$ constructed in Lemma~\ref{Lemma:ExistenceCompetitor} and extend it oddly through $\ccal$ and then to coincide with $u$ outside $B_{S+2}$.  Hence, since $u$ is a doubly radial odd minimizer and $w$ an admissible competitor, $ \ecal (u, B_R) \leq \ecal (w, B_R)$. Moreover, $u\equiv w$ in $\R^{2m}\setminus B_{S+2}$, and thus ir follows that
 	$$ 
-	\ecal (u, B_{S+2}) \leq \ecal (w, B_{S+2}), 
+	\ecal (u, B_{S+2}) \leq \ecal (w, B_{S+2}).
 	$$
-	and by the monotonicity of the energy $\ecal$ by inclusions we get
+	By the monotonicity of the energy $\ecal$ by inclusions we get
 	$$ 
 	\ecal (u, B_{S}) \leq \ecal (w, B_{S+2}). 
 	$$
-	Therefore, to obtain our result we only need to estimate $\ecal (w, B_{S+2})$. 
+	Therefore, to obtain our result it remains to estimate $\ecal (w, B_{S+2})$. 
 	
 	
-	In the following estimates, the letter $C$ will be a constant depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{G}_{C^2([-1,1])}$. Recall that $\mu$ given by Lemma~\ref{Lemma:ExistenceCompetitor} depends only on the previous quantities.
+	In the following estimates, the letter $C$ will be a constant depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{G}_{C^2([-1,1])}$. Recall that $\mu$ defined in \eqref{Eq:ChoiceMu} depends only on the previous quantities.
 	
 	First, note that using the ellipticity of the kernel $K$ and the change of variables given by $(\cdot)^\star$ it follows that
 	$$ 
@@ -1479,118 +1527,7 @@ We postpone the proof of Lemma~\ref{Lemma:ExistenceCompetitor} and, assuming it 
 	Using these two estimates in \eqref{Eq:EnergyEstimateProofLastEstimate}, and absorbing the lower order term with $S^{2m-1}$ (recall that $S\geq 2$), the desired result follows.
 \end{proof}
 
-To conclude the section, we establish Lemma~\ref{Lemma:ExistenceCompetitor}, which completes the previous proof.
 
-\begin{proof}[Proof of Lemma~\ref{Lemma:ExistenceCompetitor}] We divide it into two steps.
-	\medskip
-	
-	\textbf{Step 1. We show that $0\leq u < 1$ in $\ocal$.}
-	
-	First note that since $u$ is a minimizer of $\ecal$ in $B_R$, by Lemma~\ref{Lemma:DecreaseEnergy} we can assume without loss of generality that $-1 \leq u \leq 1$, $u \geq 0$ in $\ocal$, and $u \leq 0$ in $\ical$. Recall that to prove Lemma~\ref{Lemma:DecreaseEnergy} we used crucially the expression of the kinetic energy given by \eqref{Eq:ShortExpressionEnergy} and the ellipticity assumption \eqref{Eq:KernelInequality}.
-	
-	
-	Now we want to show that $u < 1$ in $\ocal$. We first claim that $u$ is a classical solution to
-	\begin{equation}
-	\label{Eq:ProofEnergyEstimateProblemBR}
-	\beqc{\PDEsystem}
-	L_K  u &=& f(u) & \textrm{ in } B_R\,,\\
-	u &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
-	\eeqc
-	\end{equation}
-	To see this, we consider perturbations $u +  \varepsilon \xi$ with $\varepsilon>0$. On the one hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Then, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$, we get
-	$$
-	0 = \dfrac{\d}{\d \varepsilon}\evalat{\varepsilon = 0} \ecal(u +  \varepsilon \xi, B_R) = \langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} - \langle f(u),\xi \rangle_{L^2(B_R)}\,.
-	$$
-	On the other hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{even}}(B_R)$. Since $u$ is odd with respect to the Simons cone, the same holds for $f(u)$ ---recall that $f$ is odd. Then, by Remark~\ref{Remark:DecompositionHK} we find that
-	$$
-	\langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} = 0 \quad \textrm{ and } \quad  \langle f(u),\xi \rangle_{L^2(B_R)} = 0\,.
-	$$
-	Therefore, 
-	$$
-	\langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} = \langle f(u),\xi \rangle_{L^2(B_R)}
-	$$
-	for every $\xi \in\widetilde{\H}^K_0(B_R)$ with compact support in  $B_R$. By approximation, $\xi$ can be taken to be $C^\infty_c(B_R)$. Thus,
-	$$
-	\int_{\R^{2m}}\int_{\R^{2m}} \{u(x)-u(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u(x)) \xi(x) \d x
-	$$
-	for every $\xi \in C^\infty_c(\Omega)$ that is doubly radial. Finally, by Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, $u$ is a weak solution to \eqref{Eq:ProofEnergyEstimateProblemBR}, and in view of the regularity theory for operators in $\lcal_0$ (see Remark~\ref{Remark:InteriorRegularity}), since $u$ is bounded, it is a classical solution and the claim is proved.
-	
-	Since $u$ is a classical solution that is odd and continuous, it follows that $u \not \equiv 1$ in $\ocal$. Therefore, by the usual strong maximum principle (recall that $u\leq 1$), we get $0\leq u < 1$ in $\ocal$. 
-	
-	\medskip
-	
-	\textbf{Step 2. We construct $w$ and verify \eqref{Eq:wH1}-\eqref{Eq:wH5}.} 
-	
-	Let $\mu>0$ be a positive number to be chosen later and consider the following function $\Psi_S:\overline{B_{S+2} \cap \ocal} \to \R$ defined by \eqref{Eq:DefPsiS}, that is, 
-	$$
-	\Psi_S(x) :=
-	\begin{cases}
-	\phi_S (x) \mu\dist(x,\ccal) &  \mu\dist(x,\ccal) \leq 1 \,, \\
-	\phi_S (x) &  \mu\dist(x,\ccal) \geq 1\,,
-	\end{cases}
-	$$
-	with 
-	$$
-	\phi_S (x) =-1+2\min\{(|x|-S-1)_+,1\}\,.
-	$$
-	
-	Obviously, $\Psi_S$ is Lipschitz in $\overline{B_{S+2}}$, with a Lipschitz constant depending only on $\mu$.
-	
-	Now, we define $w:\overline{B_{S+2} \cap \ocal} \to \R$ as
-	$$
-	w:= \min \{u, \Psi_S\}.
-	$$
-	Note that $w=\Psi_S$ in $B_{S+1}$ since $u\geq 0$ and $\Psi_S\leq 0$ there.	We claim that if we choose $\mu$ appropriately, then $w$ satisfies \eqref{Eq:wH1}-\eqref{Eq:wH5}. 
-	
-	First, \eqref{Eq:wH1} holds trivially, since both functions $u$ and $\Psi_S$ are bounded by $1$ and $-1$ by above and below. Moreover, since both functions are doubly radial ---recall that the distance to the cone, in $\ocal$, is $(|x'|-|x''|)/\sqrt{2}$--- and $u\geq0$, then \eqref{Eq:wH2} follows.
-	
-	Now, we choose $\mu$ such that \eqref{Eq:wH3} holds. On the one hand, if $x\in \partial B_{S+2}\cap \ocal$ and $\mu\dist(x,\ccal) \geq 1$, we have $\Psi_S (x) = \phi_S(x) = 1 > u$, and therefore $w(x) = u(x)$. On the other hand, for $x\in \partial B_{S+2}\cap \ocal$ with $\mu\dist(x,\ccal) \leq 1$, we have $\Psi_S (x) = \mu \dist (x,\ccal)$. We take  
-	\begin{equation} 
-	\label{Eq:ChoiceMu} 
-	\mu = \norm{u}_{\mathrm{Lip}(\overline{B_{S+3}})}, 
-	\end{equation} 
-	and therefore
-	$$ 
-	|u(y) - u(z)|\leq \mu |y-z| \quad \text{ for every } y, \ z \in \overline{B_{S+3}}. 
-	$$ 
-	Thus, by taking $y=x$ and  $z\in \ccal$ to be a point realizing $\dist(x,\ccal)$, we obtain that
-	$$ 
-	u(x) = |u(x)|\leq \mu |x-z|  = \mu \dist (x,\ccal) = \Psi_S (x).
-	$$ 
-	Thus, $w(x) = u(x)$ and \eqref{Eq:wH3} holds.
-	
-	The verification of \eqref{Eq:wH4} is easy, since $\Psi_S \equiv-1 < u$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
-	
-	Finally, we check \eqref{Eq:wH5} but with constants depending only on $\mu$. Obviously, $w$ is Lipschitz in $\overline{B_{S+2}}$ since it is the minimum of two Lipschitz functions. In addition, the Lipschitz constant of $w$ depends only on $\mu$, which was chosen in \eqref{Eq:ChoiceMu}. Next, we show the last statement. Let $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$. Then, $w(x)= \Psi_S(x) = \phi_S(x) = -1$ and $w(y)=\Psi_S(y) = \mu \dist(y,\ccal)$. Therefore, we need to show that
-	\begin{equation}
-	\label{Eq:IneqDistanceCone}
-	|1-\mu \dist(y,\ccal)|\leq \dfrac{|x-y|}{\dist(x,\ccal)}\,.
-	\end{equation}
-	
-	We will prove that, indeed, \eqref{Eq:IneqDistanceCone} holds for every $x,y \in \R^{2m}$ with $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$. First, by using the triangular inequality and the definition of distance to the Simons cone, it is easy to verify that
-	\begin{equation} 
-	\label{Eq:TriangularCone1}
-	\dist(x,\ccal) \leq |x-y| + \dist(y,\ccal).
-	\end{equation}
-	Therefore, since $\mu \dist(x,\ccal)\geq 1$, we have
-	\begin{equation} 
-	\label{Eq:TriangularCone2}
-	1-\mu |x-y|- \mu \dist(y,\ccal) \leq 1-\mu\dist(x,\ccal) \leq 0
-	\end{equation}
-	Last, multiplying \eqref{Eq:TriangularCone1} by $|1-\mu\dist(y,\ccal)|$, and using that $\mu \dist(y,\ccal)\leq 1$ and \eqref{Eq:TriangularCone2}, we obtain
-	\begin{align*}
-	|1-\mu\dist(y,\ccal)|\,\dist(x,\ccal) &\leq (1-\mu\dist(y,\ccal)) \left(|x-y| + \dist(y,\ccal)\right) \\
-	&= |x-y|+\dist(y,\ccal) \left\{ 1 -\mu |x-y|- \mu \dist(y,\ccal) \right\} \\
-	&\leq |x-y|,
-	\end{align*}
-	which establishes \eqref{Eq:IneqDistanceCone}.
-	
-	At this point we have shown \eqref{Eq:wH1}-\eqref{Eq:wH5} up to prove that $\mu$ does not depend on $R$ and $S$. We do it in next.	By Step~1, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimateBalls} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points of $B_{S+3}$, it is easy to see that
-	$$
-	\mu = \norm{u}_{\mathrm{Lip}(\overline{B_{S+3}})} \leq C,
-	$$ 
-	with a constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and thus $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$. This concludes the proof.	
-\end{proof}
 
 
 
@@ -1619,23 +1556,18 @@ In this section we establish the existence of saddle-shaped solutions to the int
 	$$
 	Therefore, $u_R \in \widetilde{\H}^K(B_R)$. In addition, $u_R(x) = - u_R(x^\star)$ for every $x\in \R^{2m}$, and $u_R \equiv 0 $ in $\R^{2m} \setminus B_R$. Thus, $u_R$ is a minimizer of $\ecal(\cdot, B_R)$ in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Moreover, it satisfies $-1\leq u_R \leq 1$ in $B_R$ and $u_R\geq 0$ in $\ocal$.
 	
-	Arguing exactly as in the proof of Theorem~\ref{Th:EnergyEstimate}, one checks the hypothesis of Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}. Thus, using in addition the regularity theory for operators in $\lcal_0$ (see Remark~\ref{Remark:InteriorRegularity}) we deduce that $u_R$ is a classical solution to
-	\begin{equation*}
-	%\label{Eq:ProofExistenceProblemBR}
-	\beqc{\PDEsystem}
-	L_K  u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
-	u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
-	\eeqc
-	\end{equation*}
-	
-	
-	
-	The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. This is done using a compactness argument. Let $S>0$ and consider the family $\{u_R\}$, for $R> S + 1$, of solutions to $L_K u_R = f(u_R)$ in $B_{S}$. Note first that, if $w$ solves $L_K w = f(w)$ in $B_\rho$ and  $|w|\leq 1$ in $\R^{2m}$ with $f\in C^{\alpha}([-1,1])$ for some $\alpha > 0$, the combination of \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} yields
-	\begin{equation}
-	\label{Eq:UniformC2alphaEstimateBalls}
+
+	Now, by Proposition~\ref{Prop:WeakSolutionForAllTestFunctions} and the regularity for operators in $L_K$ (see Remark~\ref{Remark:InteriorRegularity}), we have that $u_R$ is a classical solution to
+	$$
+	 \beqc{\PDEsystem}
+	 L_K  u_R &=& f(u_R) & \textrm{ in } B_R\,,\\
+	 u_R &=& 0 & \textrm{ in }\R^{2m} \setminus B_R.
+	 \eeqc
+	$$	The next step is to pass to the limit in $R$ to obtain a solution in $\R^{2m}$. This is done using a compactness argument. Let $S>0$ and consider the family $\{u_R\}$, for $R> S + 1$, of solutions to $L_K u_R = f(u_R)$ in $B_{S}$. Note first that, if $w$ solves $L_K w = f(w)$ in $B_\rho$ and  $|w|\leq 1$ in $\R^{2m}$ with $f\in C^{\alpha}([-1,1])$ for some $\alpha > 0$, the combination of the estimates \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} yields
+	$$
 	\norm{w}_{C^{2\s + \varepsilon}(B_{\rho/8})} \leq C \bpar{n,\ \s ,\ \lambda,\ \Lambda ,\ \norm{f}_{C^{\alpha}([-1,1])} }\,.
-	\end{equation}
-	for some $\varepsilon > 0$.  By applying the estimate \eqref{Eq:UniformC2alphaEstimateBalls} to $u_R$ in balls of radius $\rho = 1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2\s + \varepsilon}(\overline{B_S})$ bound for $u_R$. By the Arzelà-Ascoli theorem, as $R\to +\infty$, a subsequence of $\{u_R\}$ converges in $C^{2\s + \varepsilon/2}(\overline{B_S})$ to a (pointwise) solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging uniformly on compacts in the $C^{2\s + \varepsilon/2}$ norm to a solution $u \in C^{2\s + \varepsilon/2}(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
+	$$
+	for some $\varepsilon > 0$.  By applying this to $u_R$ in balls of radius $\rho = 1$ and centered at points in $\overline{B_{S}}$, we obtain a uniform $C^{2\s + \varepsilon}(\overline{B_S})$ bound for $u_R$. By the Arzelà-Ascoli theorem, as $R\to +\infty$, a subsequence of $\{u_R\}$ converges in $C^{2\s + \varepsilon/2}(\overline{B_S})$ to a (pointwise) solution in $B_S$. Taking now $S = 1,2,3,\ldots$ and using a diagonal argument, we obtain a sequence $u_{R_j}$ converging uniformly on compacts in the $C^{2\s + \varepsilon/2}$ norm to a solution $u \in C^{2\s + \varepsilon/2}(\R^{2m})$ of \eqref{Eq:NonlocalAllenCahn}.
 	
 	Therefore, we have obtained a solution $u$ to $L_K u = f(u)$ in $\R^{2m}$ which is doubly radial. Furthermore, $u$ is odd with respect to the Simons cone $\ccal$, i.e., $u(x) = -u(x^\star)$ for $x\in \R^{2m}$, and $0 \leq u\leq 1$ in $\ocal$.
 	
@@ -1643,14 +1575,14 @@ In this section we establish the existence of saddle-shaped solutions to the int
 	$$
 	\ecal (u_R,B_S) \leq \begin{cases}
 	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-	C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C\ S^{2m-2\s} \log S \ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 	\end{cases} $$
 	for every $2 < S < R-5$ and with a constant $C$ independent of $R$ and $S$. By letting $R \to \infty$ we obtain the same estimate for $u$. By contradiction, assume $u\equiv 0$. Then, the previous estimate leads to
 	$$
 	c_m G(0)S^{2m} = \ecal(0, B_S) \leq \begin{cases}
 	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-	C\ \log(S)\,S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C\ S^{2m-2\s} \log S\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1),\\
 	\end{cases} $$
 	and, since $G(0)>0$, this is a contradiction for $S$ large enough. Therefore, $u \not \equiv 0$ and the strong maximum principle for odd functions (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}) yields that $u>0$ in $\ocal$. 
