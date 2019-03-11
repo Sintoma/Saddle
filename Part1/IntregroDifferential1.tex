@@ -1101,7 +1101,7 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 	Here we have used that $\overline{K}(x^\star,y^\star) = \overline{K} (x,y)$ ---see Lemma~\ref{Lemma:PropertiesStar}.
 \end{proof}
 
-Using the previous expression for the energy, we can establish now the following lemma regarding the decrease of the energy under some operations.
+Using the previous expression for the energy, we can establish now the following lemma regarding the decrease of the energy under some operations. This result will be crucial in the next section, since it will allow us to assume that the minimizers of the energy are bounded by $1$ by above (respectively by $-1$ by below) and that are nonnegative in $\ocal$.
 \begin{lemma}
 	\label{Lemma:DecreaseEnergy} 
 	Let $\Omega\subset \R^{2m}$ be a set of double revolution that is symmetric with respect to the Simons cone, and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality}. Given $u\in\widetilde{\H}^K_{0,\mathrm{odd}}(\Omega)$, we define
@@ -1349,9 +1349,11 @@ where $\Psi_S:B_{S+2} \cap \ocal \to \R$ is essentially the function $\phi_S$ of
 \phi_S (x) &  \mu\dist(x,\ccal) \geq 1\,,
 \end{cases}
 \end{equation}
-where $\mu$ is a positive number that depends on the Lipschitz constant of $u$ in $B_{S+3}$ and makes \eqref{Eq:wH3} to be satisfied. Moreover, $\Psi_S \equiv -1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$ ---see Figure~\ref{Fig:PsiSandOmegaS}~(b)--- and thus \eqref{Eq:wH4} holds.
+where $\mu$ is a positive number that depends on the Lipschitz constant of $u$ in $B_{S+3}$ and makes \eqref{Eq:wH3} to be satisfied. 
 
-We postpone the proof of this lemma and, assuming it true for the moment, let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
+To prove \eqref{Eq:wH1} we need to prove first that the minimizer $u$ satisfies $-1\leq u \leq 1$ and that $0\leq u$ in $\ocal$. To see this we use Lemma~\ref{Lemma:DecreaseEnergy}, which uses crucially the expressions for the energy of doubly radial odd functions developed in the previous section and the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$. Once this is proved, since $\Psi_S \equiv -1$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$ ---see Figure~\ref{Fig:PsiSandOmegaS}~(b)---, \eqref{Eq:wH4} holds. The point \eqref{Eq:wH2} follows easily and \eqref{Eq:wH5} requires some computations. For the details, see the proof below.
+
+We postpone the proof of Lemma~\ref{Lemma:ExistenceCompetitor} and, assuming it true for the moment, let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
 
 \begin{proof}[Proof of Theorem~\ref{Th:EnergyEstimate}]
 	Take $w$ constructed in Lemma~\ref{Lemma:ExistenceCompetitor} as a competitor. Hence, since $u$ is a doubly radial odd minimizer, $ \ecal (u, B_R) \leq \ecal (w, B_R)$. Since $u\equiv w$ in $B_{S+2}^c$, it follows that
@@ -1484,7 +1486,7 @@ To conclude the section, we establish Lemma~\ref{Lemma:ExistenceCompetitor}, whi
 	
 	\textbf{Step 1. We show that $0\leq u < 1$ in $\ocal$.}
 	
-	First note that since $u$ is a minimizer of $\ecal$ in $B_R$, by Lemma~\ref{Lemma:DecreaseEnergy} we can assume without loss of generality that $-1 \leq u \leq 1$, $u \geq 0$ in $\ocal$, and $u \leq 0$ in $\ical$. 
+	First note that since $u$ is a minimizer of $\ecal$ in $B_R$, by Lemma~\ref{Lemma:DecreaseEnergy} we can assume without loss of generality that $-1 \leq u \leq 1$, $u \geq 0$ in $\ocal$, and $u \leq 0$ in $\ical$. Recall that to prove Lemma~\ref{Lemma:DecreaseEnergy} we used crucially the expression of the kinetic energy given by \eqref{Eq:ShortExpressionEnergy} and the ellipticity assumption \eqref{Eq:KernelInequality}.
 	
 	
 	Now we want to show that $u < 1$ in $\ocal$. We first claim that $u$ is a classical solution to
