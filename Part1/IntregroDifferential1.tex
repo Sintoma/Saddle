@@ -246,9 +246,6 @@ which are odd with respect to the Simons cone --- defined in \eqref{Eq:SimonsCon
 
 There are only three papers in the literature concerning saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn} with $L_K$ being the fractional Laplacian: \cite{Cinti-Saddle, Cinti-Saddle2} by Cinti and \cite{Felipe-Sanz-Perela:SaddleFractional} by the authors. In all of them the main tool is the extension problem. This paper, together with its second part  \cite{FelipeSanz-Perela:IntegroDifferentialII}, is the first one to study \eqref{Eq:NonlocalAllenCahn} without the extension. For this reason our arguments are purely nonlocal and hold for a more general class of kernels.
 
-%This is the first of two articles concerning equation \eqref{Eq:NonlocalAllenCahn}. In the present paper we address the problem of studying doubly radial solutions which are odd with respect to the Simons cone (this terminology is  defined more precisely below). In particular, we find a suitable expression for the operator $L_K$  acting on this type of functions, given by \eqref{Eq:OperatorOddF}, as well as for its associated energy ---see \eqref{Eq:ShortExpressionEnergyIntro}. We deduce necessary and sufficient conditions for the operator to have a maximum principle in this setting (see Theorem~\ref{Th:SufficientNecessaryConditions}) and, under these assumptions, we establish an energy estimate for doubly radial odd minimizers (Theorem~\ref{Th:EnergyEstimate} below). Finally, as an application of these results we prove, by using variational arguments, the existence of saddle-shaped solutions to problem \eqref{Eq:NonlocalAllenCahn} when $f$ is of Allen-Cahn type ---see the comment right after \eqref{Eq:HipothesesG}. This is Theorem~\ref{Th:Existence}.
-
-%In the forthcoming paper \cite{FelipeSanz-Perela:IntegroDifferentialII} we focus our study on saddle-shaped solutions to \eqref{Eq:NonlocalAllenCahn} (assuming $f$ of Allen-Cahn type). Using the setting for odd functions established in the present article, we give an alternative proof of the existence of saddle solutions based on the monotone iteration scheme. In \cite{FelipeSanz-Perela:IntegroDifferentialII}, we also show the uniqueness of this type of solution by establishing its asymptotic behavior, as well as a maximum principle for the linearized operator.
 
 
 Equation \eqref{Eq:NonlocalAllenCahn} is driven by an integro-differential operator $L_K$ of the form
@@ -347,8 +344,6 @@ Here, $\d R$ denotes integration with respect to the Haar measure on $O(m)^2$ (s
 
 This new expression \eqref{Eq:L_KWithKbar} has some advantages compared with \eqref{Eq:L_K-st}. First, the computations in this new setting are shorter and more transparent than the analogous ones using $(s,t)$ variables. This also makes the notation more concise. Furthermore we avoid some issues of the $(s,t)$ variables such as the special treatment of the set $\{st=0\}$. Although in this paper we do not work in $(s,t)$ variables, we include an appendix at the end of the article with some computations using them (see Appendix~\ref{Sec:stcomputations}). We think that this could be useful in future works.  
 
-%we are still dealing with functions defined in $\R^{2m}$. Hence, we avoid the previously mentioned issues that the $(s,t)$ variables have. Furthermore, the computations with this new expression are analogous to the ones that one would do using  $(s,t)$ variables. Last, the notation is more clear and concise. Although in this paper we do not work in $(s,t)$ variables, we include an appendix at the end of the article with some computations in these variables (see Appendix~\ref{Sec:stcomputations}). We think that this could be useful in future works.  
-%The new kernel $\overline{K}$ is symmetric (as $K$), that is, $\overline{K}(x,y) = \overline{K}(y,x)$, but is not translation invariant. Nevertheless, it is doubly radial in its both variables, and this property is crucial to establish some maximum principles for odd functions.
 
 Once we have rewritten $L_K$ with a doubly radial kernel $\overline{K}$, as in \eqref{Eq:L_KWithKbar}, we shall find a suitable expression of the operator when acting on odd functions with respect to the Simons cone. Note that such functions are defined by their values in $\ocal$ and therefore we want to rewrite $L_K$ taking this into account. To this purpose, we define the new operator
 \begin{equation}
@@ -388,7 +383,6 @@ for every $\tau_1$, $\tau_2 \in (0,+\infty)$.
 
 In \cite{JarohsWeth}, Jarohs and Weth study solutions to general integro-differential equations which are odd with respect to a hyperplane. Here the natural sufficient condition on $K$ to have a positive kernel when acting on odd functions is that $K$ is decreasing in the orthogonal direction to the hyperplane. That this suffices is readily deduced after making a change of variables given by the symmetry with respect to such hyperplane. In our case, since we deal with a more complex symmetry, the kernel $K$ is required to satisfy further assumptions than just monotonicity. Moreover, the proof of Theorem~\ref{Th:SufficientNecessaryConditions} is quite involved and requires a finer argument. Indeed, if we simply make the change $y \mapsto y^\star$ in $\eqref{Eq:DefOfLu}$, following \cite{JarohsWeth}, we should prove that $K(|x-y|) > K(|x-y^\star|)$ for every $x$ and $y$ in $\ocal$, but this is false even in the easiest case $L_K = \fraclaplacian$ and $2m=2$. Instead, if we write $L_K$ in the form \eqref{Eq:L_KWithKbar} with the kernel $\overline{K}$, the analogous positivity condition \eqref{Eq:KernelInequality} holds if we assume $K(\sqrt{\cdot})$ to be convex. Here the use of the $(s,t)$ variables would not simplify the proof of Theorem~\ref{Th:SufficientNecessaryConditions}. As mentioned in Appendix~\ref{Sec:stcomputations}, an analogous result can be established for the kernel $J$ in \eqref{Eq:L_K-st}, but its proof presents exactly the same difficulties as the one for $\overline{K}$.
 
-%Regarding the sufficient conditions on the kernel $K$, since we are dealing with a more complex symmetry than the one in \cite{JarohsWeth}, the kernel is required to satisfy further assumptions than just monotonicity. First, we assume that $K$ is radially symmetric to be able to write $L_K$ in the form \eqref{Eq:L_KWithKbar}. Moreover, we require the convexity condition \eqref{Eq:SqrtConvex}, which is stronger than the decreasing assumption in \cite{JarohsWeth} (note that if $K$ satisfies \eqref{Eq:Symmetry&IntegrabilityOfK}, an assumption that we make through the paper, then \eqref{Eq:SqrtConvex} yields that $K$ is radially decreasing). 
 
 The first direct consequence of the positivity condition \eqref{Eq:KernelInequality} is the following maximum principle.
 
@@ -418,17 +412,7 @@ The first direct consequence of the positivity condition \eqref{Eq:KernelInequal
 This statement differs from the usual maximum principle for $L_K$ in the fact that we only assume that $u$ is nonpositive in $\ocal\setminus \Omega$, instead of in $\R^{2m}\setminus \Omega$ (an assumption that makes no sense for odd functions). This form of maximum principle is analogous to the ones in \cite{ChenLiLi, JarohsWeth}, where similar statements are considered for functions that are odd with respect to a hyperplane.
 
 Since in this paper we will always consider doubly radial functions $u$ which are odd with respect to the Simons cone, $L_K u =L_K^\ocal u$ in $\ocal$. Thus, to simplify the notation we will always write $L_K$ for $L_K^\ocal$. To mean that Proposition~\ref{Prop:MaximumPrincipleForOddFunctions} holds, we will say that $L_K$ has a maximum principle in $\ocal$ when acting on doubly radial odd functions.
-%Some of our arguments to prove the results of this paper are inspired by the techniques developed in \cite{ChenLiLi, JarohsWeth}, where they establish some maximum principles for odd functions with respect to a hyperplane. Such maximum principles differ from the usual ones by the fact that an assumption on the sign of a function is needed only at one side of the hyperplane. Let us clarify this. In the usual maximum principle for nonlocal operators, one assumes that a function has a constant (and appropriate) sign in the whole complementary of the set where an equation is satisfied. When there is odd symmetry with respect to a hyperplane, such assumption cannot be done. However, by only assuming a constant (and appropriate) sign in one side of the hyperplane, a maximum principle can be deduced. In particular, if the kernel is decreasing, it is easy to prove a maximum principle of this type. 
 
-%In our case, we find analogous maximum principles but with a more complex symmetry, and therefore the kernel is required to satisfy further assumptions. More precisely, we find that the assumption \eqref{Eq:SqrtConvex} below is a sufficient condition for the maximum principle for odd functions with respect to the Simons cone to hold. In order to see this, we  first need to use the symmetry of the functions to rewrite $L_K$ as an operator that only takes into account the values of the function in $\ocal$ (since the operator itself incorporates the odd symmetry). The new operator is the following:
-
-
-
-%To simplify the notation, we introduce the following definition. It is the class of all operators which are radially symmetric, uniformly elliptic and have a positive kernel in $\ocal$ when acting on doubly radial functions which are odd with respect to the Simons cone.
-%
-%\begin{definition}[Ellipticity class $\lcal_\star$]
-%	Let $L_K \in \lcal_0(2m,\s,\lambda, \Lambda)$ with kernel $K$ radially symmetric. We say that $L_K\in \lcal_\star (2m,\s,\lambda, \Lambda)$ whenever the associated kernel $\overline{K}$ satisfies \eqref{Eq:KernelInequality}.
-%\end{definition}
 
 Let us now turn to the variational problem from which equation \eqref{Eq:NonlocalAllenCahn} arises. As it is well known, \eqref{Eq:NonlocalAllenCahn} is the Euler-Lagrange equation associated to the energy functional
 \begin{equation}
@@ -488,9 +472,10 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 	where $C$ is a positive constant depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{G}_{C^2([-1,1])}$.
 \end{theorem}
 
-Note that this result does not follow from the energy estimate for general minimizers 
-%in $H^\s_0(B_R)$ 
-stated in \cite{SavinValdinoci-EnergyEstimate} by Savin and Valdinoci. The minimizers that they consider do not have any type of symmetry. In our case, the function $u$ in the previous statement minimizes the energy in a smaller class of functions and the result in \cite{SavinValdinoci-EnergyEstimate} cannot be applied. Nevertheless, we are able to adapt the arguments of Savin and Valdinoci to our setting.  The strategy they follow is to compare the energy of $u$ with the one of a suitable competitor which is constructed by taking the minimum between $u$ and a radially symmetric auxiliary function ---see \eqref{Eq:DefOfPhiS} below. Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyEstimate} how to modify the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to carry out the same type of arguments. The assumption \eqref{Eq:KernelInequality} will be crucial to guarantee that $0\leq u \leq 1$ in $\ocal$.
+
+In the proof of this result, a first basic ingredient is that $-1\leq u\leq 1$, as provided by Lemma~\ref{Lemma:DecreaseEnergy}. This information, $|u|\leq 1$, is also of importance for a solution of an Allen-Cahn equation, as in the existence Theorem~\ref{Th:Existence} below. That $|u|\leq 1$ is proved with a variational cutting argument: cutting above $1$ and below $-1$ reduces de energy. We believe that this property requires $\overline{K}(x,y)- \overline{K}(x,y^\star)$ to be nonnegative. In addition, the proof of Lemma~\ref{Lemma:DecreaseEnergy} is a priori not simple since it involves a nonlocal energy of functions with symmetries. We succeeded to greatly simplify the computations by writing the energy as in \eqref{Eq:ShortExpressionEnergy}, obtaining a short proof.
+
+Note that this result does not follow from the energy estimate for general minimizers stated in \cite{SavinValdinoci-EnergyEstimate} by Savin and Valdinoci. The minimizers that they consider do not have any type of symmetry. In our case, the function $u$ in the previous statement minimizes the energy in a smaller class of functions and the result in \cite{SavinValdinoci-EnergyEstimate} cannot be applied. Nevertheless, we are able to adapt the arguments of Savin and Valdinoci to our setting.  The strategy they follow is to compare the energy of $u$ with the one of a suitable competitor which is constructed by taking the minimum between $u$ and a radially symmetric auxiliary function ---see \eqref{Eq:DefOfPhiS} below. Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyEstimate} how to modify the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to carry out the same type of arguments. The assumption \eqref{Eq:KernelInequality} will be crucial to guarantee that $0\leq u \leq 1$ in $\ocal$.
 
 The particular result of Theorem~\ref{Th:EnergyEstimate} for the fractional Laplacian has been proved by Cabré and Cinti \cite{CabreCinti-EnergyHalfL} in the case of the half-Laplacian, and extended to all the powers $0<\s<1$ by Cinti \cite{Cinti-Saddle2} (see \cite{CabreCinti-SharpEnergy} for an extension to non-doubly radial minimizers). These papers use the local extension problem and therefore their proofs cannot be extended to general operators like $L_K$. Our proof, following \cite{SavinValdinoci-EnergyEstimate}, overcomes this issue.
 
@@ -1198,23 +1183,23 @@ Next we present a result that will be used later, and concerns weak solutions to
 	and thus the first result is proved.
 	
 	
-	We next show that if $u$ is a doubly radial odd minimizer, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}. To see this, we consider perturbations $u +  \varepsilon \xi$ with $\varepsilon>0$. On the one hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Then, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$, we get
+	We next show that if $u$ is a doubly radial odd minimizer, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}. To see this, we consider perturbations $u +  \varepsilon \xi$ with $\varepsilon\in \R$ and $\xi \in \widetilde{\H}^K_{0}(\Omega)$. By Remark~\ref{Remark:DecompositionHK}, it suffices to consider only even and odd functions $\xi$. Let first $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(\Omega)$. Then, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(\Omega)$, we get
 	$$
-	0 = \dfrac{\d}{\d \varepsilon}\evalat{\varepsilon = 0} \ecal(u +  \varepsilon \xi, B_R) = \langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} - \langle f(u),\xi \rangle_{L^2(B_R)}\,.
+	0 = \dfrac{\d}{\d \varepsilon}\evalat{\varepsilon = 0} \ecal(u +  \varepsilon \xi, \Omega) = \langle u,\xi \rangle_{\widetilde{\H}^K_0(\Omega)} - \langle f(u),\xi \rangle_{L^2(\Omega)}\,.
 	$$
-	On the other hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{even}}(B_R)$. Since $u$ is odd with respect to the Simons cone, the same holds for $f(u)$ ---recall that $f$ is odd. Then, by Remark~\ref{Remark:DecompositionHK} we find that
+	Next, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{even}}(\Omega)$. Since $u$ is odd with respect to the Simons cone, the same holds for $f(u)$ ---recall that $f$ is odd. Thus,
 	$$
-	\langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} = 0 \quad \textrm{ and } \quad  \langle f(u),\xi \rangle_{L^2(B_R)} = 0\,.
+	\langle u,\xi \rangle_{\widetilde{\H}^K_0(\Omega)} = 0 \quad \textrm{ and } \quad  \langle f(u),\xi \rangle_{L^2(\Omega)} = 0\,.
 	$$
 	Therefore, 
 	$$
-	\langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} = \langle f(u_R),\xi \rangle_{L^2(B_R)}
+	\langle u,\xi \rangle_{\widetilde{\H}^K_0(\Omega)} = \langle f(u_R),\xi \rangle_{L^2(\Omega)}
 	$$
-	for every $\xi \in\widetilde{\H}^K_0(B_R)$ with compact support in  $B_R$. By approximation, $\xi$ can be taken to be $C^\infty_c(B_R)$. Thus,
+	for every $\xi \in\widetilde{\H}^K_0(\Omega)$ with compact support in  $\Omega$. In particular,
 	$$
 	\int_{\R^{2m}}\int_{\R^{2m}} \{u_R(x)-u_R(y)\}\{\xi(x)-\xi(y)\} K(|x-y|) \d x \d y = \int_{\R^{2m}} f(u_R(x)) \xi(x) \d x
 	$$
-	for every $\xi \in C^\infty_c(\Omega)$ that is doubly radial, and by the previous reasoning, $u$ is a weak solution to \eqref{Eq:DirichletProblemOmega}.
+	for every $\xi \in C^\infty_c(\Omega)$ that is doubly radial. Finally, by the first statement of the proposition, that we just proved, we obtain that $u$ is a weak solution to \eqref{Eq:DirichletProblemOmega}.
 \end{proof}
 
 
@@ -1233,7 +1218,8 @@ Next we present a result that will be used later, and concerns weak solutions to
 	\end{equation}
 	where the previous two constants $C$ depend only on $n$, $\s$, $\lambda$, and $\Lambda$ (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein).
 	
-	From the previous estimates and using the same argument as in Corollaries 2.4 and 2.5 of \cite{RosOtonSerra-Regularity}, \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimate} yield, respectively, the estimates
+	
+	Note that in some situations these estimates are not suitable enough to be applied repeatedly, mainly due to the term $\norm{w}_{C^\alpha (\R^n)}$ in \eqref{Eq:Calpha->Calpha+2sEstimate} ---recall that in the case of a Dirichlet problem with zero exterior data the optimal regularity in $\R^n$ is $C^\s$ and not more. Using a cut-off argument as in Corollaries 2.4 and 2.5 of \cite{RosOtonSerra-Regularity}, we can modify \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimate} to obtain, respectively, the estimates
 	\begin{equation}
 	\label{Eq:C2sEstimateBalls}
 	\norm{w}_{C^{2\s} (\overline{B_{1/4}})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (B_1)} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} },
@@ -1266,16 +1252,16 @@ First of all, let us comment briefly the strategy used in \cite{SavinValdinoci-E
 \end{enumerate} 
 By the second property, $v$ can be extended to coincide with $u$ outside $B_{S+2}$, becoming an admissible competitor. Then, the desired estimate follows by finding precise bounds on the energy of $v$ in $B_{S+2}$. The function $v$ is constructed in $B_{S+2}$ as $v = \min \{u, \phi_S\}$, where $\phi_S (x) =-1+2\min\{(|x|-S-1)_+,1\}$ ---we will also use this function below, see \eqref{Eq:DefOfPhiS}.
 
-In our case, the strategy will be the same but adapting some ingredients, namely, the competitor $v$. First, note that the previous construction for $v$ cannot be used in our setting, since it would not produce a doubly radial odd function. To overcome this problem, we will consider a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$).
+In our case, the strategy will be the same but adapting some ingredients, namely, the competitor $v$. First, note that the previous construction for $v$ cannot be used in our setting, since it would not produce a doubly radial odd function. To overcome this problem, we will construct a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$).
 
-Let us introduce two definitions. First, let $\mu$ be the Lipschitz constant of $u$ in $\overline{B_{S+3}}$, that is,
+To state the precise properties of $w$, we need to consider the Lipschitz constant of $u$ in $\overline{B_{S+3}}$, namely
 \begin{equation} 
 \label{Eq:ChoiceMu} 
-	\mu = \seminorm{u}_{\mathrm{Lip}(\overline{B_{S+3}})}. 
+	\mu := \seminorm{u}_{\mathrm{Lip}(\overline{B_{S+3}})}. 
 \end{equation} 
 By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Moreover, by Lemma~\ref{Lemma:DecreaseEnergy} we know that $u$ is bounded. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimateBalls} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points in $B_{S+3}$, it is easy to see that $\mu\leq C$ with a positive constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and hence $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$.
 
-Next, we define the following set:
+We can now define the set
 \begin{equation}
 \label{Eq:DefOmegaS}
 \Omega_S := \left( \overline{B_{S+2}}\setminus B_S \right) \cup \left(  \overline{B_{S+2}} \cap \{\mu \dist(\cdot,\ccal) \leq 1\}\right),
