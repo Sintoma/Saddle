@@ -1158,7 +1158,7 @@ Next we present a result that will be used later, and concerns weak solutions to
 	$$
 	for every $\eta \in C^\infty_c(\Omega)$ (not necessarily doubly radial).
 	
-	As a consequence, if $u\in \widetilde{\H}^K_{0}(\Omega)$ is a doubly minimizer of the energy $\ecal(u,\Omega)$, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}.
+	As a consequence, if $u\in \widetilde{\H}^K_{0}(\Omega)$ is a doubly radial odd minimizer of the energy $\ecal(u,\Omega)$, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}.
 \end{proposition}
 
 \begin{proof}
@@ -1198,7 +1198,7 @@ Next we present a result that will be used later, and concerns weak solutions to
 	and thus the first result is proved.
 	
 	
-	We next show that if $u$ is a minimizer, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}. To see this, we consider perturbations $u +  \varepsilon \xi$ with $\varepsilon>0$. On the one hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Then, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$, we get
+	We next show that if $u$ is a doubly radial odd minimizer, then it is a weak solution to \eqref{Eq:DirichletProblemOmega}. To see this, we consider perturbations $u +  \varepsilon \xi$ with $\varepsilon>0$. On the one hand, take $\xi \in \widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$. Then, since $u$ is a minimizer among functions in $\widetilde{\H}^K_{0, \,\mathrm{odd}}(B_R)$, we get
 	$$
 	0 = \dfrac{\d}{\d \varepsilon}\evalat{\varepsilon = 0} \ecal(u +  \varepsilon \xi, B_R) = \langle u,\xi \rangle_{\widetilde{\H}^K_0(B_R)} - \langle f(u),\xi \rangle_{L^2(B_R)}\,.
 	$$
@@ -1257,7 +1257,7 @@ Next we present a result that will be used later, and concerns weak solutions to
 In this section we present an estimate for the energy in the ball $B_S$ of minimizers in the space $\widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ with $R > S+ 4$. That is, we prove Theorem~\ref{Th:EnergyEstimate}. In order to establish this result, we follow the ideas of Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate}, where they show the same estimate but for minimizers without any restriction on their symmetry.
 
 
-First of all, let us comment briefly the strategy used in \cite{SavinValdinoci-EnergyEstimate}. The argument is based in comparing the energy of the minimizer $u$ in $B_R\subset \R^n$ with the energy of a suitable competitor $v$. This function $v$ satisfies, in $B_{S+2}\subset B_R \subset \R^n$, the following assumptions:
+First of all, let us comment briefly the strategy used in \cite{SavinValdinoci-EnergyEstimate}. The argument is based on comparing the energy of the minimizer $u$ in $B_R\subset \R^n$ with the energy of a suitable competitor $v$. This function $v$ satisfies, in $B_{S+2}\subset B_R \subset \R^n$, the following assumptions:
 \begin{enumerate}[label=(\textit{\roman*})]
 	\item $-1 \leq v \leq 1$.
 	\item $v=u$ in $\partial B_{S+2}$.
@@ -1266,20 +1266,16 @@ First of all, let us comment briefly the strategy used in \cite{SavinValdinoci-E
 \end{enumerate} 
 By the second property, $v$ can be extended to coincide with $u$ outside $B_{S+2}$, becoming an admissible competitor. Then, the desired estimate follows by finding precise bounds on the energy of $v$ in $B_{S+2}$. The function $v$ is constructed in $B_{S+2}$ as $v = \min \{u, \phi_S\}$, where $\phi_S (x) =-1+2\min\{(|x|-S-1)_+,1\}$ ---we will also use this function below, see \eqref{Eq:DefOfPhiS}.
 
-In our case, the strategy will be the same but adapting some ingredients, namely, the competitor $v$. First, note that the previous construction for $v$ cannot be used in our setting, since it would not produce a doubly radial function $v$ which is odd with respect to the Simons cone $\ccal$. To overcome this problem, we will consider a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$).
+In our case, the strategy will be the same but adapting some ingredients, namely, the competitor $v$. First, note that the previous construction for $v$ cannot be used in our setting, since it would not produce a doubly radial odd function. To overcome this problem, we will consider a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$).
 
 Let us introduce two definitions. First, let $\mu$ be the Lipschitz constant of $u$ in $\overline{B_{S+3}}$, that is,
 \begin{equation} 
 \label{Eq:ChoiceMu} 
 	\mu = \seminorm{u}_{\mathrm{Lip}(\overline{B_{S+3}})}, 
 \end{equation} 
-By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimateBalls} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points of $B_{S+3}$, it is easy to see that
-$$
-\mu = \norm{u}_{\mathrm{Lip}(\overline{B_{S+3}})} \leq C,
-$$ 
-with a constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and thus $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$.
+By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Moreover, by Lemma~\ref{Lemma:DecreaseEnergy} we know that $u$ is bounded. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimateBalls} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points in $B_{S+3}$, it is easy to see that $\mu\leq C$ with a positive constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and hence $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$.
 
-Now, we define the following set:
+Next, we define the following set:
 \begin{equation}
 \label{Eq:DefOmegaS}
 \Omega_S := \left( \overline{B_{S+2}}\setminus B_S \right) \cup \left(  \overline{B_{S+2}} \cap \{\mu \dist(\cdot,\ccal) \leq 1\}\right),
@@ -1356,7 +1352,7 @@ In the following lemma we state the properties of the competitor $w$ that suffic
 	$$
 	We check next that \eqref{Eq:wH1}-\eqref{Eq:wH5} hold.
 	
-	First of all, recall that by Lemma~\ref{Lemma:DecreaseEnergy}, $0\leq u \leq 1$ in $\ocal$. Since $-1\leq \Psi_S\leq 1$ in $B_{S+2} \cap \ocal$ \eqref{Eq:wH1} holds trivially. Moreover, since both functions are doubly radial and vanish on $\ccal$, \eqref{Eq:wH2} follows ---recall that the distance to the cone, in $\ocal$, is $(|x'|-|x''|)/\sqrt{2}$. The verification of \eqref{Eq:wH4} is easy, since $\Psi_S \equiv-1 \leq u$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
+	First of all, recall that by Lemma~\ref{Lemma:DecreaseEnergy}, $0\leq u \leq 1$ in $\ocal$. Since $-1\leq \Psi_S\leq 1$ in $B_{S+2} \cap \ocal$, \eqref{Eq:wH1} holds trivially. Moreover, since both functions are doubly radial and vanish on $\ccal$, \eqref{Eq:wH2} follows ---recall that the distance to the cone, in $\ocal$, is $(|x'|-|x''|)/\sqrt{2}$. The verification of \eqref{Eq:wH4} is easy, since $\Psi_S \equiv-1 \leq u$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
 	
 	Now, we check that \eqref{Eq:wH3} holds. On the one hand, if $x\in \partial B_{S+2}\cap \ocal$ and $\mu\dist(x,\ccal) \geq 1$, we have $\Psi_S (x) = \phi_S(x) = 1 \geq u(x)$, and therefore $w(x) = u(x)$. On the other hand, for $x\in \partial B_{S+2}\cap \ocal$ with $\mu\dist(x,\ccal) \leq 1$, we have $\Psi_S (x) = \mu \dist (x,\ccal)$. By \eqref{Eq:ChoiceMu},
 	$$ 
@@ -1404,7 +1400,7 @@ $$
 Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
 
 \begin{proof}[Proof of Theorem~\ref{Th:EnergyEstimate}]
-	Take $w$ constructed in Lemma~\ref{Lemma:ExistenceCompetitor} and extend it oddly through $\ccal$ and then to coincide with $u$ outside $B_{S+2}$.  Hence, since $u$ is a doubly radial odd minimizer and $w$ an admissible competitor, $ \ecal (u, B_R) \leq \ecal (w, B_R)$. Moreover, $u\equiv w$ in $\R^{2m}\setminus B_{S+2}$, and thus ir follows that
+	Take $w$ constructed in Lemma~\ref{Lemma:ExistenceCompetitor} and extend it oddly through $\ccal$ and then to coincide with $u$ outside $B_{S+2}$.  Hence, since $u$ is a doubly radial odd minimizer and $w$ an admissible competitor, $ \ecal (u, B_R) \leq \ecal (w, B_R)$. Moreover, $u\equiv w$ in $\R^{2m}\setminus B_{S+2}$, and thus it follows that
 	$$ 
 	\ecal (u, B_{S+2}) \leq \ecal (w, B_{S+2}).
 	$$
@@ -1412,14 +1408,14 @@ Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}.
 	$$ 
 	\ecal (u, B_{S}) \leq \ecal (w, B_{S+2}). 
 	$$
-	Therefore, to obtain our result it remains to estimate $\ecal (w, B_{S+2})$. 
+	Therefore, to obtain the desired result it remains to estimate $\ecal (w, B_{S+2})$. 
 	
 	
-	In the following estimates, the letter $C$ will be a constant depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{G}_{C^2([-1,1])}$. Recall that $\mu$ defined in \eqref{Eq:ChoiceMu} depends only on the previous quantities.
+	In the following inequalities, the letter $C$ will be a constant depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{G}_{C^2([-1,1])}$. Recall that $\mu$ defined in \eqref{Eq:ChoiceMu} depends only on the previous quantities.
 	
 	First, note that using the ellipticity of the kernel $K$ and the change of variables given by $(\cdot)^\star$ it follows that
 	$$ 
-	\ecal(w,B_{S+2}) \leq C \int_{B_{S+2}\cap \ocal} \d x \int_{\R^n} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} + \int_{B_{S+2}} G(w) \d x. 
+	\ecal(w,B_{S+2}) \leq C \int_{B_{S+2}\cap \ocal} \d x \int_{\R^{2m}} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} + \int_{B_{S+2}} G(w) \d x. 
 	$$
 	Now we estimate separately the potential and kinetic energies.
 	
@@ -1437,12 +1433,12 @@ Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}.
 	\textbf{Estimate for the kinetic energy.}
 	We split the integral in three terms, as follows.
 	\begin{align*}
-	\int_{B_{S+2}\cap \ocal} \d x \int_{\R^n} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} &= \int_{\Omega_{S}\cap \ocal} \d x \int_{\R^{2m}} \d y \ \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
+	\int_{B_{S+2}\cap \ocal} \d x \int_{\R^{2m}} \d y \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} &= \int_{\Omega_{S}\cap \ocal} \d x \int_{\R^{2m}} \d y \ \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
 	&\ \ + \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{B_{S+1}\cap \ocal} \d y \ \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
 	&\ \ + \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{(B_{S+1}\cap \ocal)^c} \d y \ \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
 	&=: I_1+I_2+I_3.
 	\end{align*}
-	Now we estimate each term separately.
+	Here $(\cdot)^c$ denotes the complementary set. Now we control each term separately.
 	
 	We estimate the first integral:
 	\begin{align*}
@@ -1451,14 +1447,14 @@ Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}.
 	&\leq C \int_{\Omega_{S}\cap \ocal} \d x \int_0^1 \d r \ r^{1-2\s} + C \int_{\Omega_{S}\cap \ocal} \d x \int_1^\infty \d r \ r^{-1-2\s} \\
 	&= C |\Omega_S| \leq C \ S^{2m-1}.
 	\end{align*}
-	In the first addend of the previous estimate we have used that $w$ is Lipschitz in $\overline{B_{S+3}}$ ---see \eqref{Eq:wH5} and the last comment in Lemma~\ref{Lemma:ExistenceCompetitor}--- while in the second one we have  used only that $w$ is bounded \eqref{Eq:wH1}. 
+	In the first addend of the previous estimate we have used that $w$ is Lipschitz in $\overline{B_{S+3}}$ ---see \eqref{Eq:wH5} and \eqref{Eq:ChoiceMu}--- while in the second one we have  used only that $w$ is bounded \eqref{Eq:wH1}. 
 	
 	Next, we estimate $I_2$. To do it, we first claim that, if $|x-y|\leq d_S(x)$, then
 	\begin{equation}
 	\label{Eq:EnergyEstimateProofLipschitz}
 	|w(x)-w(y)| \leq \dfrac{C}{d_S(x)} |x-y|	
 	\end{equation}
-	for every $x\in (B_S\setminus \Omega_S)\cap \ocal$ and $y \in B_{S+1}\cap \ocal$. To see this, note first that since $x\in B_S\setminus \Omega_S \subset \{\mu \dist (\cdot, \ccal) \geq 1\}$, then $d_S(x)=\min \{S+1-|x| , \mu \dist (x, \ccal)\}$, and therefore it suffices to show that
+	for every $x\in (B_S\setminus \Omega_S)\cap \ocal$ and $y \in B_{S+1}\cap \ocal$. Recall that $d_S$ is defined as $d_S(x)=\min \{S+1-|x| , \mu \dist (x, \ccal)\}$, and therefore it suffices to show that
 	$$
 	|w(x)-w(y)| \leq \dfrac{C}{\dist (x, \ccal)} |x-y|
 	$$
@@ -1473,9 +1469,9 @@ Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}.
 	\end{align*}
 	Here we have used \eqref{Eq:EnergyEstimateProofLipschitz} to estimate the first term, while for the second one we have used only that $w$ is bounded \eqref{Eq:wH1}. 
 	
-	Last, we estimate $I_3$. To do it, we first claim that if $x\in (B_S\setminus \Omega_S) \cap \ocal$ and $y\in (B_{S+1}\cap \ocal)^c = I \cup B_{S+1}^c$, then $|x-y|\geq C d_S(x)$. Indeed, on the one hand it is clear that, if $y\in B_{S+1}^c$, then $|x-y|\geq \dist(x,\partial B_{S+1})\geq d_S(x)$. On the other hand, if $y\in \ical$, then $|x-y|\geq \dist(x,\ccal) \geq  d_S(x) / \mu$. Here we used that since $x\in B_S\setminus \Omega_S $, if holds $d_S(x)=\min \{\dist(x,\partial B_{S+1}), \mu \dist (x, \ccal)\}$. 
+	Last, we estimate $I_3$. To do it, we first claim that if $x\in (B_S\setminus \Omega_S) \cap \ocal$ and $y\in (B_{S+1}\cap \ocal)^c = \ical \cup B_{S+1}^c$, then $|x-y|\geq C d_S(x)$. Indeed, on the one hand it is clear that, if $y\in B_{S+1}^c$, then $|x-y|\geq \dist(x,\partial B_{S+1})\geq d_S(x)$. On the other hand, if $y\in \ical$, then $|x-y|\geq \dist(x,\ccal) \geq  d_S(x) / \mu$.
 	
-	Using the previous claim, we obtain
+	By the previous claim, we obtain
 	\begin{align*}
 	I_3 &= \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{(B_{S+1}\cap \ocal)^c} \d y \  \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
 	&\leq \int_{(B_S\setminus \Omega_S)\cap \ocal} \d x \int_{|x-y|\geq C d_S(x)} \d y \ \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
@@ -1491,7 +1487,7 @@ Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}.
 	\begin{align*}
 	\int_{B_{S+2}\setminus \Omega_S} d_S(x)^{-2\s} \d x &= \int_{B_{S}\cap \{\mu \dist(x,\ccal)>1\}} d_S(x)^{-2\s} \d x \\
 	& \leq \int_{B_S} \left( S+1-|x| \right)^{-2\s} \d x \\
-	& \quad \quad + \int_{B_{S}\cap \{\mu \dist(x,\ccal)>1\}} \dist(x,\ccal)^{-2\s} \d x.
+	& \quad \quad + C \int_{B_{S}\cap \{\mu \dist(x,\ccal)>1\}} \dist(x,\ccal)^{-2\s} \d x.
 	\end{align*}
 	We next estimate these two integrals.
 	
@@ -1503,7 +1499,7 @@ Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}.
 	&\leq C (S+1)^{2m - 2\s}\int_0^{1 - \frac{1}{S+1}} (1-\tau)^{-2\s} \d \tau \\
 	& \leq \begin{cases}
 	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-	C\ \log(S)\,S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C\ S^{2m-1}\,\log S\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1).\\
 	\end{cases}
 	\end{align*}
@@ -1519,7 +1515,7 @@ Let us establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}.
 	& \leq C\, \int_{1/\mu}^S \d \euscr{z}   \ \euscr{z}^{-2\s}\int_0^S \d \euscr{y}\  \euscr{y}^{2m-2} \\
 	& \leq \begin{cases}
 	C \ S^{2m-2\s}\ \ \ \ &\textrm{if } \ \ \s\in(0,1/2),\\
-	C\ \log(S)\,S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
+	C\ S^{2m-1}\,\log S\ \ \ \ &\textrm{if } \ \ \s=1/2,\\
 	C \ S^{2m-1}\ \ \ \ &\textrm{if } \ \ \s\in(1/2,1).\\
 	\end{cases}
 	\end{align*}
