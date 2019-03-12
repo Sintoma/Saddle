@@ -181,25 +181,6 @@ cycle;
 (243.0000+11,193.8560+12) .. controls (275.7522-9,226.7370-6) and (289.9164,258.7115) ..
 (289.9164,309.8622);
 
-%x-axis    
-\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
-(126.5055,309.8063) -- (330.4872,309.8063);
-
-%x-axis cap    
-\path[draw=black,fill=black,even odd rule,line width=0.497pt]
-(330.4872,309.8063) -- (328.1493,312.1289) -- (336.3320,309.8063) --
-(328.1493,307.4838) -- cycle;
-
-%y-axis
-\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
-(127.0562,310.75) -- (127.0562,99.5223);
-
-%y-axis cap    
-\path[draw=black,fill=black,even odd rule,line width=0.497pt] (127.0562,99.5223)
--- (129.3788,101.8602) -- (127.0562,93.6775) -- (124.7336,101.8602) -- cycle;
-
-
-
 %medium circle
 \path[draw=black,line join=miter,line cap=butt,line width=1.4pt]
 (221.4938,215.3997) .. controls (250.7785,244.9692) and (259.4986,284.9193) ..
@@ -248,6 +229,37 @@ rule,line width=1.57pt] (126.7629,310.0643) -- (326.1869,110.8844);
 (285, 250) -- (285+0.9375, 250+0.9375) -- (285-2.3437, 250) --
 (285+0.9375, 250-0.9375) -- cycle;
 
+%Flecha Cono Cota (221.4938,215.3997)
+\path[draw=black,fill=black,even odd rule,line width=0.200pt]
+(210.4938,215.3997) -- (210.4938-1.3258,215.3997-0.0147) -- (210.4938+1.6388,215.3997+1.6759) --
+(210.4938+0.0147,215.3997-1.3257) -- cycle;
+
+%Linea Cota
+\path[draw=black,line join=miter,line cap=butt,line width=0.5pt]
+(210.4938,215.3997) -- (210.4938-10,215.3997-10);
+
+%Linea Cono
+\path[draw=azul_custom,line join=miter,line cap=butt,line width=1.8pt]
+(126.7629+1,310.0643-1) -- (243.0000+0.7,193.8560-0.7);
+
+%x-axis    
+\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+(126.5055,309.8063) -- (330.4872,309.8063);
+
+%x-axis cap    
+\path[draw=black,fill=black,even odd rule,line width=0.497pt]
+(330.4872,309.8063) -- (328.1493,312.1289) -- (336.3320,309.8063) --
+(328.1493,307.4838) -- cycle;
+
+%y-axis
+\path[draw=black,line join=miter,line cap=butt,line width=1.5pt]
+(127.0562,310.75) -- (127.0562,99.5223);
+
+%y-axis cap    
+\path[draw=black,fill=black,even odd rule,line width=0.497pt] (127.0562,99.5223)
+-- (129.3788,101.8602) -- (127.0562,93.6775) -- (124.7336,101.8602) -- cycle;
+
+
 \node at (315,138) {\normalsize $\mu^{-1}$};
 \node at (127,85) {\normalsize $|x''|$};
 \node at (350, 311) {\normalsize $|x'|$};
@@ -257,6 +269,7 @@ rule,line width=1.57pt] (126.7629,310.0643) -- (326.1869,110.8844);
 \node at (334, 101) {\normalsize $\ccal$};
 \node at (298, 220) {\normalsize $\Psi_S\! = \!1$};
 \node at (220, 286) {\normalsize $\Psi_S\! = \!-1$};
+\node at (190, 195) {\normalsize $\Psi_S\! = \!0$};
 
 
 \end{tikzpicture}
