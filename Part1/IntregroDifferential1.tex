@@ -1344,7 +1344,7 @@ In the following lemma we state the precise properties for the competitor $w$ th
 	$$ 
 	Thus, $w(x) = u(x)$ and \eqref{Eq:wH3} holds.
 	
-	Finally, we verify \eqref{Eq:wH5}. Obviously, $w$ is Lipschitz in $\overline{B_{S+2}}$ since it is the minimum of two Lipschitz functions ---with Lipschitz constants depending only on $\mu$. From this it follows that \eqref{Eq:wH5Lipschitz} also holds, for a large constant $C$ depending on $\mu$, at points where $\dist(x,\ccal)\leq 2/\mu$. Finally, assume that $\dist(x,\ccal)\leq 2/\mu$. Then, by using the triangular inequality and the definition of distance to the Simons cone, we have
+	Finally, we verify \eqref{Eq:wH5}. Obviously, $w$ is Lipschitz in $\overline{B_{S+2}}$ since it is the minimum of two Lipschitz functions ---with Lipschitz constants depending only on $\mu$. From this it follows that \eqref{Eq:wH5Lipschitz} also holds, for a large constant $C$ depending on $\mu$, at points where $\dist(x,\ccal)\leq 2/\mu$. Finally, assume that $\dist(x,\ccal)\geq 2/\mu$. Then, by using the triangular inequality and the definition of distance to the Simons cone, we have
 	$$
 	|x-y| \geq 	\dist(x,\ccal) - \dist(y,\ccal) \geq \dfrac{1}{2}\dist(x,\ccal).
 	$$
@@ -1355,7 +1355,7 @@ In the following lemma we state the precise properties for the competitor $w$ th
 
 To estimate the energy of $w$ in $B_{S+2}$, it will be important to control the double integrals in the nonlocal energy  first in the set where $|x-y|\geq d_S(x)$, and then in $\{|x-y|\leq d_S(x)\}$, where 
 $$ 
-\d_S (x) 
+d_S (x) 
 := \min \{\dist(x, \partial B_{S+1}),\mu \dist(x,\ccal)\} \quad \text{ for } x\in B_S\,.
 $$
 A similar technicality was used by Savin and Valdinoci in \cite{SavinValdinoci-EnergyEstimate} with the function $\dist(x, \partial B_{S+1})$, and it is the key point to get \eqref{Eq:EnergyEstimate}. We can now establish the energy estimate of Theorem~\ref{Th:EnergyEstimate}. 
@@ -1469,7 +1469,7 @@ A similar technicality was used by Savin and Valdinoci in \cite{SavinValdinoci-E
 	\end{align*}
 	To bound the second integral (note that it only appears in the proof when $1/ \mu \leq S$), we write it in the $(\overline{s},\overline{t})$ variables in $\R^2$, where
 	$$
-	\overline{s} := \dfrac{|x'|+|x''|}{\sqrt{2}} \, \quad \text{ and } \overline{t} := \dfrac{|x'|-|x''|}{\sqrt{2}}\,.
+	\overline{s} := \dfrac{|x'|+|x''|}{\sqrt{2}} \, \quad \text{ and } \, \quad  \overline{t} := \dfrac{|x'|-|x''|}{\sqrt{2}}\,.
 	$$
 	Note that $\overline{t}$ is the signed distance to the cone (see Lemma~4.2 in \cite{CabreTerraI}). Thus, still denoting by $B_S$ the ball of radius $S$ in $\R^2$,
 	\begin{align*}
