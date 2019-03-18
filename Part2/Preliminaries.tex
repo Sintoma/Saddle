@@ -6,6 +6,7 @@
 In this section we collect some preliminary results that will be used in the rest of this paper. First, we state the regularity results needed in the forthcoming sections. Then, we state a remark on stability that will be used later in this paper, and finally we recall the basic maximum principles for doubly radial odd functions proved in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Regularity theory for nonlocal operators in the class $\lcal_0$}
 \label{Subsec:Regularity}
@@ -14,8 +15,12 @@ In this section we collect some preliminary results that will be used in the res
 
 In this subsection we present the regularity results that will be used in the paper. For further details, see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein. 
 
+First, note that for operators in the class $\lcal_0$, the minimal assumption on $w$ so that $L_K w$ is well defined in an open set $\Omega$ is that $w\in C^\alpha (\Omega)\cap L^1_\s(\R^n)$ for some $\alpha > 2\s$, where $w\in L^1_\s(\R^n)$ means that
+$$
+\int_{\R^n} \dfrac{|w(x)|}{1+|x|^{n+2\s}}\d x < +\infty\,.
+$$
 
-We start with a result on the interior regularity for linear equations.
+Now, we give a result on the interior regularity for linear equations.
 
 \begin{proposition}[\cite{RosOton-Survey,SerraC2s+alphaRegularity}]
 	\label{Prop:InteriorRegularity}
@@ -57,14 +62,28 @@ for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, $k$, an
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Here we prove that if $w$ is a bounded positive solution to $L_K w = f(w)$ in a set $\Omega\subset \R^n$, with $f$ satisfying \eqref{Eq:Hypothesesf}, then $w$ is stable in $\Omega$, that is, \eqref{Eq:StablityCondition} holds. We will use this in Sections~\ref{Sec:SymmetryResults} and \ref{Sec:Asymptotic}. The proof of this fact is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
+
+
+Recall that we say that a bounded solution $w$ to $L_K w = f(w)$ in $\Omega\subset \R^n$ is \emph{stable} in $\Omega$ if the second variation of the energy at $w$ is nonnegative. That is, if
+\begin{equation}
+\label{Eq:StablityCondition}  
+\dfrac{1}{2} \int_{\R^n} \int_{\R^n} |\xi (x) - \xi(y)|^2 K(x - y) \d x \d y - \int_{\Omega} f'(w) \xi^2 \d x \geq 0
+\end{equation}
+for every $\xi \in C^\infty_c (\Omega)$.
+
+
+
+
+
+
+Here we prove that if $w \leq 1$ is a positive solution to $L_K w = f(w)$ in a set $\Omega\subset \R^n$, with $f$ satisfying \eqref{Eq:Hypothesesf}, then $w$ is stable in $\Omega$. We will use this in Sections~\ref{Sec:SymmetryResults} and \ref{Sec:Asymptotic}. The proof of this fact is rather simple and we present it next. It is a consequence of the fact that, under these assumptions, $w$ is a positive supersolution of the linearized operator $L_K - f'(w)$ (a more detailed discussion can be found in \cite{HamelRosOtonSireValdinoci}). 
 
 On the one hand, since $f$ is strictly concave in $(0,1)$ and $f(0)=0$, then $f'(w)w<f(w)$ in $\Omega$ (recall that $w$ is positive there). On the other hand, the following inequality holds for all functions $\varphi$ and $\xi$, with $\varphi>0$:
 \begin{equation}
 \label{Eq:IdentityStability}
 \big (\varphi(x) - \varphi(y) \big) \bpar{\dfrac{\xi^2(x)}{\varphi(x)} - \dfrac{\xi^2(y)}{\varphi(y)} } \leq |\xi (x) - \xi(y)|^2\,.
 \end{equation}
-Indeed, developing the squares and the products, this last inequality is equivalent to $2 \xi(x) \xi(y) \leq \xi^2(y) \varphi(x)/ \varphi(y) +  \xi^2 (x) \varphi(y) / \varphi(x)$, which in turn is equivalent to
+Indeed, developing the square and the products, this last inequality is equivalent to $2 \xi(x) \xi(y) \leq \xi^2(y) \varphi(x)/ \varphi(y) +  \xi^2 (x) \varphi(y) / \varphi(x)$, which in turn is equivalent to
 $$
 \bpar{\xi (x)\sqrt{\varphi(y) / \varphi(x)} - \xi(y) \sqrt{ \varphi(x)/ \varphi(y) } }^2 \geq 0\,.
 $$
@@ -83,7 +102,7 @@ Thus, $w$ is stable in $\Omega$.
 \label{Subsec:MaxPrinciples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this last subsection, we state the basic maximum principles for doubly radial odd functions. Note that in the following result we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. This was proved in \cite{FelipeSanz-Perela:IntegroDifferentialI} and follows readily from the expression \eqref{Eq:OperatorOddF} by using the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$.
+In this last subsection, we state the basic maximum principles for doubly radial odd functions. Note that in the following result we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. This was proved in part I \cite{FelipeSanz-Perela:IntegroDifferentialI} and follows readily from the expression \eqref{Eq:OperatorOddF} by using the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$.
 
 
 \begin{proposition}[Maximum principle for odd functions with respect to $\ccal$]

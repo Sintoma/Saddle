@@ -13,7 +13,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 
 \begin{proposition}
 	\label{Prop:KernelsDimension}
-	Let $L_K $ be a symmetric and translation invariant integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel $K:\R^n\setminus \{0\} \to (0,+\infty) $ satisfying \eqref{Eq:Symmetry&IntegrabilityOfK}. Define the one dimensional kernel $K_1 : \R \setminus \{0\} \to (0,+\infty) $ by
+	Let $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$ be a symmetric and translation invariant integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel $K:\R^n\setminus \{0\} \to (0,+\infty) $. Define the one dimensional kernel $K_1 : \R \setminus \{0\} \to (0,+\infty) $ by
 	\begin{equation}
 	\label{Eq:OneDimKernel}
 	K_1(t) := \int_{\R^{n-1}} K\left(\theta,t\right) \d \theta = |t|^{n-1} \int_{\R^{n-1}} K\left(t\sigma,t\right) \d \sigma.
@@ -21,7 +21,7 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	\begin{enumerate}[label=(\roman{*})]
 		\item Let $v:\R\to\R$ and consider $w:\R^n\to\R$ defined by $w(x) = v(x_n)$. Then, $L_K w(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens with $w(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K w(x) = L_{K_1} v(x \cdot e)$.
 		\item  If $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$, then $K_1(t)$ is nonincreasing/decreasing in $(0,+\infty)$.
-		\item If $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$, then   $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$. Moreover, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
+		\item $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$, and moreover, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
 		
 	\end{enumerate}
 \end{proposition}
@@ -52,7 +52,12 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	\dfrac{\pi^{\frac{n-1}{2}} \Gamma(\frac{1}{2}+\s)}{\Gamma(\frac{n}{2}+\s)} 
 	= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} = c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
 	\end{align*}
-	where we have used \eqref{Eq:ConstantFracLaplacian} and the definition of the Beta and Gamma functions. The upper bound for $K_1$ is obtained in the same way. Note that the previous computation is an equality with $\lambda = 1$ in the case of the fractional Laplacian.
+	where we have used the explicit value of the normalizing constant for the fractional Laplacian,
+	\begin{equation}
+	\label{Eq:ConstantFracLaplacian}
+	c_{n,\s} = \s\dfrac{2^{2\s} \Gamma(\frac{n}{2}+\s) }{\pi^{n/2} \Gamma(1-\s)},
+	\end{equation}
+	and the definition of the Beta and Gamma functions. The upper bound for $K_1$ is obtained in the same way. Note that the previous computation is an equality with $\lambda = 1$ in the case of the fractional Laplacian.
 \end{proof}
 
 
@@ -68,7 +73,7 @@ In our arguments we need also to show that the second derivative of the layer go
 
 \begin{lemma}
 	\label{Lemma:SecondDerivativeLayer}
-	Let $K_1:\R \setminus \{0\} \to (0,+\infty)$ be a kernel satisfying \eqref{Eq:Symmetry&IntegrabilityOfK} and assume that it is decreasing in $(0,+\infty)$. Let $u_0$ be the layer solution associated to the kernel $K_1$, that is, $u_0$ solving \eqref{Eq:LayerSolution}. Then, 
+	Let $K_1:\R \setminus \{0\} \to (0,+\infty)$ be a symmetric kernel satisfying \eqref{Eq:Ellipticity} and assume that it is decreasing in $(0,+\infty)$. Let $u_0$ be the layer solution associated to the kernel $K_1$, that is, $u_0$ solving \eqref{Eq:LayerSolution}. Then, 
 	\begin{enumerate}[label=(\roman{*})]
 		\item $\ddot{u}_0 (x) \to 0$ as $x\to \pm \infty$.	
 		\item  $\ddot{u}_0 (x) < 0$ in $(0,+\infty)$.
