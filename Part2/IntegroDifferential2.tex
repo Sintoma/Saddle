@@ -456,9 +456,9 @@ To establish the asymptotic behavior of saddle-shaped solutions we use a compact
 	Then, $v\equiv 0$ or $v \equiv 1$.
 \end{theorem}
 
-Similar classification results have been proved for the fractional Laplacian in \cite{ChenLiZhang,LiZhang} (either using the extension problem or not) with the method of moving spheres, which uses crucially the scale invariance of the operator $\fraclaplacian$. To the best of our knowledge, there is no similar result available in the literature for general kernels in the ellipticity class $\lcal_0$ (which are not necessarily scale invariant). Thus, we present here a proof based on the techniques used in \cite{BerestyckiHamelNadi} for a local equation with the classical Laplacian. It relies on the maximum principle, the translation invariance of the operator, a Harnack inequality and a stability argument. All these features are available for the operators in $\lcal_0$ (see Section~\ref{Sec:SymmetryResults}). Thus, the same arguments as in the local case can be carried out.
+Similar classification results have been proved for the fractional Laplacian in \cite{ChenLiZhang,LiZhang} (either using the extension problem or not) with the method of moving spheres, which uses crucially the scale invariance of the operator $\fraclaplacian$. To the best of our knowledge, there is no similar result available in the literature for general kernels in the ellipticity class $\lcal_0$ (which are not necessarily scale invariant). Thus, we present here a proof based on the techniques used in \cite{BerestyckiHamelNadi} for a local equation with the classical Laplacian. It relies on the maximum principle, the translation invariance of the operator, a Harnack inequality, and a stability argument. All these features are available for the operators in $\lcal_0$ (see Section~\ref{Sec:SymmetryResults}). Thus, the same arguments as in the local case can be carried out.
 
-The second ingredient to prove the asymptotic behavior of saddle-shaped solutions is a symmetry result for equations in a half-space, stated next. Here and in the rest of the paper we use the notation $\R^n_+= \{(x_H,x_n)\in \R^{n-1}\times \R \ : \ x_n > 0\}$.  
+The second ingredient needed to prove the asymptotic behavior of saddle-shaped solutions is a symmetry result for equations in a half-space, stated next. Here and in the rest of the paper we use the notation $\R^n_+= \{(x_H,x_n)\in \R^{n-1}\times \R \ : \ x_n > 0\}$.  
 
 \begin{theorem}
 	\label{Th:SymmHalfSpace}
@@ -495,7 +495,7 @@ The second ingredient to prove the asymptotic behavior of saddle-shaped solution
 	Suppose that $f\in C^1$ and
 	\begin{itemize}
 		\item $f(0) = f(1) = 0$,
-		\item $f'(0)>0$, and $f'(t)\leq 0$ for all $t\in[1-\delta,1]$ for some $\delta>0$,
+		\item $f'(0)>0$, and $f'(\tau)\leq 0$ for all $\tau\in[1-\delta,1]$ for some $\delta>0$,
 		\item $f>0$ in $(0,1)$, and
 		\item $f$ is odd in the case of \eqref{Eq:P1}.
 	\end{itemize}
@@ -1326,16 +1326,16 @@ Now, we present the other important ingredient needed in the proof of Theorem~\r
 	\end{equation}
 	\reqnomode
 	Assume that there exists a $\delta > 0$ such that
-	$$ f'(t) \leq 0 \quad \text{ in } \quad [-1,-1+\delta]\cup[1-\delta,1], $$
+	$$ f' \leq 0 \quad \text{ in } \quad [-1,-1+\delta]\cup[1-\delta,1], $$
 	for problem \eqref{Eq:P3} and
-	$$ f'(t) \leq 0 \quad \text{ in } \quad [1-\delta,1] $$
+	$$ f' \leq 0 \quad \text{ in } \quad [1-\delta,1] $$
 	for problem \eqref{Eq:P4}.
 	
 	Then, $v$ depends only on $x_n$ and is increasing in that direction.
 \end{proposition}
 
 \begin{proof}
-	It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual,   to define $ v^t(x) := v(x+\nu t) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^t(x)-v(x)\geq 0$ for all $t\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the Lioville type result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. Therefore, we do not include here the details.
+	It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual,   to define $ v^\tau(x) := v(x+\nu \tau) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^\tau(x)-v(x)\geq 0$ for all $\tau\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the Lioville type result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. Therefore, we do not include here the details.
 \end{proof}
 
 
@@ -1399,11 +1399,11 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	Let $L_K \in \mathcal{L}_0 (n,\s,\lambda,\Lambda)$ be a symmetric and translation invariant integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel $K:\R^n\setminus \{0\} \to (0,+\infty) $. Define the one dimensional kernel $K_1 : \R \setminus \{0\} \to (0,+\infty) $ by
 	\begin{equation}
 	\label{Eq:OneDimKernel}
-	K_1(t) := \int_{\R^{n-1}} K\left(\theta,t\right) \d \theta = |t|^{n-1} \int_{\R^{n-1}} K\left(t\sigma,t\right) \d \sigma.
+	K_1(\tau) := \int_{\R^{n-1}} K\left(\theta,\tau\right) \d \theta = |\tau|^{n-1} \int_{\R^{n-1}} K\left(\tau\sigma,\tau\right) \d \sigma.
 	\end{equation}
 	\begin{enumerate}[label=(\roman{*})]
 		\item Let $v:\R\to\R$ and consider $w:\R^n\to\R$ defined by $w(x) = v(x_n)$. Then, $L_K w(x) = L_{K_1} v(x_n)$. If we assume moreover that $K$ is radially symmetric, then the same happens with $w(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$. That is, $L_K w(x) = L_{K_1} v(x \cdot e)$.
-		\item  If $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$, then $K_1(t)$ is nonincreasing/decreasing in $(0,+\infty)$.
+		\item  If $K$ is nonincreasing/decreasing in  the $x_n$-direction in $\{x_n>0\}$, then $K_1(\tau)$ is nonincreasing/decreasing in $(0,+\infty)$.
 		\item $L_{K_1} \in \mathcal{L}_0 (1,\s,\lambda,\Lambda)$, and moreover, if $L_K $ is the fractional Laplacian in dimension $n$, then $L_{K_1}$ is the fractional Laplacian in dimension $1$.
 		
 	\end{enumerate}
@@ -1420,17 +1420,17 @@ Nevertheless, for a general operator $L_K$ this is not true anymore and we need 
 	L_K w(x) 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} \int_{\R^{n-1}} K\left(\theta,x_n-y_n\right) \d \theta \d y_n \\
 	&= \int_{\R} \left\{ v(x_n)-v(y_n) \right\} K_1(x_n-y_n ) \d y_n = L_{K_1}v(x_n).
 	\end{align*}
-	This shows the first equality in \eqref{Eq:OneDimKernel}. The alternative expression of the kernel $K_1$, that is useful in some cases, can be obtained from the change of variables $\theta = t\sigma$. Furthermore, in the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables in the previous computations.
+	This shows the first equality in \eqref{Eq:OneDimKernel}. The alternative expression of the kernel $K_1$, that is useful in some cases, can be obtained from the change of variables $\theta = \tau\sigma$. Furthermore, in the case of $K$ radially symmetric, the result is valid for $u(x) = v(x\cdot e)$ for every unitary vector $e\in \Sph^{n-1}$ after a change of variables in the previous computations.
 	
 	The proof of point $(ii)$ follows directly from the first expression of the unidimensional kernel $K_1$. That is,
 	$$ 
-	K_1(t_2)-K_1(t_1) = \int_{\R^{n-1}} \left\{ K(\theta,t_2) - K(\theta,t_1)\right\} \d \theta \geq 0 \quad \text{ for any } \quad t_2>t_1>0. 
+	K_1(\tau_2)-K_1(\tau_1) = \int_{\R^{n-1}} \left\{ K(\theta,\tau_2) - K(\theta,\tau_1)\right\} \d \theta \geq 0 \quad \text{ for any } \quad \tau_2>\tau_1>0. 
 	$$
 	
 	We establish now point $(iii)$. To do it, we bound the kernel $K_1$ using the ellipticity condition on $K$:
 	\begin{align*}
-	K_1(t) &= |t|^{n-1} \int_{\R^{n-1}} K\left(t(\sigma,1)\right) \d\sigma \geq |t|^{n-1} \int_{\R^n} c_{n,\s} \frac{\lambda}{|t|^{n+2\s}(|\sigma|^2+1)^{\frac{n+2s}{2}}} \d\sigma \\
-	&= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \int_{\R^{n-1}} \frac{\d\sigma}{(|\sigma|^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \dfrac{2 \pi^{\frac{n-1}{2}}}{\Gamma(\frac{n-1}{2})} \int_0^\infty \dfrac{r^{n-2}}{(r^2+1)^{\frac{n+2\s}{2}}} \d r \\	
+	K_1(\tau) &= |\tau|^{n-1} \int_{\R^{n-1}} K\left(\tau(\sigma,1)\right) \d\sigma \geq |\tau|^{n-1} \int_{\R^n} c_{n,\s} \frac{\lambda}{|\tau|^{n+2\s}(|\sigma|^2+1)^{\frac{n+2s}{2}}} \d\sigma \\
+	&= c_{n,\s} \frac{\lambda}{|\tau|^{1+2\s}} \int_{\R^{n-1}} \frac{\d\sigma}{(|\sigma|^2+1)^{\frac{n+2\s}{2}}} = c_{n,\s} \frac{\lambda}{|\tau|^{1+2\s}} \dfrac{2 \pi^{\frac{n-1}{2}}}{\Gamma(\frac{n-1}{2})} \int_0^\infty \dfrac{r^{n-2}}{(r^2+1)^{\frac{n+2\s}{2}}} \d r \\	
 	& = c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} 
 	\dfrac{\pi^{\frac{n-1}{2}} \Gamma(\frac{1}{2}+\s)}{\Gamma(\frac{n}{2}+\s)} 
 	= c_{n,\s} \frac{\lambda}{|t|^{1+2\s}} \frac{c_{1,\s}}{c_{n,\s}} = c_{1,\s} \frac{\lambda}{|t|^{1+2\s}},
@@ -1571,7 +1571,7 @@ The maximum principle we establish is the following.
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleLinearized}
-	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m,\s)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}, and let $v\in C^\s(\overline{\Omega})\cap C^\alpha(\Omega)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
+	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m,\s)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}, and let $v\in C^\s(\overline{\Omega})\cap C^\alpha(\Omega)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\s$, be a doubly radial function satisfying
 	$$
 	\beqc{\PDEsystem}
 	L_K v - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
@@ -1594,7 +1594,7 @@ In order to prove this result we need a maximum principle in ``narrow'' sets, st
 	\ncal_\varepsilon \subset \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
 	$$ 
 	be an open set (not necessarily bounded).  
-	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m,\s)$. Let $v\in C^\s(\overline{\ncal_\varepsilon})\cap C^\alpha(\ncal_\varepsilon)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\gamma$, be a doubly radial function satisfying
+	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m,\s)$. Let $v\in C^\s(\overline{\ncal_\varepsilon})\cap C^\alpha(\ncal_\varepsilon)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\s$, be a doubly radial function satisfying
 	\begin{equation}
 	\label{Eq:AssumptionsMaxPNarrow}
 	\beqc{\PDEsystem}
