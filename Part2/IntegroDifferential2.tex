@@ -583,7 +583,7 @@ The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present
 %%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:Preliminaries}
 
-In this section we collect some preliminary results that will be used in the rest of this paper. First, we state the regularity results needed in the forthcoming sections. Then, we state a remark on stability that will be used later in this paper, and finally we recall the basic maximum principles for doubly radial odd functions proved in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
+In this section we collect some preliminary results that will be used in the rest of this paper. First, we summarize the regularity results needed in the forthcoming sections. Then, we state a remark on stability that will be used later in this paper, and finally we recall the basic maximum principles for doubly radial odd functions proved in \cite{FelipeSanz-Perela:IntegroDifferentialI}.
 
 
 
@@ -595,7 +595,7 @@ In this section we collect some preliminary results that will be used in the res
 
 In this subsection we present the regularity results that will be used in the paper. For further details, see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein. 
 
-First, note that for operators in the class $\lcal_0$, the minimal assumption on $w$ so that $L_K w$ is well defined in an open set $\Omega$ is that $w\in C^\alpha (\Omega)\cap L^1_\s(\R^n)$ for some $\alpha > 2\s$, where $w\in L^1_\s(\R^n)$ means that
+First, note that for operators in the class $\lcal_0$, the minimal assumption on $w$ for $L_K w$ to be well defined in an open set $\Omega$ is that $w\in L^1_\s(\R^n)$ and that $w$ is $C^\alpha$ in $\Omega$ for some $\alpha > 2\s$, where $w\in L^1_\s(\R^n)$ means that
 $$
 \int_{\R^n} \dfrac{|w(x)|}{1+|x|^{n+2\s}}\d x < +\infty\,.
 $$
@@ -615,7 +615,7 @@ Now, we give a result on the interior regularity for linear equations.
 	\label{Eq:Calpha->Calpha+2sEstimate}
 	\norm{w}_{C^{\alpha + 2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{C^{\alpha} (B_1)} + \norm{w}_{C^\alpha (\R^n)} },
 	\end{equation}
-	where $C$ is a constant that depends only on $n$, $\s$, $\lambda$ and $\Lambda$.
+	where $C$ is a constant that depends only on $n$, $\s$, $\lambda$, and $\Lambda$.
 \end{proposition}
 
 
@@ -684,9 +684,8 @@ Thus, $w$ is stable in $\Omega$.
 
 In this last subsection, we state the basic maximum principles for doubly radial odd functions. Note that in the following result we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. This was proved in part I \cite{FelipeSanz-Perela:IntegroDifferentialI} and follows readily from the expression \eqref{Eq:OperatorOddF} by using the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$.
 
-
-\begin{proposition}[Maximum principle for odd functions with respect to $\ccal$]
-	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $w\in C^{\alpha}(\Omega)\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
+\begin{proposition}[Maximum principle for odd functions with respect to $\ccal$ \cite{FelipeSanz-Perela:IntegroDifferentialI}]
+	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ be an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $w\in C^{\alpha}(\Omega)\cap C^{\s}(\overline{\Omega})\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
 	
 	\begin{enumerate}[label=(\roman{*})]
 		\item  (Weak maximum principle)
@@ -704,13 +703,13 @@ In this last subsection, we state the basic maximum principles for doubly radial
 		Then, $w \geq 0$ in $\Omega$.
 		
 		\item (Strong maximum principle)  
-		Assume that $L_K w + c(x) w\geq 0$ in $\Omega$, with $c(x)$ any function, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ in $\ocal$ or $w > 0$ in $\Omega$.
+		Assume that $L_K w + c(x) w\geq 0$ in $\Omega$, with $c$ any continuous function, and that $w\geq 0$ in $\ocal$. Then, either $w\equiv 0$ in $\ocal$ or $w > 0$ in $\Omega$.
 	\end{enumerate} 
 \end{proposition}
 
 \begin{remark}
 	\label{Remark:MaxPrincipleSingularity}
-	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the regularity assumptions on $w$ in the previous results can be weakened. Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:ExistenceUniqueness} in order to apply this maximum principle with a function that is no more regular than $C^\s$ in the interior of $\Omega$ (see Remark~\ref{Remark:CsRegularityFirstEigenfunction})
+	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the regularity assumptions on $w$ in the previous results can be weakened. Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:ExistenceUniqueness} in order to apply this maximum principle with a function that is no more regular than $C^\s$ at some points in the interior of $\Omega$ (see Remark~\ref{Remark:CsRegularityFirstEigenfunction})
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -723,7 +722,7 @@ In this last subsection, we state the basic maximum principles for doubly radial
 \label{Sec:Existence}
 
 
-In this section we give a proof of the existence result in Theorem~\ref{Th:ExistenceUniqueness} based on the maximum principle and the existence of a positive subsolution. To do this, we need a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$. Along this section we will call odd sub/supersolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}. In view of Remark~\ref{Remark:MaxPrincipleSingularity}, we do not need the operator to be finite in the whole set when applied to a subsolution (respectively supersolution), it can take the value $-\infty$ (respectively $+\infty$) at some points.
+In this section we give a proof of the existence result in Theorem~\ref{Th:ExistenceUniqueness} based on the maximum principle. The first ingredient that we need is a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$. Along this section we will call odd sub/supersolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}. In view of Remark~\ref{Remark:MaxPrincipleSingularity}, we do not need the operator to be finite in the whole set when applied to a subsolution (respectively supersolution), it can take the value $-\infty$ (respectively $+\infty$) at some points.
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
@@ -897,7 +896,7 @@ With these ingredients, we can proceed with the proof of the existence statement
 
 
 
-This section is devoted to prove the Liouville type result of \ref{Th:LiouvilleSemilinearWholeSpace} and the one-dimensional symmetry result of \ref{Th:SymmHalfSpace}. Both of them will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. 
+This section is devoted to prove the Liouville type result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace} and the one-dimensional symmetry result of Theorem~\ref{Th:SymmHalfSpace}. Both of them will be needed in the following section to establish the asymptotic behavior of the saddle-shaped solution. 
 
 \subsection{A Liouville type result for positive solutions in the whole space}
 
@@ -917,7 +916,7 @@ In the proof of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace} we will need two 
 	$$
 	|f(u)|\leq d_1 + d_2 |u|^{q-1} \quad \text{ in } \R^n\,,
 	$$ 
-	with $d_1=0$, $d_2 =||f||_{\mathrm{Lip}}$ and $q=2$. With this choice of the parameters, we only need to repeat the proof of Proposition~8.5 from \cite{Cozzi-DeGiorgiClassesLong} (with $p=2$ and $\Omega = \R^n$) in order to obtain that $u$ belongs to the fractional De Giorgi class $\mathrm{DG}^{\s,2} ( \R^n , 0, H, -\infty,2\s/n,2\s,+\infty)$	for some constant $H>0$ (see \cite{Cozzi-DeGiorgiClassesLong} for the precise definition of these classes). Therefore, the Harnack inequality follows from Theorem~6.9 in \cite{Cozzi-DeGiorgiClassesLong}.
+	with $d_1=0$, $d_2 =||f||_{\mathrm{Lip}}$ and $q=2$. With this choice of the parameters, we only need to repeat the proof of Proposition~8.5 in \cite{Cozzi-DeGiorgiClassesLong} (with $p=2$ and $\Omega = \R^n$) in order to obtain that $u$ belongs to the fractional De Giorgi class $\mathrm{DG}^{\s,2} ( \R^n , 0, H, -\infty,2\s/n,2\s,+\infty)$	for some constant $H>0$ (see \cite{Cozzi-DeGiorgiClassesLong} for the precise definition of these classes). Therefore, the Harnack inequality follows from Theorem~6.9 in \cite{Cozzi-DeGiorgiClassesLong}.
 \end{proof}
 
 
@@ -929,7 +928,7 @@ The second ingredient that we need in the proof of Theorem~\ref{Th:LiouvilleSemi
 	\begin{equation*}
 	\beqc{\PDEsystem}
 	\partial_t v + L_K  v + c(x)\,v &\leq& 0 & \textrm{ in }\R^n\times(0,+\infty)\,,\\
-	v_0:=v(x,0) &\leq& 0 & \textrm{ in } \R^n\,,
+	v(x,0) &\leq& 0 & \textrm{ in } \R^n\,,
 	\eeqc
 	\end{equation*}
 	with $c(x)$ a continuous and bounded function. Then,
@@ -944,7 +943,7 @@ This result can be deduced from the usual parabolic maximum principle in a bound
 	\begin{equation*}
 	\beqc{\PDEsystem}
 	\partial_t v + L_K v &\leq& 0 & \textrm{ in } \Omega \subset B_R\times(0,T)\,,\\
-	v_0:=v(x,0) &\leq& 0 & \textrm{ in } \overline{\Omega} \cap \{t=0\} \subset B_R\,,\\
+	v(x,0) &\leq& 0 & \textrm{ in } \overline{\Omega} \cap \{t=0\} \subset B_R\,,\\
 	v &\leq& 0 & \textrm{ in } ( \R^n \times (0,T))\setminus \Omega \,.
 	\eeqc
 	\end{equation*}
@@ -952,7 +951,7 @@ This result can be deduced from the usual parabolic maximum principle in a bound
 \end{lemma}
 
 \begin{proof}
-	By contradiction, for every $\varepsilon > 0$ assume that 
+	By contradiction, for every small $\varepsilon > 0$ assume that 
 	$$
 	M:=\sup_{\R^n \times (0,T-\varepsilon)}v > 0
 	$$
@@ -1028,7 +1027,7 @@ With these ingredients, we establish now the parabolic maximum principle in $\R^
 	\beqc{\PDEsystem}
 	\partial_t \tilde{v} + L_K  \tilde{v} &\leq& 0 & \textrm{ in } \Omega \subset\R^n\times(0,+\infty)\,,\\
 	\tilde{v} &\leq& 0 & \textrm{ in }  \left(\R^n\times(0,+\infty)\right) \setminus  \Omega\,,\\
-	\tilde{v}_0 &\leq& 0 & \textrm{ in } \R^n\,,
+	\tilde{v}(x,0)&\leq& 0 & \textrm{ in } \R^n\,,
 	\eeqc
 	\end{equation*}
 	if we take $\alpha > ||c||_{L^\infty}$ and $\Omega := \{(x,t)\in \R^n\times(0,+\infty) \ : \ v(x,t) > 0\}$.
