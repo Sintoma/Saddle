@@ -212,7 +212,7 @@ Universitat Polit\`ecnica de Catalunya and BGSMath, Departament de Matem\`{a}tiq
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-This paper, which is the follow-up to part I, concerns saddle-shaped solutions to the semilinear equation $L_K u = f(u)$ in $\R^{2m}$, where $L_K$ is a linear elliptic integro-differential operator with a radially symmetric kernel and $f$ is of Allen-Cahn type. Saddle-shaped solutions are doubly radial, odd with respect to the Simons cone $\{(x', x'') \in \R^m \times \R^m \, : \, |x'| = |x''|\}$, and vanish only in this set.
+This paper, which is the follow-up to part I, concerns saddle-shaped solutions to the semilinear equation $L_K u = f(u)$ in $\mathbb{R}^{2m}$, where $L_K$ is a linear elliptic integro-differential operator with a radially symmetric kernel and $f$ is of Allen-Cahn type. Saddle-shaped solutions are doubly radial, odd with respect to the Simons cone $\{(x', x'') \in \mathbb{R}^m \times \mathbb{R}^m \, : \, |x'| = |x''|\}$, and vanish only in this set.
 
 Following the setting established in part I for doubly radial odd functions, we show existence, asymptotic behavior, and uniqueness of the saddle-shaped solution. For this, we prove, among others, a Liouville type result, the one-dimensional symmetry of positive solutions to semilinear problems in a half-space, and maximum principles in ``narrow'' sets.
 \end{abstract}
@@ -250,7 +250,6 @@ As in part I \cite{FelipeSanz-Perela:IntegroDifferentialI}, equation \eqref{Eq:N
 \label{Eq:DefOfLu}
 L_K w(x) = \int_{\R^n} \{w(x) - w(y)\} K(x-y)\d y.
 \end{equation}
-%The integral in \eqref{Eq:DefOfLu} has to be understood in the principal value sense. 
 The most canonical example of such operators is the fractional Laplacian, which corresponds to the kernel $K(z) = c_{n, \s} |z|^{-n-2\s}$, where $\s \in (0,1)$ and $c_{n, \s}$ is a normalizing positive constant ---see \eqref{Eq:ConstantFracLaplacian}.
 
 Throughout the paper, we assume that $K$ is symmetric, i.e.,
@@ -400,11 +399,6 @@ $$
 $v$ is a layer solution to $L_K v = f(v)$ in $\R^n$ if and only if $w$ is a layer solution to $L_{K_1} w = f(w)$ in $\R$. For more details see Proposition~\ref{Prop:KernelsDimension} in Section~\ref{Sec:Asymptotic} and \cite{CozziPassalacqua}. 
 
 
-%The same holds for $v(x) = w(x\cdot e)$ for every $e\in \Sph^{n-1}$ whenever the kernel $K$ is radially symmetric.
-%Note that, by the previous comments, $v(x) = u_0(x_n)$ is a one-dimensional layer solution to $L_K v = f(v)$ in $\R^n$. Moreover, the same holds for $u_0(x\cdot e)$ for every $e\in \Sph^{n-1}$ whenever the kernel $K$ is radially symmetric.
-% 
-%Moreover $L_{K_1}\in \lcal_0(1,\s,\lambda, \Lambda)$. 
-
 The layer solution in $\R$ that vanishes at the origin, denoted by $u_0$, solves
 \begin{equation}
 \label{Eq:LayerSolution}
@@ -525,7 +519,7 @@ The second ingredient needed to prove the asymptotic behavior of saddle-shaped s
 	Then, $v$ depends only on $x_n$ and it is increasing in this direction.
 \end{theorem}
 
-The result for \eqref{Eq:P2} has been proved for the fractional Laplacian under some assumptions on $f$ (weaker than the ones in Theorem~\ref{Th:SymmHalfSpace}) in \cite{QuaasXia, BarriosEtAl-Monotonicity, BarriosEtAl-Symmetry, FallWethMonotonicity}. Instead, no result was available for general integro-differential operators. To the best of our knowledge, problem \eqref{Eq:P1} on odd solutions with respect to a hyperplane has not been treated even for the fractional Laplacian. In our case, the fact that $f$ is of Allen-Cahn type allows us to use rather simple arguments that work for both problems \eqref{Eq:P1} and \eqref{Eq:P2} ---moving planes and sliding methods. Moreover, the fact that the kernel of the operator is $|\cdot|^{-n-2\s}$ or a general $K$ satisfying uniform ellipticity bounds does not affect significantly the proof.  Although \eqref{Eq:P2} will not be used in this paper, we include it here for future reference since the proof for this problem is analogous to the one for \eqref{Eq:P1}. 
+The result for \eqref{Eq:P2} has been proved for the fractional Laplacian under some assumptions on $f$ (weaker than the ones in Theorem~\ref{Th:SymmHalfSpace}) in \cite{QuaasXia, DipierroSoaveValdinoci, BarriosEtAl-Monotonicity, BarriosEtAl-Symmetry, FallWethMonotonicity}. Instead, no result was available for general integro-differential operators. To the best of our knowledge, problem \eqref{Eq:P1} on odd solutions with respect to a hyperplane has not been treated even for the fractional Laplacian. In our case, the fact that $f$ is of Allen-Cahn type allows us to use rather simple arguments that work for both problems \eqref{Eq:P1} and \eqref{Eq:P2} ---moving planes and sliding methods, similarly as done in \cite{DipierroSoaveValdinoci}. Moreover, the fact that the kernel of the operator is $|\cdot|^{-n-2\s}$ or a general $K$ satisfying uniform ellipticity bounds does not affect significantly the proof.  Although \eqref{Eq:P2} will not be used in this paper, we include it here for future reference since the proof for this problem is analogous to the one for \eqref{Eq:P1}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -536,7 +530,7 @@ To conclude this introduction, let us make some comments on the importance of pr
 
 A main open problem (even in the local case) is to determine whether the saddle-shaped solution is a minimizer of the energy functional associated to the equation, depending on the dimension $2m$. This question is deeply related to the regularity theory of local and nonlocal minimal surfaces, as explained next.
 
-In the seventies, Modica and Mortola (see \cite{Modica,ModicaMortola}) proved that, considering an appropriately rescaled version of the (local) Allen-Cahn equation, the corresponding energy functionals $\Gamma$-converge to the perimeter functional. Thus, the blow-down sequence of minimizers of the Allen-Cahn energy converge to the characteristic function of a set of minimal perimeter. This same fact holds for the equation with the fractional Laplacian, though we have two different scenarios depending on the parameter $\s \in (0,1)$. If $\s \geq 1/2$, the rescaled energy functionals associated to the equation $\Gamma$-converge to the classical perimeter (see \cite{GiovanniBouchitteSeppecher,Gonzalez}), while in the case $\s \in (0,1/2)$, they $\Gamma$-converge to the fractional perimeter (see \cite{SavinValdinoci-GammaConvergence}). 
+In the seventies, Modica and Mortola (see \cite{Modica,ModicaMortola}) proved that, considering an appropriately rescaled version of the (local) Allen-Cahn equation, the corresponding energy functionals $\Gamma$-converge to the perimeter functional. Thus, the blow-down sequence of minimizers of the Allen-Cahn energy converge to the characteristic function of a set of minimal perimeter. This same fact holds for the equation with the fractional Laplacian, though we have two different scenarios depending on the parameter $\s \in (0,1)$. If $\s \geq 1/2$, the rescaled energy functionals associated to the equation $\Gamma$-converge to the classical perimeter (see \cite{AlbertiBouchitteSeppecher,Gonzalez}), while in the case $\s \in (0,1/2)$, they $\Gamma$-converge to the fractional perimeter (see \cite{SavinValdinoci-GammaConvergence}). 
 
 In the recent years there has been an increasing interest in developing a regularity theory for nonlocal minimal surfaces, although very few results are known for the moment. It is beyond the scope of this article to describe all of them in detail, and we refer the interested reader to \cite{CozziFigalli-Survey, BucurValdinoci} and the references therein. Let us just make some comments on the scarce available results concerning the possible minimality of the Simons cone as a nonlocal minimal surface, since this is connected to our work on saddle-shaped solutions. Note first that, by all its symmetries, it is easy to check that the Simons cone $\ccal$ is stationary for the fractional perimeter. If $2m=2$, it cannot be a minimizer since in \cite{SavinValdinoci-Cones} Savin and Valdinoci proved that all minimizing nonlocal minimal cones in $\R^2$ are flat (indeed, dimension $n=2$ is the only one where a complete classification of minimizing nonlocal minimal cones is available). In higher dimensions, the only available results regarding the possible minimality of $\ccal$ appear in \cite{DaviladelPinoWei} and in our paper \cite{Felipe-Sanz-Perela:SaddleFractional}, but they concern stability, a weaker property than minimality. 
 
@@ -564,9 +558,7 @@ Concerning the conjecture with more general operators like $L_K$, fewer results 
 A related issue to the conjecture by De Giorgi concerns the one-dimensional symmetry of minimizers to the Allen-Cahn equation. In the local case, a deep result of Savin \cite{Savin-DeGiorgi} states that minimizers of the Allen-Cahn equation $-\Delta u = f(u)$ in $\R^n$ are one-dimensional if $n\leq 7$. On the other hand, Liu, Wang, and Wei \cite{LiuWangWei} have constructed minimizers in dimensions $n\geq 8$ which are not one-dimensional. We should mention that the same question for stable solutions (instead of minimizers) is still largely open, only solved in dimension $n=2$ (see \cite{GhoussoubGui,BerestyckiCaffarelliNiremberg-Qualitative}).
 
 
-Let us make a brief remark on the recent result of Liu, Wang, and Wei \cite{LiuWangWei} concerning the existence of minimizers in $\R^8$ which are not one-dimensional. 
-%Recall first that in $\R^8$ there exists a foliation $\Gamma_\lambda^\pm$ made of minimal surfaces such that $\Gamma_0$ is the Simons cone and $\Gamma_\lambda^+$ and $\Gamma_\lambda^-$, with $\lambda >0$, are asymptotic to $\ccal$ and lie at each side of the cone respectively. This foliation is crucial in the proof of the minimality of the Simons cone in $\R^8$, see \cite{CabrePoggesi} and the references therein. For the Allen-Cahn equation, Liu, Wang, and Wei \cite{LiuWangWei} recently proved 
-The authors proved that there exists an ordered family of solutions $W_\lambda$ with their zero level set being asymptotic to the cone $\ccal$. From this ordering, they can establish that each solution $W_\lambda$ is a minimizer of the Allen-Cahn equation. However, their construction only gives solutions $W_\lambda$ for which $\{W_\lambda = 0\}$ is far from the origin of $\R^8$ (corresponding to $\lambda$ large). Therefore, this family does not include the saddle-shaped solution ---the arguments in \cite{LiuWangWei} suggest that if the solutions $W_\lambda$ could be built for all values of the parameter $\lambda\geq 0$, the saddle-shaped solution would be the one for the limiting case $\lambda = 0$.
+Let us make a brief remark on the recent result of Liu, Wang, and Wei \cite{LiuWangWei} concerning the existence of minimizers in $\R^8$ which are not one-dimensional. The authors proved that there exists an ordered family of solutions $W_\lambda$ with their zero level set being asymptotic to the cone $\ccal$. From this ordering, they can establish that each solution $W_\lambda$ is a minimizer of the Allen-Cahn equation. However, their construction only gives solutions $W_\lambda$ for which $\{W_\lambda = 0\}$ is far from the origin of $\R^8$ (corresponding to $\lambda$ large). Therefore, this family does not include the saddle-shaped solution ---the arguments in \cite{LiuWangWei} suggest that if the solutions $W_\lambda$ could be built for all values of the parameter $\lambda\geq 0$, the saddle-shaped solution would be the one for the limiting case $\lambda = 0$.
 
 Concerning the same issue on minimizers in the fractional setting, Savin \cite{Savin-Fractional, Savin-Fractional2} extended his results for the Laplacian to the powers $\s \in [1/2,1)$, by proving that minimizers of the equation $\fraclaplacian u = f(u)$ in $\R^n$ are one-dimensional if $n\leq 7$. In the case $\s \in (0,1/2)$, Dipierro, Serra, and Valdinoci \cite{DipierroSerraValdinoci} proved that minimizers are one-dimensional provided that their level sets are asymptotically flat. Therefore, if one could prove a classification result for nonlocal minimal cones in some dimension $n$, this would entail the one-dimensional symmetry of minimizers to $\fraclaplacian u = f(u)$ in $\R^{n-1}$. As mentioned above, the classification of stable nonlocal minimal cones is still a fundamental open problem in dimensions $n\geq 3$. The one-dimensional symmetry of stable solutions is also largely open, only solved in dimension $n=2$ (see \cite{CabreSolaMorales, CabreSireII}). %todo mirar Cabre Cinti Serra si ho fan per dim 3
 
@@ -992,7 +984,6 @@ With this result we can introduce the auxiliary function that we will use to pro
 \begin{proof}
 	First, consider $\phi_R$ the solution to
 	\begin{equation*}
-	%\label{Eq:phiRProblem}
 	\beqc{\PDEsystem}
 	L_K  \phi_R &=& 1 & \textrm{ in } B_R\,,\\
 	\phi_R &=& 0 & \textrm{ in } \R^n\setminus B_R\,.
@@ -1362,7 +1353,7 @@ Now, we present the other important ingredient needed in the proof of Theorem~\r
 \end{proposition}
 
 \begin{proof}
-	It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual,   to define $ v^\tau(x) := v(x+\nu \tau) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^\tau(x)-v(x)\geq 0$ for all $\tau\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the Lioville type result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. Therefore, we do not include here the details.
+	It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual, to define $ v^\tau(x) := v(x+\nu \tau) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^\tau(x)-v(x)\geq 0$ for all $\tau\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the Liouville type result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. Therefore, we do not include here the details.
 \end{proof}
 
 
@@ -1561,9 +1552,6 @@ Now we have all the ingredients to establish the asymptotic behavior of the sadd
 	Similarly as before, by letting $k\to +\infty$, up to a subsequence $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
 	$$
 	\beqc{\PDEsystem}
-	%L w &=& f(w)  \textrm{ in } &H:=\{x\cdot \nu >0\}\,,\\
-	%w &\geq& 0  \textrm{ in } &H\,,\\
-	%w &\text{ odd}& \hspace{-2mm} \text{with respect} \text{to} &H \,.
 	L_K  w &=& f(w)  &\textrm{ in } H:=\{x\cdot \nu >0\}\,,\\
 	w &\geq& 0  &\textrm{ in } H\,,\\
 	\,\,w \text{ is odd with respect to } H. \span\span\span \,
