@@ -1231,10 +1231,10 @@ By the second property, $v$ can be extended to coincide with $u$ outside $B_{S+2
 
 In our case, the strategy will be the same but adapting some ingredients, namely, the competitor $v$. First, note that the previous construction for $v$ cannot be used in our setting, since it would not produce a doubly radial odd function. To overcome this problem, we will construct a function $w$ defined in $B_{S+2}\cap \ocal$ and satisfying the four previous assumptions on $v$. In addition, we will require $w$ to be doubly radial and to vanish on the Simons cone (then we will consider its odd extension through $\ccal$).
 
-To state the precise properties of $w$, we need to consider the Lipschitz constant of $u$ in $\overline{B_{S+3}}$, namely
+To state the precise properties of $w$, we need to consider the Hölder constant of $u$ in $\overline{B_{S+3}}$, namely
 \begin{equation} 
 \label{Eq:ChoiceMu} 
-	\mu := \seminorm{u}_{\mathrm{Lip}(\overline{B_{S+3}})}. 
+	\mu := \left(\seminorm{u}_{\mathrm{C^\alpha}(\overline{B_{S+3}})}\right) ^{1/\alpha}. 
 \end{equation} 
 By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Moreover, by Lemma~\ref{Lemma:DecreaseEnergy} we know that $u$ is bounded. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimateBalls} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points in $B_{S+3}$, it is easy to see that $\mu\leq C$ with a positive constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and hence $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$.
 
@@ -1282,10 +1282,10 @@ In the following lemma we state the precise properties for the competitor $w$ th
 		\item
 		\label{Eq:wH4} $w\equiv-1$ on $(B_{S+2}\cap \ocal)\setminus \Omega_S = B_S \cap \{ \mu \dist (\cdot, \ccal) > 1\}$.
 		\item
-		\label{Eq:wH5} $w\in \Lip(\overline{B_{S+2}})$ with a Lipschitz constant independent of $R$ and $S$. In addition, 
+		\label{Eq:wH5} $w\in C^\alpha(\overline{B_{S+2}})$ with a Hölder constant independent of $R$ and $S$. In addition, 
 		\begin{equation}
 			\label{Eq:wH5Lipschitz}
-			|w(x)-w(y)| \leq \frac{C}{\dist(x,\ccal)}|x-y|			
+			|w(x)-w(y)| \leq \frac{C}{\dist(x,\ccal)^\alpha}|x-y|^\alpha			
 		\end{equation}
 		whenever $x,y \in B_{S+1}\cap \ocal$, $\mu \dist(x,\ccal)\geq 1$ and $\mu \dist(y,\ccal)\leq 1$, and with $C$ a constant independent of $R$ and $S$.
 	\end{enumerate} 
@@ -1306,7 +1306,7 @@ In the following lemma we state the precise properties for the competitor $w$ th
 	$$
 	\Psi_S(x) :=
 	\begin{cases}
-	\phi_S (x) \mu\dist(x,\ccal) &  \textrm{ if }  \  \mu\dist(x,\ccal) \leq 1 \,, \\
+	\phi_S (x) \mu^\alpha \dist(x,\ccal)^\alpha &  \textrm{ if }  \  \mu\dist(x,\ccal) \leq 1 \,, \\
 	\phi_S (x) & \textrm{ if }  \  \mu\dist(x,\ccal) \geq 1\,,
 	\end{cases}
 	$$
@@ -1320,17 +1320,17 @@ In the following lemma we state the precise properties for the competitor $w$ th
 	
 	First of all, recall that by Lemma~\ref{Lemma:DecreaseEnergy}, $0\leq u \leq 1$ in $\ocal$. Since $-1\leq \Psi_S\leq 1$ in $B_{S+2} \cap \ocal$, \eqref{Eq:wH1} holds trivially. Moreover, since both functions are doubly radial and vanish on $\ccal$, \eqref{Eq:wH2} follows ---recall that the distance to the cone, in $\ocal$, is the doubly radial function given by $(|x'|-|x''|)/\sqrt{2}$. The verification of \eqref{Eq:wH4} is easy, since $\Psi_S \equiv-1 \leq u$ in $(B_{S+2}\cap \ocal)\setminus \Omega_S$.
 	
-	Now, we check that \eqref{Eq:wH3} holds. On the one hand, if $x\in \partial B_{S+2}\cap \ocal$ and $\mu\dist(x,\ccal) \geq 1$, we have $\Psi_S (x) = \phi_S(x) = 1 \geq u(x)$, and therefore $w(x) = u(x)$. On the other hand, for $x\in \partial B_{S+2}\cap \ocal$ with $\mu\dist(x,\ccal) \leq 1$, we have $\Psi_S (x) = \mu \dist (x,\ccal)$. By \eqref{Eq:ChoiceMu},
+	Now, we check that \eqref{Eq:wH3} holds. On the one hand, if $x\in \partial B_{S+2}\cap \ocal$ and $\mu\dist(x,\ccal) \geq 1$, we have $\Psi_S (x) = \phi_S(x) = 1 \geq u(x)$, and therefore $w(x) = u(x)$. On the other hand, for $x\in \partial B_{S+2}\cap \ocal$ with $\mu\dist(x,\ccal) \leq 1$, we have $\Psi_S (x) = \mu^\alpha \dist (x,\ccal)^\alpha$. By \eqref{Eq:ChoiceMu},
 	$$ 
-	|u(y) - u(z)|\leq \mu |y-z| \quad \text{ for every } y, \ z \in \overline{B_{S+3}},
+	|u(y) - u(z)|\leq \mu^\alpha |y-z|^\alpha \quad \text{ for every } y, \ z \in \overline{B_{S+3}},
 	$$ 
 	and thus, by taking $y=x$ and $z\in \ccal$ to be a point realizing $\dist(x,\ccal)$, we obtain that
 	$$ 
-	u(x) = |u(x)|\leq \mu |x-z|  = \mu \dist (x,\ccal) = \Psi_S (x).
+	u(x) = |u(x)|\leq \mu^\alpha |x-z|^\alpha  = \mu^\alpha \dist (x,\ccal)^\alpha = \Psi_S (x).
 	$$ 
 	Thus, $w(x) = u(x)$ and \eqref{Eq:wH3} holds.
 	
-	Finally, we verify \eqref{Eq:wH5}. Obviously, $w$ is Lipschitz in $\overline{B_{S+2}}$ since it is the minimum of two Lipschitz functions ---with Lipschitz constants depending only on $\mu$. From this it follows that \eqref{Eq:wH5Lipschitz} also holds, for a large constant $C$ depending on $\mu$, at points where $\dist(x,\ccal)\leq 2/\mu$. Finally, assume that $\dist(x,\ccal)\geq 2/\mu$. Then, by using the triangular inequality and the definition of distance to the Simons cone, we have
+	Finally, we verify \eqref{Eq:wH5}. Obviously, $w$ is $\alpha$-Hölder in $\overline{B_{S+2}}$ since it is the minimum of two $\alpha$-Hölder functions ---with Hölder constants depending only on $\mu$. From this it follows that \eqref{Eq:wH5Lipschitz} also holds, for a large constant $C$ depending on $\mu$, at points where $\dist(x,\ccal)\leq 2/\mu$. Finally, assume that $\dist(x,\ccal)\geq 2/\mu$. Then, by using the triangular inequality and the definition of distance to the Simons cone, we have
 	$$
 	|x-y| \geq 	\dist(x,\ccal) - \dist(y,\ccal) \geq \dfrac{1}{2}\dist(x,\ccal).
 	$$
@@ -1391,21 +1391,21 @@ A similar technicality was used by Savin and Valdinoci in \cite{SavinValdinoci-E
 	\begin{align*}
 	I_1 &= \int_{\Omega_{S}\cap \ocal} \d x \int_{\R^{2m}} \d y \  \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
 	&= \int_{\Omega_{S}\cap \ocal} \d x \int_{\{|x-y|\leq 1\}} \d y \ \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} + \int_{\Omega_{S}\cap \ocal} \d x \int_{\{|x-y|\geq 1\}} \d y \ \frac{|w(x)-w(y)|^2}{|x-y|^{2m+2\s}} \\
-	&\leq C \int_{\Omega_{S}\cap \ocal} \d x \int_0^1 \d r \ r^{1-2\s} + C \int_{\Omega_{S}\cap \ocal} \d x \int_1^\infty \d r \ r^{-1-2\s} \\
+	&\leq C \int_{\Omega_{S}\cap \ocal} \d x \int_0^1 \d r \ r^{2\alpha-1-2\s} + C \int_{\Omega_{S}\cap \ocal} \d x \int_1^\infty \d r \ r^{-1-2\s} \\
 	&= C |\Omega_S| \leq C \ S^{2m-1}.
 	\end{align*}
-	We have used that $w$ is Lipschitz in $\overline{B_{S+3}}$ ---see \eqref{Eq:wH5} and \eqref{Eq:ChoiceMu}--- to bound the first integral, while the second one is controlled using only that $w$ is bounded, by \eqref{Eq:wH1}. 
+	We have used that $w$ is $\alpha$-Hölder in $\overline{B_{S+3}}$ ---see \eqref{Eq:wH5} and \eqref{Eq:ChoiceMu}--- to bound the first integral, while the second one is controlled using only that $w$ is bounded, by \eqref{Eq:wH1}. 
 	
 	Next, we estimate $I_2$. To do it, we first claim that, if $|x-y|\leq d_S(x)$, then
 	\begin{equation}
 	\label{Eq:EnergyEstimateProofLipschitz}
-	|w(x)-w(y)| \leq \dfrac{C}{d_S(x)} |x-y|	
+	|w(x)-w(y)| \leq \dfrac{C}{d_S(x)^\alpha} |x-y|^\alpha	
 	\end{equation}
 	for every $x\in (B_S\setminus \Omega_S)\cap \ocal$ and $y \in B_{S+1}\cap \ocal$. Recall that $d_S$ is defined as $d_S(x)=\min \{\dist(x,\partial B_{S+1}) , \mu \dist (x, \ccal)\}$, and therefore it suffices to show that
 	$$
-	|w(x)-w(y)| \leq \dfrac{C}{\dist (x, \ccal)} |x-y|
+	|w(x)-w(y)| \leq \dfrac{C}{\dist (x, \ccal)^\alpha} |x-y|^\alpha
 	$$
-	for $x\in B_S \cap \ocal$ with $\mu \dist (x, \ccal) \geq 1$ and $y \in B_{S+1}\cap \ocal$ (recall that $C$ may depend on $\mu$). Now, if we assume that $\mu \dist (y, \ccal) \geq 1$, it follows that $w(x)=w(y)=-1$ and \eqref{Eq:EnergyEstimateProofLipschitz} is trivially true. On the other hand, if we assume that $\mu \dist (y, \ccal) \leq 1$, then \eqref{Eq:EnergyEstimateProofLipschitz} follows from \eqref{Eq:wH5}. Therefore, the claim is proved.
+	for $x\in B_S \cap \ocal$ with $\mu \dist (x, \ccal) \geq 1$ and $y \in B_{S+1}\cap \ocal$ (recall that $C$ may depend on $\mu$ and $\alpha$). Now, if we assume that $\mu \dist (y, \ccal) \geq 1$, it follows that $w(x)=w(y)=-1$ and \eqref{Eq:EnergyEstimateProofLipschitz} is trivially true. On the other hand, if we assume that $\mu \dist (y, \ccal) \leq 1$, then \eqref{Eq:EnergyEstimateProofLipschitz} follows from \eqref{Eq:wH5}. Therefore, the claim is proved.
 	
 	Using \eqref{Eq:EnergyEstimateProofLipschitz}, we proceed as before splitting the integrals to obtain
 	\begin{align*}
