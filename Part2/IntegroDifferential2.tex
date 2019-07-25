@@ -713,7 +713,7 @@ In this section we give a proof of the existence result in Theorem~\ref{Th:Exist
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
-	Let $\s\in (0,1)$ and let $K$ be a radially symmetric kernel  satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0$ and such that $L_K\in \lcal_0$. Assume that $\vsub \leq \vsup$ are two bounded functions which are doubly radial and odd with respect to the Simons cone. Furthermore, assume that $\vsub\in C^\s(\R^{2m})$ and that $\vsub$ and $\vsup$ satisfy respectively   
+	Let $\s\in (0,1)$ and let $K$ be a radially symmetric kernel  satisfying the positivity condition \eqref{Eq:KernelInequality}\todo{Convexity} and such that $L_K\in \lcal_0$ and such that $L_K\in \lcal_0$. Assume that $\vsub \leq \vsup$ are two bounded functions which are doubly radial and odd with respect to the Simons cone. Furthermore, assume that $\vsub\in C^\s(\R^{2m})$ and that $\vsub$ and $\vsup$ satisfy respectively   
 	\begin{equation}
 	\label{Eq:SemilinearSubSuperSolutionInBall}
 	\beqc{\PDEsystem}
@@ -766,7 +766,9 @@ In this section we give a proof of the existence result in Theorem~\ref{Th:Exist
 	v_k &=& \varphi &  \textrm{ in } \R^{2m} \setminus B_R\,. 
 	\eeqc
 	$$
-	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $v_k\in L^\infty(\R^n) \cap C^{2\s+2\varepsilon}(B_R)$ for some $\varepsilon>0$. Moreover, given $\Omega\subset B_R$ a compact set, then $||v_k||_{C^{2\s+2\varepsilon}(\Omega)}$ is uniformly bounded in $k$.
+	It is easy to see by induction and the regularity results from Proposition~\ref{Prop:InteriorRegularity} that $v_k\in L^\infty(\R^n) \cap C^{2\s+2\varepsilon}(B_R)$ for some $\varepsilon>0$. 
+	Moreover, given $\Omega\subset B_R$ a compact set, then $||v_k||_{C^{2\s+2\varepsilon}(\Omega)}$ is uniformly bounded in $k$.
+	\todo[inline, color=red]{!!!}
 	
 	Then, using the maximum principle it is not difficult to show by induction that 
 	$$
@@ -836,6 +838,7 @@ Recall that when $K$ is radially symmetric and $w$ is doubly radial, we can repl
 \begin{remark}
 	\label{Remark:CsRegularityFirstEigenfunction}
 	Note that, by standard regularity results for $L_K$, we have that $\phi_1 \in C^\s(\overline{\Omega})\cap C^\infty(\Omega)$, and the regularity up to the boundary is optimal (by the Hopf lemma, see \cite{RosOton-Survey} and the references therein for the details). Due to this and the fact that $\phi_1 >0$ in $\Omega\cap \ocal$ while $\phi_1=0$ in $\R^{2m}\setminus \Omega$, it is easy to check by using \eqref{Eq:OperatorOddF} that $-\infty <L_K \phi_1 < 0$ in $\ocal\setminus \overline{\Omega}$ and $L_K \phi_1 = -\infty$ in $\partial \Omega \cap \ocal$.
+	\todo[inline, color=red]{!!!}
 \end{remark}
 
 With these ingredients, we can proceed with the proof of the existence statement in Theorem~\ref{Th:ExistenceUniqueness}.
@@ -1000,7 +1003,7 @@ With this result we can introduce the auxiliary function that we will use to pro
 	\varphi_R &\leq & 1\,.
 	\eeqc
 	\end{equation}
-	By a standard compactness argument, we deduce that as $R\to +\infty$, $\varphi_R$ converges (up to a subsequence) to a function $\varphi$ that solves $L_K  \varphi = 1/M$ in $\R^n$ and satisfies  $|\varphi| \leq 1$. This contradicts Lemma~\ref{Lemma:NoBddSolL=1} and therefore, $M_R \to +\infty$ as $R\to +\infty$. 
+	By a standard\todo{!!} compactness argument, we deduce that as $R\to +\infty$, $\varphi_R$ converges (up to a subsequence) to a function $\varphi$ that solves $L_K  \varphi = 1/M$ in $\R^n$ and satisfies  $|\varphi| \leq 1$. This contradicts Lemma~\ref{Lemma:NoBddSolL=1} and therefore, $M_R \to +\infty$ as $R\to +\infty$. 
 	
 	Define now $\psi_R := 1-\phi_R/M_R = 1-\varphi_R$, which solves trivially \eqref{Eq:psiRProblem}. Thus, it only remains to show that $\phi_R \to 0$ as $R\to +\infty$. We will see that $\varphi_R \to	1$  as $R\to +\infty$. Recall that $\varphi_R$ solves problem \eqref{Eq:varphiRProblem}, and by the previous arguments, by letting $R\to +\infty$ we have that a subsequence of $\varphi_R$ converges uniformly in compact sets to a bounded function $\varphi\geq 0$ that solves $ L_K \varphi = 0 $ in $\R^n$. By the Liouville theorem, $\varphi$ must be constant, and since its $L^\infty$ norm is $1$ and $\varphi\geq 0$, we conclude $\varphi\equiv 1$.	
 \end{proof}
@@ -1316,6 +1319,7 @@ With the maximum principle in ``narrow'' sets for odd functions with respect to 
 	w_{\lambda^* +  \delta} (x) > 0 \quad \text{ in } \Sigma_{\lambda^*-\varepsilon}\setminus \Sigma_{\varepsilon}
 	$$
 	for some small $\varepsilon$. This can be established using a compactness argument exactly as in Lemma~3.1 of \cite{QuaasXia} and thus we omit the details. In the argument a Harnack inequality is needed, one can use for instance Proposition~\ref{Prop:HarnackSemilinear}. Finally, by the maximum principle in ``narrow'' sets we deduce that $w_{\lambda^* +  \delta} (x) > 0 $ in $\Sigma_{\lambda^*+\delta}$ if $\delta$ is small enough, contradicting the definition of $\lambda^*$.
+	\todo[inline, color=red]{!!!}
 \end{proof}
 
 
@@ -1353,7 +1357,7 @@ Now, we present the other important ingredient needed in the proof of Theorem~\r
 \end{proposition}
 
 \begin{proof}
-	It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual, to define $ v^\tau(x) := v(x+\nu \tau) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^\tau(x)-v(x)\geq 0$ for all $\tau\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the Liouville type result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. Therefore, we do not include here the details.
+	It is based on the sliding method, exactly as in the proof of Theorem~1 in \cite{BerestyckiHamelMonneau}. The idea is, as usual, to define $ v^\tau(x) := v(x+\nu \tau) $ for every $\nu\in\R^n$ with $|\nu|=1$ and $\nu_n>0$, and the aim is to show that $v^\tau(x)-v(x)\geq 0$ for all $\tau\geq 0$. Despite the fact that $L_K$ is a nonlocal operator, the proof is exactly the same as the one in \cite{BerestyckiHamelMonneau} ---it only relies on the maximum principle, the translation invariance of the operator and the Liouville type result of Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}. Therefore, we do not include here the details.\todo{CHECK!}
 \end{proof}
 
 
@@ -1375,7 +1379,7 @@ Finally, we can proceed with the proof of Theorem~\ref{Th:SymmHalfSpace}.
 	
 	By Proposition \ref{Prop:MonotonyHalfSpace} we know that $v$ is strictly increasing in the direction $x_n$. Since $v$ is also bounded by hypothesis, we know that, given $x_H\in\R^{n-1}$, the one variable function $v(x_H,\cdot)$ has a limit as $x_n\to +\infty$, which we call $\overline{v}(x_H)$. Note that, since $v(x_H,0) = 0$ and $v_{x_n}>0$, it follows that $\overline{v}(x_H) > 0$.
 	
-	Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x_H,x_n) := v(x_H,x_n+x_n^k)$. By the regularity theory of the operator $L_K $ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ which is a classical solution to
+	Let $x_n^k$ be any increasing sequence tending to infinity. Define $v_k(x_H,x_n) := v(x_H,x_n+x_n^k)$. By the regularity theory of the operator $L_K $ (see Section~\ref{Sec:Preliminaries}) and a standard compactness argument \todo{check}, we see that, up to a subsequence, $v_k$ converge uniformly on compact sets to a function $v_\infty$ which is a classical solution to
 	\begin{equation}
 	\label{Eq:ProofSymmHalf-SemilinearEqWholeSpace}
 	\beqc{\PDEsystem}
@@ -1390,7 +1394,7 @@ Finally, we can proceed with the proof of Theorem~\ref{Th:SymmHalfSpace}.
 	
 	\textbf{Step 2:} The limit is uniform in $x_H$.
 	
-	Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_H^k,x_n^k)$ with $x_n^k\to +\infty$ such that $v(x_H^k,x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x_H,x_n) = v(x_H+x_H^k,x_n+x_n^k)$ converge uniformly on compact sets to a function $\tilde{v}_\infty$ that also solves \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:LiouvilleSemilinearWholeSpace}, either $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
+	Let us proceed by contradiction. Suppose that the limit is not uniform. This means that given any $\varepsilon>0$ small enough, there exists a sequence of points $(x_H^k,x_n^k)$ with $x_n^k\to +\infty$ such that $v(x_H^k,x_n^k) = 1-\varepsilon$. Similarly as before, the sequence of functions $\tilde{v}_k(x_H,x_n) = v(x_H+x_H^k,x_n+x_n^k)$ converge uniformly on compact sets \todo{check} to a function $\tilde{v}_\infty$ that also solves \eqref{Eq:ProofSymmHalf-SemilinearEqWholeSpace}. By Theorem \ref{Th:LiouvilleSemilinearWholeSpace}, either $\tilde{v}_\infty\equiv 0$ or $\tilde{v}_\infty \equiv 1$. But, by construction
 	$$ 
 	\tilde{v}_\infty(0,0) = \lim_{k\to +\infty} \tilde{v}_k(0,0) = \lim_{k\to +\infty} v(x_H^k,x_n^k) = 1-\varepsilon, 
 	$$
@@ -1488,7 +1492,7 @@ We prove here the first statement of this lemma, and we postpone the proof of th
 	$$
 	L_{K_1} \ddot{u}_0 = f''(u_0)\dot{u}_0^2 + f'(u_0)\ddot{u}_0 \quad \text{ in }\R.
 	$$
-	Hence, as $x_j \to +\infty$ a standard compactness argument combined with the asymptotic behavior given by \eqref{Eq:PropertiesLayer} yields that $w_j$ converges on compact sets to a function $w$ that solves
+	Hence, as $x_j \to +\infty$ a standard compactness argument \todo{check} combined with the asymptotic behavior given by \eqref{Eq:PropertiesLayer} yields that $w_j$ converges on compact sets to a function $w$ that solves
 	$$
 	L_{K_1}  w = f'(1)w \quad \text{ in }\R.
 	$$
@@ -1522,7 +1526,7 @@ Now we have all the ingredients to establish the asymptotic behavior of the sadd
 	$$
 	L_K w_k = f(w_k) \ \textrm{ in } B_k.
 	$$
-	By letting $k\to +\infty$, by the uniform estimates for the operators of the class $\lcal_0$ and the Arzelà-Ascoli theorem, we have that, up to a subsequence, $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
+	By letting $k\to +\infty$, by the uniform estimates for the operators of \todo{write well but it is ok} the class $\lcal_0$ and the Arzelà-Ascoli theorem, we have that, up to a subsequence, $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
 	$$
 	\beqc{\PDEsystem}
 	L_K  w &=& f(w) & \textrm{ in }\R^n\,,\\
@@ -1549,7 +1553,7 @@ Now we have all the ingredients to establish the asymptotic behavior of the sadd
 	$$ w_k (x) := u(x+x_k^0), $$
 	which solves
 	$$ L_K  w_k = f(w_k) \ \text{in } \R^n. $$
-	Similarly as before, by letting $k\to +\infty$, up to a subsequence $w_k$ converges on compact sets to a function $w$ which is a pointwise solution to
+	Similarly as before, by letting $k\to +\infty$, up to a subsequence $w_k$ \todo{write well} converges on compact sets to a function $w$ which is a pointwise solution to
 	$$
 	\beqc{\PDEsystem}
 	L_K  w &=& f(w)  &\textrm{ in } H:=\{x\cdot \nu >0\}\,,\\
