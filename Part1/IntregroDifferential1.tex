@@ -386,7 +386,7 @@ In \cite{JarohsWeth}, Jarohs and Weth study solutions to general integro-differe
 The first direct consequence of the positivity condition \eqref{Eq:KernelInequality} is the following maximum principle.
 
 \begin{proposition}[Maximum principle for odd functions with respect to $\ccal$]
-	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ be an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap C^{\s}(\overline{\Omega})\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
+	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ be an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $u\in C^{\alpha}(\Omega)\cap C(\overline{\Omega})\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
 	
 	\begin{enumerate}[label=(\roman{*})]
 		\item  (Weak maximum principle)
@@ -455,7 +455,7 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
-	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S\geq2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+4$. 
+	Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S\geq2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+4$. 
 	
 	Then
 	\begin{equation}
@@ -473,7 +473,7 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 
 In the proof of this result, a first basic ingredient is that $-1\leq u\leq 1$, as provided by Lemma~\ref{Lemma:DecreaseEnergy}. This information, $|u|\leq 1$, is also of importance for a solution of an Allen-Cahn equation, as in the existence Theorem~\ref{Th:Existence} below. That $|u|\leq 1$ is proved with a variational cutting argument: cutting above $1$ and below $-1$ reduces de energy. We believe that this property requires $\overline{K}(x,y)- \overline{K}(x,y^\star)$ to be nonnegative. In addition, the proof of Lemma~\ref{Lemma:DecreaseEnergy} is a priori not simple since it involves a nonlocal energy of functions with symmetries. We succeeded to greatly simplify the computations by writing the energy as in \eqref{Eq:ShortExpressionEnergy}, obtaining a short proof.
 
-Note that Theorem~\ref{Th:EnergyEstimate} does not follow from the energy estimate for general minimizers stated in \cite{SavinValdinoci-EnergyEstimate} by Savin and Valdinoci. The minimizers that they consider do not have any type of symmetry. In our case, the function $u$ in the previous statement minimizes the energy in a smaller class of functions and the result in \cite{SavinValdinoci-EnergyEstimate} cannot be applied. Nevertheless, we are able to adapt the arguments of Savin and Valdinoci to our setting.  The strategy they follow is to compare the energy of $u$ with the one of a suitable competitor which is constructed by taking the minimum between $u$ and a radially symmetric auxiliary function ---see \eqref{Eq:DefOfPhiS} below. Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyEstimate} how to modify the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to carry out the same type of arguments. The assumption \eqref{Eq:KernelInequality} will be crucial to guarantee that $0\leq u \leq 1$ in $\ocal$.
+Note that Theorem~\ref{Th:EnergyEstimate} does not follow from the energy estimate for general minimizers stated in \cite{SavinValdinoci-EnergyEstimate} by Savin and Valdinoci. The minimizers that they consider do not have any type of symmetry. In our case, the function $u$ in the previous statement minimizes the energy in a smaller class of functions and the result in \cite{SavinValdinoci-EnergyEstimate} cannot be applied. Nevertheless, we are able to adapt the arguments of Savin and Valdinoci to our setting.  The strategy they follow is to compare the energy of $u$ with the one of a suitable competitor which is constructed by taking the minimum between $u$ and a radially symmetric auxiliary function ---see \eqref{Eq:DefOfPhiS} below. Such competitor is not permitted in our case, since it is not odd with respect to the Simons cone. Nevertheless, we show in Section~\ref{Sec:EnergyEstimate} how to modify the auxiliary functions of \cite{SavinValdinoci-EnergyEstimate} to carry out the same type of arguments. The assumption \eqref{Eq:SqrtConvex} will be crucial to guarantee that $0\leq u \leq 1$ in $\ocal$.
 
 The particular result of Theorem~\ref{Th:EnergyEstimate} for the fractional Laplacian has been proved by Cabré and Cinti \cite{CabreCinti-EnergyHalfL} in the case of the half-Laplacian, and extended to all the powers $0<\s<1$ by Cinti \cite{Cinti-Saddle2} (see \cite{CabreCinti-SharpEnergy} for an extension to non-doubly radial minimizers). These papers use the local extension problem and therefore their proofs cannot be extended to general operators like $L_K$. Our proof, following \cite{SavinValdinoci-EnergyEstimate}, overcomes this issue.
 
@@ -482,7 +482,7 @@ As an application of the previous results, we prove, by using standard variation
 
 \begin{theorem}[Existence of saddle-shaped solution]
 	\label{Th:Existence}
-	Let $G$ satisfy \eqref{Eq:HipothesesG}, $G(0)>0$, and let $f=-G'$. Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. 
+	Let $G$ satisfy \eqref{Eq:HipothesesG}, $G(0)>0$, and let $f=-G'$. Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. 
 	
 	Then, for every even dimension $2m \geq 2$, there exists a saddle-shaped solution $u$ to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
 \end{theorem}
@@ -1193,10 +1193,12 @@ Next we present a result that will be used later, and concerns weak solutions to
 \end{proof}
 
 
+The previous proposition, combined with some regularity results (see the following remark), yield that bounded minimizers among doubly radial functions of the energy $\ecal(\cdot,\Omega)$ are classical solutions to $L_K u = f(u)$ in $\Omega$.
+
 
 \begin{remark}
 	\label{Remark:InteriorRegularity}
-	This proposition combined with some regularity results for operators in the class $\lcal_0(n,\s,\lambda, \Lambda)$ yield that bounded minimizers among doubly radial functions of the energy $\ecal(\cdot,\Omega)$ are classical solutions to $L_K u = f(u)$ in $\Omega$. Indeed, if $w\in L^\infty (\R^n)$ is a weak solution to $L_K w = h$ in $B_1\subset \R^n$, then
+	 Let us present here some interior estimates that will be used in the sequel. If $w\in L^\infty (\R^n)$ is a weak solution to $L_K w = h$ in $B_1\subset \R^n$, with $L_K \in \lcal_0(n,\s,\lambda, \Lambda)$, then
 	\begin{equation}
 	\label{Eq:C2sEstimate}
 	\norm{w}_{C^{2\s} (\overline{B_{1/2}})} \leq C\bpar{\norm{h}_{L^\infty (B_1)} + \norm{w}_{L^\infty  (\R^n)}}.
@@ -1206,7 +1208,24 @@ Next we present a result that will be used later, and concerns weak solutions to
 	\label{Eq:Calpha->Calpha+2sEstimate}
 	\norm{w}_{C^{\alpha + 2\s} (\overline{B_{1/2}})} \leq C\bpar{\norm{h}_{C^{\alpha} (\overline{B_1})} + \norm{w}_{C^\alpha (\R^n)} },
 	\end{equation}
-	where the previous two constants $C$ depend only on $n$, $\s$, $\lambda$, and $\Lambda$ (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein).
+	where the previous two constants $C$ depend only on $n$, $\s$, $\lambda$, and $\Lambda$ (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein). 
+	
+	
+	Note that in some situations these estimates are not suitable enough to be applied repeatedly, mainly due to the term $\norm{w}_{C^\alpha (\R^n)}$ in \eqref{Eq:Calpha->Calpha+2sEstimate}. Let us show how to overcome this difficulty in our setting, that is, when $K$ is radially symmetric and $K(\sqrt{\cdot})$ is convex. 
+	In this case, using the ellipticity property \eqref{Eq:Ellipticity}, and the convexity assumption \eqref{Eq:SqrtConvex}, it is not difficult to show that $K$ is locally Lipschitz in $\R^n \setminus \{0\}$ and
+	\begin{equation}
+	\label{Eq:KLipschitz}
+		\seminorm{K}_{\Lip (\R^n \setminus B_R)} \leq C R^{-n-2\s-1}, \quad \text{ for all } R>0,
+	\end{equation} 
+	with a positive constant $C$ depending only on $n$, $\s$, $\lambda$, and $\Lambda$.
+	
+	Using a cut-off argument as in Corollary~2.4 of \cite{RosOtonSerra-Regularity}, and taking into account \eqref{Eq:KLipschitz}, we can modify \eqref{Eq:Calpha->Calpha+2sEstimate} to obtain the estimate 
+	\begin{equation} 
+	\label{Eq:Calpha->Calpha+2sEstimateBalls} 
+	\norm{w}_{C^{\alpha + 2\s} (\overline{B_{1/4}})} \leq C\bpar{\norm{h}_{C^{\alpha} (\overline{B_1})} + \norm{w}_{C^\alpha (\overline{B_1})} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} }, 
+	\end{equation} 
+	for $\alpha \in (0,1)$ and with $C$ depending only on $n$, $\s$, $\lambda$, and $\Lambda$.
+	This, combined with \eqref{Eq:C2sEstimate}, will be used in the following section to obtain uniform Lipschitz interior estimates for the semilinear equation $L_K u = f(u)$.	
 \end{remark}
 
 
@@ -1236,7 +1255,7 @@ To state the precise properties of $w$, we need to consider the Lipschitz consta
 \label{Eq:ChoiceMu} 
 	\mu := \seminorm{u}_{\mathrm{Lip}(\overline{B_{S+3}})}. 
 \end{equation} 
-By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Moreover, by Lemma~\ref{Lemma:DecreaseEnergy} we know that $u$ is bounded. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimateBalls} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points in $B_{S+3}$, it is easy to see that $\mu\leq C$ with a positive constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and hence $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$.
+By Proposition~\ref{Prop:WeakSolutionForAllTestFunctions}, we know that $u$ solves $L_K u = f(u)$ in $B_R$ with $R> S+4$. Moreover, by Lemma~\ref{Lemma:DecreaseEnergy} we know that $u$ is bounded. Therefore, by applying repeatedly the estimates \eqref{Eq:C2sEstimate} and \eqref{Eq:Calpha->Calpha+2sEstimateBalls} in balls centered at points in $B_{S+3}$, it is easy to see that $\mu\leq C$ with a positive constant $C$ depending only on $m$, $\s$, $\lambda$, $\Lambda$, and $\norm{f}_{C^1([-1,1])}$ (and thus, independent of $R$ and $S$). Recall that $G' = -f$ and hence $\norm{f}_{C^1([-1,1])} \leq \norm{G}_{C^2([-1,1])}$.
 
 We can now define the set
 \begin{equation}
