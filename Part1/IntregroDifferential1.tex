@@ -455,7 +455,7 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
-	Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex}\footnote{In this theorem, as well as in Theorem~\ref{Th:Existence}, we assume \eqref{Eq:SqrtConvex} instead of the positivity condition \eqref{Eq:KernelInequality} ---recall that for $C^2$ kernels they are equivalent.  The reason for this is that in the proofs we will make use of some estimates that require the Lipschitz regularity of the kernel (see Remark~\ref{Remark:InteriorRegularity} below). Such regularity holds if \eqref{Eq:SqrtConvex} is satisfied, but it is not clear if this happens assuming \eqref{Eq:KernelInequality} instead.} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S\geq2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+4$. 
+	Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex}\footnote{In this theorem, as well as in Theorem~\ref{Th:Existence}, we assume \eqref{Eq:SqrtConvex} instead of the positivity condition \eqref{Eq:KernelInequality} ---recall that for $C^2$ kernels they are equivalent.  The reason for this is that in the proofs we will make use of some estimates that require the Lipschitz regularity of the kernel $K$ (see Remark~\ref{Remark:InteriorRegularity} below). Such regularity for $K$ holds if \eqref{Eq:SqrtConvex} is satisfied, but it is not clear if this happens, when $K \notin C^2$, assuming \eqref{Eq:KernelInequality} instead.} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S\geq2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+4$. 
 	
 	Then
 	\begin{equation}
@@ -1193,7 +1193,7 @@ Next we present a result that will be used later, and concerns weak solutions to
 \end{proof}
 
 
-The previous proposition, combined with some regularity results (see the following remark), yield that bounded minimizers among doubly radial functions of the energy $\ecal(\cdot,\Omega)$ are classical solutions to $L_K u = f(u)$ in $\Omega$.
+The previous proposition, combined with the regularity results of the following remark, yields that bounded minimizers among doubly radial functions of the energy $\ecal(\cdot,\Omega)$ are classical solutions to $L_K u = f(u)$ in $\Omega$.
 
 
 \begin{remark}
@@ -1211,15 +1211,16 @@ The previous proposition, combined with some regularity results (see the followi
 	where the previous two constants $C$ depend only on $n$, $\s$, $\lambda$, and $\Lambda$ (see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein). 
 	
 	
-	Note that in some situations these estimates are not suitable enough to be applied repeatedly, mainly due to the term $\norm{w}_{C^\alpha (\R^n)}$ in \eqref{Eq:Calpha->Calpha+2sEstimate}. Let us show how to overcome this difficulty in our setting, that is, when $K$ is radially symmetric and $K(\sqrt{\cdot})$ is convex. 
-	In this case, using the ellipticity property \eqref{Eq:Ellipticity}, and the convexity assumption \eqref{Eq:SqrtConvex}, it is not difficult to show that $K$ is locally Lipschitz in $\R^n \setminus \{0\}$ and
+	Note that in some situations these estimates are not suitable enough to be applied repeatedly due to the term $\norm{w}_{C^\alpha (\R^n)}$ in \eqref{Eq:Calpha->Calpha+2sEstimate}. 
+	Let us show how to overcome this difficulty in our setting, that is, when $K$ is radially symmetric and $K(\sqrt{\cdot})$ is convex. 
+	In this case, using the ellipticity property \eqref{Eq:Ellipticity} and the convexity assumption \eqref{Eq:SqrtConvex} for $K$, it is not difficult to show that $K$ is locally Lipschitz in $\R^n \setminus \{0\}$ and
 	\begin{equation}
 	\label{Eq:KLipschitz}
 		\seminorm{K}_{\Lip (\R^n \setminus B_R)} \leq C R^{-n-2\s-1}, \quad \text{ for all } R>0,
 	\end{equation} 
 	with a positive constant $C$ depending only on $n$, $\s$, $\lambda$, and $\Lambda$.
 	
-	Using a cut-off argument as in Corollary~2.4 of \cite{RosOtonSerra-Regularity}, and taking into account \eqref{Eq:KLipschitz}, we can modify \eqref{Eq:Calpha->Calpha+2sEstimate} to obtain the estimate 
+	Using for $L_K$ the same cut-off argument as in Corollary~2.4 of \cite{RosOtonSerra-Regularity} for the fractional Laplacian, and taking into account \eqref{Eq:KLipschitz}, one can modify \eqref{Eq:Calpha->Calpha+2sEstimate} to obtain the estimate 
 	\begin{equation} 
 	\label{Eq:Calpha->Calpha+2sEstimateBalls} 
 	\norm{w}_{C^{\alpha + 2\s} (\overline{B_{1/4}})} \leq C\bpar{\norm{h}_{C^{\alpha} (\overline{B_1})} + \norm{w}_{C^\alpha (\overline{B_1})} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} }, 
