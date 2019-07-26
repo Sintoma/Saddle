@@ -455,7 +455,7 @@ for every $w\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$.
 
 \begin{theorem}
 	\label{Th:EnergyEstimate} 
-	Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S\geq2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+4$. 
+	Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex}\footnote{In this theorem, as well as in Theorem~\ref{Th:Existence}, we assume \eqref{Eq:SqrtConvex} instead of the positivity condition \eqref{Eq:KernelInequality} ---recall that for $C^2$ kernels they are equivalent.  The reason for this is that in the proofs we will make use of some estimates that require the Lipschitz regularity of the kernel (see Remark~\ref{Remark:InteriorRegularity} below). Such regularity holds if \eqref{Eq:SqrtConvex}, but it is not clear if this happens assuming \eqref{Eq:KernelInequality} instead.} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Assume that $G$ is a potential satisfying \eqref{Eq:HipothesesG}. Let $S\geq2$ and let $u\in \widetilde{\H}^K_{0, \mathrm{odd}}(B_R)$ be a doubly radial odd minimizer of $\ecal$ in $B_R$, with $R>S+4$. 
 	
 	Then
 	\begin{equation}
@@ -1065,7 +1065,7 @@ Thanks to this notation, we rewrite the kinetic energy as follows.
 	$$
 	once we consider the change $ y = R\tilde{y}$ and take the average among all $R\in O(m)^2$ as in Lemma~\ref{Lemma:AlternativeOperatorExpression}.
 	
-	Finally, we split $\Omega_i$ into $\Omega_i \cap \ocal$ and $\Omega_i\setminus\ocal = (\Omega_i \cap \ocal)^\star$. By using the change of variables given by $(\cdot)^\star$ and the symmetries of $\Omega_i$ and $w$, we get
+	Finally, we split $\Omega_i$ into $\Omega_i \cap \ocal$ and $\Omega_i\setminus\ocal = (\Omega_i \cap \overline{\ocal})^\star$. By using the change of variables given by $(\cdot)^\star$ and the symmetries of $\Omega_i$ and $w$, we get
 	\begin{align*}
 	\int_{\Omega_1} \int_{\Omega_2} |w(x)&-w(y)|^2 \overline{K}(x,y) \d x \d y \\
 	= & \hspace{1.3mm} 2 \int_{\Omega_1\cap \ocal} \int_{\Omega_2 \cap \ocal} |w(x)-w(y)|^2 \overline{K}(x,y) + |w(x)+w(y)|^2 \overline{K}(x,y^\star) \d x \d y  \\
@@ -1224,7 +1224,7 @@ The previous proposition, combined with some regularity results (see the followi
 	\label{Eq:Calpha->Calpha+2sEstimateBalls} 
 	\norm{w}_{C^{\alpha + 2\s} (\overline{B_{1/4}})} \leq C\bpar{\norm{h}_{C^{\alpha} (\overline{B_1})} + \norm{w}_{C^\alpha (\overline{B_1})} + \norm{\dfrac{w(x)}{(1+|x|)^{n+2\s}}}_{L^1(\R^n)} }, 
 	\end{equation} 
-	for $\alpha \in (0,1)$ and with $C$ depending only on $n$, $\s$, $\lambda$, and $\Lambda$.
+	for all $\alpha \in (0,1)$ with $\alpha + 2\s$ not an integer, and with $C$ depending only on $n$, $\s$, $\lambda$, and $\Lambda$.
 	This, combined with \eqref{Eq:C2sEstimate}, will be used in the following section to obtain uniform Lipschitz interior estimates for the semilinear equation $L_K u = f(u)$.	
 \end{remark}
 
