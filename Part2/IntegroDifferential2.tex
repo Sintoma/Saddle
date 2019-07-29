@@ -379,7 +379,7 @@ The first main result of this paper concerns the existence and uniqueness of sad
 
 \begin{theorem}[Existence and uniqueness of the saddle-shaped solution]
 	\label{Th:ExistenceUniqueness}
-	Let $f$ satisfy \eqref{Eq:Hypothesesf}. Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. 
+	Let $f$ satisfy \eqref{Eq:Hypothesesf}. Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. 
 	
 	Then, for every even dimension $2m \geq 2$, there exists a unique saddle-shaped solution $u$ to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
 \end{theorem}
@@ -420,7 +420,7 @@ The precise statement on the asymptotic behavior of saddle-shaped solutions at i
 
 \begin{theorem}
 	\label{Th:AsymptoticBehaviorSaddleSolution}
-	Let $f\in C^2(\R)$ satisfy \eqref{Eq:Hypothesesf}. Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} and let $U$ be the function defined by \eqref{Eq:DefOfU}.
+	Let $f\in C^2(\R)$ satisfy \eqref{Eq:Hypothesesf}. Let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn} and let $U$ be the function defined by \eqref{Eq:DefOfU}.
 	
 	Then,
 	$$
@@ -436,7 +436,7 @@ Let us now describe some of the main ingredients that are used to prove Theorems
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleLinearized}
-	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}, and let $v\in  L^1_\s(\R^{2m})$ be  a doubly radial function which is $C^\s$ in $\overline{\Omega}$ and $C^\alpha$ in $\Omega$, for some $\alpha > 2\s$. Assume that $v$ satisfies
+	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}, and let $v\in  L^1_\s(\R^{2m})$ be a doubly radial function which is $C^\alpha$ in $\Omega$ and continuous up to the boundary, for some $\alpha > 2\s$. Assume that $v$ satisfies
 	$$
 	\beqc{\PDEsystem}
 	L_K v - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
@@ -560,7 +560,7 @@ A related issue to the conjecture by De Giorgi concerns the one-dimensional symm
 
 Let us make a brief remark on the recent result of Liu, Wang, and Wei \cite{LiuWangWei} concerning the existence of minimizers in $\R^8$ which are not one-dimensional. The authors proved that there exists an ordered family of solutions $W_\lambda$ with their zero level set being asymptotic to the cone $\ccal$. From this ordering, they can establish that each solution $W_\lambda$ is a minimizer of the Allen-Cahn equation. However, their construction only gives solutions $W_\lambda$ for which $\{W_\lambda = 0\}$ is far from the origin of $\R^8$ (corresponding to $\lambda$ large). Therefore, this family does not include the saddle-shaped solution ---the arguments in \cite{LiuWangWei} suggest that if the solutions $W_\lambda$ could be built for all values of the parameter $\lambda\geq 0$, the saddle-shaped solution would be the one for the limiting case $\lambda = 0$.
 
-Concerning the same issue on minimizers in the fractional setting, Savin \cite{Savin-Fractional, Savin-Fractional2} extended his results for the Laplacian to the powers $\s \in [1/2,1)$, by proving that minimizers of the equation $\fraclaplacian u = f(u)$ in $\R^n$ are one-dimensional if $n\leq 7$. In the case $\s \in (0,1/2)$, Dipierro, Serra, and Valdinoci \cite{DipierroSerraValdinoci} proved that minimizers are one-dimensional provided that their level sets are asymptotically flat. Therefore, if one could prove a classification result for nonlocal minimal cones in some dimension $n$, this would entail the one-dimensional symmetry of minimizers to $\fraclaplacian u = f(u)$ in $\R^{n-1}$. As mentioned above, the classification of stable nonlocal minimal cones is still a fundamental open problem in dimensions $n\geq 3$. The one-dimensional symmetry of stable solutions is also largely open, only solved in dimension $n=2$ (see \cite{CabreSolaMorales, CabreSireII}). %todo mirar Cabre Cinti Serra si ho fan per dim 3
+Concerning the same issue on minimizers in the fractional setting, Savin \cite{Savin-Fractional, Savin-Fractional2} extended his results for the Laplacian to the powers $\s \in [1/2,1)$, by proving that minimizers of the equation $\fraclaplacian u = f(u)$ in $\R^n$ are one-dimensional if $n\leq 7$. In the case $\s \in (0,1/2)$, Dipierro, Serra, and Valdinoci \cite{DipierroSerraValdinoci} proved that minimizers are one-dimensional provided that their level sets are asymptotically flat. Therefore, if one could prove a classification result for nonlocal minimal cones in some dimension $n$, this would entail the one-dimensional symmetry of minimizers to $\fraclaplacian u = f(u)$ in $\R^{n-1}$. As mentioned above, the classification of stable nonlocal minimal cones is still a fundamental open problem in dimensions $n\geq 3$. The one-dimensional symmetry of stable solutions is also largely open, only solved in dimension $n=2$ (see \cite{CabreSolaMorales, CabreSireII}) for all $\s \in (0,1)$, and in dimension $n=3$ for $\s=1/2$ \cite{FigalliSerra} and for $\s$ sufficiently close to $1$ \cite{CabreCintiSerra-Stable}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -584,7 +584,7 @@ In this section we collect some preliminary results that will be used in the res
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In this subsection we present the regularity results that will be used in the paper. For further details, see \cite{RosOton-Survey,SerraC2s+alphaRegularity} and the references therein. 
+In this subsection we present the regularity results that will be used in the paper. For further details, see \cite{RosOton-Survey,SerraC2s+alphaRegularity,CozziPassalacqua} and the references therein. 
 
 
 We first give a result on the interior regularity for linear equations.
@@ -603,7 +603,6 @@ We first give a result on the interior regularity for linear equations.
 	\norm{w}_{C^{\alpha + 2\s} (B_{1/2})} \leq C\bpar{\norm{h}_{C^{\alpha} (B_1)} + \norm{w}_{C^\alpha (\R^n)} },
 	\end{equation}
 	where $C$ is a constant that depends only on $n$, $\s$, $\lambda$, and $\Lambda$.
-	\todo{Añadir boundary regularity o aqui o mas tarde}
 \end{proposition}
 
 
@@ -622,6 +621,28 @@ $$
 $$
 for some constant $C$ depending only on $n$, $\s$, $\lambda$, $\Lambda$, $k$, and $\norm{f}_{C^k([-1,1])}$.
 
+Let us now state a result on the boundary regularity of solutions to a Dirichlet problem for an operator $L_K\in\lcal_0$. 
+
+\begin{proposition}[\cite{CozziPassalacqua,RosOton-Survey}]
+	\label{Prop:BoundaryRegularity}
+	Let $L_K \in\lcal_0(n,\s,\lambda, \Lambda)$ and let $w\in L^\infty (\R^n)$ be a weak solution to
+	$$
+	\beqc{\PDEsystem}
+	L_K w & = & h & \text{ in } \Omega\,,\\
+	w & = & \varphi & \text{ in } \R^n \setminus \Omega\,,
+	\eeqc
+	$$
+	with $h\in L^\infty(\Omega)$ and $\varphi \in C^{2\s + \eta}(\R^n\setminus \Omega)$ for some $\eta \in (0,2-2\s)$. Assume that $\Omega$ is a bounded $C^{1,1}$ domain.
+	
+	Then, there exists an $\alpha_0 \in (0,\s)$, depending only on $n$, $\s$, $\lambda$, $\Lambda$, and $\eta$, such that
+	\begin{equation}
+	\label{Eq:BoundaryRegularityEstimate}
+	\norm{w}_{C^{\alpha_0} (\overline{\Omega})} \leq C\bpar{\norm{h}_{L^\infty (\Omega)} + \norm{\varphi}_{C^{2\s+\eta}(\R^n\setminus \Omega)}},
+	\end{equation}
+	where $C$ is a constant that depends only on $n$, $\s$, $\lambda$, $\Lambda$, $\eta$, and $\Omega$.
+\end{proposition}
+
+Note that this result can be combined with the interior estimate \eqref{Eq:Calpha->Calpha+2sEstimate} to prove that weak solutions are indeed classical solutions.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -673,7 +694,8 @@ Thus, $w$ is stable in $\Omega$.
 In this last subsection, we state the basic maximum principles for doubly radial odd functions. Note that in the following result we only need assumptions on the functions at one side of the Simons cone thanks to their symmetry. This was proved in part I \cite{FelipeSanz-Perela:IntegroDifferentialI} and follows readily from the expression \eqref{Eq:OperatorOddF} by using the key inequality \eqref{Eq:KernelInequality} for the kernel $\overline{K}$.
 
 \begin{proposition}[Maximum principle for odd functions with respect to $\ccal$ \cite{FelipeSanz-Perela:IntegroDifferentialI}]
-	\label{Prop:MaximumPrincipleForOddFunctions} Let $\Omega \subset \ocal$ be an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $w\in C^{\alpha}(\Omega)\cap C^{\s}(\overline{\Omega})\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
+	\label{Prop:MaximumPrincipleForOddFunctions} 
+	Let $\Omega \subset \ocal$ be an open set and let $L_K$ be an integro-differential operator with a radially symmetric kernel $K$ satisfying the positivity condition \eqref{Eq:KernelInequality}.  Let $w\in C^{\alpha}(\Omega)\cap C(\overline{\Omega})\cap L^\infty(\R^{2m})$, with $\alpha > 2\s$, be a doubly radial function which is odd with respect to the Simons cone. 
 	
 	\begin{enumerate}[label=(\roman{*})]
 		\item  (Weak maximum principle)
@@ -697,7 +719,9 @@ In this last subsection, we state the basic maximum principles for doubly radial
 
 \begin{remark}
 	\label{Remark:MaxPrincipleSingularity}
-	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the regularity assumptions on $w$ in the previous results can be weakened. Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. This will be used in the proof of Theorem~\ref{Th:ExistenceUniqueness} in order to apply this maximum principle with a function that is no more regular than $C^\s$ at some points in the interior of $\Omega$ (see Remark~\ref{Remark:CsRegularityFirstEigenfunction}) 	\todo[inline, color=red]{!!! tocar una vez escrita la boundary regularity antes}
+	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the interior regularity assumptions on $w$ in the previous result can be weakened.
+	Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. 
+	This will be used later in the proof of Theorem~\ref{Th:ExistenceUniqueness} (see Remark~\ref{Remark:CsRegularityFirstEigenfunction} below): we will apply Proposition~\ref{Prop:MaximumPrincipleForOddFunctions} with $w$ being a function no more regular than $C^{\alpha_0}$ at some points in the interior of $\Omega$, where $\alpha_0$ is given by Proposition~\ref{Prop:BoundaryRegularity}. 
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -846,7 +870,7 @@ Recall that when $K$ is radially symmetric and $w$ is doubly radial, we can repl
 
 \begin{remark}
 	\label{Remark:CsRegularityFirstEigenfunction}
-	Note that, by standard regularity results for $L_K$, we have that $\phi_1 \in C^{\alpha_0}(\overline{\Omega})\cap C^\infty(\Omega)$ for some $0<\alpha_0<\s$, and the regularity up to the boundary is optimal (\todo[color=red]{REFERENCIA!!}see \cite{RosOton-Survey} and the references therein for the details). Due to this and the fact that $\phi_1 >0$ in $\Omega\cap \ocal$ while $\phi_1=0$ in $\R^{2m}\setminus \Omega$, it is easy to check by using \eqref{Eq:OperatorOddF} that $-\infty <L_K \phi_1 < 0$ in $\ocal\setminus \overline{\Omega}$ and $L_K \phi_1 = -\infty$ in $\partial \Omega \cap \ocal$.
+	Note that, by the regularity results for $L_K$ stated in Section~\ref{Sec:Preliminaries}, we have that $\phi_1 \in C^{\alpha_0}(\overline{\Omega})\cap C^{\alpha_0 + 2\s}(\Omega)$ for some $0<\alpha_0<\s$, and the regularity up to the boundary is optimal. Due to this and the fact that $\phi_1 >0$ in $\Omega\cap \ocal$ while $\phi_1=0$ in $\R^{2m}\setminus \Omega$, it is easy to check by using \eqref{Eq:OperatorOddF} that $-\infty <L_K \phi_1 < 0$ in $\ocal\setminus \overline{\Omega}$ and $L_K \phi_1 = -\infty$ on $\partial \Omega \cap \ocal$.
 \end{remark}
 
 With these ingredients, we can proceed with the proof of the existence statement in Theorem~\ref{Th:ExistenceUniqueness}.
@@ -862,11 +886,11 @@ With these ingredients, we can proceed with the proof of the existence statement
 	\end{equation}
 	and then let $R\to+ \infty$ to get a saddle-shaped solution.
 	
-	Let $\phi_1^{R_0}$ be the first odd eigenfunction of $L_K$ in $B_{R_0} \subset \R^{2m}$, given by Lemma~\ref{Lemma:FirstOddEigenfunction}, and let  $\lambda_1^{R_0} := \lambda_{1, \, \mathrm{odd}}(B_{R_0}, L_K)$. Then, we claim that for $R_0$ big enough and $\varepsilon>0$ small enough, $\usub_R = \varepsilon\phi_1^{R_0} $ is an odd subsolution of \eqref{Eq:ProofExistenceProblemBR} for every $R\geq R_0$. To see this, first note that, without loss of generality, we can assume that $\norm{\phi_1^{R_0}}_{L^\infty(B_R)}=1$. Now, since $f$ is strictly concave in $(0,1)$ and $f(0)=0$, then $f'(\tau)\tau<f(\tau)$ for all $\tau>0$. Thus, using that $\varepsilon \phi_1^{R_0}>0$ in $B_{R_0}\cap \ocal$, we see that for every $x\in B_{R_0}\cap \ocal$,
+	Let $\phi_1^{R_0}$ be the first odd eigenfunction of $L_K$ in $B_{R_0} \subset \R^{2m}$, given by Lemma~\ref{Lemma:FirstOddEigenfunction}, and let  $\lambda_1^{R_0} := \lambda_{1, \, \mathrm{odd}}(B_{R_0}, L_K)$. We claim that for $R_0$ big enough and $\varepsilon>0$ small enough, $\usub_R := \varepsilon\phi_1^{R_0} $ is an odd subsolution of \eqref{Eq:ProofExistenceProblemBR} for every $R\geq R_0$. To see this, note first that, without loss of generality, we can assume that $\norm{\phi_1^{R_0}}_{L^\infty(B_R)}=1$. Now, since $f$ is strictly concave in $(0,1)$ and $f(0)=0$, we have that $f'(\tau)\tau<f(\tau)$ for all $\tau>0$. Thus, using that $\varepsilon \phi_1^{R_0}>0$ in $B_{R_0}\cap \ocal$, it follows that for every $x\in B_{R_0}\cap \ocal$,
 	$$
 	\dfrac{f(\varepsilon \phi_1^{R_0}(x))}{\varepsilon \phi_1^{R_0}(x)} > f'(\varepsilon \phi_1^{R_0}(x)) \geq f'(0)/2
 	$$
-	if $\varepsilon$ is small enough, independently of $x$ (recall that we assumed $|\phi_1|\leq 1$). Therefore, since $f'(0)>0$, taking $R_0$ big enough so that $\lambda_1^{R_0} < f'(0)/2$ (this can be achieved thanks to the last statement of Lemma~\ref{Lemma:FirstOddEigenfunction}), we have that for every $x\in B_{R_0}\cap \ocal$,  $f(\varepsilon \phi_1^{R_0}(x)) > \lambda_1 \varepsilon \phi_1^R(x)$. Thus,
+	if $\varepsilon$ is small enough, independently of $x$ (recall that we assumed $|\phi_1|\leq 1$). Therefore, since $f'(0)>0$, taking $R_0$ big enough so that $\lambda_1^{R_0} < f'(0)/2$ (this can be achieved thanks to the last statement of Lemma~\ref{Lemma:FirstOddEigenfunction}), we have that for every $x\in B_{R_0}\cap \ocal$,  $f(\varepsilon \phi_1^{R_0}(x)) > \lambda_1^{R_0}  \varepsilon \phi_1^{R_0}(x)$. Thus,
 	$$
 	L_K \usub_R = \lambda_1^{R_0} \varepsilon \phi_1^{R_0} < f(\varepsilon\phi_1^{R_0}) = f(\usub_R) \quad \textrm{ in } B_{R_0}\cap \ocal\,.
 	$$
@@ -878,12 +902,18 @@ With these ingredients, we can proceed with the proof of the existence statement
 	
 	Now, if we define $\usup_R := \chi_{\ocal \cap B_R} - \chi_{\ical \cap B_R}$, a simple computation shows that it is an odd supersolution to \eqref{Eq:ProofExistenceProblemBR}. Therefore, using the monotone iteration procedure given in Proposition~\ref{Prop:MonotoneIterationOdd} (taking into account Remarks~\ref{Remark:MaxPrincipleSingularity} and \ref{Remark:CsRegularityFirstEigenfunction} when using the maximum principle), we obtain a solution $u_R$ to \eqref{Eq:ProofExistenceProblemBR} such that it is doubly radial, odd with respect to the Simons cone, and $\varepsilon \phi_1^{R_0} = \usub_R \leq u_R \leq \usup_R$ in $\ocal$. Note that, since $\usub_R > 0$ in $\ocal \cap B_{R_0}$, the same holds for $u_R$.
 	
-	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging on compacts in  $C^{2\s + \eta}(\R^{2m})$ norm, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. Let us show that $0 < u < 1$ in $\ocal$ and hence $u$ is a saddle-shaped solution. Indeed, the usual strong maximum principle yields $u<1$ in $\ocal$. Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$ for $R>R_0$, also the limit $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. Therefore, by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
+	Using a standard compactness argument as in \cite{FelipeSanz-Perela:IntegroDifferentialI}, we let $R\to +\infty$ to obtain a sequence $u_{R_j}$ converging on compacts in  $C^{2\s + \eta}(\R^{2m})$ norm, for some $\eta > 0$, to a solution $u \in C^{2\s + \eta}(\R^{2m})$ of $L_K u = f(u)$ in $\R^{2m}$. Note that $u$ is doubly radial, odd with respect to the Simons cone and $0\leq u \leq 1$ in $\ocal$. 
+	Let us show that $0 < u < 1$ in $\ocal$, which will yield that $u$ is a saddle-shaped solution. 
+	By the usual strong maximum principle it follows readily that $u<1$ in $\ocal$. 
+	Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$ for $R>R_0$, this holds also the limit, that is, $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. 
+	Therefore, by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
 \end{proof}
 
 
 \begin{remark}
+	\label{Remark:uStableinO}
 	The fact of being $u$ positive in $\ocal$ yields that $u$ is stable in this set, as explained in Section~\ref{Sec:Preliminaries}. 
+	This fact will be used in Section~\ref{Sec:Asymptotic}.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1541,7 +1571,7 @@ Now we have all the ingredients to establish the asymptotic behavior of the sadd
 	\eeqc
 	$$
 	
-	Then, by Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see the comments in Section~\ref{Sec:Preliminaries}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}, see Proposition~9 of \cite{ServadeiValdinoci}). Therefore $w\equiv 1$. 
+	Then, by Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}, either $w\equiv 0$ or $w\equiv 1$. First, note that $w$ cannot be zero. Indeed, since $w_k$ are stable with respect to perturbations supported in $B_k$ (see the comments in Section~\ref{Sec:Preliminaries} and Remark~\ref{Remark:uStableinO}), $w$ is stable in $\R^n$, which means that the linearized operator $L_K-f'(w)$ is a positive operator. Nevertheless, if $w\equiv 0$, then the linearized operator $L_K-f'(w) = L_K-f'(0)$ is negative for sufficiently large balls, since $f'(0)>0$ and the first eigenvalue of $L_K$ is of order $R^{-2\s}$ in balls of radius $R$ (as in Lemma~\ref{Lemma:FirstOddEigenfunction}, see Proposition~9 of \cite{ServadeiValdinoci}). Therefore $w\equiv 1$. 
 	
 	On the other hand, since $d_k\rightarrow +\infty$ and $U(x_k) =  u_0(d_k)$, we get by the properties of the layer solution that $U(x_k) \rightarrow 1$, $\nabla U(x_k) \rightarrow 0$ and $D^2U(x_k) \rightarrow 0$ ---see \eqref{Eq:PropertiesLayer} and Lemma~\ref{Lemma:SecondDerivativeLayer}. From this and condition \eqref{Eq:ContradictionAsymptotic} we get
 	$$
@@ -1602,7 +1632,7 @@ In order to prove the maximum principle of Proposition~\ref{Prop:MaximumPrincipl
 	\ncal_\varepsilon \subset \{(x',x'')\in \R^m\times\R^m \ : \ |x''|<|x'|<|x''|+ \varepsilon\} \subset \ocal
 	$$ 
 	be an open set (not necessarily bounded).  
-	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0$. Let $v\in C^\s(\overline{\ncal_\varepsilon})\cap C^\alpha(\ncal_\varepsilon)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\s$, be a doubly radial function satisfying
+	Let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0$. Let $v\in C(\overline{\ncal_\varepsilon})\cap C^\alpha(\ncal_\varepsilon)\cap L^1_\s(\R^{2m})$, for some $\alpha > 2\s$, be a doubly radial function satisfying
 	\begin{equation}
 	\label{Eq:AssumptionsMaxPNarrow}
 	\beqc{\PDEsystem}
