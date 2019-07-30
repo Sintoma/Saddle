@@ -212,7 +212,7 @@ Universitat Polit\`ecnica de Catalunya and BGSMath, Departament de Matem\`{a}tiq
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-This paper, which is the follow-up to part I, concerns saddle-shaped solutions to the semilinear equation $L_K u = f(u)$ in $\mathbb{R}^{2m}$, where $L_K$ is a linear elliptic integro-differential operator with a radially symmetric kernel and $f$ is of Allen-Cahn type. Saddle-shaped solutions are doubly radial, odd with respect to the Simons cone $\{(x', x'') \in \mathbb{R}^m \times \mathbb{R}^m \, : \, |x'| = |x''|\}$, and vanish only in this set.
+This paper, which is the follow-up to part I, concerns saddle-shaped solutions to the semilinear equation $L_K u = f(u)$ in $\mathbb{R}^{2m}$, where $L_K$ is a linear elliptic integro-differential operator with a radially symmetric kernel $K$, and $f$ is of Allen-Cahn type. Saddle-shaped solutions are doubly radial, odd with respect to the Simons cone $\{(x', x'') \in \mathbb{R}^m \times \mathbb{R}^m \, : \, |x'| = |x''|\}$, and vanish only in this set.
 
 Following the setting established in part I for doubly radial odd functions, we show existence, asymptotic behavior, and uniqueness of the saddle-shaped solution. For this, we prove, among others, a Liouville type result, the one-dimensional symmetry of positive solutions to semilinear problems in a half-space, and maximum principles in ``narrow'' sets.
 \end{abstract}
@@ -384,7 +384,7 @@ The first main result of this paper concerns the existence and uniqueness of sad
 	Then, for every even dimension $2m \geq 2$, there exists a unique saddle-shaped solution $u$ to \eqref{Eq:NonlocalAllenCahn}. In addition, $u$ satisfies $|u|<1$ in $\R^{2m}$.
 \end{theorem}
 
-The existence of saddle-shaped solutions was already proved in part~I \cite{FelipeSanz-Perela:IntegroDifferentialI} using variational techniques. Here, we show that it can also be proved using, instead, the monotone iteration method. Let us remark that in both methods it is crucial to have the positivity condition \eqref{Eq:KernelInequality}. To establish the uniqueness of the saddle-shaped solution we will need two ingredients: the asymptotic behavior of saddle-shaped solutions and a maximum principle for the linearized operator in $\ocal$. Both results will be described next.
+The existence of saddle-shaped solutions was already proved in part~I \cite{FelipeSanz-Perela:IntegroDifferentialI} using variational techniques. Here, we show that it can also be proved using, instead, the monotone iteration method. Let us remark that in both methods it is crucial to have the convexity assumption \eqref{Eq:SqrtConvex}. To establish the uniqueness of the saddle-shaped solution we will need two ingredients: the asymptotic behavior of saddle-shaped solutions and a maximum principle for the linearized operator in $\ocal$. Both results will be described next.
 
 
 The second main result of this paper is Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution} below, on the asymptotic behavior of a saddle-shaped solution at infinity. To state it, let us introduce an important type of solutions in the study of the integro-differential Allen-Cahn equation: the layer solutions.
@@ -436,7 +436,7 @@ Let us now describe some of the main ingredients that are used to prove Theorems
 
 \begin{proposition}
 	\label{Prop:MaximumPrincipleLinearized}
-	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel satisfying the positivity condition \eqref{Eq:KernelInequality} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}, and let $v\in  L^1_\s(\R^{2m})$ be a doubly radial function which is $C^\alpha$ in $\Omega$ and continuous up to the boundary, for some $\alpha > 2\s$. Assume that $v$ satisfies
+	Let $\Omega \subset \ocal$ be an open set (not necessarily bounded) and let $K$ be a radially symmetric kernel satisfying the convexity assumption \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0(2m, \s, \lambda, \Lambda)$. Let $u$ be a saddle-shaped solution to \eqref{Eq:NonlocalAllenCahn}, and let $v\in  L^1_\s(\R^{2m})$ be a doubly radial function which is $C^\alpha$ in $\Omega$ and continuous up to the boundary, for some $\alpha > 2\s$. Assume that $v$ satisfies
 	$$
 	\beqc{\PDEsystem}
 	L_K v - f'(u)v - c(x)v &\leq & 0 &\textrm{ in } \Omega\,,\\
@@ -451,7 +451,7 @@ Let us now describe some of the main ingredients that are used to prove Theorems
 \end{proposition}
 
 
-To establish it, the key tool is to use a maximum principle in ``narrow'' sets, also proved in Section~\ref{Sec:MaximumPrinciple}. Our proof of this result is much simpler than that of the analogue maximum principle for the classical Laplacian. This is an example of how the nonlocality of the operator can make some arguments easier and less technical (informally speaking, the reason would be that $L_K$ ``sees more'', or ``further'', than the Laplacian). It is also interesting to notice that the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized} is by far simpler than the one using the extension problem in the case of the fractional Laplacian (Proposition 1.4 in \cite{Felipe-Sanz-Perela:SaddleFractional}). In the proof, it is crucial again the positivity condition \eqref{Eq:KernelInequality} together with the bounds \eqref{Eq:ZeroOrderTerm}.
+To establish it, the key tool is to use a maximum principle in ``narrow'' sets, also proved in Section~\ref{Sec:MaximumPrinciple}. Our proof of this result is much simpler than that of the analogue maximum principle for the classical Laplacian. This is an example of how the nonlocality of the operator can make some arguments easier and less technical (informally speaking, the reason would be that $L_K$ ``sees more'', or ``further'', than the Laplacian). It is also interesting to notice that the proof of Proposition~\ref{Prop:MaximumPrincipleLinearized} is by far simpler than the one using the extension problem in the case of the fractional Laplacian (Proposition 1.4 in \cite{Felipe-Sanz-Perela:SaddleFractional}). In the proof, it is crucial again the positivity condition \eqref{Eq:KernelInequality} (guaranteed by the convexity of the kernel) together with the bounds \eqref{Eq:ZeroOrderTerm}.
 
 Regarding the proof of Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}, to establish the asymptotic behavior of saddle-shaped solutions we use a compactness argument as in \cite{CabreTerraII, Cinti-Saddle, Cinti-Saddle2}, together with two important results established in Section~\ref{Sec:SymmetryResults}. The first one, Theorem~\ref{Th:LiouvilleSemilinearWholeSpace}, is a Liouville type principle for nonnegative solutions to a semilinear equation in the whole space. This result, in contrast with the previous ones, does not require the kernel $K$ to be radially symmetric, but only to satisfy \eqref{Eq:ParityK} and \eqref{Eq:Ellipticity}.
 
@@ -567,7 +567,7 @@ Concerning the same issue on minimizers in the fractional setting, Savin \cite{S
 \subsection{Plan of the article}
 \label{Subsec:Plan}
 
-The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present some preliminary results that will be used in the rest of the article. Section~\ref{Sec:Existence} contains the proof of the existence of a saddle-shaped solution via the monotone iteration method. In Section~\ref{Sec:SymmetryResults} we establish the Liouville type and symmetry results, Theorems~\ref{Th:LiouvilleSemilinearWholeSpace} and \ref{Th:SymmHalfSpace}. Section~\ref{Sec:Asymptotic} is devoted to the layer solution $u_0$ of problem \eqref{Eq:NonlocalAllenCahn} and the proof of the asymptotic behavior of saddle-shaped solutions, Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. Finally, Section~\ref{Sec:MaximumPrinciple} concerns the proof of a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}), as well as the proof of the uniqueness of the saddle-shaped solution.
+The paper is organized as follows. In Section~\ref{Sec:Preliminaries} we present some preliminary results that will be used in the rest of the article. Section~\ref{Sec:ExistenceUniqueness} contains the proof of the existence of a saddle-shaped solution ---via the monotone iteration method---, as well as the proof of its uniqueness. In Section~\ref{Sec:SymmetryResults} we establish the Liouville type and symmetry results, Theorems~\ref{Th:LiouvilleSemilinearWholeSpace} and \ref{Th:SymmHalfSpace}. Section~\ref{Sec:Asymptotic} is devoted to the layer solution $u_0$ of problem \eqref{Eq:NonlocalAllenCahn}, and to the proof of the asymptotic behavior of saddle-shaped solutions, Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}. Finally, Section~\ref{Sec:MaximumPrinciple} concerns the proof of a maximum principle in $\ocal$ for the linearized operator $L_K - f'(u)$ (Proposition~\ref{Prop:MaximumPrincipleLinearized}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Preliminaries}
@@ -719,7 +719,7 @@ In this last subsection, we state the basic maximum principles for doubly radial
 
 \begin{remark}
 	\label{Remark:MaxPrincipleSingularity}
-	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the interior regularity assumptions on $w$ in the previous result can be weakened.
+	Following the proof of this result in \cite{FelipeSanz-Perela:IntegroDifferentialI} it is easy to see that the interior regularity assumptions on $w$ in the previous statement can be weakened.
 	Indeed, we may allow $L_K w$ to take the value $+\infty$ at the points of $\Omega$ where $w$ is not regular enough for $L_K w$ to be finite. 
 	This will be used later in the proof of Theorem~\ref{Th:ExistenceUniqueness} (see Remark~\ref{Remark:CsRegularityFirstEigenfunction} below): we will apply Proposition~\ref{Prop:MaximumPrincipleForOddFunctions} with $w$ being a function no more regular than $C^{\alpha_0}$ at some points in the interior of $\Omega$, where $\alpha_0$ is given by Proposition~\ref{Prop:BoundaryRegularity}. 
 \end{remark}
@@ -729,18 +729,22 @@ In this last subsection, we state the basic maximum principles for doubly radial
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Existence of saddle-shaped solution: monotone iteration method}
+\section{Existence and uniqueness of the saddle-shaped solution: monotone iteration method}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\label{Sec:Existence}
+\label{Sec:ExistenceUniqueness}
 
 
-In this section we give a proof of the existence result in Theorem~\ref{Th:ExistenceUniqueness} based on the maximum principle. The first ingredient that we need is a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$.
-Along this section we will call odd sub/supersolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}. 
+In this section we prove the existence and uniqueness result of Theorem~\ref{Th:ExistenceUniqueness}. 
+The proof of the existence is based on the maximum principle and the first ingredient that we need is a version of the monotone iteration procedure for doubly radial functions which are odd with respect to the Simons cone $\ccal$.
+In order to prove the uniqueness we will use the asymptotic behavior result of Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution} together with the maximum principle for the linearized operator $L_K - f'(u)$, given in Proposition~\ref{Prop:MaximumPrincipleLinearized}; both results will be proved in the subsequent sections.
+
+We next present the monotone iteration method for doubly radial odd functions. 
+In this result and along the section, we will call odd sub/supersolutions to problem \eqref{Eq:SemilinearSolutionInBall} the functions that are doubly radial, odd with respect to the Simons cone, and satisfy the corresponding problem in \eqref{Eq:SemilinearSubSuperSolutionInBall}. 
 
 
 \begin{proposition}
 	\label{Prop:MonotoneIterationOdd}
-	Let $\s\in (0,1)$ and let $K$ be a radially symmetric kernel  satisfying the convexity condition \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0$. Assume that $\vsub \leq \vsup$ are two bounded functions which are doubly radial, odd with respect to the Simons cone, and belonging to $C^{2\s + \varepsilon} (B_R)$ for some $\varepsilon>0$. Furthermore, assume that $\vsub\in C^\varepsilon(\overline{B_R})$ and that $\vsub$ and $\vsup$ satisfy respectively   
+	Let $\s\in (0,1)$ and let $K$ be a radially symmetric kernel  satisfying the convexity assumption \eqref{Eq:SqrtConvex} and such that $L_K\in \lcal_0$. Assume that $\vsub \leq \vsup$ are two bounded functions which are doubly radial, odd with respect to the Simons cone, and belonging to $C^{2\s + \varepsilon} (B_R)$ for some $\varepsilon>0$. Furthermore, assume that $\vsub\in C^\varepsilon(\overline{B_R})$ and that $\vsub$ and $\vsup$ satisfy respectively   
 	\begin{equation}
 	\label{Eq:SemilinearSubSuperSolutionInBall}
 	\beqc{\PDEsystem}
@@ -811,7 +815,7 @@ Note, however, that we cannot drop the assumption $\vsub\in C^\varepsilon(\overl
 
 
 
-In order to construct a positive subsolution, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next. This eigenfunction is obtained though a minimization of the Rayleigh quotient in the appropriate space, defined next.
+In order to construct a positive subsolution to \eqref{Eq:SemilinearSolutionInBall} with zero exterior data, we also need a characterization and some properties of the first odd eigenfunction and eigenvalue for the operator $L_K$, which are presented next. This eigenfunction is obtained though a minimization of the Rayleigh quotient in the appropriate space, defined next.
 
 Given a set $\Omega \subset \R^{2m}$ and a translation invariant and positive kernel $K$, we define the space
 $$
@@ -822,7 +826,7 @@ where
 \label{Eq:SeminormHK}
 [w]^2_{\H^K(\R^{2m})} := \dfrac{1}{2}\int_{\R^{2m}} \int_{\R^{2m}} |w(x) - w(y)|^2 K(x-y) \d x \d y\,.
 \end{equation}
-Recall also that when $K$ satisfies the ellipticity assumption \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \H^\s_0 (\Omega)$, which is the space associated to the kernel of the fractional Laplacian, $K(y) = c_{n,\s}|y|^{-n-2\s}$. We also define
+Recall also that when $K$ satisfies the ellipticity assumption \eqref{Eq:Ellipticity}, then $\H^K_0 (\Omega) = \H^\s_0 (\Omega)$, which is the space associated to the kernel of the fractional Laplacian, $K(y) = c_{n,\s}|y|^{-n-2\s}$. We also define, for $\Omega$ doubly radial and symmetric with respect to $\ccal$, the space
 $$
 \widetilde{\H}^K_{0, \, \mathrm{odd}}(\Omega) := \setcond{w \in \H^K_0(\Omega)}{w \textrm{ is doubly radial a.e. and odd with respect to } \ccal}.
 $$
@@ -870,12 +874,15 @@ Recall that when $K$ is radially symmetric and $w$ is doubly radial, we can repl
 
 \begin{remark}
 	\label{Remark:CsRegularityFirstEigenfunction}
-	Note that, by the regularity results for $L_K$ stated in Section~\ref{Sec:Preliminaries}, we have that $\phi_1 \in C^{\alpha_0}(\overline{\Omega})\cap C^{\alpha_0 + 2\s}(\Omega)$ for some $0<\alpha_0<\s$, and the regularity up to the boundary is optimal. Due to this and the fact that $\phi_1 >0$ in $\Omega\cap \ocal$ while $\phi_1=0$ in $\R^{2m}\setminus \Omega$, it is easy to check by using \eqref{Eq:OperatorOddF} that $-\infty <L_K \phi_1 < 0$ in $\ocal\setminus \overline{\Omega}$ and $L_K \phi_1 = -\infty$ on $\partial \Omega \cap \ocal$.
+	Note that, by the regularity results for $L_K$ stated in Section~\ref{Sec:Preliminaries}, we have that $\phi_1 \in C^{\alpha_0}(\overline{\Omega})\cap C^{\alpha_0 + 2\s}(\Omega)$ for some $0<\alpha_0<\s$, and the regularity up to the boundary is optimal. Due to this and the fact that $\phi_1 >0$ in $\Omega\cap \ocal$ while $\phi_1=0$ in $\R^{2m}\setminus \Omega$, it is easy to check by using \eqref{Eq:OperatorOddF} that $-\infty <L_K \phi_1 < 0$ in $\ocal\setminus \overline{\Omega}$ and that $L_K \phi_1 = -\infty$ on $\partial \Omega \cap \ocal$.
 \end{remark}
 
 With these ingredients, we can proceed with the proof of the existence statement in Theorem~\ref{Th:ExistenceUniqueness}.
 
-\begin{proof}[Proof of Theorem~\ref{Th:ExistenceUniqueness}: Existence]
+\begin{proof}[Proof of Theorem~\ref{Th:ExistenceUniqueness}] We divide it into two parts.
+	
+	
+\textbf{\textit{i}) Existence:}
 	The strategy is to build a suitable solution $u_R$ of 
 	\begin{equation}
 	\label{Eq:ProofExistenceProblemBR}
@@ -907,12 +914,25 @@ With these ingredients, we can proceed with the proof of the existence statement
 	By the usual strong maximum principle it follows readily that $u<1$ in $\ocal$. 
 	Moreover, since $u_R\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$ for $R>R_0$, this holds also the limit, that is, $u\geq\varepsilon \phi_1^{R_0}>0$ in  $\ocal \cap B_{R_0}$. 
 	Therefore, by applying the strong maximum principle for odd functions (see Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}) we obtain that $0 < u < 1$ in $\ocal$.
+	
+	\medskip
+	
+	\textbf{\textit{ii}) Uniqueness:}
+	Let $u_1$ and $u_2$ be two saddle-shaped solutions. Define $v := u_1 - u_2$, which is a doubly radial function that is odd with respect to $\ccal$. Then,
+	$$
+	L_K v = f(u_1) - f(u_2) \leq f'(u_2) (u_1 - u_2) = f'(u_2) v \quad \textrm{ in } \ocal\,,
+	$$
+	since $f$ is concave in $(0,1)$. Moreover, by the asymptotic result (see Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}), we have
+	$$
+	\limsup_{x\in \ocal, \ |x|\to \infty} v(x) = 0\,.
+	$$
+	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleLinearized}), it follows that $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.	
 \end{proof}
 
 
 \begin{remark}
 	\label{Remark:uStableinO}
-	The fact of being $u$ positive in $\ocal$ yields that $u$ is stable in this set, as explained in Section~\ref{Sec:Preliminaries}. 
+	Since the saddle-shaped solution $u$ is positive in $\ocal$, it follows that $u$ is stable in this set, as explained in Section~\ref{Sec:Preliminaries}. 
 	This fact will be used in Section~\ref{Sec:Asymptotic}.
 \end{remark}
 
@@ -967,7 +987,8 @@ This result can be deduced from the usual parabolic maximum principle in a bound
 
 \begin{lemma}
 	\label{Lemma:ParabolicmaxPrpBdd}
-	Let $L_K$ be an integro-differential operator of the form \eqref{Eq:DefOfLu} with kernel symmetric and satisfying \eqref{Eq:Ellipticity}, and let $v$ be a bounded function, $C^\alpha$ with $\alpha > 2\s$ in space and $C^1$ in time, satisfying
+	Let $\Omega  \subset B_R\times(0,T) \subset \R^n \times (0,+\infty)$ be a bounded open set.
+	Let $L_K$ be an integro-differential operator of the form \eqref{Eq:DefOfLu} with a symmetric kernel satisfying \eqref{Eq:Ellipticity}, and let $v$ be a bounded function, $C^\alpha$ with $\alpha > 2\s$ in space and $C^1$ in time, satisfying
 	\begin{equation*}
 	\beqc{\PDEsystem}
 	\partial_t v + L_K v &\leq& 0 & \textrm{ in } \Omega \subset B_R\times(0,T)\,,\\
@@ -1018,7 +1039,7 @@ With this result we can introduce the auxiliary function that we will use to pro
 	\end{equation}
 	satisfying 
 	$$
-	\psi_R \to  0 \ \text{ pointwise } \quad \text{and } \quad M_R  \to +\infty \ \text{as } R\to +\infty\,.
+	\psi_R \to  0 \ \text{ pointwise }  \text{ and } \quad M_R  \to +\infty \ \quad \text{ as } R\to +\infty\,.
 	$$
 \end{lemma}
 
@@ -1156,7 +1177,7 @@ We proceed now with the details of the arguments. As we have said, the first ste
 
 \begin{proposition}
 	\label{Prop:MonotonyHalfSpace}
-	Let $v$ be a bounded solution to one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0$ such that the kernel $K$ is decreasing in the direction of $x_n$ in $\R^n_+$, that is, 
+	Let $v$ be a bounded solution to one of the problems \eqref{Eq:P1} or \eqref{Eq:P2}, with $L_K \in \lcal_0$ such that the kernel $K$ is nonincreasing in the direction of $x_n$ in $\R^n_+$, that is, 
 	$$
 	K(x_H-y_H,x_n-y_n) \geq K(x_H-y_H,x_n+y_n) \,\,\,\,\text{for all } \,\, x,y\in \R^n_+.
 	$$
@@ -1259,7 +1280,7 @@ As a consequence of this result, one can deduce easily a general maximum princip
 \end{proof}
 
 
-The previous maximum principle in ``narrow'' sets is not suitable enough to apply the moving planes method. In the argument, we would want to use a maximum principle in a ``narrow'' band and applied to an odd function with respect to a hyperplane. However, odd functions cannot have a constant sign in the exterior of a band and in the hypotheses of Corollary~\ref{Cor:MaxPpleNarrowDomains} there is a prescribed constant sign of a function outside the set $\Omega$. Thus, we need another version of a maximum principle in ``narrow'' sets that applies to odd functions and only requires a constant sign of the function at one side of a hyperplane (in the spirit of the maximum principles of Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}). This is accomplished with the following result.
+The previous maximum principle in ``narrow'' sets is not suitable enough to apply the moving planes method, and we need to adapt it to the setting of odd functions with respect to a hyperplane (see Proposition~\ref{Prop:MaxPrpNarrowOdd} below, which will be deduced  from Corollary~\ref{Cor:MaxPpleNarrowDomains}). The reason why we need it is the following. In the moving the argument, we would want to use a maximum principle in a ``narrow'' band and applied to an odd function with respect to a hyperplane. However, odd functions cannot have a constant sign in the exterior of a band and in the hypotheses of Corollary~\ref{Cor:MaxPpleNarrowDomains} there is a prescribed constant sign of a function outside the set $\Omega$. Thus, we need another version of a maximum principle in ``narrow'' sets that applies to odd functions and only requires a constant sign of the function at one side of a hyperplane (in the spirit of the maximum principles of Proposition~\ref{Prop:MaximumPrincipleForOddFunctions}). This is accomplished with the following result.
 
 \begin{proposition}
 	\label{Prop:MaxPrpNarrowOdd}
@@ -1617,7 +1638,7 @@ Now we have all the ingredients to establish the asymptotic behavior of the sadd
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Maximum principles for the linearized operator and uniqueness of the saddle-shaped solution}
+\section{Maximum principles for the linearized operator}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{Sec:MaximumPrinciple}
 
@@ -1797,24 +1818,6 @@ The same argument used in the previous proof can be used to establish the remain
 
 
 
-
-
-
-With these ingredients available, we can finally establish the uniqueness of the saddle-shaped solution.
-
-
-
-\begin{proof}[Proof of Theorem~\ref{Th:ExistenceUniqueness}: Uniqueness]
-	Let $u_1$ and $u_2$ be two saddle-shaped solutions. Define $v := u_1 - u_2$, which is a doubly radial function that is odd with respect to $\ccal$. Then,
-	$$
-	L_K v = f(u_1) - f(u_2) \leq f'(u_2) (u_1 - u_2) = f'(u_2) v \quad \textrm{ in } \ocal\,,
-	$$
-	since $f$ is concave in $(0,1)$. Moreover, by the asymptotic result (see Theorem~\ref{Th:AsymptoticBehaviorSaddleSolution}), we have
-	$$
-	\limsup_{x\in \ocal, \ |x|\to \infty} v(x) = 0\,.
-	$$
-	Then, by the maximum principle in $\ocal$ for the linearized operator $L_K  - f'(u_2)$ (see Proposition~\ref{Prop:MaximumPrincipleLinearized}), it follows that $v \leq 0$ in $\ocal$, which means $u_1 \leq u_2$ in $\ocal$. Repeating the  argument with $-v = u_2 - u_1$ we deduce $u_1 \geq u_2$ in $\ocal$. Therefore, $u_1 = u_2$ in $\R^{2m}$.
-\end{proof}
 
 
 
